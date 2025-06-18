@@ -1,0 +1,257 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    top: 0;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+}
+
+footer {
+    background-color: #cfe5ff;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+h1 {
+    color: #374151;
+    font-weight: 700;
+    font-size: 2vw;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1vw;
+    color: #374151;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* 화면의 너비가 1920px 보다 작아질 때, “판다마켓” 로고의 왼쪽 여백 200px“로그인" 버튼의 오른쪽 여백 200px이 유지되고, 화면의 너비가 작아질수록 두 요소간 거리가 가까워지도록 해주세요. */
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px;
+}
+
+.login_btn {
+    width: 128px;
+    height: 48px;
+    background-color: #3692ff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.login_btn:hover {
+    background-color: #1967d6;
+}
+
+.login_btn:active {
+    background-color: #1251aa;
+}
+
+.plan_card {
+    background-color: #cfe5ff;
+    display: flex;
+    height: 540px;
+    justify-content: center;
+    align-items: end;
+}
+
+.slogan {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.large_btn {
+    width: 19vw;
+    height: 56px;
+    background-color: #3692ff;
+    border-radius: 40px;
+    border: none;
+    font-size: 20px;
+}
+
+.large_btn:hover {
+    background-color: #1967d6;
+}
+
+.large_btn:active {
+    background-color: #1251aa;
+}
+
+.main_img {
+    width: 746px;
+    height: 340px;
+}
+
+.container {
+    height: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_box {
+    width: 988px;
+    height: 444px;
+    border-radius: 12px;
+    border: none;
+    background-color: #fcfcfc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.introduce_img {
+    width: 579px;
+    height: 444px;
+}
+
+.keyword {
+    font-weight: 800;
+    font-size: 18px;
+    color: #3692ff;
+}
+
+.sec_introduce {
+    text-align: right;
+}
+
+.bottom {
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.bottom_slogan {
+    padding-bottom: 100px;
+}
+
+.footer_container {
+    height: 160px;
+    background-color: #111827;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom_content_box {
+    width: 1110px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright {
+    color: #9ca3af;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer_menu a {
+    color: #e5e7eb;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 15px;
+}
+
+.sns_menu ul {
+    padding: 0;
+}
+
+.sns_menu ul > li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+}
+
+/* tablet */
+@media (max-width: 1199px) {
+    body {
+        background-color: #fcfcfc;
+    }
+
+    h1 {
+        color: #374151;
+        font-weight: 700;
+        font-size: 32px;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 18px;
+        color: #374151;
+    }
+
+    .plan_card {
+        background-color: #cfe5ff;
+        display: flex;
+        flex-direction: column;
+        height: 771px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main_img {
+        width: 744px;
+        height: 340px;
+    }
+
+    .slogan {
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .only_pc {
+        display: none;
+    }
+
+    /* .container {
+    } */
+
+    .content_box {
+        flex-direction: column;
+        /* align-items: flex-start; */
+    }
+
+    .keyword {
+        font-weight: 700;
+        font-size: 18px;
+        color: #3692ff;
+    }
+
+    .introduce_img {
+        width: 696px;
+        height: 525.55px;
+    }
+}
+
+
