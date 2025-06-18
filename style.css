@@ -10,7 +10,8 @@ body {
 }
 
 .horizontal-padding {
-  padding: 0 200px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 header {
