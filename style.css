@@ -8,12 +8,15 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.horizontal-padding {
+  padding: 0 200px;
+}
+
 header {
   height: 70px;
   border-bottom: 1px solid #dfdfdf;
   display: flex;
   align-items: center;
-  padding: 0 200px;
 }
 
 .container {
@@ -39,7 +42,7 @@ header a:last-child {
 
 footer {
   background-color: #111827;
-  padding: 32px 200px 108px;
+  padding: 32px 0 108px;
 }
 
 footer > .container > div:first-child {
@@ -61,4 +64,39 @@ footer > .container > div:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.landing-introduce {
+  background-color: #cfe5ff;
+  height: 540px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.landing-introduce > .container > div:first-child {
+  margin-bottom: 60px;
+}
+
+.landing-look-around {
+  width: 357px;
+  background-color: #3692ff;
+  border-radius: 40px;
+  padding: 12px 124px;
+  margin-top: 32px;
+}
+
+.landing-look-around > a {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #f9fafb;
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 2%;
 }
