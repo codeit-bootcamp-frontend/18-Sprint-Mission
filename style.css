@@ -13,16 +13,17 @@ header {
   border-bottom: 1px solid #dfdfdf;
   display: flex;
   align-items: center;
+  padding: 0 200px;
 }
 
 .container {
-  padding: 0 200px;
   margin: 0 auto;
   width: 100%;
   max-width: 1120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: content-box;
 }
 
 header a:last-child {
@@ -38,14 +39,14 @@ header a:last-child {
 
 footer {
   background-color: #111827;
-  padding: 32px 0 108px 0;
+  padding: 32px 200px 108px;
 }
 
-.container > div:first-child {
+footer > .container > div:first-child {
   color: #9ca3af;
 }
 
-.container > div:nth-child(2) {
+footer > .container > div:nth-child(2) {
   display: flex;
   align-items: center;
   gap: 30px;
