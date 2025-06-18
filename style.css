@@ -100,3 +100,47 @@ h1 {
   line-height: 140%;
   letter-spacing: 2%;
 }
+
+h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 26px;
+  color: #3692ff;
+}
+
+p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+section {
+  padding: 138px 0;
+}
+
+.content {
+  margin: 0 auto;
+  width: 988px;
+  display: grid;
+  grid-template-columns: 579px 1fr;
+  background-color: #fcfcfc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+section:nth-child(3) > .content {
+  grid-template-columns: 1fr 579px;
+}
+
+.content-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-info h1 {
+  margin: 12px 0 24px;
+}
