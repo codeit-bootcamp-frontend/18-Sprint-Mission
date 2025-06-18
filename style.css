@@ -25,7 +25,7 @@ header {
   align-items: center;
 }
 
-header a {
+header a:last-child {
   padding: 11px 43px;
   background-color: #3692ff;
   color: #f3f4f6;
