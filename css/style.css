@@ -1,3 +1,5 @@
+@import url(colors.css);
+
 *{
     box-sizing: border-box;
 }
@@ -61,7 +63,7 @@ button {
 .login_btn {
     width: 128px;
     height: 48px;
-    background-color: #3692ff;
+    background-color: var(--blue);
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -93,7 +95,7 @@ button {
     width: 19vw;
     max-width: 357px;
     height: 56px;
-    background-color: #3692ff;
+    background-color: var(--blue);
     border-radius: 40px;
     border: none;
     font-size: 20px;
@@ -138,7 +140,7 @@ button {
 .keyword {
     font-weight: 800;
     font-size: 18px;
-    color: #3692ff;
+    color: var(--blue);
 }
 
 .sec_introduce {
@@ -246,7 +248,7 @@ button {
     .keyword {
         font-weight: 700;
         font-size: 18px;
-        color: #3692ff;
+        color: var(--blue);
     }
 
     .introduce_img {

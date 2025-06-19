@@ -1,3 +1,5 @@
+@import url(colors.css);
+
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
@@ -67,6 +69,17 @@ button {
 
 .login_logo {
     text-align: center;
+}
+
+.pw_box {
+    position: relative;
+    display: flex;
+}
+
+.eyes {
+    position: absolute;
+    top: 17px;
+    right: 15px;
 }
 
 .social_login_container {
