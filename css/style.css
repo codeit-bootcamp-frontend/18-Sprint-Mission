@@ -160,7 +160,7 @@ button {
 
 .footer_container {
     height: 160px;
-    background-color: #111827;
+    background-color: var(--gray900);
     display: flex;
     justify-content: center;
 }
@@ -174,13 +174,13 @@ button {
 }
 
 .copyright {
-    color: #9ca3af;
+    color: var(--gray400);
     font-size: 16px;
     font-weight: 400;
 }
 
 .footer_menu a {
-    color: #e5e7eb;
+    color: var(--gray200);
     font-size: 16px;
     font-weight: 400;
     padding: 15px;
@@ -203,7 +203,7 @@ button {
     }
 
     h1 {
-        color: #374151;
+        color: var(--gray700);
         font-weight: 700;
         font-size: 32px;
     }
