@@ -36,12 +36,12 @@ a {
 h1 {
     color: #374151;
     font-weight: 700;
-    font-size: 2vw;
+    font-size: clamp(16px, 2vw ,40px);
 }
 
 h2 {
     font-weight: 500;
-    font-size: 1vw;
+    font-size: clamp(12px, 1vw, 24px);
     color: #374151;
 }
 
@@ -91,6 +91,7 @@ button {
 
 .large_btn {
     width: 19vw;
+    max-width: 357px;
     height: 56px;
     background-color: #3692ff;
     border-radius: 40px;
