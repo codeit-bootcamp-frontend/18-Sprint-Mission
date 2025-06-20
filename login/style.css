@@ -91,3 +91,14 @@ body {
   list-style: none;
   margin: 0;
 }
+
+.signup {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+.signup > a {
+  color: #3692ff;
+}
