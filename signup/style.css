@@ -8,3 +8,97 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #fcfcfc;
 }
+
+.container {
+  width: 640px;
+  margin: 231px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.signup-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.signup-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup-input-field > label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.signup-input {
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 16px 24px 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.signup-input > input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  flex-grow: 1;
+}
+
+.signup-button {
+  background-color: #3692ff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  padding: 12px 0;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.login-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  background-color: #e6f2ff;
+  padding: 16px 24px;
+  border-radius: 8px;
+}
+
+.social-login-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+}
+
+.signup {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+.signup > a {
+  color: #3692ff;
+}

@@ -3,10 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link ref="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>회원가입</title>
   </head>
   <body>
-    회원가입
+    <div class="container">
+      <header class="signup-header">
+        <a href="/">
+          <img src="images/logo.png" alt="logo image" width="396" />
+        </a>
+      </header>
+      <main class="signup-main">
+        <form class="signup-form">
+          <div class="signup-input-field">
+            <label for="email-input">이메일</label>
+            <div class="signup-input">
+              <input
+                id="email-input"
+                type="email"
+                name="email"
+                placeholder="이메일을 입력하세요"
+                required
+              />
+            </div>
+          </div>
+          <div class="signup-input-field">
+            <label for="username-input">닉네임</label>
+            <div class="signup-input">
+              <input
+                id="username-input"
+                name="username"
+                placeholder="닉네임을 입력하세요"
+                required
+              />
+            </div>
+          </div>
+          <div class="signup-input-field">
+            <label for="password-input">비밀번호</label>
+            <div class="signup-input">
+              <input
+                id="password-input"
+                type="password"
+                name="password"
+                placeholder="비밀번호를 입력하세요"
+                required
+              />
+              <img src="images/icon-visibility-off.svg" alt="show password" />
+            </div>
+          </div>
+          <div class="signup-input-field">
+            <label for="confirm-password-input">비밀번호 확인</label>
+            <div class="signup-input">
+              <input
+                id="confirm-password-input"
+                placeholder="비밀번호를 한 번 더 입력하세요"
+                required
+              />
+              <img src="images/icon-visibility-on.svg" alt="show password" />
+            </div>
+          </div>
+          <button class="signup-button">회원가입</button>
+        </form>
+        <div class="login-social">
+          <span>간편 로그인하기</span>
+          <ul class="social-login-list">
+            <li>
+              <a href="https://www.google.com/" target="_blank">
+                <img
+                  src="images/social-google.png"
+                  alt="google social login"
+                  width="42"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.kakaocorp.com/page/" target="_blank">
+                <img
+                  src="images/social-kakaotalk.png"
+                  alt="kakaotalk social login"
+                  width="42"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="signup">
+          이미 회원이신가요? <a href="../login/">로그인</a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
