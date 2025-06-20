@@ -14,7 +14,7 @@ body {
   padding-right: 200px;
 }
 
-header {
+.landing-header {
   height: 70px;
   border-bottom: 1px solid #dfdfdf;
   display: flex;
@@ -30,7 +30,11 @@ header {
   align-items: center;
 }
 
-header a:last-child {
+.header-logo img {
+  vertical-align: top;
+}
+
+.login-button {
   padding: 11px 43px;
   background-color: #3692ff;
   color: #f3f4f6;
@@ -41,31 +45,30 @@ header a:last-child {
   text-decoration: none;
 }
 
-footer {
+.landing-footer {
   background-color: #111827;
   padding: 32px 0 108px;
   margin-top: 138px;
 }
 
-footer > .container > div:first-child {
+.footer-copyright {
   color: #9ca3af;
+}
+
+.footer-cs {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-cs > a {
+  color: #e5e7eb;
+  text-decoration: none;
 }
 
 .footer-social {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.container > div:nth-child(2) > a {
-  color: #e5e7eb;
-  text-decoration: none;
-}
-
-.container > div:last-child {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -78,7 +81,7 @@ footer > .container > div:first-child {
   align-items: flex-end;
 }
 
-.landing-introduce > .container > div:first-child {
+.landing-introduce-title {
   margin-bottom: 60px;
 }
 
@@ -98,7 +101,7 @@ footer > .container > div:first-child {
   text-decoration: none;
 }
 
-h1 {
+h2 {
   margin: 0;
   font-size: 40px;
   font-weight: 700;
@@ -106,7 +109,7 @@ h1 {
   letter-spacing: 2%;
 }
 
-h2 {
+.landing-content-label {
   margin: 0;
   font-size: 18px;
   font-weight: 800;
@@ -114,14 +117,14 @@ h2 {
   color: #3692ff;
 }
 
-p {
+.landing-content-description {
   margin: 0;
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
 }
 
-section {
+.landing-section {
   padding: 138px 0;
 }
 
@@ -135,7 +138,7 @@ section {
   overflow: hidden;
 }
 
-section:nth-child(3) > .content {
+.content.reverse {
   grid-template-columns: 1fr 579px;
 }
 
@@ -146,6 +149,6 @@ section:nth-child(3) > .content {
   align-items: center;
 }
 
-.content-info h1 {
+.content-info h2 {
   margin: 12px 0 24px;
 }
