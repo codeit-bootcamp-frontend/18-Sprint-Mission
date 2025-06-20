@@ -51,13 +51,19 @@ button {
     cursor: pointer;
 }
 
-/* 화면의 너비가 1920px 보다 작아질 때, “판다마켓” 로고의 왼쪽 여백 200px“로그인" 버튼의 오른쪽 여백 200px이 유지되고, 화면의 너비가 작아질수록 두 요소간 거리가 가까워지도록 해주세요. */
 .logo {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 200px;
+}
+
+.logo_img {
+    background-image: url("/web_publishing/panda_market/images/Property 1=sm.png");
+    background-repeat: no-repeat;
+    width: 198px;
+    height: 66px;
 }
 
 .login_btn {
@@ -214,6 +220,14 @@ button {
         color: #374151;
     }
 
+    .slogan h1, .bottom h1 {
+        font-size: 40px;
+    }
+
+    .logo {
+        padding: 10px 24px;
+    }
+
     .plan_card {
         background-color: #cfe5ff;
         display: flex;
@@ -221,6 +235,11 @@ button {
         height: 771px;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .large_btn {
+        width: 512px;
+        height: 56px;
     }
 
     .main_img {
@@ -237,12 +256,23 @@ button {
         display: none;
     }
 
-    /* .container {
-    } */
+    .container {
+        height: 800px;
+    }
 
     .content_box {
-        flex-direction: column;
-        /* align-items: flex-start; */
+        display: grid;
+        width: 768px;
+        height: 100%;
+        padding: 20px 0;
+    }
+
+    .introduce, .sec_introduce {
+        padding-bottom: 40px;
+    }
+
+    .sec_introduce {
+        grid-row: 2/3;
     }
 
     .keyword {
@@ -255,6 +285,122 @@ button {
         width: 696px;
         height: 525.55px;
     }
+
+    .bottom {
+        display: grid;
+        width: 100%;
+        height: 1080px;
+        align-items: end;
+    }
+
+    .bottom img {
+        width: 100%;
+    }
+
+    .bottom_slogan {
+        text-align: center;
+    }
+
+    .bottom_content_box {
+        width: 768px;
+        padding: 0px 0px 60px;
+        justify-content: space-around;
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .plan_card {
+        height: 600px;
+    }
+
+    .slogan {
+        margin-top: 80px;
+    }
+
+    .slogan_heading {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .large_btn {
+        width: 240px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .main_img {
+        width: 375px;
+        height: 175px;
+    }
+
+    .logo {
+        padding: 10px 16px;
+    }
+
+    .logo_img {
+        background-image: url("/web_publishing/panda_market/images/Property 1=Typo.png");
+        background-repeat: no-repeat;
+        width: 103px;
+        height: 51px;
+    }
+
+    .container {
+        height: 480px;
+    }
+
+    .content_box {
+        width: 375px;
+    }
+
+    .introduce, .sec_introduce {
+        width: 344px;
+    }
+
+    .introduce_img {
+        width: 344px;
+        height: 260px;
+    }
+    
+    .bottom {
+        height: 600px;
+    }
+
+    .bottom_slogan {
+        padding-bottom: 0;
+    }
+
+    .bottom_content_box {
+        display: grid;
+    }
+
+    .copyright {
+        grid-row: 2/3;
+        padding: 15px;
+    }
+
+    .privacy {
+        grid-row: 1/2;
+    }
+
+    .sns_menu {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    .only_mobile {
+        display: block;
+    }
+
+
 }
 
 
