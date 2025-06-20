@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판다마켓 회원가입</title>
+  <link rel="icon" href="./source/favicon.ico">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="header">
+    <a href="index.html">
+      <img src="./source/nav_icon.svg" alt="nav_icon">
+      <span>판다마켓</span>
+    </a>
+  </div>
+
+  <main>
+    <div class="input">
+      <label for="email">이메일</label>
+      <input type="text" id="email" autofocus placeholder="이메일을 입력해주세요">
+    </div>
+    <div class="input">
+      <label for="nickname">닉네임</label>
+      <input type="text" id="nickname" placeholder="닉네임을 입력해주세요">
+    </div>
+    <div class="input">
+      <label for="password">비밀번호</label>
+      <div class="input-wrapper">
+        <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
+        <img src="./source/eye_close.svg" alt="eye_close" class="eye-toggle">
+      </div>
+    </div>
+    <div class="input">
+      <label for="passwordConfirm">비밀번호 확인</label>
+      <div class="input-wrapper">
+        <input type="password" id="passwordConfirm" placeholder="비밀번호를 다시 입력해주세요">
+        <img src="./source/eye_open.svg" alt="eye_open" class="eye-toggle">
+      </div>
+    </div>
+    <button class="button login-button">회원가입</button>
+    <div class="social-login">
+      <p>간편 로그인하기</p>
+      <div class="social-login-icons">
+        <a href="https://www.google.com/"><img src="./source/google.svg" alt="google"></a>
+        <a href="https://www.kakaocorp.com/page/"><img src="./source/kakao.svg" alt="kakao"></a>
+      </div>
+    </div>
+    <p class="register">판다마켓이 처음이신가요?<a href="login.html">로그인</a></p>
+  </main>
+</body>
+
+</html>
