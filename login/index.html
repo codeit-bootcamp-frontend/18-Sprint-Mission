@@ -3,9 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>로그인</h1>
+    <div clas="container">
+      <header class="login-header">
+        <a href="/">
+          <img src="images/logo.png" alt="logo image" />
+        </a>
+      </header>
+      <main>
+        <form class="login-form">
+          <div class="login-input-field">
+            <label for="email-input">이메일</label>
+            <div class="login-input">
+              <input
+                id="email-input"
+                type="email"
+                name="email"
+                placeholder="이메일을 입력하세요"
+                required
+              />
+            </div>
+          </div>
+          <div class="login-input-field">
+            <label for="password-input">비밀번호</label>
+            <div class="login-input">
+              <input
+                id="password-input"
+                type="password"
+                name="password"
+                placeholder="비밀번호를 입력하세요"
+                required
+              />
+              <img src="images/icon-visibility-on.svg" alt="show password" />
+            </div>
+          </div>
+          <button class="login-button">로그인</button>
+        </form>
+        <div class="login-social">
+          <span>간편 로그인하기</span>
+          <ul class="social-login-list">
+            <li>
+              <img src="images/social-google.png" alt="google social login" />
+            </li>
+            <li>
+              <img
+                src="images/social-kakaotalk.png"
+                alt="kakaotalk social login"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="signup">
+          판다마켓이 처음이신가요? <a href="#">회원가입</a>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
