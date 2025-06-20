@@ -1,0 +1,250 @@
+* , *::after, *::before {
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+}
+
+body > div {
+
+    max-width: 192rem;
+    margin: 0 auto;
+}
+
+header {
+    padding: 0 2rem;
+    background-color: white;
+    top: 0;
+    position: sticky;
+    height: 7rem;
+    display: flex
+;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+}
+
+header span {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #3692ff;
+    font-family: ROKAF Sans;
+}
+
+header > div {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    width: 15.4rem;
+    
+}
+
+header a {
+    padding: 1.2rem 2.3rem 1.2rem 2.3rem;
+    background-color: #3692ff;
+    color: white;
+    gap: 1rem;
+    border-radius: 0.8rem;
+    width: 12.8rem;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+main nav{
+    width: 100%;
+    height: 54rem;
+    background-color: #CFE5FF;
+}
+
+.items{
+        border-radius: 4rem;
+    width: 35.7rem;
+    height: 5.6rem;
+    padding: 1.6rem 12rem 1.6rem 12rem;
+    text-decoration: none;
+    background-color: #3692FF;
+    color: #f9fafb;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.article {
+    width: 35.7rem;
+    height: 26rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+        flex-direction: column;
+        padding-bottom: 8rem;
+}
+
+.article p {
+    width: 100%;
+    font-size: 4rem;
+    line-height: 140%;
+    font-weight: 700;
+    text-align: start;
+    color: #374151;
+}
+
+main nav .container{
+        width: 111rem;
+    height: 34rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.itemImg{
+    width: 74.6rem;
+    height: 34rem;
+}
+
+main nav{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+main section
+{
+    width: 100%;
+    height: 72rem;
+    background-color: white;
+    padding: 13.8rem 46.6rem 13.8rem 46.6rem;
+    ;
+}
+
+main section .container
+{
+    height: 44.4rem;
+    padding-left: 2.35rem;
+    display: flex;
+}
+
+main section .container img {
+    width: 57.9rem;
+    height: 100%;
+}
+
+main section .container .article {
+    padding: 10.3rem 2.35rem 10.3rem 6.4rem;
+    width: 38.55rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+main section .container .article div {
+    width: 100%;
+}
+
+main section .container .article div:nth-child(1){
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    letter-spacing: 0;
+    color: #3692ff;
+}
+main section .container .article div:nth-child(2){
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 140%;
+    letter-spacing: 2%;
+    color: #374151;
+    margin-bottom: 2.4rem;
+}
+main section .container .article div:nth-child(3){
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0;
+    color: #374151;
+}
+
+main section:nth-child(3) .container .article div{
+    text-align: end;
+}
+
+main section:nth-child(3) .container .article div:nth-child(2){
+    font-size: 3.7rem;
+    text-align: end;
+}
+
+main section:nth-child(3) .container .article div:nth-child(3){
+    font-size: 2.2rem;
+}
+
+.bottomP{
+    padding-top: 5rem;
+}
+
+footer {
+    background-color: #111827;
+    width: 100%;
+    height: 16rem;
+    padding: 3.2rem 40rem 10.8rem 40rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #E5E7EB;
+}
+
+.flexBox{
+    margin-left: 10rem;
+    width: 15.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 100%;
+}
+
+footer div:first-child{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 100%;
+    color: #9CA3AF;
+}
+
+.imgDiv {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.imgDiv img{
+    width: 2rem;
+    height: 2rem;
+}
