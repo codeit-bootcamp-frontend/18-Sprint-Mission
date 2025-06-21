@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,19 +7,21 @@
     <title>판다마켓</title>
   </head>
   <body>
-    <header class="horizontal-padding">
+    <header class="landing-header horizontal-padding">
       <div class="container">
-        <a href="/">
-          <img src="images/logo.png" alt="판다마켓 로고" width="153" />
-        </a>
-        <a href="login/">로그인</a>
+        <h1 class="header-logo">
+          <a href="/">
+            <img src="images/logo.png" alt="판다마켓 로고" width="153" />
+          </a>
+        </h1>
+        <a class="login-button" href="login/">로그인</a>
       </div>
     </header>
     <main>
       <div class="landing-introduce horizontal-padding">
         <div class="container">
-          <div>
-            <h1>일상의 모든 물건을<br />거래해 보세요</h1>
+          <div class="landing-introduce-title">
+            <h2>일상의 모든 물건을<br />거래해 보세요</h2>
             <div class="landing-look-around">
               <a href="items/">구경하러 가기</a>
             </div>
@@ -27,27 +29,31 @@
           <img src="images/introduce-1.png" width="746" />
         </div>
       </div>
-      <section>
+      <section class="landing-section">
         <div class="content">
           <div class="content-image">
             <img src="images/hot-item.png" alt="Hot Item" />
           </div>
           <div class="content-info">
             <div>
-              <h2>Hot Item</h2>
-              <h1>인기 상품을<br />확인해 보세요</h1>
-              <p>가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요</p>
+              <span class="landing-content-label">Hot Item</span>
+              <h2>인기 상품을<br />확인해 보세요</h2>
+              <p class="landing-content-description">
+                가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요
+              </p>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <div class="content">
+      <section class="landing-section">
+        <div class="content reverse">
           <div class="content-info">
             <div>
-              <h2>Search</h2>
-              <h1>구매를 원하는<br />상품을 검색하세요</h1>
-              <p>구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요</p>
+              <span class="landing-content-label">Search</span>
+              <h2>구매를 원하는<br />상품을 검색하세요</h2>
+              <p class="landing-content-description">
+                구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
+              </p>
             </div>
           </div>
           <div class="content-image">
@@ -55,50 +61,60 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="landing-section">
         <div class="content">
           <div class="content-image">
             <img src="images/register.png" alt="Register" />
           </div>
           <div class="content-info">
             <div>
-              <h2>Register</h2>
-              <h1>판매를 원하는<br />상품을 등록하세요</h1>
-              <p>어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요</p>
+              <span class="landing-content-label">Register</span>
+              <h2>판매를 원하는<br />상품을 등록하세요</h2>
+              <p class="landing-content-description">
+                어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
+              </p>
             </div>
           </div>
         </div>
       </section>
       <div class="landing-introduce horizontal-padding">
         <div class="container">
-          <div>
-            <h1>믿을 수 있는<br />판다마켓 중고 거래</h1>
+          <div class="landing-introduce-title">
+            <h2>믿을 수 있는<br />판다마켓 중고 거래</h2>
           </div>
           <img src="images/introduce-2.png" width="746" />
         </div>
       </div>
     </main>
-    <footer class="horizontal-padding">
+    <footer class="landing-footer horizontal-padding">
       <div class="container">
-        <div>©codeit - 2024</div>
-        <div>
+        <span class="footer-copyright">©codeit - 2024</span>
+        <div class="footer-cs">
           <a href="privacy/">Privacy Policy</a>
           <a href="faq/">FAQ</a>
         </div>
-        <div>
-          <a href="https://www.facebook.com/" target="_blank">
-            <img src="images/ic_facebook.png" />
-          </a>
-          <a href="https://x.com/" target="_blank">
-            <img src="images/ic_twitter.png" />
-          </a>
-          <a href="https://youtube.com" target="_blank">
-            <img src="images/ic_youtube.png" />
-          </a>
-          <a href="https://www.instagram.com" target="_blank">
-            <img src="images/ic_instagram.png" />
-          </a>
-        </div>
+        <ul class="footer-social">
+          <li>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img src="images/icon-facebook.svg" alt="facbook icon" />
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/" target="_blank">
+              <img src="images/icon-twitter.svg" alt="twitter icon" />
+            </a>
+          </li>
+          <li>
+            <a href="https://youtube.com" target="_blank">
+              <img src="images/icon-youtube.svg" alt="youtube icon" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="images/icon-instagram.svg" alt="instagram icon" />
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   </body>

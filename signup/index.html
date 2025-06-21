@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>로그인</title>
+    <title>회원가입</title>
   </head>
   <body>
     <div class="container">
-      <header class="login-header">
+      <header class="signup-header">
         <a href="/">
           <img src="images/logo.png" alt="logo image" width="396" />
         </a>
       </header>
-      <main class="login-main">
-        <form class="login-form">
-          <div class="login-input-field">
+      <main class="signup-main">
+        <form class="signup-form">
+          <div class="signup-input-field">
             <label for="email-input">이메일</label>
-            <div class="login-input">
+            <div class="signup-input">
               <input
                 id="email-input"
                 type="email"
@@ -27,9 +27,20 @@
               />
             </div>
           </div>
-          <div class="login-input-field">
+          <div class="signup-input-field">
+            <label for="username-input">닉네임</label>
+            <div class="signup-input">
+              <input
+                id="username-input"
+                name="username"
+                placeholder="닉네임을 입력하세요"
+                required
+              />
+            </div>
+          </div>
+          <div class="signup-input-field">
             <label for="password-input">비밀번호</label>
-            <div class="login-input">
+            <div class="signup-input">
               <input
                 id="password-input"
                 type="password"
@@ -40,7 +51,18 @@
               <img src="images/icon-visibility-off.svg" alt="show password" />
             </div>
           </div>
-          <button class="login-button">로그인</button>
+          <div class="signup-input-field">
+            <label for="confirm-password-input">비밀번호 확인</label>
+            <div class="signup-input">
+              <input
+                id="confirm-password-input"
+                placeholder="비밀번호를 한 번 더 입력하세요"
+                required
+              />
+              <img src="images/icon-visibility-on.svg" alt="show password" />
+            </div>
+          </div>
+          <button class="signup-button">회원가입</button>
         </form>
         <div class="login-social">
           <span>간편 로그인하기</span>
@@ -66,7 +88,7 @@
           </ul>
         </div>
         <div class="signup">
-          판다마켓이 처음이신가요? <a href="../signup/">회원가입</a>
+          이미 회원이신가요? <a href="../login/">로그인</a>
         </div>
       </main>
     </div>
