@@ -1,0 +1,160 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.header img {
+  width: 103px;
+  height: 103px;
+}
+
+.header span {
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 100%;
+  color: var(--blue);
+}
+
+/* main */
+main {
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+}
+
+.input label {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--gray-800);
+}
+
+.input input {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--gray-100);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-800);
+  padding-left: 24px;
+}
+
+.input input:focus {
+  outline: none;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper input {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--gray-100);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-800);
+  padding-left: 24px;
+  padding-right: 48px;
+}
+
+.eye-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 16px 124px;
+  border-radius: 40px;
+  border: none;
+  background-color: #3182F6;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--gray-100);
+}
+
+/* Social Login */
+.social-login {
+  width: 100%;
+  height: 74px;
+  padding: 16px 23px;
+  border-radius: 8px;
+  background-color: #E6F2FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-800);
+}
+
+.social-login-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Register */
+.register {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--gray-800);
+}
+
+.register a {
+  margin-left: 4px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--blue);
+}
