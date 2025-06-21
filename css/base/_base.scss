@@ -1,0 +1,53 @@
+/* _base.scss */
+@use '../abstracts/mixins' as mix;
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  font-size: 16px;
+}
+body {
+  background-color: var(--main-bg-color);
+  color:var(--main-text-color); 
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+strong {
+  font-weight: bold;
+}
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+.blind {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0 0 0 0) !important
+}
+.inner{
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.logo{
+  i{
+    display: block;
+    @include mix.el-size(394px, 132px);
+    background: url(/img/logo.svg)no-repeat center/100%;
+  }
+}
+a{display: inline-block;}
+
+// PC
+@media screen and (max-width: 1179px) {
+html{font-size:13px;}
+}
+// 태블릿
+@media screen and (max-width: 745px) {
+
+}
