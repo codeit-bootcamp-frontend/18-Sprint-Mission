@@ -57,7 +57,7 @@ button {
   border: none;
   border-radius: 40px;
   margin: 20px 0;
-  background-color: var(--blue);
+  background-color: var(--gray400);
   color: white;
   font-size: 20px;
   font-weight: 600;
