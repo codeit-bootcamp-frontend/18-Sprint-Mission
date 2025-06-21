@@ -1,4 +1,4 @@
-:root{
+:root {
     /* primary color */
     --primary-100 : #3692ff;
     --primary-200 : #1967d6;
@@ -19,97 +19,108 @@
     --gray-50: #f9fafb;
 }
 
-html{
+html {
     font-size: 10px;
     font-family: 'Pretendard',arial;
 }
 
-a{
+a {
 	text-decoration: none;
 	display: inline-block;
     cursor: pointer;
 }
 
-.mg_center{
+.mg_center {
     margin: 0 auto;
 }
 
 
 /* btn */
-.btn_large{
+.btn_large {
     border-radius: 40px;
     padding: 16px 124px;
     font-size: 2rem;
 }
 
-.btn_medium{
+.btn_medium {
     border-radius: 40px;
     padding: 12px 71px;
     font-size: 1.8rem;
 }
 
-.btn_small_40{
+.btn_small_40 {
     border-radius: 8px;
     padding: 12px 23px;
     color: #fff;
     font-size: 1.6rem;
 }
 
-.btn_small_48{
+.btn_small_48 {
     border-radius: 8px;
     padding: 11px 43px;
     font-size: 1.6rem;
     line-height: 26px;
 }
 
-/* header */
-.panda_main_header{
-    padding: 9.5px 0;
+/* input */
+.panda_input {
+    border-radius: 12px;
+    border: 1px solid var(--gray-100);
+    background-color: var(--gray-100);
+    display: inline-block;
 }
-.panda_main_header .header_main{
+
+/* header */
+.panda_main_header {
+    padding: 9.5px 0;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+.panda_main_header .header_main {
     max-width: 1120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.panda_main_header .header_main .logo a img{
+.panda_main_header .header_main .logo a img {
     width: 153px;
 }
-.panda_main_header .header_main .login_btn .btn_small_48{
+.panda_main_header .header_main .login_btn .btn_small_48 {
     background-color: var(--primary-100);
     color: #fff;
 }
 
 /* 1920px 반응형 */
-@media (max-width: 1920px){
+@media (max-width: 1920px) {
 	.panda_main_header .header_main{
         padding: 0 200px;
     }
 }
 
 /* main */
-.panda_main .main_top_bg{
+.panda_main .main_top_bg {
     width: 100%;
     background-color: #cfe5ff;
     padding-top: 200px;
 }
-.panda_main .main_top_bg .main_top{
+.panda_main .main_top_bg .main_top {
     width: 1110px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.panda_main .main_top_bg .main_top .main_top_text{
+.panda_main .main_top_bg .main_top .main_top_text {
     padding-bottom: 60px;
 }
-.panda_main .main_top_bg .main_top .main_top_text .main_top_text_text h1{
+.panda_main .main_top_bg .main_top .main_top_text .main_top_text_text h1 {
     color: var(--gray-700);
     font-size: 4rem;
     font-weight: 700;
     padding-bottom: 32px;
     line-height: 140%;
 }
-.panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a{
+.panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a {
     background-color: var(--primary-100);
     color: #fff;
     padding: 14px 124px;
@@ -117,18 +128,18 @@ a{
     font-weight: 600;
     line-height: 32px;
 }
-.panda_main .main_top_bg .main_top img{
+.panda_main .main_top_bg .main_top img {
     width: 746px;
 }
 
 /* main card */
-.main_card_section{
+.main_card_section {
     padding-bottom: 138px;
 }
-.main_card_section .main_card_bg{
+.main_card_section .main_card_bg {
     padding: 138px 0;
 }
-.main_card_section .main_card_bg{
+.main_card_section .main_card_bg {
     width: 100%;
 }
 .main_card_section .main_card_bg .main_card {
@@ -140,25 +151,25 @@ a{
     padding: 0 23.5px;
     gap: 55px;
 }
-.main_card_section .main_card_bg:nth-of-type(2) .main_card{
+.main_card_section .main_card_bg:nth-of-type(2) .main_card {
     flex-direction: row-reverse;
 }
-.main_card_section .main_card_bg:nth-of-type(2) .main_card .main_card_right{
+.main_card_section .main_card_bg:nth-of-type(2) .main_card .main_card_right {
     text-align: right;
 }
-.main_card_section .main_card_bg .main_card .main_card_left img{
+.main_card_section .main_card_bg .main_card .main_card_left img {
     width: 579px;
 }
-.main_card_section .main_card_bg .main_card .main_card_right{
+.main_card_section .main_card_bg .main_card .main_card_right {
     width: 298px;
 }
-.main_card_section .main_card_bg .main_card .main_card_right .tag{
+.main_card_section .main_card_bg .main_card .main_card_right .tag {
     color: var(--primary-100);
     font-size: 1.8rem;
     line-height: 2.6rem;
     font-weight: 800;
 }
-.main_card_section .main_card_bg .main_card .main_card_right .title{
+.main_card_section .main_card_bg .main_card .main_card_right .title {
     font-size: 4rem;
     font-weight: 700;
     line-height: 140%;
@@ -166,7 +177,7 @@ a{
     padding: 12px 0 24px;
     color: var(--gray-700);
 }
-.main_card_section .main_card_bg .main_card .main_card_right .text{
+.main_card_section .main_card_bg .main_card .main_card_right .text {
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 3.2rem;
@@ -174,21 +185,21 @@ a{
 }
 
 /* main bottom */
-.main_bottom_bg{
+.main_bottom_bg {
     padding-top: 143px;
     background-color: #cfe5ff;
 }
-.main_bottom_bg .main_bottom{
+.main_bottom_bg .main_bottom {
     width: 1110px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.main_bottom_bg .main_bottom .main_bottom_text{
+.main_bottom_bg .main_bottom .main_bottom_text {
     width: 295px;
     height: 172px;
 }
-.main_bottom_bg .main_bottom .main_bottom_text h1{
+.main_bottom_bg .main_bottom .main_bottom_text h1 {
     font-size: 4rem;
     line-height: 140%;
     font-weight: 700;
@@ -196,36 +207,36 @@ a{
 }
 
 /* footer */
-.panda_main_footer{
+.panda_main_footer {
     background-color: var(--gray-900);
     padding: 32px 0 108px;
 }
-.panda_main_footer .footer_main{
+.panda_main_footer .footer_main {
     width: 1120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.panda_main_footer .footer_main .company p{
+.panda_main_footer .footer_main .company p {
     font-weight: 400;
     font-size: 1.6rem;
     color: var(--gray-400);
 }
-.panda_main_footer .footer_main .faq ul{
+.panda_main_footer .footer_main .faq ul {
     width: 159px;
 }
-.panda_main_footer .footer_main .faq ul li a{
+.panda_main_footer .footer_main .faq ul li a {
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--gray-200);
 }
-.panda_main_footer .footer_main .sns ul{
+.panda_main_footer .footer_main .sns ul {
     width: 116px;
 }
-.panda_main_footer .footer_main .sns ul li a img{
+.panda_main_footer .footer_main .sns ul li a img {
     width: 18px;
 }
-.panda_main_footer .footer_main ul{
+.panda_main_footer .footer_main ul {
     display: flex;
     align-items: center;
     justify-content: space-between;

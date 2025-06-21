@@ -1,0 +1,116 @@
+.panda_login_wrap {
+    padding: 100px 0 0;
+    width: 640px;
+    text-align: center;
+}
+
+/* login header */
+.panda_login_wrap .panda_login_header img {
+    width: 396px;
+    padding-bottom: 40px;
+}
+
+/* login main form */
+.panda_login_wrap .panda_login_main {
+    padding-bottom: 24px;
+}
+.panda_login_wrap .panda_login_main form {
+    padding-bottom: 24px;
+}
+
+.panda_login_wrap .panda_login_main form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.panda_login_wrap .panda_login_main form label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    padding-bottom: 16px;
+    display: block;
+}
+
+.panda_login_wrap .panda_login_main form .panda_input {
+    width: 100%;
+}
+
+.panda_login_wrap .panda_login_main form .btn_large {
+    background-color: var(--primary-100);
+    width: 640px;
+    color: #fff;
+    padding: 18px;
+    text-align: center;
+}
+
+.panda_login_wrap .panda_login_main form .panda_pwd {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.panda_login_wrap .panda_login_main form .panda_pwd::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/login_page/btn_password.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    top: 16px;
+    right: 24px;
+}
+
+.panda_login_wrap .panda_login_main form .panda_input{
+    font-size: 1.6rem;
+    line-height: 26px;
+    font-weight: 400;
+    color: var(--gray-800);
+    padding: 14px 24px;
+}
+
+/* login easy */
+.panda_login_wrap .panda_login_main .panda_login_easy {
+    width: 100%;
+    background-color: #e6f2ff;
+    border-radius: 8px;
+    padding: 16px 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.panda_login_wrap .panda_login_main .panda_login_easy h1 {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--gray-800);
+    font-weight: 500;
+}
+.panda_login_wrap .panda_login_main .panda_login_easy .panda_login_easy_icon {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.panda_login_wrap .panda_login_main .panda_login_easy .panda_login_easy_icon a img {
+    width: 42px;
+}
+
+/* login footer */
+.panda_login_wrap .panda_login_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.panda_login_wrap .panda_login_footer a {
+    text-decoration: underline;
+    color: var(--primary-100);
+    padding-left: 4px;
+}
+
+/* signup page*/
+.panda_login_wrap .panda_login_main form .panda_password_check::before {
+    background-image: url("../images/login_page/btn_password_on.svg");
+}
