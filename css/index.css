@@ -1,8 +1,26 @@
 /* 기본 설정 */
+
+@import url("color.css");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  font-size: clamp(10px, 1.2vw, 16px); /* rem 기준을 반응형으로 설정 */
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -16,9 +34,6 @@ a:link {
 
 ul {
   list-style: none;
-}
-html {
-  font-size: clamp(10px, 1.2vw, 16px); /* rem 기준을 반응형으로 설정 */
 }
 
 .header-nav {
@@ -34,29 +49,29 @@ html {
   left: 0;
   right: 0;
   z-index: 1000; /* 다른 요소들 위에 표시 */
-  background-color: white; /* 배경색 추가 (투명하지 않게) */
+  background-color: var(--white); /* 배경색 추가 (투명하지 않게) */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: clamp(5rem, 7vw, 7rem);
+  height: clamp(5rem, 7vw, 6rem);
   padding: 0 clamp(2rem, 8vw, 20rem); /* margin 대신 padding 사용 */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 선택사항: 그림자 효과 */
 }
 
 .header-logo {
   width: clamp(10rem, 12vw, 15.3rem);
-  height: clamp(3.5rem, 5vw, 5.1rem);
+  height: clamp(3.5rem, 3.5vw, 5.1rem);
 }
 
 .header-title button {
   background-color: #3692FF;
-  color: #ffffff;
+  color: var(--white);
   border: none;
   font-size: clamp(1.2rem, 1.5vw, 1.6rem);
   font-weight: 600;
   line-height: clamp(2rem, 3vw, 2.6rem);
   width: clamp(10rem, 12vw, 12.8rem);
-  height: clamp(3.6rem, 6vw, 4.8rem);
+  height: clamp(3.6rem, 4.8vw, 4.8rem);
   border-radius: clamp(0.5rem, 1vw, 0.8rem);
   cursor: pointer;
 }
@@ -101,7 +116,7 @@ html {
 
 .hero button {
   background-color: #3692FF;
-  color: white;
+  color: var(--white);
   border: none;
   padding: clamp(1rem, 2vw, 1.6rem) clamp(1.5rem, 3vw, 2.4rem);
   border-radius: 4rem;
@@ -119,6 +134,7 @@ html {
 
 .bottom-img {
   width: clamp(250px, 50vw, 746px);
+  margin-left: 40px;
   height: auto;
 }
 
@@ -216,7 +232,7 @@ html {
   padding-top: clamp(1rem, 2vw, 2rem);
 }
 
-.codeit {
+.text-gray-400 {
   color: #9CA3AF;
 }
 

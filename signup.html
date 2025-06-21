@@ -5,9 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/signup.css">
   <link rel="icon" href="images/logo/favicon.ico">
-  <title>sign up</title>
+  <title>sign Up</title>
 </head>
 <body>
+  <div class="signup-main-container">
+    <a href="index.html">
+      <img class="signup-main-title-img" src="images/logo/panda-market-logo.png" alt="panda-market-logo">
+    </a>
+    <section>
+      <form class="signup-form-content" action="" method="POST">
+        <div class="signup-email-content">
+          <label class="signup-label-content" for="email">이메일</label>
+          <input placeholder="이메일을 입력해주세요" class="signup-input-content" type="email" id="email" name="email" required>
+        </div>
 
+        <div class="signup-nickname-content">
+          <label class="signup-label-content" for="username">닉네임</label>
+          <input placeholder="닉네임을 입력해주세요" class="signup-input-content" type="text" id="username" name="username" required>
+        </div>
+        
+        <div class="signup-password-content">
+          <label class="signup-label-content" for="password">비밀번호</label>
+          <input placeholder="비밀번호를 입력해주세요" class="signup-input-content" type="password" id="password" name="password" required>
+          <img class="visibility-btn" src="images/password-check/btn_visibility_off_24px.png" alt="password-check">
+        </div>
+
+        <div class="signup-password-content">
+          <label class="signup-label-content" for="password">비밀번호 확인</label>
+          <input placeholder="비밀번호를 한 번 더 입력해주세요" class="signup-input-content" type="password" id="password-check" name="password-check" required>
+          <img class="visibility-btn" src="images/password-check/btn_visibility_on_24px.png" alt="password-check">
+        </div>
+
+        <button class="signup-button-content" type="submit">회원가입</button>
+      </form>
+    </section>
+
+    <div class = "signup-social-content"> 
+      <p>간편 로그인하기</p>
+      <div class="signup-social-icon">
+        <a href="https://accounts.google.com/">
+          <svg width="42" height="42" viewBox="0 0 60 60">
+        <!-- 흰색 배경 원 -->
+            <circle cx="30" cy="30" r="28" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+        <!-- 구글 로고 (크게) -->
+            <g transform="translate(17, 17) scale(1.7)">
+              <path fill="#4285F4" d="M15.04 8.17c0-.52-.05-1.02-.13-1.5H8v2.84h3.95c-.17.91-.69 1.69-1.47 2.21v1.85h2.38c1.39-1.28 2.18-3.16 2.18-5.4z"/>
+              <path fill="#34A853" d="M8 16c2 0 3.64-.66 4.86-1.78l-2.38-1.85c-.66.44-1.49.71-2.48.71-1.91 0-3.53-1.29-4.11-3.02H1.45v1.9C2.66 13.73 5.12 16 8 16z"/>
+              <path fill="#FBBC05" d="M3.89 9.71c-.15-.44-.23-.91-.23-1.4s.08-.96.23-1.4V4.96H1.45C.53 6.69 0 8.29 0 10s.53 3.31 1.45 5.04l2.44-1.33z"/>
+              <path fill="#EA4335" d="M8 3.58c1.08 0 2.04.37 2.81 1.09l2.1-2.1C11.64.55 10 0 8 0 5.12 0 2.66 2.27 1.45 5.23l2.44 1.33C4.47 4.87 6.09 3.58 8 3.58z"/>
+            </g>
+          </svg>
+        </a>
+
+        <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
+          <svg width="42" height="42" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="28" fill="#FEE500" stroke="#FDD835" stroke-width="2"/>
+            <g transform="translate(10, 12) scale(1.7)">
+              <path fill="#3C1E1E" d="M12 2C6.7 2 2.5 5.6 2.5 10c0 2.8 1.7 5.3 4.3 6.8L6 20.2c-.2.3 0 .5.3.3l3.8-2.6c.6.1 1.2.1 1.9.1 5.3 0 9.5-3.6 9.5-8S17.3 2 12 2z"/>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <p class="signup-footer-content">이미 회원이신가요?<a href="signin.html">로그인</a></p>
+    </footer>
+  </div>
 </body>
 </html>

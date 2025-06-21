@@ -1,4 +1,5 @@
 /* 로그인 부분 CSS 코드*/
+@import url("color.css");
 
 * {
   box-sizing: border-box;
@@ -59,7 +60,7 @@
   font-size: 20px;
   font-weight: 600;
   background-color: #9CA3AF;
-  color: #ffffff;
+  color: var(--white);
   cursor: pointer;
 }
 
