@@ -1,0 +1,141 @@
+@import url(colors.css);
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+input {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--gray100);
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input::placeholder {
+  color: var(--gray400);
+}
+
+button {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 40px;
+  margin: 20px 0;
+  background-color: var(--gray400);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 618px;
+  margin: 0 auto;
+}
+
+.login_logo {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo_img {
+  background-image: url("../images/Property 1=lg.png");
+  background-repeat: no-repeat;
+  width: 396px;
+  height: 132px;
+}
+
+.pw_box {
+  position: relative;
+  display: flex;
+}
+
+.eyes {
+  position: absolute;
+  top: 17px;
+  right: 15px;
+}
+
+.social_login_container {
+  background-color: #e6f2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.social_login_container p {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.sns_icon_box img {
+  margin: 0 5px;
+}
+
+.link_join {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.link_join a {
+  color: var(--blue);
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .container {
+    width: 400px;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  .logo_img {
+    background-image: url("/web_publishing/panda_market/images/Property 1=md.png");
+    background-repeat: no-repeat;
+    width: 198px;
+    height: 66px;
+  }
+}
