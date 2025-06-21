@@ -64,16 +64,19 @@ body {
   flex-grow: 1;
 }
 
-.login-button {
-  background-color: var(--blue-color);
+.button {
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
   padding: 12px 0;
-  border-radius: 40px;
   border: none;
-  color: var(--gray100-color);
   cursor: pointer;
+  border-radius: 40px;
+}
+
+.button-primary {
+  background-color: var(--blue-color);
+  color: var(--gray100-color);
 }
 
 .login-social {
