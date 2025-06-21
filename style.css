@@ -1,0 +1,267 @@
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+:root{
+  --tit:4rem;
+  --com:1.6rem;
+  --desc:2.4rem;
+  --deco-tit:1.8rem;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: var(--com);
+  font-weight: 500;
+  font-family: 'Pretendard-Regular';
+  color: #374151;
+}
+
+
+/* 공통 */
+.btn{
+  display: inline-block;
+  padding: 1.2rem 2.3rem;
+  font-size: var(--com);
+  font-weight: 600;
+  color:#fff;
+  background-color: #3692ff;
+  border-radius: .8rem;
+  -webkit-border-radius: .8rem;
+  -moz-border-radius: .8rem;
+  -ms-border-radius: .8rem;
+  -o-border-radius: .8rem;
+  white-space: nowrap;
+}
+
+.btn:hover{
+  background-color: #1967d6;
+}
+
+.btn:active{
+  background-color: #1251aa;
+}
+.btn:visited{
+  background-color: #9ca3af;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+.inner{
+  margin: 0 auto;
+  padding: 0 .5rem;
+  width: 100%;
+  max-width: 112rem;
+}
+
+.img-box{
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.img-box img{
+  width: 100%;
+  font-size: 0;
+}
+
+/* 헤더 */
+
+.header{
+  position: fixed; 
+  top: 0;
+  z-index: 10;
+  padding: 0 20rem;
+  width: 100%;
+  margin: 0 auto;
+  background-color:#fff;
+}
+
+.header .inner{
+  display: flex;
+  justify-content:space-between;
+  align-items: center; 
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 112rem;
+  height: 7rem; 
+}
+
+.logo{
+  font-size: 0;
+  line-height: 1;
+}
+
+
+/* 메인 */
+
+.main{
+  margin-top: 7rem;
+  background-color: #fcfcfc;
+}
+
+.section{
+  padding: 0 20rem;
+}
+
+.visual{
+  width: 100%;
+  background-color: #cfe5ff;
+}
+
+.visual-tit{
+ margin: 4rem 0 3.5rem;
+ font-size: var(--tit); 
+ line-height: 1.4;
+}
+
+.visual .visual-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;  
+  height: 54rem;
+}
+
+.visual-card .img-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 74.6rem;
+  height: 100%;
+}
+
+.visual .btn{
+  padding: 1.2rem 12.4rem;
+  font-size: calc(var(--com) + .4rem);
+  font-weight: 600;
+  border-radius: 9999px;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  -ms-border-radius: 9999px;
+  -o-border-radius: 9999px;
+}
+
+.card-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13.8rem 0;
+  margin-bottom: 13.8rem;
+  padding: 13.8rem 0;
+}
+
+.card{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0 5.5rem;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 99.8rem;
+  background-color: #fcfcfc;
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+  font-size: var(--desc);
+  line-height: 1.333;
+}
+
+.card .txt-box .tit{
+  font-size: var(--deco-tit);
+  font-weight: 800;
+  color: #3692ff;
+}
+
+.card .txt-box .visual-tit{  
+  margin: 1.2rem 0 2.4rem;
+}
+
+.card:nth-of-type(even){
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* 푸터 */
+.footer{
+  padding: 3.2rem 0 10.8rem;
+  background-color: #111827;
+}
+
+.footer .inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.9rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.footer-nev ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 3rem;
+}
+
+.footer a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #e5e7eb;
+}
+
+.footer-nev:nth-of-type(1){
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.footer-nev:nth-of-type(2) ul{
+  gap: 1.2rem;
+}
+
+.copy{
+  color: #9ca3af;
+}
+
+@media all and (max-width:80rem) {
+  :root{
+    --tit:3rem;
+    --com:1.4rem;
+    --desc:2.2rem;
+    --deco-tit:1.6rem;
+  }
+  .card-wrap{
+    gap: 7rem 0;
+    margin-bottom: 7rem;
+    padding-bottom: 7rem;
+  }
+}
