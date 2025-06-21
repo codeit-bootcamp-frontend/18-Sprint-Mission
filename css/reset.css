@@ -1,0 +1,168 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+:root {
+  --gray50: #f9fafb;
+  --gray100: #f3f4f6;
+  --gray200: #e5e7eb;
+  --gray300: #9ca3af;
+  --gray400: #a0a0a6;
+  --gray500: #6b7280;
+  --gray600: #4b5563;
+  --gray700: #374151;
+  --gray800: #1f2937;
+  --gray900: #111827;
+  --coolGray50: #f7f7f8;
+  --coolGray100: #e8ebed;
+  --coolGray200: #e5e7eb;
+  --coolGray300: #bac0c4;
+  --coolGray400: #9ea4a8;
+  --coolGray500: #72787f;
+  --coolGray600: #454c53;
+  --coolGray700: #374151;
+  --coolGray800: #26282b;
+  --coolGray900: #1b1d1f;
+  --primary100: #3692ff;
+  --primary200: #1967d6;
+  --primary300: #1251aa;
+  --brand: #cfe5ff;
+  --white: #ffffff;
+  --black: #000000;
+  --error: #f74747;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  line-height: 1;
+  vertical-align: baseline;
+  color: var(--gray800);
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  background: transparent;
+  outline: transparent;
+  cursor: pointer;
+  -webkit-highlight: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+button {
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  line-height: inherit;
+  cursor: pointer;
+  -webkit-highlight: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+small {
+  font-size: smaller;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: top;
+  font-size: 100%;
+  border-radius: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* ie input스타일 */
+input::-ms-check {
+  display: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type=checkbox] {
+  display: none;
+  cursor: pointer;
+}
+
+input[type=radio] {
+  display: none;
+  cursor: pointer;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background: var(--gray100);
+}
