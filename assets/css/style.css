@@ -63,53 +63,53 @@ a{
 }
 
 /* header */
-header{
+.panda_main_header{
     padding: 9.5px 0;
 }
-.header_main{
+.panda_main_header .header_main{
     max-width: 1120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.header_main .logo a img{
+.panda_main_header .header_main .logo a img{
     width: 153px;
 }
-.header_main .login_btn .btn_small_48{
+.panda_main_header .header_main .login_btn .btn_small_48{
     background-color: var(--primary-100);
     color: #fff;
 }
 
 /* 1920px 반응형 */
 @media (max-width: 1920px){
-	.header_main{
+	.panda_main_header .header_main{
         padding: 0 200px;
     }
 }
 
 /* main */
-.main_top_bg{
+.panda_main .main_top_bg{
     width: 100%;
     background-color: #cfe5ff;
     padding-top: 200px;
 }
-.main_top_bg .main_top{
+.panda_main .main_top_bg .main_top{
     width: 1110px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.main_top_bg .main_top .main_top_text{
+.panda_main .main_top_bg .main_top .main_top_text{
     padding-bottom: 60px;
 }
-.main_top_bg .main_top .main_top_text .main_top_text_text p{
+.panda_main .main_top_bg .main_top .main_top_text .main_top_text_text h1{
     color: var(--gray-700);
     font-size: 4rem;
     font-weight: 700;
     padding-bottom: 32px;
     line-height: 140%;
 }
-.main_top_bg .main_top .main_top_text .main_top_text_btn a{
+.panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a{
     background-color: var(--primary-100);
     color: #fff;
     padding: 14px 124px;
@@ -117,21 +117,21 @@ header{
     font-weight: 600;
     line-height: 32px;
 }
-.main_top_bg .main_top img{
+.panda_main .main_top_bg .main_top img{
     width: 746px;
 }
 
 /* main card */
-.main{
+.main_card_section{
     padding-bottom: 138px;
 }
-.main .main_card_bg{
+.main_card_section .main_card_bg{
     padding: 138px 0;
 }
-.main .main_card_bg{
+.main_card_section .main_card_bg{
     width: 100%;
 }
-.main .main_card_bg .main_card {
+.main_card_section .main_card_bg .main_card {
     width: 988px;
     background-color: #fcfcfc;
     display: flex;
@@ -140,25 +140,25 @@ header{
     padding: 0 23.5px;
     gap: 55px;
 }
-.main .main_card_bg:nth-of-type(2) .main_card{
+.main_card_section .main_card_bg:nth-of-type(2) .main_card{
     flex-direction: row-reverse;
 }
-.main .main_card_bg:nth-of-type(2) .main_card .main_card_right{
+.main_card_section .main_card_bg:nth-of-type(2) .main_card .main_card_right{
     text-align: right;
 }
-.main .main_card_bg .main_card .main_card_left img{
+.main_card_section .main_card_bg .main_card .main_card_left img{
     width: 579px;
 }
-.main .main_card_bg .main_card .main_card_right{
+.main_card_section .main_card_bg .main_card .main_card_right{
     width: 298px;
 }
-.main .main_card_bg .main_card .main_card_right .tag{
+.main_card_section .main_card_bg .main_card .main_card_right .tag{
     color: var(--primary-100);
     font-size: 1.8rem;
     line-height: 2.6rem;
     font-weight: 800;
 }
-.main .main_card_bg .main_card .main_card_right .title{
+.main_card_section .main_card_bg .main_card .main_card_right .title{
     font-size: 4rem;
     font-weight: 700;
     line-height: 140%;
@@ -166,7 +166,7 @@ header{
     padding: 12px 0 24px;
     color: var(--gray-700);
 }
-.main .main_card_bg .main_card .main_card_right .text{
+.main_card_section .main_card_bg .main_card .main_card_right .text{
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 3.2rem;
@@ -188,7 +188,7 @@ header{
     width: 295px;
     height: 172px;
 }
-.main_bottom_bg .main_bottom .main_bottom_text p{
+.main_bottom_bg .main_bottom .main_bottom_text h1{
     font-size: 4rem;
     line-height: 140%;
     font-weight: 700;
@@ -196,36 +196,36 @@ header{
 }
 
 /* footer */
-footer{
+.panda_main_footer{
     background-color: var(--gray-900);
     padding: 32px 0 108px;
 }
-footer .footer_main{
+.panda_main_footer .footer_main{
     width: 1120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-footer .footer_main .company p{
+.panda_main_footer .footer_main .company p{
     font-weight: 400;
     font-size: 1.6rem;
     color: var(--gray-400);
 }
-footer .footer_main .faq ul{
+.panda_main_footer .footer_main .faq ul{
     width: 159px;
 }
-footer .footer_main .faq ul li a{
+.panda_main_footer .footer_main .faq ul li a{
     font-size: 1.6rem;
     font-weight: 400;
     color: var(--gray-200);
 }
-footer .footer_main .sns ul{
+.panda_main_footer .footer_main .sns ul{
     width: 116px;
 }
-footer .footer_main .sns ul li a img{
+.panda_main_footer .footer_main .sns ul li a img{
     width: 18px;
 }
-footer .footer_main ul{
+.panda_main_footer .footer_main ul{
     display: flex;
     align-items: center;
     justify-content: space-between;
