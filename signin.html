@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +10,18 @@
 <body>
   <div class="signin-main-container">
     <a href="index.html">
-      <img class="signin-login-title-img" src="images/logo/panda-market-logo.png">
+      <img class="signin-login-title-img" src="images/logo/panda-market-logo.png" alt="panda-market-logo">
     </a>
     <div>
       <form class="signin-form-content" action="/login" method="POST">
         <div class="signin-username-content">
           <label class="signin-label-content" for="username">이메일</label>
-          <input placeholder="이메일을 입력해주세요" class="signin-input-content" type="text" id="username" name="username" required>
+          <input placeholder="이메일을 입력해주세요" class="signin-input-content" type="email" id="username" name="username" required>
         </div>
 
        <div class="signin-password-content">
           <label class="signin-label-content" for="password">비밀번호</label>
-          <input placeholder="비밀번호를 입력해주세요" class="signin-input-content" for="password" id="password" name="password" required>
+          <input placeholder="비밀번호를 입력해주세요" class="signin-input-content" type="password" id="password" name="password" required>
         </div>
 
         <button class="signin-button-content" type="submit">로그인</button>
