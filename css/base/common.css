@@ -1,0 +1,184 @@
+/* variables */
+:root {
+  /* color palette */
+  --color-primary-100: #3692FF;
+  --color-primary-200: #1967D6;
+  --color-primary-300: #1251AA;
+  --color-gray-900: #111827;
+  --color-gray-800: #1F2937;
+  --color-gray-700: #374151;
+  --color-gray-600: #4B5563;
+  --color-gray-500: #6B7280;
+  --color-gray-400: #9CA3AF;
+  --color-gray-200: #E5E7EB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-50: #F9FAF6;
+  --color-red: #F74747;
+  --main-white: #ffffff;
+  /* default theme */
+  --main-bg-color: var(--main-white);
+  --main-text-color: var(--color-gray-800);
+  --color-error: var(--color-red);
+  /* resource */
+  --ico-logo: url(/img/logo.svg) no-repeat center/100%;
+  /* typography(font size, line height) */
+  --text-3xl-size: 2rem;
+  --text-3xl-lh: 2.625rem;
+  --text-2xl-size: 1.5rem;
+  --text-2xl-lh: 2rem;
+  --text-xl-size: 1.25rem;
+  --text-xl-lh: 2rem;
+  --text-2lg-size: 1.125rem;
+  --text-2lg-lh: 1.625rem;
+  --text-lg-size: 1rem;
+  --text-lg-lh: 1.625rem;
+  --text-md-size: 0.875rem;
+  --text-md-lh: 1.5rem;
+  --text-sm-size: 0.8125rem;
+  --text-sm-lh: 1.375rem;
+  --text-xs-size: 0.75rem;
+  --text-xs-lh: 1.25rem;
+}
+
+/* components */
+.util-list {
+  display: flex;
+  align-items: center;
+}
+
+.logo__link {
+  display: block;
+  background: var(--ico-logo);
+}
+
+/* button */
+.btn {
+  background-color: var(--color-primary-100);
+  color: var(--color-gray-100);
+  text-align: center;
+}
+
+.btn--sm {
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-lh);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 23px;
+}
+
+.btn--sm--48 {
+  padding: 11px 30px;
+}
+
+.btn--md {
+  width: 240px;
+  font-size: var(--text-2lg-size);
+  line-height: var(--text-2lg-lh);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 11px 40px;
+}
+
+.btn--lg {
+  width: 357px;
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-lh);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 12px 40px;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-200);
+  transition: 0.3s;
+}
+
+.btn:active {
+  background-color: var(--color-primary-300);
+  transition: 0.3s;
+}
+
+/* [layout] header */
+.header {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  background: var(--main-white);
+}
+
+.header .inner {
+  max-width: 1520px;
+  height: 100%;
+  padding: 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo__link {
+  width: 153px;
+  height: 51px;
+}
+
+/* [layout] footer */
+.footer {
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-lh);
+  font-weight: 400;
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-200);
+  padding: 32px 0 108px;
+}
+
+.footer .copyright {
+  color: var(--color-gray-400);
+}
+
+.footer .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer .co-list {
+  display: flex;
+  gap: 0 30px;
+}
+
+.footer .sns-list {
+  display: flex;
+  gap: 0 12px;
+}
+
+.footer .sns-list .ico {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+.footer .sns-list .ico--facebook {
+  background-image: url(/img/ico/ico_facebook.svg);
+}
+
+.footer .sns-list .ico--x {
+  background-image: url(/img/ico/ico_twitter.svg);
+}
+
+.footer .sns-list .ico--youtube {
+  background-image: url(/img/ico/ico_youtube.svg);
+}
+
+.footer .sns-list .ico--instagram {
+  background-image: url(/img/ico/ico_instagram.svg);
+}
+
+
+/* [pc] media query */
+@media screen and (max-width: 1179px) {
+  html {
+    font-size: 13px;
+  }
+}
