@@ -24,19 +24,19 @@ main {
   height: 100vh;
 }
 
-p {
+.basic_p {
   font-size: 18px;
   font-weight: 700;
 }
 
-form {
+.form_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
-input {
+.input_box {
   width: 100%;
   height: 56px;
   border-radius: 12px;
