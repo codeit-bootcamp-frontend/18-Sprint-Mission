@@ -1,7 +1,9 @@
+@charset "utf-8";
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 
 .main {
+  padding-top: 70px;
   @include flexColumn;
   gap: 276px 0;
   & .visual {
@@ -185,6 +187,7 @@
 }
 @include breakpoint(375) {
   .main {
+    padding-top: convertPxToVw(70);
     gap: convertPxToVw(40) 0;
     & .visual {
       &-box {

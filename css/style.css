@@ -30,7 +30,12 @@
   }
 }
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   padding: 9.5px 40px;
+  background-color: var(--white);
 }
 .header .flex-row {
   justify-content: space-between;
@@ -46,11 +51,6 @@
   width: 128px;
 }
 
-@media all and (max-width: 1919px) {
-  .header {
-    padding: 9.5px 200px;
-  }
-}
 @media all and (max-width: 744px) {
   .header {
     padding: 9.5px 0;
@@ -118,6 +118,7 @@
   }
 }
 .main {
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   gap: 276px 0;
@@ -283,6 +284,7 @@
 }
 @media all and (max-width: 375px) {
   .main {
+    padding-top: 18.667vw;
     gap: 10.667vw 0;
   }
   .main .visual-box {

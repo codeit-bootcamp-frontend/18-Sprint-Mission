@@ -3,7 +3,10 @@
 @use "../utils/mixins" as *;
 
 .header {
+  @include positionEx(fixed);
+  width: 100%;
   padding: 9.5px 40px;
+  background-color: $white;
   & .flex-row {
     justify-content: space-between;
     align-items: center;
@@ -20,11 +23,6 @@
     & .btn {
       width: 128px;
     }
-  }
-}
-@include breakpoint(1919) {
-  .header {
-    padding: 9.5px 200px;
   }
 }
 @include breakpoint(744) {
