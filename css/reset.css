@@ -35,6 +35,7 @@
   border: 0;
   font-size: 100%;
   line-height: 1;
+  box-sizing: border-box;
 }
 
 html,

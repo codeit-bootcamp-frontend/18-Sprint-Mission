@@ -2,13 +2,7 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 @use "../utils/font.scss" as *;
-* {
-  vertical-align: baseline;
-  color: $base-text-color;
-  -webkit-tap-highlight-color: transparent;
-  font-family: $base-font-family, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  box-sizing: border-box;
-}
+
 .container {
   @include containerSize($containerWidth-max: 1200, $sidePadding: 40);
 }

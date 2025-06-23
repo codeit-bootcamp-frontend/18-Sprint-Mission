@@ -2,30 +2,34 @@
 @use "../utils/variables" as *;
 @use "../utils/mixins" as *;
 // /*****color *****/
+// root 변수에 따른  css 클래스 자동 생성
 @each $colorKey, $colorCode in $root {
   // 기본값 설정
-  $formattedKey: $colorKey;
+  $className: $colorKey;
 
-  // 찾을 숫자 리스트 (디자인 컬러값)
-  $numbers: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  // 디자인 시스템에서 사용하는 숫자 접미사 (ex: gray500 → 500)
+  $colorSteps: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
   $index: null;
 
-  // 리스트를 순회하며 숫자의 위치 찾기
-  @each $num in $numbers {
+  // 컬러 키에 숫자 접미사가 있다면 숫자 위치(index) 찾기
+  @each $step in $colorSteps {
     @if not $index {
-      $index: str-index($colorKey, "#{$num}");
+      $index: str-index($colorKey, "#{$step}");
     }
   }
 
-  // 숫자가 존재하면 변환
+  // 숫자 접미사가 존재하면 →  gray500
+  // 클래스 명을 유동적으로 사용하기 위하여 분할작업 (그대로 colorKey 사용가능)
+  //하이픈 삽입: gray500 → gray-500
+
   @if $index {
-    $formattedKey: str-slice($colorKey, 1, $index - 1) + str-slice($colorKey, $index);
+    $className: str-slice($colorKey, 1, $index - 1) + str-slice($colorKey, $index);
   }
 
-  .fc-#{$formattedKey} {
+  .fc-#{$className} {
     color: var(--#{$colorKey});
   }
-  .bg-#{$formattedKey} {
+  .bg-#{$className} {
     background-color: var(--#{$colorKey});
   }
 }

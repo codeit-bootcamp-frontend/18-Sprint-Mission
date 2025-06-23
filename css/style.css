@@ -9,7 +9,6 @@
   color: var(--gray800);
   -webkit-tap-highlight-color: transparent;
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  box-sizing: border-box;
 }
 
 .container {

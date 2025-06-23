@@ -1,1 +1,8 @@
+@use "../utils/variables" as *;
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+* {
+  vertical-align: baseline;
+  color: $base-text-color;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $base-font-family, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
