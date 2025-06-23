@@ -78,7 +78,7 @@ button {
 }
 
 .logo_img {
-  background-image: url("../images/Property 1=lg.png");
+  background-image: url("../images/logo_lg.png");
   background-repeat: no-repeat;
   width: 396px;
   height: 132px;
@@ -133,7 +133,7 @@ button {
   }
 
   .logo_img {
-    background-image: url("/web_publishing/panda_market/images/Property 1=md.png");
+    background-image: url("../images/logo_md.png");
     background-repeat: no-repeat;
     width: 198px;
     height: 66px;

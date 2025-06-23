@@ -61,7 +61,7 @@ button {
 }
 
 .logo_img {
-  background-image: url("../images/Property 1=sm.png");
+  background-image: url("../images/logo_sm.png");
   background-repeat: no-repeat;
   width: 198px;
   height: 66px;
@@ -350,7 +350,7 @@ button {
   }
 
   .logo_img {
-    background-image: url("../images/Property 1=Typo.png");
+    background-image: url("../images/logo_typo.png");
     background-repeat: no-repeat;
     width: 103px;
     height: 51px;
