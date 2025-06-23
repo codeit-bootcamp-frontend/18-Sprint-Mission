@@ -5,8 +5,14 @@
   --gray700: #374151;
   --gray600: #4b5563;
   --gray500: #6b7280;
-  --gray400-color: #9ca3af;
-  --gray200-color: #e5e7eb;
-  --gray100-color: #f3f4f6;
-  --gray50-color: #f9fafb;
+  --gray400: #9ca3af;
+  --gray200: #e5e7eb;
+  --gray100: #f3f4f6;
+  --gray50: #f9fafb;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #111111;
+  --skyblue: #e6f2ff;
 }
