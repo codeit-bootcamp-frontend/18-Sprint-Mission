@@ -110,12 +110,17 @@
 /// @param {Boolean} $center - center 정렬 여부
 /// @param {Number|String} $translateX - transform x 값
 /// @param {Number|String} $translateY - transform y 값
-@mixin positionEx($position: absolute, $xDirection: left, $xValue: 0, $yDirection: top, $yValue: 0, $center: false, $translateX: 0, $translateY: 0) {
+@mixin positionEx($position: absolute, $xDirection: left, $xValue: 0, $yDirection: top, $yValue: 0, $center: false, $centerDir: false, $translateX: 0, $translateY: 0) {
   position: $position;
   @if $center {
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @if $centerDir {
+      #{$centerDir}: insertUnit($yValue);
+      transform: translate(0, -50%);
+    } @else {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   } @else {
     #{$xDirection}: insertUnit($xValue);
     #{$yDirection}: insertUnit($yValue);

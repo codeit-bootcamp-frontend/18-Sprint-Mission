@@ -1,0 +1,21 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+main[class*="sign-"] {
+  padding: 60px 0;
+  & .container {
+    max-width: 640px;
+  }
+  & .logo {
+    text-align: center;
+    margin-bottom: 40px;
+    & img {
+      width: 396px;
+    }
+  }
+}
+.sign-in {
+  min-height: $vh;
+  @include flexColumn;
+  justify-content: center;
+}

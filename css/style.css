@@ -19,6 +19,10 @@
   padding: 0 40px;
 }
 
+a.logo {
+  display: block;
+}
+
 @media all and (max-width: 744px) {
   .container {
     padding: 0 24px;
@@ -314,4 +318,24 @@
   .main .banner-box.flex-col h2 {
     padding: 32vw 0 0;
   }
+}
+main[class*=sign-] {
+  padding: 60px 0;
+}
+main[class*=sign-] .container {
+  max-width: 640px;
+}
+main[class*=sign-] .logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+main[class*=sign-] .logo img {
+  width: 396px;
+}
+
+.sign-in {
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

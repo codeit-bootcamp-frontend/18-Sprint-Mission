@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓 로그인</title>
+    <title>판다마켓 회원가입</title>
     <link rel="apple-touch-icon" sizes="104x105" href="../img/logo/logo-img.png" />
     <link rel="icon" type="image/png" sizes="104x105" href="../img/logo/logo.ico" />
     <link rel="stylesheet" href="../css/reset.css" />
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <main class="sign-in">
+    <main class="sign-up">
       <div class="container">
         <h1>
           <a href="/" class="logo">
@@ -26,6 +26,10 @@
               <input type="email" id="user-email" name="userEmail" class="form-input" placeholder="이메일을 입력해주세요." />
             </li>
             <li>
+              <label for="user-nickname" class="form-label">닉네임</label>
+              <input type="text" id="user-nickname" name="nickname" class="form-input" placeholder="닉네임을 입력해주세요." />
+            </li>
+            <li>
               <label for="user-password" class="form-label">비밀번호</label>
               <div class="form-input-wrapper">
                 <input type="password" id="user-password" name="password" class="form-input" placeholder="비밀번호를 입력해주세요." />
@@ -36,7 +40,17 @@
               </div>
             </li>
             <li>
-              <button type="submit" class="btn btn-lg bg round full">로그인</button>
+              <label for="user-password-confirm" class="form-label">비밀번호 확인</label>
+              <div class="form-input-wrapper">
+                <input type="password" id="user-password-confirm" name="passwordConfirm" class="form-input" placeholder="비밀번호를 확인해주세요." />
+                <button type="button" class="password-toggle">
+                  <span class="ic ic-md hide"></span>
+                  <span class="visually-hidden">비밀번호 숨기기</span>
+                </button>
+              </div>
+            </li>
+            <li>
+              <button type="submit" class="btn btn-lg bg round full">회원가입</button>
             </li>
             <li>
               <div class="sns-sign-in">
@@ -55,8 +69,8 @@
             </li>
             <li>
               <div class="auth-switch">
-                판다마켓이 처음이신가요?
-                <a href="/signup" class="auth-switch-link">회원가입</a>
+                이미 회원이신가요?
+                <a href="/login" class="auth-switch-link">로그인</a>
               </div>
             </li>
           </ul>

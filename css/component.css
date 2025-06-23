@@ -201,6 +201,10 @@
   -webkit-mask-image: url("../img/icon/ic_facebook.svg");
   mask-image: url("../img/icon/ic_facebook.svg");
 }
+.ic.google {
+  background: url("../img/icon/ic_google.svg") no-repeat center;
+  background-size: contain;
+}
 .ic.hide {
   -webkit-mask-image: url("../img/icon/ic_hide.svg");
   mask-image: url("../img/icon/ic_hide.svg");
@@ -212,6 +216,10 @@
 .ic.italic {
   -webkit-mask-image: url("../img/icon/ic_italic.svg");
   mask-image: url("../img/icon/ic_italic.svg");
+}
+.ic.kakao {
+  background: url("../img/icon/ic_kakao.svg") no-repeat center;
+  background-size: contain;
 }
 .ic.like_fill {
   background: url("../img/icon/ic_like_fill.svg") no-repeat center;
@@ -685,4 +693,82 @@
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 24px;
+}
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gray800);
+  font-size: 1.125rem;
+  line-height: 1.444;
+  font-weight: 700;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background-color: var(--coolGray100);
+  color: var(--gray800);
+  font-size: 1rem;
+  line-height: 1.625;
+}
+.form-input::placeholder {
+  color: var(--gray400);
+}
+.form-input:focus {
+  box-shadow: inset 0 0 0 1px var(--primary100);
+}
+.form-input.error {
+  box-shadow: inset 0 0 0 1px var(--error);
+}
+.form-input.error-msg {
+  padding: 8px 16px 0;
+  color: var(--gray800);
+  font-size: 0.875rem;
+  line-height: 1.714;
+  font-weight: 600;
+}
+.form-input-wrapper {
+  position: relative;
+}
+.form-input-wrapper .password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translate(0, -50%);
+}
+.form-input-wrapper .password-toggle .ic {
+  background-color: var(--coolGray600);
+}
+
+.sns-sign-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 23px;
+  border-radius: 8px;
+  background-color: #e6f2ff;
+}
+.sns-sign-in .btn-group {
+  gap: 16px;
+}
+
+.auth-switch {
+  color: var(--gray800);
+  font-size: 0.875rem;
+  line-height: 1.714;
+  font-weight: 500;
+  text-align: center;
+}
+.auth-switch-link {
+  color: var(--primary100);
+  text-decoration: underline;
 }

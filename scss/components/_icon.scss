@@ -55,6 +55,9 @@
   &.facebook {
     @include maskImageSvg(ic_facebook);
   }
+  &.google {
+    @include backgroundImage(ic_google);
+  }
   &.hide {
     @include maskImageSvg(ic_hide);
   }
@@ -63,6 +66,9 @@
   }
   &.italic {
     @include maskImageSvg(ic_italic);
+  }
+  &.kakao {
+    @include backgroundImage(ic_kakao);
   }
   &.like_fill {
     @include backgroundImage(ic_like_fill);

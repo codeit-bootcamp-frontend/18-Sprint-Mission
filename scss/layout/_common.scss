@@ -6,6 +6,9 @@
 .container {
   @include containerSize($containerWidth-max: 1200, $sidePadding: 40);
 }
+a.logo {
+  display: block;
+}
 @include breakpoint(744) {
   .container {
     padding: 0 24px;
