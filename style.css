@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: #CFE5FF;
+    font-family: 'Noto Sans KR', AppleGothic, 돋움, sans-serif;
+    margin: 0 auto;
+}
+
+.nav {
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 200px;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+.loginbutton {
+    background: #3691FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 0;
+}
+
+.trade {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.moreviewbutton {
+    background: #3691FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 80px;
+    margin: 18px;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.headerimg, .bottomimg {
+    display: flex;
+    flex-direction: columns;
+    justify-content: flex-end;
+}
+
+.container {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.content, .content_left {
+    padding: 40px;
+}
+
+.content_left {
+    text-align: right;
+}
+
+.small {
+    color: #3691FF;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 0;
+}
+
+.footer {
+    background: #000000;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 12px;
+    padding: 20px 0 80px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+span {
+    margin: 20px;
+}
+
+.footer img {
+    margin-right: 8px;
+}
