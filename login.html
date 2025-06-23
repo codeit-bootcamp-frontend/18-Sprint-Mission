@@ -16,9 +16,10 @@
         <!-- id(email), pw -->
         <form class="form_box" action="">
           <div class="input_container">
-            <div class="email_box">
+            <div id="email_box" class="email_box">
               <label class="basic_p" for="email">이메일</label>
               <input
+                id="email"
                 class="input_box email"
                 name="email"
                 type="email"
@@ -27,8 +28,9 @@
               />
             </div>
             <label for="pw" class="basic_p">비밀번호</label>
-            <div class="pw_box">
+            <div id="pw_box" class="pw_box">
               <input
+                id="pw"
                 class="input_box pw"
                 name="pw"
                 type="password"
@@ -73,5 +75,6 @@
         </p>
       </div>
     </main>
+    <script src="js/validation.js"></script>
   </body>
 </html>

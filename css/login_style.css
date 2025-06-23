@@ -1,9 +1,9 @@
 @import url(colors.css);
 
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -79,13 +79,13 @@ button {
 }
 
 .logo_img {
-  background-image: url("../images/logo_lg.png");
+  background-image: url('../images/logo_lg.png');
   background-repeat: no-repeat;
   width: 396px;
   height: 132px;
 }
 
-.email_box {
+.email {
   margin-bottom: 20px;
 }
 
@@ -96,6 +96,7 @@ button {
 .pw_box {
   position: relative;
   display: flex;
+  flex-direction: column;
 }
 
 .pw_label {
@@ -150,7 +151,7 @@ button {
   }
 
   .logo_img {
-    background-image: url("../images/logo_md.png");
+    background-image: url('../images/logo_md.png');
     background-repeat: no-repeat;
     width: 198px;
     height: 66px;
