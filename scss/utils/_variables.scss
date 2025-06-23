@@ -1,0 +1,112 @@
+@charset "utf-8";
+// /*******  color  *******/
+$root: (
+  gray50: #f9fafb,
+  gray100: #f3f4f6,
+  gray200: #e5e7eb,
+  gray300: #9ca3af,
+  gray400: #a0a0a6,
+  gray500: #6b7280,
+  gray600: #4b5563,
+  gray700: #374151,
+  gray800: #1f2937,
+  gray900: #111827,
+
+  coolGray50: #f7f7f8,
+  coolGray100: #e8ebed,
+  coolGray200: #e5e7eb,
+  coolGray300: #bac0c4,
+  coolGray400: #9ea4a8,
+  coolGray500: #72787f,
+  coolGray600: #454c53,
+  coolGray700: #374151,
+  coolGray800: #26282b,
+  coolGray900: #1b1d1f,
+
+  primary100: #3692ff,
+  primary200: #1967d6,
+  primary300: #1251aa,
+
+  "brand": #cfe5ff,
+  "white": #ffffff,
+  "black": #000000,
+  "error": #f74747,
+);
+
+// 변수로 사용하기 쉽도록 재설정
+$gray50: var(--gray50);
+$gray100: var(--gray100);
+$gray200: var(--gray200);
+$gray300: var(--gray300);
+$gray400: var(--gray400);
+$gray500: var(--gray500);
+$gray600: var(--gray600);
+$gray700: var(--gray700);
+$gray800: var(--gray800);
+$gray900: var(--gray900);
+
+$coolGray50: var(--coolGray50);
+$coolGray100: var(--coolGray100);
+$coolGray200: var(--coolGray200);
+$coolGray300: var(--coolGray300);
+$coolGray400: var(--coolGray400);
+$coolGray500: var(--coolGray500);
+$coolGray600: var(--coolGray600);
+$coolGray700: var(--coolGray700);
+$coolGray800: var(--coolGray800);
+$coolGray900: var(--coolGray900);
+
+$primary100: var(--primary100);
+$primary200: var(--primary200);
+$primary300: var(--primary300);
+
+$brand: var(--brand);
+$white: var(--white);
+$black: var(--black);
+$error: var(--error);
+
+$base-text-color: $gray800;
+$base-font-family: "Pretendard";
+$base-background-color: $white;
+
+// /*******  typography  *******/
+
+$font: (
+  txt-4xl: 40 calc(56 / 40) 28,
+  txt-3xl: 32 calc(42 / 32) 24,
+  txt-2xl: 24 calc(32 / 24) 20,
+  txt-xl: 20 calc(32 / 20) 18,
+  txt-2lg: 18 calc(26 / 18) 16,
+  txt-lg: 16 calc(26 / 16) 15,
+  txt-md: 14 calc(24 / 14) 13,
+  txt-sm: 13 calc(22 / 13) 12,
+  txt-xs: 12 calc(20 / 12) 11,
+);
+
+$midBrackPointFont: (
+  txt-4xl: 34,
+  txt-3xl: 28,
+  txt-2xl: 22,
+);
+
+$iconSize: (
+  xl: 40,
+  lg: 32,
+  md: 24,
+  rg: 20,
+  sm: 16,
+);
+
+$buttonSize: (
+  lg: 12 "txt-xl",
+  md: 11 "txt-2lg",
+  sm: 11 "txt-lg",
+  xs: 8 "txt-lg",
+);
+
+$IconButtonSize: (
+  md: 9px,
+  sm: 4px,
+);
+
+$vh: calc(var(--vh, 1vh) * 100);

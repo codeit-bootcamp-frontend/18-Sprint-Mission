@@ -1,0 +1,31 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+// /*****color *****/
+@each $colorKey, $colorCode in $root {
+  // 기본값 설정
+  $formattedKey: $colorKey;
+
+  // 찾을 숫자 리스트 (디자인 컬러값)
+  $numbers: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  $index: null;
+
+  // 리스트를 순회하며 숫자의 위치 찾기
+  @each $num in $numbers {
+    @if not $index {
+      $index: str-index($colorKey, "#{$num}");
+    }
+  }
+
+  // 숫자가 존재하면 변환
+  @if $index {
+    $formattedKey: str-slice($colorKey, 1, $index - 1) + str-slice($colorKey, $index);
+  }
+
+  .fc-#{$formattedKey} {
+    color: var(--#{$colorKey});
+  }
+  .bg-#{$formattedKey} {
+    background-color: var(--#{$colorKey});
+  }
+}

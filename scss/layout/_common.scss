@@ -1,0 +1,24 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/font.scss" as *;
+* {
+  vertical-align: baseline;
+  color: $base-text-color;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $base-font-family, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  box-sizing: border-box;
+}
+.container {
+  @include containerSize($containerWidth-max: 1200, $sidePadding: 40);
+}
+@include breakpoint(744) {
+  .container {
+    padding: 0 24px;
+  }
+}
+@include breakpoint(375) {
+  .container {
+    padding: 0 convertPxToVw(16);
+  }
+}

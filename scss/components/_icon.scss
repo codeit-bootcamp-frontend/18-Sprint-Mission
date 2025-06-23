@@ -1,0 +1,114 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+// /***** icon ******/
+.ic {
+  @include maskImageStyle;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: $gray900;
+  line-height: 0;
+  @each $iconSizeName, $size in $iconSize {
+    &-#{$iconSizeName} {
+      width: insertUnit($size);
+      height: insertUnit($size);
+    }
+  }
+
+  &.youtube {
+    @include maskImageSvg(ic_youtube);
+  }
+  &.alignment_center {
+    @include maskImageSvg(ic_alignment_center);
+  }
+  &.alignment_left {
+    @include maskImageSvg(ic_alignment_left);
+  }
+  &.alignment_right {
+    @include maskImageSvg(ic_alignment_right);
+  }
+  &.arrow_down {
+    @include maskImageSvg(ic_arrow_down);
+  }
+  &.back {
+    @include maskImageSvg(ic_back);
+  }
+  &.bold {
+    @include maskImageSvg(ic_bold);
+  }
+  &.Bullet {
+    @include maskImageSvg(ic_Bullet);
+  }
+  &.check {
+    @include backgroundImage(ic_check);
+  }
+  &.chevron_left {
+    @include maskImageSvg(ic_chevron_left);
+  }
+  &.chevron_right {
+    @include maskImageSvg(ic_chevron_right);
+  }
+  &.coloring {
+    @include maskImageSvg(ic_coloring);
+  }
+  &.facebook {
+    @include maskImageSvg(ic_facebook);
+  }
+  &.hide {
+    @include maskImageSvg(ic_hide);
+  }
+  &.instagram {
+    @include maskImageSvg(ic_instagram);
+  }
+  &.italic {
+    @include maskImageSvg(ic_italic);
+  }
+  &.like_fill {
+    @include backgroundImage(ic_like_fill);
+  }
+  &.like {
+    @include maskImageSvg(ic_like);
+  }
+  &.medal {
+    @include backgroundImage(ic_medal);
+  }
+  &.numbering {
+    @include maskImageSvg(ic_numbering);
+  }
+  &.plus {
+    @include maskImageSvg(ic_plus);
+  }
+  &.profile {
+    @include backgroundImage(profile);
+  }
+  &.search_darker {
+    @include maskImageSvg(ic_search_darker);
+  }
+  &.search {
+    @include maskImageSvg(ic_search);
+  }
+  &.show {
+    @include maskImageSvg(ic_show);
+  }
+  &.sort {
+    @include maskImageSvg(ic_sort);
+  }
+  &.twitter {
+    @include maskImageSvg(ic_twitter);
+  }
+  &.underline {
+    @include maskImageSvg(ic_underline);
+  }
+  &.x {
+    @include backgroundImage(ic_X);
+  }
+}
+@include breakpoint(375) {
+  @each $iconSizeName, $size in $iconSize {
+    .ic-#{$iconSizeName} {
+      width: convertPxToVw($size);
+      height: convertPxToVw($size);
+    }
+  }
+}

@@ -1,0 +1,203 @@
+@charset "utf-8";
+@use "variables" as *;
+
+// line-height, vw, vh 변환시 사용
+/// @param {Number} $value - 적용될 px 값  : 10.1234, 11.5678 ..
+/// @param {Number} $decimal - 소숫점 자리수 : 3자리수 까지 출력
+@function roundToDecimal($value, $decimal) {
+  $multiplier: pow(10, $decimal);
+  @return calc(round($value * $multiplier) / $multiplier);
+}
+/// @param {Number} $value - 적용될 값 : 10, 11 ..
+/// @param {String} $unit - 적용될 단위 : px, rem  ...
+/// @return {String}  - 10px
+@function insertUnit($value, $unit: px) {
+  @if (unitless($value)) {
+    @if $value == 0 {
+      $value: $value;
+    } @else {
+      $value: $value + $unit;
+    }
+  }
+  @return $value;
+}
+/// @param {Number} $value - 변환할 px 값  : 10, 11 ..
+/// @param {Number} $default - 1rem 될  기준 값
+/// @return {String}  - 1rem
+@function convertPxToRem($value, $default: 16) {
+  @if $value == 0 {
+    @return $value;
+  }
+  @return calc($value / $default) * 1rem;
+}
+/// @param {Number} $value - 변환할 px 값  : 10, 11 ..
+/// @param {Number} $brackPoint - 기준 뷰포트 값
+/// @return {String}  - 10vw
+@function convertPxToVw($value, $brackPoint: 375) {
+  @if $value == 0 {
+    @return $value;
+  }
+  $vw: calc($value * 100 / $brackPoint) * 1vw;
+  @return roundToDecimal($vw, 3);
+}
+@function convertPxToVh($value, $brackPoint) {
+  @if $value == 0 {
+    @return $value;
+  }
+  $vh: calc($value * 100 / $brackPoint) * 1vh;
+  @return roundToDecimal($vh, 3);
+}
+
+/// @param {Number} $ellipsisLine - 말줄임표가 필요한 라인
+@mixin ellipsis($ellipsisLine: 1) {
+  @if ($ellipsisLine==1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $ellipsisLine;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/// @param {Number} $boundType - 컨테이너 너비의 기준 min, max
+/// @param {Number} $containerWidth-max - 컨테이너 너비 & min과 max 조건이 모두 있을땐  최대 단위(max)의 수치로 사용
+/// @param {Number} $sidePadding - 사이드 여백 너비
+/// @param {Boolean} $hasDualBounds - min, max 두개의 컨테이너가 필요할 때
+/// @param {Boolean} $containerWidth-min -  두개의 컨테이너 일때 최소 단위의 수치로 사용
+@mixin containerSize($boundType: max, $containerWidth-max: 1600, $sidePadding: 20, $hasDualBounds: false, $containerWidth-min: 0) {
+  $containerWidth-max: insertUnit($containerWidth-max);
+  $containerWidth-min: insertUnit($containerWidth-min);
+  $sidePadding: insertUnit($sidePadding);
+  $property: $boundType + "-width";
+  @if ($hasDualBounds) {
+    max-width: $containerWidth-max;
+    min-width: $containerWidth-min;
+  } @else {
+    #{$property}: $containerWidth-max;
+  }
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 $sidePadding;
+}
+
+/// @param {String} $display -flex , inline-flex
+/// @param {String} $wrap - wrap , nowrap
+/// @param {String} $isJustify - justify-content value
+@mixin flexbox($display: flex, $wrap: wrap, $dir: row, $justify: flex-start) {
+  display: $display;
+  flex-flow: $wrap $dir;
+  justify-content: $justify;
+}
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/// @param {String} $position - position 속성 값 (absolute, fixed 등)
+/// @param {String} $xDirection - left or right
+/// @param {Number|String} $xValue - x축 위치 값
+/// @param {String} $yDirection - top or bottom
+/// @param {Number|String} $yValue - y축 위치 값
+/// @param {Boolean} $center - center 정렬 여부
+/// @param {Number|String} $translateX - transform x 값
+/// @param {Number|String} $translateY - transform y 값
+@mixin positionEx($position: absolute, $xDirection: left, $xValue: 0, $yDirection: top, $yValue: 0, $center: false, $translateX: 0, $translateY: 0) {
+  position: $position;
+  @if $center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else {
+    #{$xDirection}: insertUnit($xValue);
+    #{$yDirection}: insertUnit($yValue);
+    @if $translateX != 0 or $translateY != 0 {
+      transform: translate($translateX, $translateY);
+    }
+  }
+}
+/// @param {String} $fileName  - 이미지 파일 이름 (확장자 제외)
+/// @param {String} $path  - 이미지 경로
+/// @param {String} $format  - 확장자 (svg, png 등)
+/// @param {String} $position  - 이미지 위치
+/// @param {String} $size  - 이미지 크기
+/// @param {Color} $bgColor  - 배경색 (기본: transparent)
+@mixin backgroundImage($fileName, $path: "../img/icon/", $format: "svg", $position: center, $size: contain, $bgColor: transparent) {
+  $url: url("#{$path}#{$fileName}.#{$format}");
+  @if ($bgColor != transparent) {
+    background: $bgColor $url no-repeat $position;
+  } @else {
+    background: $url no-repeat $position;
+  }
+  background-size: $size;
+}
+
+//// @param {String} $fileName - svg 파일 이름
+/// @param {String} $path - 파일 경로
+@mixin maskImageSvg($fileName, $path: "../img/icon/") {
+  $url: url("#{$path}#{$fileName}.svg");
+  -webkit-mask-image: $url;
+  mask-image: $url;
+}
+
+/// @param {String} $position - 마스크 위치
+/// @param {String} $size - 마스크 크기
+/// @param {String} $repeat - 반복 여부
+@mixin maskImageStyle($position: center, $size: contain, $repeat: no-repeat) {
+  mask-size: $size;
+  mask-position: $position;
+  mask-repeat: $repeat;
+  -webkit-mask-size: $size;
+  -webkit-mask-position: $position;
+  -webkit-mask-repeat: $repeat;
+}
+
+//폰트설정
+/// @param {List} $fontSet  - _variables.scss의 font set
+/// @param {String} $textColor  - color code
+@mixin fontStyle($fontSet, $textColor: $gray800) {
+  @if ($textColor) {
+    color: $textColor;
+  }
+  font-size: #{convertPxToRem(nth($fontSet, 1))};
+  line-height: #{roundToDecimal(nth($fontSet, 2), 3)};
+}
+@mixin responsiveFontStyle($fontSet, $useVw: false) {
+  @if ($useVw) {
+    font-size: #{convertPxToVw(nth($fontSet, 1))};
+  } @else {
+    font-size: #{convertPxToRem(nth($fontSet, 1))};
+  }
+}
+
+/// @param {String} $style - bg , bd
+/// @param {String} $themeColor -bg : 배경컬러 / bd : 라인컬러
+/// @param {String} $textColor -color code
+@mixin buttonStyle($style, $themeColor, $textColor) {
+  @if ($style == bg) {
+    background-color: $themeColor;
+    color: $textColor;
+  } @else if ($style == bd) {
+    box-shadow: inset 0 0 0 1px $themeColor;
+    background-color: $coolGray50;
+    color: $textColor;
+  }
+}
+
+//  미디어 쿼리
+/// @param {Number} $breakpoint - 뷰포트 너비 1920, 720,
+/// @param {String} $range - 반응형 중단점 기준 {min, max}
+@mixin breakpoint($breakpoint, $range: max) {
+  $breakpoint: insertUnit($breakpoint);
+  @media all and (#{$range}-width: #{$breakpoint}) {
+    @content;
+  }
+}

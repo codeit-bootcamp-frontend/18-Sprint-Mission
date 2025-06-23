@@ -1,0 +1,58 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+// /***** Typography ******/
+@each $fontName, $fontInfo in $font {
+  .#{$fontName} {
+    font-size: #{convertPxToRem(nth($fontInfo, 1))};
+    line-height: #{roundToDecimal(nth($fontInfo, 2), 3)};
+  }
+}
+@include breakpoint(1024) {
+  @each $fontName, $fontInfo in $midBrackPointFont {
+    .#{$fontName} {
+      font-size: #{convertPxToRem(nth($fontInfo, 1))};
+    }
+  }
+}
+@include breakpoint(768) {
+  @each $fontName, $fontInfo in $font {
+    .#{$fontName} {
+      font-size: #{convertPxToRem(nth($fontInfo, 3))};
+    }
+  }
+}
+@include breakpoint(375) {
+  @each $fontName, $fontInfo in $font {
+    .#{$fontName} {
+      font-size: #{convertPxToVw(nth($fontInfo, 3))};
+    }
+  }
+}
+[class*="txt"] {
+  font-weight: 400;
+  &.fw {
+    &-500 {
+      font-weight: 500;
+    }
+    &-600 {
+      font-weight: 600;
+    }
+    &-700 {
+      font-weight: 700;
+    }
+  }
+}
+.no-space {
+  white-space: nowrap;
+}
+.space {
+  white-space: wrap;
+}
+.ellipsis {
+  @include ellipsis;
+}
+.v-ellipsis {
+  @include ellipsis(2);
+}
