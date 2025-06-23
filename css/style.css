@@ -36,8 +36,14 @@ a {
   cursor: pointer;
 }
 
-h1 {
-  color: #374151;
+.slogan_heading {
+  color: var(--gray700);
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 40px);
+}
+
+.menu_heading {
+  color: var(--gray700);
   font-weight: 700;
   font-size: clamp(16px, 2vw, 40px);
 }
@@ -45,7 +51,7 @@ h1 {
 h2 {
   font-weight: 500;
   font-size: clamp(12px, 1vw, 24px);
-  color: #374151;
+  color: var(--gray700);
 }
 
 button {
@@ -209,21 +215,20 @@ button {
     background-color: #fcfcfc;
   }
 
-  h1 {
+  .slogan_heading {
     color: var(--gray700);
     font-weight: 700;
+    font-size: 40px;
+  }
+
+  .menu_heading {
     font-size: 32px;
   }
 
   h2 {
     font-weight: 500;
     font-size: 18px;
-    color: #374151;
-  }
-
-  .slogan h1,
-  .bottom h1 {
-    font-size: 40px;
+    color: var(--gray700);
   }
 
   .logo {
@@ -313,7 +318,11 @@ button {
 
 /* mobile */
 @media (max-width: 767px) {
-  h1 {
+  .slogan_heading {
+    font-size: 24px;
+  }
+
+  .menu_heading {
     font-size: 24px;
   }
 
