@@ -17,17 +17,20 @@
         <form class="form_box" action="">
           <div class="input_container">
             <div class="email_box">
-              <p class="basic_p">이메일</p>
+              <label class="basic_p" for="email">이메일</label>
               <input
                 class="input_box email"
+                name="email"
                 type="email"
                 placeholder="이메일을 입력해주세요"
+                required
               />
             </div>
-            <p class="basic_p">비밀번호</p>
+            <label for="pw" class="basic_p">비밀번호</label>
             <div class="pw_box">
               <input
                 class="input_box pw"
+                name="pw"
                 type="password"
                 placeholder="비밀번호를 입력해주세요"
               />

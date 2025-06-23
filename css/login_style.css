@@ -43,6 +43,7 @@ main {
   border: none;
   background-color: var(--gray100);
   padding: 20px;
+  margin: 10px 0px 0px;
   font-size: 16px;
   font-weight: 400;
 }
@@ -56,7 +57,7 @@ button {
   height: 56px;
   border: none;
   border-radius: 40px;
-  margin: 20px 0;
+  margin: 0px 0px 20px 0;
   background-color: var(--gray400);
   color: white;
   font-size: 20px;
@@ -84,14 +85,30 @@ button {
   height: 132px;
 }
 
+.email_box {
+  margin-bottom: 20px;
+}
+
+.nickname_box {
+  margin-bottom: 20px;
+}
+
 .pw_box {
   position: relative;
   display: flex;
 }
 
+.pw_label {
+  padding: 10px 0;
+}
+
+.pw {
+  margin-bottom: 20px;
+}
+
 .eyes {
   position: absolute;
-  top: 17px;
+  top: 30px;
   right: 15px;
 }
 
