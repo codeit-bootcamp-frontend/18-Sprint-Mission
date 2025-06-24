@@ -1,0 +1,114 @@
+/* 로그인 부분 CSS 코드*/
+@import url("color.css");
+
+* {
+  box-sizing: border-box;
+}
+
+.signup-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 640px;
+  gap: 40px;
+  padding: 20px;
+}
+
+.signup-main-title-img {
+  width: 396px;
+  height: 132px;
+}
+
+.signup-form-content{
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  gap:24px;
+}
+
+.signup-label-content{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.signup-input-content{  
+  width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #F3F4F6;
+  padding: 0 16px;
+  background-color: #F3F4F6;
+}
+
+.signup-nickname-content, 
+.signup-password-content, 
+.signup-email-content
+{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  position: relative;
+}
+
+.signup-input-content .signup-password-content {
+  margin-right: 50px;
+}
+
+.signup-button-content {
+  width: 640px;
+  height: 56px;
+  border-radius: 40px;
+  border: none;
+  margin-top: 16px; 
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #9CA3AF;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.visibility-btn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.signup-footer-content {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signup-footer-content a {
+  color: #3692FF;
+  text-decoration: underline;
+}
+
+.signup-social-content {
+  display: flex;  /* ← flex로 수정 */
+  align-items: center;  /* ← align-content 대신 align-items */
+  justify-content: space-between;  /* ← space-between 대신 center가 더 자연스러움 */
+  width: 640px;
+  gap: 20px;  /* ← 간격 추가 */
+  border-radius: 8px;
+  background-color: #E6F2FF;
+  padding: 15px 20px;
+}
+
+.signup-social-content p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.signup-social-icon {
+  display: flex;
+  gap: 16px;
+}
