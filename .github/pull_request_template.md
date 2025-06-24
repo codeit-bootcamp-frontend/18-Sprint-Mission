@@ -41,11 +41,8 @@
 
 ## 주요 변경사항
 
-- 스프린트 미션 1 완료
-  [메인 페이지](https://market-panda.netlify.app/login/)
-- 스프린트 미션 2 완료
-  [로그인]()
-  [회원가입](https://market-panda.netlify.app/signup/)
+- 스프린트 미션 1 완료 : [메인 페이지](https://market-panda.netlify.app/login/)
+- 스프린트 미션 2 완료 : [로그인](https://market-panda.netlify.app/login/) / [회원가입](https://market-panda.netlify.app/signup/)
 
 ## 스크린샷
 
