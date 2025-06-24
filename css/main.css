@@ -68,24 +68,24 @@ header, #container, footer, .wrap {
 
 
 /* header */
-header {
+.header {
   padding: 0 200px;
   height: 70px;
   background-color: #ffffff;
 }
 
-header .header-bar {
+.header-bar {
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: space-between;
 }
 
-header .header-bar img {
+.header-bar img {
   width: 153px;
 }
 
-header .header-bar #login-button {
+.header-bar #login-button {
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
