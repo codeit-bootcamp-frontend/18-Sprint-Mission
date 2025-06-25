@@ -100,11 +100,11 @@ const validationCheck = (input) => {
       break;
     case 'pw_check':
       result = pwInput.value === input.value;
-      pwCheckValidate = true;
+      pwCheckValidate = result ? true : false;
       break;
     case 'nickname':
       result = input.value !== '';
-      nicknameValidate = true;
+      nicknameValidate = result ? true : false;
       break;
     default:
       result = false;
@@ -121,8 +121,6 @@ const activeBtn = () => {
 
   switch (countInput.length) {
     case 2:
-      console.log('test');
-
       if (validationCheck(emailInput) && validationCheck(pwInput)) {
         loginBtn.removeAttribute('type');
         loginBtn.style.backgroundColor = '#3692ff';
