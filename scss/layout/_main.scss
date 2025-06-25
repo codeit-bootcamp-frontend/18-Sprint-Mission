@@ -1,0 +1,230 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.main {
+  padding-top: 70px;
+  @include flexColumn;
+  gap: 276px 0;
+  & .visual {
+    background-color: $brand;
+    &-box {
+      height: 540px;
+      background: url(../img/visual/Img_home_top.png) no-repeat bottom right;
+      background-size: auto 340px;
+      &.flex-col {
+        justify-content: end;
+        gap: 32px;
+      }
+      & .btn {
+        width: min(convertPxToVw(357, 1370), 357px);
+        margin-bottom: 100px;
+      }
+    }
+  }
+  & .intro-content {
+    &:nth-of-type(2) {
+      margin-top: -138px;
+    }
+    & .container {
+      max-width: 988px;
+    }
+    & .flex-row {
+      flex-wrap: nowrap;
+      align-items: center;
+      border-radius: 12px;
+      background-color: #fcfcfc;
+    }
+    & img {
+      width: 579px;
+    }
+    & .feature {
+      flex-grow: 1;
+      & .txt-4xl {
+        margin: 12px 0 24px;
+      }
+    }
+    &:not(.reverse) .feature {
+      padding-left: 64px;
+    }
+    &.reverse {
+      & img {
+        order: 2;
+      }
+      & .feature {
+        order: 1;
+        padding-right: 64px;
+        & > * {
+          text-align: right;
+        }
+      }
+    }
+  }
+  & .banner {
+    background-color: $brand;
+    &-box {
+      height: 540px;
+      background: url(../img/visual/Img_home_bottom.png) no-repeat bottom -1px right;
+      background-size: auto 397px;
+      &.flex-col {
+        justify-content: end;
+        & h2 {
+          padding-bottom: 127px;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(1200) {
+  .main {
+    gap: max(convertPxToVw(138, 1200), 100px) 0;
+    & .visual {
+      &-box {
+        //   540 -> 최대 440px까지만 줄이기
+        height: max(convertPxToVw(540, 1200), 440px);
+        background-size: auto convertPxToVw(357, 1200);
+      }
+    }
+    & .intro-content {
+      &:nth-of-type(2) {
+        margin-top: 0;
+      }
+      & .container {
+        max-width: none;
+      }
+      & img {
+        width: 50%;
+        height: auto;
+      }
+      &:not(.reverse) .feature {
+        padding-left: 24px;
+      }
+      &.reverse .feature {
+        padding-right: 24px;
+      }
+    }
+    & .banner {
+      margin-top: 0;
+      &-box {
+        height: max(convertPxToVw(540, 1200), 440px);
+        background-size: auto convertPxToVw(397, 1200);
+      }
+    }
+  }
+}
+@include breakpoint(744) {
+  .main {
+    gap: max(convertPxToVw(52, 744), 40px) 0;
+    & .visual {
+      &-box {
+        height: max(540px, convertPxToVw(744, 744));
+        background-size: 100% auto;
+        &.flex-col {
+          justify-content: start;
+          align-items: center;
+          gap: 24px;
+        }
+        & h2 {
+          text-align: center;
+          padding-top: 84px;
+          word-break: keep-all;
+          & br {
+            display: none;
+          }
+        }
+        & .btn {
+          width: min(80%, 357px);
+          margin-bottom: 0;
+        }
+      }
+    }
+    & .intro-content {
+      & .flex-row {
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: transparent;
+        gap: 24px;
+      }
+      & img {
+        width: 100%;
+      }
+      & .feature {
+        & .txt-4xl {
+          margin: 16px 0 24px;
+        }
+      }
+      &:not(.reverse) .feature {
+        padding-left: 0;
+      }
+      &.reverse {
+        & img {
+          order: 1;
+        }
+        & .feature {
+          order: 2;
+          padding-right: 0;
+          & > * {
+            text-align: left;
+          }
+        }
+      }
+    }
+    & .banner {
+      &-box {
+        height: max(540px, convertPxToVw(744, 744));
+        background-size: 100% auto;
+        &.flex-col {
+          justify-content: start;
+          & h2 {
+            padding: 100px 0 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint(375) {
+  .main {
+    padding-top: convertPxToVw(70);
+    gap: convertPxToVw(40) 0;
+    & .visual {
+      &-box {
+        height: convertPxToVw(540);
+        &.flex-col {
+          gap: convertPxToVw(18);
+        }
+        & h2 {
+          padding-top: convertPxToVw(48);
+          & br {
+            display: block;
+          }
+        }
+        & .btn {
+          width: convertPxToVw(240);
+        }
+      }
+    }
+    & .intro-content {
+      & .flex-row {
+        gap: convertPxToVw(24);
+      }
+      & .feature {
+        & .txt-4xl {
+          margin: convertPxToVw(8) 0 convertPxToVw(16);
+        }
+      }
+    }
+    & .banner {
+      &-box {
+        height: convertPxToVw(540);
+        &.flex-col {
+          & h2 {
+            padding: convertPxToVw(120) 0 0;
+          }
+        }
+      }
+    }
+  }
+}

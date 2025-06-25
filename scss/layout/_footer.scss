@@ -1,0 +1,49 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.footer {
+  padding: 32px 0 108px;
+  background-color: $gray900;
+  & .flex-row {
+    justify-content: space-between;
+    align-items: center;
+  }
+  & .info-links {
+    gap: 30px;
+    & a {
+      color: $gray200;
+    }
+  }
+  & .sns-links {
+    gap: 12px;
+    & .ic {
+      background-color: $white;
+    }
+  }
+}
+@include breakpoint(480) {
+  .footer {
+    & .flex-row {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    & .txt-lg {
+      order: 1;
+    }
+  }
+}
+@include breakpoint(375) {
+  .footer {
+    padding: convertPxToVw(32) 0 convertPxToVw(65);
+    & .flex-row {
+      gap: convertPxToVw(24);
+    }
+    & .info-links {
+      gap: convertPxToVw(30);
+    }
+    & .sns-links {
+      gap: convertPxToVw(12);
+    }
+  }
+}

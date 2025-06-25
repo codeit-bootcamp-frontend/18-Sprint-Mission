@@ -1,6 +1,14 @@
 @charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 .utf-8 {
   content: "Für charset";
+}
+
+* {
+  vertical-align: baseline;
+  color: var(--gray800);
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 
 .container {
@@ -9,6 +17,10 @@
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 40px;
+}
+
+a.logo {
+  display: block;
 }
 
 @media all and (max-width: 744px) {
@@ -21,95 +33,96 @@
     padding: 0 4.267vw;
   }
 }
-header {
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   padding: 9.5px 40px;
+  background-color: var(--white);
 }
-header .flex-row {
+.header .flex-row {
   justify-content: space-between;
   align-items: center;
 }
-header .logo img {
+.header .logo img {
   height: 51px;
 }
-header .logo img:last-of-type {
+.header .logo img:last-of-type {
   display: none;
 }
-header .user-access .btn {
+.header .user-access .btn {
   width: 128px;
 }
 
-@media all and (max-width: 1919px) {
-  header {
-    padding: 9.5px 200px;
-  }
-}
 @media all and (max-width: 744px) {
-  header {
+  .header {
     padding: 9.5px 0;
   }
 }
 @media all and (max-width: 375px) {
-  header {
+  .header {
     padding: 2.533vw 0;
   }
-  header .logo img {
+  .header .logo img {
     height: 13.6vw;
   }
-  header .logo img:first-of-type {
+  .header .logo img:first-of-type {
     display: none;
   }
-  header .logo img:last-of-type {
+  .header .logo img:last-of-type {
     display: block;
   }
-  header .user-access .btn {
+  .header .user-access .btn {
     width: 34.133vw;
   }
 }
-footer {
+.footer {
   padding: 32px 0 108px;
   background-color: var(--gray900);
 }
-footer .flex-row {
+.footer .flex-row {
   justify-content: space-between;
   align-items: center;
 }
-footer .info-links {
+.footer .info-links {
   gap: 30px;
 }
-footer .info-links a {
+.footer .info-links a {
   color: var(--gray200);
 }
-footer .sns-links {
+.footer .sns-links {
   gap: 12px;
 }
-footer .sns-links .ic {
+.footer .sns-links .ic {
   background-color: var(--white);
 }
 
 @media all and (max-width: 480px) {
-  footer .flex-row {
+  .footer .flex-row {
     flex-wrap: wrap;
     gap: 24px;
   }
-  footer .txt-lg {
+  .footer .txt-lg {
     order: 1;
   }
 }
 @media all and (max-width: 375px) {
-  footer {
+  .footer {
     padding: 8.533vw 0 17.333vw;
   }
-  footer .flex-row {
+  .footer .flex-row {
     gap: 6.4vw;
   }
-  footer .info-links {
+  .footer .info-links {
     gap: 8vw;
   }
-  footer .sns-links {
+  .footer .sns-links {
     gap: 3.2vw;
   }
 }
 .main {
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   gap: 276px 0;
@@ -145,23 +158,23 @@ footer .sns-links .ic {
 .main .intro-content img {
   width: 579px;
 }
-.main .intro-content ul {
+.main .intro-content .feature {
   flex-grow: 1;
 }
-.main .intro-content ul .txt-4xl {
+.main .intro-content .feature .txt-4xl {
   margin: 12px 0 24px;
 }
-.main .intro-content:not(.reverse) ul {
+.main .intro-content:not(.reverse) .feature {
   padding-left: 64px;
 }
 .main .intro-content.reverse img {
   order: 2;
 }
-.main .intro-content.reverse ul {
+.main .intro-content.reverse .feature {
   order: 1;
   padding-right: 64px;
 }
-.main .intro-content.reverse ul li {
+.main .intro-content.reverse .feature > * {
   text-align: right;
 }
 .main .banner {
@@ -197,10 +210,10 @@ footer .sns-links .ic {
     width: 50%;
     height: auto;
   }
-  .main .intro-content:not(.reverse) ul {
+  .main .intro-content:not(.reverse) .feature {
     padding-left: 24px;
   }
-  .main .intro-content.reverse ul {
+  .main .intro-content.reverse .feature {
     padding-right: 24px;
   }
   .main .banner {
@@ -245,20 +258,20 @@ footer .sns-links .ic {
   .main .intro-content img {
     width: 100%;
   }
-  .main .intro-content ul .txt-4xl {
+  .main .intro-content .feature .txt-4xl {
     margin: 16px 0 24px;
   }
-  .main .intro-content:not(.reverse) ul {
+  .main .intro-content:not(.reverse) .feature {
     padding-left: 0;
   }
   .main .intro-content.reverse img {
     order: 1;
   }
-  .main .intro-content.reverse ul {
+  .main .intro-content.reverse .feature {
     order: 2;
     padding-right: 0;
   }
-  .main .intro-content.reverse ul li {
+  .main .intro-content.reverse .feature > * {
     text-align: left;
   }
   .main .banner-box {
@@ -275,6 +288,7 @@ footer .sns-links .ic {
 }
 @media all and (max-width: 375px) {
   .main {
+    padding-top: 18.667vw;
     gap: 10.667vw 0;
   }
   .main .visual-box {
@@ -295,7 +309,7 @@ footer .sns-links .ic {
   .main .intro-content .flex-row {
     gap: 6.4vw;
   }
-  .main .intro-content ul .txt-4xl {
+  .main .intro-content .feature .txt-4xl {
     margin: 2.133vw 0 4.267vw;
   }
   .main .banner-box {
@@ -304,4 +318,24 @@ footer .sns-links .ic {
   .main .banner-box.flex-col h2 {
     padding: 32vw 0 0;
   }
+}
+main[class*=sign-] {
+  padding: 60px 0;
+}
+main[class*=sign-] .container {
+  max-width: 640px;
+}
+main[class*=sign-] .logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+main[class*=sign-] .logo img {
+  width: 396px;
+}
+
+.sign-in {
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

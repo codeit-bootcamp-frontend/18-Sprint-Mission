@@ -1,0 +1,21 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/font.scss" as *;
+
+.container {
+  @include containerSize($containerWidth-max: 1200, $sidePadding: 40);
+}
+a.logo {
+  display: block;
+}
+@include breakpoint(744) {
+  .container {
+    padding: 0 24px;
+  }
+}
+@include breakpoint(375) {
+  .container {
+    padding: 0 convertPxToVw(16);
+  }
+}
