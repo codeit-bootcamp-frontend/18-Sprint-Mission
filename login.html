@@ -5,9 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓 Login</title>
   <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/auth.css" />
 </head>
 <body>
-  판다마켓의 임시 LOGIN 페이지
+  
+  <main class="auth-container">
+
+    <a class="logo" href="/">
+      <h1 class="visually-hidden">판다마켓 로그인</h1>
+      <img src="images/logo/panda-market-logo.svg" alt="판다마켓 로고">
+    </a>
+    
+    <!-- login-form -->
+    <form class="auth-form" action="/login" method="post">
+
+      <div class="form-group">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요." required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">비밀번호</label>
+        <div class="input-wrap">
+          <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요." required />
+          <button type="button" id="togglePassword" aria-label="비밀번호 보기">
+            <img src="images/icon/eye-slash-icon.svg" alt="비밀번호 보기 아이콘" />
+          </button>
+        </div>
+      </div>
+
+       <button type="submit" class="auth-btn">로그인</button>
+    </form>
+
+    <div class="auth-social">
+      <p>간편 로그인하기</p>
+      <ul class="social">
+        <li>
+          <a href="https://www.google.com/">
+            <img src="images/social/google-logo.svg" alt="구글 로고">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kakaocorp.com/page/">
+            <img src="images/social/kakao-logo.svg" alt="카카오 로고">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="auth-guide">
+      <span>판다마켓이 처음이신가요?</span>
+      <a href="/signup.html">회원가입</a>
+    </div>
+
+  </main>
 </body>
 </html>

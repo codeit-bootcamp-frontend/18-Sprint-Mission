@@ -1,0 +1,139 @@
+/* 전체 컨테이너 */
+.auth-container {
+  max-width: 640px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 로고 */
+.logo img {
+  width: 396px;
+  margin-bottom: 40px;
+}
+
+/* 로그인 폼 */
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 입력 그룹 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray800);
+}
+
+.form-group input {
+  width: 100%;
+  height: 56px;
+  font-size: 16px;
+  padding: 0 24px;
+  border-radius: 12px;
+  background-color: #F3F4F6;
+  border: none;
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 2px solid var(--primary300);
+}
+
+/* 비밀번호 보기 버튼 */
+.form-group .input-wrap {
+  position: relative;
+}
+
+.form-group button {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* 제출 버튼 */
+.auth-btn {
+  height: 56px;
+  background-color: var(--primary100);
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: var(--primary200);
+}
+.auth-btn:active {
+  background-color: var(--primary300);
+}
+
+/* 소셜 로그인 */
+.auth-social {
+  width: 100%;
+  margin-top: 24px;
+  background-color: #E6F2FF;
+  padding: 0 23px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+}
+
+.auth-social p {
+  font-weight: 500;
+  line-height: 26px;
+  color: var(--gray800);
+  cursor: default;
+}
+
+/* 소셜 아이콘 */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social a img {
+  width: 42px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.social a img:hover {
+  transform: scale(1.1);
+}
+
+
+.auth-guide {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.auth-guide a {
+  color: var(--primary100);
+  text-decoration: underline;
+}
