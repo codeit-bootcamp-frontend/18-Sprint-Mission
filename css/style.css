@@ -339,3 +339,20 @@ main[class*=sign-] .logo img {
   flex-direction: column;
   justify-content: center;
 }
+
+@media all and (max-width: 744px) {
+  main[class*=sign-] .logo img {
+    width: min(396px, 53.226vw);
+  }
+}
+@media all and (max-width: 375px) {
+  main[class*=sign-] {
+    padding: 6.4vw 0;
+  }
+  main[class*=sign-] .logo {
+    margin-bottom: 6.4vw;
+  }
+  main[class*=sign-] .logo img {
+    width: 52.8vw;
+  }
+}

@@ -753,7 +753,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 23px;
+  padding: 16px 24px;
   border-radius: 8px;
   background-color: #e6f2ff;
 }
@@ -774,4 +774,36 @@
 .auth-switch-link {
   color: var(--primary100);
   text-decoration: underline;
+}
+
+@media all and (max-width: 375px) {
+  .form-wrapper {
+    gap: 6.4vw;
+  }
+  .form-label {
+    margin-bottom: 2.133vw;
+    font-size: 4.8vw;
+  }
+  .form-input {
+    padding: 4.267vw 6.4vw;
+    border-radius: 3.2vw;
+    font-size: 4.267vw;
+  }
+  .form-input.error-msg {
+    padding: 2.133vw 4.267vw 0;
+    font-size: 3.733vw;
+  }
+  .form-input-wrapper .password-toggle {
+    right: 6.4vw;
+  }
+  .sns-sign-in {
+    padding: 4.267vw 6.4vw;
+    border-radius: 2.133vw;
+  }
+  .sns-sign-in .btn-group {
+    gap: 4.267vw;
+  }
+  .auth-switch {
+    font-size: 3.733vw;
+  }
 }

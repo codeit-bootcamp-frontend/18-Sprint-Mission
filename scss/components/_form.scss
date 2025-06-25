@@ -50,7 +50,7 @@
   @include flexRow;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 23px;
+  padding: 16px 24px;
   border-radius: 8px;
   background-color: #e6f2ff;
   & .txt-lg {
@@ -68,6 +68,45 @@
     &-link {
       color: $primary100;
       text-decoration: underline;
+    }
+  }
+}
+@include breakpoint(375) {
+  .form {
+    &-wrapper {
+      gap: convertPxToVw(24);
+    }
+    &-label {
+      margin-bottom: convertPxToVw(8);
+      @include responsiveFontStyle(map-get($font, txt-2lg), true);
+    }
+    &-input {
+      padding: convertPxToVw(16) convertPxToVw(24);
+      border-radius: convertPxToVw(12);
+      @include responsiveFontStyle(map-get($font, txt-lg), true);
+      &.error {
+        &-msg {
+          padding: convertPxToVw(8) convertPxToVw(16) 0;
+          @include responsiveFontStyle(map-get($font, txt-md), true);
+        }
+      }
+      &-wrapper {
+        & .password-toggle {
+          right: convertPxToVw(24);
+        }
+      }
+    }
+  }
+  .sns-sign-in {
+    padding: convertPxToVw(16) convertPxToVw(24);
+    border-radius: convertPxToVw(8);
+    & .btn-group {
+      gap: convertPxToVw(16);
+    }
+  }
+  .auth {
+    &-switch {
+      @include responsiveFontStyle(map-get($font, txt-md), true);
     }
   }
 }
