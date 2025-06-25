@@ -19,47 +19,39 @@
             <img src="../img/logo/logo.png" alt="판다마켓로고" />
           </a>
         </h1>
-        <form action="" autocomplete="off">
-          <ul class="form-list">
-            <li>
-              <label for="user-email" class="form-label">이메일</label>
-              <input type="email" id="user-email" name="userEmail" class="form-input" placeholder="이메일을 입력해주세요." />
-            </li>
-            <li>
-              <label for="user-password" class="form-label">비밀번호</label>
-              <div class="form-input-wrapper">
-                <input type="password" id="user-password" name="password" class="form-input" placeholder="비밀번호를 입력해주세요." />
-                <button type="button" class="password-toggle">
-                  <span class="ic ic-md hide"></span>
-                  <span class="visually-hidden">비밀번호 숨기기</span>
-                </button>
-              </div>
-            </li>
-            <li>
-              <button type="submit" class="btn btn-lg bg round full">로그인</button>
-            </li>
-            <li>
-              <div class="sns-sign-in">
-                <p class="txt-lg fw-md">간편 로그인 하기</p>
-                <div class="btn-group">
-                  <a href="https://www.google.com/" target="_blank">
-                    <span class="ic ic-lg google"></span>
-                    <span class="visually-hidden">구글로 로그인하기</span>
-                  </a>
-                  <a href="https://www.kakaocorp.com/page/" target="_blank">
-                    <span class="ic ic-lg kakao"></span>
-                    <span class="visually-hidden">카카오로 로그인하기</span>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="auth-switch">
-                판다마켓이 처음이신가요?
-                <a href="/signup" class="auth-switch-link">회원가입</a>
-              </div>
-            </li>
-          </ul>
+        <form action="" autocomplete="off" class="form-wrapper">
+          <div class="form-field">
+            <label for="user-email" class="form-label">이메일</label>
+            <input type="email" id="user-email" name="userEmail" class="form-input" placeholder="이메일을 입력해주세요." />
+          </div>
+          <div class="form-field">
+            <label for="user-password" class="form-label">비밀번호</label>
+            <div class="form-input-wrapper">
+              <input type="password" id="user-password" name="password" class="form-input" placeholder="비밀번호를 입력해주세요." />
+              <button type="button" class="password-toggle">
+                <span class="ic ic-md hide"></span>
+                <span class="visually-hidden">비밀번호 숨기기</span>
+              </button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-lg bg round full">로그인</button>
+          <div class="sns-sign-in">
+            <p class="txt-lg">간편 로그인 하기</p>
+            <div class="btn-group">
+              <a href="https://www.google.com/" target="_blank">
+                <span class="ic ic-lg google"></span>
+                <span class="visually-hidden">구글로 로그인하기</span>
+              </a>
+              <a href="https://www.kakaocorp.com/page/" target="_blank">
+                <span class="ic ic-lg kakao"></span>
+                <span class="visually-hidden">카카오로 로그인하기</span>
+              </a>
+            </div>
+          </div>
+          <div class="auth-switch">
+            판다마켓이 처음이신가요?
+            <a href="/signup" class="auth-switch-link">회원가입</a>
+          </div>
         </form>
       </div>
     </main>

@@ -413,13 +413,13 @@
 [class*=txt] {
   font-weight: 400;
 }
-[class*=txt].fw-500 {
+[class*=txt].font-weight-500 {
   font-weight: 500;
 }
-[class*=txt].fw-600 {
+[class*=txt].font-weight-600 {
   font-weight: 600;
 }
-[class*=txt].fw-700 {
+[class*=txt].font-weight-700 {
   font-weight: 700;
 }
 
@@ -695,7 +695,7 @@
   white-space: nowrap;
 }
 
-.form-list {
+.form-wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -756,6 +756,9 @@
   padding: 16px 23px;
   border-radius: 8px;
   background-color: #e6f2ff;
+}
+.sns-sign-in .txt-lg {
+  font-weight: 500;
 }
 .sns-sign-in .btn-group {
   gap: 16px;

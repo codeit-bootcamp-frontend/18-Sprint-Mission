@@ -43,13 +43,17 @@
 
 - 스프린트 미션 1 완료 : [메인 페이지](https://market-panda.netlify.app/login/)
 - 스프린트 미션 2 완료 : [로그인](https://market-panda.netlify.app/login/) / [회원가입](https://market-panda.netlify.app/signup/)
-
+-스프린트 미션 3완료 :
 ## 스크린샷
+|메인|로그인|회원가입|
+|:---:|:---:|:---:|
+|![image](https://github.com/sohyun0/18-Sprint-Mission/blob/Basic-%EC%9C%84%EC%86%8C%ED%98%84-sprint1/img/thumbnail_01.png?raw=true)|![image](https://github.com/sohyun0/18-Sprint-Mission/blob/Basic-%EC%9C%84%EC%86%8C%ED%98%84-sprint2/img/thumbnail/thumbnail_02.png?raw=true)|![image](https://github.com/sohyun0/18-Sprint-Mission/blob/Basic-%EC%9C%84%EC%86%8C%ED%98%84-sprint2/img/thumbnail/thumbnail_03.png?raw=true)|
 
-![image](https://github.com/sohyun0/18-Sprint-Mission/blob/Basic-%EC%9C%84%EC%86%8C%ED%98%84-sprint1/img/thumbnail_01.png?raw=true)
+
 
 ## 멘토에게
 
 - 체크리스트 중 로그인 페이지, 회원가입 페이지 모두 로고 위 상단 여백이 동일합니다. 라고 되어있지만, 실제 피그마에서는 서로 다른 여백이 존재하기에 각각 상하 60px으로 작업 후 컨텐츠 양이 작은 로그인 페이지에서는 중앙정렬되게끔 작성했습니다.
 
 - 셀프 코드 리뷰를 통해 질문 이어가겠습니다.
+

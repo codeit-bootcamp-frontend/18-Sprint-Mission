@@ -3,7 +3,7 @@
 @use "../utils/mixins" as *;
 
 .form {
-  &-list {
+  &-wrapper {
     @include flexColumn;
     flex-wrap: nowrap;
     gap: 24px;
@@ -53,6 +53,9 @@
   padding: 16px 23px;
   border-radius: 8px;
   background-color: #e6f2ff;
+  & .txt-lg {
+    font-weight: 500;
+  }
   & .btn-group {
     gap: 16px;
   }
