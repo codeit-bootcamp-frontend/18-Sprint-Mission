@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+
+  <link rel="icon" href="images/logo/favicon.ico"/>
+  <link rel="stylesheet" href="../styles/global.css"/>
+  <link rel="stylesheet" href="../styles/signup.css"/>
+</head>
+<body>
+  <div id="signupWrapper">
+    <!-- header 시작 -->
+    <header>
+      <a href="/"><img src="../images/login&signup/logo/logo.svg" alt="판다마켓 로고"></a>
+      <h1>판다마켓</h1>
+    </header>
+    <!-- main 시작 -->
+    <main>
+      <form action="#" id="signupInputForm">
+        <label for="signupEmail">이메일</label>
+        <input id="signupEmail" type="email" placeholder="codeit@email.com" autofocus>
+        <label for="signupNickName">닉네임</label>
+        <input id="signupNickName" type="text" placeholder="판다">
+        <div class="signupPasswordWrap">
+          <label for="signupPassword">비밀번호</label>
+          <input id="signupPassword" class="signupPasswordClass" type="password" placeholder="......">
+          <button class="passwordEye"><img src="../images/login&signup/password-eye.png"></button>
+        </div>
+        <div class="signupPasswordWrap">
+          <label for="signupPasswordCheck">비밀번호 확인</label>
+          <input id="signupPasswordCheck" class="signupPasswordClass" type="password" placeholder="......">
+          <button class="passwordEye"><img src="../images/login&signup/password-eye.png"></button>       
+        </div>
+      </form>
+      <button id="signupButton">회원가입</button>
+      <div id="signupBySns">
+        <p>간편 로그인하기</p>
+        <div id="snsLogo">
+          <a href="https://www.google.com/" target="_blank"><img src="../images/login&signup/sns/google-logo.svg" alt="구글 로고"></a>
+          <a href="https://www.kakaocorp.com/page/" target="_blank"><img src="../images/login&signup/sns/kakao-logo.svg" alt="카카오 로고"></a>
+        </div> 
+      </div>
+      <p id="foot">이미 회원이신가요?<a id="signup" href="../login/">로그인</a></p>
+    </main>
+  </div>
+</body>
+</html>

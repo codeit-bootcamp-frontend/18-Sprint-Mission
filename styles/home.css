@@ -1,3 +1,7 @@
+header {
+  position: fixed
+}
+
 #headerLogo {
   width: 153px;
 }
