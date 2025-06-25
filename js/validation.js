@@ -23,12 +23,18 @@ const nicknameBox = document.getElementById('nickname_box');
 const nicknameInput = document.getElementById('nickname');
 
 /**
- * flags
+ * 로그인, 회원가입 버튼
  */
-let showEmailErr = false;
-let showPwErr = false;
-let showPwCheckErr = false;
-let showNicknameErr = false;
+const loginBtn = document.getElementById('login_btn');
+const joinBtn = document.getElementById('join_btn');
+
+/**
+ * 버튼 활성화를 위한 flag
+ */
+let emailValidate = false;
+let pwValidate = false;
+let pwCheckValidate = false;
+let nicknameValidate = false;
 
 /**
  * 에러 메시지 출력을 위한 p 태그와 내용을 추가한다.
@@ -78,7 +84,7 @@ const removeErrBorder = (inputBox) => {
  * @param {document.getElementById} input
  * @returns {boolean}
  */
-const regexValidationCheck = (input) => {
+const validationCheck = (input) => {
   const emailRegex = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
   const pwRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
   let result = false;
@@ -86,21 +92,64 @@ const regexValidationCheck = (input) => {
   switch (input.id) {
     case 'email':
       result = emailRegex.test(input.value);
+      emailValidate = result ? true : false;
       break;
     case 'pw':
       result = pwRegex.test(input.value);
+      pwCheckValidate = result ? true : false;
       break;
     case 'pw_check':
       result = pwInput.value === input.value;
+      pwCheckValidate = true;
       break;
     case 'nickname':
       result = input.value !== '';
+      nicknameValidate = true;
       break;
     default:
       result = false;
       break;
   }
   return result;
+};
+
+/**
+ * 로그인창, 회원가입창의 모든 input 값의 유효성 검사가 통과되면 버튼을 활성화한다.
+ */
+const activeBtn = () => {
+  let countInput = document.querySelectorAll('#form input');
+
+  switch (countInput.length) {
+    case 2:
+      console.log('test');
+
+      if (validationCheck(emailInput) && validationCheck(pwInput)) {
+        loginBtn.removeAttribute('type');
+        loginBtn.style.backgroundColor = '#3692ff';
+        loginBtn.style.cursor = 'pointer';
+      } else {
+        loginBtn.setAttribute('type', 'button');
+        loginBtn.style.backgroundColor = '#9ca3af';
+        loginBtn.style.cursor = 'default';
+      }
+      break;
+    case 4:
+      if (
+        validationCheck(emailInput) &&
+        validationCheck(pwInput) &&
+        validationCheck(pwCheckInput) &&
+        validationCheck(nicknameInput)
+      ) {
+        joinBtn.removeAttribute('type');
+        joinBtn.style.backgroundColor = '#3692ff';
+        joinBtn.style.cursor = 'pointer';
+      } else {
+        joinBtn.setAttribute('type', 'button');
+        joinBtn.style.backgroundColor = '#9ca3af';
+        joinBtn.style.cursor = 'default';
+      }
+      break;
+  }
 };
 
 /**
@@ -112,7 +161,7 @@ const regexValidationCheck = (input) => {
  */
 const checkInput = (inputTag, box, valdationErrMsg, emptyErrMsg) => {
   if (inputTag.value !== '') {
-    if (regexValidationCheck(inputTag)) {
+    if (validationCheck(inputTag)) {
       removeErrBorder(inputTag);
       removeErrTag(box);
     } else {
@@ -136,6 +185,7 @@ emailInput.addEventListener('blur', () => {
     '이메일을 입력해주세요'
   );
 });
+emailInput.addEventListener('input', activeBtn);
 
 /**
  * 비밀번호 입력창이 focus out 될 때 값을 검사한다.
@@ -148,6 +198,7 @@ pwInput.addEventListener('blur', () => {
     '비밀번호를 입력해주세요'
   );
 });
+pwInput.addEventListener('input', activeBtn);
 
 /**
  * 비밀번호 확인 입력창이 focus out 될 때 값을 검사한다.
@@ -160,6 +211,7 @@ pwCheckInput.addEventListener('blur', () => {
     '비밀번호를 8자 이상 입력해주세요'
   );
 });
+pwCheckInput.addEventListener('input', activeBtn);
 
 /**
  * 닉네임 입력창이 focus out 될 때 값을 검사한다.
@@ -172,3 +224,4 @@ nicknameInput.addEventListener('blur', () => {
     '닉네임을 입력해주세요'
   );
 });
+nicknameInput.addEventListener('input', activeBtn);
