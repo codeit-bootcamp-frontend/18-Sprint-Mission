@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  word-break: keep-all;
+  font-family: Pretendard, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+header {
+  max-width: 1920px;
+  height: 70px;
+}
+
+nav {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* margin-left: 200px; */
+}
+
+.logo {
+  font-family: 'ROKAF Sans';
+  font-weight: 700;
+  font-size: 26px;
+  color: #3692FF;
+}
+
+.login {
+  padding:12px 23px;
+  width: 128px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 8px;
+  color: #F3F4F6;
+  background-color: #3692FF;
+}
+
+.colored {
+  background-color: #CFE5FF;
+  width:100%;
+  height: 540px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.show-items {
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 124px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #F9FAFB;
+  background-color: #3692FF;
+}
+
+
+.container {
+  max-width:1920px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-middle > .container {
+  width: 50%;
+  background-color: #FCFCFC;
+  margin: 10% auto;
+  border-radius: 12px;
+}
+
+.main-core-title {
+  font-size: 40px;
+  color:#374151;
+  font-weight: 700;
+  line-height: 140%;
+}
+
+.main-middle > .container > * {
+  width: 100%;
+}
+
+.main-txt {
+  margin-left: 5%;
+}
+
+.main-point {
+  font-size: 18px;
+  font-weight: 800;
+  color:#3692FF;
+  line-height: 26px;
+}
+
+.main-title {
+  font-size: 40px;
+  font-weight: 700;
+  color:#374151;
+  line-height: 140%;
+}
+
+.main-describe {
+  font-size: 24px;
+  font-weight: 500;
+  color:#374151;
+  line-height: 32px;
+}
+
+footer {
+  background-color: #111827;
+}
+
+footer .footer-list {
+  width: 100%;
+  padding: 20px 40px 40px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-list > li {
+  color:#9CA3AF;
+}
+
+.list-policy > a {
+  color: white;
+  margin: 0 20px;
+}
+
+.list-sns > a:not(:last-child){
+  margin-right: 10px;
+}
+
+@media(max-width:1919px) {
+  header .navi {
+    margin: 0 200px;
+  }
+  
+  .main-point {
+    font-size: 12px;
+  }
+  
+  .main-title {
+    font-size: 32px;
+  }
+  
+  .main-describe {
+    font-size: 18px;
+  }
+
+}
