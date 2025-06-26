@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <header id="panda_header">
+    <header class="panda_header">
       <div class="gnb inner">
         <div class="logo">
           <a href="./">
@@ -22,136 +22,144 @@
         <a class="login_button" href="/login">로그인</a>
       </div>
     </header>
-    <main >
-      <section id="main_visual">
-      <div class="visual inner">
-        <div class="visual_txt">
-          <h1 class="main_title">
-            일상의 모든 물건을<br/>
-            거래해 보세요
-          </h1>
-          <a href="/items" class="main_button">구경하러가기</a>
+    <main>
+      <section class="main_visual">
+        <div class="visual inner">
+          <div class="visual_txt">
+            <h2 class="title">
+              일상의 모든 물건을<br />
+              거래해 보세요
+            </h2>
+            <a href="/items" class="main_button">구경하러가기</a>
+          </div>
+          <img
+            src="image/panda_main_img.png"
+            alt="판다마켓 메인 이미지"
+            class="bg"
+          />
         </div>
-        <img
-          src="image/panda_main_img.png"
-          alt="판다마켓 메인 이미지"
-          class="bg"
-        />
-      </div>
       </section>
       <section class="content">
-      <div class="content_inner">
-        <div class="content_box">
+        <div class="content_inner">
+          <div class="content_box">
+            <img
+              src="image/content1_Hot_item_img.png"
+              alt=""
+              class="content_img"
+            />
+            <div class="content_txt">
+              <div class="flex_item">
+                <p class="category">Hot item</p>
+                <h2 class="title">
+                  인기 상품을<br />
+                  확인해 보세요
+                </h2>
+                <p class="content_text">
+                  가장 HOT한 중고거래 물품을<br />
+                  판다 마켓에서 확인해 보세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="content">
+        <div class="content_inner">
+          <div class="content_box">
+            <div class="content_txt">
+              <div class="flex_item right">
+                <p class="category">Search</p>
+                <h2 class="title">
+                  구매를 원하는<br />
+                  상품을 검색하세요
+                </h2>
+                <p class="content_text">
+                  구매하고 싶은 물품은 검색해서<br />
+                  쉽게 찾아 보세요
+                </p>
+              </div>
+            </div>
+            <img
+              src="image/content2_Search_img.png"
+              alt=""
+              class="content_img"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="content">
+        <div class="content_inner">
+          <div class="content_box">
+            <img
+              src="image/content3_Register_img.png"
+              alt=""
+              class="content_img"
+            />
+            <div class="content_txt">
+              <div class="flex_item">
+                <p class="category">Register</p>
+                <h2 class="title">
+                  판매를 원하는<br />
+                  상품을 등록하세요
+                </h2>
+                <p class="content_text">
+                  어떤 물건이든 판매하고 싶은 상품을<br />
+                  쉽게 등록하세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="bottom_divider"></div>
+      <section class="bottom_visual">
+        <div class="bt_visual inner">
+          <div class="bt_txt">
+            <h2 class="title">
+              믿을 수 있는<br />
+              판다마켓 중고 거래
+            </h2>
+          </div>
           <img
-            src="image/content1_Hot_item_img.png"
-            alt=""
-            class="content_img"
+            src="image/panda_bottom_img.png"
+            alt="판다마켓 서브 이미지"
+            class="bottom_img"
           />
-          <div class="content_txt">
-            <div class="flex_item">
-              <p class="category">Hot item</p>
-              <h1 class="content_title">
-                인기 상품을<br />
-                확인해 보세요
-              </h1>
-              <p class="content_text">
-                가장 HOT한 중고거래 물품을<br />
-                판다 마켓에서 확인해 보세요
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-    <section class="content">
-      <div class="content_inner">
-        <div class="content_box">
-          <div class="content_txt">
-            <div class="flex_item right">
-              <p class="category">Search</p>
-              <h1 class="content_title">
-                구매를 원하는<br />
-                상품을 검색하세요
-              </h1>
-              <p class="content_text">
-                구매하고 싶은 물품은 검색해서<br />
-                쉽게 찾아 보세요
-              </p>
-            </div>
-          </div>
-          <img src="image/content2_Search_img.png" alt="" class="content_img" />
-        </div>
-      </div>
-    </section>
-    <section class="content">
-      <div class="content_inner">
-        <div class="content_box">
-          <img
-            src="image/content3_Register_img.png"
-            alt=""
-            class="content_img"
-          />
-          <div class="content_txt">
-            <div class="flex_item">
-              <p class="category">Register</p>
-              <h1 class="content_title">
-                판매를 원하는<br />
-                상품을 등록하세요
-              </h1>
-              <p class="content_text">
-                어떤 물건이든 판매하고 싶은 상품을<br />
-                쉽게 등록하세요
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="next_zoon"></section>
-    <section id="bottom_visual">
-      <div class="bt_visual inner">
-        <div class="bt_txt">
-          <h1 class="bottom_title">
-            믿을 수 있는<br />
-            판다마켓 중고 거래
-          </h1>
-        </div>
-        <img
-          src="image/panda_bottom_img.png"
-          alt="판다마켓 서브 이미지"
-          class="bottom_img"
-        />
-      </div>
-    </section>
+      </section>
     </main>
-    
-    <footer id="end_footer">
+
+    <footer class="end_footer">
       <div class="footer_list inner">
         <div class="copy">
-          <p class="copyright">
-            &copy;codeit - 2024
-          </p>
+          <p class="copyright">&copy;codeit - 2024</p>
         </div>
         <div class="page_move">
-          <a class="footer_a" href="/privacy">
-            Privacy Policy</a>
+          <a class="footer_a" href="/privacy"> Privacy Policy</a>
           <a class="footer_a" href="faq">FAQ</a>
         </div>
-        <div class="icon_list">
+        <ul class="icon_list">
+          <li>
           <a href="https://www.facebook.com/" target="_blank">
-            <img src="icon/ic_facebook.png" alt="페이스북" class="icon">
+            <img src="icon/ic_facebook.svg" alt="페이스북" class="icon" />
           </a>
+          </li>
+          <li>
           <a href="https://x.com/" target="_blank">
-            <img src="icon/ic_twitter.png" alt="트위터" class="icon">
+            <img src="icon/ic_twitter.svg" alt="트위터" class="icon" />
           </a>
+          </li>
+          <li>
           <a href="https://www.youtube.com/" target="_blank">
-            <img src="icon/ic_youtube.png" alt="유튜브" class="icon">
+            <img src="icon/ic_youtube.svg" alt="유튜브" class="icon" />
           </a>
+          </li>
+          <li>
           <a href="https://www.instagram.com/" target="_blank">
-            <img src="icon/ic_instagram.png" alt="인스타" class="icon">
+            <img src="icon/ic_instagram.svg" alt="인스타" class="icon" />
           </a>
-        </div>
-
+          </li>
+        </ul>
       </div>
     </footer>
   </body>
