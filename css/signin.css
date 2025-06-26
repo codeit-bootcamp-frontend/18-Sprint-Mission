@@ -77,11 +77,11 @@
 }
 
 .signin-social-content {
-  display: flex;  /* ← flex로 수정 */
-  align-items: center;  /* ← align-content 대신 align-items */
-  justify-content: space-between;  /* ← space-between 대신 center가 더 자연스러움 */
+  display: flex;  
+  align-items: center;  
+  justify-content: space-between;  
   width: 640px;
-  gap: 20px;  /* ← 간격 추가 */
+  gap: 20px;  
   border-radius: 8px;
   background-color: #E6F2FF;
   padding: 15px 20px;
@@ -95,4 +95,66 @@
 .signin-social-icon {
   display: flex;
   gap: 16px;
+}
+
+@media (max-width: 767px) {
+  .signin-main-container {
+    width: 100%;
+    max-width: calc(400px + 32px); 
+    margin: 0 auto;
+    padding: 20px 16px; 
+    box-sizing: border-box; 
+    gap: clamp(20px, 5vw, 40px);
+  }
+
+  .signin-login-title-img {
+    width: clamp(250px, 70vw, 396px);
+    height: auto;
+  }
+
+  .signin-form-content {
+    width: 100%;
+    height: auto;
+    gap: clamp(16px, 4vw, 24px);
+  }
+
+  .signin-input-content {
+    width: 100%;
+    min-width: 350px;
+    height: clamp(48px, 12vw, 56px);
+    font-size: clamp(14px, 4vw, 16px);
+    border: 1px solid #F3F4F6;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .signin-button-content {
+    width: 100%;
+    max-width: 350px;
+    min-width: 280px;
+    height: clamp(48px, 12vw, 56px);
+    font-size: clamp(16px, 4vw, 20px);
+    box-sizing: border-box;
+  }
+
+  .signin-social-content {
+    width: 100%;
+    max-width: 350px;
+    min-width: 280px;
+    padding: clamp(12px, 3vw, 15px) clamp(16px, 4vw, 20px);
+    gap: clamp(12px, 3vw, 20px);
+    box-sizing: border-box; 
+  }
+
+  .signin-social-content p {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  .signin-social-icon {
+    gap: clamp(12px, 3vw, 16px);
+  }
+
+  .signin-footer-content {
+    font-size: clamp(12px, 3vw, 14px);
+  }
 }
