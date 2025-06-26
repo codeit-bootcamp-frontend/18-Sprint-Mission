@@ -26,6 +26,7 @@ header, #container, footer, .wrap {
   height: 70px;
   background-color: #ffffff;
   position: fixed;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .header-bar {
