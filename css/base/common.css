@@ -150,6 +150,10 @@
   gap: 0 12px;
 }
 
+.footer .sns-list a{
+  display: block;
+}
+
 .footer .sns-list .ico {
   display: block;
   width: 20px;
