@@ -183,6 +183,47 @@
   line-height: 32px;
 }
 
+@media (max-width: 1440px) {
+  .responsive-image {
+    width: 540px;
+    
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .section-explaination {
+    font-size: 20px;
+  }
+
+  .home-section {
+    height: 600px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .responsive-image {
+      width: 500px;
+      
+    }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-explaination {
+    font-size: 18px;
+  }
+
+  .home-section {
+    height: 520px;
+    
+  }
+
+}
+
 .bottom-banner {
   background-color: #CFE5FF;
   min-width: 1920px;
