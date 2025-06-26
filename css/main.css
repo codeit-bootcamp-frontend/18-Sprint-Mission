@@ -1,8 +1,4 @@
 /* main */
-body {
-  font-family: "Pretendard", sans-serif;
-}
-
 header, #container, footer, .wrap {
   width: 100%;
 }
