@@ -140,7 +140,7 @@ const activeBtn = () => {
         joinBtn.classList.add('btn_active');
       } else {
         joinBtn.setAttribute('type', 'button');
-        joinBtn.classList.add('btn_active');
+        joinBtn.classList.remove('btn_active');
       }
       break;
   }
