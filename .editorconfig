@@ -1,0 +1,22 @@
+# EditorConfig helps maintain consistent coding styles
+# Place this file at the root of your project
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+# Markdown 파일은 줄 끝 공백 유지 (예: 줄바꿈 강조)
+trim_trailing_whitespace = false
+
+[*.html]
+max_line_length = off
+
+[*.css]
+max_line_length = off
