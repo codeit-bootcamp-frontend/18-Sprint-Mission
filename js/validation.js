@@ -102,19 +102,19 @@ const validationCheck = (input) => {
   switch (input.id) {
     case 'email':
       result = emailRegex.test(input.value);
-      emailValidate = result ? true : false;
+      emailValidate = result;
       break;
     case 'pw':
       result = pwRegex.test(input.value);
-      pwCheckValidate = result ? true : false;
+      pwCheckValidate = result;
       break;
     case 'pw_check':
       result = pwInput.value === input.value;
-      pwCheckValidate = result ? true : false;
+      pwCheckValidate = result;
       break;
     case 'nickname':
       result = input.value !== '';
-      nicknameValidate = result ? true : false;
+      nicknameValidate = result;
       break;
     default:
       result = false;
