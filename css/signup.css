@@ -39,9 +39,9 @@
   width: 640px;
   height: 56px;
   border-radius: 12px;
-  border: 1px solid #F3F4F6;
+  border: 1px solid var(--input);
   padding: 0 16px;
-  background-color: #F3F4F6;
+  background-color: var(--input);
 }
 
 .signup-nickname-content, 
@@ -111,4 +111,65 @@
 .signup-social-icon {
   display: flex;
   gap: 16px;
+}
+
+
+@media (max-width: 767px) {
+  .signup-main-container {
+    width: 100%;
+    max-width: calc(400px + 32px); 
+    margin: 0 auto;
+    padding: 20px 16px; 
+    gap: clamp(20px, 5vw, 40px);
+    box-sizing: border-box; 
+  }
+
+  .signup-main-title-img {
+    width: clamp(250px, 70vw, 396px);
+    height: auto;
+  }
+
+  .signup-form-content {
+    width: 100%;
+    height: auto;
+    gap: clamp(16px, 4vw, 24px);
+  }
+
+  .signup-input-content {
+    width: 100%;
+    min-width: 350px;
+    height: clamp(48px, 12vw, 56px);
+    font-size: clamp(14px, 2vw, 16px);
+    border: 1px solid #F3F4F6;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .signup-button-content {
+    width: 100%;
+    min-width: 350px;
+    height: clamp(48px, 12vw, 56px);
+    font-size: clamp(16px, 4vw, 20px);
+    box-sizing: border-box;
+  }
+
+  .signup-social-content {
+    width: 100%;
+    min-width: 350px;
+    padding: clamp(12px, 3vw, 15px) clamp(16px, 4vw, 20px);
+    gap: clamp(12px, 3vw, 20px);
+    box-sizing: border-box; 
+  }
+
+  .signup-social-content p {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  .signup-social-icon {
+    gap: clamp(12px, 3vw, 16px);
+  }
+
+  .signup-footer-content {
+    font-size: clamp(12px, 3vw, 14px);
+  }
 }

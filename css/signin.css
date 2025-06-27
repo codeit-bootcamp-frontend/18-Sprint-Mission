@@ -40,9 +40,9 @@
   width: 640px;
   height: 56px;
   border-radius: 12px;
-  border: 1px solid #F3F4F6;
+  border: 1px solid var(--input);
   padding: 0 16px;
-  background-color: #F3F4F6;
+  background-color: var(--input);
 }
 
 .signin-username-content, .signin-password-content
