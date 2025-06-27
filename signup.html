@@ -22,6 +22,12 @@
               </div>
             </div>
             <div class="input-group">
+              <label class="input-label" for="nickName">닉네임</label>
+              <div class="input-box">
+                <input id="nickName" type="email" required />
+              </div>
+            </div>
+            <div class="input-group">
               <label class="input-label" for="password">비밀번호</label>
               <div class="input-box">
                 <input id="password" type="password" required />
@@ -31,9 +37,21 @@
                 </label>
               </div>
             </div>
-            <a class="button full-button large-button" href="#n">로그인</a>
+            <div class="input-group">
+              <label class="input-label" for="passwordCheck"
+                >비밀번호 확인</label
+              >
+              <div class="input-box">
+                <input id="password" type="passwordCheck" required />
+                <label class="show-toggle-btn">
+                  <input class="checkbox" type="checkbox" checked />
+                  <span class="check-label"></span>
+                </label>
+              </div>
+            </div>
+            <a class="button full-button large-button" href="#n">회원가입</a>
             <dl class="right-link-wrap">
-              <dt>간편 로그인하기</dt>
+              <dt>간편 가입하기</dt>
               <dd>
                 <a
                   class="link-button"
@@ -55,9 +73,9 @@
             </dl>
           </fieldset>
           <dl class="flex-center">
-            <dt>판다마켓이 처음이신가요?</dt>
+            <dt>이미 회이신가요?</dt>
             <dd>
-              <a class="link-text" href="/signup.html"> 회원가입 </a>
+              <a class="link-text" href="/login.html"> 로그인 </a>
             </dd>
           </dl>
         </form>
