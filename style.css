@@ -1,12 +1,18 @@
 body{
     margin:0;    
 }
+*{
+    font-family: Pretendard;
+}
 a{
     text-decoration: none;
     color:inherit;
 }
 a:hover{
     cursor: pointer;
+}
+#logo{
+    font-family: 'ROKAF Sans';
 }
 
 header{
@@ -104,6 +110,8 @@ header{
     font-weight: 800;
     line-height: 26px;
     flex-shrink: 1;
+    font-family: 'Abhaya Libre ExtraBold';
+    color:#3691ff;
 }
 .txtmsg{
     margin-bottom: 24px;
