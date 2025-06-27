@@ -43,18 +43,18 @@ let nicknameValidate = false;
  */
 const addErrTag = (box, msg) => {
   if (!box.hasAttribute('name')) {
-    const paragraphTag = document.createElement('p');
+    const errMsgTag = document.createElement('p');
     box.setAttribute('name', 'err');
-    paragraphTag.setAttribute('id', box.id + '_err');
-    paragraphTag.append(msg);
-    paragraphTag.style.color = '#ff0000';
-    paragraphTag.style.marginTop = 0;
-    box.appendChild(paragraphTag);
+    errMsgTag.setAttribute('id', box.id + '_err');
+    errMsgTag.classList.add('err_msg');
+    errMsgTag.append(msg);
+    box.appendChild(errMsgTag);
   }
 };
 
 /**
- * 에러 메시지를 제거한다.
+ * 입력창별로 표시된 에러를 제거한다.
+ * @param {document.getElementById} box
  */
 const removeErrTag = (box) => {
   box.removeAttribute('name');
@@ -68,7 +68,7 @@ const removeErrTag = (box) => {
  * @param {document.getElementById} inputBox
  */
 const setErrBorder = (inputBox) => {
-  inputBox.style.border = '1px solid #ff0000';
+  inputBox.classList.add('err_border');
 };
 
 /**
@@ -76,7 +76,7 @@ const setErrBorder = (inputBox) => {
  * @param {document.getElementById} inputBox
  */
 const removeErrBorder = (inputBox) => {
-  inputBox.style.border = 'none';
+  inputBox.classList.remove('err_border');
 };
 
 /**
@@ -123,12 +123,10 @@ const activeBtn = () => {
     case 2:
       if (validationCheck(emailInput) && validationCheck(pwInput)) {
         loginBtn.removeAttribute('type');
-        loginBtn.style.backgroundColor = '#3692ff';
-        loginBtn.style.cursor = 'pointer';
+        loginBtn.classList.add('btn_active');
       } else {
         loginBtn.setAttribute('type', 'button');
-        loginBtn.style.backgroundColor = '#9ca3af';
-        loginBtn.style.cursor = 'default';
+        loginBtn.classList.remove('btn_active');
       }
       break;
     case 4:
@@ -139,12 +137,10 @@ const activeBtn = () => {
         validationCheck(nicknameInput)
       ) {
         joinBtn.removeAttribute('type');
-        joinBtn.style.backgroundColor = '#3692ff';
-        joinBtn.style.cursor = 'pointer';
+        joinBtn.classList.add('btn_active');
       } else {
         joinBtn.setAttribute('type', 'button');
-        joinBtn.style.backgroundColor = '#9ca3af';
-        joinBtn.style.cursor = 'default';
+        joinBtn.classList.add('btn_active');
       }
       break;
   }

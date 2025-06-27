@@ -64,6 +64,11 @@ button {
   font-weight: 600;
 }
 
+.btn_active {
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -140,6 +145,16 @@ button {
 
 .link_join a {
   color: var(--blue);
+}
+
+/* 에러 스타일 */
+.err_border {
+  border: 1px solid #ff0000;
+}
+
+.err_msg {
+  color: #ff0000;
+  margin-top: 0px;
 }
 
 /* mobile */
