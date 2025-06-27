@@ -98,11 +98,15 @@
 }
 
 @media (max-width: 767px) {
+  body {
+    padding: 0 16px;
+  }
+
   .signin-main-container {
     width: 100%;
     max-width: calc(400px + 32px); 
     margin: 0 auto;
-    padding: 20px 16px; 
+    padding: 20px 0;
     box-sizing: border-box; 
     gap: clamp(20px, 5vw, 40px);
   }

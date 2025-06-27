@@ -115,11 +115,15 @@
 
 
 @media (max-width: 767px) {
+  body {
+    padding: 0 16px;
+  }
+
   .signup-main-container {
     width: 100%;
-    max-width: calc(400px + 32px); 
+    max-width: 350px;
     margin: 0 auto;
-    padding: 20px 16px; 
+    padding: 20px 0; 
     gap: clamp(20px, 5vw, 40px);
     box-sizing: border-box; 
   }
@@ -137,7 +141,7 @@
 
   .signup-input-content {
     width: 100%;
-    min-width: 350px;
+    min-width: 343px;
     height: clamp(48px, 12vw, 56px);
     font-size: clamp(14px, 2vw, 16px);
     border: 1px solid #F3F4F6;
@@ -147,7 +151,7 @@
 
   .signup-button-content {
     width: 100%;
-    min-width: 350px;
+    min-width: 343px;
     height: clamp(48px, 12vw, 56px);
     font-size: clamp(16px, 4vw, 20px);
     box-sizing: border-box;
@@ -155,8 +159,8 @@
 
   .signup-social-content {
     width: 100%;
-    min-width: 350px;
-    padding: clamp(12px, 3vw, 15px) clamp(16px, 4vw, 20px);
+    min-width: 343px;
+    padding: clamp(12px, 3vw, 1px) clamp(16px, 4vw, 20px);
     gap: clamp(12px, 3vw, 20px);
     box-sizing: border-box; 
   }
