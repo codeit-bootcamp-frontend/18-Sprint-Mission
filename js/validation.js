@@ -171,6 +171,7 @@ const checkInput = (inputTag, box, valdationErrMsg, emptyErrMsg) => {
     } else {
       removeErrTag(box);
       addErrTag(box, valdationErrMsg);
+      setErrBorder(inputTag);
     }
   } else {
     setErrBorder(inputTag);
