@@ -29,12 +29,22 @@ const loginBtn = document.getElementById('login_btn');
 const joinBtn = document.getElementById('join_btn');
 
 /**
- * 버튼 활성화를 위한 flag
+ * 비밀번호, 비밀번호 확인 눈 아이콘
+ */
+const pwEyes = document.getElementById('eyes');
+const pwCheckEyes = document.getElementById('_eyes');
+const EYESOFFIMG = 'url(../images/icons/eyes_off.png)';
+const EYESONIMG = 'url(../images/icons/eyes_on.png)';
+
+/**
+ * flags
  */
 let emailValidate = false;
 let pwValidate = false;
 let pwCheckValidate = false;
 let nicknameValidate = false;
+let pwEyesOn = false;
+let pwCheckEyesOn = false;
 
 /**
  * 에러 메시지 출력을 위한 p 태그와 내용을 추가한다.
@@ -169,7 +179,36 @@ const checkInput = (inputTag, box, valdationErrMsg, emptyErrMsg) => {
 };
 
 /**
- * 이메일 입력창이 focus out 될 때 값을 검사한다.
+ * 눈모양 아이콘 클릭시 비밀번호 표시 타입과 이미지를 변경한다.
+ * @param {document.getElementById} eyes
+ */
+const showPw = (eyes) => {
+  switch (eyes.id) {
+    case pwEyes.id:
+      if (pwEyesOn) {
+        eyes.style.background = EYESONIMG;
+        pwInput.setAttribute('type', 'text');
+      } else {
+        eyes.style.background = EYESOFFIMG;
+        pwInput.setAttribute('type', 'password');
+      }
+      break;
+    case pwCheckEyes.id:
+      if (pwCheckEyesOn) {
+        eyes.style.background = EYESONIMG;
+        pwCheckInput.setAttribute('type', 'text');
+      } else {
+        eyes.style.background = EYESOFFIMG;
+        pwCheckInput.setAttribute('type', 'password');
+      }
+      break;
+    default:
+      break;
+  }
+};
+
+/**
+ * 이메일 입력칸이 focus out 될 때 값을 이벤트.
  */
 emailInput.addEventListener('blur', () => {
   checkInput(
@@ -182,7 +221,7 @@ emailInput.addEventListener('blur', () => {
 emailInput.addEventListener('input', activeBtn);
 
 /**
- * 비밀번호 입력창이 focus out 될 때 값을 검사한다.
+ * 비밀번호 입력칸이 focus out 될 때 값을 이벤트.
  */
 pwInput.addEventListener('blur', () => {
   checkInput(
@@ -195,7 +234,15 @@ pwInput.addEventListener('blur', () => {
 pwInput.addEventListener('input', activeBtn);
 
 /**
- * 비밀번호 확인 입력창이 focus out 될 때 값을 검사한다.
+ * 비밀번호 입력칸 눈모양 아이콘 클릭시 이벤트
+ */
+pwEyes.addEventListener('click', () => {
+  pwEyesOn = !pwEyesOn;
+  showPw(pwEyes);
+});
+
+/**
+ * 비밀번호 확인 입력칸이 focus out 될 때 이벤트.
  */
 pwCheckInput.addEventListener('blur', () => {
   checkInput(
@@ -208,7 +255,15 @@ pwCheckInput.addEventListener('blur', () => {
 pwCheckInput.addEventListener('input', activeBtn);
 
 /**
- * 닉네임 입력창이 focus out 될 때 값을 검사한다.
+ * 비밀번호 확인 입력칸 눈모양 아이콘 클릭시 이벤트
+ */
+pwCheckEyes.addEventListener('click', () => {
+  pwCheckEyesOn = !pwCheckEyesOn;
+  showPw(pwCheckEyes);
+});
+
+/**
+ * 닉네임 입력칸이 focus out 될 때 이벤트.
  */
 nicknameInput.addEventListener('blur', () => {
   checkInput(

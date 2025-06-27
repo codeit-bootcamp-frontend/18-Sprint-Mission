@@ -113,9 +113,14 @@ button {
 }
 
 .eyes {
+  background-image: url(../images/icons/eyes_off.png);
+  width: 25px;
+  height: 20px;
+  background-repeat: no-repeat;
   position: absolute;
-  top: 30px;
+  top: 26px;
   right: 15px;
+  cursor: pointer;
 }
 
 .social_login_container {
