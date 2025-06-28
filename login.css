@@ -158,3 +158,38 @@ main {
   font-size: 14px;
   color: var(--blue);
 }
+
+/* mobile responsive */
+@media screen and (max-width: 767px) {
+  main {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header a {
+    gap: 16px;
+  }
+
+  .header img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .header span {
+    font-size: 45px;
+  }
+
+  .input {
+    gap: 8px;
+  }
+
+  .input label {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .button-primary {
+    height: 56px;
+  }
+}
