@@ -36,9 +36,14 @@ h2, p {
 a {
   text-decoration: none;
 }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 
-/* common */
+/* common style class */
 .heading {
   font-size: 4rem;
   font-weight: 700;

@@ -101,17 +101,17 @@ footer .content {
 .links a {
   color: var(--color-secondary-200);
 }
-.links, .social {
+.links, .footer-social > ul {
   display: flex;
   align-items: center;
 }
 .links {
   gap: 3rem;
 }
-.social {
+.footer-social > ul {
   gap: 1.2rem;
 }
-.social a {
+.footer-social a {
   width: 2rem;
   height: 2rem;
 }
