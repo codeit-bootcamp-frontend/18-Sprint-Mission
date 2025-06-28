@@ -1,0 +1,39 @@
+:root {
+  /* 폰트 */
+  --title: 4rem;
+  --common: 1.6rem;
+  --description: 2.4rem;
+  --large: 2rem;
+  --medium: 1.8rem;
+  --small: 1.4rem;
+
+
+  /* 컬러 */
+  --blue100: #3692ff;
+  --blue200: #1967d6;
+  --blue300: #1251aa;
+  --blue400: #cfe5ff;
+  --blue500: #e6f2ff;
+
+  --white100: #fff;
+  --white200: #fcfcfc;
+
+  --gray900: #111827;
+  --gray800: #1F2937;
+  --gray700: #374151;
+  --gray600: #4B5563;
+  --gray500: #6B7280;
+  --gray400: #9CA3AF;
+  --gray200: #E5E7EB;
+  --gray100: #F3F4F6;
+  --gray50: #F9FAFB;
+}
+
+
+/* 타블렛 */
+@media all and (max-width:74.9375rem) {
+  :root {}
+}
+
+/* 모바일 */
+@media all and (max-width:47.9375rem) {}
