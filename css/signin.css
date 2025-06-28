@@ -5,12 +5,18 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
 .signin-main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   margin: 0 auto;
   max-width: 640px;
   gap: 40px;
@@ -40,16 +46,26 @@
   width: 640px;
   height: 56px;
   border-radius: 12px;
-  border: 1px solid var(--input);
+  border: 1px solid var(--white-240);
   padding: 0 16px;
-  background-color: var(--input);
+  background-color: var(--white-240);
 }
 
 .signin-username-content, .signin-password-content
 {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap:16px;
+}
+
+.visibility-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .signin-button-content {
@@ -59,10 +75,18 @@
   border: none; 
   font-size: 20px;
   font-weight: 600;
-  background-color: #9CA3AF;
-  color: var(--white);
+  background-color: var(--blue);
+  color: var(--white-240);
   cursor: pointer;
 }
+
+.signin-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
 
 .signin-footer-content {
   display: flex;
@@ -72,7 +96,7 @@
 }
 
 .signin-footer-content a {
-  color: #3692FF;
+  color: var(--blue);
   text-decoration: underline;
 }
 
@@ -83,7 +107,7 @@
   width: 640px;
   gap: 20px;  
   border-radius: 8px;
-  background-color: #E6F2FF;
+  background-color: var(--white-230);
   padding: 15px 20px;
 }
 
@@ -99,14 +123,14 @@
 
 @media (max-width: 767px) {
   body {
-    padding: 0 16px;
+    padding: 0;
   }
 
   .signin-main-container {
     width: 100%;
     max-width: calc(400px + 32px); 
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 16px;
     box-sizing: border-box; 
     gap: clamp(20px, 5vw, 40px);
   }
@@ -127,7 +151,7 @@
     min-width: 350px;
     height: clamp(48px, 12vw, 56px);
     font-size: clamp(14px, 4vw, 16px);
-    border: 1px solid #F3F4F6;
+    border: 1px solid var(--white-240);
     outline: none;
     box-sizing: border-box;
   }
@@ -158,7 +182,14 @@
     gap: clamp(12px, 3vw, 16px);
   }
 
+  .signin-footer {
+    padding: 20px 16px;
+  }
+
   .signin-footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: clamp(12px, 3vw, 14px);
   }
 }

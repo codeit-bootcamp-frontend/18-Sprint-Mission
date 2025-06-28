@@ -1,5 +1,7 @@
 * {
-  --white: #ffffff;
+  --white-250: #ffffff;
+  --white-240: #F3F4F6;
+  --white-230: #E6F2FF;
   --black: #111322;
-  --input: #F3F4F6;
+  --blue: #3692FF;
 }
