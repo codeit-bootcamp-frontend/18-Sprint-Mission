@@ -1,3 +1,16 @@
+:root {
+    --gray900: #111827;
+    --gray800: #1F2937;
+    --gray700: #374151;
+    --gray600: #4B5563;
+    --gray500: #6B7280;
+    --gray400: #9CA3AF;
+    --gray200: #E5E7EB;
+    --gray100: #F3F4F6;
+    --gray50: #F9FAFB;
+    --blue: #3692FF;
+}
+
 body {
     width: 100%;
     background-color: #CFE5FF;
@@ -21,7 +34,7 @@ a, button {
 }
 
 .loginbutton {
-    background: #3692FF;
+    background: var(--blue);
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -52,7 +65,7 @@ h1 .content, .small_description {
 }
 
 .moreviewbutton {
-    background: #3692FF;
+    background: var(--blue);
     color: #ffffff;
     border: none;
     border-radius: 30px;
@@ -90,7 +103,7 @@ h1 .content, .small_description {
 }
 
 .small {
-    color: #3692FF;
+    color: var(--blue);
     margin: 0;
     font-size: 12px;
     font-weight: 500;
@@ -105,7 +118,7 @@ h1 .content, .small_description {
 }
 
 .footer {
-    background: #000000;
+    background: var(--gray900);
     color: #ffffff;
     display: flex;
     justify-content: space-evenly;
