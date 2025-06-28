@@ -271,9 +271,6 @@
     order: 2;
     padding-right: 0;
   }
-  .main .intro-content.reverse .feature > * {
-    text-align: left;
-  }
   .main .banner-box {
     height: max(540px, 100vw);
     background-size: 100% auto;
