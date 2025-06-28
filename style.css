@@ -10,7 +10,7 @@ section .content {
 img {
   width: 100%;
 }
-h2 {
+.heading {
   margin-bottom: 2.4rem;
 }
 .bg-blue {
@@ -53,6 +53,9 @@ nav > a, #logo {
   margin: 0 10rem;
   flex-direction: row-reverse;
   gap: .7rem;
+}
+.hero .cover {
+  display: flex;
 }
 button.cta {
   margin-top: .8rem;

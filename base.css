@@ -30,18 +30,22 @@ html {
 body {
   margin: 0 auto;
 }
-h2 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0;
-}
-p {
-  font-size: 2.4rem;
-  font-weight: 500;
+h2, p {
   margin: 0;
 }
 a {
   text-decoration: none;
+}
+
+
+/* common */
+.heading {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.paragraph {
+  font-size: 2.4rem;
+  font-weight: 500;
 }
 
 
