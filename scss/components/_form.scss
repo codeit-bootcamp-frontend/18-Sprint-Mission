@@ -1,0 +1,112 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.form {
+  &-wrapper {
+    @include flexColumn;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+  &-label {
+    display: block;
+    margin-bottom: 8px;
+    @include fontStyle(map-get($font, txt-2lg));
+    font-weight: 700;
+  }
+  &-input {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: $coolGray100;
+    @include fontStyle(map-get($font, txt-lg));
+    &::placeholder {
+      color: $gray400;
+    }
+    &:focus {
+      box-shadow: inset 0 0 0 1px $primary100;
+    }
+    &.error {
+      box-shadow: inset 0 0 0 1px $error;
+      &-msg {
+        padding: 8px 16px 0;
+        @include fontStyle(map-get($font, txt-md));
+        font-weight: 600;
+      }
+    }
+    &-wrapper {
+      position: relative;
+      & .password-toggle {
+        @include positionEx($yValue: 24, $center: true, $centerDir: right);
+        & .ic {
+          background-color: $coolGray600;
+        }
+      }
+    }
+  }
+}
+.sns-sign-in {
+  @include flexRow;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: #e6f2ff;
+  & .txt-lg {
+    font-weight: 500;
+  }
+  & .btn-group {
+    gap: 16px;
+  }
+}
+.auth {
+  &-switch {
+    @include fontStyle(map-get($font, txt-md));
+    font-weight: 500;
+    text-align: center;
+    &-link {
+      color: $primary100;
+      text-decoration: underline;
+    }
+  }
+}
+@include breakpoint(375) {
+  .form {
+    &-wrapper {
+      gap: convertPxToVw(24);
+    }
+    &-label {
+      margin-bottom: convertPxToVw(8);
+      @include responsiveFontStyle(map-get($font, txt-2lg), true);
+    }
+    &-input {
+      padding: convertPxToVw(16) convertPxToVw(24);
+      border-radius: convertPxToVw(12);
+      @include responsiveFontStyle(map-get($font, txt-lg), true);
+      &.error {
+        &-msg {
+          padding: convertPxToVw(8) convertPxToVw(16) 0;
+          @include responsiveFontStyle(map-get($font, txt-md), true);
+        }
+      }
+      &-wrapper {
+        & .password-toggle {
+          right: convertPxToVw(24);
+        }
+      }
+    }
+  }
+  .sns-sign-in {
+    padding: convertPxToVw(16) convertPxToVw(24);
+    border-radius: convertPxToVw(8);
+    & .btn-group {
+      gap: convertPxToVw(16);
+    }
+  }
+  .auth {
+    &-switch {
+      @include responsiveFontStyle(map-get($font, txt-md), true);
+    }
+  }
+}

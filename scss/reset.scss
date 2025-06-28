@@ -1,0 +1,126 @@
+@charset "utf-8";
+@use "utils/variables" as *;
+
+// CSS 변수 생성
+:root {
+  @each $colorKey, $colorCode in $root {
+    --#{$colorKey}: #{$colorCode};
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+  background: transparent;
+  outline: transparent;
+  cursor: pointer;
+  -webkit-highlight: none;
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+img {
+  vertical-align: top;
+}
+button {
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  line-height: inherit;
+  cursor: pointer;
+  -webkit-highlight: none;
+  -webkit-tap-highlight-color: transparent;
+}
+small {
+  font-size: smaller;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: top;
+  font-size: 100%;
+  border-radius: 0;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+/* ie input스타일 */
+input::-ms-check {
+  display: none;
+}
+select::-ms-expand {
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+  cursor: pointer;
+}
+input[type="radio"] {
+  display: none;
+  cursor: pointer;
+}
+hr {
+  width: 100%;
+  height: 1px;
+  background: $gray100;
+}

@@ -1,0 +1,81 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+/***** button ******/
+.btn {
+  display: inline-flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-weight: 600;
+  &.round {
+    border-radius: 40px;
+  }
+  &-in-icon {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 4px;
+  }
+  &-group {
+    @include flexbox(flex, nowrap);
+    align-items: center;
+    gap: 8px;
+  }
+  &.full {
+    width: 100%;
+  }
+  &.bg {
+    @include buttonStyle(bg, $primary100, $coolGray100);
+    &:hover {
+      background-color: $primary200;
+    }
+    &:active {
+      background-color: $primary300;
+    }
+  }
+  &.bd {
+    @include buttonStyle(bd, $primary100, $primary100);
+  }
+  &:disabled {
+    box-shadow: none;
+    background-color: $gray400;
+    color: $gray100;
+    pointer-events: none;
+  }
+  @each $sizeName, $size in $buttonSize {
+    &-#{$sizeName} {
+      @include fontStyle(map-get($font, #{nth($size, 2)}), false);
+      padding: #{insertUnit(nth($size, 1))};
+    }
+  }
+}
+@include breakpoint(768) {
+  @each $sizeName, $size in $buttonSize {
+    .btn-#{$sizeName} {
+      @include responsiveFontStyle(nth(map-get($font, #{nth($size, 2)}), 1));
+    }
+  }
+}
+@include breakpoint(375) {
+  .btn {
+    border-radius: convertPxToVw(8);
+    &.round {
+      border-radius: convertPxToVw(40);
+    }
+    &-in-icon {
+      gap: convertPxToVw(4);
+    }
+    &-group {
+      gap: convertPxToVw(8);
+    }
+    @each $sizeName, $size in $buttonSize {
+      &-#{$sizeName} {
+        @include responsiveFontStyle(nth(map-get($font, #{nth($size, 2)}), 1), true);
+        padding: #{convertPxToVw(nth($size, 1))};
+      }
+    }
+  }
+}

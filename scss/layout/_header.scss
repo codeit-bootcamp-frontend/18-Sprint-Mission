@@ -1,0 +1,53 @@
+@charset "utf-8";
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+.header {
+  @include positionEx(fixed);
+  width: 100%;
+  padding: 9.5px 40px;
+  background-color: $white;
+  & .flex-row {
+    justify-content: space-between;
+    align-items: center;
+  }
+  & .logo {
+    & img {
+      height: 51px;
+      &:last-of-type {
+        display: none;
+      }
+    }
+  }
+  & .user-access {
+    & .btn {
+      width: 128px;
+    }
+  }
+}
+@include breakpoint(744) {
+  .header {
+    padding: 9.5px 0;
+  }
+}
+@include breakpoint(375) {
+  .header {
+    padding: convertPxToVw(9.5) 0;
+    & .logo {
+      & img {
+        height: convertPxToVw(51);
+        &:first-of-type {
+          display: none;
+        }
+        &:last-of-type {
+          display: block;
+        }
+      }
+    }
+    & .user-access {
+      & .btn {
+        width: convertPxToVw(128);
+      }
+    }
+  }
+}
