@@ -75,6 +75,10 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  color: #374151;
 }
 
 h1 {
@@ -130,7 +134,7 @@ footer {
   color: var(--gray-200);
 }
 
-#socialMedia {
+.socialMedia {
   display: flex;
   gap: 12px;
 }
