@@ -14,40 +14,66 @@
         </div>
 
         <!-- id(email), nickname, pw -->
-        <form action="">
+        <form id="form" action="">
           <div class="input_container">
-            <div class="email_box">
-              <p>이메일</p>
-              <input class="email" type="text" />
+            <div id="email_box" class="email_box">
+              <label for="email" class="basic_p">이메일</label>
+              <input
+                id="email"
+                class="input_box email"
+                name="email"
+                type="email"
+                placeholder="이메일을 입력해주세요"
+                required
+              />
             </div>
-            <div class="nickname_box">
-              <p>닉네임</p>
-              <input class="email" type="text" />
+            <div id="nickname_box" class="nickname_box">
+              <label for="nickname" class="basic_p">닉네임</label>
+              <input
+                id="nickname"
+                class="input_box nickname"
+                type="text"
+                placeholder="닉네임을 입력해주세요"
+              />
             </div>
-            <p>비밀번호</p>
-            <div class="pw_box">
-              <input class="pw" type="password" />
-              <img
+            <label for="pw" class="basic_p pw_label">비밀번호</label>
+            <div id="pw_box" class="pw_box">
+              <input
+                id="pw"
+                class="input_box pw"
+                name="pw"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <!-- <img
                 class="eyes"
                 src="images/icons/eyes_off.png"
                 alt=""
                 width="20px"
                 height="18px"
-              />
+              /> -->
+              <div id="eyes" class="eyes"></div>
             </div>
-            <p>비밀번호 확인</p>
-            <div class="pw_box">
-              <input class="pw" type="password" />
-              <img
+            <label for="pw_check" class="basic_p pw_label">비밀번호 확인</label>
+            <div id="pw_check_box" class="pw_box">
+              <input
+                id="pw_check"
+                class="input_box pw pw_check"
+                name="pw_check"
+                type="password"
+                placeholder="비밀번호를 다시 한 번 입력해주세요"
+              />
+              <!-- <img
                 class="eyes"
                 src="images/icons/eyes_off.png"
                 alt=""
                 width="20px"
                 height="18px"
-              />
+              /> -->
+              <div id="_eyes" class="eyes"></div>
             </div>
           </div>
-          <button>회원가입</button>
+          <button id="join_btn" class="join_btn" type="button">회원가입</button>
         </form>
 
         <!--  소셜 로그인 -->
@@ -77,5 +103,6 @@
         </p>
       </div>
     </main>
+    <script src="js/validation.js"></script>
   </body>
 </html>
