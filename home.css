@@ -69,3 +69,64 @@
   letter-spacing: 0.08em;
   margin-top: 24px;
 }
+
+/* mobile responsive */
+@media screen and (max-width: 767px) {
+  .feature {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero {
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .banner .pill-button {
+    margin-top: 0;
+  }
+
+  .features {
+    padding-bottom: 40px;
+  }
+
+  .feature {
+    padding: 40px 0;
+  }
+
+  .feature-content h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+  }
+
+  .feature-tag {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .feature-description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.08em;
+    margin-top: 16px;
+  }
+
+  .bottomBanner {
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .bottomBanner .wrapper {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 121px;
+  }
+}
