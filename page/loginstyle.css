@@ -1,0 +1,112 @@
+body {
+    width: 100%;
+    background-color: #ffffff;
+    font-family: 'Noto Sans KR', AppleGothic, 돋움, sans-serif;
+    margin: 0 auto;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0 30px;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+label {
+    font-weight: 500;
+}
+
+#user-email, #user-password, #user-name, #check-password {
+    background: #f3f4f6;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 500px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+input::placeholder {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.emailinput {
+    margin-bottom: 10px;
+}
+
+.passwordinput {
+    position: relative;
+}
+
+.viewoff {
+    position: absolute;
+    left: 490px;
+    bottom: 27px;
+}
+
+.view {
+    position: absolute;
+    right: 480px;
+    bottom: 182px;
+}
+
+.loginbutton, .signupbutton {
+    background: #3692FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    width: 550px;
+    height: 50px;
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.simplelogin {
+    background: #CFE5FF;
+    border: none;
+    border-radius: 10px;
+    width: 520px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 445px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.sociallogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.sociallogin li {
+    padding: 5px;
+}
+
+.footer {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin: 20px 20px 100px;
+}
+
+.footer a {
+    color: #3692FF;
+}
