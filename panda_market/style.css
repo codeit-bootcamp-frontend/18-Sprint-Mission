@@ -6,6 +6,9 @@
 body {
     margin: 0px;
 }
+body a {
+    text-decoration: none;
+}
 body a.func-btn {
     color: #ffffff;
     background-color: #3692FF;
@@ -189,13 +192,13 @@ body a.func-btn:active {
     color: #9CA3AF;
     margin-top: 32.5px;
 }
-.main-footer span a {
+.main-footer span .favi {
     display: inline-flex;
 }
-.main-footer span a:not(:last-child) {
+.main-footer span .favi:not(:last-child) {
   margin-right: 12px;
 }
-.main-footer span > span {
+.main-footer .left-top a:last-child {
     margin-left: 30px;
 }
 
