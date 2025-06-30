@@ -48,7 +48,7 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; 
+  z-index: var(--z-index-high); 
   background-color: var(--white); 
   display: flex;
   align-items: center;

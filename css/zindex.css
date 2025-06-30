@@ -1,0 +1,5 @@
+:root {
+  --z-index-low: 10;
+  --z-index-medium: 50;
+  --z-index-high: 100;
+}
