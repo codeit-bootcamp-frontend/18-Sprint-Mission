@@ -80,7 +80,7 @@ section .content {
 .tag {
   display: block;
   margin-bottom: 1.2rem;
-  color: var(--color-primary-100);
+  color: var(--color-blue-100);
   font-size: 1.8rem;
   font-weight: 800;
 }
@@ -88,7 +88,7 @@ section .content {
 
 footer {
   height: 16rem;
-  background: var(--color-secondary-900);
+  background: var(--color-gray-900);
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -97,10 +97,10 @@ footer .content {
   justify-content: space-between;
 }
 .copyright {
-  color: var(--color-secondary-400);
+  color: var(--color-gray-400);
 }
 .links a {
-  color: var(--color-secondary-200);
+  color: var(--color-gray-200);
 }
 .links, .footer-social > ul {
   display: flex;
