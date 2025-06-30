@@ -46,9 +46,9 @@ body {
   width: 640px;
   height: 56px;
   border-radius: 12px;
-  border: 1px solid var(--white-240);
+  border: 1px solid var(--gray-100);
   padding: 0 16px;
-  background-color: var(--white-240);
+  background-color: var(--gray-100);
 }
 
 .signin-username-content, .signin-password-content
@@ -76,7 +76,7 @@ body {
   font-size: 20px;
   font-weight: 600;
   background-color: var(--blue);
-  color: var(--white-240);
+  color: var(--gray-100);
   cursor: pointer;
 }
 
@@ -107,7 +107,7 @@ body {
   width: 640px;
   gap: 20px;  
   border-radius: 8px;
-  background-color: var(--white-230);
+  background-color: var(--gray-250);
   padding: 15px 20px;
 }
 
@@ -151,7 +151,7 @@ body {
     min-width: 350px;
     height: clamp(48px, 12vw, 56px);
     font-size: clamp(14px, 4vw, 16px);
-    border: 1px solid var(--white-240);
+    border: 1px solid var(--gray-100);
     outline: none;
     box-sizing: border-box;
   }
