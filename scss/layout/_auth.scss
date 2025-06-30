@@ -19,3 +19,23 @@ main[class*="sign-"] {
   @include flexColumn;
   justify-content: center;
 }
+@include breakpoint(744) {
+  main[class*="sign-"] {
+    & .logo {
+      & img {
+        width: min(396px, convertPxToVw(396, 744));
+      }
+    }
+  }
+}
+@include breakpoint(375) {
+  main[class*="sign-"] {
+    padding: convertPxToVw(24) 0;
+    & .logo {
+      margin-bottom: convertPxToVw(24);
+      & img {
+        width: convertPxToVw(198);
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@
   padding: 0 40px;
 }
 
-a.logo {
+.logo {
   display: block;
 }
 
@@ -271,9 +271,6 @@ a.logo {
     order: 2;
     padding-right: 0;
   }
-  .main .intro-content.reverse .feature > * {
-    text-align: left;
-  }
   .main .banner-box {
     height: max(540px, 100vw);
     background-size: 100% auto;
@@ -338,4 +335,21 @@ main[class*=sign-] .logo img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+@media all and (max-width: 744px) {
+  main[class*=sign-] .logo img {
+    width: min(396px, 53.226vw);
+  }
+}
+@media all and (max-width: 375px) {
+  main[class*=sign-] {
+    padding: 6.4vw 0;
+  }
+  main[class*=sign-] .logo {
+    margin-bottom: 6.4vw;
+  }
+  main[class*=sign-] .logo img {
+    width: 52.8vw;
+  }
 }
