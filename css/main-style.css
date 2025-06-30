@@ -64,6 +64,10 @@ header {
   background-color: #3692ff;
 }
 
+.main-top > .container {
+  align-items: flex-start;
+}
+
 .container {
   max-width: 1920px;
   display: flex;
@@ -76,6 +80,7 @@ header {
   background-color: #fcfcfc;
   margin: 10% auto;
   border-radius: 12px;
+  gap: 25px;
 }
 
 .main-core-title {
@@ -89,8 +94,8 @@ header {
   width: 100%;
 }
 
-.main-txt {
-  margin-left: 5%;
+.text-right {
+  text-align: right;
 }
 
 .main-point {
