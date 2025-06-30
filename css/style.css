@@ -23,7 +23,7 @@ header {
   height: 70px;
 }
 
-nav {
+.navi {
   padding: 12px;
   display: flex;
   justify-content: space-between;
