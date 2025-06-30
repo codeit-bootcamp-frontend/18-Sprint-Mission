@@ -1,17 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  word-break: keep-all;
-  font-family: Pretendard, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 body {
   margin: 0;
   background-color: #ffffff;

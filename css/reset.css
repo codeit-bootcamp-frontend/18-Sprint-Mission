@@ -2,6 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+* {
+  box-sizing: border-box;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -27,6 +30,14 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
+}
+html {
+  word-break: keep-all;
+  font-family: Pretendard, sans-serif;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 body {
 	line-height: 1;
