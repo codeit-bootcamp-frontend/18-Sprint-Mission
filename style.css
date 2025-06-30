@@ -38,27 +38,27 @@ nav {
 }
 
 .logo {
-  font-family: 'ROKAF Sans';
+  font-family: "ROKAF Sans";
   font-weight: 700;
   font-size: 26px;
-  color: #3692FF;
+  color: #3692ff;
 }
 
 .login {
-  padding:12px 23px;
+  padding: 12px 23px;
   width: 128px;
   height: 48px;
   font-size: 16px;
   line-height: 26px;
   text-align: center;
   border-radius: 8px;
-  color: #F3F4F6;
-  background-color: #3692FF;
+  color: #f3f4f6;
+  background-color: #3692ff;
 }
 
 .colored {
-  background-color: #CFE5FF;
-  width:100%;
+  background-color: #cfe5ff;
+  width: 100%;
   height: 540px;
   display: flex;
   align-items: flex-end;
@@ -75,13 +75,12 @@ nav {
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
-  color: #F9FAFB;
-  background-color: #3692FF;
+  color: #f9fafb;
+  background-color: #3692ff;
 }
 
-
 .container {
-  max-width:1920px;
+  max-width: 1920px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,14 +88,14 @@ nav {
 
 .main-middle > .container {
   width: 50%;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   margin: 10% auto;
   border-radius: 12px;
 }
 
 .main-core-title {
   font-size: 40px;
-  color:#374151;
+  color: #374151;
   font-weight: 700;
   line-height: 140%;
 }
@@ -112,21 +111,21 @@ nav {
 .main-point {
   font-size: 18px;
   font-weight: 800;
-  color:#3692FF;
+  color: #3692ff;
   line-height: 26px;
 }
 
 .main-title {
   font-size: 40px;
   font-weight: 700;
-  color:#374151;
+  color: #374151;
   line-height: 140%;
 }
 
 .main-describe {
   font-size: 24px;
   font-weight: 500;
-  color:#374151;
+  color: #374151;
   line-height: 32px;
 }
 
@@ -137,14 +136,13 @@ footer {
 footer .footer-list {
   width: 100%;
   padding: 20px 40px 40px;
-  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.footer-list > li {
-  color:#9CA3AF;
+.copyright {
+  color: #9ca3af;
 }
 
 .list-policy > a {
@@ -152,25 +150,33 @@ footer .footer-list {
   margin: 0 20px;
 }
 
-.list-sns > a:not(:last-child){
+.list-sns {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.list-sns > a:not(:last-child) {
   margin-right: 10px;
 }
 
-@media(max-width:1919px) {
+@media (max-width: 1919px) {
   header .navi {
     margin: 0 200px;
   }
-  
+
   .main-point {
     font-size: 12px;
   }
-  
+
   .main-title {
     font-size: 32px;
   }
-  
+
   .main-describe {
     font-size: 18px;
   }
-
 }
