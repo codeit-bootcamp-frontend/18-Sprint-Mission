@@ -29,7 +29,7 @@ a {
 
 a:visited,
 a:link {
-  color: #E5E7EB;
+  color: var(--gray-200);
 }
 
 ul {
@@ -49,7 +49,7 @@ ul {
   left: 0;
   right: 0;
   z-index: 1000; 
-  background-color: var(--white-250); 
+  background-color: var(--white); 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -110,7 +110,7 @@ ul {
   font-size: clamp(2.4rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 140%;
-  color: #1F2937;
+  color: var(--gray-800);
   margin: 0;
 }
 
@@ -199,14 +199,14 @@ ul {
   font-size: clamp(2.4rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 140%;
-  color: #374151;
+  color: var(--gray-700);
 }
 
 .section-1-text-3, .section-2-text-3, .section-3-text-3 {
   font-size: clamp(1.6rem, 2vw, 2.4rem);
   font-weight: 500;
   line-height: clamp(2.2rem, 3vw, 3.2rem);
-  color: #374151;
+  color: var(--gray-700);
 }
 
 
@@ -217,7 +217,7 @@ ul {
 
 
 .footer-section {
-  background-color: #111827;
+  background-color: var(--gray-900);
   width: 100%;
   height: clamp(100px, 15vw, 160px);
 }
@@ -233,11 +233,11 @@ ul {
 }
 
 .text-gray-400 {
-  color: #9CA3AF;
+  color: var(--gray-400);
 }
 
 .menu {
-  color: #E5E7EB;
+  color: var(--gray-200);
   display: flex;
   gap: clamp(1rem, 3vw, 3rem);
 }
@@ -245,7 +245,7 @@ ul {
 .social {
   display: flex;
   gap: clamp(0.6rem, 2vw, 1.2rem);
-  fill: #9CA3AF;
+  fill: var(--gray-400);
 }
 
 .social svg {
