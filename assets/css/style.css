@@ -90,13 +90,6 @@ a {
   color: #fff;
 }
 
-/* 1920px 반응형 */
-@media (max-width: 1920px) {
-  .panda_main_header .header_main {
-    padding: 0 200px;
-  }
-}
-
 /* main */
 .panda_main .main_top_bg {
   width: 100%;
@@ -118,6 +111,7 @@ a {
   font-weight: 700;
   padding-bottom: 32px;
   line-height: 140%;
+  width: 330px;
 }
 .panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a {
   background-color: var(--primary-100);
@@ -147,8 +141,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 23.5px;
-  gap: 55px;
 }
 .main_card_section .main_card_bg:nth-of-type(2) .main_card {
   flex-direction: row-reverse;
@@ -160,7 +152,7 @@ a {
   width: 579px;
 }
 .main_card_section .main_card_bg .main_card .main_card_right {
-  width: 298px;
+  width: 360px;
 }
 .main_card_section .main_card_bg .main_card .main_card_right .tag {
   color: var(--primary-100);
@@ -173,6 +165,14 @@ a {
   font-weight: 700;
   line-height: 140%;
   letter-spacing: 2%;
+  padding: 12px 0 24px;
+  color: var(--gray-700);
+  display: none;
+}
+.main_card_section .main_card_bg .main_card .main_card_right .br-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 140%;
   padding: 12px 0 24px;
   color: var(--gray-700);
 }
@@ -239,4 +239,219 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Tablet 반응형 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* header */
+  .panda_main_header .header_main {
+    padding: 0 24px;
+  }
+
+  /* main */
+  .panda_main .main_top_bg {
+    padding-top: 84px;
+    margin-bottom: 24px;
+  }
+  .panda_main .main_top_bg .main_top {
+    flex-direction: column;
+    width: 744px;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text {
+    padding: 0;
+  }
+  .panda_main .main_top_bg .main_top img {
+    padding-top: 211px;
+    width: 744px;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_text h1 {
+    width: 100%;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn {
+    text-align: center;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a {
+    padding: 12px 124px;
+  }
+
+  /* main card */
+  .main_card_section {
+    padding-bottom: 56px;
+  }
+  .main_card_section .main_card_bg {
+    padding: 0;
+  }
+  .main_card_section .main_card_bg .main_card {
+    flex-direction: column;
+    background: none;
+    width: 744px;
+    gap: 24px;
+  }
+  .main_card_section .main_card_bg:nth-of-type(2) {
+    padding: 52px 0;
+  }
+  .main_card_section .main_card_bg:nth-of-type(2) .main_card {
+    flex-direction: column;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_left img {
+    width: 696px;
+  }
+  .main_card_section .main_card_bg:nth-of-type(2) .main_card .main_card_right {
+    text-align: right;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right {
+    width: 696px;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right .title {
+    font-size: 3.2rem;
+    display: block;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right .br-title {
+    font-size: 3.2rem;
+    display: none;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right .text {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
+
+  /* main bottom */
+  .main_bottom_bg {
+    padding-top: 201px;
+  }
+  .main_bottom_bg .main_bottom {
+    width: 744px;
+    flex-direction: column;
+  }
+  .main_bottom_bg .main_bottom .main_bottom_text {
+    height: 112px;
+  }
+  .main_bottom_bg .main_bottom .main_bottom_text h1 {
+    text-align: center;
+  }
+  .main_bottom_bg .main_bottom img {
+    padding-top: 217px;
+  }
+
+  /* footer */
+  .panda_main_footer .footer_main {
+    width: 536px;
+  }
+}
+
+/* Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+  /* header */
+  .panda_main_header .header_main {
+    padding: 0 16px;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text {
+    padding: 0;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a {
+    font-size: 1.8rem;
+  }
+
+  /* main */
+  .panda_main .main_top_bg {
+    padding-top: 48px;
+    margin-bottom: 52px;
+  }
+  .panda_main .main_top_bg .main_top {
+    flex-direction: column;
+    width: 375px;
+  }
+  .panda_main .main_top_bg .main_top img {
+    padding-top: 132px;
+    width: 375px;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_text h1 {
+    width: 240px;
+    font-size: 3.2rem;
+    text-align: center;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn {
+    text-align: center;
+  }
+  .panda_main .main_top_bg .main_top .main_top_text .main_top_text_btn a {
+    padding: 8px 66px;
+  }
+
+  /* main card */
+  .main_card_section {
+    padding-bottom: 83px;
+  }
+  .main_card_section .main_card_bg {
+    padding: 0;
+  }
+  .main_card_section .main_card_bg .main_card {
+    flex-direction: column;
+    background: none;
+    width: 375px;
+  }
+  .main_card_section .main_card_bg:nth-of-type(2) {
+    padding: 40px 0;
+  }
+  .main_card_section .main_card_bg:nth-of-type(2) .main_card {
+    flex-direction: column;
+  }
+  .main_card_section .main_card_bg .main_card {
+    gap: 24px;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_left img {
+    width: 344px;
+  }
+  .main_card_section .main_card_bg:nth-of-type(2) .main_card .main_card_right {
+    text-align: right;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right {
+    width: 344px;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right .title {
+    font-size: 2.4rem;
+    padding: 8px 0 16px;
+    display: block;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right .br-title {
+    font-size: 2.4rem;
+    padding: 8px 0 16px;
+    display: none;
+  }
+  .main_card_section .main_card_bg .main_card .main_card_right .text {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+
+  /* main bottom */
+  .main_bottom_bg {
+    padding-top: 121px;
+  }
+  .main_bottom_bg .main_bottom {
+    width: 375px;
+    flex-direction: column;
+  }
+  .main_bottom_bg .main_bottom .main_bottom_text {
+    height: 112px;
+  }
+  .main_bottom_bg .main_bottom .main_bottom_text h1 {
+    text-align: center;
+  }
+  .main_bottom_bg .main_bottom img {
+    padding-top: 131px;
+    width: 375px;
+  }
+
+  /* footer */
+  .panda_main_footer {
+    padding: 32px 0 30px;
+  }
+  .panda_main_footer .footer_main {
+    width: 311px;
+    height: 98px;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  .panda_main_footer .footer_main .company {
+    order: 3;
+  }
 }

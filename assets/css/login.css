@@ -5,9 +5,11 @@
 }
 
 /* login header */
+.panda_login_wrap .panda_login_header{
+  margin-bottom: 40px;
+}
 .panda_login_wrap .panda_login_header img {
   width: 396px;
-  padding-bottom: 40px;
 }
 
 /* login main form */
@@ -118,4 +120,37 @@
 /* signup page*/
 .panda_login_wrap .panda_login_main form .panda_password_check::before {
   background-image: url("../images/login_page/btn_password_on.svg");
+}
+
+
+/* Tablet 반응형*/
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* pc와 동일 */
+}
+
+
+/* Mobile 반응형*/
+@media (min-width: 375px) and (max-width: 767px){
+  .panda_login_wrap{
+    width: 100%;
+    max-width: 400px;
+    padding: 100px 16px 0;
+  }
+  /* header */
+  .panda_login_wrap .panda_login_header{
+    margin-bottom: 24px;
+  }
+  .panda_login_wrap .panda_login_header img{
+    width: 198px;
+  }
+
+  /* input */
+  .panda_login_wrap .panda_login_main form label{
+    font-size: 1.4rem;
+  }
+
+
+  .panda_login_wrap .panda_login_main form .btn_large{
+    width: 100%;
+  }
 }
