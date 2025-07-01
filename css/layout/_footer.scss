@@ -1,0 +1,31 @@
+/* _footer.scss */
+@use '../abstracts/mixins' as mix;
+.footer{
+    @include mix.text-style('lg');
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-200);
+    padding:32px 0 108px;
+    .copyright{color: var(--color-gray-400);}
+    .inner{
+        @include mix.flex-cb;
+    }
+    .co-list{
+        display: flex;
+        gap: 0 30px;
+    }
+    .sns-list{
+        display: flex;
+        gap: 0 12px;
+        .ico{
+            display: block;
+            @include mix.el-size(20px);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            &--facebook{background-image:url(/img/ico/ico_facebook.svg);}
+            &--x{background-image:url(/img/ico/ico_twitter.svg);}
+            &--youtube{background-image:url(/img/ico/ico_youtube.svg);}
+            &--instagram{background-image:url(/img/ico/ico_instagram.svg);}
+        }
+    }
+}
