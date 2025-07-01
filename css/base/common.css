@@ -140,7 +140,7 @@
   justify-content: space-between;
 }
 
-.footer .info-list {
+.footer .co-list {
   display: flex;
   gap: 0 30px;
 }
