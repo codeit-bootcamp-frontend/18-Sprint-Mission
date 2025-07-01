@@ -29,20 +29,20 @@ body {
   height: 132px;
 }
 
-.signup-form-content{
+.signup-form-content {
   display: flex;
   flex-direction: column;
   max-width: 640px;
-  gap:24px;
+  gap: 24px;
 }
 
-.signup-label-content{
+.signup-label-content {
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
 }
 
-.signup-input-content{  
+.signup-input-content {
   width: 640px;
   height: 56px;
   border-radius: 12px;
@@ -51,13 +51,12 @@ body {
   background-color: var(--gray-100);
 }
 
-.signup-nickname-content, 
-.signup-password-content, 
-.signup-email-content
-{
+.signup-nickname-content,
+.signup-password-content,
+.signup-email-content {
   display: flex;
   flex-direction: column;
-  gap:16px;
+  gap: 16px;
   position: relative;
 }
 
@@ -70,7 +69,7 @@ body {
   height: 56px;
   border-radius: 40px;
   border: none;
-  margin-top: 16px; 
+  margin-top: 16px;
   font-size: 20px;
   font-weight: 600;
   background-color: var(--blue);
@@ -88,11 +87,11 @@ body {
 }
 
 .signup-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
 .signup-footer-content {
   display: flex;
@@ -107,11 +106,11 @@ body {
 }
 
 .signup-social-content {
-  display: flex;  /* ← flex로 수정 */
-  align-items: center;  /* ← align-content 대신 align-items */
-  justify-content: space-between;  /* ← space-between 대신 center가 더 자연스러움 */
+  display: flex; /* ← flex로 수정 */
+  align-items: center; /* ← align-content 대신 align-items */
+  justify-content: space-between; /* ← space-between 대신 center가 더 자연스러움 */
   width: 640px;
-  gap: 20px;  /* ← 간격 추가 */
+  gap: 20px; /* ← 간격 추가 */
   border-radius: 8px;
   background-color: var(--gray-250);
   padding: 15px 20px;
@@ -127,7 +126,6 @@ body {
   gap: 16px;
 }
 
-
 @media (max-width: 767px) {
   body {
     padding: 0 16px;
@@ -137,9 +135,9 @@ body {
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
-    padding: 20px 0; 
+    padding: 20px 0;
     gap: clamp(20px, 5vw, 40px);
-    box-sizing: border-box; 
+    box-sizing: border-box;
   }
 
   .signup-main-title-img {
@@ -176,7 +174,7 @@ body {
     min-width: 343px;
     padding: clamp(12px, 3vw, 1px) clamp(16px, 4vw, 20px);
     gap: clamp(12px, 3vw, 20px);
-    box-sizing: border-box; 
+    box-sizing: border-box;
   }
 
   .signup-social-content p {
