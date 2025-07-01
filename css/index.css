@@ -129,6 +129,10 @@ ul {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: #1967d6;
+}
+
 .hero-img {
   width: clamp(25rem, 50vw, 74.6rem); /* 250px ~ 746px */
   height: 34rem; /* 340px */
