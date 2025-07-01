@@ -19,6 +19,8 @@
   --main-bg-color: var(--main-white);
   --main-text-color: var(--color-gray-800);
   --color-error: var(--color-red);
+   /* resource */
+  --ico-logo: url(/img/logo.svg) no-repeat center/100%;
   /* typography(font size, line height) */
   --text-3xl-size: 2rem;
   --text-3xl-lh: 2.625rem;
