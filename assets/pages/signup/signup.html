@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓</title>
-    <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/login.css">
-    <link rel="shortcut icon" href="../../images/favicon/판다마켓_파비콘.png" type="image/x-icon">
-</head>
-<body>
+    <link rel="stylesheet" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/login.css" />
+    <link
+      rel="shortcut icon"
+      href="../../images/favicon/판다마켓_파비콘.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
     <div class="panda_login_wrap mg_center">
-        <header class="panda_login_header">
-            <a href="../../../index.html">
-                <img src="../../images/main_page/panda_logo.png" alt="판다마켓로고">
+      <header class="panda_login_header">
+        <a href="../../../index.html">
+          <img src="../../images/main_page/panda_logo.png" alt="판다마켓로고" />
+        </a>
+      </header>
+      <main class="panda_login_main">
+        <form action="/">
+          <div>
+            <label for="panda_id">이메일</label>
+            <input id="panda_id" class="panda_input" type="email" required placeholder="이메일을 입력해주세요."/>
+          </div>
+          <div>
+            <label for="panda_aka">닉네임</label>
+            <input id="panda_aka" class="panda_input" type="text" required placeholder="닉네임을 입력해주세요."/>
+          </div>
+          <div>
+            <label for="panda_password">비밀번호</label>
+            <div class="panda_pwd">
+              <input
+                id="panda_password"
+                class="panda_input"
+                type="password"
+                placeholder="비밀번호를 입력해주세요."
+                required
+              />
+            </div>
+          </div>
+          <div>
+            <label for="panda_password_check">비밀번호 확인</label>
+            <div class="panda_pwd panda_password_check">
+              <input
+                id="panda_password_check"
+                class="panda_input"
+                type="text"
+                placeholder="비밀번호를 다시 한 번 입력해주세요."
+                required
+              />
+            </div>
+          </div>
+          <a class="btn_large" href="../login/login.html">회원가입</a>
+        </form>
+        <section class="panda_login_easy">
+          <h1>간편 로그인하기</h1>
+          <div class="panda_login_easy_icon">
+            <a href="https://www.google.com/">
+              <img
+                src="../../images/login_page/login_google.svg"
+                alt="구글아이콘"
+              />
             </a>
-        </header>
-        <main class="panda_login_main">
-            <form action="/">
-                <div>
-                    <label for="panda_id">이메일</label>
-                    <input id="panda_id" class="panda_input" type="text" />
-                </div>
-                <div>
-                    <label for="panda_aka">닉네임</label>
-                    <input id="panda_aka" class="panda_input" type="text" />
-                </div>
-                <div>
-                    <label for="panda_password">비밀번호</label>
-                    <div class="panda_pwd">
-                        <input id="panda_password" class="panda_input " type="password" />
-                    </div>
-                </div>
-                <div>
-                    <label for="panda_password_check">비밀번호 확인</label>
-                    <div class="panda_pwd panda_password_check">
-                        <input id="panda_password_check" class="panda_input " type="text" />
-                    </div>
-                </div>
-                <a class="btn_large" href="../login/login.html">회원가입</a>
-            </form>
-            <section class="panda_login_easy">
-                <h1>
-                    간편 로그인하기
-                </h1>
-                <div class="panda_login_easy_icon">
-                    <a href="https://www.google.com/">
-                        <img src="../../images/login_page/login_google.svg" alt="구글아이콘">
-                    </a>
-                    <a href="https://www.kakaocorp.com/page/"><img src="../../images/login_page/login_kakao.svg" alt="카카오아이콘"></a>
-                </div>
-            </section>
-        </main>
-        <footer class="panda_login_footer">
-            <p>판다마켓이 처음이신가요?</p>
-            <a href="../login/login.html">로그인</a>
-        </footer>
+            <a href="https://www.kakaocorp.com/page/"
+              ><img
+                src="../../images/login_page/login_kakao.svg"
+                alt="카카오아이콘"
+            /></a>
+          </div>
+        </section>
+      </main>
+      <footer class="panda_login_footer">
+        <p>판다마켓이 처음이신가요?</p>
+        <a href="../login/login.html">로그인</a>
+      </footer>
     </div>
-</body>
+  </body>
 </html>
