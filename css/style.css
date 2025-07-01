@@ -1,9 +1,150 @@
 /**
  * @version 1.0
- * @date 2025-06-23
+ * @date 2025-07-02
  * @author Yeonsu Webpublisher
  * @link https://velog.io/@iamsuuya/posts
 **/
 @import './base/reset.css';
 @import './base/base.css';
 @import './base/common.css';
+
+/* auth */
+body[class*=sign-] .wrap {
+    padding: 60px 0;
+}
+
+/* sign-in/sign-out */
+body[class*=sign-] .wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body[class*=sign-] .inner {
+    max-width: 640px;
+    margin: 0 auto;
+    box-sizing: initial;
+}
+
+body[class*=sign-] .main {
+    display: grid;
+    gap: 24px 0;
+}
+
+body[class*=sign-] .sns-login {
+    background: #E6F2FF;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 16px 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body[class*=sign-] .sns-list {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+}
+
+body[class*=sign-] .sns-list .ico {
+    width: 42px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+body[class*=sign-] .sns-list a {
+    display: block;
+}
+
+body[class*=sign-] .sns-list .ico--google {
+    background-image: url(../img/ico/ico-google.svg);
+}
+
+body[class*=sign-] .sns-list .ico--kakao {
+    background-image: url(../img/ico/ico_kakao.svg);
+}
+
+body[class*=sign-] .auth-find {
+    font-weight: 500;
+    text-align: center;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-height);
+}
+
+body[class*=sign-] .auth-find .btn {
+    margin-left: 4px;
+}
+
+/*form*/
+.form {
+    display: grid;
+    gap: 24px 0;
+}
+
+.form .form__label {
+    display: block;
+    font-size: var(--text-2lg-size);
+    line-height: var(--text-2lg-height);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.form .form__input {
+    display: block;
+    width: 100%;
+    height: 56px;
+    background: var(--color-gray-100);
+    border-radius: 12px;
+    padding: 0 24px;
+    color: var(--color-gray-800);
+}
+
+.form .form__input::placeholder {
+    color: var(--color-gray-400);
+}
+
+.form .form__input:focus {
+    outline: 1px solid var(--color-primary-100);
+}
+
+.form .input--error {
+    outline: 1px solid var(--color-error);
+}
+
+.form .error-message {
+    color: var(--color-error);
+    margin-top: 8px;
+    padding: 0 16px;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-height);
+    font-weight: 600;
+}
+
+.form .password-input {
+    position: relative;
+}
+
+.form .password-input__toggle {
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    mask-image: url(../img/ico/ico-visibility-off.svg);
+    -webkit-mask-image: url(../img/ico/ico-visibility-off.svg);
+    background: var(--color-gray-600);
+}
+
+.form .password-input__toggle[aria-pressed="true"] {
+    mask-image: url(../img/ico/ico-visibility-on.svg);
+    -webkit-mask-image: url(../img/ico/ico-visibility-on.svg);
+}
+
+.form .btn--submit {
+    width: 100%;
+}

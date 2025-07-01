@@ -6,6 +6,10 @@ body {
   min-width: 745px;
 }
 
+.wrap {
+  padding-top: 70px;
+}
+
 .section {
   overflow: hidden;
   color: var(--color-gray-700);
@@ -17,7 +21,7 @@ body {
 
 .section__label {
   font-size: var(--text-2lg-size);
-  line-height: var(--text-2lg-lh);
+  line-height: var(--text-2lg-height);
   font-weight: 800;
   color: var(--color-primary-100);
 }
@@ -123,13 +127,15 @@ body {
   background-image: url(../img/main/img_home_bottom.svg);
 }
 
+
+/* [pc] media query */
 @media screen and (max-width: 1179px) {
-  .section-layout-1 {
-    padding:calc(138px * .81) 0;
+  html {
+    font-size: 13px;
   }
 
-  .section-layout-1 .inner {
-    padding:calc(138px * .81) 0;
+  .section-layout-1 {
+    padding: calc(138px * .81) 0;
   }
 
   .section-layout-1 .inner::before {

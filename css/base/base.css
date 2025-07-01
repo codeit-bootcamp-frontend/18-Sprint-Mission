@@ -44,6 +44,10 @@ a {
   display: inline-block;
 }
 
+input {
+  border: 0;
+}
+
 @font-face {
   font-family: 'Pretendard';
   font-weight: 400;
