@@ -80,7 +80,6 @@ ul {
   cursor: pointer;
 }
 
-/* Hero Section */
 .hero-background {
   width: 100%;
   height: clamp(40rem, 60vw, 54rem);
@@ -199,7 +198,7 @@ ul {
 .section-1-text-1,
 .section-2-text-1,
 .section-3-text-1 {
-  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  font-size: clamp(0.5rem, 1.5vw, 1rem);
   font-weight: 800;
   line-height: clamp(1.6rem, 3vw, 2.6rem);
   color: var(--blue);
@@ -208,7 +207,7 @@ ul {
 .section-1-text-2,
 .section-2-text-2,
 .section-3-text-2 {
-  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-size: clamp(1rem, 4vw, 2.3rem);
   font-weight: 700;
   line-height: 140%;
   color: var(--gray-700);
@@ -217,9 +216,8 @@ ul {
 .section-1-text-3,
 .section-2-text-3,
 .section-3-text-3 {
-  font-size: clamp(1.6rem, 2vw, 2.4rem);
-  font-weight: 500;
-  line-height: clamp(2.2rem, 3vw, 3.2rem);
+  font-size: clamp(0.5rem, 2vw, 1rem);
+  font-weight: 200;
   color: var(--gray-700);
 }
 
