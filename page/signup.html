@@ -11,7 +11,7 @@
         />
         <link rel="stylesheet" href="loginstyle.css" />
         <link rel="resetsheet" href="../reset.css">
-        <title>판다마켓 로그인</title>
+        <title>판다마켓 회원가입</title>
     </head>
     <body>
         <div class="header">
@@ -27,6 +27,12 @@
                 <div class="emailinput">
                     <input id="user-email" type="email" placeholder="codeit@email.com"/>
                 </div>
+                <label for="user-name">
+                    닉네임
+                </label>
+                <div class="usernameinput">
+                    <input id="user-name" placeholder="판다"/>
+                </div>
                 <label for="user-password">
                     비밀번호
                 </label>
@@ -36,9 +42,18 @@
                         <img class="viewoff" src="../img/password_viewoff.svg">
                     </div>
                 </div>
+                <label for="check-password">
+                    비밀번호 확인
+                </label>
+                <div class="checkpasswordinput">
+                    <input id="check-password" value="asdffff"/>
+                    <div>
+                        <img class="view" src="../img/password_view.svg">
+                    </div>
+                </div>
                 <div>
-                    <button class="loginbutton">
-                        로그인
+                    <button class="signupbutton">
+                        회원가입
                     </button>
                 </div>
             </form>
@@ -59,8 +74,7 @@
             </ul>
         </div>
         <div class="footer">
-            판다마켓이 처음이신가요? <a href="signup.html">회원가입</a>
+            이미 회원이신가요? <a href="login.html">로그인</a>
         </div>
     </body>
     </html>
-

@@ -1,3 +1,152 @@
+:root {
+    --gray900: #111827;
+    --gray800: #1F2937;
+    --gray700: #374151;
+    --gray600: #4B5563;
+    --gray500: #6B7280;
+    --gray400: #9CA3AF;
+    --gray200: #E5E7EB;
+    --gray100: #F3F4F6;
+    --gray50: #F9FAFB;
+    --blue: #3692FF;
+}
+
+body {
+    width: 100%;
+    background-color: #CFE5FF;
+    font-family: 'Noto Sans KR', AppleGothic, 돋움, sans-serif;
+    margin: 0 auto;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 1040px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 200px;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+.loginbutton {
+    background: var(--blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 32px;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+h1 .content, .small_description {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 0;
+}
+
+.trade {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.moreviewbutton {
+    background: var(--blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 80px;
+    margin: 18px;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.headerimg, .bottomimg {
+    display: flex;
+    flex-direction: columns;
+    justify-content: flex-end;
+}
+
+.container {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.content, .content_left {
+    padding: 40px;
+}
+
+.content_left {
+    text-align: right;
+}
+
+.content > .content_left {
+    text-align: right;  
+}
+
+.small {
+    color: var(--blue);
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 0;
+}
+
+.footer {
+    background: var(--gray900);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 12px;
+    padding: 20px 0 80px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+span {
+    margin: 20px;
+}
+
+.footer img {
+    margin-right: 8px;
+=======
 * {
     box-sizing: border-box;
 }
@@ -124,3 +273,4 @@ span {
 .footer img {
     margin-right: 8px;
 }
+  
