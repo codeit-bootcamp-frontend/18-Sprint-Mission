@@ -7,10 +7,7 @@ section .content {
 }
 
 
-img {
-  width: 100%;
-}
-h2 {
+.heading {
   margin-bottom: 2.4rem;
 }
 .bg-blue {
@@ -31,13 +28,17 @@ h2 {
 nav {
   width: 100%;
   height: 7rem;
-  border-bottom: 1px solid #dfdfdf;
 }
-nav.content {
+.gnb {
   padding: 1rem 20rem;
+  border-bottom: 1px solid #dfdfdf;
+  background-color: #ffffff;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-nav > a, #logo {
+.gnb > a, #logo {
   height: 100%;
 }
 
@@ -53,6 +54,9 @@ nav > a, #logo {
   margin: 0 10rem;
   flex-direction: row-reverse;
   gap: .7rem;
+}
+.hero .cover {
+  display: flex;
 }
 button.cta {
   margin-top: .8rem;
@@ -76,7 +80,7 @@ section .content {
 .tag {
   display: block;
   margin-bottom: 1.2rem;
-  color: var(--color-primary-100);
+  color: var(--color-blue-100);
   font-size: 1.8rem;
   font-weight: 800;
 }
@@ -84,7 +88,7 @@ section .content {
 
 footer {
   height: 16rem;
-  background: var(--color-secondary-900);
+  background: var(--color-gray-900);
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -93,22 +97,22 @@ footer .content {
   justify-content: space-between;
 }
 .copyright {
-  color: var(--color-secondary-400);
+  color: var(--color-gray-400);
 }
 .links a {
-  color: var(--color-secondary-200);
+  color: var(--color-gray-200);
 }
-.links, .social {
+.links, .footer-social > ul {
   display: flex;
   align-items: center;
 }
 .links {
   gap: 3rem;
 }
-.social {
+.footer-social > ul {
   gap: 1.2rem;
 }
-.social a {
+.footer-social a {
   width: 2rem;
   height: 2rem;
 }

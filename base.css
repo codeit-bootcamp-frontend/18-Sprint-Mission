@@ -1,18 +1,18 @@
 /* color */
 :root {
-  --color-primary-100: #3692FF;
-  --color-primary-200: #1967D6;
-  --color-primary-300: #1251AA;
+  --color-blue-100: #3692FF;
+  --color-blue-200: #1967D6;
+  --color-blue-300: #1251AA;
 
-  --color-secondary-50: #F9FAFB;
-  --color-secondary-100: #F3F4F6;
-  --color-secondary-200: #E5E7EB;
-  --color-secondary-400: #9CA3AF;
-  --color-secondary-500: #6B7280;
-  --color-secondary-600: #4B5563;
-  --color-secondary-700: #374151;
-  --color-secondary-800: #1F2937;
-  --color-secondary-900: #111827;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
 
   --color-error: #F74747;
 }
@@ -24,44 +24,57 @@
 html {
   font-size: 62.5%;
   font-family: 'Pretendard';
-  color: var(--color-secondary-700);
+  color: var(--color-gray-700);
   word-break: keep-all;
 }
 body {
   margin: 0 auto;
 }
-h2 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin: 0;
-}
-p {
-  font-size: 2.4rem;
-  font-weight: 500;
+h2, p {
   margin: 0;
 }
 a {
   text-decoration: none;
 }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* font style class */
+.f-heading {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.f-paragraph {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.f-regular {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
 
 
 /* buttons */
 button {
-  background: var(--color-primary-100);
-  color: var(--color-secondary-50);
+  background: var(--color-blue-100);
+  color: var(--color-gray-50);
   font-weight: 600;
   text-align: center;
   border: none;
 }
 button:hover {
-  background: var(--color-primary-200);
+  background: var(--color-blue-200);
   cursor: pointer;
 }
 button:active {
-  background: var(--color-primary-300);
+  background: var(--color-blue-300);
 }
 button.inactive {
-  background: var(--color-secondary-400);
+  background: var(--color-gray-400);
 }
 button.large {
   width: 100%;
@@ -74,4 +87,9 @@ button.small {
   height: 4.8rem;
   font-size: 1.6rem;
   border-radius: .8rem;
+}
+
+/* images */
+img {
+  width: 100%;
 }
