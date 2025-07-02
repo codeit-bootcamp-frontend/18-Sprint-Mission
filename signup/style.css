@@ -21,6 +21,10 @@ body {
   gap: 40px;
 }
 
+.logo-small {
+  display: none;
+}
+
 .signup-main {
   width: 100%;
   display: flex;
@@ -107,4 +111,38 @@ body {
 
 .signup > a {
   color: var(--blue-color);
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    margin: 80px 0;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .logo-large {
+    display: none;
+  }
+  .logo-small {
+    display: inline;
+  }
+
+  .signup-main {
+    gap: 16px;
+  }
+
+  .signup-input-field {
+    gap: 8px;
+  }
+  .signup-input-field > label {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .signup-social {
+    margin: 8px 0;
+  }
 }
