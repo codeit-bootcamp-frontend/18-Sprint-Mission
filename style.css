@@ -48,23 +48,23 @@ nav {
   align-items: center;
 }
 
-.landing-top {
+.landing {
   background-color: #CFE5FF;
   width: 100%;
   height: 540px;
 }
 
-.landing-top > .container {
+.landing > .container {
   display: flex;
   align-items: flex-end;
   height: 100%;
 }
 
-.landing-top-area {
+.landing-area {
   display: flex;
 }
 
-.landing-top-area-left{
+.landing-area-left{
   flex: 4;
   display: flex;
   flex-direction: column;
@@ -72,7 +72,7 @@ nav {
   gap: 32px;
 }
 
-.landing-top-area-right{
+.landing-area-right{
   flex: 8;
 }
 
