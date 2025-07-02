@@ -143,10 +143,7 @@ body {
   background-color: #fcfcfc;
   border-radius: 12px;
   overflow: hidden;
-}
-
-.landing-content-image {
-  width: 579px;
+  /* TODO: SNS에 랜딩 페이지 공유 시 미리보기 이미지 보이도록 구현 */
 }
 
 .landing-content-info {
