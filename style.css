@@ -32,6 +32,9 @@ body {
 .header-logo img {
   vertical-align: top;
 }
+.header-logo .logo-no-img {
+  display: none;
+}
 
 .login-button {
   padding: 11px 43px;
@@ -270,6 +273,13 @@ body {
 
 /* Mobile */
 @media (max-width: 767px) {
+  .header-logo .logo-img {
+    display: none;
+  }
+  .header-logo .logo-no-img {
+    display: inline;
+  }
+
   .page-header {
     padding: 0 16px;
   }
