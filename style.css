@@ -1,0 +1,40 @@
+body,html {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background-color: #3692FF;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn {
+  padding: 12px 23px;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  width: 128px;
+  height: 48px;
+}
+
+
+.container {
+  max-width: 1120px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 9px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
