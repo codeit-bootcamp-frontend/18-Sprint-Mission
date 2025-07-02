@@ -301,6 +301,19 @@ body {
     display: block;
   }
 
+  .landing-look-around {
+    width: 240px;
+    padding: 12px 0;
+  }
+  .landing-look-around > a {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .landing-title > h2 {
+    font-size: 32px;
+  }
+
   .landing-title {
     align-items: center;
     gap: 24px;
