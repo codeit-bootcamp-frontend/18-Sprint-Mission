@@ -136,17 +136,18 @@ body {
 .landing-content {
   margin: 0 auto;
   width: 988px;
-  display: grid;
-  grid-template-columns: 579px 1fr;
+  display: flex;
   background-color: #fcfcfc;
   border-radius: 12px;
   overflow: hidden;
 }
-.landing-content.reverse {
-  grid-template-columns: 1fr 579px;
+
+.landing-content-image {
+  width: 579px;
 }
 
 .landing-content-info {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -170,6 +171,11 @@ body {
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
+}
+
+.content-reverse {
+  flex-direction: row-reverse;
+  text-align: right;
 }
 
 /* Tablet */
@@ -201,10 +207,64 @@ body {
 
   .main-footer {
     padding: 201px 0 0;
+    margin-top: 32px;
   }
   .main-footer > .container {
     flex-direction: column;
     gap: 217px;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    padding: 24px;
+  }
+
+  .landing-section {
+    padding: 0;
+  }
+
+  .landing-content {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .landing-content-image {
+    width: 100%;
+  }
+  .landing-content-image img {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .landing-content-info {
+    align-items: flex-start;
+  }
+
+  .landing-content-label {
+    font-weight: 700;
+  }
+
+  .landing-content-title {
+    margin-top: 16px;
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .landing-content-title br {
+    display: none;
+  }
+
+  .landing-content-description {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .content-reverse {
+    align-items: flex-end;
+    text-align: right;
   }
 }
 
@@ -253,5 +313,22 @@ body {
   .main-footer > .container {
     flex-direction: column;
     gap: 131px;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 52px 16px;
+  }
+
+  .landing-content-title {
+    margin: 8px 0 16px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .landing-content-description {
+    font-size: 16px;
   }
 }
