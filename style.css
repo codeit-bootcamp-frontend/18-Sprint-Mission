@@ -169,3 +169,37 @@ body {
   font-weight: 500;
   line-height: 32px;
 }
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .page-header {
+    padding: 0 24px;
+  }
+
+  .page-footer {
+    padding: 32px 104px 108px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .page-header {
+    padding: 0 16px;
+  }
+
+  .page-footer {
+    padding: 32px 32px 30px;
+  }
+
+  .page-footer > .container {
+    position: relative;
+    height: 98px;
+    align-items: flex-start;
+  }
+
+  .footer-copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
