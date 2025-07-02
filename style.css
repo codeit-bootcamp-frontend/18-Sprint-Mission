@@ -237,6 +237,8 @@ body {
 
   .landing-content-image {
     width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
   }
   .landing-content-image img {
     display: inline-block;
