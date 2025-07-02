@@ -132,5 +132,44 @@ nav {
   color: #3692FF;
 }
 
+footer {
+  background-color: #111827;
+  height: 160px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 32px 0;
+}
+
+.footer-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left > p{
+  color: #9CA3AF;
+}
+
+.footer-center {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-center > a {
+  color: #E5E7EB;
+
+  text-decoration: none;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sns-links {
+  width: 20px;
+}
 
 /* 1390 px  */
