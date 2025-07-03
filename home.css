@@ -8,19 +8,19 @@
   background-size: 55%;
 }
 
-#hero {
+.hero {
   background-image: url("./source/Img_home_top.png");
 }
 
-#features {
+.features {
   padding-bottom: 138px;
 }
 
-#bottomBanner {
+.bottomBanner {
   background-image: url("./source/Img_home_bottom.png");
 }
 
-#loginLinkButton {
+.loginLinkButton {
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
@@ -38,12 +38,25 @@
   gap: 5%;
 }
 
+.feature img {
+  width: 50%;
+  object-fit: cover;
+}
+
 .feature:nth-child(2) {
   text-align: right;
 }
 
 .feature-content {
   flex: 1;
+}
+
+.feature-content h3 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #374151;
 }
 
 .feature-tag {
@@ -60,4 +73,111 @@
   line-height: 120%;
   letter-spacing: 0.08em;
   margin-top: 24px;
+}
+
+/* tablet responsive */
+@media screen and (max-width: 1199px) {
+  .feature {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 24px;
+  }
+
+  .feature-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .feature img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .feature-content {
+    width: 100%;
+  }
+
+  .feature-content br {
+    display: none;
+  }
+
+  .hero {
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .banner .pill-button {
+    margin-top: 0;
+  }
+
+  .features {
+    padding-bottom: 40px;
+  }
+
+  .feature-content h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .feature-tag {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .bottomBanner {
+    height: 927px;
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .bottomBanner .wrapper {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 217px;
+  }
+}
+
+/* mobile responsive */
+@media screen and (max-width: 767px) {
+  .feature-content h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+  }
+
+  .feature-tag {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .feature-description {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.08em;
+    margin-top: 16px;
+  }
+
+  .bottomBanner {
+    height: 540px;
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .bottomBanner .wrapper {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: 121px;
+  }
 }

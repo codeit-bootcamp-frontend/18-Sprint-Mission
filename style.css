@@ -75,6 +75,10 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  color: #374151;
 }
 
 h1 {
@@ -124,13 +128,119 @@ footer {
   font-size: 16px;
 }
 
-#footerPolicy {
+.footerPolicy {
   display: flex;
   gap: 30px;
   color: var(--gray-200);
 }
 
-#socialMedia {
+.socialMedia {
   display: flex;
   gap: 12px;
+}
+
+/* tablet responsive */
+@media screen and (max-width: 1199px) {
+  header {
+    width: 100%;
+    padding: 16px 8px;
+  }
+
+  .banner.hero {
+    height: 771px;
+  }
+
+  .banner.hero {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 84px;
+  }
+
+  .hero-wrapper br {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 32px 104px 64px 104px;
+    font-size: 16px;
+  }
+}
+
+/* mobile responsive */
+@media screen and (max-width: 767px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    padding: 32px 32px 64px 32px;
+    font-size: 16px;
+  }
+
+  header {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .hero-wrapper br {
+    display: flex;
+  }
+
+  .header-logo img {
+    display: none;
+  }
+
+  .banner.hero {
+    display: flex;
+    height: 540px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 48px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .wrapper h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+    text-align: center;
+  }
+
+  .pill-button {
+    width: 240px;
+    height: 48px;
+    border-radius: 40px;
+    padding: 12px 71px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
