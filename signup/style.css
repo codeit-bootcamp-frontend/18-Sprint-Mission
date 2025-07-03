@@ -21,6 +21,10 @@ body {
   gap: 40px;
 }
 
+.logo-small {
+  display: none;
+}
+
 .signup-main {
   width: 100%;
   display: flex;
@@ -64,16 +68,19 @@ body {
   flex-grow: 1;
 }
 
-.signup-button {
-  background-color: var(--blue-color);
+.button {
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
   padding: 12px 0;
-  border-radius: 40px;
   border: none;
-  color: var(--gray100-color);
   cursor: pointer;
+  border-radius: 40px;
+}
+
+.button-primary {
+  background-color: var(--blue-color);
+  color: var(--gray100-color);
 }
 
 .login-social {
@@ -104,4 +111,39 @@ body {
 
 .signup > a {
   color: var(--blue-color);
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 0 16px;
+    gap: 24px;
+  }
+
+  .logo-large {
+    display: none;
+  }
+  .logo-small {
+    display: inline;
+  }
+
+  .signup-main {
+    gap: 16px;
+  }
+
+  .signup-input-field {
+    gap: 8px;
+  }
+  .signup-input-field > label {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .signup-social {
+    margin: 8px 0;
+  }
 }

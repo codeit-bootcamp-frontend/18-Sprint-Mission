@@ -3,90 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="판다 마켓" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/og-image.png" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:url" content="https://ckim-codeit.netlify.app/" />
     <link rel="stylesheet" href="style.css" />
     <title>판다마켓</title>
   </head>
   <body>
-    <header class="landing-header horizontal-padding">
+    <header class="page-header">
       <div class="container">
         <h1 class="header-logo">
           <a href="/">
-            <img src="images/logo.png" alt="판다마켓 로고" width="153" />
+            <img
+              class="logo-img"
+              src="images/logo.png"
+              alt="판다마켓 로고"
+              width="153"
+            />
+            <img
+              class="logo-no-img"
+              src="images/logo-no-img.png"
+              alt="판다마켓 로고"
+              width="103"
+            />
           </a>
         </h1>
         <a class="login-button" href="login/">로그인</a>
       </div>
     </header>
     <main>
-      <div class="landing-introduce horizontal-padding">
+      <header class="main-header">
         <div class="container">
-          <div class="landing-introduce-title">
-            <h2>일상의 모든 물건을<br />거래해 보세요</h2>
+          <div class="landing-title">
+            <h2>일상의 모든 물건을 <br />거래해 보세요</h2>
             <div class="landing-look-around">
               <a href="items/">구경하러 가기</a>
             </div>
           </div>
-          <img src="images/introduce-1.png" width="746" />
+          <div class="landing-image"></div>
         </div>
+      </header>
+      <div class="main-content">
+        <section class="landing-section">
+          <div class="landing-content">
+            <div class="landing-content-image">
+              <img src="images/hot-item.png" alt="Hot Item" />
+            </div>
+            <div class="landing-content-info">
+              <div>
+                <span class="landing-content-label">Hot Item</span>
+                <h2 class="landing-content-title">
+                  인기 상품을 <br />확인해 보세요
+                </h2>
+                <p class="landing-content-description">
+                  가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="landing-section">
+          <div class="landing-content content-reverse">
+            <div class="landing-content-image">
+              <img src="images/search.png" alt="Search" />
+            </div>
+            <div class="landing-content-info">
+              <div>
+                <span class="landing-content-label">Search</span>
+                <h2 class="landing-content-title">
+                  구매를 원하는 <br />상품을 검색하세요
+                </h2>
+                <p class="landing-content-description">
+                  구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="landing-section">
+          <div class="landing-content">
+            <div class="landing-content-image">
+              <img src="images/register.png" alt="Register" />
+            </div>
+            <div class="landing-content-info">
+              <div>
+                <span class="landing-content-label">Register</span>
+                <h2 class="landing-content-title">
+                  판매를 원하는 <br />상품을 등록하세요
+                </h2>
+                <p class="landing-content-description">
+                  어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <section class="landing-section">
-        <div class="content">
-          <div class="content-image">
-            <img src="images/hot-item.png" alt="Hot Item" />
-          </div>
-          <div class="content-info">
-            <div>
-              <span class="landing-content-label">Hot Item</span>
-              <h2>인기 상품을<br />확인해 보세요</h2>
-              <p class="landing-content-description">
-                가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="landing-section">
-        <div class="content reverse">
-          <div class="content-info">
-            <div>
-              <span class="landing-content-label">Search</span>
-              <h2>구매를 원하는<br />상품을 검색하세요</h2>
-              <p class="landing-content-description">
-                구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
-              </p>
-            </div>
-          </div>
-          <div class="content-image">
-            <img src="images/search.png" alt="Search" />
-          </div>
-        </div>
-      </section>
-      <section class="landing-section">
-        <div class="content">
-          <div class="content-image">
-            <img src="images/register.png" alt="Register" />
-          </div>
-          <div class="content-info">
-            <div>
-              <span class="landing-content-label">Register</span>
-              <h2>판매를 원하는<br />상품을 등록하세요</h2>
-              <p class="landing-content-description">
-                어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="landing-introduce horizontal-padding">
+      <footer class="main-footer">
         <div class="container">
-          <div class="landing-introduce-title">
+          <div class="landing-title">
             <h2>믿을 수 있는<br />판다마켓 중고 거래</h2>
           </div>
-          <img src="images/introduce-2.png" width="746" />
+          <div class="landing-image"></div>
         </div>
-      </div>
+      </footer>
     </main>
-    <footer class="landing-footer horizontal-padding">
+    <footer class="page-footer">
       <div class="container">
         <span class="footer-copyright">©codeit - 2024</span>
         <div class="footer-cs">
