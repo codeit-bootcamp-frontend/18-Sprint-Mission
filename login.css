@@ -159,6 +159,16 @@ main {
   color: var(--blue);
 }
 
+.error {
+  border: 1px solid red;
+}
+
+.disabled {
+  pointer-events: none;
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+}
+
 /* mobile responsive */
 @media screen and (max-width: 767px) {
   main {
