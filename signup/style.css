@@ -21,8 +21,8 @@ body {
   gap: 40px;
 }
 
-.logo-small {
-  display: none;
+.logo-img {
+  width: 396px;
 }
 
 .signup-main {
@@ -124,11 +124,8 @@ body {
     gap: 24px;
   }
 
-  .logo-large {
-    display: none;
-  }
-  .logo-small {
-    display: inline;
+  .logo-img {
+    width: 198px;
   }
 
   .signup-main {
