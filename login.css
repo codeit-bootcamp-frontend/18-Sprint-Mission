@@ -6,25 +6,25 @@ body {
   min-height: 100vh;
 }
 
-.header {
+.login-header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.header a {
+.login-header a {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 22px;
 }
 
-.header img {
+.login-header img {
   width: 103px;
   height: 103px;
 }
 
-.header span {
+.login-header span {
   font-weight: 700;
   font-size: 66px;
   line-height: 100%;
