@@ -249,6 +249,9 @@ footer {
 
 .top-content-container {
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 
 body br {
@@ -258,6 +261,12 @@ body br {
 .top-content {
   display: flex;
   align-items: center;
+  position: relative;
+  top: 8.4rem;
+}
+
+.top-container img {
+  width: 100%;
 }
 
 }
