@@ -30,10 +30,8 @@ body {
 }
 
 .header-logo img {
+  /* Desktop, Tablet에서 logo 가운데 정렬을 위한 설정 */
   vertical-align: top;
-}
-.header-logo .logo-no-img {
-  display: none;
 }
 
 .login-button {
@@ -272,11 +270,9 @@ body {
 
 /* Mobile */
 @media (max-width: 767px) {
-  .header-logo .logo-img {
-    display: none;
-  }
-  .header-logo .logo-no-img {
-    display: inline;
+  .logo-img {
+    display: flex;
+    align-items: center;
   }
 
   .page-header {
