@@ -269,4 +269,12 @@ body br {
   width: 100%;
 }
 
+.section-container {
+    padding: 0 2.4rem;
+}
+
+.section-div {
+  display: inline-block;
+}
+
 }
