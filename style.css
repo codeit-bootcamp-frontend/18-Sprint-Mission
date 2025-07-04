@@ -84,27 +84,27 @@ body {
   margin-top: 138px;
 }
 
-.landing-image {
-  width: 100%;
-  max-width: 746px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-}
-.main-header .landing-image {
-  background-image: url("images/introduce-1.png");
-  height: 340px;
-}
-.main-footer .landing-image {
-  background-image: url("images/introduce-2.png");
-  height: 397px;
-}
-
 .landing-title {
   display: flex;
   flex-direction: column;
   gap: 32px;
   margin-bottom: 60px;
+
+  /* 화면 크기가 작아질 때 `main-footer`의 `landing-title`이 줄바꿈되지 않고 
+   * 이미지 크기만 줄어들 수 있도록 설정 
+   */
+  white-space: nowrap;
+}
+
+.landing-image {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+
+.landing-image img {
+  width: 100%;
 }
 
 .landing-look-around {
@@ -201,6 +201,10 @@ body {
     align-items: center;
     gap: 24px;
     text-align: center;
+  }
+
+  .landing-image {
+    align-self: auto;
   }
 
   .main-footer {
