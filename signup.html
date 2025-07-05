@@ -1,78 +1,99 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/signup.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/signup.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
-  <title>회원가입</title>
-</head>
-<body>
-  <div class="container">
-    <div class="inner">
-      <!-- logo section -->
-      <div class="logo">
-              <a href="/" >
-        <img class="logo_img" src="image/panda_logo_X3.png" alt="판다마켓 로고">
-      </a>
-      </div>
-      <!-- join form section -->
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner">
+        <!-- logo section -->
+        <div class="logo">
+          <a href="/">
+            <img class="logo_img" src="image/panda_logo_X3.png" alt="판다마켓 로고" />
+          </a>
+        </div>
+        <!-- join form section -->
         <form class="form_contorl" name="sign-up" method="get" autocomplete="on">
-      <div class="info">
-      <label class="sign_title" for="user_email">이메일</label>
-      <input class="sign_input_field" id="user_email" type="email" placeholder="이메일을 입력해주세요.">
+          <div class="info">
+            <label class="sign_title" for="user_email">이메일</label>
+            <input
+              class="sign_input_field"
+              id="user_email"
+              type="email"
+              placeholder="이메일을 입력해주세요."
+            />
+          </div>
+          <div class="info">
+            <label class="sign_title" for="user_name">닉네임</label>
+            <input
+              class="sign_input_field"
+              id="user_name"
+              type="name"
+              placeholder="닉네임을 입력해주세요."
+            />
+          </div>
+          <div class="info">
+            <label class="sign_title" for="user_password">비밀번호</label>
+            <div class="flex_item">
+              <input
+                class="sign_input_field"
+                id="user_password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <div class="passwrod_icon">
+                <a class="ic_eyes hide" href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <label class="sign_title" for="password_check">비밀번호 확인</label>
+            <div class="flex_item">
+              <input
+                class="sign_input_field"
+                id="password_check"
+                type="text"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <div class="passwrod_icon">
+                <a class="ic_eyes open" href="#"></a>
+              </div>
+            </div>
+          </div>
+          <div class="connection">
+            <a class="connection_button" href="/">회원가입</a>
+          </div>
+        </form>
+        <!-- simple login -->
+        <div class="simple_login">
+          <p class="simple_login_text">간편 로그인하기</p>
+          <ul class="social_list">
+            <li>
+              <a class="social_ic" href="https://www.google.com/" target="_blank">
+                <img src="icon/ic_login_google.svg" alt="구글 로그인" />
+              </a>
+            </li>
+            <li>
+              <a class="social_ic" href="https://www.kakaocorp.com/page/" target="_blank">
+                <img src="icon/ic_login_kakaotalk.svg" alt="카카오톡 로그인" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- member login -->
+        <div class="member_login">
+          <p>이미 회원이신가요? <a class="login_link" href="/login">로그인</a></p>
+        </div>
       </div>
-      <div class="info">
-      <label class="sign_title" for="user_name">닉네임</label>
-      <input class="sign_input_field" id="user_name" type="name" placeholder="닉네임을 입력해주세요.">
-      </div>
-      <div class="info">
-      <label class="sign_title" for="user_password">비밀번호</label>
-      <div class="flex_item">
-      <input class="sign_input_field" id="user_password" type="password" placeholder="비밀번호를 입력해주세요.">
-      <div class="passwrod_icon">
-      <a class="ic_eyes hide" href="#"></a>
-      </div>
-      </div>
-      </div>
-      <div class="info">
-      <label class="sign_title" for="password_check">비밀번호 확인</label>
-      <div class="flex_item">
-      <input class="sign_input_field" id="password_check" type="text" placeholder="비밀번호를 입력해주세요.">
-      <div class="passwrod_icon">
-      <a class="ic_eyes open" href="#"></a>
-      </div>
-      </div>
-      </div>
-      <div class="connection">
-        <a class="connection_button" href="/">회원가입</a>
-      </div>
-    </form>
-    <!-- simple login -->
-      <div class="simple_login">
-      <p class="simple_login_text">간편 로그인하기</p>
-      <ul class="social_list">
-        <li>
-          <a class="social_ic" href="https://www.google.com/"target="_blank">
-          <img src="icon/ic_login_google.svg" alt="구글 로그인">
-          </a>
-        </li>
-        <li>
-          <a class="social_ic" href="https://www.kakaocorp.com/page/" target="_blank">
-          <img src="icon/ic_login_kakaotalk.svg" alt="카카오톡 로그인">
-          </a>
-        </li>
-      </ul>
     </div>
-    <!-- member login -->
-    <div class="member_login">
-      <p>이미 회원이신가요? <a class="login_link" href="/login">로그인</a></p>
-    </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

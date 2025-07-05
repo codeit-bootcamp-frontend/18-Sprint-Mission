@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/login.css">
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
-  <title>로그인</title>
-</head>
-<body>
-  <div class="container">
-  <div class="inner">
-    <!-- logo section -->
-    <div class="logo">
-      <a href="/" >
-        <img class="logo_img" src="image/panda_logo_X3.png" alt="판다마켓 로고">
-      </a>
-    </div>
-    <!-- login from section -->
-    <form class="form_contorl" name="login" method="get" autocomplete="on">
-      <div class="info">
-      <label class="iogin_title" for="user_email">이메일</label>
-      <input class="login_input_field" id="user_email" type="email" placeholder="이메일을 입력해주세요.">
-      </div>
-      <div class="info">
-      <label class="iogin_title" for="user_password">비밀번호</label>
-      <div class="flex_item">
-      <input class="login_input_field" id="user_password" type="password" placeholder="비밀번호를 입력해주세요.">
-      <div class="passwrod_icon">
-      <a class="ic_eyes" href="#"></a>
-      </div>
-      </div>
-      </div>
-      <div class="connection_info">
-        <a class="connection_button" href="/login">로그인</a>
-      </div>
-    </form>
-    <!-- simple login -->
-    <div class="simple_login">
-      <p class="simple_login_text">간편 로그인하기</p>
-      <ul class="social_list">
-        <li>
-          <a class="social_ic" href="https://www.google.com/">
-          <img src="icon/ic_login_google.svg" alt="구글 로그인">
+    <title>로그인</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="inner">
+        <!-- logo section -->
+        <div class="logo">
+          <a href="/">
+            <img class="logo_img" src="image/panda_logo_X3.png" alt="판다마켓 로고" />
           </a>
-        </li>
-        <li>
-          <a class="social_ic" href="https://www.kakaocorp.com/page/">
-          <img src="icon/ic_login_kakaotalk.svg" alt="카카오톡 로그인">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- sign up -->
-    <div class="sign-up">
-      <p>판다마켓이 처음이신가요? <a class="sign_link" href="/signup">회원가입</a></p>
-    </div>
-  </div>
-  </div>
-</body>
+        </div>
+        <!-- login from section -->
+        <form class="form_contorl" name="login" method="get" autocomplete="on">
+          <div class="info">
+            <label class="iogin_title" for="user_email">이메일</label>
+            <input
+              class="login_input_field"
+              id="user_email"
+              type="email"
+              placeholder="이메일을 입력해주세요."
+            />
+          </div>
+          <div class="info">
+            <label class="iogin_title" for="user_password">비밀번호</label>
+            <div class="flex_item">
+              <input
+                class="login_input_field"
+                id="user_password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <div class="passwrod_icon">
+                <button class="ic_eyes" href="#"></button>
+              </div>
+            </div>
+          </div>
+          <div class="connection_info">
+            <a class="connection_button" href="/login">로그인</a>
+          </div>
+        </form>
+        <!-- simple login -->
+        <div class="simple_login">
+          <p class="simple_login_text">간편 로그인하기</p>
+          <ul class="social_list">
+            <li>
+              <a class="social_ic" href="https://www.google.com/">
+                <img src="icon/ic_login_google.svg" alt="구글 로그인" />
+              </a>
+            </li>
+            <li>
+              <a class="social_ic" href="https://www.kakaocorp.com/page/">
+                <img src="icon/ic_login_kakaotalk.svg" alt="카카오톡 로그인" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sign up -->
+        <div class="sign-up">
+          <p>판다마켓이 처음이신가요? <a class="sign_link" href="/signup">회원가입</a></p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
