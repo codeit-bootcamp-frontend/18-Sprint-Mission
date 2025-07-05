@@ -8,13 +8,13 @@
         <link rel="apple-touch-icon" href="./img/favorite.png">
         <meta name="keywords" content="판다마켓, 코드잇, codeit" />
         <meta name="description" content="일상의 모든 물건을 거래해 보세요" />
-        <meta property="og:title" content="로그인 | 판다마켓" />
+        <meta property="og:title" content="회원가입 | 판다마켓" />
         <meta property="og:description" content="일상의 모든 물건을 거래해 보세요" />
         <meta property="og:image" content="./img/og-img.png">
-        <title>로그인 | 판다마켓</title>
+        <title>회원가입 | 판다마켓</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
     </head>
-    <body class="sign-in">
+    <body class="sign-up">
         <div id="wrap" class="wrap">
             <div class="inner">
                 <header class="header">
@@ -25,11 +25,15 @@
                     </h1>
                 </header>
                 <main class="main">
-                    <h2 class="blind">판다마켓 로그인</h2>
+                    <h2 class="blind">판다마켓 회원가입</h2>
                     <form action="#" method="POST" class="form auth-form">
                         <div class="form-field">
                             <label for="email" class="form__label">이메일</label>
                             <input type="email" id="email" name="email" class="form__input" placeholder="이메일을 입력해주세요." autocomplete="on" required>
+                        </div>
+                         <div class="form-field">
+                            <label for="nickname" class="form__label">닉네임</label>
+                            <input type="text" id="nickname" name="nickname" class="form__input" placeholder="닉네임을 입력해주세요." required>
                         </div>
                         <div class="form-field">
                             <label for="password" class="form__label">비밀번호</label>
@@ -40,7 +44,16 @@
                                 </button>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn--submit btn--lg">로그인</button>
+                        <div class="form-field">
+                            <label for="passwordConfirm" class="form__label">비밀번호 확인</label>
+                            <div class="password-input">
+                                <input type="passwordConfirm" id="passwordConfirm" name="passwordConfirm" class="form__input" placeholder="비밀번호를 재입력해주세요." required>
+                                <button type="button" class="password-input__toggle btn--toggle" aria-pressed="true">
+                                    <span class="blind">비밀번호 표시/숨기기</span>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--submit btn--lg">회원가입</button>
                     </form>
                     <div class="sns-login">
                         <span>간편 로그인하기</span>
@@ -50,7 +63,7 @@
                         </ul>
                     </div>
                     <div class="auth-find">
-                        판다마켓이 처음이신가요?<a href="./signup.html" class="btn btn--signup btn--underline">회원가입</a>
+                        이미 회원이신가요?<a href="./login.html" class="btn btn--signin btn--underline">로그인</a>
                     </div>
                 </main>
             </div>
