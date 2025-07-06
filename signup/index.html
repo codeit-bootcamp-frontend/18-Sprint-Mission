@@ -12,13 +12,13 @@
     <meta property="og:url" content="https://market-panda.netlify.app" />
     <meta property="og:title" content="판다마켓" />
     <meta property="og:description" content="일상의 모든 물건을 거래해 보세요" />
-    <meta property="og:image" content="https://market-panda.netlify.app/img/visual/og_thumbnail.png" />
+    <meta property="og:image" content="https://market-panda.netlify.app/img/visual/og_thumbnail.svg" />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://market-panda.netlify.app" />
     <meta property="twitter:title" content="판다마켓" />
     <meta property="twitter:description" content="일상의 모든 물건을 거래해 보세요" />
-    <meta property="twitter:image" content="https://market-panda.netlify.app/img/visual/og_thumbnail.png" />
+    <meta property="twitter:image" content="https://market-panda.netlify.app/img/visual/og_thumbnail.svg" />
     <link rel="apple-touch-icon" sizes="104x105" href="../img/logo/logo-img.png" />
     <link rel="icon" type="image/png" sizes="104x105" href="../img/logo/logo.ico" />
     <link rel="stylesheet" href="../css/reset.css" />
@@ -46,9 +46,8 @@
             <label for="user-password" class="form-label">비밀번호</label>
             <div class="form-input-wrapper">
               <input type="password" id="user-password" name="password" class="form-input" placeholder="비밀번호를 입력해주세요." />
-              <button type="button" class="password-toggle">
+              <button type="button" class="password-toggle" aria-label="비밀번호 숨기기">
                 <span class="ic ic-md hide"></span>
-                <span class="visually-hidden">비밀번호 숨기기</span>
               </button>
             </div>
           </div>
@@ -56,9 +55,8 @@
             <label for="user-password-confirm" class="form-label">비밀번호 확인</label>
             <div class="form-input-wrapper">
               <input type="password" id="user-password-confirm" name="passwordConfirm" class="form-input" placeholder="비밀번호를 확인해주세요." />
-              <button type="button" class="password-toggle">
+              <button type="button" class="password-toggle" aria-label="비밀번호 숨기기">
                 <span class="ic ic-md hide"></span>
-                <span class="visually-hidden">비밀번호 숨기기</span>
               </button>
             </div>
           </div>
@@ -66,13 +64,11 @@
           <div class="sns-sign-in">
             <p class="txt-lg">간편 로그인 하기</p>
             <div class="btn-group">
-              <a href="https://www.google.com/" target="_blank">
+              <a href="https://www.google.com/" target="_blank" aria-label="구글로 로그인하기">
                 <span class="ic ic-lg google"></span>
-                <span class="visually-hidden">구글로 로그인하기</span>
               </a>
-              <a href="https://www.kakaocorp.com/page/" target="_blank">
+              <a href="https://www.kakaocorp.com/page/" target="_blank" aria-label="카카오로 로그인하기">
                 <span class="ic ic-lg kakao"></span>
-                <span class="visually-hidden">카카오로 로그인하기</span>
               </a>
             </div>
           </div>
