@@ -129,3 +129,24 @@ button:hover {
 .login-footer a {
     color: var(--blue);
 }
+
+@media (min-width: 375px) and (max-width: 767px) {
+  #login-container {
+    width: 100%;
+    max-width: 40rem;
+    padding: 0 1.6rem;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .login-header img {
+    width: 19.8rem;
+    height: 6.6rem;
+  }
+
+  .input-div input,
+  .form-button,
+  .login-simple {
+    width: 100%;
+  }
+}

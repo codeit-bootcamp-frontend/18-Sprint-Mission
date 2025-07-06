@@ -240,6 +240,7 @@ footer {
 
 
 
+
 @media (min-width: 768px) and (max-width: 1199px) {
 .header {
   position: fixed;
@@ -490,6 +491,5 @@ footer {
     width: 100%;
     text-align: start;
   }
-
 
 }
