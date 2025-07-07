@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.container {
+  margin: 150px auto 0;
+  width: 640px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.width-parent {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+.login-form {
+  margin: 30px 0 20px;
+}
+
+.input-label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.input-box {
+  margin: 20px 0;
+  height: 54px;
+  background-color: #f3f4f6;
+  border: 0px;
+  border-radius: 12px;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 0 20px;
+}
+
+.pwd-section {
+  position: relative;
+}
+
+.pwd-visible {
+  position: absolute;
+  right: 5%;
+  bottom: 35px;
+}
+
+.login-btn {
+  border: 0;
+  border-radius: 40px;
+  height: 56px;
+  background-color: #3692ff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #f3f4f6;
+}
+
+.quick-login {
+  height: 74px;
+  border-radius: 8px;
+  background-color: #e6f2ff;
+  padding: 16px 23px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.quick-login > span {
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  line-height: 26px;
+  color: #1f2937;
+}
+
+.social-login {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  display: flex;
+  gap: 10px;
+}
+
+.signup {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signup > span {
+  color: #1f2937;
+}
+
+.signup > a {
+  color: #3692ff;
+  text-decoration: underline;
+}
