@@ -68,7 +68,7 @@ main {
 
 .pw-visibility {
   position: absolute;
-  top: 5.8rem;
+  top: 5rem;
   right: 1.5rem;
   border: none;
   background-color: var(--gray-100);
@@ -137,6 +137,12 @@ button:hover {
     padding: 0 1.6rem;
     margin: 0 auto;
     height: auto;
+    position: relative;
+    top: -6rem;
+  }
+
+    .login-header {
+    padding-bottom: 3rem;
   }
 
   .login-header img {
@@ -149,4 +155,17 @@ button:hover {
   .login-simple {
     width: 100%;
   }
+
+  .input-div {
+    gap: 0.8rem;
+  }
+
+  .input-div label {
+    font-size: 1.4rem;
+  }
+
+    .form-container {
+    gap: 1.6rem;
+  }
+
 }
