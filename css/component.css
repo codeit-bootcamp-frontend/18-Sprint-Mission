@@ -747,6 +747,13 @@
 .form-input-wrapper .password-toggle .ic {
   background-color: var(--coolGray600);
 }
+.form-error-msg {
+  padding: 8px 16px 0;
+  color: var(--error);
+  font-size: 0.875rem;
+  line-height: 1.714;
+  font-weight: 600;
+}
 
 .sns-sign-in {
   display: flex;
@@ -789,12 +796,12 @@
     border-radius: 3.2vw;
     font-size: 4.267vw;
   }
-  .form-input.error-msg {
-    padding: 2.133vw 4.267vw 0;
-    font-size: 3.733vw;
-  }
   .form-input-wrapper .password-toggle {
     right: 6.4vw;
+  }
+  .form-error-msg {
+    padding: 2.133vw 4.267vw 0;
+    font-size: 3.733vw;
   }
   .sns-sign-in {
     padding: 4.267vw 6.4vw;

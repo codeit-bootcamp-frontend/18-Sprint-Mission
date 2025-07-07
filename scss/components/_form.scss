@@ -45,6 +45,11 @@
       }
     }
   }
+  &-error-msg {
+    padding: 8px 16px 0;
+    @include fontStyle(map-get($font, txt-md), $error);
+    font-weight: 600;
+  }
 }
 .sns-sign-in {
   @include flexRow;
@@ -84,17 +89,16 @@
       padding: convertPxToVw(16) convertPxToVw(24);
       border-radius: convertPxToVw(12);
       @include responsiveFontStyle(map-get($font, txt-lg), true);
-      &.error {
-        &-msg {
-          padding: convertPxToVw(8) convertPxToVw(16) 0;
-          @include responsiveFontStyle(map-get($font, txt-md), true);
-        }
-      }
+
       &-wrapper {
         & .password-toggle {
           right: convertPxToVw(24);
         }
       }
+    }
+    &-error-msg {
+      padding: convertPxToVw(8) convertPxToVw(16) 0;
+      @include responsiveFontStyle(map-get($font, txt-md), true);
     }
   }
   .sns-sign-in {

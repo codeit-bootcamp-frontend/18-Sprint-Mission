@@ -46,21 +46,17 @@
             <label for="user-password" class="form-label">비밀번호</label>
             <div class="form-input-wrapper">
               <input type="password" id="user-password" name="password" class="form-input" placeholder="비밀번호를 입력해주세요." />
-              <button type="button" class="password-toggle" aria-label="비밀번호 숨기기">
-                <span class="ic ic-md hide"></span>
-              </button>
+              <button type="button" class="password-toggle ic ic-md hide" aria-label="비밀번호 숨기기"></button>
             </div>
           </div>
           <div class="form-field">
             <label for="user-password-confirm" class="form-label">비밀번호 확인</label>
             <div class="form-input-wrapper">
               <input type="password" id="user-password-confirm" name="passwordConfirm" class="form-input" placeholder="비밀번호를 확인해주세요." />
-              <button type="button" class="password-toggle" aria-label="비밀번호 숨기기">
-                <span class="ic ic-md hide"></span>
-              </button>
+              <button type="button" class="password-toggle ic ic-md hide" aria-label="비밀번호 숨기기"></button>
             </div>
           </div>
-          <button type="submit" class="btn btn-lg bg round full">회원가입</button>
+          <button type="submit" name="submitBtn" class="btn btn-lg bg round full" disabled>회원가입</button>
           <div class="sns-sign-in">
             <p class="txt-lg">간편 로그인 하기</p>
             <div class="btn-group">
@@ -79,5 +75,6 @@
         </form>
       </div>
     </main>
+    <script src="../js/signup.js "></script>
   </body>
 </html>
