@@ -1,3 +1,18 @@
+:root {
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-200: #1251aa;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+}
+
 body {
   margin: 0;
   background-color: #ffffff;
@@ -35,10 +50,10 @@ body {
 .input-box {
   margin: 20px 0;
   height: 54px;
-  background-color: #f3f4f6;
+  background-color: var(--gray-100, #f3f4f6);
   border: 0px;
   border-radius: 12px;
-  color: #1f2937;
+  color: var(--gray-800, #1f2937);
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
@@ -59,11 +74,11 @@ body {
   border: 0;
   border-radius: 40px;
   height: 56px;
-  background-color: #3692ff;
+  background-color: var(--primary-100, #3692ff);
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
-  color: #f3f4f6;
+  color: var(--gray-100, #f3f4f6);
 }
 
 .quick-login {
@@ -82,7 +97,7 @@ body {
   top: 35%;
   left: 5%;
   line-height: 26px;
-  color: #1f2937;
+  color: var(--gray-800, #1f2937);
 }
 
 .social-login {
@@ -100,10 +115,10 @@ body {
 }
 
 .signup > span {
-  color: #1f2937;
+  color: var(--gray-800, #1f2937);
 }
 
 .signup > a {
-  color: #3692ff;
+  color: var(--primary-100, #3692ff);
   text-decoration: underline;
 }

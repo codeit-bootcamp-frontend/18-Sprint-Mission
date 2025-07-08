@@ -1,3 +1,18 @@
+:root {
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-200: #1251aa;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+}
+
 body {
   margin: 0;
   background-color: #ffffff;
@@ -29,7 +44,7 @@ header {
   font-family: "ROKAF Sans";
   font-weight: 700;
   font-size: 26px;
-  color: #3692ff;
+  color: var(--primary-100, #3692ff);
 }
 
 .login {
@@ -40,8 +55,8 @@ header {
   line-height: 26px;
   text-align: center;
   border-radius: 8px;
-  color: #f3f4f6;
-  background-color: #3692ff;
+  color: var(--gray-100, #f3f4f6);
+  background-color: var(--primary-100, #3692ff);
 }
 
 .colored {
@@ -63,8 +78,8 @@ header {
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
-  color: #f9fafb;
-  background-color: #3692ff;
+  color: var(--gray-50, #f9fafb);
+  background-color: var(--primary-100, #3692ff);
 }
 
 .main-top > .container {
@@ -88,7 +103,7 @@ header {
 
 .main-core-title {
   font-size: 40px;
-  color: #374151;
+  color: var(--gray-700, #374151);
   font-weight: 700;
   line-height: 140%;
   margin-bottom: 40px;
@@ -105,14 +120,14 @@ header {
 .main-point {
   font-size: 18px;
   font-weight: 800;
-  color: #3692ff;
+  color: var(--primary-100, #3692ff);
   line-height: 26px;
 }
 
 .main-title {
   font-size: 40px;
   font-weight: 700;
-  color: #374151;
+  color: var(--gray-700, #374151);
   line-height: 140%;
   padding-bottom: 20px;
 }
@@ -120,12 +135,12 @@ header {
 .main-describe {
   font-size: 24px;
   font-weight: 500;
-  color: #374151;
+  color: var(--gray-700, #374151);
   line-height: 32px;
 }
 
 footer {
-  background-color: #111827;
+  background-color: var(--gray-900, #111827);
 }
 
 footer .footer-list {
@@ -137,7 +152,7 @@ footer .footer-list {
 }
 
 .copyright {
-  color: #9ca3af;
+  color: var(--gray-400, #9ca3af);
 }
 
 .list-policy > a {
