@@ -140,23 +140,6 @@
   padding: 11px 43px;
 }
 
-/* auth header */
-body[class*=sign-] .header {
-  position: relative;
-  height: auto;
-  display: block;
-  border: 0;
-  background-color: transparent;
-  margin-bottom: 40px;
-}
-
-body[class*=sign-] .header .logo__link {
-  width: 396px;
-  height: 132px;
-  margin: 0 auto;
-}
-
-
 /* [layout] footer */
 .footer {
   font-size: var(--text-lg-size);
