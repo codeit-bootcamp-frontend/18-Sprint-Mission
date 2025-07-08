@@ -76,3 +76,11 @@ header {
   letter-spacing: 0.08em;
   margin-top: 24px;
 }
+
+@media (max-width:1199px) {
+
+}
+
+@media (mind-width:375px) and (max-width:767px) {
+  
+}

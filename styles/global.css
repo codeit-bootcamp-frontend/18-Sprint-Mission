@@ -88,3 +88,15 @@ footer {
   border-radius: 999px;
   padding: 16px 124px;
 }
+
+@media (max-width:1199px) {
+  header{
+    padding: 0 24px
+  }
+}
+
+@media (mind-width:375px) and (max-width:767px) {
+  header{
+    padding: 0 16px
+  }  
+}
