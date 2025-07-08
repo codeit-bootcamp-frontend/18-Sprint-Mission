@@ -31,7 +31,7 @@ header h1 {
   font-size: 66.34px;
   font-family: ROKAF Sans;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 150%;
   color:var(--brandColor); 
   vertical-align: middle;
 }
@@ -126,4 +126,11 @@ input:focus {
   color:var(--brandColor);
   text-decoration: underline;
   padding-left: 5px;
+}
+
+@media (min-width:375px) and (max-width:767px) {
+  #loginWrapper {
+    padding: 0 16px;
+    max-width: 432px;  
+  }
 }
