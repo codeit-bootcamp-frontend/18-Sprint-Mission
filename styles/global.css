@@ -108,5 +108,6 @@ footer {
 
   #copyright {
     order:3;
+    flex-basis: 100%;
   }
 }
