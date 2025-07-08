@@ -20,29 +20,29 @@
     <main>
       <form action="#" id="signupInputForm">
         <label for="signupEmail">이메일</label>
-        <input id="signupEmail" type="email" placeholder="codeit@email.com" autofocus>
+        <input name="useremial" id="signupEmail" type="email" placeholder="codeit@email.com" autofocus required>
         <label for="signupNickName">닉네임</label>
-        <input id="signupNickName" type="text" placeholder="판다">
+        <input name="usernickname" id="signupNickName" type="text" placeholder="판다" required>
         <div class="signupPasswordWrap">
           <label for="signupPassword">비밀번호</label>
-          <input id="signupPassword" class="signupPasswordClass" type="password" placeholder="......">
+          <input name="userpassword" id="signupPassword" class="signupPasswordClass" type="password" placeholder="......" required>
           <button class="passwordEye"><img src="../images/login&signup/password-eye.png"></button>
         </div>
         <div class="signupPasswordWrap">
           <label for="signupPasswordCheck">비밀번호 확인</label>
-          <input id="signupPasswordCheck" class="signupPasswordClass" type="password" placeholder="......">
+          <input name="userpasswordCheck" id="signupPasswordCheck" class="signupPasswordClass" type="password" placeholder="......" required>
           <button class="passwordEye"><img src="../images/login&signup/password-eye.png"></button>       
         </div>
       </form>
       <button id="signupButton">회원가입</button>
       <div id="signupBySns">
-        <p>간편 로그인하기</p>
+        <span>간편 로그인하기</span>
         <div id="snsLogo">
           <a href="https://www.google.com/" target="_blank"><img src="../images/login&signup/sns/google-logo.svg" alt="구글 로고"></a>
           <a href="https://www.kakaocorp.com/page/" target="_blank"><img src="../images/login&signup/sns/kakao-logo.svg" alt="카카오 로고"></a>
         </div> 
       </div>
-      <p id="foot">이미 회원이신가요?<a id="signup" href="../login/">로그인</a></p>
+      <h4 id="foot">이미 회원이신가요?<a id="signup" href="../login/">로그인</a></h4>
     </main>
   </div>
 </body>

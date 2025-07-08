@@ -20,22 +20,22 @@
     <main>
       <form action="#" id="loginInputForm">
         <label for="loginEmail">이메일</label>
-        <input id="loginEmail" type="email" placeholder="codeit@email.com" autofocus>
+        <input name="useremail" id="loginEmail" type="email" placeholder="codeit@email.com" autofocus required>
         <div id="loginPasswordWrap">
           <label for="loginPassword">비밀번호</label>
-          <input id="loginPassword" type="password" placeholder="......">
+          <input name="userpassword" id="loginPassword" type="password" placeholder="......" required>
           <button id="passwordEye"><img src="../images/login&signup/password-eye.png"></button>
         </div>
       </form>
       <button id="loginButton">로그인</button>
       <div id="loginBySns">
-        <p>간편 로그인하기</p>
+        <span>간편 로그인하기</span>
         <div id="snsLogo">
           <a href="https://www.google.com/" target="_blank"><img src="../images/login&signup/sns/google-logo.svg" alt="구글 로고"></a>
           <a href="https://www.kakaocorp.com/page/" target="_blank"><img src="../images/login&signup/sns/kakao-logo.svg" alt="카카오 로고"></a>
         </div> 
       </div>
-      <p id="foot">판다마켓이 처음이신가요?<a id="signup" href="../signup/">회원가입</a></p>
+      <h4 id="foot">판다마켓이 처음이신가요?<a id="signup" href="../signup/">회원가입</a></h4>
     </main>
   </div>
 </body>
