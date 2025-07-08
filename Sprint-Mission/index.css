@@ -63,12 +63,6 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 192rem) {
-  .header-container {
-    margin: 0 20rem;
-  }
-}
-
 .top-container {
   margin-top: 7rem;
 }
@@ -235,4 +229,267 @@ footer {
 .footer-sns img {
   width: 2rem;
   height: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .header-container {
+    margin: 0 auto;
+    width: 1120px;
+  }
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+.header {
+  position: fixed;
+  z-index: 1;
+}
+
+.header-container {
+    margin: 0 2.4rem;
+}
+
+.top-container {
+  height: 77.1rem;
+}
+
+.top-content-container {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+h2.section-div-content-mid br, h1.top-content br {
+  display: none;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 8.4rem;
+}
+
+.top-container img {
+  width: 100%;
+}
+
+.section-container {
+    padding: 2.4rem;
+    height: 100%;
+}
+
+.section-div {
+  display: block;
+  width: 100%;
+  height: 70.8rem;
+}
+
+.section-img {
+  width: 100%;
+    height: 52.4rem;
+}
+
+.section-img img{
+  width: 100%;
+  height: 52.4rem;
+}
+
+.section-div-content {
+  display: flex;
+  flex-direction: column;
+  width: auto !important;
+  height: 16rem;
+  margin-top: 2.4rem;
+}
+
+.section-div-content-mid {
+  white-space: nowrap;
+}
+
+section:nth-of-type(2) .section-div-content {
+  text-align: right;
+}
+
+.bottom-container {
+    width: 100%;
+  height: 92.7rem;
+}
+
+.bottom-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-content-container img {
+  width: 100%;
+}
+
+.bottom-content {
+  text-align: center;
+  position: relative;
+  top: 20.1rem;
+}
+
+footer {
+  padding: 3.2rem 10.4rem 6.4rem;
+}
+
+}
+
+
+
+@media (min-width: 375px) and (max-width: 767px) {
+
+  .header-container {
+    width: 100%;
+    margin: 0 1.6rem;
+}
+
+.top-content-container {
+  flex-direction: column;
+  align-items: center;
+  height: 54rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.top-content {
+  font-size: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+  margin-top: 4.8rem;
+  line-height: 140%;
+  text-align: center;
+}
+
+.top-content a {
+  font-size: 1.8rem;
+  padding: 1.2rem 7.1rem;
+  line-height: 2.6rem;
+  text-align: center;
+}
+
+.top-content-container img {
+  left: -3.6rem;
+  height: 20.4rem;
+  width: 44.8rem;
+}
+
+.section-container {
+    padding: 0 1.5rem;
+    height: 100%;
+    margin-top: 4rem;
+}
+
+.section-div {
+  display: block;
+  width: 100%;
+  height: 41.7rem;
+}
+
+.section-img {
+  width: 100%;
+    height: 25.9rem;
+}
+
+.section-img img{
+  width: 100%;
+  height: 25.9rem;
+}
+
+.section-div-content {
+  display: flex;
+  flex-direction: column;
+  width: auto !important;
+  height: 13.4rem !important;
+  margin-top: 2.4rem;
+  gap: 1.6rem;
+}
+
+.section-div-content-top {
+  font-size: 1.6rem;
+}
+
+.section-div-content-mid {
+  font-size: 2.4rem;
+  white-space: nowrap;
+}
+
+.section-div-content-bottom {
+  font-size: 1.6rem;
+}
+
+section:nth-of-type(2) .section-div-content {
+  text-align: right;
+}
+
+.bottom-container {
+    width: 100%;
+  height: 54rem;
+  margin-top: 4rem;
+}
+
+.bottom-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-content-container img {
+  width: 100%;
+  height: 19.8rem;
+}
+
+.bottom-content {
+  text-align: center;
+  position: relative;
+  top: 12.1rem;
+  font-size: 3.2rem;
+}
+
+h2.section-div-content-mid br {
+  display: none;
+}
+
+footer {
+  display: flex;
+  height: 20rem;
+  padding: 4rem;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-mid {
+  order: 1;
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-sns {
+    order: 2;
+    display: flex;
+}
+
+.footer-codeit {
+    order: 3;
+    text-align: center;
+    width: 100%;
+    text-align: start;
+  }
+
 }

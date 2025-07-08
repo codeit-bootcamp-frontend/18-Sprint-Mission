@@ -28,7 +28,7 @@ main {
   gap: 2.4rem;
 }
 
-form {
+.form-container {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -68,7 +68,7 @@ form {
 
 .pw-visibility {
   position: absolute;
-  top: 5.8rem;
+  top: 5rem;
   right: 1.5rem;
   border: none;
   background-color: var(--gray-100);
@@ -128,4 +128,44 @@ button:hover {
 
 .login-footer a {
     color: var(--blue);
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  #login-container {
+    width: 100%;
+    max-width: 40rem;
+    padding: 0 1.6rem;
+    margin: 0 auto;
+    height: auto;
+    position: relative;
+    top: -6rem;
+  }
+
+    .login-header {
+    padding-bottom: 3rem;
+  }
+
+  .login-header img {
+    width: 19.8rem;
+    height: 6.6rem;
+  }
+
+  .input-div input,
+  .form-button,
+  .login-simple {
+    width: 100%;
+  }
+
+  .input-div {
+    gap: 0.8rem;
+  }
+
+  .input-div label {
+    font-size: 1.4rem;
+  }
+
+    .form-container {
+    gap: 1.6rem;
+  }
+
 }
