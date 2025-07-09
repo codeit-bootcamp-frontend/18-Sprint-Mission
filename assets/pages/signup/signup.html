@@ -22,39 +22,98 @@
       </header>
       <main class="panda_login_main">
         <form action="/">
-          <div>
+          <div class="input_box input_disabled_btn">
             <label for="panda_id">이메일</label>
-            <input id="panda_id" class="panda_input" type="email" required placeholder="이메일을 입력해주세요."/>
+            <input
+              id="panda_id"
+              class="panda_input"
+              type="email"
+              required
+              placeholder="이메일을 입력해주세요."
+            />
+            <div class="input_error_text_box">
+              <p class="input_error_text" data-error="email-empty">
+                이메일을 입력해주세요.
+              </p>
+            </div>
           </div>
-          <div>
+
+          <div class="input_box input_disabled_btn">
             <label for="panda_aka">닉네임</label>
-            <input id="panda_aka" class="panda_input" type="text" required placeholder="닉네임을 입력해주세요."/>
+            <input
+              id="panda_aka"
+              class="panda_input"
+              type="text"
+              required
+              placeholder="닉네임을 입력해주세요."
+            />
+            <div class="input_error_text_box">
+              <p class="input_error_text"></p>
+            </div>
           </div>
-          <div>
+
+          <div class="input_box input_pwd_box input_disabled_btn">
             <label for="panda_password">비밀번호</label>
             <div class="panda_pwd">
               <input
                 id="panda_password"
                 class="panda_input"
                 type="password"
+                required
                 placeholder="비밀번호를 입력해주세요."
-                required
               />
+              <button
+                type="button"
+                class="toggle_pwd_btn"
+                aria-label="비밀번호 보기"
+              >
+                <img
+                  src="../../images/login_page/btn_password.svg"
+                  alt="비밀번호 보기 아이콘"
+                />
+              </button>
+            </div>
+            <div class="input_error_text_box">
+              <p class="input_error_text" data-error="password-empty">
+                비밀번호를 입력해주세요.
+              </p>
             </div>
           </div>
-          <div>
-            <label for="panda_password_check">비밀번호 확인</label>
-            <div class="panda_pwd panda_password_check">
+
+          <div class="input_box input_pwd_box input_disabled_btn">
+            <label for="panda_password_confirm">비밀번호 확인</label>
+            <div class="panda_pwd">
               <input
-                id="panda_password_check"
+                id="panda_password_confirm"
                 class="panda_input"
-                type="text"
-                placeholder="비밀번호를 다시 한 번 입력해주세요."
+                type="password"
                 required
+                placeholder="비밀번호를 입력해주세요."
               />
+              <button
+                type="button"
+                class="toggle_pwd_btn"
+                aria-label="비밀번호 보기"
+              >
+                <img
+                  src="../../images/login_page/btn_password.svg"
+                  alt="비밀번호 보기 아이콘"
+                />
+              </button>
+            </div>
+            <div class="input_error_text_box">
+              <p class="input_error_text" data-error="password-confirm-empty">
+                비밀번호를 입력해주세요.
+              </p>
             </div>
           </div>
-          <a class="btn_large" href="../login/login.html">회원가입</a>
+          <button
+            type="button"
+            class="btn_large disabled"
+            onClick="location.href='../login/login.html'"
+          >
+            회원가입
+          </button>
         </form>
         <section class="panda_login_easy">
           <h1>간편 로그인하기</h1>
@@ -78,5 +137,6 @@
         <a href="../login/login.html">로그인</a>
       </footer>
     </div>
+    <script type="module" src="../../js/login.js"></script>
   </body>
 </html>

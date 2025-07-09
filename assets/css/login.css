@@ -45,6 +45,12 @@
   color: #fff;
   padding: 18px;
   text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.panda_login_wrap .panda_login_main form .btn_large.disabled {
+  pointer-events: none;
+  background-color: var(--gray-400);
 }
 
 .panda_login_wrap .panda_login_main form .panda_pwd {
@@ -52,18 +58,20 @@
   display: inline-block;
   width: 100%;
 }
-.panda_login_wrap .panda_login_main form .panda_pwd::before {
-  content: "";
-  position: absolute;
-  background-image: url("../images/login_page/btn_password.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.panda_login_wrap .panda_login_main form .toggle_pwd_btn {
+  position: absolute; 
+  top: 16px; 
+  right: 24px; 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  width: 24px; 
+  height: 24px;
+}
+
+.panda_login_wrap .panda_login_main form .toggle_pwd_btn img{
   width: 24px;
   height: 24px;
-  cursor: pointer;
-  top: 16px;
-  right: 24px;
 }
 
 .panda_login_wrap .panda_login_main form .panda_input {
@@ -72,6 +80,18 @@
   font-weight: 400;
   color: var(--gray-800);
   padding: 14px 24px;
+}
+
+.panda_login_wrap .panda_login_main form .input_error .panda_input{
+  border-color: var(--error);
+}
+
+.panda_login_wrap .panda_login_main form .input_error_text {
+  color: var(--error);
+  padding: 8px 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: none;
 }
 
 /* login easy */

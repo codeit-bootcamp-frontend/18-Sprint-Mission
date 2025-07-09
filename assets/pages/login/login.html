@@ -22,17 +22,53 @@
       </header>
       <main class="panda_login_main">
         <form action="/">
-          <div>
+          <div class="input_box input_disabled_btn">
             <label for="panda_id">이메일</label>
-            <input id="panda_id" class="panda_input" type="email" required placeholder="이메일을 입력해주세요."/>
-          </div>
-          <div>
-            <label for="panda_password">비밀번호</label>
-            <div class="panda_pwd">
-              <input id="panda_password" class="panda_input" type="password" required placeholder="비밀번호를 입력해주세요."/>
+            <input
+              id="panda_id"
+              class="panda_input"
+              type="email"
+              required
+              placeholder="이메일을 입력해주세요."
+            />
+            <div class="input_error_text_box">
+              <p class="input_error_text">이메일을 입력해주세요.</p>
+              <p class="input_error_text">잘못된 이메일입니다.</p>
             </div>
           </div>
-          <a class="btn_large" href="../login/login.html">로그인</a>
+          <div class="input_box input_disabled_btn">
+            <label for="panda_password">비밀번호</label>
+            <div class="panda_pwd">
+              <input
+                id="panda_password"
+                class="panda_input"
+                type="password"
+                required
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <button
+                type="button"
+                class="toggle_pwd_btn"
+                aria-label="비밀번호 보기"
+              >
+                <img
+                  src="../../images/login_page/btn_password.svg"
+                  alt="비밀번호 보기 아이콘"
+                />
+              </button>
+            </div>
+            <div class="input_error_text_box">
+              <p class="input_error_text">비밀번호를 입력해주세요.</p>
+              <p class="input_error_text">비밀번호를 8자 이상 입력해주세요</p>
+            </div>
+          </div>
+          <button
+          type="button"
+            class="btn_large disabled"
+            onClick="location.href='../items/items.html'"
+          >
+            로그인
+          </button>
         </form>
         <section class="panda_login_easy">
           <h1>간편 로그인하기</h1>
@@ -56,5 +92,6 @@
         <a href="../signup/signup.html">회원가입</a>
       </footer>
     </div>
+    <script type="module" src="../../js/login.js"></script>
   </body>
 </html>
