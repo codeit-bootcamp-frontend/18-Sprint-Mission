@@ -1,140 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>판다마켓</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="centered">
-    <nav class="navi centered">
-      <div class="nav-left">
-        <a href="index.html"> 
-          <img
-            class="panda-icon" 
-            src="images/panda_face.svg"
-            alt="판다얼굴이 그려져 있는 마켓 로고"
-          >
-          <img
-            src="images/txt_logo.svg"
-            alt="판다마켓"
-          >
-        </a>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main-style.css" />
+  </head>
+  <body>
+    <header class="centered">
+      <nav class="navi centered">
+        <div class="nav-left">
+          <a href="index.html">
+            <img class="panda-icon" src="images/ic-panda_face.svg" alt="판다얼굴이 그려져 있는 마켓 로고" />
+            <img src="images/ic-txt-logo.svg" alt="판다마켓" />
+          </a>
+        </div>
+        <a class="login" href="login.html">로그인</a>
+      </nav>
+    </header>
+    <main>
+      <section class="main-top colored">
+        <div class="container centered">
+          <div class="top-title-txt">
+            <h1 class="main-core-title">
+              일상의 모든 물건을 <br />
+              거래해 보세요
+            </h1>
+            <a class="show-items" href="items.html">구경하러 가기</a>
+          </div>
+          <img class="main-core-img" src="images/img-main-header.svg" alt="판다마켓 메인페이지 상단 이미지" />
+        </div>
+      </section>
+      <div class="main-middle">
+        <section class="container centered">
+          <img class="main-content-img" src="images/img-main-01.svg" />
+          <div class="main-txt">
+            <span class="main-point">Hot item</span>
+            <h2 class="main-title">
+              인기 상품을 <br />
+              확인해 보세요
+            </h2>
+            <p class="main-describe">
+              가장 HOT한 중고거래 물품을<br />
+              판다 마켓에서 확인해 보세요
+            </p>
+          </div>
+        </section>
+        <section class="container centered">
+          <div class="main-txt text-right">
+            <span class="main-point">Search</span>
+            <h2 class="main-title">
+              구매를 원하는 <br />
+              상품을 검색하세요
+            </h2>
+            <p class="main-describe">
+              구매하고 싶은 물품은 검색해서<br />
+              쉽게 찾아보세요
+            </p>
+          </div>
+          <img class="main-content-img" src="images/img-main-02.svg" />
+        </section>
+        <section class="container centered">
+          <img class="main-content-img" src="images/img-main-03.svg" />
+          <div class="main-txt">
+            <span class="main-point">Register</span>
+            <h2 class="main-title">
+              판매를 원하는 <br />
+              상품을 등록하세요
+            </h2>
+            <p class="main-describe">
+              어떤 물건이든 판매하고 싶은 상품을<br />
+              쉽게 등록하세요
+            </p>
+          </div>
+        </section>
       </div>
-      <a class="login" href="login.html">로그인</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="main-top colored">
+      <section class="main-bottom colored">
+        <div class="container centered">
+          <h2 class="main-core-title">
+            믿을 수 있는 <br />
+            판다마켓 중고거래
+          </h2>
+          <img class="main-core-img" src="images/img-main-footer.svg" alt="판다마켓 메인페이지 하단 이미지" />
+        </div>
+      </section>
+    </main>
+    <footer>
       <div class="container centered">
-        <div class="top-title-txt">
-          <h2 class="main-core-title">일상의 모든 물건을 <br>
-            거래해 보세요</h2>
-          <a class="show-items" href="items.html">구경하러 가기</a>
+        <div class="footer-list">
+          <div class="copyright">&copy;codeit - 2024</div>
+          <div class="list-policy">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+          <ul class="list-sns">
+            <li>
+              <a href="https://www.facebook.com/?locale=ko_KR" target="_blank">
+                <img class="footer-icon" src="images/ic-facebook.svg" alt="페이스북 아이콘" />
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/login?lang=ko" target="_blank">
+                <img class="footer-icon" src="images/ic-twitter.svg" alt="트위터 아이콘" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/?app=desktop&hl=ko&gl=KR" target="_blank">
+                <img class="footer-icon" src="images/ic-youtube.svg" alt="유튜브 아이콘" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank">
+                <img class="footer-icon" src="images/ic-instagram.svg" alt="인스타그램 아이콘" />
+              </a>
+            </li>
+          </ul>
         </div>
-        <img
-          class="main-core-img"
-          src="images/Img_home_top.svg"
-          alt="판다마켓 메인페이지 상단 이미지"
-        >
       </div>
-    </section>
-
-    <div class="main-middle">
-      <section class="container centered">
-        <img
-          class="main-content-img"
-          src="images/Img_home_01.svg"
-        >
-        <div class="main-txt">
-          <span class="main-point">Hot item</span>
-          <h3 class="main-title">인기 상품을 <br>
-            확인해 보세요</h3>
-          <p class="main-describe">가장 HOT한 중고거래 물품을<br> 판다 마켓에서 확인해 보세요</p>
-        </div>
-      </section>
-      <section class="container centered">
-        <div class="main-txt">
-          <span class="main-point">Search</span>
-          <h3 class="main-title">구매를 원하는 <br>
-            상품을 검색하세요</h3>
-          <p class="main-describe">구매하고 싶은 물품은 검색해서<br> 쉽게 찾아보세요</p>
-        </div>
-        <img
-          class="main-content-img"
-          src="images/Img_home_02.svg"
-        >
-      </section>
-      <section class="container centered">
-        <img
-          class="main-content-img"
-          src="images/Img_home_03.svg"
-        >
-        <div class="main-txt">
-          <span class="main-point">Register</span>
-          <h3 class="main-title">판매를 원하는 <br>
-            상품을 등록하세요</h3>
-          <p class="main-describe">어떤 물건이든 판매하고 싶은 상품을<br> 쉽게 등록하세요</p>
-        </div>
-      </section>
-    </div>
-
-    <section class="main-bottom colored">
-      <div class="container centered">
-        <h2 class="main-core-title">믿을 수 있는 <br>
-          판다마켓 중고거래
-        </h2>
-        <img 
-          class="main-core-img"
-          src="images/Img_home_bottom.svg"
-          alt="판다마켓 메인페이지 하단 이미지"
-        >
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container centered">
-      <ul class="footer-list">
-        <li>&copy;codeit - 2024</li>
-        <li class="list-policy">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="faq.html">FAQ</a>
-        </li>
-        <li class="list-sns">
-          <a href="https://www.facebook.com/?locale=ko_KR" target="_blank">
-            <img 
-              class="footer-icon"
-              src="images/ic_facebook.svg"
-              alt="페이스북 아이콘"
-            >  
-          </a>
-          <a href="https://twitter.com/login?lang=ko" target="_blank">
-            <img 
-              class="footer-icon"
-              src="images/ic_twitter.svg"
-              alt="트위터 아이콘"
-            >
-          </a>
-          <a href="https://www.youtube.com/?app=desktop&hl=ko&gl=KR" target="_blank">
-            <img 
-              class="footer-icon"
-              src="images/ic_youtube.svg"
-              alt="유튜브 아이콘"
-            >
-          </a>
-          <a href="https://www.instagram.com/" target="_blank">
-            <img 
-              class="footer-icon"
-              src="images/ic_instagram.svg"
-              alt="인스타그램 아이콘"
-            >
-          </a> 
-        </li>
-      </ul>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

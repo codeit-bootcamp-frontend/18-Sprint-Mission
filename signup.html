@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/sign.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/sign.css" />
   </head>
   <body>
     <div class="container">
@@ -18,12 +18,19 @@
         <form class="login-form" method="post">
           <label for="user-id" class="input-label"> 이메일 </label>
           <input type="text" id="user-id" name="user-id" class="width-parent input-box" />
+          <label for="user-name" class="input-label"> 닉네임 </label>
+          <input type="text" id="user-name" name="user-name" class="width-parent input-box" />
           <div class="pwd-section">
             <label for="user-pwd" class="input-label">비밀번호</label>
             <img class="pwd-visible" src="./images/ic-invisible.svg" />
             <input type="password" id="user-pwd" name="user-pwd" class="width-parent input-box" />
           </div>
-          <button class="login-btn width-parent">로그인</button>
+          <div class="pwd-section">
+            <label for="user-pwd-check" class="input-label">비밀번호 확인</label>
+            <img class="pwd-visible" src="./images/ic-visible.svg" />
+            <input type="text" id="user-pwd-check" name="user-pwd-check" class="width-parent input-box" />
+          </div>
+          <button class="login-btn width-parent">회원가입</button>
         </form>
         <div class="quick-login width-parent">
           <span>간편 로그인하기</span>
@@ -33,8 +40,8 @@
           </div>
         </div>
         <div class="signup">
-          <span>판다마켓이 처음이신가요?</span>
-          <a href="./signup.html">회원가입</a>
+          <span>이미 회원이신가요?</span>
+          <a href="./login.html">로그인</a>
         </div>
       </div>
     </div>
