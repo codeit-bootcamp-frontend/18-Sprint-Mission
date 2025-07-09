@@ -30,7 +30,7 @@
 }
 
 .form-group label {
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 700;
   color: var(--gray800);
 }
@@ -144,11 +144,6 @@
 .auth-guide a {
   color: var(--primary100);
   text-decoration: underline;
-}
-
-/* 태블릿 이하 */
-@media (max-width: 1199px) {
-  
 }
 
 /* 모바일 이하 */
