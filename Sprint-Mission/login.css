@@ -74,18 +74,15 @@ main {
   background-color: var(--gray-100);
 }
 
-button:hover {
-    cursor: pointer;
-}
 
 .form-button {
   width: 64rem;
   height: 5.6rem;
-  border: 0.2rem solid var(--blue);
+  border: 0.2rem solid var(--gray-400);
   border-radius: 4rem;
   padding: 1.6rem 12.4rem;
   gap: 1rem;
-  background-color: var(--blue);
+  background-color: var(--gray-400);
   font-family: Pretendard;
   color: var(--gray-100);
   font-weight: 600;
@@ -94,6 +91,12 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-button:enabled {
+  background-color: var(--blue);
+  border: 0.2rem solid var(--blue);
+  cursor: pointer;
 }
 
 .login-simple {
@@ -128,6 +131,18 @@ button:hover {
 
 .login-footer a {
     color: var(--blue);
+}
+
+.input-div .errorborder {
+  border: 2px solid red;
+}
+
+.errortext {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: red;
+  padding-left: 1.6rem;
+  display: block;
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
