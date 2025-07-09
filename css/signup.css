@@ -115,7 +115,7 @@ body {
   font-weight: 600;
   color: var(--gray100);
   line-height: 2;
-  background: var(--blue);
+  background: var(--Secondary400);
   border-radius: 40px;
 }
 
@@ -169,4 +169,42 @@ body {
 
 /* Mobile */
 @media (min-width: 375px) and (max-width: 767px) {
+  .container {
+    margin: 0 16px;
+  }
+
+  .inner {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 198px;
+    height: 66px;
+    margin: 0 auto 24px;
+  }
+
+  .form_contorl {
+    width: 100%;
+    margin: 24px 0 16px;
+  }
+
+  .info {
+    max-width: 400px;
+    margin: 0 0 16px;
+    font-size: 0.875rem;
+  }
+
+  .sign_title {
+    margin: 0 0 8px;
+  }
+
+  /* open 이미지 hide로 변겨 */
+  .open {
+    background-image: url(../icon/ic_passwrod_hide.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
 }
