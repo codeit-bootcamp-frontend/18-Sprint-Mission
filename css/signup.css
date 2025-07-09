@@ -162,3 +162,11 @@ body {
   text-decoration: underline;
   color: var(--blue);
 }
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1200px) {
+}
+
+/* Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+}

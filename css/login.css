@@ -29,13 +29,10 @@ body {
 }
 
 .form_contorl {
-  width: 100%;
-  margin: 40px 0 24px;
-}
-
-.form_contorl {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 40px 0 24px;
 }
 
 .info {
@@ -108,7 +105,7 @@ body {
   font-weight: 600;
   color: var(--gray100);
   line-height: 2;
-  background: var(--blue);
+  background: var(--Secondary400);
   border-radius: 40px;
 }
 
@@ -154,4 +151,53 @@ body {
 .sign_link {
   text-decoration: underline;
   color: var(--blue);
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .connection_button {
+    background: var(--Secondary400);
+  }
+}
+
+/* Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+  .container {
+    margin: 0 16px;
+  }
+
+  .inner {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 198px;
+    height: 66px;
+    margin: 0 auto 24px;
+  }
+
+  .form_contorl {
+    margin: 24px 0;
+  }
+
+  .info {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 0 16px;
+    font-size: 0.875rem;
+  }
+
+  .iogin_title {
+    margin: 0 0 8px;
+  }
+
+  .login_input_field {
+    width: 100%;
+    background: var(--gray100);
+    padding: 16px 24px;
+    border: 0;
+    border-radius: 12px;
+  }
 }
