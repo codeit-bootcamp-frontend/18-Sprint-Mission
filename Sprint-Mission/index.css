@@ -380,9 +380,8 @@ footer {
 }
 
 .top-content-container img {
-  left: -3.6rem;
   height: 20.4rem;
-  width: 44.8rem;
+  width: 100%;
 }
 
 .section-container {
