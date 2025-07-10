@@ -71,7 +71,7 @@ header, #container, footer, .wrap {
   display: inline-block;
   margin-top: 23px;
   padding: 16px 124px;
-  font-size: 20px;
+  font-size: clamp(18px, 2vw, 20px);
   font-weight: 700;
   border-radius: 999px;
 }
@@ -79,7 +79,7 @@ header, #container, footer, .wrap {
 
 /* section1 */
 h1, h3 {
-  font-size: 40px;
+  font-size: clamp(24px, 3.5vw, 40px);
   font-weight: 700;
   color: var(--gray700);
   line-height: 1.4;
@@ -105,6 +105,10 @@ h1, h3 {
   width: 56%;
 }
 
+#container .wrap .h-br {
+  display: block;
+}
+
 .feature .feature-text {
   width: 40%;
 }
@@ -113,7 +117,7 @@ h1, h3 {
 }
 
 .feature .feature-text h2 {
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 18px);
   font-weight: 800;
   line-height: 26px;
   color: var(--primary100);
@@ -121,7 +125,7 @@ h1, h3 {
 }
 
 .feature .feature-text p {
-  font-size: 24px;
+  font-size: clamp(16px, 2vw, 24px);
   font-weight: 500;
   line-height: 32px;
   padding-top: 24px;
@@ -159,4 +163,109 @@ footer .social {
 
 footer .social img {
   width: 20px;
+}
+
+/* 태블릿 이하 */
+@media (max-width: 1199px) {
+  /* header */
+  .header {
+    padding: 0 24PX;
+  }
+
+  /* container */
+  #container .banner {
+    background-size: 100%;
+    align-items: normal;
+    text-align: center;
+    height: 771px;
+  }
+  #container .wrap h1 {
+    padding-top: 84px;
+  }
+  #container .wrap .h-br {
+    display: inline;
+  }
+  #container .footer-banner h3 {
+    padding-top: 200px;
+  }
+  #container .wrap img {
+    width: 100%;
+  }
+
+  .banner .pill-button {
+    margin-top: 24px;
+    padding: 12px 124px;
+    font-weight: 600;
+  } 
+
+  .feature {
+    padding: 24px;
+    margin-bottom: 52px;
+    background-color: #fcfcfc;
+  }
+  .feature-inner {
+    flex-wrap: wrap;
+    background-color: none;
+  }
+  .feature .feature-text {
+    width: 100%;
+  }
+  .feature .feature-text h2 {
+    padding: 24px 0 16px;
+  }
+  .feature .feature-text p {
+    line-height: 1.2em;
+  }
+  .feature:nth-child(2) .feature-inner {
+    flex-direction: column-reverse;
+  }
+  
+  #container .footer-banner {
+    height: 927px;
+  }
+
+  footer {
+    padding: 32px 104px 108px;
+    gap: 60px;
+  }
+}
+
+/* 모바일 이하 */
+@media (max-width: 767px) {
+  /* header */
+  .header {
+    padding: 0 16PX;
+  }
+
+  /* container */
+  #container .banner {
+    height: 540px;
+  }
+  #container .wrap h1 {
+    padding-top: 54px;
+  }
+  #container .banner .h-br {
+    display: block;
+  }
+  #container .footer-banner h3 {
+    padding-top: 120px;
+    font-size: 32px;
+  }
+
+  .banner .pill-button {
+    margin-top: 18px;
+    padding: 11px 71px;
+  } 
+
+  .footer-banner .wrap {
+    height: 540px;
+  }
+
+  footer {
+    padding: 32px 32px 30px;
+  }
+  footer .copy {
+    width: 100%;
+    order: 3;
+  }
 }

@@ -30,7 +30,7 @@
 }
 
 .form-group label {
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 700;
   color: var(--gray800);
 }
@@ -55,7 +55,7 @@
   position: relative;
 }
 
-.form-group button {
+.form-group .togglePassword {
   position: absolute;
   right: 24px;
   top: 50%;
@@ -64,7 +64,10 @@
   border: none;
   cursor: pointer;
 }
-
+.form-group .togglePassword img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
 
 
 /* 제출 버튼 */
@@ -78,6 +81,11 @@
   border-radius: 999px;
   cursor: pointer;
   transition: background-color 0.2s;
+}
+
+.auth-btn:disabled, .auth-btn.disabled {
+  background-color: var(--gray400);
+  pointer-events: none;
 }
 
 .auth-btn:hover {
@@ -136,4 +144,15 @@
 .auth-guide a {
   color: var(--primary100);
   text-decoration: underline;
+}
+
+/* 모바일 이하 */
+@media (max-width: 767px) {
+  .auth-container {
+    max-width: 400px;
+  }
+
+  .logo img {
+    width: 198px;
+  }
 }

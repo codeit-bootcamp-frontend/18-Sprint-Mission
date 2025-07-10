@@ -18,7 +18,7 @@
     </a>
     
     <!-- signup-form -->
-    <form class="auth-form" action="/login" method="post">
+    <form class="auth-form" action="/signup" method="post">
 
       <div class="form-group">
         <label for="email">이메일</label>
@@ -34,23 +34,23 @@
         <label for="password">비밀번호</label>
         <div class="input-wrap">
           <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요." required />
-          <button type="button" id="togglePassword" aria-label="비밀번호 보기">
+          <button type="button" id="togglePassword" class="togglePassword" aria-label="비밀번호 보기">
             <img src="images/icon/eye-slash-icon.svg" alt="비밀번호 보기 아이콘" />
           </button>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="password">비밀번호 확인</label>
+        <label for="confirmPassword">비밀번호 확인</label>
         <div class="input-wrap">
-          <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요." required />
-          <button type="button" id="togglePassword" aria-label="비밀번호 숨기기">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호를 입력해주세요." required />
+          <button type="button" id="toggleConfirmPassword" class="togglePassword" aria-label="비밀번호 숨기기">
             <img src="images/icon/eye-icon.svg" alt="비밀번호 숨기기 아이콘" />
           </button>
         </div>
       </div>
 
-       <button type="submit" class="auth-btn">회원가입</button>
+       <button type="submit" class="auth-btn disabled" disabled>회원가입</button>
     </form>
 
     <div class="auth-social">
