@@ -17,33 +17,14 @@
   --color-error: #F74747;
 }
 
-/* reset */
-* {
-  box-sizing: border-box;
-}
+
+/* font style class */
 html {
   font-size: 62.5%;
   font-family: 'Pretendard';
   color: var(--color-gray-700);
   word-break: keep-all;
 }
-body {
-  margin: 0 auto;
-}
-h2, p {
-  margin: 0;
-}
-a {
-  text-decoration: none;
-}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-
-/* font style class */
 .f-heading {
   font-size: 4rem;
   font-weight: 700;
