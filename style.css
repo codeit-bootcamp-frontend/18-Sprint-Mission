@@ -93,8 +93,12 @@ footer {
   font-weight: 400;
 }
 footer .content {
-  padding: 3.2rem 20rem;
+  position: relative;
+  max-width: 112rem;
+  height: 100%;
+  padding: 3.2rem 10rem;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .copyright {
   color: var(--color-gray-400);
@@ -115,4 +119,29 @@ footer .content {
 .footer-social a {
   width: 2rem;
   height: 2rem;
+}
+
+
+/* Tablet */
+@media screen and (max-width: 1199px) {
+  .gnb {
+    padding : 1rem 2.4rem
+  }
+}
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .gnb {
+    padding : 1rem 1.6rem
+  }
+  .content {
+    flex-wrap: wrap;
+  }
+  footer .content {
+    flex-wrap: nowrap;
+    padding: 3.2rem;
+  }
+  .copyright {
+    position: absolute;
+    bottom: 3rem;
+  }
 }
