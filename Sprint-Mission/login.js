@@ -5,23 +5,24 @@ const passwordDiv = passwordInput.parentElement;
 const loginButton = document.querySelector(".form-button");
 const form = document.querySelector(".form-container");
 
+function showError(inputElement, message) {
+  const parentDiv = inputElement.parentElement;
+  inputElement.classList.add("errorborder");
+  const span = document.createElement("span");
+  span.textContent = message;
+  span.classList.add("errortext");
+  parentDiv.appendChild(span);
+}
+
 function emailError() {
   const existError = emailDiv.querySelector(".errortext");
   if (existError) {
     existError.remove();
   }
   if (emailInput.validity.valueMissing) {
-    emailInput.classList.add("errorborder");
-    const span = document.createElement("span");
-    emailDiv.appendChild(span);
-    span.textContent = "이메일을 입력해주세요";
-    span.classList.add("errortext");
+    showError(emailInput, "이메일을 입력해주세요.");
   } else if (emailInput.validity.typeMismatch) {
-    emailInput.classList.add("errorborder");
-    const span = document.createElement("span");
-    emailDiv.appendChild(span);
-    span.textContent = "잘못된 이메일입니다. ";
-    span.classList.add("errortext");
+    showError(emailInput, "잘못된 이메일입니다.");
   } else {
     emailInput.classList.remove("errorborder");
   }
@@ -33,17 +34,9 @@ function passwordError() {
     existError.remove();
   }
   if (passwordInput.validity.valueMissing) {
-    passwordInput.classList.add("errorborder");
-    const span = document.createElement("span");
-    passwordDiv.appendChild(span);
-    span.textContent = "비밀번호를 입력해주세요";
-    span.classList.add("errortext");
+    showError(passwordInput, "비밀번호를 입력해주세요.");
   } else if (passwordInput.value.length < 8) {
-    passwordInput.classList.add("errorborder");
-    const span = document.createElement("span");
-    passwordDiv.appendChild(span);
-    span.textContent = "비밀번호를 8자 이상 입력해주세요.";
-    span.classList.add("errortext");
+    showError(passwordInput, "비밀번호를 8자 이상 입력해주세요.");
   } else {
     passwordInput.classList.remove("errorborder");
   }
@@ -65,8 +58,14 @@ form.addEventListener("submit", (event) => {
   }
 });
 
-const emailFunction = () => {emailError(); inputsValid();}
-const passwordFunction = () => {passwordError(); inputsValid();}
+const emailFunction = () => {
+  emailError();
+  inputsValid();
+};
+const passwordFunction = () => {
+  passwordError();
+  inputsValid();
+};
 
 emailInput.addEventListener("focusout", emailFunction);
 passwordInput.addEventListener("focusout", passwordFunction);
