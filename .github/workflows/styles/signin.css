@@ -1,0 +1,27 @@
+.error {
+    border: 1px solid #f74747;
+}
+
+.email-error-message, .password-error-message {
+    color: #f74747;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.disable {
+    background-color: #9CA3AF;
+}
+
+.enable {
+    background-color: #3692ff;
+}
+
+.button.enable:hover {
+  background-color: #1967d6;
+}
+
+.button.enable:focus {
+  background-color: #1251aa;
+}
