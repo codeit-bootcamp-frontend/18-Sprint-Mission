@@ -36,6 +36,9 @@ html {
   font-size: 1.6rem;
   font-weight: 400;
 }
+.letter-sp-04 {
+  letter-spacing: .4rem;
+}
 
 
 /* buttons */
