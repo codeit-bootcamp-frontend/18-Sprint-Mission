@@ -2,10 +2,6 @@
   --bg-color-section: #CFE5FF;
 }
 
-body {
-  min-width: 745px;
-}
-
 .wrap {
   padding-top: 70px;
 }
@@ -13,10 +9,6 @@ body {
 .section {
   overflow: hidden;
   color: var(--color-gray-700);
-}
-
-.section .inner {
-  max-width: 1170px;
 }
 
 .section__label {
@@ -54,8 +46,9 @@ body {
 .section-layout-1 .inner::before {
   display: block;
   content: "";
-  width: 579px;
-  height: 444px;
+  width: 100%;
+  max-width: 579px;
+  aspect-ratio: 579 / 444;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -77,15 +70,12 @@ body {
 .section-layout-2 .inner::after {
   display: block;
   content: "";
-  width: 746px;
-  height: 340px;
+  width: 100%;
+  max-width: 746px;
+  aspect-ratio: 746 / 340;
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 100%;
-}
-
-.section-layout-2 .section__head {
-  margin: 0 0 60px 0;
 }
 
 .section-layout-2 .section__title {
@@ -94,6 +84,10 @@ body {
 
 .section-layout-2 .btn--link {
   margin-top: 32px;
+}
+
+.section-visual .section__head {
+  margin: 0 0 60px 0;
 }
 
 .section-visual .inner::after {
@@ -121,36 +115,31 @@ body {
   margin-top: 138px;
 }
 
+.section-banner .section__head {
+  margin: 0 0 60px 0;
+}
+
 .section-banner .inner::after {
-  width: 746px;
-  height: 397px;
+  max-width: 746px;
+  aspect-ratio: 746 / 397;
   background-image: url(../img/main/img_home_bottom.svg);
 }
 
 
-/* [pc] media query */
-@media screen and (max-width: 1179px) {
-  html {
-    font-size: 13px;
+/* [Tablet] media query */
+@media screen and (max-width: 1199px) {
+  .section__title {
+    font-size: 2rem;
+    margin-top: 16px;
+  }
+
+  .section__desc {
+    font-size: var(--text-2lg-size);
+    line-height: var(--text-2lg-height);
   }
 
   .section-layout-1 {
-    padding: calc(138px * .81) 0;
-  }
-
-  .section-layout-1 .inner::before {
-    width: calc(579px * .81);
-    height: calc(444px * .81);
-  }
-
-  .section-layout-2 {
-    height: calc(540px * .81);
-  }
-}
-
-@media screen and (max-width: 979px) {
-  .section-layout-1 {
-    text-align: center;
+    padding: 24px 0;
   }
 
   .section-layout-1 .inner {
@@ -158,12 +147,21 @@ body {
   }
 
   .section-layout-1 .inner::before {
-    margin: 0 auto 60px;
+    margin: 0 auto 24px;
+  }
+
+  .section-layout-1 .section__head {
+    width: 100%;
+    max-width: 579px;
+    margin: 0 auto;
+  }
+
+  .section-layout-1 .section__title br {
+    display: none;
   }
 
   .section-layout-2 {
     text-align: center;
-    padding: calc(138px * .81) 0 0;
     height: auto;
   }
 
@@ -175,7 +173,86 @@ body {
     margin: 0 auto;
   }
 
+  .section-layout-2 .btn--link {
+    margin-top: 24px;
+  }
+
+  .section-visual {
+    padding-top: 84px;
+  }
+
+  .section-visual .section__head {
+    margin: 0 0 211px 0;
+  }
+
   .section-banner {
-    margin-top: 0px;
+    margin-top: 32px;
+    padding-top: 201px;
+  }
+
+  .section-banner .section__head {
+    margin: 0 0 217px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .section-visual .section__title br {
+    display: none;
+  }
+}
+
+/* [Mobile] media query */
+@media screen and (max-width: 767px) {
+  .section__label {
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-height);
+  }
+
+  .section__title {
+    margin-top: 8px;
+    font-size: var(--text-2xl-size);
+    line-height: var(--text-2xl-height);
+  }
+
+  .section__desc {
+    margin-top: 16px;
+    font-size: var(--text-lg-size);
+    line-height: var(--text-lg-height);
+  }
+
+  .section-layout-1 {
+    padding: 20px 0;
+  }
+
+  .section-layout-2 .section__title {
+    font-size: var(--text-3xl-size);
+    line-height: var(--text-3xl-height);
+  }
+
+  .section-layout-2 .inner::after {
+    width: calc(100% + 32px);
+    transform: translateX(-16px);
+  }
+
+  .section-layout-2 .btn--link {
+    margin-top: 18px;
+  }
+
+  .section-visual {
+    padding-top: 48px;
+    margin-bottom: 32px;
+  }
+
+  .section-visual .section__head {
+    margin: 0 0 132px 0;
+  }
+
+  .section-banner {
+    margin-top: 63px;
+    padding-top: 121px;
+  }
+
+  .section-banner .section__head {
+    margin: 0 0 131px 0;
   }
 }

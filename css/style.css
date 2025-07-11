@@ -8,6 +8,22 @@
 @import './base/base.css';
 @import './base/common.css';
 
+/* auth header */
+body[class*=sign-] .header {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+
+body[class*=sign-] .header .ico--logo {
+    width: 396px;
+    height: 132px;
+}
+
 /* auth */
 body[class*=sign-] .wrap {
     padding: 60px 0;
@@ -22,9 +38,9 @@ body[class*=sign-] .wrap {
 }
 
 body[class*=sign-] .inner {
-    max-width: 640px;
+    max-width: calc(640px + 104px);
+    padding: 0 52px;
     margin: 0 auto;
-    box-sizing: initial;
 }
 
 body[class*=sign-] .main {
@@ -128,6 +144,10 @@ body[class*=sign-] .auth-find .btn {
     position: relative;
 }
 
+.form .password-input .form__input {
+    padding-right: 72px;
+}
+
 .form .password-input__toggle {
     position: absolute;
     top: 50%;
@@ -138,6 +158,7 @@ body[class*=sign-] .auth-find .btn {
     mask-image: url(../img/ico/ico-visibility-off.svg);
     -webkit-mask-image: url(../img/ico/ico-visibility-off.svg);
     background: var(--color-gray-600);
+    z-index: 1;
 }
 
 .form .password-input__toggle[aria-pressed="true"] {
@@ -147,4 +168,44 @@ body[class*=sign-] .auth-find .btn {
 
 .form .btn--submit {
     width: 100%;
+    height: 56px;
+}
+
+
+/* [Tablet] media query */
+@media screen and (max-width: 1199px) {
+    body[class*=sign-] .wrap {
+        padding: 48px 0;
+    }
+}
+
+/* [Mobile] media query */
+@media screen and (max-width: 767px) {
+    body[class*=sign-] .header {
+        margin-bottom: 24px;
+    }
+
+    body[class*=sign-] .header .ico--logo {
+        width: 198px;
+        height: 66px;
+    }
+
+    body[class*=sign-] .wrap {
+        padding: 24px 0;
+    }
+
+    body[class*=sign-] .inner {
+        padding: 0 16px;
+        max-width: 400px;
+    }
+
+    .form {
+        gap: 16px 0;
+    }
+
+    .form .form__label {
+        font-size: var(--text-md-size);
+        line-height: var(--text-md-height);
+        margin-bottom: 8px;
+    }
 }

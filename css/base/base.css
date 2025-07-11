@@ -35,9 +35,10 @@ textarea {
 
 .inner {
   width: 100%;
-  max-width: 1180px;
+  max-width: calc(1120px + 104px);
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 52px;
+  box-sizing: border-box;
 }
 
 a {
