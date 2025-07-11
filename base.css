@@ -20,7 +20,6 @@
 
 /* font style class */
 html {
-  font-size: 62.5%;
   font-family: 'Pretendard';
   color: var(--color-gray-700);
   word-break: keep-all;
