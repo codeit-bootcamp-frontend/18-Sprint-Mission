@@ -4,6 +4,8 @@ const $emailInput = document.querySelector("#email-input");
 const $usernameInput = document.querySelector("#username-input");
 const $passwordInput = document.querySelector("#password-input");
 const $confirmPasswordInput = document.querySelector("#confirm-password-input");
+const $signupForm = document.querySelector(".signup-form");
+const $signupButton = document.querySelector(".signup-form .button");
 
 function validateEmail(email) {
   if (!email) {
@@ -70,7 +72,7 @@ function checkCanSignup(input) {
 }
 
 function updateSignupButton() {
-  const canSignup =  
+  const canSignup =
     checkCanSignup($emailInput) &&
     checkCanSignup($usernameInput) &&
     checkCanSignup($passwordInput) &&
@@ -108,3 +110,34 @@ $confirmPasswordInput.addEventListener("focusout", ({ target }) => {
 });
 
 $signupForm.addEventListener("keyup", updateSignupButton);
+
+const VISIBILITY_ON_IMAGE = "images/icon-visibility-on.svg";
+const VISIBILITY_OFF_IMAGE = "images/icon-visibility-off.svg";
+
+const $visibilityToggles = document.querySelectorAll(
+  ".password-visibility-toggle"
+);
+
+$visibilityToggles.forEach((element) =>
+  element.addEventListener("click", ({ target }) => {
+    let image;
+    let input;
+    if (target instanceof HTMLImageElement) {
+      image = target;
+      input = target.parentElement.previousElementSibling;
+    } else if (target instanceof HTMLButtonElement) {
+      image = target.firstElementChild;
+      input = target.previousElementSibling;
+    } else {
+      return;
+    }
+
+    if (image.src.includes("off")) {
+      image.src = VISIBILITY_ON_IMAGE;
+      input.type = "text";
+    } else {
+      image.src = VISIBILITY_OFF_IMAGE;
+      input.type = "password";
+    }
+  })
+);

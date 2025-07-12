@@ -68,6 +68,13 @@ body {
   flex-grow: 1;
 }
 
+.password-visibility-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .input-border-error {
   border: 1px solid var(--error-red-color);
 }

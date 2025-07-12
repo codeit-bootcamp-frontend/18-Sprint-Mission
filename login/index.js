@@ -4,7 +4,7 @@ const INPUT_BORDER_ERROR_CLASS = "input-border-error";
 const $emailInput = document.querySelector("#email-input");
 const $passwordInput = document.querySelector("#password-input");
 const $loginForm = document.querySelector(".login-form");
-const $loginButton = document.querySelector(".login-form button");
+const $loginButton = document.querySelector(".login-form .button");
 
 function validateEmail(email) {
   if (!email) {
@@ -90,3 +90,28 @@ $passwordInput.addEventListener("focusout", ({ target }) => {
 });
 
 $loginForm.addEventListener("keyup", updateLoginButton);
+
+const VISIBILITY_ON_IMAGE = "images/icon-visibility-on.svg";
+const VISIBILITY_OFF_IMAGE = "images/icon-visibility-off.svg";
+
+const $passwordVisibilityToggle = document.querySelector(
+  ".password-visibility-toggle"
+);
+$passwordVisibilityToggle.addEventListener("click", ({ target }) => {
+  let image;
+  if (target instanceof HTMLImageElement) {
+    image = target;
+  } else if (target instanceof HTMLButtonElement) {
+    image = target.firstElementChild;
+  } else {
+    return;
+  }
+
+  if (image.src.includes("off")) {
+    image.src = VISIBILITY_ON_IMAGE;
+    $passwordInput.type = "text";
+  } else {
+    image.src = VISIBILITY_OFF_IMAGE;
+    $passwordInput.type = "password";
+  }
+});
