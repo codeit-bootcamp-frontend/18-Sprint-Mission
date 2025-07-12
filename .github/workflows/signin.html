@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/auth.css" />
+    <link rel="stylesheet" href="styles/signin.css" />
   </head>
 
   <body>
@@ -23,8 +24,8 @@
         /></a>
       </div>
 
-      <form method="post">
-        <div class="input-item">
+      <form action="./items.html" method="post" id="loginForm">
+        <div id="email-input" class="input-item">
           <label for="email">이메일</label>
           <input
             id="email"
@@ -33,7 +34,7 @@
             placeholder="이메일을 입력해 주세요"
           />
         </div>
-        <div class="input-item">
+        <div id="password-input" class="input-item">
           <label for="password">비밀번호</label>
           <div class="input-wrapper">
             <input
@@ -50,7 +51,7 @@
           </div>
         </div>
 
-        <button type="submit" class="button pill-button full-width">
+        <button id="loginBtn" type="submit" class="button pill-button full-width">
           로그인
         </button>
       </form>
@@ -77,5 +78,7 @@
         판다마켓이 처음이신가요? <a href="signup.html">회원가입</a>
       </div>
     </div>
+  <script src="./js/signin.js"></script>  
   </body>
+
 </html>
