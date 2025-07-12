@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   background: var(--white);
 }
 
@@ -82,25 +82,12 @@ body {
   transform: translateY(-50%);
 }
 
-.ic_eyes {
+.password_toggle {
   display: inline-block;
   width: 100%;
   height: 100%;
+  background-color: transparent;
   border: none;
-}
-
-.hide {
-  background-image: url(../icon/ic_passwrod_hide.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.open {
-  background-image: url(../icon/ic_passwrod_open.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 
 .connection {
@@ -198,13 +185,5 @@ body {
 
   .sign_title {
     margin: 0 0 8px;
-  }
-
-  /* open 이미지 hide로 변겨 */
-  .open {
-    background-image: url(../icon/ic_passwrod_hide.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
   }
 }

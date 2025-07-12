@@ -82,14 +82,11 @@ body {
   transform: translateY(-50%);
 }
 
-.ic_eyes {
+.password_toggle {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-image: url(../icon/ic_passwrod_hide.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-color: transparent;
   border: none;
 }
 
