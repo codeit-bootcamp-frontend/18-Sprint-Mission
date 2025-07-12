@@ -99,6 +99,11 @@ body {
   color: var(--gray100-color);
 }
 
+.button-secondary {
+  background-color: var(--gray400-color);
+  color: var(--gray100-color);
+}
+
 .login-social {
   display: flex;
   justify-content: space-between;

@@ -3,6 +3,8 @@ const INPUT_BORDER_ERROR_CLASS = "input-border-error";
 
 const $emailInput = document.querySelector("#email-input");
 const $passwordInput = document.querySelector("#password-input");
+const $loginForm = document.querySelector(".login-form");
+const $loginButton = document.querySelector(".login-form button");
 
 function validateEmail(email) {
   if (!email) {
@@ -59,12 +61,32 @@ function handleValidationError(target, validator, elementRef) {
   elementRef.current = errorMessage;
 }
 
+function updateLoginButton() {
+  const canLogin =
+    $emailInput.value.length > 0 &&
+    $passwordInput.value.length > 0 &&
+    emailErrorRef.current == null &&
+    passwordErrorRef.current == null;
+
+  if (canLogin) {
+    $loginButton.disabled = false;
+    $loginButton.className = "button button-primary";
+  } else {
+    $loginButton.disabled = true;
+    $loginButton.classList = "button button-secondary";
+  }
+}
+
 const emailErrorRef = { current: null };
 $emailInput.addEventListener("focusout", ({ target }) => {
   handleValidationError(target, validateEmail, emailErrorRef);
+  updateLoginButton();
 });
 
 const passwordErrorRef = { current: null };
 $passwordInput.addEventListener("focusout", ({ target }) => {
   handleValidationError(target, validatePassword, passwordErrorRef);
+  updateLoginButton();
 });
+
+$loginForm.addEventListener("keyup", updateLoginButton);
