@@ -2,7 +2,7 @@
     border: 1px solid #f74747;
 }
 
-.email-error-message, .password-error-message {
+.email-error-message, .password-error-message, .nickname-error-message, .confirmation-error-message {
     color: #f74747;
     font-size: 14px;
     font-weight: 600;

@@ -13,13 +13,14 @@ emailInput.addEventListener('focus', () => {
   }
 });
 
-
 passwordInput.addEventListener('focus', () => {
   const existingError = document.querySelector('.password-error-message');
   if (existingError) {
     passwordDiv.removeChild(existingError);
   }
 });
+
+
 
 // focusout 시 이메일 유효성 검사
 emailInput.addEventListener('focusout', () => {

@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/auth.css" />
+    <link rel="stylesheet" href="styles/signin.css">
   </head>
 
   <body>
@@ -23,8 +24,8 @@
         /></a>
       </div>
 
-      <form method="post">
-        <div class="input-item">
+      <form action="./signin.html" id="signUpForm" method="post">
+        <div id="email-input" class="input-item">
           <label for="email">이메일</label>
           <input
             id="email"
@@ -33,7 +34,7 @@
             placeholder="이메일을 입력해 주세요"
           />
         </div>
-        <div class="input-item">
+        <div id="nickName-input" class="input-item">
           <label for="nickname">닉네임</label>
           <input
             id="nickname"
@@ -42,7 +43,7 @@
             placeholder="닉네임을 입력해 주세요"
           />
         </div>
-        <div class="input-item">
+        <div id="password-input" class="input-item">
           <label for="password">비밀번호</label>
           <div class="input-wrapper">
             <input
@@ -52,13 +53,14 @@
               placeholder="비밀번호를 입력해 주세요"
             />
             <img
+              id="passwordImg"
               src="images/icons/eye-invisible.svg"
               alt="비밀번호 숨김"
-              class="toggle-password"
+              class="toggle-password invisible"
             />
           </div>
         </div>
-        <div class="input-item">
+        <div id="passwordConfirmation-input" class="input-item">
           <label for="passwordConfirmation">비밀번호 확인</label>
           <div class="input-wrapper">
             <input
@@ -68,14 +70,15 @@
               placeholder="비밀번호를 다시 한 번 입력해 주세요"
             />
             <img
+              id="passwordConfirmationImg"
               src="images/icons/eye-invisible.svg"
               alt="비밀번호 숨김"
-              class="toggle-password"
+              class="toggle-password invisible"
             />
           </div>
         </div>
 
-        <button type="submit" class="button pill-button full-width">
+        <button type="submit" id="signUpBtn" class="button pill-button full-width signUpBtn">
           회원가입
         </button>
       </form>
@@ -103,4 +106,5 @@
       </div>
     </div>
   </body>
+  <script src="./js/signup.js"></script>
 </html>
