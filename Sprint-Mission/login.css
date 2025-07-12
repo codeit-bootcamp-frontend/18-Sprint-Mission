@@ -72,6 +72,7 @@ main {
   right: 1.5rem;
   border: none;
   background-color: var(--gray-100);
+  cursor: pointer;
 }
 
 

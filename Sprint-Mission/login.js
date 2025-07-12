@@ -4,6 +4,9 @@ const emailDiv = emailInput.parentElement;
 const passwordDiv = passwordInput.parentElement;
 const loginButton = document.querySelector(".form-button");
 const form = document.querySelector(".form-container");
+const eyebtn = document.querySelector(".pw-visibility");
+
+// -----------------------------------------------------------------------
 
 function showError(inputElement, message) {
   const parentDiv = inputElement.parentElement;
@@ -72,3 +75,16 @@ passwordInput.addEventListener("focusout", passwordFunction);
 
 emailInput.addEventListener("input", emailFunction);
 passwordInput.addEventListener("input", passwordFunction);
+
+// -----------------------------------------------------------------------
+
+eyebtn.addEventListener("click", () => {
+  const eyeIcon = eyebtn.querySelector("img");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    eyeIcon.src = "images/visible.svg";
+  } else {
+    passwordInput.type = "password";
+    eyeIcon.src = "images/hidden.svg";
+  }
+});

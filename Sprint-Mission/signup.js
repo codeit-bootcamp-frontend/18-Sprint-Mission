@@ -7,7 +7,10 @@ const passwordDiv = passwordInput.parentElement;
 const nicknameDiv = nicknameInput.parentElement;
 const passwordCheckDiv = passwordCheckInput.parentElement;
 const loginButton = document.querySelector(".form-button");
+const eyebtns = document.querySelectorAll(".pw-visibility");
 const form = document.querySelector(".form-container");
+
+// -----------------------------------------------------------------------
 
 function showError(inputElement, message) {
   const parentDiv = inputElement.parentElement;
@@ -113,3 +116,18 @@ emailInput.addEventListener("input", emailFunction);
 passwordInput.addEventListener("input", passwordFunction);
 nicknameInput.addEventListener("input", nicknameFunction);
 passwordCheckInput.addEventListener("input", passwordCheckFunction);
+
+// -----------------------------------------------------------------------
+eyebtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const btnInput = btn.previousElementSibling;
+    const eyeIcon = btn.querySelector("img");
+    if (btnInput.type === "password") {
+      btnInput.type = "text";
+      eyeIcon.src = "images/visible.svg";
+    } else {
+      btnInput.type = "password";
+      eyeIcon.src = "images/hidden.svg";
+    }
+  });
+});
