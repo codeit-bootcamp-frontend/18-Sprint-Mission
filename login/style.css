@@ -41,7 +41,6 @@ body {
 .login-input-field {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .login-input-field > label {
@@ -56,6 +55,7 @@ body {
   padding: 16px 24px 14px;
   display: flex;
   gap: 12px;
+  margin-top: 16px;
 }
 
 .login-input > input {
@@ -66,6 +66,22 @@ body {
   font-weight: 400;
   line-height: 26px;
   flex-grow: 1;
+}
+
+.input-border-error {
+  border: 1px solid var(--error-red-color);
+}
+
+.input-message {
+  margin-top: 8px;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.input-message-error {
+  color: var(--error-red-color);
 }
 
 .button {
@@ -132,12 +148,13 @@ body {
     gap: 16px;
   }
 
-  .login-input-field {
-    gap: 8px;
-  }
   .login-input-field > label {
     font-size: 14px;
     line-height: 24px;
+  }
+
+  .login-input {
+    margin-top: 8px;
   }
 
   .login-social {
