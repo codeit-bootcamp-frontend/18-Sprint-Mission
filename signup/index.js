@@ -62,20 +62,49 @@ function updateValidationError(target, validator) {
   }
 }
 
+function checkCanSignup(input) {
+  return (
+    input.value.length > 0 &&
+    input.parentElement.nextElementSibling.style.display !== "block"
+  );
+}
+
+function updateSignupButton() {
+  const canSignup =  
+    checkCanSignup($emailInput) &&
+    checkCanSignup($usernameInput) &&
+    checkCanSignup($passwordInput) &&
+    checkCanSignup($confirmPasswordInput);
+
+  if (canSignup) {
+    $signupButton.disabled = false;
+    $signupButton.className = "button button-primary";
+  } else {
+    $signupButton.disabled = true;
+    $signupButton.className = "button button-secondary";
+  }
+}
+
 $emailInput.addEventListener("focusout", ({ target }) => {
   updateValidationError(target, validateEmail);
+  updateSignupButton();
 });
 
 $usernameInput.addEventListener("focusout", ({ target }) => {
   updateValidationError(target, validateUsername);
+  updateSignupButton();
 });
 
 $passwordInput.addEventListener("focusout", ({ target }) => {
   updateValidationError(target, validatePassword);
+  updateSignupButton();
 });
 
 $confirmPasswordInput.addEventListener("focusout", ({ target }) => {
   updateValidationError(target, (value) =>
     validateConfirmPassword($passwordInput.value, value)
   );
+  updateSignupButton();
 });
+
+$signupForm.addEventListener("keyup", updateSignupButton);
