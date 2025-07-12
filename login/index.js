@@ -38,7 +38,7 @@ function createErrorMessage(errorMessage) {
   return $errorMessage;
 }
 
-function handleValidationError(target, validator, elementRef) {
+function updateValidationError(target, validator, elementRef) {
   const container = target.parentElement;
   const error = validator(target.value);
 
@@ -79,13 +79,13 @@ function updateLoginButton() {
 
 const emailErrorRef = { current: null };
 $emailInput.addEventListener("focusout", ({ target }) => {
-  handleValidationError(target, validateEmail, emailErrorRef);
+  updateValidationError(target, validateEmail, emailErrorRef);
   updateLoginButton();
 });
 
 const passwordErrorRef = { current: null };
 $passwordInput.addEventListener("focusout", ({ target }) => {
-  handleValidationError(target, validatePassword, passwordErrorRef);
+  updateValidationError(target, validatePassword, passwordErrorRef);
   updateLoginButton();
 });
 
