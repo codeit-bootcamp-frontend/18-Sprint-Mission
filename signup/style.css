@@ -132,9 +132,6 @@ body {
     gap: 16px;
   }
 
-  .signup-input-field {
-    gap: 8px;
-  }
   .signup-input-field > label {
     font-size: 14px;
     line-height: 24px;
