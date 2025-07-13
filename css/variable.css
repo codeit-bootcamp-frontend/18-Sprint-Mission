@@ -32,8 +32,17 @@
 
 /* 타블렛 */
 @media all and (max-width:74.9375rem) {
-  :root {}
+  :root {
+  --description: 1.8rem;
+   --large: 1.8rem;
+  }
 }
 
 /* 모바일 */
-@media all and (max-width:47.9375rem) {}
+@media all and (max-width:47.9375rem) {
+  :root{
+      --title: 3.2rem;
+       --description: 1.6rem;
+      --large: 1.6rem;
+  }
+}
