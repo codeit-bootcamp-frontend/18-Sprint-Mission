@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
+    <title>회원가입</title>
     <link rel="stylesheet" href="loginstyle.css">
 </head>
 <body>
-    <header>
-        <a href="/" id="logo"><img src="img/logo_big.png" class="img">판다마켓</a>
-    </header>
+    <header><a href="/" id="logo"><img src="img/logo_big.png" class="img">판다마켓</a></header>
     <main>
         <label for="email" class="labels">이메일</label>
-        <input id="email" type="email" name="useremail" class="inputbox">      
+        <input id="email" type="email" name="useremail" class="inputbox">
+        <label for="nickname" class="labels">닉네임</label>
+        <input id="nickname" name="username" class="inputbox">      
         <label for="password" class="labels" >비밀번호</label>
         <input id="password" type="password" name="password" class="inputbox">
-        <button type="submit">로그인</button>
+        <label for="passwordcheck" class="labels" >비밀번호 확인</label>
+        <input id="passwordcheck" type="password" name="password" class="inputbox">
+        <button type="submit">회원가입</button>
         <div class="simple">
             <span>간편 로그인하기</span>
             <span>
                 <a href="https://www.google.com/"><img src="img/ic_google.svg" alt="googleLogin"></a>
                 <a href="https://www.kakaocorp.com/page/"><img src="img/ic_kakao.svg" alt="kakaoLogin"></a>
-            </span>
+            </span>            
         </div>
-        <div class="signup">
-            판다마켓이 처음이신가요?<a href="/signup.html">회원가입</a>
+        <div class="login">
+            판다마켓이 처음이신가요?<a href="/login.html">로그인</a>
         </div>
     </main>
 </body>
