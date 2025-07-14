@@ -44,7 +44,7 @@ nav {
 
 
 .hero {
-  max-height: 54rem;
+  /* height: 54rem; */
   padding-top: 20rem;
   display: flex;
   align-items: flex-end;
@@ -59,7 +59,8 @@ nav {
   display: flex;
 }
 button.cta {
-  margin-top: .8rem;
+  margin-top: 3.2rem;
+  max-width: 35.7rem;
 }
 
 
@@ -71,11 +72,18 @@ section.reverse .content {
   text-align: right;
   flex-direction: row-reverse;
 }
+section.reverse .content p {
+  margin: 0 0 0 auto;
+}
 section .content {
   gap: 6.4rem;
   background: #FCFCFC;
   border-radius: 1.2rem;
   padding: 0 2.4rem;  
+}
+.f-paragraph {
+  margin-top: 2.4rem;
+  max-width: 30rem;
 }
 .tag {
   display: block;
@@ -124,20 +132,48 @@ footer .content {
 
 /* Tablet */
 @media screen and (max-width: 1199px) {
+  html {
+    font-size: 50%;
+  }
   .gnb {
     padding : 1rem 2.4rem
-  }
-}
-/* Mobile */
-@media screen and (max-width: 767px) {
-  .gnb {
-    padding : 1rem 1.6rem
   }
   .content {
     flex-wrap: wrap;
   }
+  .caption {
+    flex-grow: 1;
+  }
+  .hero:first-of-type {
+    padding-top: 8rem;
+  }
+  .hero .content {
+    flex-direction: column-reverse;
+    margin: 0 auto;
+  }
+  .hero .caption {
+    text-align: center;
+  }
+  section {
+    margin: 2.4rem 0 5.2rem;
+    padding: 0;
+  }
+  section .content {
+    gap: 2.2rem;
+  }
+}
+/* Mobile */
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 40%;
+  }
+  .gnb {
+    padding : 1rem 1.6rem
+  }
+  .hero .f-heading {
+    max-width: 32rem;
+  }
   footer .content {
-    flex-wrap: nowrap;
     padding: 3.2rem;
   }
   .copyright {

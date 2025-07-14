@@ -27,6 +27,7 @@ html {
 .f-heading {
   font-size: 4rem;
   font-weight: 700;
+  line-height: 140%;
 }
 .f-paragraph {
   font-size: 2.4rem;
