@@ -16,19 +16,19 @@
       </div>
       <div class="content">
         <form class="login-form" method="post">
-          <label for="user-id" class="input-label"> 이메일 </label>
-          <input type="text" id="user-id" name="user-id" class="width-parent input-box" />
+          <label for="user-id" class="input-label">이메일</label>
+          <input type="email" id="user-id" name="user-id" class="width-parent input-box" autofocus required />
           <label for="user-name" class="input-label"> 닉네임 </label>
-          <input type="text" id="user-name" name="user-name" class="width-parent input-box" />
+          <input type="text" id="user-name" name="user-name" class="width-parent input-box" required />
           <div class="pwd-section">
             <label for="user-pwd" class="input-label">비밀번호</label>
             <img class="pwd-visible" src="./images/ic-invisible.svg" />
-            <input type="password" id="user-pwd" name="user-pwd" class="width-parent input-box" />
+            <input type="password" id="user-pwd" name="user-pwd" class="width-parent input-box" required />
           </div>
           <div class="pwd-section">
             <label for="user-pwd-check" class="input-label">비밀번호 확인</label>
             <img class="pwd-visible" src="./images/ic-visible.svg" />
-            <input type="text" id="user-pwd-check" name="user-pwd-check" class="width-parent input-box" />
+            <input type="password" id="user-pwd-check" name="user-pwd-check" class="width-parent input-box" required />
           </div>
           <button class="login-btn width-parent">회원가입</button>
         </form>
