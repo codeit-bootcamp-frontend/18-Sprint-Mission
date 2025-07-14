@@ -134,13 +134,13 @@ button {
   justify-content: center;
 }
 
-.button:hover {
+/* .button:hover {
   background-color: #1967d6;
 }
 
 .button:focus {
   background-color: #1251aa;
-}
+} */
 
 .button:disabled {
   background-color: #9ca3af;
