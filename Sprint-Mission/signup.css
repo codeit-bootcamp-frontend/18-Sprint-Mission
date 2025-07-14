@@ -9,7 +9,7 @@ body {
   height: 100vh;
 }
 
-#login-container {
+.login-container {
   width: 64rem;
   height: 85.7rem;
   margin: 23.1rem auto;
@@ -149,7 +149,7 @@ button:hover {
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
-  #login-container {
+  .login-container {
     width: 100%;
     max-width: 40rem;
     padding: 0 1.6rem;
