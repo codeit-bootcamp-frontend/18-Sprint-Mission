@@ -47,6 +47,7 @@ main{
 .inputbox{
     width: 100%;
     height : 56px;
+    padding-right: 50px;
     border-radius: 12px;
     border: 2px;
     border-color: #3182F6;
@@ -92,6 +93,10 @@ button{
     gap : 10px;
     background-color: #E6F2FF;
     color :var(--gray800);
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    font-style: medium;
 }
 .signup,
 .login{    
@@ -101,4 +106,12 @@ button{
     color: var(--gray800);
     font-style: medium;
     text-align: center;
+}
+.passwordbox{
+    position: relative;
+}
+.blindIco{
+    position: absolute;
+    right : 17px;
+    top : 17px;
 }
