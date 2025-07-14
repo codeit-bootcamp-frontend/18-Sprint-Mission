@@ -22,18 +22,19 @@
           </a>
         </div>
         <!-- login from section -->
-        <form class="form_contorl" name="login" method="get" autocomplete="on">
-          <div class="info">
-            <label class="iogin_title" for="user_email">이메일</label>
+        <form class="form_contorl" name="login" method="post" autocomplete="on">
+          <div class="info info_email">
+            <label class="login_title" for="user_email">이메일</label>
             <input
               class="login_input_field"
               id="user_email"
               type="email"
               placeholder="이메일을 입력해주세요."
             />
+            <div class="error_msg"></div>
           </div>
-          <div class="info">
-            <label class="iogin_title" for="user_password">비밀번호</label>
+          <div class="info info_password">
+            <label class="login_title" for="user_password">비밀번호</label>
             <div class="flex_item">
               <input
                 class="login_input_field"
@@ -42,7 +43,7 @@
                 placeholder="비밀번호를 입력해주세요."
               />
               <div class="passwrod_icon">
-                <button type="button" class="password_toggle" href="#" aria-label="비밀번호 보기">
+                <button type="button" class="password_toggle" aria-label="비밀번호 보기">
                   <img
                     class="pw-icon"
                     src="./icon/ic_passwrod_hide.svg"
@@ -51,9 +52,10 @@
                 </button>
               </div>
             </div>
+            <div class="error_msg"></div>
           </div>
           <div class="connection_info">
-            <a class="connection_button" href="/login">로그인</a>
+            <button class="connection_button" type="submit" disabled>로그인</button>
           </div>
         </form>
         <!-- simple login -->
@@ -78,5 +80,6 @@
         </div>
       </div>
     </main>
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>

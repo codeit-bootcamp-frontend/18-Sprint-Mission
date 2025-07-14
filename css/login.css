@@ -46,7 +46,7 @@ body {
   line-height: 1.4;
 }
 
-.iogin_title {
+.login_title {
   margin: 0 0 16px;
 }
 
@@ -60,6 +60,8 @@ body {
 .login_input_field {
   width: 100%;
   background: var(--gray100);
+  font: 400 1rem;
+  color: var(--Secondary800);
   padding: 16px 24px;
   border: 0;
   border-radius: 12px;
@@ -90,6 +92,14 @@ body {
   border: none;
 }
 
+.error_msg {
+  margin: 8px 0 0 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--errorMsg);
+}
+
 .connection_info {
   text-align: center;
 }
@@ -102,8 +112,13 @@ body {
   font-weight: 600;
   color: var(--gray100);
   line-height: 2;
-  background: var(--Secondary400);
+  background: var(--blue);
+  border: none;
   border-radius: 40px;
+}
+
+.connection_button:disabled {
+  background: var(--Secondary400);
 }
 
 .simple_login {
@@ -148,13 +163,6 @@ body {
 .sign_link {
   text-decoration: underline;
   color: var(--blue);
-}
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1200px) {
-  .connection_button {
-    background: var(--Secondary400);
-  }
 }
 
 /* Mobile */
