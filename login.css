@@ -100,3 +100,16 @@ li.kakao img {
   color: var(--color-blue-100);
   text-decoration: underline;
 }
+
+
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  body {
+    padding : 4rem 1.6rem;
+    max-width: 43.2rem;
+  }
+  .logo {
+    max-width: 20rem ;
+  }
+}
