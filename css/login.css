@@ -50,14 +50,14 @@ body {
   margin: 0 0 16px;
 }
 
-.login_input_field::placeholder {
+.input_field::placeholder {
   font-family: Pretendard, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
 }
 
-.login_input_field {
+.input_field {
   width: 100%;
   background: var(--gray100);
   font: 400 1rem;
@@ -67,7 +67,7 @@ body {
   border-radius: 12px;
 }
 
-.login_input_field:focus {
+.input_field:focus {
   outline: none;
 }
 
@@ -198,7 +198,7 @@ body {
     margin: 0 0 8px;
   }
 
-  .login_input_field {
+  .input_field {
     width: 100%;
     background: var(--gray100);
     padding: 16px 24px;

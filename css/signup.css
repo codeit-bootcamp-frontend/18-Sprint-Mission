@@ -50,22 +50,24 @@ body {
   margin: 0 0 16px;
 }
 
-.sign_input_field::placeholder {
+.input_field::placeholder {
   font-family: Pretendard, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
 }
 
-.sign_input_field {
+.input_field {
   width: 100%;
   background: var(--gray100);
+  font: 400 1rem;
+  color: var(--Secondary800);
   padding: 16px 24px;
   border: 0;
   border-radius: 12px;
 }
 
-.sign_input_field:focus {
+.input_field:focus {
   outline: none;
 }
 

@@ -1,4 +1,4 @@
-export const form = document.querySelector(".form_control");
+export const form = document.querySelector(".form_contorl");
 export const userEmail = document.querySelector("#user_email");
 export const userPassword = document.querySelector("#user_password");
 export const submitButton = document.querySelector(".connection_button");

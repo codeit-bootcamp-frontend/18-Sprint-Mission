@@ -7,7 +7,7 @@ import {
   pwErrorMsg,
   pwToggle,
   errMsg,
-  changimg,
+  changeImg,
 } from "./shared_variable.js";
 
 form.addEventListener("submit", (e) => {
@@ -70,14 +70,19 @@ function activeButton() {
 }
 
 // 비밀번호 보기
-pwToggle.addEventListener("click", () => {
-  const img = document.querySelector(".pw-icon");
+pwToggle.forEach((button) => {
+  button.addEventListener("click", (target) => {
+    const clickBtn = target.currentTarget;
+    const parentEle = clickBtn.closest(".flex_item");
+    const targetInput = parentEle.querySelector(".input_field");
+    const img = clickBtn.querySelector(".pw-icon");
 
-  if (userPassword.type === "password") {
-    userPassword.type = "text";
-    img.src = changImg.show;
-  } else {
-    userPassword.type = "password";
-    img.src = changImg.hide;
-  }
+    if (targetInput.type === "password") {
+      targetInput.type = "text";
+      img.src = changeImg.show;
+    } else {
+      targetInput.type = "password";
+      img.src = changeImg.hide;
+    }
+  });
 });
