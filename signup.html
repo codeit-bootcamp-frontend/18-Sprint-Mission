@@ -23,7 +23,7 @@
         </div>
         <!-- join form section -->
         <form class="form_contorl" name="sign-up" method="get" autocomplete="on">
-          <div class="info">
+          <div class="info info_email">
             <label class="sign_title" for="user_email">이메일</label>
             <input
               class="sign_input_field"
@@ -31,8 +31,9 @@
               type="email"
               placeholder="이메일을 입력해주세요."
             />
+            <div class="error_msg"></div>
           </div>
-          <div class="info">
+          <div class="info info_nickname">
             <label class="sign_title" for="user_name">닉네임</label>
             <input
               class="sign_input_field"
@@ -40,8 +41,9 @@
               type="name"
               placeholder="닉네임을 입력해주세요."
             />
+            <div class="error_msg"></div>
           </div>
-          <div class="info">
+          <div class="info info_password">
             <label class="sign_title" for="user_password">비밀번호</label>
             <div class="flex_item">
               <input
@@ -51,26 +53,40 @@
                 placeholder="비밀번호를 입력해주세요."
               />
               <div class="passwrod_icon">
-                <button class="ic_eyes hide" href="#"></button>
+                <button type="button" class="password_toggle">
+                  <img
+                    class="pw-icon"
+                    src="./icon/ic_passwrod_hide.svg"
+                    alt="비밀번호 보기 아이콘"
+                  />
+                </button>
               </div>
             </div>
+            <div class="error_msg"></div>
           </div>
-          <div class="info">
+          <div class="info info_Re_password">
             <label class="sign_title" for="password_check">비밀번호 확인</label>
             <div class="flex_item">
               <input
                 class="sign_input_field"
                 id="password_check"
-                type="text"
+                type="password"
                 placeholder="비밀번호를 입력해주세요."
               />
               <div class="passwrod_icon">
-                <button class="ic_eyes open" href="#"></button>
+                <button type="button" class="password_toggle">
+                  <img
+                    class="pw-icon"
+                    src="./icon/ic_passwrod_hide.svg"
+                    alt="비밀번호 보기 아이콘"
+                  />
+                </button>
               </div>
             </div>
+            <div class="error_msg"></div>
           </div>
           <div class="connection">
-            <button class="connection_button" href="/">회원가입</button>
+            <button class="connection_button" type="submit" disabled>회원가입</button>
           </div>
         </form>
         <!-- simple login -->
@@ -96,6 +112,6 @@
       </div>
     </main>
 
-    <script src="./js/signup.js"></script>
+    <script type="module" src="./js/signup.js"></script>
   </body>
 </html>

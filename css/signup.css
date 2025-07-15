@@ -86,8 +86,14 @@ body {
   display: inline-block;
   width: 100%;
   height: 100%;
-  background-color: transparent;
-  border: none;
+}
+
+.error_msg {
+  margin: 8px 0 0 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--errorMsg);
 }
 
 .connection {
@@ -102,8 +108,12 @@ body {
   font-weight: 600;
   color: var(--gray100);
   line-height: 2;
-  background: var(--Secondary400);
+  background: var(--blue);
   border-radius: 40px;
+}
+
+.connection_button:disabled {
+  background: var(--Secondary400);
 }
 
 .simple_login {
