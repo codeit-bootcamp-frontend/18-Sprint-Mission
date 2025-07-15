@@ -74,7 +74,7 @@ function validateField(fieldName) {
 
   // 에러 상태 저장
   errorState[fieldName] = error;
-  
+
   // 해당 input 요소 가져오기
   const input = {
     email: emailInput,
@@ -122,10 +122,13 @@ function updateButtonState() {
 function togglePasswordVisibility(input, button) {
   const img = button.querySelector("img");
   const isHidden = input.type === "password"; // 현재 숨겨진 상태인지 확인
-  input.type = isHidden ? "text" : "password";
+  input.type = isHidden ? "text" : "password"; //true면 text, false면 password
   img.src = isHidden
     ? "images/icon/eye-icon.svg"
     : "images/icon/eye-slash-icon.svg";
+  img.alt = isHidden
+    ? "비밀번호 표시 상태 아이콘"
+    : "비밀번호 숨김 상태 아이콘";
 }
 
 // 각 필드에 blur 이벤트 연결해서 focus-out 시 유효성 검사
