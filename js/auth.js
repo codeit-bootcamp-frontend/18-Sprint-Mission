@@ -47,12 +47,14 @@ function removeError(input) {
 // 특정 필드를 검사하고 에러를 처리하는 함수
 function validateField(fieldName) {
   // 입력값 가져오기
-  const value = {
-    email: emailInput?.value, // 없으면 undefined
+  const inputValues = {
+    email: emailInput?.value,
     nickname: nicknameInput?.value,
     password: passwordInput?.value,
     confirmPassword: confirmPasswordInput?.value,
-  }[fieldName];
+  };
+
+  const value = inputValues[fieldName];
 
   let error = null; // 에러 메시지 초기화
 
@@ -76,12 +78,14 @@ function validateField(fieldName) {
   errorState[fieldName] = error;
 
   // 해당 input 요소 가져오기
-  const input = {
+  const inputElements = {
     email: emailInput,
     nickname: nicknameInput,
     password: passwordInput,
     confirmPassword: confirmPasswordInput,
-  }[fieldName];
+  };
+
+  const input = inputElements[fieldName];
 
   // 에러 표시 혹은 제거
   if (error) {
