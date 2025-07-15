@@ -16,18 +16,10 @@
       <div class="container">
         <h1 class="header-logo">
           <a href="/">
-            <img
-              class="logo-img"
-              src="images/logo.png"
-              alt="판다마켓 로고"
-              width="153"
-            />
-            <img
-              class="logo-no-img"
-              src="images/logo-no-img.png"
-              alt="판다마켓 로고"
-              width="103"
-            />
+            <picture class="logo-img">
+              <source srcset="images/logo-no-img.svg" media="(width < 768px)" />
+              <img src="images/logo.png" alt="판다마켓 로고" />
+            </picture>
           </a>
         </h1>
         <a class="login-button" href="login/">로그인</a>
@@ -42,7 +34,9 @@
               <a href="items/">구경하러 가기</a>
             </div>
           </div>
-          <div class="landing-image"></div>
+          <div class="landing-image">
+            <img src="images/introduce-1.png" alt="소개 이미지 1" />
+          </div>
         </div>
       </header>
       <div class="main-content">
@@ -106,7 +100,9 @@
           <div class="landing-title">
             <h2>믿을 수 있는<br />판다마켓 중고 거래</h2>
           </div>
-          <div class="landing-image"></div>
+          <div class="landing-image">
+            <img src="images/introduce-2.png" alt="소개 이미지 2" />
+          </div>
         </div>
       </footer>
     </main>

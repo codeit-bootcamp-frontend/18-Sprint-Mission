@@ -21,8 +21,8 @@ body {
   gap: 40px;
 }
 
-.logo-small {
-  display: none;
+.logo-img {
+  width: 396px;
 }
 
 .login-main {
@@ -41,7 +41,6 @@ body {
 .login-input-field {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .login-input-field > label {
@@ -56,6 +55,7 @@ body {
   padding: 16px 24px 14px;
   display: flex;
   gap: 12px;
+  margin-top: 16px;
 }
 
 .login-input > input {
@@ -66,6 +66,29 @@ body {
   font-weight: 400;
   line-height: 26px;
   flex-grow: 1;
+}
+
+.password-visibility-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.input-border-error {
+  border: 1px solid var(--error-red-color);
+}
+
+.input-message {
+  margin-top: 8px;
+  padding-left: 16px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.input-message-error {
+  color: var(--error-red-color);
 }
 
 .button {
@@ -80,6 +103,11 @@ body {
 
 .button-primary {
   background-color: var(--blue-color);
+  color: var(--gray100-color);
+}
+
+.button-secondary {
+  background-color: var(--gray400-color);
   color: var(--gray100-color);
 }
 
@@ -124,23 +152,21 @@ body {
     gap: 24px;
   }
 
-  .logo-large {
-    display: none;
-  }
-  .logo-small {
-    display: inline;
+  .logo-img {
+    width: 198px;
   }
 
   .login-main {
     gap: 16px;
   }
 
-  .login-input-field {
-    gap: 8px;
-  }
   .login-input-field > label {
     font-size: 14px;
     line-height: 24px;
+  }
+
+  .login-input {
+    margin-top: 8px;
   }
 
   .login-social {

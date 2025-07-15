@@ -10,16 +10,11 @@
     <div class="container">
       <header class="login-header">
         <a href="/">
-          <img class="logo-large" src="images/logo.png" alt="logo image" />
-          <img
-            class="logo-small"
-            src="images/logo-small.png"
-            alt="logo image"
-          />
+          <img class="logo-img" src="images/logo.png" alt="logo image" />
         </a>
       </header>
       <main class="login-main">
-        <form class="login-form">
+        <form class="login-form" action="/items">
           <div class="login-input-field">
             <label for="email-input">이메일</label>
             <div class="login-input">
@@ -42,10 +37,12 @@
                 placeholder="비밀번호를 입력하세요"
                 required
               />
-              <img src="images/icon-visibility-off.svg" alt="show password" />
+              <button type="button" class="password-visibility-toggle">
+                <img src="images/icon-visibility-off.svg" alt="show password" />
+              </button>
             </div>
           </div>
-          <button class="button button-primary">로그인</button>
+          <button class="button button-secondary" disabled>로그인</button>
         </form>
         <div class="login-social">
           <span>간편 로그인하기</span>
@@ -75,5 +72,7 @@
         </div>
       </main>
     </div>
+
+    <script type="module" src="index.js"></script>
   </body>
 </html>
