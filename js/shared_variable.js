@@ -1,7 +1,7 @@
-export const form = document.querySelector(".form_contorl");
+export const form = document.querySelector(".form_control");
 export const userEmail = document.querySelector("#user_email");
 export const userPassword = document.querySelector("#user_password");
-export const loginButton = document.querySelector(".connection_button");
+export const submitButton = document.querySelector(".connection_button");
 export const emailErrorMsg = document.querySelector(".info_email .error_msg");
 export const pwErrorMsg = document.querySelector(".info_password .error_msg");
 export const pwToggle = document.querySelectorAll(".password_toggle");

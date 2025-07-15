@@ -2,7 +2,7 @@ import {
   form,
   userEmail,
   userPassword,
-  loginButton,
+  submitButton,
   emailErrorMsg,
   pwErrorMsg,
   pwToggle,
@@ -12,6 +12,7 @@ import {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  window.location.href = "/item";
 });
 
 // error messsage show
@@ -31,16 +32,16 @@ function hideError(inputEle, errorEle) {
 userEmail.addEventListener("focusout", () => {
   if (userEmail.value === "") {
     showError(userEmail, emailErrorMsg, errMsg.id.voidOut.trim());
-  } else if (!emailcheck(userEmail.value)) {
+  } else if (!emailCheck(userEmail.value)) {
     showError(userEmail, emailErrorMsg, errMsg.id.fail.trim());
   } else {
     hideError(userEmail, emailErrorMsg);
   }
-  activebutton();
+  activeButton();
 });
 
 // 이메일 정규 표현식 체크
-function emailcheck(value) {
+function emailCheck(value) {
   const emailRegex =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
@@ -56,15 +57,15 @@ userPassword.addEventListener("focusout", () => {
   } else {
     hideError(userPassword, pwErrorMsg);
   }
-  activebutton();
+  activeButton();
 });
 
 // 버튼 활성화
-function activebutton() {
-  if (emailcheck(userEmail.value) && userPassword.value.length >= 8) {
-    loginButton.disabled = false;
+function activeButton() {
+  if (emailCheck(userEmail.value) && userPassword.value.length >= 8) {
+    submitButton.disabled = false;
   } else {
-    loginButton.disabled = true;
+    submitButton.disabled = true;
   }
 }
 
@@ -74,9 +75,9 @@ pwToggle.addEventListener("click", () => {
 
   if (userPassword.type === "password") {
     userPassword.type = "text";
-    img.src = changimg.show;
+    img.src = changImg.show;
   } else {
     userPassword.type = "password";
-    img.src = changimg.hide;
+    img.src = changImg.hide;
   }
 });

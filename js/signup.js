@@ -2,7 +2,7 @@ import {
   form,
   userEmail,
   userPassword,
-  loginButton,
+  submitButton,
   emailErrorMsg,
   pwErrorMsg,
   pwToggle,
@@ -12,7 +12,7 @@ import {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  window.location.href = "./login.html";
+  window.location.href = "/login.html";
 });
 
 // error messsage show
@@ -32,16 +32,16 @@ function hideError(inputEle, errorEle) {
 userEmail.addEventListener("focusout", () => {
   if (userEmail.value === "") {
     showError(userEmail, emailErrorMsg, errMsg.id.voidOut.trim());
-  } else if (!emailcheck(userEmail.value)) {
+  } else if (!emailCheck(userEmail.value)) {
     showError(userEmail, emailErrorMsg, errMsg.id.fail.trim());
   } else {
     hideError(userEmail, emailErrorMsg);
   }
-  activebutton();
+  activeButton();
 });
 
 // 이메일 정규 표현식 체크
-function emailcheck(value) {
+function emailCheck(value) {
   const emailRegex =
     /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
@@ -58,7 +58,7 @@ userName.addEventListener("focusout", () => {
   } else {
     hideError(userName, nameError);
   }
-  activebutton();
+  activeButton();
 });
 
 // 비밀번호 유효성검사
@@ -70,7 +70,7 @@ userPassword.addEventListener("focusout", () => {
   } else {
     hideError(userPassword, pwErrorMsg);
   }
-  activebutton();
+  activeButton();
 });
 
 // 비밀번호 확인 유효성검사
@@ -78,26 +78,26 @@ const checkPassword = document.querySelector("#password_check");
 const checkPwError = document.querySelector(".info_Re_password .error_msg");
 
 checkPassword.addEventListener("focusout", () => {
-  if (checkPassword.value === 0) {
+  if (checkPassword.value === "") {
     showError(checkPassword, checkPwError, errMsg.pw.voidOut.trim());
   } else if (checkPassword.value !== userPassword.value) {
     showError(checkPassword, checkPwError, errMsg.rePw.trim());
   } else {
     hideError(checkPassword, checkPwError);
   }
-  activebutton();
+  activeButton();
 });
 
 // 버튼 활성화
 
-function activebutton() {
+function activeButton() {
   const formValid =
-    emailcheck(userEmail.value) &&
+    emailCheck(userEmail.value) &&
     userName.value !== "" &&
     userPassword.value.length >= 8 &&
     userPassword.value === checkPassword.value;
 
-  loginButton.disabled = !formValid;
+  submitButton.disabled = !formValid;
 }
 
 // 비밀번호 보기/숨기기 토글
@@ -106,7 +106,7 @@ pwToggle.forEach((button) => {
   button.addEventListener("click", (target) => {
     const clickBtn = target.currentTarget;
     const parentEle = clickBtn.closest(".flex_item");
-    const targetInput = parentEle.querySelector(".sign_input_field");
+    const targetInput = parentEle.querySelector(".input_field");
     const img = clickBtn.querySelector(".pw-icon");
 
     if (targetInput.type === "password") {
