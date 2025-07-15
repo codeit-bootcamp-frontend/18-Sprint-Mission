@@ -1,4 +1,4 @@
-/* 로그인 부분 CSS 코드*/
+/* 회원가입 부분 CSS 코드*/
 @import url("color.css");
 
 * {
@@ -9,7 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .signup-main-container {
@@ -17,22 +19,30 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   margin: 0 auto;
-  max-width: 640px;
+  width: 100%;
+  min-height: calc(100vh - 120px);
   gap: 40px;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 .signup-main-title-img {
   width: 396px;
   height: 132px;
+  max-width: 100%;
+}
+
+.signup-main-container > section {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  justify-content: center;
 }
 
 .signup-form-content {
   display: flex;
   flex-direction: column;
-  max-width: 640px;
+  width: 100%;
   gap: 24px;
 }
 
@@ -40,10 +50,11 @@ body {
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
+  margin-bottom: 16px;
 }
 
 .signup-input-content {
-  width: 640px;
+  width: 100%;
   height: 56px;
   border-radius: 12px;
   border: 1px solid var(--gray-100);
@@ -54,36 +65,38 @@ body {
 .signup-nickname-content,
 .signup-password-content,
 .signup-email-content {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  position: relative;
 }
 
-.signup-input-content .signup-password-content {
-  margin-right: 50px;
+.signup-password-content .signup-input-content {
+  padding: 0 50px 0 16px;
+}
+
+.signup-password-content .visibility-btn {
+  position: absolute;
+  right: 16px;
+  top: calc(26px + 16px + 28px);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 10;
+  pointer-events: auto;
+  transform: translateY(-50%);
 }
 
 .signup-button-content {
-  width: 640px;
+  width: 100%;
   height: 56px;
   border-radius: 40px;
   border: none;
-  margin-top: 16px;
   font-size: 20px;
   font-weight: 600;
   background-color: var(--blue);
   color: var(--gray-100);
   cursor: pointer;
-}
-
-.visibility-btn {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+  margin-top: 16px;
 }
 
 .signup-footer {
@@ -106,75 +119,113 @@ body {
 }
 
 .signup-social-content {
-  display: flex; /* ← flex로 수정 */
-  align-items: center; /* ← align-content 대신 align-items */
-  justify-content: space-between; /* ← space-between 대신 center가 더 자연스러움 */
-  width: 640px;
-  gap: 20px; /* ← 간격 추가 */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  min-height: 60px;
   border-radius: 8px;
   background-color: var(--gray-250);
-  padding: 15px 20px;
+  padding: 15px 30px;
 }
 
 .signup-social-content p {
   font-size: 16px;
   font-weight: 500;
+  margin-right: auto;
 }
 
 .signup-social-icon {
   display: flex;
   gap: 16px;
+  margin-left: auto;
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+  padding-left: 16px;
+}
+
+/* 버튼 비활성화 상태 */
+.signup-button-content:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.signup-button-content:disabled:hover {
+  background-color: #9ca3af;
+}
+
+/* 입력 필드 포커스 상태 */
+.signup-input-content:focus {
+  outline: none;
+  border: 1px solid var(--blue);
+}
+
+/* 에러 상태의 입력 필드 포커스 */
+.signup-input-content[style*="border: 1px solid #ef4444"]:focus {
+  border: 1px solid #ef4444;
+}
+
+/* 비밀번호 표시/숨기기 버튼 호버 효과 */
+.visibility-btn:hover {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
 }
 
 @media (max-width: 767px) {
   body {
-    padding: 0 16px;
+    padding: 0;
   }
 
   .signup-main-container {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 16px;
     gap: clamp(20px, 5vw, 40px);
-    box-sizing: border-box;
+  }
+
+  .signup-main-container > section {
+    max-width: none;
   }
 
   .signup-main-title-img {
-    width: clamp(250px, 70vw, 396px);
+    width: clamp(250px, 70vw, 350px);
     height: auto;
   }
 
   .signup-form-content {
-    width: 100%;
-    height: auto;
     gap: clamp(16px, 4vw, 24px);
   }
 
   .signup-input-content {
-    width: 100%;
-    min-width: 343px;
     height: clamp(48px, 12vw, 56px);
-    font-size: clamp(14px, 2vw, 16px);
-    border: 1px solid var(--gray-100);
-    outline: none;
-    box-sizing: border-box;
+    font-size: clamp(14px, 4vw, 16px);
+  }
+
+  .signup-password-content .signup-input-content {
+    padding: 0 45px 0 16px;
+  }
+
+  .signup-password-content .visibility-btn {
+    right: 12px;
+    top: calc(26px + 16px + 24px);
+    width: clamp(20px, 5vw, 24px);
+    height: clamp(20px, 5vw, 24px);
   }
 
   .signup-button-content {
-    width: 100%;
-    min-width: 343px;
     height: clamp(48px, 12vw, 56px);
     font-size: clamp(16px, 4vw, 20px);
-    box-sizing: border-box;
   }
 
   .signup-social-content {
-    width: 100%;
-    min-width: 343px;
-    padding: clamp(12px, 3vw, 1px) clamp(16px, 4vw, 20px);
+    max-width: none;
+    padding: clamp(12px, 3vw, 15px) clamp(16px, 4vw, 20px);
     gap: clamp(12px, 3vw, 20px);
-    box-sizing: border-box;
   }
 
   .signup-social-content p {
@@ -191,5 +242,12 @@ body {
 
   .signup-footer-content {
     font-size: clamp(12px, 3vw, 14px);
+  }
+
+  /* 모바일에서 에러 메시지 스타일 */
+  .error-message {
+    font-size: 12px;
+    margin-top: 6px;
+    padding-left: 16px;
   }
 }
