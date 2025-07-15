@@ -20,11 +20,12 @@
     </a>
     
     <!-- login-form -->
-    <form class="auth-form" action="/login" method="post">
+    <form id="auth-form" class="auth-form" action="/login.html" method="post">
 
-      <div class="form-group">
+      <div id="form-group" class="form-group">
         <label for="email">이메일</label>
         <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요." required />
+        <p class="visually-hidden error-msg"></p>
       </div>
 
       <div class="form-group">
@@ -35,9 +36,10 @@
             <img src="images/icon/eye-slash-icon.svg" alt="비밀번호 보기 아이콘" />
           </button>
         </div>
+        <p class="visually-hidden error-msg"></p>
       </div>
 
-       <button type="submit" class="auth-btn disabled" disabled>로그인</button>
+       <button type="submit" id="auth-btn" class="auth-btn disabled" disabled>로그인</button>
     </form>
 
     <div class="auth-social">
@@ -60,7 +62,7 @@
       <span>판다마켓이 처음이신가요?</span>
       <a href="/signup.html">회원가입</a>
     </div>
-
+    <script type="module" src="js/auth.js"></script>
   </main>
 </body>
 </html>
