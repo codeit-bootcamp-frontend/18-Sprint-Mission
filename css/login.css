@@ -93,7 +93,7 @@ input[type="password"] {
 .login-btn {
   width: 100%;
   height: 56px;
-  background-color: #3692FF;
+  background-color: #9CA3AF;
   color: #ffffff;
   font-weight: 600;
   font-size: 20px;
@@ -138,9 +138,17 @@ input[type="password"] {
 }
 
 .signup-callout a {
-  color: #3692FF;
+  color: #3182F6;
   font-size: 14px;
   font-weight: 500;
 }
 
-
+@media (max-width: 767px) and (min-width: 375px) {
+  .login-box {
+    max-width: 400px;
+  }
+  .logo-img {
+    width: 100%;
+    height: auto;
+  }
+}
