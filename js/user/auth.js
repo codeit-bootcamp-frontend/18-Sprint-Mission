@@ -3,6 +3,7 @@ import { validateEmail, validateNickName, validatePassword, passwordMatch } from
 
 const form = document.querySelector(".form");
 const formFields = form.querySelectorAll("input");
+const togglePasswordBtn = form.querySelectorAll(".password-input__toggle");
 const submitBtn = form.querySelector(".btn--submit");
 const authType = form.dataset.auth;
 
@@ -64,6 +65,17 @@ const checkForm = () => {
 }
 
 // s: 이벤트 관리
+// click: 패스워드 비밀번호 표시/숨기기 버튼 토글 기능
+togglePasswordBtn.forEach((toggleBtn) => {
+    toggleBtn.addEventListener("click", () => {
+        const isPressed = toggleBtn.getAttribute("aria-pressed") === "true";
+        const inputType = toggleBtn.closest(".password-input").querySelector("input");
+
+        toggleBtn.setAttribute("aria-pressed", isPressed ? "false" : "true");
+        inputType.type = isPressed ? "password" : "text";
+    });
+});
+
 // focusout: targetFieldId 검증, 폼 체크
 form.addEventListener("focusout", (e) => {
     const targetField = e.target;
