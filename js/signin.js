@@ -165,8 +165,3 @@ if (visibilityBtn) {
     }
   });
 }
-
-// 초기 상태 설정
-validationState.email.isValid = false;
-validationState.password.isValid = false;
-updateFormValidation();

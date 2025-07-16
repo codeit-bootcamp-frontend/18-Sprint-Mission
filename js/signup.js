@@ -262,10 +262,3 @@ visibilityBtns.forEach((btn, index) => {
     }
   });
 });
-
-// 초기 상태 설정
-validationState.email.isValid = false;
-validationState.nickname.isValid = false;
-validationState.password.isValid = false;
-validationState.passwordCheck.isValid = false;
-updateFormValidation();
