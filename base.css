@@ -17,36 +17,17 @@
   --color-error: #F74747;
 }
 
-/* reset */
-* {
-  box-sizing: border-box;
-}
+
+/* font style class */
 html {
-  font-size: 62.5%;
   font-family: 'Pretendard';
   color: var(--color-gray-700);
   word-break: keep-all;
 }
-body {
-  margin: 0 auto;
-}
-h2, p {
-  margin: 0;
-}
-a {
-  text-decoration: none;
-}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-
-/* font style class */
 .f-heading {
   font-size: 4rem;
   font-weight: 700;
+  line-height: 140%;
 }
 .f-paragraph {
   font-size: 2.4rem;
@@ -55,6 +36,9 @@ ul {
 .f-regular {
   font-size: 1.6rem;
   font-weight: 400;
+}
+.letter-sp-04 {
+  letter-spacing: .4rem;
 }
 
 
