@@ -3,6 +3,7 @@ body{
 }
 *{
     font-family: Pretendard;
+    box-sizing: border-box;
 }
 a{
     text-decoration: none;
@@ -20,7 +21,13 @@ header{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding : 9.5px clamp(200px, 21vw, 400px);    
+    padding : 9.5px clamp(200px, 21vw, 400px);
+    background-color: #ffffff;
+    height:70px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
 }
 #logo{
     display: flex;
@@ -51,6 +58,9 @@ header{
     justify-content:center;
     flex-wrap: wrap;
     flex-shrink: 1;
+}
+.hometop{
+    margin-top: 70px;
 }
 .htbox{
     display:flex;
