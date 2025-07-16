@@ -241,12 +241,12 @@
   outline: 1px solid var(--color-primary-100);
 }
 
-.form .input--error {
-  outline: 1px solid var(--color-error);
+.form .form__input:-webkit-autofill{
+ -webkit-box-shadow: 0 0 0 1000px var(--color-gray-100) inset;
 }
 
-.form .error-message {
-  color: var(--color-error);
+.form .message {
+  display: block;
   margin-top: 8px;
   padding: 0 16px;
   font-size: var(--text-md-size);
@@ -264,20 +264,27 @@
 
 .form .password-input__toggle {
   position: absolute;
-  top: 50%;
+  top: 16px;
   right: 24px;
-  transform: translateY(-50%);
   width: 24px;
   height: 24px;
-  mask-image: url(../img/ico/ico-visibility-off.svg);
-  -webkit-mask-image: url(../img/ico/ico-visibility-off.svg);
+  mask-image: url(../../img/ico/ico-visibility-off.svg);
+  -webkit-mask-image: url(../../img/ico/ico-visibility-off.svg);
   background: var(--color-gray-600);
   z-index: 1;
 }
 
 .form .password-input__toggle[aria-pressed="true"] {
-  mask-image: url(../img/ico/ico-visibility-on.svg);
-  -webkit-mask-image: url(../img/ico/ico-visibility-on.svg);
+  mask-image: url(../../img/ico/ico-visibility-on.svg);
+  -webkit-mask-image: url(../../img/ico/ico-visibility-on.svg);
+}
+
+.form .status--error .form__input {
+  outline: 1px solid var(--color-error);
+}
+
+.form .status--error .message {
+  color: var(--color-error);
 }
 
 .form .btn--submit {

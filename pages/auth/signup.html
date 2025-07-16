@@ -33,19 +33,19 @@
                 </header>
                 <main class="main">
                     <h2 class="blind">판다마켓 회원가입</h2>
-                    <form action="#" method="POST" class="form auth-form">
+                    <form action="./login.html" method="POST" class="form auth-form" data-auth="signup">
                         <div class="form-field">
                             <label for="email" class="form__label">이메일</label>
                             <input type="email" id="email" name="email" class="form__input" placeholder="이메일을 입력해주세요." autocomplete="on" required>
                         </div>
-                         <div class="form-field">
+                        <div class="form-field">
                             <label for="nickname" class="form__label">닉네임</label>
-                            <input type="text" id="nickname" name="nickname" class="form__input" placeholder="닉네임을 입력해주세요." required>
+                            <input type="text" id="nickname" name="nickname" class="form__input" placeholder="닉네임을 입력해주세요." autocomplete="username" required>
                         </div>
                         <div class="form-field">
                             <label for="password" class="form__label">비밀번호</label>
                             <div class="password-input">
-                                <input type="password" id="password" name="password" class="form__input" placeholder="비밀번호를 입력해주세요." required>
+                                <input type="password" id="password" name="password" class="form__input" placeholder="비밀번호를 입력해주세요." autocomplete="current-password" required>
                                 <button type="button" class="password-input__toggle btn--toggle" aria-pressed="false">
                                     <span class="blind">비밀번호 표시/숨기기</span>
                                 </button>
@@ -54,8 +54,8 @@
                         <div class="form-field">
                             <label for="passwordConfirm" class="form__label">비밀번호 확인</label>
                             <div class="password-input">
-                                <input type="passwordConfirm" id="passwordConfirm" name="passwordConfirm" class="form__input" placeholder="비밀번호를 재입력해주세요." required>
-                                <button type="button" class="password-input__toggle btn--toggle" aria-pressed="true">
+                                <input type="password" id="passwordConfirm" name="passwordConfirm" class="form__input" placeholder="비밀번호를 재입력해주세요." autocomplete="current-password" required>
+                                <button type="button" class="password-input__toggle btn--toggle" aria-pressed="false">
                                     <span class="blind">비밀번호 표시/숨기기</span>
                                 </button>
                             </div>
@@ -75,5 +75,7 @@
                 </main>
             </div>
         </div>
+        <!-- js -->
+        <script type="module" src="/js/user/auth.js"></script>
     </body>
 </html>
