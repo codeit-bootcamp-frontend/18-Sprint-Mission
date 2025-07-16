@@ -1,0 +1,115 @@
+/* auth header */
+body[class*=sign-] .header {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+
+body[class*=sign-] .header .ico--logo {
+    width: 396px;
+    height: 132px;
+}
+
+/* auth */
+body[class*=sign-] .wrap {
+    padding: 60px 0;
+}
+
+/* sign-in/sign-out */
+body[class*=sign-] .wrap {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body[class*=sign-] .inner {
+    max-width: calc(640px + 104px);
+    padding: 0 52px;
+    margin: 0 auto;
+}
+
+body[class*=sign-] .main {
+    display: grid;
+    gap: 24px 0;
+}
+
+body[class*=sign-] .sns-login {
+    background: #E6F2FF;
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 16px 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body[class*=sign-] .sns-list {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+}
+
+body[class*=sign-] .sns-list .ico {
+    width: 42px;
+    height: 42px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+body[class*=sign-] .sns-list a {
+    display: block;
+}
+
+body[class*=sign-] .sns-list .ico--google {
+    background-image: url(../../../img/ico/ico-google.svg);
+}
+
+body[class*=sign-] .sns-list .ico--kakao {
+    background-image: url(../../../img/ico/ico_kakao.svg);
+}
+
+body[class*=sign-] .auth-find {
+    font-weight: 500;
+    text-align: center;
+    font-size: var(--text-md-size);
+    line-height: var(--text-md-height);
+}
+
+body[class*=sign-] .auth-find .btn {
+    margin-left: 4px;
+}
+
+
+/* [Tablet] media query */
+@media screen and (max-width: 1199px) {
+    body[class*=sign-] .wrap {
+        padding: 48px 0;
+    }
+}
+
+/* [Mobile] media query */
+@media screen and (max-width: 767px) {
+    body[class*=sign-] .header {
+        margin-bottom: 24px;
+    }
+
+    body[class*=sign-] .header .ico--logo {
+        width: 198px;
+        height: 66px;
+    }
+
+    body[class*=sign-] .wrap {
+        padding: 24px 0;
+    }
+
+    body[class*=sign-] .inner {
+        padding: 0 16px;
+        max-width: 400px;
+    }
+}
