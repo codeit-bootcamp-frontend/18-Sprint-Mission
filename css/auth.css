@@ -50,9 +50,20 @@
   border: 2px solid var(--primary300);
 }
 
+.error-msg {
+  color: var(--error);
+  padding-left: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 /* 비밀번호 보기 버튼 */
 .form-group .input-wrap {
   position: relative;
+}
+
+input.error {
+  border: 2px solid red;
 }
 
 .form-group .togglePassword {
