@@ -9,7 +9,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   background: var(--white);
 }
 
@@ -50,22 +50,24 @@ body {
   margin: 0 0 16px;
 }
 
-.sign_input_field::placeholder {
+.input_field::placeholder {
   font-family: Pretendard, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
 }
 
-.sign_input_field {
+.input_field {
   width: 100%;
   background: var(--gray100);
+  font: 400 1rem;
+  color: var(--Secondary800);
   padding: 16px 24px;
   border: 0;
   border-radius: 12px;
 }
 
-.sign_input_field:focus {
+.input_field:focus {
   outline: none;
 }
 
@@ -82,25 +84,18 @@ body {
   transform: translateY(-50%);
 }
 
-.ic_eyes {
+.password_toggle {
   display: inline-block;
   width: 100%;
   height: 100%;
-  border: none;
 }
 
-.hide {
-  background-image: url(../icon/ic_passwrod_hide.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-
-.open {
-  background-image: url(../icon/ic_passwrod_open.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+.error_msg {
+  margin: 8px 0 0 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--errorMsg);
 }
 
 .connection {
@@ -115,8 +110,12 @@ body {
   font-weight: 600;
   color: var(--gray100);
   line-height: 2;
-  background: var(--Secondary400);
+  background: var(--blue);
   border-radius: 40px;
+}
+
+.connection_button:disabled {
+  background: var(--Secondary400);
 }
 
 .simple_login {
@@ -198,13 +197,5 @@ body {
 
   .sign_title {
     margin: 0 0 8px;
-  }
-
-  /* open 이미지 hide로 변겨 */
-  .open {
-    background-image: url(../icon/ic_passwrod_hide.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
   }
 }
