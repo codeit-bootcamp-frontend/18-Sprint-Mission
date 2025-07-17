@@ -40,7 +40,7 @@ header{
     color : #f3f4f6;
     background-color: #3691ff;
     border-radius: 8px;
-    padding: 12px 23px;
+    padding: 12px 24px;
     gap:10px;
 }
 .img{
@@ -72,6 +72,7 @@ header{
 #tbt1{
     margin: 0 62px 32px 0;
     flex-shrink: 1;
+    line-height: 140%;
 }
 #itembtn{
     display:block;
@@ -93,6 +94,7 @@ header{
     font-weight: 700;
     line-height: 140%;
     flex-shrink: 1;
+    width: 357px;
 }
 
 .home{
@@ -110,6 +112,7 @@ header{
     background-color: #fcfcfc;
     gap:64px;
     flex-shrink: 1;
+    width: 988px;
 }
 .sec{
     text-align: right;
@@ -129,6 +132,9 @@ header{
     font-weight: 700;
     line-height: 140%;
     flex-shrink: 1;
+    white-space: wrap;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 .txttxt{
     font-size: 24px;
@@ -169,4 +175,169 @@ footer{
 .icons{
     display:flex;
     gap:12px;
+}
+/*태블릿*/
+@media(min-width : 768px) and (max-width : 1199px){
+    header{
+        padding : 0 24px;
+    }
+    .htbox{  
+        height : 100%;      
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;        
+    }
+    .hometop{
+        padding-top: 84px;
+        height : 771px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .textbox{
+        width : 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:24px;
+        text-align: center;
+    }
+    #tbt1{
+        margin:0;
+        width: 100%;
+    }
+    #itembtn{
+        width: 357px;
+    }
+    .homebottom{
+        height : 927px;
+        padding-top: 200px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .home{
+        align-items: flex-start;
+        margin:52px 24px;
+    }
+    .hbox{
+        width: 100%;
+        height: 708px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap:24px;
+    }
+    .sec{
+        flex-direction: column-reverse;
+    }
+    .htxt{
+        width:100%;
+    }
+    .txtmsg{
+        white-space: nowrap;
+    }
+    .txtmsg{
+        font-size: 32px;
+    }
+    .txttxt{
+        font-size:18px;
+    }
+    .img{
+        width : 100%;
+        max-height: 524px;
+        overflow: hidden;
+    }
+}
+/*모바일*/
+@media(max-width : 767px){
+    header{
+        padding : 0 16px;
+    }
+    #loico{
+        display: none;
+    }
+    .htbox{  
+        height : 100%;      
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;        
+    }
+    .hometop{
+        padding-top: 48px;
+        height : 540px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .textbox{
+        width : 240px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:18px;
+        text-align: center;
+    }
+    #tbt1{
+        margin:0;
+        width: 100%;
+        font-size: 32px;
+    }
+    #itembtn{
+        width: 240px;
+        height: 48px;
+        font-size: 18px;
+        line-height: 17px;
+    }
+    .homebottom{
+        height : 540px;
+        padding-top: 120px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .home{
+        align-items: flex-start;
+        margin:40px 16px;
+    }
+    .hbox{
+        width: 100%;
+        height: 416px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap:24px;
+    }
+    .sec{
+        flex-direction: column-reverse;
+    }
+    .htxt{
+        width:100%;
+    }
+    .txtindex{
+        font-size: 16px;
+    }
+    .txtmsg{
+        white-space: nowrap;
+        font-size: 24px;
+    }
+    .txttxt{
+        font-size:18px;
+    }
+    .img{
+        width : 100%;
+        max-height: 260px;
+        overflow: hidden;
+    }
+    footer{        
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding : 32px;
+        height:160px;
+    }
+    #links>*{
+        margin-left: 0;
+        margin-right: 32px;
+    }
+    #bn{
+        order:3;
+    }
 }
