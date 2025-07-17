@@ -1,7 +1,14 @@
 * {
-  --white-250: #ffffff;
-  --white-240: #F3F4F6;
-  --white-230: #E6F2FF;
-  --black: #111322;
-  --blue: #3692FF;
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-250: #e6f2ff;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --white: #ffffff;
+  --blue: #3692ff;
 }
