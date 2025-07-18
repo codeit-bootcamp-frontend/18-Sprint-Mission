@@ -20,53 +20,84 @@
         </div>
         <div class="form-group">
           <label for="email">이메일</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" placeholder="이메일을 입력해주세요." />
           <div class="error-message" id="email-error"></div>
         </div>
+        <span
+          id="email-error"
+          class="error-message"
+          style="display: none"
+        ></span>
         <div class="form-group">
           <label for="nickname">닉네임</label>
-          <input type="text" id="nickname" required />
-          <div class="error-message" id="nickname-error"></div>
+          <input
+            type="text"
+            id="nickname"
+            placeholder="닉네임을 입력해주세요."
+          />
         </div>
+        <span
+          id="nickname-error"
+          class="error-message"
+          style="display: none"
+        ></span>
         <div class="form-group">
           <label for="password">비밀번호</label>
           <div class="password">
-            <input type="password" id="password" required />
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요."
+            />
             <button
               type="button"
               class="btn"
               onclick="inputPassword('password', 'eye-icon')"
             >
               <img
-                src="images/eye-off.png"
+                src="images/eye-off.svg"
                 alt="비밀번호 숨기기"
                 id="eye-icon"
                 class="eye-icon"
               />
             </button>
           </div>
+          <span
+            id="password-error"
+            class="error-message"
+            style="display: none"
+          ></span>
           <div class="error-message" id="password-error"></div>
         </div>
         <div class="form-group">
           <label for="password-confirm">비밀번호 확인</label>
           <div class="password">
-            <input type="password" id="password-confirm" required />
+            <input
+              type="password"
+              id="password-confirm"
+              placeholder="비밀번호를 다시 한 번 입력해주세요."
+            />
             <button
               type="button"
               class="btn"
               onclick="confirmPassword('password-confirm', 'eye-icon2')"
             >
               <img
-                src="images/eye-off.png"
+                src="images/eye-off.svg"
                 alt="비밀번호 숨기기"
                 id="eye-icon2"
                 class="eye-icon"
               />
             </button>
+            <span
+              id="confirm-error"
+              class="error-message"
+              style="display: none"
+            ></span>
           </div>
           <div class="error-message" id="password-confirm-error"></div>
         </div>
-        <button type="submit" class="login-btn" id="signupBtn" disabled>
+        <button type="submit" class="login-btn" id="signup-button" disabled>
           회원가입
         </button>
         <div class="social-login">
@@ -81,7 +112,7 @@
           </div>
         </div>
         <p class="signup-callout">
-          이미 회원이신가요? <a href="/login">로그인</a>
+          이미 회원이신가요? <a href="login.html">로그인</a>
         </p>
       </form>
     </main>
