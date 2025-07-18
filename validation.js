@@ -1,9 +1,5 @@
 function validateInput(el, label) {
   const { validity } = el;
-  console.log(validity);
-
-  el.id === "signup_password_check" && setPasswordValidity();
-
   if (!validity.valid) {
     if (validity.valueMissing) return `${label}을 입력해주세요`;
     if (validity.typeMismatch) return "잘못된 이메일 형식입니다";
@@ -22,8 +18,8 @@ function setPasswordValidity() {
   }
 }
 
-function showValidMessage(e) {
-  const inputEl = e.target;
+function showValidMessage(el) {
+  const inputEl = el;
   const parentEl = inputEl.parentElement;
   const targetLabel = parentEl.firstElementChild.textContent;
 
@@ -43,15 +39,18 @@ function showValidMessage(e) {
 }
 
 function checkBtnState(form, inputs) {
-  form.id=='signup_form' && setPasswordValidity();
-  const btn = form.querySelector('button.large');
-  const isValid = [...inputs].every(input=>input.validity.valid);
-  btn.classList.toggle('inactive', !isValid);
+  form.id === "signup_form" && setPasswordValidity();
+  const btn = form.querySelector("button.large");
+  const isValid = [...inputs].every((input) => input.validity.valid);
+  btn.classList.toggle("inactive", !isValid);
 }
 
 const form = document.querySelector("form");
-const inputs = form.querySelectorAll('input');
+const inputs = form.querySelectorAll("input");
 inputs.forEach((inputEl) => {
-  inputEl.addEventListener('input', (e)=>checkBtnState(form, inputs));
-  inputEl.addEventListener("focusout", (e) => showValidMessage(e));
+  inputEl.addEventListener("input", () => {
+    checkBtnState(form, inputs);
+    inputEl.id === "signup_password_check" && showValidMessage(inputEl);
+  });
+  inputEl.addEventListener("focusout", (e) => showValidMessage(e.target));
 });
