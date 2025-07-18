@@ -14,16 +14,16 @@ const pctoggle = document.getElementById("pctoggle");
 const pcon = document.getElementById("pcOn");
 const pcoff = document.getElementById("pcOff")
 
-const button = document.getElementsByClassName("btn");
+const button = document.getElementById("btn");
 
 
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const error={
-    email : 1,
-    nickname : 1,
-    password : 1,
-    passwordcheck : 1,
+    email : 0,
+    nickname : 0,
+    password : 0,
+    passwordcheck : 0,
 };
 emailInput.addEventListener("focusout",function() {
     const value = emailInput.value.trim();
@@ -31,14 +31,18 @@ emailInput.addEventListener("focusout",function() {
         emailError.textContent = "이메일을 입력해 주세요";
         emailError.style.display = "block";
         emailInput.classList.add("errorborder");
+        error.email =0;
     }else if(!emailPattern.test(value)){
         emailError.textContent = "잘못된 이메일 형식입니다.";
         emailError.style.display = "block";
         emailInput.classList.add("errorborder");
+        error.email =0;
     }else{
         emailError.style.display="none"
         emailInput.classList.remove("errorborder");
+        error.email =1;
     }
+    updateButtonState()
 })
 
 nicknameInput.addEventListener("focusout",function(){
@@ -47,10 +51,13 @@ nicknameInput.addEventListener("focusout",function(){
         nicknameError.textContent = "닉네임을 입력해 주세요";
         nicknameError.style.display = "block";
         nicknameInput.classList.add("errorborder");
+        error.nickname =0;
     }else{
         nicknameError.style.display = "none"
         nicknameInput.classList.remove("errorborder");
+        error.nickname =0;
     }
+    updateButtonState()
 })
 
 passwordInput.addEventListener("focusout", function(){
@@ -59,14 +66,18 @@ passwordInput.addEventListener("focusout", function(){
         passwordError.textContent = "비밀번호를 입력해 주세요";
         passwordError.style.display = "block";
         passwordInput.classList.add("errorborder");
+        error.password =0;
     }else if(value.length<8){
         passwordError.textContent = "비밀번호를 8자 이상 입력해 주세요";
         passwordError.style.display = "block";
         passwordInput.classList.add("errorborder");
+        error.password =0;
     }else{
         passwordError.style.display="none"
         passwordInput.classList.remove("errorborder");
+        error.password =1;
     }
+    updateButtonState()
 })
 
 passwordcheckInput.addEventListener("focusout",function(){
@@ -76,18 +87,23 @@ passwordcheckInput.addEventListener("focusout",function(){
         passwordcheckError.textContent = "비밀번호를 8자 이상 입력해 주세요";
         passwordcheckError.style.display = "block";
         passwordcheckInput.classList.add("errorborder");
+        error.passwordcheck =0;
     }else if(value != password){
         passwordcheckError.textContent = "비밀번호가 일치하지 않습니다.";
         passwordcheckError.style.display = "block";
         passwordcheckInput.classList.add("errorborder");
+        error.passwordcheck =0;
     }else{
         passwordcheckError.style.display="none"
         passwordcheckInput.classList.remove("errorborder");
+        error.passwordcheck =1;
     }
+    updateButtonState()
 })
 
 let showPw = false;
 let showPc = false;
+
 pwtoggle.addEventListener('click', function() {
   showPw = !showPw;
   passwordInput.type = showPw ? 'text' : 'password';
@@ -111,3 +127,16 @@ if(error.email * error.nickname * error.password * error. passwordcheck ==0){
     button.classList.add('disabled');
     btn.disabled = true;
 }
+function updateButtonState(){
+    const validcheck = error.email * error.password * error.nickname * error.passwordcheck;
+    if(validcheck ==1){
+        button.disabled = false;
+        button.classList.remove("disabled");
+        button.classList.add("enabled");
+    }else {
+        button.disabled = true;
+        button.classList.add("disabled");
+        button.classList.remove("enabled");
+    }
+}
+
