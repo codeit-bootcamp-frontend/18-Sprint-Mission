@@ -57,6 +57,9 @@ main{
     line-height: 26px;
     font-style: regular;
 }
+.errorborder{
+    border :2px solid #f74747;
+}
 .labels{
     text-align: left;
     font-size: 18px;
@@ -65,14 +68,14 @@ main{
     font-style: bold;
     color: var(--gray800);
 }
-button{
+.btn{
     margin:16px 0;
     padding : 16px 124px;
     gap : 10px;
     height : 56px;
     border-radius: 40px;
     color: var(--gray100);
-    background-color: var(--gray400 );
+    background-color: var(--blue);
     width : 100%;
     font-size: 20px;
     font-weight: 600;
@@ -82,6 +85,10 @@ button{
     justify-content: center;
     align-items: center;
 }
+.disabled{
+    background-color: var(--gray400);
+}
+
 .simple{
     display: flex;
     justify-content: space-between;
@@ -114,6 +121,10 @@ button{
     position: absolute;
     right : 17px;
     top : 17px;    
+}
+#pwOff,
+#pcOff{
+    display : none;
 }
 .errormsg{
     font-size: 14px;
