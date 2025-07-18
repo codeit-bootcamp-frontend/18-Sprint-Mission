@@ -54,13 +54,14 @@ body {
   right: 0;
   padding: 0;
   margin: 1.6rem 2.4rem;
+  background-color: transparent;
 }
-.btn-show, .btn-show:hover {
+.btn-show, .btn-show:hover, .btn-show:active {
   background: url("Images/ic_eye_closed.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
-.btn-show:active {
+.btn-show.visible {
   background: url("Images/ic_eye.svg");
 }
 
