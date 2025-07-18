@@ -43,14 +43,14 @@ body {
   padding: .8rem 0 0 1.6rem;
 }
 
-.password {
+.password, .password-check {
   position: relative;
 }
 .btn-show {
   position: absolute;
   height: 2.4rem;
   width: 2.4rem;
-  bottom: 0;
+  top: 3.4rem;
   right: 0;
   padding: 0;
   margin: 1.6rem 2.4rem;
