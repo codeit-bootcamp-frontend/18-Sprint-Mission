@@ -15,7 +15,7 @@ const error={
     email : 0,
     password : 0,
 };
-updateButtonState()
+
 emailInput.addEventListener("focusout",function() {
     const value = emailInput.value.trim();
     if (value==""){

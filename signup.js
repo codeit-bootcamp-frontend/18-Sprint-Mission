@@ -55,7 +55,7 @@ nicknameInput.addEventListener("focusout",function(){
     }else{
         nicknameError.style.display = "none"
         nicknameInput.classList.remove("errorborder");
-        error.nickname =0;
+        error.nickname =1;
     }
     updateButtonState()
 })
@@ -82,13 +82,13 @@ passwordInput.addEventListener("focusout", function(){
 
 passwordcheckInput.addEventListener("focusout",function(){
     const value = passwordcheckInput.value;
-    const password = passwordInput;
+    const pw = passwordInput.value;
     if(value.length<8){
         passwordcheckError.textContent = "비밀번호를 8자 이상 입력해 주세요";
         passwordcheckError.style.display = "block";
         passwordcheckInput.classList.add("errorborder");
         error.passwordcheck =0;
-    }else if(value != password){
+    }else if(value != pw){
         passwordcheckError.textContent = "비밀번호가 일치하지 않습니다.";
         passwordcheckError.style.display = "block";
         passwordcheckInput.classList.add("errorborder");
