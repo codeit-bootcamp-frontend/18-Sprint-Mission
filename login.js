@@ -22,3 +22,13 @@ emailInput.addEventListener("focusout",function() {
         emailError.style.display="none"
     }
 })
+
+nicknameInput.addEventListener("focusout",function(){
+    const value = nicknameInput.value;
+    if(value == ""){
+        nicknameError.textContent = "닉네임을 입력해 주세요";
+        nicknameError.style.display = "block";
+    }else{
+        nicknameError.style.display = "none"
+    }
+})
