@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓 로그인</title>
+    <link rel="icon" href="images/favicon-panda.png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/login.css" />
     <script src="js/login.js"></script>
@@ -11,7 +12,7 @@
 
   <body>
     <main class="login-wrapper">
-      <form class="login-box" autocomplete="off" id="loginForm">
+      <form class="login-box">
         <div class="logo-row">
           <a href="/">
             <img src="images/logo.png" alt="판다로고" class="logo-img" />
@@ -19,31 +20,39 @@
         </div>
         <div class="form-group">
           <label for="email">이메일</label>
-          <input type="email" id="email" required />
-          <div class="error-message" id="email-error"></div>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="이메일을 입력해주세요"
+          />
+          <span id="email-error" class="error-message"></span>
         </div>
         <div class="form-group">
           <label for="password">비밀번호</label>
           <div class="password-input">
-            <input type="password" id="password" required />
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
             <button
               type="button"
               class="btn"
               onclick="inputPassword('password', 'eye-icon')"
             >
               <img
-                src="images/eye-off.png"
+                src="images/eye-off.svg"
                 alt="비밀번호 숨기기"
                 id="eye-icon"
                 class="eye-icon"
               />
             </button>
           </div>
+          <span id="password-error" class="error-message"></span>
           <div class="error-message" id="password-error"></div>
         </div>
-        <button type="submit" class="login-btn" id="loginBtn" disabled>
-          로그인
-        </button>
+        <button id="login-button" class="login-btn" disabled>로그인</button>
         <div class="social-login">
           <p class="social-login-text">간편 로그인하기</p>
           <div class="social-icons">
