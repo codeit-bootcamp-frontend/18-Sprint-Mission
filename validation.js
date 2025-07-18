@@ -1,48 +1,47 @@
-function validateInput(e, label) {
-  const { validity } = e.target;
+function validateInput(el, label) {
+  const { validity } = el;
+
+  el.id === "signup_password_check" && setPasswordValidity();
+
   if (!validity.valid) {
     if (validity.valueMissing) return `${label}을 입력해주세요`;
     if (validity.typeMismatch) return "잘못된 이메일 형식입니다";
     if (validity.tooShort) return "비밀번호를 8자 이상 입력해주세요";
+    if (validity.customError) return el.validationMessage;
+    console.log(validity);
   }
-  if(label==='비밀번호 확인' && !validatePWCheck()) return "비밀번호가 일치하지 않습니다";
-
   return "";
 }
 
-function validatePWCheck() {
-  const [pw,pwCheck] = document.querySelectorAll('input[id^=signup_password]');
-  return pw.value===pwCheck.value;
+function setPasswordValidity() {
+  const [pw, pwCheck] = document.querySelectorAll("input[id^=signup_password]");
+  if (pw.value !== pwCheck.value) {
+    pwCheck.setCustomValidity("비밀번호가 일치하지 않습니다");
+  } else {
+    pwCheck.setCustomValidity("");
+  }
 }
 
 function showValidMessage(e) {
-  const parentEl = e.target.parentElement;
-  const parentClassName = parentEl.className;
+  const inputEl = e.target;
+  const parentEl = inputEl.parentElement;
   const targetLabel = parentEl.firstElementChild.textContent;
-  let p = document.querySelector(`.${parentClassName} p`);
-  if (!p) {
-    p = document.createElement("p");
-    p.classList.add("invalid-input");
-  }
 
-  const errMsg = validateInput(e, targetLabel);
+  let p = parentEl.querySelector("p");
+  let errMsg = validateInput(inputEl, targetLabel);
+
   if (errMsg) {
+    if (!p) {
+      p = document.createElement("p");
+      p.classList.add("invalid-input");
+      inputEl.after(p);
+    }
     p.textContent = errMsg;
-    e.target.after(p);
   } else {
-    p.remove();
+    p && p.remove();
   }
 }
 
-const inputIds = [
-  "login_email",
-  "login_password",
-  "signup_email",
-  "signup_name",
-  "signup_password",
-  "signup_password_check",
-];
-inputIds.forEach((id) => {
-  const inputEl = document.getElementById(id);
-  inputEl && inputEl.addEventListener("focusout", (e) => showValidMessage(e));
+const form = document.querySelectorAll("form input").forEach((inputEl) => {
+  inputEl.addEventListener("focusout", (e) => showValidMessage(e));
 });
