@@ -1,5 +1,6 @@
 function validateInput(el, label) {
   const { validity } = el;
+  console.log(validity);
 
   el.id === "signup_password_check" && setPasswordValidity();
 
@@ -8,7 +9,6 @@ function validateInput(el, label) {
     if (validity.typeMismatch) return "잘못된 이메일 형식입니다";
     if (validity.tooShort) return "비밀번호를 8자 이상 입력해주세요";
     if (validity.customError) return el.validationMessage;
-    console.log(validity);
   }
   return "";
 }
@@ -42,6 +42,16 @@ function showValidMessage(e) {
   }
 }
 
-const form = document.querySelectorAll("form input").forEach((inputEl) => {
+function checkBtnState(form, inputs) {
+  form.id=='signup_form' && setPasswordValidity();
+  const btn = form.querySelector('button.large');
+  const isValid = [...inputs].every(input=>input.validity.valid);
+  btn.classList.toggle('inactive', !isValid);
+}
+
+const form = document.querySelector("form");
+const inputs = form.querySelectorAll('input');
+inputs.forEach((inputEl) => {
+  inputEl.addEventListener('input', (e)=>checkBtnState(form, inputs));
   inputEl.addEventListener("focusout", (e) => showValidMessage(e));
 });

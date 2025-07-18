@@ -59,6 +59,8 @@ button:active {
 }
 button.inactive {
   background: var(--color-gray-400);
+  pointer-events: none;
+  cursor: default;
 }
 button.large {
   width: 100%;
