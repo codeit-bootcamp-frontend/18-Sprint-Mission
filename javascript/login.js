@@ -41,7 +41,7 @@ const checkPasswordValidation = () => {
 
   if (!passwordInputValue) {
     showError(passwordInput, "passwordEmptyErr");
-  } else if (passwordInputValue < 8) {
+  } else if (passwordInputValue.length < 8) {
     showError(passwordInput, "passwordInvalidErr");
   } else {
     hideError(passwordInput, "passwordEmptyErr");
@@ -60,3 +60,18 @@ if (loginForm) {
     window.location.href = "../items/";
   });
 }
+
+// //눈 모양 비밀번호 표시 상태 토글 버튼
+// function togglePasswordVisibility(event) {
+//   const button = event.currentTarget;
+//   const inputField = button.parentElement.querySelector("input");
+//   const toggleIcon = button.querySelector(".password-toggle-eye");
+
+//   const isPasswordVisible = inputField.type === "text";
+
+//   inputField.type = isPasswordVisible ? "password" : "text";
+// }
+// const toggleButtons = document.querySelectorAll(".password-toggle-eye-button");
+// toggleButtons.forEach((button) => {
+//   button.addEventListener("click", togglePasswordVisibility);
+// });

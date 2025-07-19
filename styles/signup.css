@@ -92,7 +92,7 @@ input:focus {
   gap: 15px;
 }
 
-.passwordEye {
+.password-toggle-eye-button {
   position: absolute;
   right: 10px;
   bottom: 14px;

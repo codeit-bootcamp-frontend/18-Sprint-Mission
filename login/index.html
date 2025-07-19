@@ -23,7 +23,7 @@
         <form action="#" class="login-inputForm">
           <label for="loginEmail">이메일</label>
           <input
-            name="useremail"
+            name="userEmail"
             id="loginEmail"
             type="email"
             placeholder="codeit@email.com"
@@ -40,14 +40,22 @@
           <div id="loginPasswordWrap">
             <label for="loginPassword">비밀번호</label>
             <input
-              name="userpassword"
+              name="userPassword"
               id="loginPassword"
               type="password"
               placeholder="......"
               required
             />
-            <button id="passwordEye">
-              <img src="../images/login&signup/password-eye.png" />
+            <button
+              type="button"
+              id="passwordEye"
+              class="password-toggle-eye-button"
+            >
+              <img
+                class="password-toggle-eye"
+                src="../images/login&signup/password-eye.png"
+                alt="비밀번호 숨김 상태 아이콘"
+              />
             </button>
           </div>
 
