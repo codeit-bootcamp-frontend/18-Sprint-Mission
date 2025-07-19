@@ -49,6 +49,7 @@ const checkPasswordValidation = () => {
   }
 };
 
+//이벤트 동작 코드
 emailInput.addEventListener("focusout", checkEmailValidation);
 passwordInput.addEventListener("focusout", checkPasswordValidation);
 

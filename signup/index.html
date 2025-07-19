@@ -23,25 +23,37 @@
         <form action="#" id="signupInputForm">
           <label for="signupEmail">이메일</label>
           <input
-            name="useremial"
+            name="userEmail"
             id="signupEmail"
             type="email"
             placeholder="codeit@email.com"
             autofocus
             required
           />
-          <label for="signupNickName">닉네임</label>
+
+          <span id="emailEmptyErr" class="error-message"
+            >이메일을 입력해주세요.</span
+          >
+          <span id="emailInvalidErr" class="error-message"
+            >잘못된 이메일 형식입니다.</span
+          >
+
+          <label for="signupNickname">닉네임</label>
           <input
-            name="usernickname"
-            id="signupNickName"
+            name="userNickname"
+            id="signupNickname"
             type="text"
             placeholder="판다"
             required
           />
+          <span id="nicknameEmptyErr" class="error-message"
+            >닉네임을 입력해주세요.</span
+          >
+
           <div class="signupPasswordWrap">
             <label for="signupPassword">비밀번호</label>
             <input
-              name="userpassword"
+              name="userPassword"
               id="signupPassword"
               class="signupPasswordClass"
               type="password"
@@ -52,10 +64,18 @@
               <img src="../images/login&signup/password-eye.png" />
             </button>
           </div>
+
+          <span id="passwordEmptyErr" class="error-message"
+            >비밀번호를 입력해주세요.</span
+          >
+          <span id="passwordInvalidErr" class="error-message"
+            >비밀번호를 8자 이상 입력해주세요.</span
+          >
+
           <div class="signupPasswordWrap">
             <label for="signupPasswordCheck">비밀번호 확인</label>
             <input
-              name="userpasswordCheck"
+              name="userPasswordCheck"
               id="signupPasswordCheck"
               class="signupPasswordClass"
               type="password"
@@ -66,8 +86,13 @@
               <img src="../images/login&signup/password-eye.png" />
             </button>
           </div>
+
+          <span id="passwordConfirmErr" class="error-message"
+            >비밀번호가 일치하지 않습니다.</span
+          >
+
+          <button id="signupButton" type="submit">회원가입</button>
         </form>
-        <button id="signupButton">회원가입</button>
         <div id="signupBySns">
           <span>간편 로그인하기</span>
           <div id="snsLogo">
@@ -88,5 +113,6 @@
         >
       </main>
     </div>
+    <script src="../javascript/signup.js"></script>
   </body>
 </html>
