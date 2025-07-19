@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-size: clamp(14px, 1.2vw, 18px);
 }
@@ -10,11 +11,11 @@ body {
   margin: 0;
 }
 
-header, footer {
+header {
   padding: 1rem 5vw;
 }
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px;
@@ -23,7 +24,7 @@ header {
   gap: 10px;
 }
 
-header > a {
+.header > a {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -65,7 +66,7 @@ main {
   line-height: 140%;
   color: #374151;
   margin-bottom: 1.25rem;
-  font-family: pretenderd;
+  font-family: Pretendard;
 }
 
 .main-btn {
@@ -88,11 +89,12 @@ main {
   padding: 8rem 10%;
   gap: 4rem;
   border-radius: 12px;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
 }
 
 .content-box {
-  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
 }
 
@@ -101,7 +103,7 @@ main {
   font-weight: 800;
   line-height: 26px;
   font-family: Abhaya Libre ExtraBold;
-  color: #3692FF;
+  color: #3692ff;
 }
 
 .content-title {
@@ -119,9 +121,9 @@ main {
   color: #374151;
 }
 
-.content-title.content-Subheading{
-  font-family: pretenderd;
-  gap: 24px;
+.content-title,
+.content-Subheading {
+  font-family: Pretendard;
 }
 
 .content-2 {
@@ -129,7 +131,7 @@ main {
   align-items: center;
   justify-content: center;
   text-align: right;
-  padding: 138px 466px;
+  padding: 8rem 10%;
   gap: 64px;
   border-radius: 12px;
 }
@@ -147,7 +149,7 @@ main {
   gap: 69px;
 }
 
-footer {
+.footer {
   padding: 32px 400px;
   gap: 10px;
   background-color: #111872;
@@ -156,7 +158,7 @@ footer {
   justify-content: space-between;
   width: 100%;
   text-align: center;
-  font-family: pretenderd;
+  font-family: Pretendard;
 }
 
 .footer-left {
@@ -180,4 +182,34 @@ footer {
   width: 20px;
   height: 20px;
   margin-right: 12px;
+}
+
+.footer-right a {
+  text-decoration: none;
+}
+
+.footer li {
+  float: left;
+}
+
+@media screen and (min-width: 1200px) {
+  footer {
+    padding: 32px 200px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  footer {
+    padding: 32px 24px;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 32px 16px;
+    gap: 4px;
+    flex-direction: column;
+    text-align: center;
+  }
 }

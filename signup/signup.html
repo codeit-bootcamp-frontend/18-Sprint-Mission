@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div class="content-box">
+      <div class="container">
+        <div class="logo">
+          <a href="/"
+            ><img src="../assets/img/ic_logo.svg" alt="판다 로고" />판다마켓</a
+          >
+        </div>
+      </div>
+      <div class="sign-in">
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="userEmail">이메일</label> <br />
+            <input type="email" id="userEmail" name="userEmail" />
+            <p
+              id="emailErrorMsg"
+              class="error-message"
+              class="error-border"
+            ></p>
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="userNickname">닉네임</label> <br />
+            <input type="text" id="userNickname" name="userNickname" />
+            <p
+              id="nicknameErrorMsg"
+              class="error-message"
+              class="error-border"
+            ></p>
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="userPassword">비밀번호</label> <br />
+            <div class="btn_visibility">
+              <input type="password" id="userPassword" name="userPassword" />
+              <button type="button" class="togglePassword">
+                <img
+                  class="eyes"
+                  src="../assets/img/btn_visibility_off.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+            <p
+              id="passwordErrorMsg"
+              class="error-message"
+              class="error-border"
+            ></p>
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="passwordConfirm">비밀번호 확인</label> <br />
+            <div class="btn_visibility">
+              <input
+                type="password"
+                id="passwordConfirm"
+                name="passwordConfirm"
+              />
+              <button type="button" class="togglePassword">
+                <img
+                  class="eyes"
+                  src="../assets/img/btn_visibility_off.svg"
+                  alt=""
+                />
+              </button>
+            </div>
+            <p
+              id="pwConfirmErrorMsg"
+              class="error-message"
+              class="error-border"
+            ></p>
+          </div>
+          <br />
+          <div class="login">
+            <button
+              id="submitButton"
+              class="button signup-button"
+              type="submit"
+              disabled
+            >
+              회원가입
+            </button>
+          </div>
+          <div class="easy-sign-up">
+            <p>간편 로그인하기</p>
+            <div>
+              <a href="https://www.google.com/">
+                <img src="../assets/img/ic_google.svg" alt="구글 로고 이미지" />
+              </a>
+              <a href="https://www.kakaocorp.com/page/">
+                <img
+                  src="../assets/img/ic_kakao.svg"
+                  alt="카카오톡 로고 이미지"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="create-an-account">
+            <p>이미 회원이신가요?</p>
+            <a href="../login/login.html">로그인</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script  type="module" src="../js/signup.js"></script>
+  </body>
+</html>
