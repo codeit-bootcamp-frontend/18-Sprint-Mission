@@ -43,6 +43,9 @@ body {
   padding: .8rem 0 0 1.6rem;
 }
 
+.password input[type='password']:not(:placeholder-shown){
+  letter-spacing: 0.4rem;
+}
 .password, .password-check {
   position: relative;
 }
