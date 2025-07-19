@@ -120,13 +120,6 @@ pctoggle.addEventListener('click', function() {
   pcoff.style.display = showPc ? 'inline' : 'none';
 });
 
-if(error.email * error.nickname * error.password * error. passwordcheck ==0){
-    button.classList.remove('disabled');
-    btn.disabled = false;
-}else{
-    button.classList.add('disabled');
-    btn.disabled = true;
-}
 function updateButtonState(){
     const validcheck = error.email * error.password * error.nickname * error.passwordcheck;
     if(validcheck ==1){
