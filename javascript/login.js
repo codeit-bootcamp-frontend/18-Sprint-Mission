@@ -61,17 +61,29 @@ if (loginForm) {
   });
 }
 
-// //눈 모양 비밀번호 표시 상태 토글 버튼
-// function togglePasswordVisibility(event) {
-//   const button = event.currentTarget;
-//   const inputField = button.parentElement.querySelector("input");
-//   const toggleIcon = button.querySelector(".password-toggle-eye");
+//눈 모양 비밀번호 표시 상태 토글 버튼
+function togglePasswordVisibility(event) {
+  const button = event.currentTarget;
+  const inputField = button.parentElement.querySelector("input");
+  const toggleIcon = button.querySelector(".password-toggle-eye");
 
-//   const isPasswordVisible = inputField.type === "text";
+  const isPasswordVisible = inputField.type === "text";
 
-//   inputField.type = isPasswordVisible ? "password" : "text";
-// }
-// const toggleButtons = document.querySelectorAll(".password-toggle-eye-button");
-// toggleButtons.forEach((button) => {
-//   button.addEventListener("click", togglePasswordVisibility);
-// });
+  inputField.type = isPasswordVisible ? "password" : "text";
+
+  toggleIcon.src = isPasswordVisible
+    ? "../images/login&signup/password-eye-invisible.svg"
+    : "../images/login&signup/password-eye.svg";
+  toggleIcon.alt = isPasswordVisible
+    ? "비밀번호 숨김 상태 아이콘"
+    : "비밀번호 표시 상태 아이콘";
+  button.setAttribute(
+    "aria-label",
+    isPasswordVisible ? "비밀번호 숨기기" : "비밀번호 보기"
+  );
+}
+
+const toggleButtons = document.querySelectorAll(".password-toggle-eye-button");
+toggleButtons.forEach((button) => {
+  button.addEventListener("click", togglePasswordVisibility);
+});

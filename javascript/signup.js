@@ -88,13 +88,25 @@ function togglePasswordVisibility(event) {
   const button = event.currentTarget;
   const inputField = button.parentElement.querySelector("input");
   const toggleIcon = button.querySelector(".password-toggle-eye");
+  console.log("찾아낸 inputField:", inputField);
 
   const isPasswordVisible = inputField.type === "text";
 
-  const toggleButtons = document.querySelectorAll(
-    ".password-toggle-eye-button"
+  inputField.type = isPasswordVisible ? "password" : "text";
+
+  toggleIcon.src = isPasswordVisible
+    ? "../images/login&signup/password-eye-invisible.svg"
+    : "../images/login&signup/password-eye.svg";
+  toggleIcon.alt = isPasswordVisible
+    ? "비밀번호 숨김 상태 아이콘"
+    : "비밀번호 표시 상태 아이콘";
+  button.setAttribute(
+    "aria-label",
+    isPasswordVisible ? "비밀번호 숨기기" : "비밀번호 보기"
   );
-  toggleButtons.forEach((button) => {
-    button.addEventListener("click", togglePasswordVisibility);
-  });
 }
+
+const toggleButtons = document.querySelectorAll(".password-toggle-eye-button");
+toggleButtons.forEach((button) => {
+  button.addEventListener("click", togglePasswordVisibility);
+});
