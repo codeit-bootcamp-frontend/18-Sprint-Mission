@@ -1,63 +1,130 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>판다마켓 로그인</title>
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/signup.css"/>
-  <script src="js/signup.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓 회원가입</title>
+    <link rel="icon" href="images/favicon-panda.png" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta
+      property="og:image"
+      content="https://file2.nocutnews.co.kr/newsroom/image/2019/01/18/20190118151430114340_0_800_451.jpg"
+    />
+    <meta property="og:url" content="https://pandapandapanda.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+    <script src="js/signup.js"></script>
+  </head>
 
-
-<body>
-  <main class="login-wrapper">
-    <form class="login-box" autocomplete="off">
-      <div class="logo-row">
-        <a href="/">
-         <img src="images/logo.png" alt="판다로고" class="logo-img"/>
-        </a>
-      </div>
-      <div class="form-group">
-        <label for="email">이메일</label>
-        <input type="email" id="email">
-      </div>
-      <div class="form-group">
-        <label for="nickname">닉네임</label>
-        <input type="text" id="nickname"/>
-      </div>
-      <div class="form-group">
-        <label for="password">비밀번호</label>
-        <div class="password">
-          <input type="password" id="password"/>
-          <button type="button" class="btn" onclick="inputPassword('password', 'eye-icon')">
-          <img src="images/eye-off.png" alt="비밀번호 숨기기" id="eye-icon" class="eye-icon"/>
-          </button>
-      </div>
-      <div class="form-group">
-        <label for="password-confirm">비밀번호 확인</label>
-        <div class="password">
-          <input type="password" id="password-confirm"/>
-          <button type="button" class="btn" onclick="confirmPassword('password-confirm', 'eye-icon2')">
-          <img src="images/eye-off.png" alt="비밀번호 숨기기" id="eye-icon2" class="eye-icon"/>
+  <body>
+    <main class="login-wrapper">
+      <form class="login-box" autocomplete="off" id="signupForm">
+        <div class="logo-row">
+          <a href="/">
+            <img src="images/logo.png" alt="판다로고" class="logo-img" />
+          </a>
         </div>
-      </div>
-      <button type="submit" class="login-btn">회원가입</button>
-      <div class="social-login">
+        <div class="form-group">
+          <label for="email">이메일</label>
+          <input type="email" id="email" placeholder="이메일을 입력해주세요." />
+          <div class="error-message" id="email-error"></div>
+        </div>
+        <span
+          id="email-error"
+          class="error-message"
+          style="display: none"
+        ></span>
+        <div class="form-group">
+          <label for="nickname">닉네임</label>
+          <input
+            type="text"
+            id="nickname"
+            placeholder="닉네임을 입력해주세요."
+          />
+        </div>
+        <span
+          id="nickname-error"
+          class="error-message"
+          style="display: none"
+        ></span>
+        <div class="form-group">
+          <label for="password">비밀번호</label>
+          <div class="password">
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요."
+            />
+            <button
+              type="button"
+              class="btn"
+              onclick="inputPassword('password', 'eye-icon')"
+            >
+              <img
+                src="images/eye-off.svg"
+                alt="비밀번호 숨기기"
+                id="eye-icon"
+                class="eye-icon"
+              />
+            </button>
+          </div>
+          <span
+            id="password-error"
+            class="error-message"
+            style="display: none"
+          ></span>
+          <div class="error-message" id="password-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="password-confirm">비밀번호 확인</label>
+          <div class="password">
+            <input
+              type="password"
+              id="password-confirm"
+              placeholder="비밀번호를 다시 한 번 입력해주세요."
+            />
+            <button
+              type="button"
+              class="btn"
+              onclick="confirmPassword('password-confirm', 'eye-icon2')"
+            >
+              <img
+                src="images/eye-off.svg"
+                alt="비밀번호 숨기기"
+                id="eye-icon2"
+                class="eye-icon"
+              />
+            </button>
+            <span
+              id="confirm-error"
+              class="error-message"
+              style="display: none"
+            ></span>
+          </div>
+          <div class="error-message" id="password-confirm-error"></div>
+        </div>
+        <button type="submit" class="login-btn" id="signup-button" disabled>
+          회원가입
+        </button>
+        <div class="social-login">
           <p class="social-login-text">간편 로그인하기</p>
           <div class="social-icons">
-            <a href="https://www.google.com/”" class="social">
-              <img src="images/google.png" alt="간편 로그인-구글"/>
+            <a href="https://www.google.com/" class="social">
+              <img src="images/google.png" alt="간편 로그인-구글" />
             </a>
             <a href="https://www.kakaocorp.com/page/" class="social">
-              <img src="images/kakao.png" alt="간편 로그인-카카오"/>
+              <img src="images/kakao.png" alt="간편 로그인-카카오" />
             </a>
           </div>
-      </div>
-      <p class="signup-callout">
-        이미 회원이신가요? <a href="/signup">로그인</a>
-      </p>
-    </form>
-  </main>
-</body>
+        </div>
+        <p class="signup-callout">
+          이미 회원이신가요? <a href="login.html">로그인</a>
+        </p>
+      </form>
+    </main>
+  </body>
 </html>

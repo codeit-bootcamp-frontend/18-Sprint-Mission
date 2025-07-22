@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Pretendard' ;
+  font-family: 'Pretendard';
 }
 
 .login-wrapper {
@@ -11,7 +11,7 @@ body {
 
 .login-box {
   width: 640px;
-  padding: 48px;
+  padding: 56px;
   box-sizing: border-box;
 }
 
@@ -20,12 +20,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .logo-img {
   width: 396px;
   height: 132px;
-  display: block; 
+  display: block;
 }
 
 /*입력창*/
@@ -38,18 +39,18 @@ label {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #1F2937;
+  color: #1f2937;
 }
 
-input[type="email"],
-input[type="password"] {
+input[type='email'],
+input[type='password'] {
   width: 100%;
-  height: 48px;
+  height: 56px;
   font-size: 15px;
-  padding:  16px;
+  padding: 16px;
   border-radius: 12px;
   border: none;
-  background-color: #F3F4F6;
+  background-color: #f3f4f6;
   box-sizing: border-box;
 }
 
@@ -65,9 +66,10 @@ input[type="password"] {
   margin: 16 48 48 48px;
   border-radius: 12px;
   box-sizing: border-box;
-  background-color: #F3F4F6;
+  background-color: #f3f4f6;
   border: none;
   font-size: 16px;
+  margin: 0;
 }
 
 .password-input .btn {
@@ -88,12 +90,11 @@ input[type="password"] {
   height: 100%;
 }
 
-
 /*로그인 버튼*/
 .login-btn {
   width: 100%;
   height: 56px;
-  background-color: #9CA3AF;
+  background-color: #9ca3af;
   color: #ffffff;
   font-weight: 600;
   font-size: 20px;
@@ -103,7 +104,7 @@ input[type="password"] {
 
 /*간편 로그인*/
 .social-login {
-  background-color: #E6F2FF;
+  background-color: #e6f2ff;
   height: 74px;
   display: flex;
   justify-content: space-between;
@@ -134,11 +135,11 @@ input[type="password"] {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
-  color: #1F2937;
+  color: #1f2937;
 }
 
 .signup-callout a {
-  color: #3182F6;
+  color: #3182f6;
   font-size: 14px;
   font-weight: 500;
 }
@@ -151,4 +152,26 @@ input[type="password"] {
     width: 100%;
     height: auto;
   }
+}
+
+/*에러 메세지*/
+.error-input {
+  border: 1px solid #f74747 !important;
+}
+
+.error-message {
+  color: #f74747;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+}
+
+/*로그인 버튼 활성화*/
+.login-btn.enabled {
+  background-color: #3692ff;
+}
+
+.login-btn:disabled {
+  cursor: not-allowed;
 }
