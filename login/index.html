@@ -1,42 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>로그인</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
 
-  <link rel="icon" href="images/logo/favicon.ico"/>
-  <link rel="stylesheet" href="../styles/global.css"/>
-  <link rel="stylesheet" href="../styles/login.css"/>
-</head>
-<body>
-  <div id="loginWrapper">
-    <!-- header 시작 -->
-    <header>
-      <a href="/"><img src="../images/login&signup/logo/logo.svg" alt="판다마켓 로고"></a>
-      <h1>판다마켓</h1>
-    </header>
-    <!-- main 시작 -->
-    <main>
-      <form action="#" id="loginInputForm">
-        <label for="loginEmail">이메일</label>
-        <input name="useremail" id="loginEmail" type="email" placeholder="codeit@email.com" autofocus required>
-        <div id="loginPasswordWrap">
-          <label for="loginPassword">비밀번호</label>
-          <input name="userpassword" id="loginPassword" type="password" placeholder="......" required>
-          <button id="passwordEye"><img src="../images/login&signup/password-eye.png"></button>
+    <link rel="icon" href="../images/logo/favicon.ico" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+  </head>
+  <body>
+    <div id="loginWrapper">
+      <!-- header 시작 -->
+      <header>
+        <a href="/"
+          ><img src="../images/login&signup/logo/logo.svg" alt="판다마켓 로고"
+        /></a>
+        <h1>판다마켓</h1>
+      </header>
+      <!-- main 시작 -->
+      <main>
+        <form action="#" class="login-inputForm">
+          <label for="loginEmail">이메일</label>
+          <input
+            name="userEmail"
+            id="loginEmail"
+            type="email"
+            placeholder="codeit@email.com"
+            autofocus
+            required
+          />
+          <span id="emailEmptyErr" class="error-message"
+            >이메일을 입력해 주세요.</span
+          >
+          <span id="emailInvalidErr" class="error-message"
+            >잘못된 이메일 형식입니다.</span
+          >
+
+          <div id="loginPasswordWrap">
+            <label for="loginPassword">비밀번호</label>
+            <input
+              name="userPassword"
+              id="loginPassword"
+              type="password"
+              placeholder="......"
+              required
+            />
+            <button
+              type="button"
+              id="passwordEye"
+              class="password-toggle-eye-button"
+            >
+              <img
+                class="password-toggle-eye"
+                src="../images/login&signup/password-eye-invisible.svg"
+                alt="비밀번호 숨김 상태 아이콘"
+              />
+            </button>
+          </div>
+
+          <span id="passwordEmptyErr" class="error-message"
+            >비밀번호를 입력해 주세요</span
+          >
+          <span id="passwordInvalidErr" class="error-message"
+            >비밀번호를 8자 이상 입력해 주세요</span
+          >
+          <button id="loginButton" type="submit">로그인</button>
+        </form>
+        <div id="loginBySns">
+          <span>간편 로그인하기</span>
+          <div id="snsLogo">
+            <a href="https://www.google.com/" target="_blank"
+              ><img
+                src="../images/login&signup/sns/google-logo.svg"
+                alt="구글 로고"
+            /></a>
+            <a href="https://www.kakaocorp.com/page/" target="_blank"
+              ><img
+                src="../images/login&signup/sns/kakao-logo.svg"
+                alt="카카오 로고"
+            /></a>
+          </div>
         </div>
-      </form>
-      <button id="loginButton">로그인</button>
-      <div id="loginBySns">
-        <span>간편 로그인하기</span>
-        <div id="snsLogo">
-          <a href="https://www.google.com/" target="_blank"><img src="../images/login&signup/sns/google-logo.svg" alt="구글 로고"></a>
-          <a href="https://www.kakaocorp.com/page/" target="_blank"><img src="../images/login&signup/sns/kakao-logo.svg" alt="카카오 로고"></a>
-        </div> 
-      </div>
-      <h4 id="foot">판다마켓이 처음이신가요?<a id="signup" href="../signup/">회원가입</a></h4>
-    </main>
-  </div>
-</body>
+        <span id="foot"
+          >판다마켓이 처음이신가요?<a id="signup" href="../signup/"
+            >회원가입</a
+          ></span
+        >
+      </main>
+    </div>
+    <script src="../javascript/login.js"></script>
+  </body>
 </html>
