@@ -12,13 +12,15 @@
     </header>
     <main>
         <label for="email" class="labels">이메일</label>
-        <input id="email" type="email" name="useremail" class="inputbox"placeholder="이메일을 입력해 주세요.">      
+        <input id="email" type="email" name="useremail" class="inputbox" placeholder="이메일을 입력해 주세요.">
+        <div id="emailError" class = "errormsg"></div>
         <label for="password" class="labels" >비밀번호</label>
         <div class="passwordbox">
             <input id="password" type="password" name="password" class="inputbox" placeholder="비밀번호를 입력해 주세요.">
-            <span class="blindIco"><img src="/img/password_on.svg" alt="blinder"></span>
+            <span class="blindIco" id="pwtoggle"><img src="/img/password_on.svg" alt="blinder" id="pwOn"><img src="/img/password_off.svg" alt="blinder" id="pwOff"></span>
         </div>
-        <button type="submit">로그인</button>
+        <div id="passwordError" class = "errormsg"></div>
+        <button onclick=location.href='/items.html' id = "btn" class="disabled">로그인</button>
         <div class="simple">
             <span>간편 로그인하기</span>
             <span>
@@ -30,5 +32,6 @@
             판다마켓이 처음이신가요?<a href="/signup.html">회원가입</a>
         </div>
     </main>
+    <script src="login.js"></script>
 </body>
 </html>
