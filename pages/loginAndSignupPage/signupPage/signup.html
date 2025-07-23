@@ -19,44 +19,62 @@
             <img class="form-logo" src="../../../images/logo.png" alt="logo" />
           </a>
         </div>
-        <form class="login-signup-form">
+        <form class="login-signup-form" id="signup-form">
           <label class="form-label">이메일</label>
-          <input
-            class="form-input"
-            type="email"
-            placeholder="이메일을 입력해주세요"
-          />
-          <label class="form-label">닉네임</label>
-          <input
-            class="form-input"
-            type="text"
-            placeholder="닉네임을 입력해주세요"
-          />
-          <label class="form-label">비밀번호</label>
-          <div class="password-input-area">
+          <div class="form-input-area">
             <input
+              id="signup-email"
+              class="form-input"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+            />
+          </div>
+          <label class="form-label">닉네임</label>
+          <div class="form-input-area">
+            <input
+              id="signup-nickname"
+              class="form-input"
+              type="text"
+              placeholder="닉네임을 입력해주세요"
+            />
+          </div>
+          <label class="form-label">비밀번호</label>
+          <div class="form-input-area">
+            <input
+              id="signup-password"
               class="form-input"
               type="password"
               style="width: 100%"
               placeholder="비밀번호를 입력해주세요"
             />
-            <button type="button" class="visibility-img">
+            <button
+              type="button"
+              class="button visibility-img"
+              id="signup-password-visibility-btn"
+            >
               <img src="../../../images/visibility-icon.svg" alt="visibility" />
             </button>
           </div>
           <label class="form-label">비밀번호 확인</label>
-          <div class="password-input-area">
+          <div class="form-input-area">
             <input
+              id="signup-checkPassword"
               class="form-input"
               type="password"
               style="width: 100%"
               placeholder="비밀번호를 다시 한 번 입력해주세요"
             />
-            <button type="button" class="visibility-img">
+            <button
+              type="button"
+              class="button visibility-img"
+              id="signup-checkPassword-visibility-btn"
+            >
               <img src="../../../images/visibility-icon.svg" alt="visibility" />
             </button>
           </div>
-          <button class="form-submit-btn disabled" disabled>회원가입</button>
+          <button class="button form-btn" id="signup-btn" disabled>
+            회원가입
+          </button>
         </form>
 
         <div class="easy-login-area">
@@ -81,5 +99,7 @@
         </div>
       </div>
     </main>
+
+    <script type="module" src="./signup.js"></script>
   </body>
 </html>

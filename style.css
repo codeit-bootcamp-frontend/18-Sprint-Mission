@@ -18,7 +18,7 @@ html {
   overflow-x: hidden;
 }
 
-button {
+.button {
   background-color: var(--blue);
   color: white;
   border: none;
@@ -29,4 +29,17 @@ ul,
 li {
   list-style: none;
   padding: 0;
+}
+
+.error-message {
+  color: #F74747;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.error-status {
+  outline: 1px solid #F74747;
 }

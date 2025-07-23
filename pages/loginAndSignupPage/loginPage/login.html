@@ -19,26 +19,37 @@
             <img class="form-logo" src="../../../images/logo.png" alt="logo" />
           </a>
         </div>
-        <form class="login-signup-form">
+        <form class="login-signup-form" id="login-form">
           <label class="form-label">이메일</label>
-          <input
-            class="form-input"
-            type="email"
-            placeholder="이메일을 입력해주세요"
-          />
-          <label class="form-label">비밀번호</label>
-          <div class="password-input-area">
+          <div class="form-input-area">
             <input
+              id="login-email"
+              class="form-input"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+            />
+          </div>
+          <label class="form-label">비밀번호</label>
+          <div class="form-input-area">
+            <input
+              id="login-password"
               class="form-input"
               type="password"
               style="width: 100%"
               placeholder="비밀번호를 입력해주세요"
+              minlength="8"
             />
-            <button type="button" class="visibility-img">
-              <img src="../../../images/visibility-icon.svg" alt="visibility" />
+            <button type="button" class="button visibility-img">
+              <img
+                src="../../../images/visibility-icon.svg"
+                alt="visibility"
+                id="password-visibility-img"
+              />
             </button>
           </div>
-          <button class="form-submit-btn disabled" disabled>로그인</button>
+          <button type="submit" class="button form-btn" id="login-btn" disabled>
+            로그인
+          </button>
         </form>
 
         <div class="easy-login-area">
@@ -63,5 +74,7 @@
         </div>
       </div>
     </main>
+
+    <script type="module" src="./login.js"></script>
   </body>
 </html>

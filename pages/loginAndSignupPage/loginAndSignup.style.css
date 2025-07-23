@@ -44,8 +44,11 @@
   padding-left: 20px;
 }
 
-.password-input-area {
+.form-input-area {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .visibility-img {
@@ -55,7 +58,7 @@
   background: none;
 }
 
-.form-submit-btn {
+.form-btn {
   padding: 16px 124px;
   border-radius: 40px;
   height: 56px;
@@ -124,7 +127,7 @@
   line-height: 100%;
 }
 
-.disabled {
+.form-btn:disabled {
   background-color: var(--gray400);
 }
 

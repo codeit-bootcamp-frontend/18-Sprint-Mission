@@ -9,17 +9,14 @@
       content="https://panda-market-sanginjeong.netlify.app/"
     />
     <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
-    <meta
-      property="og:image"
-      content="https://panda-market-sanginjeong.netlify.app/images/logo.png"
-    />
+    <meta property="og:image" content="/images/logo.png" />
     <title>판다마켓</title>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./pages/homePage/index.style.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <nav class="container">
         <a href="./index.html"
           ><img
@@ -28,7 +25,7 @@
             style="width: 153px; height: 51px"
         /></a>
         <a href="./pages/loginAndSignupPage/loginPage/login.html"
-          ><button class="login-btn">로그인</button></a
+          ><button class="button go-login-btn">로그인</button></a
         >
       </nav>
     </header>
@@ -37,12 +34,12 @@
       <div class="container">
         <div class="landing-area">
           <div class="landing-area-left">
-            <h2 class="description">
+            <h1 class="description">
               <span>일상의 모든 물건을</span>
               <span>거래해 보세요</span>
-            </h2>
+            </h1>
             <a href="/items"
-              ><button class="items-btn">구경하러 가기</button></a
+              ><button class="button items-btn">구경하러 가기</button></a
             >
           </div>
           <div class="landing-area-right">
@@ -68,14 +65,14 @@
         <div class="hot-item-right">
           <p class="title">Hot item</p>
           <div>
-            <h2 class="description">
+            <h1 class="description">
               <span>인기 상품을</span>
               <span>확인해 보세요</span>
-            </h2>
-            <p class="sub-description">
-              span가장 HOT한 중고거래 물품을<br />
+            </h1>
+            <h2 class="sub-description">
+              가장 HOT한 중고거래 물품을<br />
               판다 마켓에서 확인해 보세요
-            </p>
+            </h2>
           </div>
         </div>
       </section>
@@ -83,14 +80,14 @@
       <section class="main-wrap container section-search">
         <div class="search-left">
           <p class="title">Search</p>
-          <h2 class="description">
+          <h1 class="description">
             <span>구매를 원하는</span>
             <span>상품을 검색하세요</span>
-          </h2>
-          <p class="sub-description">
+          </h1>
+          <h2 class="sub-description">
             구매하고 싶은 물품은 검색해서<br />
             쉽게 찾아보세요
-          </p>
+          </h2>
         </div>
         <div class="search-right">
           <img
@@ -112,14 +109,14 @@
         <div class="register-right">
           <p class="title">Register</p>
           <div>
-            <h2 class="description">
+            <h1 class="description">
               <span>판매를 원하는</span>
               <span>상품을 등록하세요</span>
-            </h2>
-            <p class="sub-description">
+            </h1>
+            <h2 class="sub-description">
               어떤 물건이든 판매하고 싶은 상품을<br />
               쉽게 등록하세요
-            </p>
+            </h2>
           </div>
         </div>
       </section>
@@ -145,7 +142,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="footer">
       <div class="footer-area container">
         <div class="footer-left">
           <p>@codeit - 2024</p>
