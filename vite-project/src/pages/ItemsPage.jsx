@@ -1,3 +1,4 @@
+import Item from "../components/Item";
 import {
   ItemsSection,
   ItemsSectionContent,
@@ -11,10 +12,10 @@ function ItemsPage() {
       <ItemsSection>
         <ItemsSectionHeader title="베스트 상품" />
         <ItemsSectionContent numberOfColumns={4}>
-          <div>상품 1</div>
-          <div>상품 2</div>
-          <div>상품 3</div>
-          <div>상품 4</div>
+          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
+          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
+          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
+          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
         </ItemsSectionContent>
       </ItemsSection>
       <ItemsSection spacing={24}>
@@ -24,16 +25,16 @@ function ItemsPage() {
           <button>최신순</button>
         </ItemsSectionHeader>
         <ItemsSectionContent numberOfColumns={5}>
-          <div>상품 1</div>
-          <div>상품 2</div>
-          <div>상품 3</div>
-          <div>상품 4</div>
-          <div>상품 5</div>
-          <div>상품 6</div>
-          <div>상품 7</div>
-          <div>상품 8</div>
-          <div>상품 9</div>
-          <div>상품 10</div>
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
+          <Item title="로봇 청소기" price={1500000} likeCount={240} />
         </ItemsSectionContent>
       </ItemsSection>
     </div>
