@@ -1,134 +1,115 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--타이틀-->
-    <title>판다마켓</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--파비콘-->
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="./favicon/favicon-76x76.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./favicon/favicon-16x16.png"
-    />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
+  <!--타이틀-->
+  <title>판다마켓</title>
 
-    <!--메타-->
-    <meta name="description" content="일상의 모든 물건을 거래해보세요" />
-    <meta name="keywords" content="일상의 모든 거래" />
+  <!--파비콘-->
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicon/favicon-76x76.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="판다마켓" />
-    <meta property="og:description" content="일상의 모든 거래" />
-    <meta property="og:image" content="./image/thumb.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="600" />
-    <meta property="og:image:height" content="315" />
-    <meta property="og:url" content="https://imaginative-starlight-932f0e.netlify.app/" />
+  <!--메타-->
+  <meta name="description" content="일상의 모든 물건을 거래해보세요" />
+  <meta name="keywords" content="일상의 모든 거래" />
 
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:title" content="판다마켓" />
-    <meta property="twitter:description" content="일상의 모든 물건을 거래해보세요"
-    />
-    <meta property="twitter:image" content="./image/thumb.png" />
-    <meta property="twitter:image:type" content="image/png" />
-    <meta property="twitter:image:width" content="600" />
-    <meta property="twitter:image:height" content="315" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="판다마켓" />
+  <meta property="og:description" content="일상의 모든 거래" />
+  <meta property="og:image" content="./images/thumb.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <meta property="og:url" content="https://imaginative-starlight-932f0e.netlify.app/" />
 
-    <!--css-->
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="판다마켓" />
+  <meta property="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+  <meta property="twitter:image" content="./images/thumb.png" />
+  <meta property="twitter:image:type" content="image/png" />
+  <meta property="twitter:image:width" content="600" />
+  <meta property="twitter:image:height" content="315" />
+
+  <!--css-->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!--js-->
+  <script type="module" src="./js/signup.js"></script>
+</head>
 
 
-  <body>
-    <div class="center-wrap inner">
-      <div class="form-wrap">
-        <h1 class="logo-title">
-          <img src="./image/login_page_logo.png" alt="판다마켓" />
-        </h1>
-        <form>
-          <fieldset class="fieldset">
-            <div class="input-group">
-              <label class="input-label" for="userEmail">이메일</label>
-              <div class="input-box">
-                <input id="userEmail" type="email" name="userEmail" />
-              </div>
+<body>
+  <div class="center-wrap inner">
+    <div class="form-wrap">
+      <h1 class="logo-title">
+        <a href="/"><img src="./images/login_page_logo.png" alt="판다마켓" /></a>
+      </h1>
+      <form>
+        <fieldset class="fieldset">
+          <div class="input-group">
+            <label class="input-label" for="userEmail">이메일</label>
+            <div class="input-box">
+              <input id="userEmail" type="email" name="userEmail" />
             </div>
-            <div class="input-group">
-              <label class="input-label" for="nickName">닉네임</label>
-              <div class="input-box">
-                <input id="nickName" type="email" name="nickName" />
-              </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="nickName">닉네임</label>
+            <div class="input-box">
+              <input id="nickName" type="text" name="nickName" minlength="2" maxlength="12" /><!--타입수정 길이-->
             </div>
-            <div class="input-group">
-              <label class="input-label" for="password">비밀번호</label>
-              <div class="input-box">
-                <input id="password" type="password" name="password" minlength="8" maxlength="12"/>
-                <label class="show-toggle-btn">
-                  <input class="checkbox" type="checkbox" />
-                  <span class="check-label"></span>
-                </label>
-              </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="password">비밀번호</label>
+            <div class="input-box">
+              <input id="password" type="password" name="password" minlength="8" maxlength="12" />
+              <label class="show-toggle-btn" data-toggle="password">
+                <input class="checkbox" type="checkbox" name="showCheck" />
+                <span class="check-label"></span>
+              </label>
             </div>
-            <div class="input-group">
-              <label class="input-label" for="passwordCheck"
-                >비밀번호 확인</label
-              >
-              <div class="input-box">
-                <input id="password" type="passwordCheck" name="passwordCheck"  minlength="8" maxlength="12"/>
-                <label class="show-toggle-btn">
-                  <input class="checkbox" type="checkbox" name="showCheck" />
-                  <span class="check-label"></span>
-                </label>
-              </div>
+          </div>
+          <div class="input-group">
+            <label class="input-label" for="passwordCheck">비밀번호 확인</label>
+            <div class="input-box">
+              <input id="passwordCheck" type="password" name="passwordCheck" minlength="8"
+                maxlength="12" /><!--중복 아이디 변경-->
+              <label class="show-toggle-btn" data-toggle="password">
+                <input class="checkbox" type="checkbox" name="showCheck" />
+                <span class="check-label"></span>
+              </label>
             </div>
-            <a class="button full-button large-button" href="#n">회원가입</a>
-            <dl class="right-link-wrap">
-              <dt>간편 가입하기</dt>
-              <dd>
-                <a
-                  class="link-button"
-                  href="https://www.google.com/"
-                  target="_blank"
-                >
-                  <img src="./image/google.svg" alt="구글로 로그인" />
-                </a>
-              </dd>
-              <dd>
-                <a
-                  class="link-button"
-                  href="https://www.kakaocorp.com/page/"
-                  target="_blank"
-                >
-                  <img src="./image/kakao.svg" alt="카카오로 로그인" />
-                </a>
-              </dd>
-            </dl>
-          </fieldset>
-          <dl class="flex-center">
-            <dt>이미 회이신가요?</dt>
+          </div>
+          <a class="button full-button large-button disabled-button" href="login.html" tabindex="0">회원가입</a>
+          <dl class="right-link-wrap">
+            <dt>간편 가입하기</dt>
             <dd>
-              <a class="link-text" href="/login.html"> 로그인 </a>
+              <a class="link-button" href="https://www.google.com/" target="_blank">
+                <img src="./images/google.svg" alt="구글로 로그인" />
+              </a>
+            </dd>
+            <dd>
+              <a class="link-button" href="https://www.kakaocorp.com/page/" target="_blank">
+                <img src="./images/kakao.svg" alt="카카오로 로그인" />
+              </a>
             </dd>
           </dl>
-        </form>
-      </div>
+        </fieldset>
+        <dl class="flex-center">
+          <dt>이미 회이신가요?</dt>
+          <dd>
+            <a class="link-text" href="/login.html"> 로그인 </a>
+          </dd>
+        </dl>
+      </form>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

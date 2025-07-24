@@ -2,6 +2,7 @@
 @import url(fonts.css);
 
 body {
+  width: calc(100vw - calc(100vw - 100%));
   font-size: var(--common);
   font-weight: 500;
   font-family: "Pretendard-Regular";
@@ -34,7 +35,7 @@ body {
   background-color: var(--blue300);
 }
 
-.button:visited {
+.button:visited:not(.full-button) {
   background-color: var(--gray400);
 }
 
@@ -47,6 +48,11 @@ body {
   height: 4.8rem;
 }
 
+.disabled-button {
+  background-color: var(--gray400) !important;
+  cursor: default;
+}
+
 /* 767px */
 @media all and (max-width: 47.9375rem) {
   .large-button {
@@ -56,7 +62,7 @@ body {
 
 .logo {
   img {
-    content: url("../image/logo.svg");
+    content: url("../images/logo.svg");
   }
 }
 
@@ -64,6 +70,7 @@ body {
   margin: 0 auto;
   padding: 0 4.5rem;
   width: 100%;
+  width: calc(100vw - calc(100vw - 100%));
   max-width: 120rem;
 }
 
@@ -247,7 +254,6 @@ body {
 
 /* 768~1199px */
 @media all and (max-width: 74.9375rem) {
-
   .inner,
   .header .inner {
     padding: 0 2.4rem;
@@ -351,7 +357,7 @@ body {
 @media all and (max-width: 47.9375rem) {
   .logo {
     img {
-      content: url("../image/m-logo.svg");
+      content: url("../images/m-logo.svg");
     }
   }
 
@@ -437,12 +443,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: calc(100vw - calc(100vw - 100%));
   height: 100vh;
-  min-height: 58rem;
+  min-height: fit-content;
 }
 
 .form-wrap {
+  padding: 8rem 0;
   width: 64rem;
 }
 
@@ -472,6 +479,7 @@ body {
 .input-box {
   display: flex;
   align-items: center;
+  position: relative;
   width: 100%;
   height: 5.6rem;
   background-color: var(--gray100);
@@ -492,16 +500,38 @@ body {
   outline: 0 none;
 }
 
+.input-box input:not([type="checkbox"]).err {
+  border: 1px solid var(--red) !important;
+}
+
+.input-box input:not([type="checkbox"]):focus {
+  border: 1px solid var(--blue200);
+}
+
 .check-label {
-  position: relative;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  width: 4rem;
+  height: 4rem;
   cursor: pointer;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }
 
 .check-label::before {
   position: absolute;
-  top: -1rem;
-  right: 2.4rem;
-  content: url("../image/hidden.svg");
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  content: url("../images/hidden.svg");
 }
 
 .show-toggle-btn .checkbox {
@@ -513,7 +543,16 @@ body {
   font-size: 1px;
 }
 
-.show-toggle-btn .checkbox+.check-label::after {
+.show-toggle-btn .checkbox:focus + .check-label {
+  border: 2px solid var(--gray900);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.show-toggle-btn .checkbox + .check-label::after {
   overflow: hidden;
   position: absolute;
   width: 0;
@@ -521,12 +560,12 @@ body {
   font-size: 1px;
 }
 
-.show-toggle-btn .checkbox+.check-label::after {
+.show-toggle-btn .checkbox + .check-label::after {
   content: "입력 보기";
 }
 
-.show-toggle-btn .checkbox:checked+.check-label::before {
-  content: url("../image/show.svg");
+.show-toggle-btn .checkbox:checked + .check-label::before {
+  content: url("../images/show.svg");
 }
 
 .full-button {
@@ -580,6 +619,12 @@ body {
   text-decoration-color: var(--blue100);
   line-height: 1;
   -moz-text-decoration-color: var(--blue100);
+}
+
+.alert-box {
+  margin-top: 0.8rem;
+  font-size: var(--small);
+  color: var(--red);
 }
 
 /* 767px */
