@@ -1,15 +1,12 @@
-import ItemsPage from "../pages/ItemsPage";
 import "./App.css";
 import Nav from "./Nav";
 import PageControl from "./PageControl";
 
-function App() {
+function App({ children }) {
   return (
     <>
       <Nav />
-      <div className="content">
-        <ItemsPage />
-      </div>
+      <div className="content">{children}</div>
       <PageControl numberOfPages={10} />
     </>
   );
