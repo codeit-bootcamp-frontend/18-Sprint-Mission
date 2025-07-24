@@ -6,25 +6,28 @@ import {
   ItemsSectionContent,
   ItemsSectionHeader,
 } from "../components/ItemsSection";
+import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
 import SearchInput from "../components/SearchInput";
-import Select from "../components/Select";
 import "./ItemsPage.css";
 
 function ItemsPage() {
   const [products, setProducts] = useState([]);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const [orderBy, setOrderBy] = useState(ORDER_BY_DEFAULT);
 
   const bestProducts = [...products]
     .sort((a, b) => b.favoriteCount - a.favoriteCount)
     .slice(0, 4);
 
-  const handleSelectClick = (e) => setIsSelectOpen(!isSelectOpen);
+  const handleOrderByClick = () => setIsSelectOpen(!isSelectOpen);
 
   useEffect(() => {
-    fetchProducts()
+    fetchProducts({
+      orderBy,
+    })
       .then(setProducts)
       .catch(() => setProducts([]));
-  }, []);
+  }, [orderBy]);
 
   return (
     <div className="ItemsPage">
@@ -36,11 +39,11 @@ function ItemsPage() {
         <ItemsSectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
           <Button title="상품 등록하기" />
-          <Select
-            value="최신순"
-            options={["최신순", "좋아요순"]}
+          <OrderBySelect
+            value={orderBy}
             isOpen={isSelectOpen}
-            onClick={handleSelectClick}
+            onClick={handleOrderByClick}
+            onOptionClick={setOrderBy}
           />
         </ItemsSectionHeader>
         <ItemsSectionContent items={products} numberOfColumns={5} />
