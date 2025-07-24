@@ -1,0 +1,34 @@
+@import url("../palette.css");
+
+.Nav {
+  padding: 0 200px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.Nav-content {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Nav-links {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Nav-logo {
+  margin-right: 32px;
+}
+
+.Nav-link {
+  padding: 21px 15px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--color-secondary-600);
+}
