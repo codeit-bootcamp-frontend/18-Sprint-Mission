@@ -8,6 +8,7 @@ import {
   ItemsSectionHeader,
 } from "../components/ItemsSection";
 import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
+import PageControl from "../components/PageControl";
 import SearchInput from "../components/SearchInput";
 import "./ItemsPage.css";
 
@@ -54,6 +55,7 @@ function ItemsPage() {
           />
         </ItemsSectionHeader>
         <ItemsSectionContent items={products} numberOfColumns={5} />
+        <PageControl numberOfPages={10} />
       </ItemsSection>
     </div>
   );
