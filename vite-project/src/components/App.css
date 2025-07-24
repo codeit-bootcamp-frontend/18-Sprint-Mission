@@ -8,3 +8,8 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #fcfcfc;
 }
+
+.content {
+  max-width: 1200px;
+  margin: 24px auto 0px;
+}

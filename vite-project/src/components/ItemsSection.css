@@ -1,0 +1,42 @@
+@import url("../palette.css");
+
+.ItemsSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ItemsSectionHeader */
+
+.ItemsSectionHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ItemsSectionHeader-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--color-secondary-900);
+  margin: 0;
+}
+
+.ItemsSectionHeader-controls {
+  display: flex;
+  gap: 12px;
+}
+
+/* ItemsSectionContent */
+
+.ItemsSectionContent {
+  display: grid;
+  column-gap: 24px;
+  row-gap: 40px;
+}
+
+/* DEBUG */
+.ItemsSectionContent-item {
+  height: 300px;
+  background-color: blue;
+  color: white;
+}
