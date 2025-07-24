@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import Item from "../components/Item";
 import {
@@ -6,9 +7,14 @@ import {
   ItemsSectionHeader,
 } from "../components/ItemsSection";
 import SearchInput from "../components/SearchInput";
+import Select from "../components/Select";
 import "./ItemsPage.css";
 
 function ItemsPage() {
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+
+  const handleSelectClick = (e) => setIsSelectOpen(!isSelectOpen);
+
   return (
     <div className="ItemsPage">
       <ItemsSection>
@@ -24,7 +30,12 @@ function ItemsPage() {
         <ItemsSectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
           <Button title="상품 등록하기" />
-          <button>최신순</button>
+          <Select
+            value="최신순"
+            options={["최신순", "좋아요순"]}
+            isOpen={isSelectOpen}
+            onClick={handleSelectClick}
+          />
         </ItemsSectionHeader>
         <ItemsSectionContent numberOfColumns={5}>
           <Item title="로봇 청소기" price={1500000} likeCount={240} />

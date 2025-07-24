@@ -1,0 +1,53 @@
+@import url("../palette.css");
+
+.Select-typography {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-secondary-800);
+}
+
+.Select-border {
+  border: 1px solid var(--color-cool-gray-200);
+  border-radius: 12px;
+}
+
+/* Select */
+
+.Select {
+  background-color: white;
+  padding: 12px 20px;
+  display: flex;
+  gap: 24px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* SelectDropdown */
+
+.SelectDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background-color: var(--color-cool-gray-200);
+  width: 100%;
+  overflow: hidden;
+}
+
+.SelectDropdown-option {
+  height: 42px;
+  padding: 7px 0;
+  background-color: white;
+}
+
+.SelectDropdown-option.first {
+  padding-top: 9px;
+}
+
+.SelectDropdown-option.last {
+  padding-bottom: 9px;
+}
