@@ -1,4 +1,8 @@
 :root {
   /* Secondary */
   --color-secondary-600: #4b5563;
+
+  /* Cool Gray */
+  --color-cool-gray-200: #e5e7eb;
+  --color-cool-gray-500: #6b7280;
 }
