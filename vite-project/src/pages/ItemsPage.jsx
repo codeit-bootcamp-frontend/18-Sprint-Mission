@@ -1,9 +1,11 @@
+import Button from "../components/Button";
 import Item from "../components/Item";
 import {
   ItemsSection,
   ItemsSectionContent,
   ItemsSectionHeader,
 } from "../components/ItemsSection";
+import SearchInput from "../components/SearchInput";
 import "./ItemsPage.css";
 
 function ItemsPage() {
@@ -20,8 +22,8 @@ function ItemsPage() {
       </ItemsSection>
       <ItemsSection spacing={24}>
         <ItemsSectionHeader title="전체 상품">
-          <input placeholder="검색할 상품을 입력해주세요" />
-          <button>상품 등록하기</button>
+          <SearchInput placeholder="검색할 상품을 입력해주세요" />
+          <Button title="상품 등록하기" />
           <button>최신순</button>
         </ItemsSectionHeader>
         <ItemsSectionContent numberOfColumns={5}>

@@ -1,10 +1,16 @@
 :root {
+  /* Primary */
+  --color-primary-100: #3692ff;
+
   /* Secondary */
+  --color-secondary-100: #f3f4f6;
+  --color-secondary-400: #9ca3af;
   --color-secondary-600: #4b5563;
   --color-secondary-800: ##1f2937;
   --color-secondary-900: #111827;
 
   /* Cool Gray */
+  --color-cool-gray-100: #f3f4f6;
   --color-cool-gray-200: #e5e7eb;
   --color-cool-gray-500: #6b7280;
 }
