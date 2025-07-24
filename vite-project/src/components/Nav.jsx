@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import logoImg from "../assets/logo-large.svg";
+import largeLogo from "../assets/logo-large.svg";
+import smallLogo from "../assets/logo-small.svg";
 import profileImg from "../assets/profile-default.svg";
 
 import "./Nav.css";
@@ -15,7 +16,10 @@ export default function Nav() {
       <div className="Nav-content">
         <ul className="Nav-links">
           <li className="Nav-logo">
-            <img src={logoImg} />
+            <picture>
+              <source srcSet={smallLogo} media="(max-width: 767px)" />
+              <img src={largeLogo} />
+            </picture>
           </li>
           <li className="Nav-link">
             <NavLink to="/community" style={linkStyle}>
