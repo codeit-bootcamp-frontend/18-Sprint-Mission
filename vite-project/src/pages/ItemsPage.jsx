@@ -10,17 +10,40 @@ import {
 import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
 import PageControl from "../components/PageControl";
 import SearchInput from "../components/SearchInput";
+import { useMediaQuery } from "../utils/useMediaQuery";
 import "./ItemsPage.css";
+
+function getNumberOfColumns(mediaQuery) {
+  let bestProducts = 4;
+  let products = 5;
+
+  if (mediaQuery.isTablet) {
+    bestProducts = 2;
+    products = 3;
+  }
+
+  if (mediaQuery.isMobile) {
+    bestProducts = 1;
+    products = 2;
+  }
+
+  return { bestProducts, products };
+}
 
 function ItemsPage() {
   const [products, setProducts] = useState([]);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [orderBy, setOrderBy] = useState(ORDER_BY_DEFAULT);
   const navigate = useNavigate();
+  const mediaQuery = useMediaQuery();
+
+  const numberOfColumns = getNumberOfColumns(mediaQuery);
 
   const bestProducts = [...products]
     .sort((a, b) => b.favoriteCount - a.favoriteCount)
-    .slice(0, 4);
+    .slice(0, numberOfColumns.bestProducts);
+
+  const allProducts = products.slice(0, numberOfColumns.products * 2);
 
   const handleOrderByClick = () => setIsSelectOpen(!isSelectOpen);
 
@@ -31,6 +54,7 @@ function ItemsPage() {
 
   useEffect(() => {
     fetchProducts({
+      pageSize: numberOfColumns.products * 2,
       orderBy,
     })
       .then(setProducts)
@@ -41,7 +65,10 @@ function ItemsPage() {
     <div className="ItemsPage">
       <ItemsSection>
         <ItemsSectionHeader title="베스트 상품" />
-        <ItemsSectionContent items={bestProducts} numberOfColumns={4} />
+        <ItemsSectionContent
+          items={bestProducts}
+          numberOfColumns={numberOfColumns.bestProducts}
+        />
       </ItemsSection>
       <ItemsSection spacing={24}>
         <ItemsSectionHeader title="전체 상품">
@@ -54,7 +81,10 @@ function ItemsPage() {
             onOptionClick={setOrderBy}
           />
         </ItemsSectionHeader>
-        <ItemsSectionContent items={products} numberOfColumns={5} />
+        <ItemsSectionContent
+          items={allProducts}
+          numberOfColumns={numberOfColumns.products}
+        />
         <PageControl numberOfPages={10} />
       </ItemsSection>
     </div>

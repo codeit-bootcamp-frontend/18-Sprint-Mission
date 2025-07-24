@@ -13,3 +13,19 @@ body {
   max-width: 1200px;
   margin: 24px auto 0px;
 }
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .content {
+    max-width: none;
+    margin: 24px 24px 0px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .content {
+    max-width: none;
+    margin: 16px 16px 0px;
+  }
+}
