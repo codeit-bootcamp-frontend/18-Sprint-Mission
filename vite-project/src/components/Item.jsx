@@ -2,7 +2,7 @@ import likeImg from "../assets/ic-heart.svg";
 import "./Item.css";
 
 function Item({ imageUrl, title, price, likeCount }) {
-  const priceString = `${price}원`;
+  const priceString = Intl.NumberFormat().format(price) + "원";
   return (
     <div className="Item">
       <div className="Item-image">
