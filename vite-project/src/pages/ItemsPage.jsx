@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { fetchProducts } from "../api/products";
 import Button from "../components/Button";
-import Item from "../components/Item";
 import {
   ItemsSection,
   ItemsSectionContent,
@@ -11,20 +11,26 @@ import Select from "../components/Select";
 import "./ItemsPage.css";
 
 function ItemsPage() {
+  const [products, setProducts] = useState([]);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
 
+  const bestProducts = [...products]
+    .sort((a, b) => b.favoriteCount - a.favoriteCount)
+    .slice(0, 4);
+
   const handleSelectClick = (e) => setIsSelectOpen(!isSelectOpen);
+
+  useEffect(() => {
+    fetchProducts()
+      .then(setProducts)
+      .catch(() => setProducts([]));
+  }, []);
 
   return (
     <div className="ItemsPage">
       <ItemsSection>
         <ItemsSectionHeader title="베스트 상품" />
-        <ItemsSectionContent numberOfColumns={4}>
-          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
-          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
-          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
-          <Item title="아이패드 미니 팝니다" price={500000} likeCount={240} />
-        </ItemsSectionContent>
+        <ItemsSectionContent items={bestProducts} numberOfColumns={4} />
       </ItemsSection>
       <ItemsSection spacing={24}>
         <ItemsSectionHeader title="전체 상품">
@@ -37,18 +43,7 @@ function ItemsPage() {
             onClick={handleSelectClick}
           />
         </ItemsSectionHeader>
-        <ItemsSectionContent numberOfColumns={5}>
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-          <Item title="로봇 청소기" price={1500000} likeCount={240} />
-        </ItemsSectionContent>
+        <ItemsSectionContent items={products} numberOfColumns={5} />
       </ItemsSection>
     </div>
   );

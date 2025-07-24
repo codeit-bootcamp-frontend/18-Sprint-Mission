@@ -1,3 +1,4 @@
+import Item from "./Item";
 import "./ItemsSection.css";
 
 function ItemsSectionHeader({ title, children }) {
@@ -11,7 +12,7 @@ function ItemsSectionHeader({ title, children }) {
   );
 }
 
-function ItemsSectionContent({ numberOfColumns, children }) {
+function ItemsSectionContent({ items, numberOfColumns }) {
   return (
     <div
       className="ItemsSectionContent"
@@ -19,8 +20,14 @@ function ItemsSectionContent({ numberOfColumns, children }) {
         gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)`,
       }}
     >
-      {children.map((child) => (
-        <div className="ItemsSectionContent-item">{child}</div>
+      {items.map((product) => (
+        <Item
+          key={product.id}
+          imageUrl={product.images[0]}
+          title={product.name}
+          price={product.price}
+          likeCount={product.favoriteCount}
+        />
       ))}
     </div>
   );

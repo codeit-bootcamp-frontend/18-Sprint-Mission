@@ -1,11 +1,13 @@
 import likeImg from "../assets/ic-heart.svg";
 import "./Item.css";
 
-function Item({ title, price, likeCount }) {
+function Item({ imageUrl, title, price, likeCount }) {
   const priceString = `${price}원`;
   return (
     <div className="Item">
-      <div className="Item-image"></div>
+      <div className="Item-image">
+        <img src={imageUrl} alt="상품 이미지" />
+      </div>
       <div className="Item-info">
         <p className="Item-title">{title}</p>
         <p className="Item-price">{priceString}</p>
