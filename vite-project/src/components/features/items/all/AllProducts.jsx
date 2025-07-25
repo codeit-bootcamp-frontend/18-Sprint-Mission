@@ -15,11 +15,11 @@ const AllProducts = () => {
         </div>
       </div>
       <div className='all-products-wrapper'>
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
       </div>
     </div>
   );

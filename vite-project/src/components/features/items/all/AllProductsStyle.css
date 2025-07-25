@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  gap: 16px;
+  gap: 24px;
 }
 
 .all-products-header {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 

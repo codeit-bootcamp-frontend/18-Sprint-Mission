@@ -1,3 +1,13 @@
+.item-card-best-img {
+  width: 282px;
+  height: 282px;
+}
+
+.item-card-all-img {
+  width: 221px;
+  height: 221px;
+}
+
 .item-card-info {
   display: flex;
   flex-direction: column;
