@@ -29,12 +29,12 @@
 .OrderBySelect-dropdown {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   gap: 1px;
   background-color: var(--color-cool-gray-200);
-  width: 100%;
+  width: 130px;
   overflow: hidden;
 }
 
@@ -50,4 +50,11 @@
 
 .OrderBySelect-option.last {
   padding-bottom: 9px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .OrderBySelect {
+    padding: 9px;
+  }
 }

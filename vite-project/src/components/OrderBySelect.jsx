@@ -1,3 +1,4 @@
+import selectDownImgMobile from "../assets/ic-arrow-down-list.svg";
 import selectDownImg from "../assets/ic-triangle-down.svg";
 import "./OrderBySelect.css";
 
@@ -35,12 +36,20 @@ function SelectDropdown({ classNames, options, onOptionClick }) {
   );
 }
 
-function OrderBySelect({ value, isOpen = false, onClick, onOptionClick }) {
+function OrderBySelect({
+  value,
+  isOpen = false,
+  isMobile,
+  onClick,
+  onOptionClick,
+}) {
   const currentOption = value || ORDER_BY_DEFAULT;
+  const selectImage = isMobile ? selectDownImgMobile : selectDownImg;
+
   return (
     <button className={`OrderBySelect ${BASE_CLASSNAMES}`} onClick={onClick}>
-      <span>{ORDER_BY_TITLE[currentOption]}</span>
-      <img src={selectDownImg} alt="정렬 선택" />
+      {isMobile || <span>{ORDER_BY_TITLE[currentOption]}</span>}
+      <img src={selectImage} alt="정렬 선택" />
       {isOpen && (
         <SelectDropdown
           classNames={BASE_CLASSNAMES}
