@@ -19,6 +19,11 @@
   color: #111827;
 }
 
+.all-products-header-search-dropdown {
+  display: flex;
+  gap: 12px;
+}
+
 .all-products-wrapper {
   display: flex;
   gap: 24px;
