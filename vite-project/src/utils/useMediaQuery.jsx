@@ -5,9 +5,12 @@ let remove = null;
 function useMediaQuery() {
   remove?.();
 
+  const matchesTablet = matchMedia("(max-width: 1199px)");
+  const matchesMobile = matchMedia("(max-width: 767px)");
+
   const [mediaQuery, setMediaQuery] = useState({
-    isTablet: false,
-    isMobile: false,
+    isTablet: matchesTablet.matches,
+    isMobile: matchesMobile.matches,
   });
 
   const handleTabletMatchesChange = (e) =>
@@ -20,9 +23,6 @@ function useMediaQuery() {
       ...prev,
       isMobile: e.target.matches,
     }));
-
-  const matchesTablet = matchMedia("(max-width: 1199px)");
-  const matchesMobile = matchMedia("(max-width: 767px)");
 
   matchesTablet.addEventListener("change", handleTabletMatchesChange);
   matchesMobile.addEventListener("change", handleMobileMatchesChange);
