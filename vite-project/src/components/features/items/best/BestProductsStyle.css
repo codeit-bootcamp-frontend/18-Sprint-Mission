@@ -1,0 +1,19 @@
+.best-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+
+.best-products-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: #111827;
+}
+
+.best-products-wrapper {
+  display: flex;
+  gap: 24px;
+}

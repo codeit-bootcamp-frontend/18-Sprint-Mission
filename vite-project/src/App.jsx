@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import Items from './pages/Items';
-import Board from './pages/Board';
+import Items from './pages/items/Items';
+import Board from './pages/board/Board';
 
 function App() {
   return (

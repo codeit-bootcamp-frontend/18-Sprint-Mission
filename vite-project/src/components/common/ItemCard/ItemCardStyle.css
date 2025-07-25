@@ -1,0 +1,39 @@
+.item-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 6px;
+  color: #1F2937;
+}
+
+.item-card-info-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.item-card-info-price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.item-card-heart {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item-card-heart img {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.item-card-heart-count {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #4B5563;
+}
