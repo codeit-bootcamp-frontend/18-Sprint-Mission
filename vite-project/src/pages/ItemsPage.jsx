@@ -10,7 +10,7 @@ import {
 import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
 import PageControl from "../components/PageControl";
 import SearchInput from "../components/SearchInput";
-import { useMediaQuery } from "../utils/useMediaQuery";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 import "./ItemsPage.css";
 
 function getNumberOfColumns(mediaQuery) {
