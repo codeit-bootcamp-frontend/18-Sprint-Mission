@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GnbItem from "./GnbItem";
+import NavItem from "./NavItem";
 import "./gnbStyle.css";
 
 const Gnb = () => {
   return (
-    <div className="gnb">
+    <header className="gnb">
       <div className="gnb-left">
         <Link to="/">
           <img
@@ -14,14 +14,14 @@ const Gnb = () => {
             alt="판다마켓 로고"
           />
         </Link>
-        <GnbItem />
+        <NavItem />
       </div>
       <div className="gnb-right">
         <Link to="/profile">
           <img src="/icons/profile.svg" alt="프로필 기본 이미지" />
         </Link>
       </div>
-    </div>
+    </header>
   );
 };
 

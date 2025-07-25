@@ -1,16 +1,16 @@
 import React from "react";
-import BestProducts from "../../components/features/items/best/BestProducts";
-import AllProducts from "../../components/features/items/all/AllProducts";
+import BestProductSection from "../../components/features/items/BestProductSection/BestProductSection";
+import AllProductSection from "../../components/features/items/AllProductSection/AllProductSection";
 import Pagination from "../../components/features/items/pagination/Pagination";
 import "./ItemsStyle.css";
 
 const Items = () => {
   return (
     <>
-      <div className="products">
-        <BestProducts />
-        <AllProducts />
-      </div>
+      <main className="products">
+        <BestProductSection />
+        <AllProductSection />
+      </main>
 
       {/* 페이지네이션 */}
       <div className="pagination">

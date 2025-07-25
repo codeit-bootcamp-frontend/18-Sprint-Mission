@@ -1,0 +1,21 @@
+.gnb li.active {
+  color: #3692FF;
+}
+
+.gnb-left ul {
+  display: flex;
+}
+
+.gnb-left ul li {
+  padding: 21px 15px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: #4B5563;
+  cursor: pointer;
+}
+
+.gnb-left ul li:hover {
+  color: #87bdff;
+  transition: color 0.3s ease;
+}

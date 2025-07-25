@@ -1,9 +1,10 @@
 import React from "react";
-import { NAV_LINKS } from "../../constants/NAV_LINKS";
+import { NAV_LINKS } from "../../../../constants/NAV_LINKS";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import "./NavItemStyle.css";
 
-const GnbItem = () => {
+const NavItem = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -20,4 +21,4 @@ const GnbItem = () => {
   );
 };
 
-export default GnbItem;
+export default NavItem;

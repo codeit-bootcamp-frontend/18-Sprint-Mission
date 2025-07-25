@@ -1,13 +1,13 @@
 import React from "react";
 import ItemCard from "../../../common/ItemCard/ItemCard";
-import Search from "./search/Search";
-import Dropdown from "./dropdown/Dropdown";
-import AddButton from "./addButton/AddButton";
-import "./AllProductsStyle.css";
+import Search from "../../../common/search/Search";
+import Dropdown from "../../../common/dropdown/Dropdown";
+import AddButton from "../../../common/Button/AddButton";
+import "./AllProductSectionStyle.css";
 
-const AllProducts = () => {
+const AllProductSection = () => {
   return (
-    <div className="all-products">
+    <section className="all-products">
       <div className="all-products-header">
         <h1 className="all-products-title">전체 상품</h1>
         <div className="all-products-header-search-dropdown">
@@ -16,7 +16,7 @@ const AllProducts = () => {
           <Dropdown />
         </div>
       </div>
-      <div className="all-products-wrapper">
+      <article className="all-products-wrapper">
         <ItemCard
           img="/Black.JPG"
           type="ALL"
@@ -52,8 +52,8 @@ const AllProducts = () => {
           price="500,000원"
           heartCount="240"
         />
-      </div>
-      <div className="all-products-wrapper">
+      </article>
+      <article className="all-products-wrapper">
         <ItemCard
           img="/Black.JPG"
           type="ALL"
@@ -89,9 +89,9 @@ const AllProducts = () => {
           price="500,000원"
           heartCount="240"
         />
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 
-export default AllProducts;
+export default AllProductSection;
