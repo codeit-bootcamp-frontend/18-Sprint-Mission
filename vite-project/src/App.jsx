@@ -1,11 +1,14 @@
-import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Items from './pages/Items';
+import Board from './pages/Board';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <Routes>
+      <Route path="/board" element={<Board />} />
+      <Route path="/items" element={<Items />} />
+    </Routes>
   );
-};
+}
 
 export default App;
