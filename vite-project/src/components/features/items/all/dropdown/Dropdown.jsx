@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './DropdownStyle.css';
+import React, { useState, useRef, useEffect } from "react";
+import "./DropdownStyle.css";
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState('최신순');
+  const [selected, setSelected] = useState("최신순");
   const dropdownRef = useRef(null);
 
-  const toggleDropdown = () => setIsOpen(prev => !prev);
+  const toggleDropdown = () => setIsOpen((prev) => !prev);
   const handleSelect = (option) => {
     setSelected(option);
     setIsOpen(false);
@@ -19,8 +19,8 @@ const Dropdown = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -31,8 +31,8 @@ const Dropdown = () => {
       </button>
       {isOpen && (
         <ul className="dropdown-menu">
-          <li onClick={() => handleSelect('최신순')}>최신순</li>
-          <li onClick={() => handleSelect('좋아요순')}>좋아요순</li>
+          <li onClick={() => handleSelect("최신순")}>최신순</li>
+          <li onClick={() => handleSelect("좋아요순")}>좋아요순</li>
         </ul>
       )}
     </div>
