@@ -1,6 +1,6 @@
 import React from 'react';
-import './BestProductsStyle.css';
 import ItemCard from '../../../common/ItemCard/ItemCard';
+import './BestProductsStyle.css';
 
 const BestProducts = () => {
   return (

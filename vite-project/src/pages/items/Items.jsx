@@ -1,6 +1,6 @@
 import React from 'react';
 import BestProducts from '../../components/features/items/best/BestProducts';
-import AllProducts from '../../components/features/items/AllProducts';
+import AllProducts from '../../components/features/items/all/AllProducts';
 import Pagination from '../../components/features/items/Pagination';
 import './ItemsStyle.css';
 

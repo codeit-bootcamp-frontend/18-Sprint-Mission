@@ -1,0 +1,25 @@
+.all-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+
+.all-products-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-products-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: #111827;
+}
+
+.all-products-wrapper {
+  display: flex;
+  gap: 24px;
+}

@@ -1,0 +1,53 @@
+.search-add-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 325px;
+}
+
+.search-input {
+  width: 100%;
+  height: 42px;
+  border-radius: 12px;
+  padding: 9px 16px 9px 40px;
+  background-color: #F3F4F6;
+  border: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000;
+}
+
+.search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input-wrapper img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.add-product-button {
+  width: 133px;
+  height: 42px;
+  border-radius: 8px;
+  padding: 9px;
+  background-color: #3692FF;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: #F3F4F6;
+  text-wrap: nowrap;
+}
