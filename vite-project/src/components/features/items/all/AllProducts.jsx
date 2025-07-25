@@ -15,11 +15,18 @@ const AllProducts = () => {
         </div>
       </div>
       <div className='all-products-wrapper'>
-        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
-        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
-        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
-        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
-        <ItemCard type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+      </div>
+      <div className='all-products-wrapper'>
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
+        <ItemCard img="/Black.JPG" type="ALL" title="아이패드 미니 팝니다" price="500,000원" heartCount="240" />
       </div>
     </div>
   );
