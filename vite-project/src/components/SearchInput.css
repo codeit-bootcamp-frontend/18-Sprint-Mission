@@ -6,19 +6,20 @@
   display: flex;
   gap: 4px;
   border-radius: 12px;
-}
-
-.SearchInput.large {
   width: 325px;
 }
 
+.SearchInput img {
+  width: 24px;
+}
+
 .SearchInput input {
-  width: 100%;
   border: none;
   background: none;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
+  flex-grow: 1;
 }
 .SearchInput input:focus {
   outline: none;
@@ -28,4 +29,11 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .SearchInput {
+    width: 242px;
+  }
 }

@@ -88,6 +88,7 @@ function ItemsPage() {
           <OrderBySelect
             value={orderBy}
             isOpen={isSelectOpen}
+            isMobile={mediaQuery.isMobile}
             onClick={handleOrderByClick}
             onOptionClick={setOrderBy}
           />

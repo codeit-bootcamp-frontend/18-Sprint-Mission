@@ -3,7 +3,7 @@ import "./SearchInput.css";
 
 function SearchInput({ placeholder }) {
   return (
-    <div className="SearchInput large">
+    <div className="SearchInput">
       <img src={searchImg} alt="상품 검색" />
       <input placeholder={placeholder} />
     </div>
