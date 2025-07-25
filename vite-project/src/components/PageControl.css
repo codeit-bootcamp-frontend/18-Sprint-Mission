@@ -27,3 +27,8 @@
   color: white;
   background-color: #2f80ed;
 }
+
+.PageControl-button.disabled {
+  cursor: default;
+  opacity: 0.3;
+}

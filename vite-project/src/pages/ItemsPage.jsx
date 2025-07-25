@@ -32,6 +32,8 @@ function getNumberOfColumns(mediaQuery) {
 
 function ItemsPage() {
   const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [numberOfPages, setNumberOfPages] = useState(1);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [orderBy, setOrderBy] = useState(ORDER_BY_DEFAULT);
   const navigate = useNavigate();
@@ -52,14 +54,23 @@ function ItemsPage() {
     navigate("/additem");
   };
 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   useEffect(() => {
     fetchProducts({
+      page: currentPage,
       pageSize: numberOfColumns.products * 2,
       orderBy,
     })
-      .then(setProducts)
+      .then(({ products, numberOfPages }) => {
+        setProducts(products);
+        setCurrentPage((prev) => Math.min(prev, numberOfPages));
+        setNumberOfPages(numberOfPages);
+      })
       .catch(() => setProducts([]));
-  }, [orderBy]);
+  }, [currentPage, orderBy, mediaQuery]);
 
   return (
     <div className="ItemsPage">
@@ -85,7 +96,11 @@ function ItemsPage() {
           items={allProducts}
           numberOfColumns={numberOfColumns.products}
         />
-        <PageControl numberOfPages={10} />
+        <PageControl
+          numberOfPages={numberOfPages}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
       </ItemsSection>
     </div>
   );

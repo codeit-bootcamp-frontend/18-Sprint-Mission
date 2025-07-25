@@ -21,5 +21,8 @@ export async function fetchProducts({
   }
 
   const json = await response.json();
-  return json.list;
+  return {
+    products: json.list,
+    numberOfPages: Math.ceil(json.totalCount / pageSize),
+  };
 }
