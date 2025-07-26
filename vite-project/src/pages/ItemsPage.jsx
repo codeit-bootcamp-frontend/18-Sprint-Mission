@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchProducts } from "../api/products";
 import Button from "../components/Button";
@@ -10,42 +10,44 @@ import {
 import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
 import PageControl from "../components/PageControl";
 import SearchInput from "../components/SearchInput";
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import { useDevice } from "../hooks/useDevice";
 import "./ItemsPage.css";
 
-function getNumberOfColumns(mediaQuery) {
-  let bestProducts = 4;
-  let products = 5;
+function getNumberOfColumns(deviceInfo) {
+  let bestProductsColumns = 4;
+  let productsColumns = 5;
 
-  if (mediaQuery.isTablet) {
-    bestProducts = 2;
-    products = 3;
+  if (deviceInfo.isTablet) {
+    bestProductsColumns = 2;
+    productsColumns = 3;
   }
 
-  if (mediaQuery.isMobile) {
-    bestProducts = 1;
-    products = 2;
+  if (deviceInfo.isMobile) {
+    bestProductsColumns = 1;
+    productsColumns = 2;
   }
 
-  return { bestProducts, products };
+  return { bestProductsColumns, productsColumns };
 }
 
 function ItemsPage() {
+  console.log("ItemsPage rendered");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [orderBy, setOrderBy] = useState(ORDER_BY_DEFAULT);
   const navigate = useNavigate();
-  const mediaQuery = useMediaQuery();
+  const deviceInfo = useDevice();
 
-  const numberOfColumns = getNumberOfColumns(mediaQuery);
+  const { bestProductsColumns, productsColumns } =
+    getNumberOfColumns(deviceInfo);
 
   const bestProducts = [...products]
     .sort((a, b) => b.favoriteCount - a.favoriteCount)
-    .slice(0, numberOfColumns.bestProducts);
+    .slice(0, bestProductsColumns);
 
-  const allProducts = products.slice(0, numberOfColumns.products * 2);
+  const allProducts = products.slice(0, productsColumns * 2);
 
   const handleOrderByClick = () => setIsSelectOpen(!isSelectOpen);
 
@@ -58,10 +60,10 @@ function ItemsPage() {
     setCurrentPage(page);
   };
 
-  useEffect(() => {
+  const fetch = useCallback(() => {
     fetchProducts({
       page: currentPage,
-      pageSize: numberOfColumns.products * 2,
+      pageSize: productsColumns * 2,
       orderBy,
     })
       .then(({ products, numberOfPages }) => {
@@ -70,7 +72,11 @@ function ItemsPage() {
         setNumberOfPages(numberOfPages);
       })
       .catch(() => setProducts([]));
-  }, [currentPage, orderBy, mediaQuery]);
+  }, [currentPage, orderBy, productsColumns]);
+
+  useEffect(() => {
+    fetch();
+  }, [fetch]);
 
   return (
     <div className="ItemsPage">
@@ -78,7 +84,7 @@ function ItemsPage() {
         <ItemsSectionHeader title="베스트 상품" />
         <ItemsSectionContent
           items={bestProducts}
-          numberOfColumns={numberOfColumns.bestProducts}
+          numberOfColumns={bestProductsColumns}
         />
       </ItemsSection>
       <ItemsSection spacing={24}>
@@ -88,14 +94,14 @@ function ItemsPage() {
           <OrderBySelect
             value={orderBy}
             isOpen={isSelectOpen}
-            isMobile={mediaQuery.isMobile}
+            isMobile={deviceInfo.isMobile}
             onClick={handleOrderByClick}
             onOptionClick={setOrderBy}
           />
         </ItemsSectionHeader>
         <ItemsSectionContent
           items={allProducts}
-          numberOfColumns={numberOfColumns.products}
+          numberOfColumns={productsColumns}
         />
         <PageControl
           numberOfPages={numberOfPages}
