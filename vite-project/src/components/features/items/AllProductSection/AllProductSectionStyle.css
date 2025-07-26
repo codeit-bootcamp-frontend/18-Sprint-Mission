@@ -26,6 +26,19 @@
 }
 
 .all-products-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 1190px) {
+  .all-products-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 778px) {
+  .all-products-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

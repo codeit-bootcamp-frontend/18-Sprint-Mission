@@ -11,8 +11,8 @@ const ItemCard = ({ img, title, price, heartCount, type }) => {
         aria-label={`${title} 상세페이지 이동`}>
         <figure className="item-card-figure">
           <img
-            src={img}
-            alt={title}
+            src={img || "/ProductNullImage.png"}
+            alt={title || "상품 이미지"}
             className={
               type === "BEST" ? "item-card-best-img" : "item-card-all-img"
             }

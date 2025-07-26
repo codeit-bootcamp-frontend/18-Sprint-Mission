@@ -5,7 +5,7 @@ import Dropdown from "../../../common/dropdown/Dropdown";
 import AddButton from "../../../common/Button/AddButton";
 import "./AllProductSectionStyle.css";
 
-const AllProductSection = () => {
+const AllProductSection = ({ products }) => {
   return (
     <section className="all-products">
       <div className="all-products-header">
@@ -17,78 +17,16 @@ const AllProductSection = () => {
         </div>
       </div>
       <article className="all-products-wrapper">
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-      </article>
-      <article className="all-products-wrapper">
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
-        <ItemCard
-          img="/Black.JPG"
-          type="ALL"
-          title="아이패드 미니 팝니다"
-          price="500,000원"
-          heartCount="240"
-        />
+        {products?.list?.map((product) => (
+          <ItemCard
+            key={product.id}
+            img={product.images[0]}
+            type="ALL"
+            title={product.name}
+            price={product.price}
+            heartCount={product.favoriteCount}
+          />
+        ))}
       </article>
     </section>
   );
