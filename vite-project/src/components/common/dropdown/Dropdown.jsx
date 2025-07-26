@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./DropdownStyle.css";
 
-const Dropdown = () => {
+const Dropdown = ({ onOrderByChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("최신순");
   const dropdownRef = useRef(null);
@@ -10,6 +10,7 @@ const Dropdown = () => {
   const handleSelect = (option) => {
     setSelected(option);
     setIsOpen(false);
+    onOrderByChange(option);
   };
 
   useEffect(() => {

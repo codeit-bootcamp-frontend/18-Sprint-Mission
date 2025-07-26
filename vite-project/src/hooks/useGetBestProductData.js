@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useGetBestProductData = () => {
+const useGetBestProductData = ({ pageSize = "4" }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,9 @@ const useGetBestProductData = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("https://panda-market-api.vercel.app/products?orderBy=favorite&pageSize=4");
+        const response = await fetch(
+          `https://panda-market-api.vercel.app/products?orderBy=favorite&pageSize=${pageSize}`
+        );
         const data = await response.json();
         setProducts(data);
       } catch (err) {
@@ -20,7 +22,7 @@ const useGetBestProductData = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, [pageSize]);
 
   return { products, loading, error };
 };

@@ -5,7 +5,7 @@ import Dropdown from "../../../common/dropdown/Dropdown";
 import AddButton from "../../../common/Button/AddButton";
 import "./AllProductSectionStyle.css";
 
-const AllProductSection = ({ products }) => {
+const AllProductSection = ({ products, onOrderByChange }) => {
   return (
     <section className="all-products">
       <div className="all-products-header">
@@ -13,7 +13,7 @@ const AllProductSection = ({ products }) => {
         <div className="all-products-header-search-dropdown">
           <Search />
           <AddButton />
-          <Dropdown />
+          <Dropdown onOrderByChange={onOrderByChange} />
         </div>
       </div>
       <article className="all-products-wrapper">
