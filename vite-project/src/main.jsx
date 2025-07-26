@@ -9,7 +9,7 @@ function Main() {
       <App>
         <Routes>
           <Route path="/items" element={<ItemsPage />} />
-          <Route path="/additem" elemenet={<AddItemPage />} />
+          <Route path="/additem" element={<AddItemPage />} />
           <Route path="*" element={<h1>NOT IMPLEMENTED</h1>} />
         </Routes>
       </App>
