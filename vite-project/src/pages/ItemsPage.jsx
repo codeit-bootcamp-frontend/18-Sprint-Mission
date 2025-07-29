@@ -31,7 +31,6 @@ function getNumberOfColumns(deviceInfo) {
 }
 
 function ItemsPage() {
-  console.log("ItemsPage rendered");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
