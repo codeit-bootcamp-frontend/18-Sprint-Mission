@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchProducts } from "../api/products";
 import Button from "../components/Button";
@@ -42,9 +42,13 @@ function ItemsPage() {
   const { bestProductsColumns, productsColumns } =
     getNumberOfColumns(deviceInfo);
 
-  const bestProducts = [...products]
-    .sort((a, b) => b.favoriteCount - a.favoriteCount)
-    .slice(0, bestProductsColumns);
+  const bestProducts = useMemo(
+    () =>
+      [...products]
+        .sort((a, b) => b.favoriteCount - a.favoriteCount)
+        .slice(0, bestProductsColumns),
+    [products]
+  );
 
   const allProducts = products.slice(0, productsColumns * 2);
 
