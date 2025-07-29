@@ -1,6 +1,6 @@
 import chevronLeftImg from "../assets/ic-chevron-left.svg";
 import chevronRightImg from "../assets/ic-chevron-right.svg";
-import PageController from "../utils/pageController";
+import PageController from "../utils/PageController";
 import "./PageControl.css";
 
 const PAGE_MOVE_IMAGE = {
