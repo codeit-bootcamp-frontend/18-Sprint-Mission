@@ -9,7 +9,7 @@ function Item({ imageUrl, title, price, likeCount }) {
         <img src={imageUrl} alt="상품 이미지" />
       </div>
       <div className="Item-info">
-        <p className="Item-title">{title}</p>
+        <h3 className="Item-title">{title}</h3>
         <p className="Item-price">{priceString}</p>
         <div className="Item-likes">
           <img src={likeImg} alt="좋아요 갯수" />
