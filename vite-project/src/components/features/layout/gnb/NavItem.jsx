@@ -1,6 +1,6 @@
 import React from "react";
 import { NAV_LINKS } from "../../../../constants/NAV_LINKS";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "./NavItemStyle.css";
 
@@ -14,7 +14,7 @@ const NavItem = () => {
         <li
           key={link.path}
           className={currentPath === link.path ? "active" : ""}>
-          <Link to={link.path}>{link.label}</Link>
+          <NavLink to={link.path}>{link.label}</NavLink>
         </li>
       ))}
     </ul>

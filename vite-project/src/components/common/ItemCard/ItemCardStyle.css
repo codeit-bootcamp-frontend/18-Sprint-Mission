@@ -1,3 +1,9 @@
+.item-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .item-card-best-img,
 .item-card-all-img {
   border-radius: 16px;
