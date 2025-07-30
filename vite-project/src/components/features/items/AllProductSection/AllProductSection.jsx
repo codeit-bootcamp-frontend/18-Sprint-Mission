@@ -4,8 +4,15 @@ import Search from "../../../common/search/Search";
 import Dropdown from "../../../common/dropdown/Dropdown";
 import AddButton from "../../../common/Button/AddButton";
 import "./AllProductSectionStyle.css";
+import IsLoading from "../../../common/State/IsLoading";
+import IsError from "../../../common/State/IsError";
 
-const AllProductSection = ({ products, onOrderByChange }) => {
+const AllProductSection = ({
+  products,
+  onOrderByChange,
+  isLoading,
+  isError,
+}) => {
   return (
     <section className="all-products">
       <div className="all-products-header">
@@ -17,6 +24,8 @@ const AllProductSection = ({ products, onOrderByChange }) => {
         </div>
       </div>
       <article className="all-products-wrapper">
+        {isLoading && <IsLoading />}
+        {isError && <IsError />}
         {products?.list?.map((product) => (
           <ItemCard
             key={product.id}

@@ -19,26 +19,39 @@ const Items = () => {
     };
     setOrderBy(orderByMap[koreanValue] || "recent");
   };
+
   // 베스트 상품 데이터
-  const { products: bestProducts } = useGetBestProductData({ pageSize: "4" });
+  const {
+    products: bestProducts,
+    isLoading: bestProductsLoading,
+    isError: bestProductsError,
+  } = useGetBestProductData({ pageSize: "4" });
 
   // 전체 상품 데이터
-  const { products: allProducts } = useGetProductData({
+  const {
+    products: allProducts,
+    isLoading: allProductsLoading,
+    isError: allProductsError,
+  } = useGetProductData({
     page,
     pageSize: "10",
     orderBy,
     keyword: "",
   });
 
-  console.log(allProducts);
-
   return (
     <>
       <main className="products">
-        <BestProductSection products={bestProducts} />
+        <BestProductSection
+          products={bestProducts}
+          isLoading={bestProductsLoading}
+          isError={bestProductsError}
+        />
         <AllProductSection
           products={allProducts}
           onOrderByChange={handleOrderByChange}
+          isLoading={allProductsLoading}
+          isError={allProductsError}
         />
       </main>
 
