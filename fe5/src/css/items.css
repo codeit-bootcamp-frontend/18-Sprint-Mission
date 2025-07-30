@@ -1,0 +1,90 @@
+.headerLeft {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.headerAncker {
+	color: #4b5563;
+	font-weight: 700;
+	line-height: 26px;
+	font-size: 18px;
+}
+
+.itemList {
+	height: 378px;
+	width: 282px;
+	place-items: center;
+	list-style: none;
+}
+
+.itemList > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 2px;
+}
+
+#favoriteHeart,
+#itemPrice,
+#itemTag {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}
+
+#itemTag {
+	margin-top: 18px;
+}
+
+#itemImg {
+	width: 282px;
+	height: 282px;
+	border-radius: 16px;
+}
+
+.bestGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 24px;
+}
+
+.itemNotice {
+	color: #111827;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 32px;
+	letter-spacing: 0;
+	text-align: start;
+	margin-bottom: 16px;
+}
+
+.newItemRegist {
+	width: 133px;
+	height: 42px;
+}
+
+.searchInput {
+	width: 325px;
+	height: 42px;
+	border-radius: 12px;
+	color: gray;
+	border: 1px solid black;
+	padding: 9px 20px 9px 16px;
+}
+
+.searchDiv {
+	display: flex;
+	justify-content: space-between;
+}
+.searchDiv > div {
+	display: flex;
+	gap: 12px;
+}
+.selectBox {
+	border: 1px solid #e5e7eb;
+	width: 130px;
+	height: 42px;
+	padding: 12px 20px 12px 20px;
+}
