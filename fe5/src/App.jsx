@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Additem from "./components/addItem";
 import Items from "./components/items";
 // import "./css/global.css";
 // import "./css/home.css";
@@ -9,7 +11,10 @@ function App() {
 
 	return (
 		<div>
-			<Items />
+			<Routes>
+				<Route path="/items" element={<Items />} />
+				<Route path="/additem" element={<Additem />} />
+			</Routes>
 		</div>
 	);
 }

@@ -18,7 +18,8 @@
 	list-style: none;
 }
 
-.itemList > div {
+.itemList > div,
+.allItemList > div {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -76,7 +77,10 @@
 
 .searchDiv {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
+	margin-top: 40px;
+	margin-bottom: 24px;
 }
 .searchDiv > div {
 	display: flex;
@@ -87,4 +91,88 @@
 	width: 130px;
 	height: 42px;
 	padding: 12px 20px 12px 20px;
+}
+
+.allGrid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 16px;
+}
+
+.allImg {
+	width: 221px;
+	height: 221px;
+}
+
+.allItemList {
+	width: 221px;
+	height: 317px;
+	place-items: center;
+	list-style: none;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	gap: 8px;
+}
+
+.pagination button {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: none;
+	background: #f5f5f5;
+	color: #333;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background 0.2s ease;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.pagination button:hover {
+	background: #ddd;
+}
+
+.pagination button.active {
+	background: #1976d2;
+	color: white;
+	font-weight: bold;
+}
+
+.pagination button:disabled {
+	background: #ccc;
+	cursor: not-allowed;
+}
+
+/* 전체 상품 그리드 - 데스크탑 기본 (10개 → 5개 × 2줄) */
+.allGrid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 16px;
+}
+
+/* 태블릿 (768px ~ 1024px) : 6개 → 3개 × 2줄 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.allGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* 모바일 (최대 767px) : 4개 → 2개 × 2줄 */
+@media screen and (max-width: 767px) {
+	.allGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+#itemPrice {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 26px;
+	letter-spacing: 0;
 }
