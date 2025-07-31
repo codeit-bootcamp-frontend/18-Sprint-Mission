@@ -25,7 +25,7 @@ const StyledAddingItemImageLabel = styled.label`
   }
 `;
 
-function AddingItemImageInput({ onChange }) {
+function AddingItemImageInput({ onClick, onChange, ref }) {
   return (
     <StyledAddingItemImageLabel htmlFor="AddingItemImageInput">
       <img src={addImg} alt="상품 이미지 추가 아이콘" />
@@ -35,9 +35,11 @@ function AddingItemImageInput({ onChange }) {
         type="file"
         accept="image/*"
         style={{ display: "none" }}
-        onChange={
-          onChange ? ({ target }) => onChange(target.files[0]) : undefined
-        }
+        onClick={onClick}
+        onChange={({ target }) => {
+          onChange(target.files[0]);
+        }}
+        ref={ref}
       />
     </StyledAddingItemImageLabel>
   );

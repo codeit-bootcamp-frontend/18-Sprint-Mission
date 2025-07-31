@@ -28,11 +28,11 @@ const StyledAddingItemImage = styled.div`
   }
 `;
 
-function AddingItemImage({ imageUrl }) {
+function AddingItemImage({ imageUrl, onRemove }) {
   return (
     <StyledAddingItemImage>
       {imageUrl && <img src={imageUrl} alt="등록할 상품 이미지" />}
-      <button>
+      <button onClick={onRemove}>
         <img src={removeImg} alt="등록한 상품 이미지 삭제" />
       </button>
     </StyledAddingItemImage>
