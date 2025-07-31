@@ -1,3 +1,5 @@
+import AddingItemImageContainer from "../../components/add-item/adding-item-image-container";
+
 import Button from "../../components/Button";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
@@ -12,6 +14,7 @@ function AddItemPage() {
       <Section spacing={32}>
         <Section>
           <SectionHeader title={"상품 이미지"} size={SectionHeaderSize.SMALL} />
+          <AddingItemImageContainer />
         </Section>
         <Section>
           <SectionHeader title={"상품명"} size={SectionHeaderSize.SMALL} />
