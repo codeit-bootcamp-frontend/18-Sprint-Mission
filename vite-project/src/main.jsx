@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./components/App";
-import AddItemPage from "./pages/AddItemPage";
+import AddItemPage from "./pages/add-item/add-item-page";
 import ItemsPage from "./pages/ItemsPage";
 
 function Main() {
