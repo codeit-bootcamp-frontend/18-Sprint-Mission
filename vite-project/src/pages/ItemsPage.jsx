@@ -93,7 +93,7 @@ function ItemsPage() {
       <ItemsSection spacing={24}>
         <ItemsSectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
-          <Button title="상품 등록하기" onClick={handleAddClick} />
+          <Button onClick={handleAddClick}>상품 등록하기</Button>
           <OrderBySelect
             value={orderBy}
             isOpen={isSelectOpen}
