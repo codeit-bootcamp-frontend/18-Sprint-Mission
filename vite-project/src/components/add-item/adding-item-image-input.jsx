@@ -16,12 +16,15 @@ const StyledAddingItemImageLabel = styled.label`
   cursor: pointer;
 
   width: 282px;
-  height: 282px;
+  aspect-ratio: 1;
   border-radius: 12px;
 
   @media (max-width: 1199px) {
     width: 168px;
-    height: 168px;
+  }
+
+  @media (max-width: 767px) {
+    width: 50%;
   }
 `;
 
