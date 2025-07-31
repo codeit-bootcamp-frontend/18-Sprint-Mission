@@ -2,14 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchProducts } from "../api/products";
 import Button from "../components/Button";
-import {
-  ItemsSection,
-  ItemsSectionContent,
-  ItemsSectionHeader,
-} from "../components/ItemsSection";
+import ItemsGrid from "../components/item/items-grid";
 import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
 import PageControl from "../components/PageControl";
 import SearchInput from "../components/SearchInput";
+import Section from "../components/section/section";
+import SectionHeader from "../components/section/section-header";
 import { useDevice } from "../hooks/useDevice";
 import "./ItemsPage.css";
 
@@ -83,15 +81,12 @@ function ItemsPage() {
 
   return (
     <div className="ItemsPage">
-      <ItemsSection>
-        <ItemsSectionHeader title="베스트 상품" />
-        <ItemsSectionContent
-          items={bestProducts}
-          numberOfColumns={bestProductsColumns}
-        />
-      </ItemsSection>
-      <ItemsSection spacing={24}>
-        <ItemsSectionHeader title="전체 상품">
+      <Section>
+        <SectionHeader title="베스트 상품" />
+        <ItemsGrid items={bestProducts} numberOfColumns={bestProductsColumns} />
+      </Section>
+      <Section>
+        <SectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
           <Button onClick={handleAddClick}>상품 등록하기</Button>
           <OrderBySelect
@@ -101,17 +96,14 @@ function ItemsPage() {
             onClick={handleOrderByClick}
             onOptionClick={setOrderBy}
           />
-        </ItemsSectionHeader>
-        <ItemsSectionContent
-          items={allProducts}
-          numberOfColumns={productsColumns}
-        />
+        </SectionHeader>
+        <ItemsGrid items={allProducts} numberOfColumns={productsColumns} />
         <PageControl
           numberOfPages={numberOfPages}
           currentPage={currentPage}
           onPageChange={handlePageChange}
         />
-      </ItemsSection>
+      </Section>
     </div>
   );
 }
