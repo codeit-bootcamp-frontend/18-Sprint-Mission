@@ -93,7 +93,7 @@ function ItemsPage() {
         <SectionHeader title="베스트 상품" />
         <ItemsGrid items={bestProducts} numberOfColumns={bestProductsColumns} />
       </Section>
-      <Section>
+      <Section spacing={24}>
         <SectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
           <Button onClick={handleAddClick}>상품 등록하기</Button>

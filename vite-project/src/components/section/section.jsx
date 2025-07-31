@@ -4,11 +4,15 @@ const StyledSection = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: ${({ spacing }) => spacing}px;
+
+  @media (max-width: 767px) {
+    gap: 16px;
+  }
 `;
 
-function Section({ children }) {
-  return <StyledSection>{children}</StyledSection>;
+function Section({ children, spacing = 16 }) {
+  return <StyledSection spacing={spacing}>{children}</StyledSection>;
 }
 
 export default Section;
