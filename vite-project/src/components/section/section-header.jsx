@@ -10,7 +10,7 @@ const StyledSectionHeader = styled.div`
   @media (max-width: 767px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    ${({ $hasGap }) => ($hasGap ? "gap: 8px;" : "")}
     position: relative;
   }
 `;
@@ -22,18 +22,14 @@ const StyledSectionHeaderActions = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     gap: 14px;
-
-    button:nth-child(2) {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
   }
 `;
 
 function SectionHeader({ children, title, size = SectionHeaderSize.LARGE }) {
+  const hasSingleAction = children?.type?.name === "SectionHeaderAction";
+
   return (
-    <StyledSectionHeader>
+    <StyledSectionHeader $hasGap={!hasSingleAction}>
       {title && <SectionHeaderTitle size={size}>{title}</SectionHeaderTitle>}
       {children && (
         <StyledSectionHeaderActions>{children}</StyledSectionHeaderActions>

@@ -1,15 +1,15 @@
 import AddingItemImageContainer from "../../components/add-item/adding-item-image-container";
 
-import Button from "../../components/Button";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
+import SectionHeaderAction from "../../components/section/section-header-action";
 import SectionHeaderSize from "../../components/section/section-header-size";
 
 function AddItemPage() {
   return (
     <Section spacing={24}>
       <SectionHeader title={"상품 등록하기"}>
-        <Button disabled>등록</Button>
+        <SectionHeaderAction disabled>등록</SectionHeaderAction>
       </SectionHeader>
       <Section spacing={32}>
         <Section>

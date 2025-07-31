@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProducts } from "../../api/products";
-import Button from "../../components/Button";
 import ItemsGrid from "../../components/item/items-grid";
 import OrderBySelect, {
   ORDER_BY_DEFAULT,
@@ -11,6 +10,7 @@ import PageControl from "../../components/PageControl";
 import SearchInput from "../../components/SearchInput";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
+import SectionHeaderAction from "../../components/section/section-header-action";
 import { useDevice } from "../../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
@@ -96,7 +96,9 @@ function ItemsPage() {
       <Section spacing={24}>
         <SectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
-          <Button onClick={handleAddClick}>상품 등록하기</Button>
+          <SectionHeaderAction onClick={handleAddClick}>
+            상품 등록하기
+          </SectionHeaderAction>
           <OrderBySelect
             value={orderBy}
             isOpen={isSelectOpen}
