@@ -47,7 +47,7 @@ function ItemsPage() {
       [...products]
         .sort((a, b) => b.favoriteCount - a.favoriteCount)
         .slice(0, bestProductsColumns),
-    [products]
+    [bestProductsColumns, products]
   );
 
   const allProducts = products.slice(0, productsColumns * 2);
