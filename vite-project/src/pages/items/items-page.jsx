@@ -1,15 +1,17 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchProducts } from "../api/products";
-import Button from "../components/Button";
-import ItemsGrid from "../components/item/items-grid";
-import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
-import PageControl from "../components/PageControl";
-import SearchInput from "../components/SearchInput";
-import Section from "../components/section/section";
-import SectionHeader from "../components/section/section-header";
-import { useDevice } from "../hooks/useDevice";
-import "./ItemsPage.css";
+import styled from "styled-components";
+import { fetchProducts } from "../../api/products";
+import Button from "../../components/Button";
+import ItemsGrid from "../../components/item/items-grid";
+import OrderBySelect, {
+  ORDER_BY_DEFAULT,
+} from "../../components/OrderBySelect";
+import PageControl from "../../components/PageControl";
+import SearchInput from "../../components/SearchInput";
+import Section from "../../components/section/section";
+import SectionHeader from "../../components/section/section-header";
+import { useDevice } from "../../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
   let bestProductsColumns = 4;
@@ -27,6 +29,12 @@ function getNumberOfColumns(deviceInfo) {
 
   return { bestProductsColumns, productsColumns };
 }
+
+const StyledItemsPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`;
 
 function ItemsPage() {
   const [products, setProducts] = useState([]);
@@ -80,7 +88,7 @@ function ItemsPage() {
   }, [fetch]);
 
   return (
-    <div className="ItemsPage">
+    <StyledItemsPage>
       <Section>
         <SectionHeader title="베스트 상품" />
         <ItemsGrid items={bestProducts} numberOfColumns={bestProductsColumns} />
@@ -104,7 +112,7 @@ function ItemsPage() {
           onPageChange={handlePageChange}
         />
       </Section>
-    </div>
+    </StyledItemsPage>
   );
 }
 
