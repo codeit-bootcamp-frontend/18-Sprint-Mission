@@ -1,16 +1,30 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import largeLogo from "../assets/logo-large.svg";
 import smallLogo from "../assets/logo-small.svg";
 import profileImg from "../assets/profile-default.svg";
 
 import "./Nav.css";
 
-export default function Nav() {
-  const linkStyle = ({ isActive }) => ({
+function NavigationLink({ to, activePaths = [], children }) {
+  const location = useLocation();
+
+  const linkStyle = (isActive) => ({
     color: `var(--color-${isActive ? "primary-100" : "secondary-600"})`,
     textDecoration: "none",
   });
 
+  const active = activePaths.includes(location.pathname);
+
+  return (
+    <li className="Nav-link">
+      <NavLink to={to} style={({ isActive }) => linkStyle(isActive || active)}>
+        {children}
+      </NavLink>
+    </li>
+  );
+}
+
+function Nav() {
   return (
     <nav className="Nav">
       <div className="Nav-content">
@@ -21,16 +35,10 @@ export default function Nav() {
               <img src={largeLogo} />
             </picture>
           </li>
-          <li className="Nav-link">
-            <NavLink to="/community" style={linkStyle}>
-              자유게시판
-            </NavLink>
-          </li>
-          <li className="Nav-link">
-            <NavLink to="/items" style={linkStyle}>
-              중고마켓
-            </NavLink>
-          </li>
+          <NavigationLink to="/community">자유게시판</NavigationLink>
+          <NavigationLink to="/items" activePaths={["/additem"]}>
+            중고마켓
+          </NavigationLink>
         </ul>
         <div className="Nav__profile">
           <img src={profileImg} />
@@ -39,3 +47,5 @@ export default function Nav() {
     </nav>
   );
 }
+
+export default Nav;
