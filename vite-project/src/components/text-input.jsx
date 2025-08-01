@@ -49,14 +49,10 @@ const StyledTextInput = styled.div`
   }
 `;
 
-function TextInput({ placeholder, multiline = false }) {
+function TextInput({ multiline = false, ...props }) {
   return (
     <StyledTextInput $multiline={multiline}>
-      {multiline ? (
-        <textarea placeholder={placeholder} />
-      ) : (
-        <input placeholder={placeholder} />
-      )}
+      {multiline ? <textarea {...props} /> : <input {...props} />}
     </StyledTextInput>
   );
 }
