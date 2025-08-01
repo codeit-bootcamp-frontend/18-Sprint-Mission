@@ -1,16 +1,20 @@
 import React from "react";
 import ItemCard from "../../../common/ItemCard/ItemCard";
-import "./BestProductSectionStyle.css";
 import IsLoading from "../../../common/State/IsLoading";
 import IsError from "../../../common/State/IsError";
+import "./BestProductSectionStyle.css";
 
 const BestProductSection = ({ products, isLoading, isError }) => {
   return (
     <section className="best-products">
       <h1 className="best-products-title">베스트 상품</h1>
       <article className="best-products-wrapper">
-        {isLoading && <IsLoading />}
-        {isError && <IsError />}
+        {/* isLoading, isError 상태 렌더링 */}
+        {isLoading && <IsLoading type="BEST" />}
+        {isError && (
+          <IsError message="베스트 상품을 불러오는데 실패했습니다." />
+        )}
+
         {products?.list?.map((product) => (
           <ItemCard
             key={product.id}

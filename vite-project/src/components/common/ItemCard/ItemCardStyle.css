@@ -1,4 +1,12 @@
 .item-card-link {
+  transition: transform 0.2s ease-in-out;
+}
+
+.item-card:hover .item-card-link {
+  transform: scale(1.05);
+}
+
+.item-card-link {
   display: flex;
   flex-direction: column;
   gap: 16px;

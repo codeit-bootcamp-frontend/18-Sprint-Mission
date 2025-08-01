@@ -11,6 +11,12 @@ const styles = {
     padding: "40px",
     textAlign: "center",
     color: "#d32f2f",
+    backgroundColor: "#F3F4F6",
+    width: "100%",
+    height: "674px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
     fontSize: "1.2rem",

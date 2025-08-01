@@ -14,7 +14,7 @@ const useGetProductData = ({ page = "1", pageSize = "10", orderBy = "latest", ke
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`https://panda-market-api.vercel.app/products?${params}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/products?${params}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

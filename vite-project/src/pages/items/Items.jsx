@@ -6,7 +6,7 @@ import useGetProductData from "../../hooks/useGetProductData";
 import useGetBestProductData from "../../hooks/useGetBestProductData";
 import "./ItemsStyle.css";
 
-// TODO: 반응형, 페이지네이션
+// TODO: 반응형
 
 const Items = () => {
   const [page, setPage] = useState("1");

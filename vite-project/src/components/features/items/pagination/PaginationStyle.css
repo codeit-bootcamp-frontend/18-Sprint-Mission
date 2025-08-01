@@ -3,6 +3,13 @@
   justify-content: center;
   gap: 4px;
   margin-top: 43px;
+  margin-bottom: 50px;
+}
+
+.pagination-button.active {
+  background-color: #669ce1;
+  color: #fff;
+  border-color: #669ce1;
 }
 
 .pagination-button {

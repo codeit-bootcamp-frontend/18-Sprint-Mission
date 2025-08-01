@@ -9,7 +9,7 @@ const useGetBestProductData = ({ pageSize = "4" }) => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `https://panda-market-api.vercel.app/products?orderBy=favorite&pageSize=${pageSize}`
+          `${import.meta.env.VITE_API_URL}/products?orderBy=favorite&pageSize=${pageSize}`
         );
         const data = await response.json();
         setProducts(data);

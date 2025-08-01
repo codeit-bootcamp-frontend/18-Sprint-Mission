@@ -3,9 +3,9 @@ import ItemCard from "../../../common/ItemCard/ItemCard";
 import Search from "../../../common/search/Search";
 import Dropdown from "../../../common/dropdown/Dropdown";
 import AddButton from "../../../common/Button/AddButton";
-import "./AllProductSectionStyle.css";
 import IsLoading from "../../../common/State/IsLoading";
 import IsError from "../../../common/State/IsError";
+import "./AllProductSectionStyle.css";
 
 const AllProductSection = ({
   products,
@@ -23,9 +23,11 @@ const AllProductSection = ({
           <Dropdown onOrderByChange={onOrderByChange} />
         </div>
       </div>
+      {/* isLoading, isError 상태 렌더링 */}
+      {isLoading && <IsLoading type="ALL" />}
+      {isError && <IsError message="전체 상품을 불러오는데 실패했습니다." />}
+
       <article className="all-products-wrapper">
-        {isLoading && <IsLoading />}
-        {isError && <IsError />}
         {products?.list?.map((product) => (
           <ItemCard
             key={product.id}
