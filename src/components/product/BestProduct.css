@@ -1,0 +1,44 @@
+.best-product-wrap {
+  padding-bottom: 40px;
+}
+.best-product-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+.best-product-list > .product-title {
+  font-size: 14px;
+  color: #1f2937;
+  line-height: 24px;
+}
+.best-product-list > .product-price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 6px 0;
+}
+.best-product-list > .product-like {
+  width: 42px;
+  display: flex;
+  align-items: center;
+}
+.best-product-list > .product-like img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+.best-product-list > .product-like span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .best-product-list {
+    justify-content: left;
+  }
+}

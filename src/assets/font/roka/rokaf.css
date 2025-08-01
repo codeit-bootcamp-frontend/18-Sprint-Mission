@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "ROKAFSansBold";
+  font-weight: bold;
+  src: url("./ROKAF\ Sans\ Bold.ttf");
+}
+@font-face {
+  font-family: "ROKAFSansMedium";
+  font-weight: normal;
+  src: url("./ROKAF\ Sans\ Medium.ttf");
+}

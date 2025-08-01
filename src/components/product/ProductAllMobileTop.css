@@ -1,0 +1,8 @@
+.product-all-mobile-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-all-mobile-top:nth-of-type(1){
+  margin-bottom: 8px;
+}

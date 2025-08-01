@@ -1,0 +1,14 @@
+.logo{
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+}
+.logo > img{
+  margin-right: 8px;
+}
+.logo > h1{
+  font-weight: bold;
+  font-size: 25.63px;
+  color: #3692ff;
+  font-family: "ROKAFSansBold";
+}
