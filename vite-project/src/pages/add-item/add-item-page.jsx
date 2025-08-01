@@ -7,11 +7,12 @@ import SectionHeaderAction from "../../components/section/section-header-action"
 import SectionHeaderSize from "../../components/section/section-header-size";
 import TagList from "../../components/tag/tag-list";
 import TextInput from "../../components/text-input";
+import { formatPrice } from "../../utils/formatter";
 
 const INITIAL_PRODUCT_INFO = {
   title: "",
   description: "",
-  price: "",
+  price: "0",
   tags: [],
 };
 
@@ -24,9 +25,15 @@ function AddItemPage() {
   const [canSubmit, setCanSubmit] = useState(false);
 
   const handleInputChange = (event) => {
+    let nextValue = event.target.value;
+    if (event.target.name === "price") {
+      nextValue = nextValue.replace(/[^0-9]/g, "");
+      nextValue = formatPrice(nextValue);
+    }
+
     const nextProductInfo = {
       ...productInfo,
-      [event.target.name]: event.target.value,
+      [event.target.name]: nextValue,
     };
     setProductInfo(nextProductInfo);
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import likeImg from "../../assets/ic-heart.svg";
+import { formatPrice } from "../../utils/formatter";
 
 const StyledItem = styled.div`
   color: var(--color-secondary-800);
@@ -50,7 +51,6 @@ const StyledItemInfo = styled.div`
 `;
 
 function Item({ imageUrl, title, price, likeCount }) {
-  const priceString = Intl.NumberFormat().format(price) + "원";
   return (
     <StyledItem>
       <StyledItemImage>
@@ -58,7 +58,7 @@ function Item({ imageUrl, title, price, likeCount }) {
       </StyledItemImage>
       <StyledItemInfo>
         <h3>{title}</h3>
-        <p>{priceString}</p>
+        <p>{formatPrice(price, "원")}</p>
         <StyledItemFavorites>
           <img src={likeImg} alt="좋아요 갯수" />
           <span>{likeCount}</span>
