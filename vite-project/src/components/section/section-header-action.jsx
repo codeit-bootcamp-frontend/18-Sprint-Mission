@@ -9,11 +9,9 @@ const StyledSectionHeaderAction = styled(Button)`
   }
 `;
 
-function SectionHeaderAction({ children, onClick }) {
+function SectionHeaderAction({ children, ...props }) {
   return (
-    <StyledSectionHeaderAction onClick={onClick}>
-      {children}
-    </StyledSectionHeaderAction>
+    <StyledSectionHeaderAction {...props}>{children}</StyledSectionHeaderAction>
   );
 }
 
