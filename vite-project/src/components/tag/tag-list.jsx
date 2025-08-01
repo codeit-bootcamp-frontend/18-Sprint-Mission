@@ -8,11 +8,13 @@ const StyledTagList = styled.div`
   flex-wrap: wrap;
 `;
 
-function TagList({ tags }) {
+function TagList({ tags, onRemove }) {
   return (
     <StyledTagList>
       {tags.map((tag) => (
-        <Tag key={tag}>{"#" + tag}</Tag>
+        <Tag key={tag} onRemove={() => onRemove(tag)}>
+          {"#" + tag}
+        </Tag>
       ))}
     </StyledTagList>
   );

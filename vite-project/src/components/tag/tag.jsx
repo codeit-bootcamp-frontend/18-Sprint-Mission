@@ -25,11 +25,11 @@ const StyledTag = styled.div`
   }
 `;
 
-function Tag({ children }) {
+function Tag({ children, onRemove }) {
   return (
     <StyledTag>
       <span>{children}</span>
-      <button>
+      <button type="button" onClick={onRemove}>
         <img src={removeImg} alt="태그 삭제" />
       </button>
     </StyledTag>
