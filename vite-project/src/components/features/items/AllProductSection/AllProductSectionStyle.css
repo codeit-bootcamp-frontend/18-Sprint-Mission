@@ -8,39 +8,25 @@
   gap: 24px;
 }
 
-.all-products-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.all-products-title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 32px;
-  color: #111827;
-}
-
-.all-products-header-search-dropdown {
-  display: flex;
-  gap: 12px;
-}
-
 .all-products-wrapper {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
+  gap: 16px;
+  justify-content: center;
 }
 
-@media (max-width: 1190px) {
+/* 태블릿 */
+@media (max-width: 1024px) {
   .all-products-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 778px) {
+/* 모바일 */
+@media (max-width: 600px) {
   .all-products-wrapper {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }

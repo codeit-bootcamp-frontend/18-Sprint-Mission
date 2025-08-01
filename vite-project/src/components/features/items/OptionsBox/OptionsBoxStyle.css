@@ -1,0 +1,42 @@
+.all-products-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-products-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  color: #111827;
+}
+
+.all-products-header-search-dropdown {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .all-products-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .all-products-header-search-dropdown {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .all-products-title-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}

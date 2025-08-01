@@ -38,3 +38,15 @@
   height: 24px;
   pointer-events: none;
 }
+
+@media (max-width: 1024px) {
+  .search-input-wrapper {
+    width: 242px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-input-wrapper {
+    width: 100%;
+  }
+}

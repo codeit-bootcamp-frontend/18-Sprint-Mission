@@ -28,3 +28,15 @@
   background-color: #669ce1;
   color: #fff;
 }
+
+@media (max-width: 1024px) {
+  .pagination {
+    margin-top: 43px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pagination {
+    margin-top: 43px;
+  }
+}

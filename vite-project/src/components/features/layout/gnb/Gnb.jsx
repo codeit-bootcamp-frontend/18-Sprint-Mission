@@ -13,6 +13,11 @@ const Gnb = () => {
             className="logo"
             alt="판다마켓 로고"
           />
+          <img
+            src="/icons/small-logo.svg"
+            alt="판다마켓 로고"
+            className="small-logo"
+          />
         </Link>
         <NavItem />
       </div>

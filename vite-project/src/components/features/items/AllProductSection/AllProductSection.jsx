@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ItemCard from "../../../common/ItemCard/ItemCard";
-import Search from "../../../common/search/Search";
-import Dropdown from "../../../common/dropdown/Dropdown";
-import AddButton from "../../../common/Button/AddButton";
 import IsLoading from "../../../common/State/IsLoading";
 import IsError from "../../../common/State/IsError";
+import useDeviceType from "../../../../hooks/dom/useDeviceType";
+import OptionsBox from "../OptionsBox/OptionsBox";
 import "./AllProductSectionStyle.css";
 
 const AllProductSection = ({
@@ -12,17 +11,21 @@ const AllProductSection = ({
   onOrderByChange,
   isLoading,
   isError,
+  setAllPageSize,
 }) => {
+  const { isMobile, isTablet, isDesktop } = useDeviceType();
+
+  useEffect(() => {
+    if (isDesktop) setAllPageSize("10");
+    else if (isTablet) setAllPageSize("6");
+    else if (isMobile) setAllPageSize("4");
+  }, [isMobile, isTablet, isDesktop, setAllPageSize]);
+
   return (
     <section className="all-products">
-      <div className="all-products-header">
-        <h1 className="all-products-title">전체 상품</h1>
-        <div className="all-products-header-search-dropdown">
-          <Search />
-          <AddButton />
-          <Dropdown onOrderByChange={onOrderByChange} />
-        </div>
-      </div>
+      {/* 제목, 옵션 */}
+      <OptionsBox onOrderByChange={onOrderByChange} isMobile={isMobile} />
+
       {/* isLoading, isError 상태 렌더링 */}
       {isLoading && <IsLoading type="ALL" />}
       {isError && <IsError message="전체 상품을 불러오는데 실패했습니다." />}

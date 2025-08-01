@@ -6,6 +6,7 @@
   justify-content: start;
   align-items: start;
   gap: 16px;
+  margin: 0 auto;
 }
 
 .best-products-title {
@@ -16,6 +17,23 @@
 }
 
 .best-products-wrapper {
+  width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .best-products {
+    max-width: 1024px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .best-products {
+    max-width: 600px;
+  }
 }

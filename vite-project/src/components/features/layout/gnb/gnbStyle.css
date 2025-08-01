@@ -27,3 +27,37 @@
 .gnb-right img {
   cursor: pointer;
 }
+
+.small-logo {
+  display: none;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .gnb {
+    padding: 0 24px;
+  }
+
+  .gnb-left {
+    gap: 20px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .gnb {
+    padding: 0 16px;
+  }
+
+  .gnb-left {
+    gap: 8px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .small-logo {
+    display: block;
+  }
+}

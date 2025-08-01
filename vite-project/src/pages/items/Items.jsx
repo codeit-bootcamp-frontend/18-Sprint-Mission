@@ -6,10 +6,10 @@ import useGetProductData from "../../hooks/useGetProductData";
 import useGetBestProductData from "../../hooks/useGetBestProductData";
 import "./ItemsStyle.css";
 
-// TODO: 반응형
-
 const Items = () => {
   const [page, setPage] = useState("1");
+  const [allPageSize, setAllPageSize] = useState("10");
+  const [bestPageSize, setBestPageSize] = useState("4");
   const [orderBy, setOrderBy] = useState("recent");
 
   const handleOrderByChange = (koreanValue) => {
@@ -25,7 +25,7 @@ const Items = () => {
     products: bestProducts,
     isLoading: bestProductsLoading,
     isError: bestProductsError,
-  } = useGetBestProductData({ pageSize: "4" });
+  } = useGetBestProductData({ pageSize: bestPageSize });
 
   // 전체 상품 데이터
   const {
@@ -34,7 +34,7 @@ const Items = () => {
     isError: allProductsError,
   } = useGetProductData({
     page,
-    pageSize: "10",
+    pageSize: allPageSize,
     orderBy,
     keyword: "",
   });
@@ -46,12 +46,14 @@ const Items = () => {
           products={bestProducts}
           isLoading={bestProductsLoading}
           isError={bestProductsError}
+          setBestPageSize={setBestPageSize}
         />
         <AllProductSection
           products={allProducts}
           onOrderByChange={handleOrderByChange}
           isLoading={allProductsLoading}
           isError={allProductsError}
+          setAllPageSize={setAllPageSize}
         />
       </main>
 

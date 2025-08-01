@@ -66,3 +66,17 @@
   line-height: 18px;
   color: #4B5563;
 }
+
+@media (max-width: 1024px) {
+  .item-card-best-img {
+    width: 343px;
+    height: 343px;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-card-best-img {
+    width: 343px;
+    height: 343px;
+  }
+}

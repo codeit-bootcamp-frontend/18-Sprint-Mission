@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ItemCard from "../../../common/ItemCard/ItemCard";
 import IsLoading from "../../../common/State/IsLoading";
 import IsError from "../../../common/State/IsError";
+import useDeviceType from "../../../../hooks/dom/useDeviceType";
 import "./BestProductSectionStyle.css";
 
-const BestProductSection = ({ products, isLoading, isError }) => {
+const BestProductSection = ({
+  products,
+  isLoading,
+  isError,
+  setBestPageSize,
+}) => {
+  const { isMobile, isTablet, isDesktop } = useDeviceType();
+
+  useEffect(() => {
+    if (isDesktop) setBestPageSize("4");
+    else if (isTablet) setBestPageSize("2");
+    else if (isMobile) setBestPageSize("1");
+  }, [isMobile, isTablet, isDesktop, setBestPageSize]);
+
   return (
     <section className="best-products">
       <h1 className="best-products-title">베스트 상품</h1>

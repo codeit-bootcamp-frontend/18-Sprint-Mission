@@ -6,3 +6,15 @@
   gap: 40px;
   margin-top: 24px;
 }
+
+@media (max-width: 1024px) {
+  .products {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .products {
+    padding: 0 24px;
+  }
+}
