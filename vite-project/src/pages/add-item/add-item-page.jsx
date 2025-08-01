@@ -5,6 +5,7 @@ import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
 import SectionHeaderSize from "../../components/section/section-header-size";
+import TagList from "../../components/tag/tag-list";
 import TextInput from "../../components/text-input";
 
 const StyledItemsPage = styled.form`
@@ -40,7 +41,10 @@ function AddItemPage() {
           </Section>
           <Section>
             <SectionHeader title={"태그"} size={SectionHeaderSize.SMALL} />
-            <TextInput placeholder={"태그를 입력해주세요"} />
+            <div>
+              <TextInput placeholder={"태그를 입력해주세요"} />
+              <TagList tags={["상의", "티셔츠"]} />
+            </div>
           </Section>
         </Section>
       </Section>
