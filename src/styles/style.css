@@ -1,0 +1,314 @@
+@import url(colors.css);
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts-2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.slogan-heading {
+  color: var(--gray700);
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 40px);
+}
+
+.menu-heading {
+  color: var(--gray700);
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 40px);
+}
+
+h2 {
+  font-weight: 500;
+  font-size: clamp(12px, 1vw, 24px);
+  color: var(--gray700);
+}
+
+button {
+  cursor: pointer;
+}
+
+.common-btn {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.plan-card {
+  background-color: #cfe5ff;
+  display: flex;
+  height: 540px;
+  justify-content: center;
+  align-items: end;
+}
+
+.slogan {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.large-btn {
+  width: 19vw;
+  max-width: 357px;
+  height: 56px;
+  background-color: var(--blue);
+  border-radius: 40px;
+  border: none;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-hover:hover {
+  background-color: #1967d6;
+}
+
+.btn-active:active {
+  background-color: #1251aa;
+}
+
+.main-img {
+  width: 746px;
+  height: 340px;
+}
+
+.home-container {
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box {
+  width: 988px;
+  height: 444px;
+  border-radius: 12px;
+  border: none;
+  background-color: #fcfcfc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.introduce-img {
+  width: 579px;
+  height: 444px;
+}
+
+.keyword {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--blue);
+}
+
+.sec-introduce {
+  text-align: right;
+}
+
+.bottom {
+  background-color: #cfe5ff;
+  height: 540px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.bottom-slogan {
+  padding-bottom: 100px;
+}
+
+/* tablet */
+@media (max-width: 1199px) {
+  body {
+    background-color: #fcfcfc;
+  }
+
+  .slogan-heading {
+    color: var(--gray700);
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  .menu-heading {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--gray700);
+  }
+
+  .plan-card {
+    background-color: #cfe5ff;
+    display: flex;
+    flex-direction: column;
+    height: 771px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .large-btn {
+    width: 512px;
+    height: 56px;
+  }
+
+  .main-img {
+    width: 744px;
+    height: 340px;
+  }
+
+  .slogan {
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .only-pc {
+    display: none;
+  }
+
+  .home-container {
+    height: 800px;
+  }
+
+  .content-box {
+    display: grid;
+    width: 768px;
+    height: 100%;
+    padding: 20px 0;
+  }
+
+  .introduce,
+  .sec-introduce {
+    padding-bottom: 40px;
+  }
+
+  .sec-introduce {
+    grid-row: 2/3;
+  }
+
+  .keyword {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--blue);
+  }
+
+  .introduce-img {
+    width: 696px;
+    height: 525.55px;
+  }
+
+  .bottom {
+    display: grid;
+    width: 100%;
+    height: 1080px;
+    align-items: end;
+  }
+
+  .bottom img {
+    width: 100%;
+  }
+
+  .bottom-slogan {
+    text-align: center;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .slogan-heading {
+    font-size: 24px;
+  }
+
+  .menu-heading {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .plan-card {
+    height: 600px;
+  }
+
+  .slogan {
+    margin-top: 80px;
+  }
+
+  .slogan-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .large-btn {
+    width: 240px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .main-img {
+    width: 375px;
+    height: 175px;
+  }
+
+  .home-container {
+    height: 480px;
+  }
+
+  .content-box {
+    width: 375px;
+  }
+
+  .introduce,
+  .sec-introduce {
+    width: 344px;
+  }
+
+  .introduce-img {
+    width: 344px;
+    height: 260px;
+  }
+
+  .bottom {
+    height: 600px;
+    width: 100%;
+  }
+
+  .bottom-slogan {
+    padding-bottom: 0;
+  }
+
+  .only-mobile {
+    display: block;
+  }
+}

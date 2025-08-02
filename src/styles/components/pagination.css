@@ -1,0 +1,32 @@
+.pgn-container {
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pgn-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pgn-ul > li {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gray200);
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray600);
+  cursor: pointer;
+  margin: 2px;
+}
+
+.pgn-ul .pgn-disabled {
+  color: var(--gray400);
+  cursor: default;
+}

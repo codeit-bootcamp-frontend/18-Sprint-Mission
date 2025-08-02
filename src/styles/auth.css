@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.auth-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.basic-p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.input-box {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--gray100);
+  padding: 20px;
+  margin: 10px 0px 0px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input::placeholder {
+  color: var(--gray400);
+}
+
+.auth-btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 40px;
+  margin: 20px 0px 20px 0;
+  background-color: var(--gray400);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-active {
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 640px;
+  height: 618px;
+  margin: 0 auto;
+}
+
+.auth-logo {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.auth-logo-img {
+  background-image: url('../assets/images/logo_lg.png');
+  background-repeat: no-repeat;
+  width: 396px;
+  height: 132px;
+}
+
+.email-box,
+.nickname-box {
+  margin-top: 20px;
+}
+
+.pw-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.auth-visible-icon {
+  width: 25px;
+  height: 20px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 45px;
+  right: 15px;
+  cursor: pointer;
+}
+
+.social-login-container {
+  background-color: #e6f2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.social-login-container p {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.sns-icon-box img {
+  margin: 0 5px;
+}
+
+.link-signup {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.link-signup a {
+  color: var(--blue);
+}
+
+/* 에러 스타일 */
+.auth-err-border {
+  border: 1px solid #ff0000;
+}
+
+.auth-err-msg {
+  color: #ff0000;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .container {
+    width: 400px;
+    padding: 0 16px;
+    margin: 0;
+  }
+
+  .auth-logo-img {
+    background-image: url('../assets/images/logo_md.png');
+    background-repeat: no-repeat;
+    width: 198px;
+    height: 66px;
+  }
+}
