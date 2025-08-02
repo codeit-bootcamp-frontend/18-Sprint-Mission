@@ -217,32 +217,27 @@ html {
   }
 
   .total-products-container {
-    display: grid;
-    grid-template-areas:
-      "title button"
-      "input select";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 6rem;
+    gap: 0.4rem;
+  }
+
+  .products-title-mobile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .total-products-content {
-    display: contents;
-  }
-
-  .products-title {
-    grid-area: title;
-  }
-
-  .total-products-content input {
-    grid-area: input;
-  }
-
-  .add-item-button {
-    grid-area: button;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .total-products-content select {
-    grid-area: select;
+    padding: 0;
   }
 }
