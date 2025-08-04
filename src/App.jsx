@@ -16,14 +16,14 @@ function App() {
   const handleNewestClick = () => setOrder("updatedAt");
   const handleLikeClick = () => setOrder("favoriteCount");
 
-  const handleLoad = async () => {
-    const { list } = await getProducts({});
-    setItems(list);
-    const { list : best } = await getProducts({orderBy: 'favorite'});
-    setBestItems(best);
-  };
-
+  
   useEffect(() => {
+    const handleLoad = async () => {
+      const { list } = await getProducts({});
+      setItems(list);
+      const { list : best } = await getProducts({orderBy: 'favorite'});
+      setBestItems(best);
+    };
     handleLoad();
   }, [order]);
 
