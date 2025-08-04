@@ -96,7 +96,7 @@ header {
 }
 
 .main-middle > .container {
-  width: 50%;
+  width: 65%;
   background-color: #fcfcfc;
   margin: 10% auto;
   border-radius: 12px;
@@ -178,10 +178,6 @@ footer .footer-list {
 @media (max-width: 1919px) {
   header .navi {
     margin: 0 200px;
-  }
-
-  .main-point {
-    font-size: 12px;
   }
 
   .main-title {
@@ -270,5 +266,115 @@ footer .footer-list {
 
   .footer-list {
     padding: 20px 80px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header .navi {
+    margin: 0 16px;
+    padding: 12px 0;
+  }
+
+  .panda-icon {
+    display: none;
+  }
+
+  .main-top {
+    height: 540px;
+  }
+
+  .invisible {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .top-title-txt {
+    width: 240px;
+    margin-top: 10%;
+    text-align: center;
+  }
+
+  .main-top > .container > .main-core-img {
+    width: 120%;
+    object-fit: contain;
+    overflow: hidden;
+  }
+
+  .main-core-img {
+    width: 100%;
+  }
+
+  .main-middle > .container {
+    width: 90%;
+    margin: 20% auto;
+  }
+
+  .main-core-title {
+    font-size: 32px;
+  }
+
+  .main-point,
+  .main-describe {
+    font-size: 16px;
+  }
+
+  .main-title {
+    font-size: 24px;
+  }
+
+  .container > .main-txt {
+    order: 2;
+  }
+
+  .container > .main-content-img {
+    order: 1;
+  }
+
+  .main-bottom {
+    margin-top: 10%;
+  }
+
+  .bottom-txt {
+    margin-top: 30%;
+    text-align: center;
+  }
+
+  .list-policy > a {
+    color: var(--gray-400, #9ca3af);
+    margin: 0 8px;
+  }
+
+  footer .footer-list {
+    display: grid;
+    grid-template-areas:
+      "policy sns"
+      ". ."
+      "copyright .";
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px 16px;
+    align-items: center;
+  }
+
+  .list-policy {
+    grid-area: policy;
+  }
+
+  .list-sns {
+    grid-area: sns;
+    justify-content: center;
+  }
+
+  .copyright {
+    grid-area: copyright;
   }
 }
