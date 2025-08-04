@@ -1,0 +1,20 @@
+.product-wrap {
+  padding-bottom: 58px;
+}
+.main {
+  width: 1200px;
+  margin: 24px auto 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main {
+    width: 696px;
+  }
+}
+/* Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+  .main {
+    width: 344px;
+  }
+}
