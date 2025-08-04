@@ -1,15 +1,10 @@
-import { useMediaQuery } from 'react-responsive';
-import './BestProduct.css';
+import './BestProducts.css';
 import ProductCard from "./ProductCard";
 import ProductTitle from "./ProductTitle";
 
-export default function BestProduct({ bestitems }) {
+export default function BestProducts({ bestitems, displayCount }) {
   // 미디어 쿼리
-  const isMobile = useMediaQuery({ minWidth: 375, maxWidth: 767 });
-  const isTablet = useMediaQuery({ minWidth: 767, maxWidth: 1199 });
-  const isPC = useMediaQuery({ minWidth: 1200 });
-
-  const displayCount = isMobile ? 1 : isTablet ? 2 : isPC ? 4 : 4;
+  
 
   return (
     <div className="best-product-wrap">
