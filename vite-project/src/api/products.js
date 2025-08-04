@@ -1,12 +1,10 @@
-const BASE_URL = "https://panda-market-api.vercel.app";
-
 export async function fetchProducts({
   keyword = "",
   page = 1,
   pageSize = 10,
   orderBy = "recent",
 } = {}) {
-  const url = new URL(`${BASE_URL}/products`);
+  const url = new URL(`${import.meta.env.VITE_API_BASE_URL}/products`);
   url.searchParams.append("page", page);
   url.searchParams.append("pageSize", pageSize);
   url.searchParams.append("orderBy", orderBy);

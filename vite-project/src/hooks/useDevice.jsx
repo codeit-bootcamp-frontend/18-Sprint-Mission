@@ -18,7 +18,6 @@ function useDevice() {
 
   useEffect(() => {
     const handleDesktopMatchesChange = (e) => {
-      console.log("Desktop matches change:", e.matches);
       if (!e.matches) return;
       setDeviceInfo({
         isDesktop: true,
@@ -27,11 +26,9 @@ function useDevice() {
       });
     };
 
-    console.log("Adding media query listeners");
     matchesDesktop.addEventListener("change", handleDesktopMatchesChange);
 
     return () => {
-      console.log("Cleaning up media query listeners");
       matchesDesktop.removeEventListener("change", handleDesktopMatchesChange);
       _matchesDesktop = null;
     };
@@ -39,7 +36,6 @@ function useDevice() {
 
   useEffect(() => {
     const handleTabletMatchesChange = (e) => {
-      console.log("Tablet matches change:", e.matches);
       if (!e.matches) return;
       setDeviceInfo({
         isDesktop: false,
@@ -49,7 +45,6 @@ function useDevice() {
     };
     matchesTablet.addEventListener("change", handleTabletMatchesChange);
     return () => {
-      console.log("Cleaning up media query listeners");
       matchesTablet.removeEventListener("change", handleTabletMatchesChange);
       _matchesTablet = null;
     };
@@ -57,7 +52,6 @@ function useDevice() {
 
   useEffect(() => {
     const handleMobileMatchesChange = (e) => {
-      console.log("Mobile matches change:", e.matches);
       if (!e.matches) return;
       setDeviceInfo({
         isDesktop: false,
@@ -67,7 +61,6 @@ function useDevice() {
     };
     matchesMobile.addEventListener("change", handleMobileMatchesChange);
     return () => {
-      console.log("Cleaning up media query listeners");
       matchesMobile.removeEventListener("change", handleMobileMatchesChange);
       _matchesMobile = null;
     };

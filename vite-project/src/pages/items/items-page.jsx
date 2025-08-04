@@ -1,17 +1,17 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchProducts } from "../api/products";
-import Button from "../components/Button";
-import {
-  ItemsSection,
-  ItemsSectionContent,
-  ItemsSectionHeader,
-} from "../components/ItemsSection";
-import OrderBySelect, { ORDER_BY_DEFAULT } from "../components/OrderBySelect";
-import PageControl from "../components/PageControl";
-import SearchInput from "../components/SearchInput";
-import { useDevice } from "../hooks/useDevice";
-import "./ItemsPage.css";
+import styled from "styled-components";
+import { fetchProducts } from "../../api/products";
+import ItemsGrid from "../../components/item/items-grid";
+import OrderBySelect, {
+  ORDER_BY_DEFAULT,
+} from "../../components/OrderBySelect";
+import PageControl from "../../components/PageControl";
+import SearchInput from "../../components/SearchInput";
+import Section from "../../components/section/section";
+import SectionHeader from "../../components/section/section-header";
+import SectionHeaderAction from "../../components/section/section-header-action";
+import { useDevice } from "../../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
   let bestProductsColumns = 4;
@@ -30,8 +30,13 @@ function getNumberOfColumns(deviceInfo) {
   return { bestProductsColumns, productsColumns };
 }
 
+const StyledItemsPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`;
+
 function ItemsPage() {
-  console.log("ItemsPage rendered");
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [numberOfPages, setNumberOfPages] = useState(1);
@@ -43,9 +48,13 @@ function ItemsPage() {
   const { bestProductsColumns, productsColumns } =
     getNumberOfColumns(deviceInfo);
 
-  const bestProducts = [...products]
-    .sort((a, b) => b.favoriteCount - a.favoriteCount)
-    .slice(0, bestProductsColumns);
+  const bestProducts = useMemo(
+    () =>
+      [...products]
+        .sort((a, b) => b.favoriteCount - a.favoriteCount)
+        .slice(0, bestProductsColumns),
+    [bestProductsColumns, products]
+  );
 
   const allProducts = products.slice(0, productsColumns * 2);
 
@@ -79,18 +88,17 @@ function ItemsPage() {
   }, [fetch]);
 
   return (
-    <div className="ItemsPage">
-      <ItemsSection>
-        <ItemsSectionHeader title="베스트 상품" />
-        <ItemsSectionContent
-          items={bestProducts}
-          numberOfColumns={bestProductsColumns}
-        />
-      </ItemsSection>
-      <ItemsSection spacing={24}>
-        <ItemsSectionHeader title="전체 상품">
+    <StyledItemsPage>
+      <Section>
+        <SectionHeader title="베스트 상품" />
+        <ItemsGrid items={bestProducts} numberOfColumns={bestProductsColumns} />
+      </Section>
+      <Section spacing={24}>
+        <SectionHeader title="전체 상품">
           <SearchInput placeholder="검색할 상품을 입력해주세요" />
-          <Button title="상품 등록하기" onClick={handleAddClick} />
+          <SectionHeaderAction onClick={handleAddClick}>
+            상품 등록하기
+          </SectionHeaderAction>
           <OrderBySelect
             value={orderBy}
             isOpen={isSelectOpen}
@@ -98,18 +106,15 @@ function ItemsPage() {
             onClick={handleOrderByClick}
             onOptionClick={setOrderBy}
           />
-        </ItemsSectionHeader>
-        <ItemsSectionContent
-          items={allProducts}
-          numberOfColumns={productsColumns}
-        />
+        </SectionHeader>
+        <ItemsGrid items={allProducts} numberOfColumns={productsColumns} />
         <PageControl
           numberOfPages={numberOfPages}
           currentPage={currentPage}
           onPageChange={handlePageChange}
         />
-      </ItemsSection>
-    </div>
+      </Section>
+    </StyledItemsPage>
   );
 }
 
