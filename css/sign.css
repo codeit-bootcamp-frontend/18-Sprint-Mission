@@ -129,3 +129,24 @@ body {
   color: var(--primary-100, #3692ff);
   text-decoration: underline;
 }
+
+@media (max-width: 767px) and (min-width: 375px) {
+  .container {
+    margin: 80px auto;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .logo {
+    width: 198px;
+    margin: 0 auto;
+  }
+
+  .panda-icon {
+    width: 100%;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+}
