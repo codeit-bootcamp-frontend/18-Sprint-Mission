@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { getPanda } from "./api";
+import { getProducts } from "./api";
 import PandaAddItem from "./pages/pandaadditem/PandaAddItem";
 import PandaItems from "./pages/pandaitems/PandaItems";
 import "./reset.css";
@@ -17,9 +17,9 @@ function App() {
   const handleLikeClick = () => setOrder("favoriteCount");
 
   const handleLoad = async () => {
-    const { list } = await getPanda({});
+    const { list } = await getProducts({});
     setItems(list);
-    const { list : best } = await getPanda({orderBy: 'favorite'});
+    const { list : best } = await getProducts({orderBy: 'favorite'});
     setBestItems(best);
   };
 
