@@ -20,12 +20,12 @@ function ItemsPage() {
   useEffect(() => {
     async function fetchBestProducts() {
       try {
-        const [list] = await getProducts({
+        const res = await getProducts({
           page: 1,
           pageSize: bestCount,
           orderBy: "favorite",
         });
-        setBestProducts(list);
+        setBestProducts(res.list);
       } catch (error) {
         setError(error.message);
       }
@@ -37,14 +37,14 @@ function ItemsPage() {
   useEffect(() => {
     async function fetchTotalProducts() {
       try {
-        const [list, count] = await getProducts({
+        const res = await getProducts({
           page,
           pageSize: totalCountPerPage,
           orderBy,
           keyword,
         });
-        setTotalProducts(list);
-        setTotalCount(count);
+        setTotalProducts(res.list);
+        setTotalCount(res.totalCount);
       } catch (error) {
         setError(error.message);
       }
