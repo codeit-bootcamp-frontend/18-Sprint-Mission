@@ -7,19 +7,19 @@ import "./reset.css";
 
 function App() {
   const [order, setOrder] = useState("updatedAt");
-  const [bestorder] = useState("favoriteCount");
+  const [bestorder] = useState("");
   const [items, setItems] = useState([]);
   const [bestitems, setBestItems] = useState([]);
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
-  const bestedItems = bestitems.sort((a, b) => b[bestorder] - a[bestorder]);
+  const bestedItems = [...bestitems].sort((a, b) => b[bestorder] - a[bestorder]);
 
   const handleNewestClick = () => setOrder("updatedAt");
   const handleLikeClick = () => setOrder("favoriteCount");
 
   const handleLoad = async () => {
-    const { list } = await getPanda();
+    const { list } = await getPanda({});
     setItems(list);
-    const { list : best } = await getPanda();
+    const { list : best } = await getPanda({orderBy: 'favorite'});
     setBestItems(best);
   };
 
