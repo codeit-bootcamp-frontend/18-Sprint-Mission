@@ -58,7 +58,7 @@ function Item({ imageUrl, title, price, likeCount }) {
       </StyledItemImage>
       <StyledItemInfo>
         <h3>{title}</h3>
-        <p>{formatPrice(price, "원")}</p>
+        <span>{formatPrice(price, "원")}</span>
         <StyledItemFavorites>
           <img src={likeImg} alt="좋아요 갯수" />
           <span>{likeCount}</span>
