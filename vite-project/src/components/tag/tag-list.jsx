@@ -11,7 +11,7 @@ function TagList({ tags, onRemove }) {
   return (
     <StyledTagList>
       {tags.map((tag) => (
-        <Tag key={tag} onRemove={() => onRemove(tag)}>
+        <Tag key={tag} onRemove={onRemove ? () => onRemove(tag) : undefined}>
           {"#" + tag}
         </Tag>
       ))}
