@@ -15,13 +15,15 @@ function BestProducts({ bestProducts }) {
               alt={product.name}
             />
             <h3 className="product-name">{product.name}</h3>
-            <p className="product-price">{product.price.toLocaleString()}원</p>
-            <p className="product-like">
+            <span className="product-price">
+              {product.price.toLocaleString()}원
+            </span>
+            <span className="product-like">
               <button>
                 <img src={likeIcon} alt="좋아요 아이콘" />
               </button>
               {product.favoriteCount}
-            </p>
+            </span>
           </div>
         ))}
       </div>
