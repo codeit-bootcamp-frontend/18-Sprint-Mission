@@ -2,6 +2,7 @@ import likeIcon from "../assets/ic-heart.svg";
 import searchIcon from "../assets/ic-search.svg";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import SelectDropdown from "./SelectDropdown";
 
 function TotalProducts({
   totalProducts,
@@ -55,10 +56,7 @@ function TotalProducts({
                 onChange={onKeywordChange}
               />
             </div>
-            <select onChange={onOrderChange} value={orderBy}>
-              <option value="recent">최신순</option>
-              <option value="favorite">좋아요순</option>
-            </select>
+            <SelectDropdown value={orderBy} onChange={onOrderChange} />
           </div>
         </div>
       ) : null}
