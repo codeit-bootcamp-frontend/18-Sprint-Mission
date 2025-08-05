@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import moreImg from "../../assets/ic-dots-3-vertical.svg";
 import { formatPrice } from "../../utils/formatter";
+import IconButton from "../button/icon-button";
 
 const StyledItemDetailTitle = styled.div``;
 
@@ -25,15 +26,6 @@ const StyledItemName = styled.h2`
     font-size: 16px;
     line-height: 26px;
   }
-`;
-
-const StyledItemMoreButton = styled.button`
-  background: none;
-  border: none;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
 `;
 
 const StyledItemPrice = styled.span`
@@ -66,9 +58,7 @@ function ItemDetailTitle({ title, price }) {
     <StyledItemDetailTitle>
       <StyledItemTitleHeader>
         <StyledItemName>{title}</StyledItemName>
-        <StyledItemMoreButton>
-          <img src={moreImg} />
-        </StyledItemMoreButton>
+        <IconButton src={moreImg} />
       </StyledItemTitleHeader>
       <StyledItemPrice>{formatPrice(price, "원")}</StyledItemPrice>
       <StyledSeparator />
