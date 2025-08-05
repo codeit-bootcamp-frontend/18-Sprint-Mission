@@ -4,7 +4,6 @@ import Tag from "./tag";
 const StyledTagList = styled.div`
   display: flex;
   gap: 12px;
-  margin-top: 14px;
   flex-wrap: wrap;
 `;
 

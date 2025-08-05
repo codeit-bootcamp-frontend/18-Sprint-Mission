@@ -20,6 +20,12 @@ const StyledAddItemForm = styled.form`
   padding-bottom: 69px;
 `;
 
+const StyledTagSectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+
 function AddItemPage() {
   const [inputValues, setInputValues] = useState(INITIAL_INPUT_VALUES);
   const [tags, setTags] = useState([]);
@@ -114,7 +120,7 @@ function AddItemPage() {
           </Section>
           <Section>
             <SectionHeader title={"태그"} size={SectionHeaderSize.SMALL} />
-            <div>
+            <StyledTagSectionContent>
               <TextInput
                 name="tag"
                 value={inputValues["tag"]}
@@ -125,7 +131,7 @@ function AddItemPage() {
               {tags.length > 0 && (
                 <TagList tags={tags} onRemove={handleTagRemove} />
               )}
-            </div>
+            </StyledTagSectionContent>
           </Section>
         </Section>
       </Section>
