@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import backImg from "../../assets/ic-arrow-back.svg";
 import Button from "../../components/button/button";
@@ -33,9 +34,10 @@ const Separator = styled.div`
   }
 `;
 
-const BackButton = styled(Button)`
+const StyledLink = styled(Link)`
   align-self: center;
   margin-top: 64px;
+  text-decoration: none;
 
   @media (max-width: 1199px) {
     margin-top: 48px;
@@ -46,16 +48,24 @@ const BackButton = styled(Button)`
   }
 `;
 
+function BackButton({ children }) {
+  return (
+    <StyledLink to="/items">
+      <Button size={BUTTON_SIZE.medium} type={BUTTON_TYPE.pill}>
+        {children}
+        <img src={backImg} alt="되돌아가기" />
+      </Button>
+    </StyledLink>
+  );
+}
+
 function ItemDetailPage() {
   return (
     <StyledItemDetailPage>
       <ItemDetail />
       <Separator />
       <ItemComment />
-      <BackButton size={BUTTON_SIZE.medium} type={BUTTON_TYPE.pill}>
-        목록으로 돌아가기
-        <img src={backImg} alt="되돌아가기" />
-      </BackButton>
+      <BackButton>목록으로 돌아가기</BackButton>
     </StyledItemDetailPage>
   );
 }
