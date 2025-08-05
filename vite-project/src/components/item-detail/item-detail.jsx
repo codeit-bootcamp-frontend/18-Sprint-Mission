@@ -21,7 +21,7 @@ const StyledItemDetail = styled.div`
   }
 `;
 
-const StyledItemDetailImage = styled.div`
+const ItemImage = styled.div`
   width: 486px;
   height: 486px;
   aspect-ratio: 1 / 1;
@@ -44,11 +44,11 @@ const StyledItemDetailImage = styled.div`
   }
 `;
 
-const StyledItemDetailInfo = styled.div`
+const ItemInfo = styled.div`
   width: 100%;
 `;
 
-const StyledItemDetailSections = styled.div`
+const InfoSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -59,7 +59,7 @@ const StyledItemDetailSections = styled.div`
   }
 `;
 
-const StyledItemDetailProfileContainer = styled.div`
+const ProfileContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +71,7 @@ const StyledItemDetailProfileContainer = styled.div`
   }
 `;
 
-const StyledItemDetailFavoriteContainer = styled.div`
+const FavoriteContainer = styled.div`
   border-left: 1px solid var(--color-cool-gray-200);
   padding-left: 24px;
 `;
@@ -86,12 +86,12 @@ function ItemDetail() {
 
   return product ? (
     <StyledItemDetail>
-      <StyledItemDetailImage>
+      <ItemImage>
         {product.images[0] && <img src={product.images[0]} />}
-      </StyledItemDetailImage>
-      <StyledItemDetailInfo>
+      </ItemImage>
+      <ItemInfo>
         <ItemDetailTitle title={product.name} price={product.price} />
-        <StyledItemDetailSections>
+        <InfoSectionContainer>
           <ItemDetailSection
             title="상품 소개"
             description={product.description}
@@ -99,20 +99,20 @@ function ItemDetail() {
           <ItemDetailSection title="상품 태그">
             <TagList tags={product.tags} />
           </ItemDetailSection>
-        </StyledItemDetailSections>
-        <StyledItemDetailProfileContainer>
+        </InfoSectionContainer>
+        <ProfileContainer>
           <ItemDetailProfile
             name={product.ownerNickname}
             createdAt={product.createdAt}
           />
-          <StyledItemDetailFavoriteContainer>
+          <FavoriteContainer>
             <FavoriteButton
               isFavorite={product.isFavorite}
               count={product.favoriteCount}
             />
-          </StyledItemDetailFavoriteContainer>
-        </StyledItemDetailProfileContainer>
-      </StyledItemDetailInfo>
+          </FavoriteContainer>
+        </ProfileContainer>
+      </ItemInfo>
     </StyledItemDetail>
   ) : (
     // TODO: Product loading 중 보여줄 UI
