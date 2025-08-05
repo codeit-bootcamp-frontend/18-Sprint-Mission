@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProduct } from "../../api/products";
+import TagList from "../tag/tag-list";
+import ItemDetailSection from "./item-detail-section";
 import ItemDetailTitle from "./item-detail-title";
 
 const StyledItemDetail = styled.div`
@@ -44,6 +46,17 @@ const StyledItemDetailInfo = styled.div`
   width: 100%;
 `;
 
+const StyledItemDetailSections = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+
+  @media (max-width: 1199px) {
+    margin-top: 16px;
+  }
+`;
+
 function ItemDetail() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
@@ -59,6 +72,15 @@ function ItemDetail() {
       </StyledItemDetailImage>
       <StyledItemDetailInfo>
         <ItemDetailTitle title={product.name} price={product.price} />
+        <StyledItemDetailSections>
+          <ItemDetailSection
+            title="상품 소개"
+            description={product.description}
+          />
+          <ItemDetailSection title="상품 태그">
+            <TagList tags={product.tags} />
+          </ItemDetailSection>
+        </StyledItemDetailSections>
       </StyledItemDetailInfo>
     </StyledItemDetail>
   ) : (
