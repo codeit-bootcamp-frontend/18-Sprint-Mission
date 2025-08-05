@@ -5,7 +5,7 @@ import { fetchProduct } from "../../api/products";
 import { formatDateYYYYMMDD } from "../../utils/formatter";
 import FavoriteButton from "../favorite-button";
 import TagList from "../tag/tag-list";
-import UserProfileCard from "../user-profile-card";
+import UserProfileCard from "../user-profile-card/user-profile-card";
 import ItemDetailSection from "./item-detail-section";
 import ItemDetailTitle from "./item-detail-title";
 

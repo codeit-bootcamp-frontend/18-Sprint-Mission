@@ -2,6 +2,14 @@ import styled from "styled-components";
 import ItemComment from "../../components/item-comment/item-comment";
 import ItemDetail from "../../components/item-detail/item-detail";
 
+const StyledItemDetailPage = styled.div`
+  margin-bottom: 200px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 64px;
+  }
+`;
+
 const Separator = styled.div`
   width: 100%;
   border-bottom: 1px solid var(--color-cool-gray-200);
@@ -18,11 +26,11 @@ const Separator = styled.div`
 
 function ItemDetailPage() {
   return (
-    <div>
+    <StyledItemDetailPage>
       <ItemDetail />
       <Separator />
       <ItemComment />
-    </div>
+    </StyledItemDetailPage>
   );
 }
 
