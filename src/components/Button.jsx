@@ -29,7 +29,8 @@ const Button = styled.button`
   }}
   ${buttonSize}
   ${buttonStyle}
-  &:disabled {
+  &:disabled ,
+  &.disabled {
     box-shadow: none;
     background-color: ${globalTheme.colors.gray400};
     color: ${globalTheme.colors.gray100};

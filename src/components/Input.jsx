@@ -14,7 +14,7 @@ export const InputWrapper = styled.div`
   & .password-toggle {
     position: absolute;
     top: 50%;
-    right: 24px;
+    right: ${convertPxToRem(24)};
     transform: translate(0, -50%);
   }
 `;

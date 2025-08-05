@@ -25,5 +25,24 @@ const GlobalComponentsStyles = createGlobalStyle`
   html,body{background-color: var(--base-background-color);}
   ${generateColorCSS}
   ${generateTypographyCSS}
+  .logo {
+    display: block;
+  }
+  .min-vh {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .v-ellipsis {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+   
 `;
 export default GlobalComponentsStyles;
