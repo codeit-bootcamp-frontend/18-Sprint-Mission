@@ -1,9 +1,8 @@
 import { NavLink, useLocation } from "react-router-dom";
 import largeLogo from "../assets/logo-large.svg";
 import smallLogo from "../assets/logo-small.svg";
-import profileImg from "../assets/profile-default.svg";
-
 import "./Nav.css";
+import Avatar from "./avatar";
 
 function NavigationLink({ to, activePaths = [], children }) {
   const location = useLocation();
@@ -40,9 +39,7 @@ function Nav() {
             중고마켓
           </NavigationLink>
         </ul>
-        <div className="Nav__profile">
-          <img src={profileImg} />
-        </div>
+        <Avatar />
       </div>
     </nav>
   );
