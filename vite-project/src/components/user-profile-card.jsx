@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { formatDateYYYYMMDD } from "../../utils/formatter";
-import Avatar from "../avatar";
+import Avatar from "./avatar";
 
 const ProfileInfo = styled.div`
   display: flex;
@@ -31,16 +30,16 @@ const StyledItemDetailProfile = styled.div`
   }
 `;
 
-function ItemDetailProfile({ imageUrl, name, createdAt }) {
+function UserProfileCard({ imageUrl, name, status }) {
   return (
     <StyledItemDetailProfile>
       <Avatar imageUrl={imageUrl} />
       <ProfileInfo>
         <span>{name}</span>
-        <span>{formatDateYYYYMMDD(createdAt)}</span>
+        <span>{status}</span>
       </ProfileInfo>
     </StyledItemDetailProfile>
   );
 }
 
-export default ItemDetailProfile;
+export default UserProfileCard;
