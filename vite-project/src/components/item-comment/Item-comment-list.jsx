@@ -25,13 +25,14 @@ const MoreButton = styled(IconButton)`
   right: 0;
 `;
 
-function ItemComment({ content }) {
+function ItemComment({ writer, updatedAt, content }) {
   return (
     <StyledItemComment>
       <p>{content}</p>
       <UserProfileCard
-        name="똑똑한판다"
-        status="1시간 전"
+        imageUrl={writer?.image}
+        name={writer?.nickname}
+        status={updatedAt}
         size={USER_PROFILE_CARD_SIZE.small}
       />
       <MoreButton src={moreImg} />
@@ -49,16 +50,12 @@ const StyledItemCommentList = styled.div`
   }
 `;
 
-function ItemCommentList() {
+function ItemCommentList({ comments }) {
   return (
     <StyledItemCommentList>
-      <ItemComment content="사용 기간이 어떻게되나요?" />
-      <ItemComment content="사용 기간이 어떻게되나요?" />
-      <ItemComment content="사용 기간이 어떻게되나요?" />
-      <ItemComment content="사용 기간이 어떻게되나요?" />
-      <ItemComment content="사용 기간이 어떻게되나요?" />
-      <ItemComment content="사용 기간이 어떻게되나요?" />
-      <ItemComment content="사용 기간이 어떻게되나요?" />
+      {comments.map((comment) => (
+        <ItemComment key={comment.id} content={comment.content} />
+      ))}
     </StyledItemCommentList>
   );
 }
