@@ -3,11 +3,12 @@ import removeImg from "../../assets/ic-xmark-fill.svg";
 
 const StyledAddingItemImage = styled.div`
   width: 282px;
+  height: 282px;
   position: relative;
 
   & > img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
   }
@@ -25,10 +26,12 @@ const StyledAddingItemImage = styled.div`
 
   @media (max-width: 1199px) {
     width: 168px;
+    height: 168px;
   }
 
   @media (max-width: 767px) {
     width: 50%;
+    height: auto;
   }
 `;
 
