@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "../Button";
+import Button from "../button/button";
 
 const StyledSectionHeaderAction = styled(Button)`
   @media (max-width: 767px) {

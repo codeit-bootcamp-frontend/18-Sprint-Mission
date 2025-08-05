@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Button from "../Button";
+import Button from "../button/button";
 import TextInput from "../text-input";
 
 const StyledItemCommentForm = styled.form`
