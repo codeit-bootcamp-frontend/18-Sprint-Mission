@@ -1,5 +1,11 @@
+import ItemCommentForm from "./item-comment-form";
+
 function ItemComment() {
-  return <h2>Comments</h2>;
+  return (
+    <div>
+      <ItemCommentForm />
+    </div>
+  );
 }
 
 export default ItemComment;
