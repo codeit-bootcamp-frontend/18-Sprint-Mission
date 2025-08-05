@@ -107,6 +107,7 @@ function AddItemPage() {
               placeholder={"상품 소개를 입력해주세요"}
               onChange={handleInputChange}
               multiline
+              rows="10"
             />
           </Section>
           <Section>

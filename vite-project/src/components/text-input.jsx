@@ -24,7 +24,6 @@ const StyledTextInput = styled.div`
   background-color: var(--color-secondary-100);
   padding: 16px 24px;
   border-radius: 12px;
-  ${({ $multiline }) => ($multiline ? "height: 282px;" : "")}
 
   input {
     ${inputStyle}
@@ -51,7 +50,7 @@ const StyledTextInput = styled.div`
 
 function TextInput({ multiline = false, ...props }) {
   return (
-    <StyledTextInput $multiline={multiline}>
+    <StyledTextInput>
       {multiline ? <textarea {...props} /> : <input {...props} />}
     </StyledTextInput>
   );
