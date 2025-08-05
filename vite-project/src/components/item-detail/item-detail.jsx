@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProduct } from "../../api/products";
+import FavoriteButton from "../favorite-button";
 import TagList from "../tag/tag-list";
+import ItemDetailProfile from "./item-detail-profile";
 import ItemDetailSection from "./item-detail-section";
 import ItemDetailTitle from "./item-detail-title";
 
@@ -57,6 +59,23 @@ const StyledItemDetailSections = styled.div`
   }
 `;
 
+const StyledItemDetailProfileContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-top: 62px;
+
+  @media (max-width: 1199px) {
+    margin-top: 40px;
+  }
+`;
+
+const StyledItemDetailFavoriteContainer = styled.div`
+  border-left: 1px solid var(--color-cool-gray-200);
+  padding-left: 24px;
+`;
+
 function ItemDetail() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
@@ -81,6 +100,18 @@ function ItemDetail() {
             <TagList tags={product.tags} />
           </ItemDetailSection>
         </StyledItemDetailSections>
+        <StyledItemDetailProfileContainer>
+          <ItemDetailProfile
+            name={product.ownerNickname}
+            createdAt={product.createdAt}
+          />
+          <StyledItemDetailFavoriteContainer>
+            <FavoriteButton
+              isFavorite={product.isFavorite}
+              count={product.favoriteCount}
+            />
+          </StyledItemDetailFavoriteContainer>
+        </StyledItemDetailProfileContainer>
       </StyledItemDetailInfo>
     </StyledItemDetail>
   ) : (
