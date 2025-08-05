@@ -1,23 +1,41 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import globalTheme from "../styles/theme";
+import { convertPxToRem } from "../styles/utils/convert.utils";
+import {
+  buttonSize,
+  buttonStyle,
+  buttonResponsive,
+} from "../styles/utils/button.utils";
+export const ButtonGroup = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: ${convertPxToRem(8)};
+`;
 const Button = styled.button`
+  width: ${({ full }) => (full ? `100%` : `fit-content`)};
   display: inline-flex;
-  width: fit-content;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
   font-weight: 600;
-  border-radius: ${({ round }) => (round ? `40px` : `8px`)};
+  ${({ icon }) => {
+    if (icon) {
+      return css`
+        gap: ${convertPxToRem(4)};
+      `;
+    }
+  }}
+  ${buttonSize}
+  ${buttonStyle}
   &:disabled {
     box-shadow: none;
-    background-color: $gray400;
-    color: $gray100;
+    background-color: ${globalTheme.colors.gray400};
+    color: ${globalTheme.colors.gray100};
     pointer-events: none;
   }
-  ${({ icon }) => `width:100%`}
-  ${({ full }) => `gap: 4px;`}
-  ${({ bgStyle }) => `gap: 4px;`}
-  ${({ bdStyle }) => `gap: 4px;`}
+  ${buttonResponsive}
 `;
 
 export default Button;

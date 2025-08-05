@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+// reset.css 정의
 const GlobalResetStyles = createGlobalStyle`
   * {
     margin: 0;

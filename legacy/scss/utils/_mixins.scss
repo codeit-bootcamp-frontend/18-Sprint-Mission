@@ -68,7 +68,13 @@
 /// @param {Number} $sidePadding - 사이드 여백 너비
 /// @param {Boolean} $hasDualBounds - min, max 두개의 컨테이너가 필요할 때
 /// @param {Boolean} $containerWidth-min -  두개의 컨테이너 일때 최소 단위의 수치로 사용
-@mixin containerSize($boundType: max, $containerWidth-max: 1600, $sidePadding: 20, $hasDualBounds: false, $containerWidth-min: 0) {
+@mixin containerSize(
+  $boundType: max,
+  $containerWidth-max: 1600,
+  $sidePadding: 20,
+  $hasDualBounds: false,
+  $containerWidth-min: 0
+) {
   $containerWidth-max: insertUnit($containerWidth-max);
   $containerWidth-min: insertUnit($containerWidth-min);
   $sidePadding: insertUnit($sidePadding);
@@ -83,7 +89,6 @@
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0 $sidePadding;
-
 }
 
 /// @param {String} $display -flex , inline-flex
@@ -111,7 +116,21 @@
 /// @param {Boolean} $center - center 정렬 여부
 /// @param {Number|String} $translateX - transform x 값
 /// @param {Number|String} $translateY - transform y 값
-@mixin positionEx($position: absolute, $xDirection: left, $xValue: 0, $yDirection: top, $yValue: 0, $center: false, $centerDir: false, $translateX: 0, $translateY: 0) {
+/// 
+/// ($yValue: 24, $center: true, $centerDir: right);
+/// 
+/// 
+@mixin positionEx(
+  $position: absolute,
+  $xDirection: left,
+  $xValue: 0,
+  $yDirection: top,
+  $yValue: 0,
+  $center: false,
+  $centerDir: false,
+  $translateX: 0,
+  $translateY: 0
+) {
   position: $position;
   @if $center {
     top: 50%;
@@ -136,7 +155,14 @@
 /// @param {String} $position  - 이미지 위치
 /// @param {String} $size  - 이미지 크기
 /// @param {Color} $bgColor  - 배경색 (기본: transparent)
-@mixin backgroundImage($fileName, $path: "../img/icon/", $format: "svg", $position: center, $size: contain, $bgColor: transparent) {
+@mixin backgroundImage(
+  $fileName,
+  $path: "../img/icon/",
+  $format: "svg",
+  $position: center,
+  $size: contain,
+  $bgColor: transparent
+) {
   $url: url("#{$path}#{$fileName}.#{$format}");
   @if ($bgColor != transparent) {
     background: $bgColor $url no-repeat $position;
@@ -158,9 +184,9 @@
 /// @param {String} $size - 마스크 크기
 /// @param {String} $repeat - 반복 여부
 @mixin maskImageStyle($position: center, $size: contain, $repeat: no-repeat) {
-  mask-size: $size;
-  mask-position: $position;
-  mask-repeat: $repeat;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
   -webkit-mask-size: $size;
   -webkit-mask-position: $position;
   -webkit-mask-repeat: $repeat;
