@@ -32,7 +32,7 @@ function useDevice() {
       matchesDesktop.removeEventListener("change", handleDesktopMatchesChange);
       _matchesDesktop = null;
     };
-  }, []);
+  }, [matchesDesktop]);
 
   useEffect(() => {
     const handleTabletMatchesChange = (e) => {
@@ -48,7 +48,7 @@ function useDevice() {
       matchesTablet.removeEventListener("change", handleTabletMatchesChange);
       _matchesTablet = null;
     };
-  }, []);
+  }, [matchesTablet]);
 
   useEffect(() => {
     const handleMobileMatchesChange = (e) => {
@@ -64,7 +64,7 @@ function useDevice() {
       matchesMobile.removeEventListener("change", handleMobileMatchesChange);
       _matchesMobile = null;
     };
-  }, []);
+  }, [matchesMobile]);
 
   return deviceInfo;
 }
