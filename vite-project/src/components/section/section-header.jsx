@@ -17,6 +17,7 @@ const StyledSectionHeader = styled.div`
 
 const StyledSectionHeaderActions = styled.div`
   display: flex;
+  align-items: center;
   gap: 12px;
 
   @media (max-width: 767px) {
