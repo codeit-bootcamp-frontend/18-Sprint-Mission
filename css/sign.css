@@ -1,7 +1,7 @@
 :root {
   --primary-100: #3692ff;
   --primary-200: #1967d6;
-  --primary-200: #1251aa;
+  --primary-300: #1251aa;
   --gray-900: #111827;
   --gray-800: #1f2937;
   --gray-700: #374151;
@@ -61,13 +61,20 @@ body {
 }
 
 .pwd-section {
-  position: relative;
+  display: flex;
+  background-color: var(--gray-100, #f3f4f6);
+  border-radius: 12px;
+  height: 54px;
+  margin: 20px 0;
+  align-items: center;
 }
 
 .pwd-visible {
-  position: absolute;
-  right: 5%;
-  bottom: 35px;
+  margin: 0 5px;
+}
+
+#user-pwd {
+  padding: 0 0 0 20px;
 }
 
 .login-btn {
@@ -121,4 +128,25 @@ body {
 .signup > a {
   color: var(--primary-100, #3692ff);
   text-decoration: underline;
+}
+
+@media (max-width: 767px) and (min-width: 375px) {
+  .container {
+    margin: 80px auto;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .logo {
+    width: 198px;
+    margin: 0 auto;
+  }
+
+  .panda-icon {
+    width: 100%;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
 }
