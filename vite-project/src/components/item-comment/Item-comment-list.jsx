@@ -4,7 +4,7 @@ import moreImg from "../../assets/ic-dots-3-vertical.svg";
 import { formatElapsedTime } from "../../utils/formatter";
 import Button from "../button/button";
 import IconButton from "../button/icon-button";
-import TextInput from "../text-input";
+import TextInput from "../input/text-input";
 import UserProfileCard from "../user-profile-card/user-profile-card";
 import { USER_PROFILE_CARD_SIZE } from "../user-profile-card/user-profile-card-size";
 

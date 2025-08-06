@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
 import AddingItemImageContainer from "../../components/add-item/adding-item-image-container";
+import TextInput from "../../components/input/text-input";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
 import SectionHeaderSize from "../../components/section/section-header-size";
 import TagList from "../../components/tag/tag-list";
-import TextInput from "../../components/text-input";
 import { formatPrice } from "../../utils/formatter";
 
 const INITIAL_INPUT_VALUES = {

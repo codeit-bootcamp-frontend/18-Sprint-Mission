@@ -2,12 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProducts } from "../../api/products";
+import SearchInput from "../../components/input/search-input";
 import ItemsGrid from "../../components/item/items-grid";
 import OrderBySelect, {
   ORDER_BY_DEFAULT,
 } from "../../components/OrderBySelect";
 import PageControl from "../../components/PageControl";
-import SearchInput from "../../components/SearchInput";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";

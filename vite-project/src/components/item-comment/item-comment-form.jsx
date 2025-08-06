@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Button from "../button/button";
-import TextInput from "../text-input";
+import TextInput from "../input/text-input";
 
 const StyledItemCommentForm = styled.form`
   display: flex;
