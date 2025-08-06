@@ -14,9 +14,9 @@ const StyledIconButton = styled.button`
   }
 `;
 
-function IconButton({ className, src, size = 24 }) {
+function IconButton({ className, src, size = 24, onClick }) {
   return (
-    <StyledIconButton className={className} $size={size}>
+    <StyledIconButton className={className} $size={size} onClick={onClick}>
       <img src={src} />
     </StyledIconButton>
   );
