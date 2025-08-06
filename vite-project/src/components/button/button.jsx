@@ -30,6 +30,10 @@ const StyledButton = styled.button`
     background-color: var(--color-cool-gray-400);
     cursor: default;
   }
+
+  &:hover:not(:disabled) {
+    opacity: 0.5;
+  }
 `;
 
 function Button({
