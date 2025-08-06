@@ -1,6 +1,10 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { fetchComments } from "../../api/comments";
 import ItemCommentForm from "./item-comment-form";
 import ItemCommentList from "./Item-comment-list";
+import ItemCommentsEmpty from "./item-comments-empty";
 
 const StyledItemComment = styled.div`
   display: flex;
@@ -13,24 +17,21 @@ const StyledItemComment = styled.div`
 `;
 
 function ItemComment() {
-  // const [comments, setComments] = useState([]);
-  // const { id } = useParams();
+  const [comments, setComments] = useState([]);
+  const { id } = useParams();
 
-  // useEffect(() => {
-  //   fetchComments(id).then((comments) =>
-  //     setComments((prev) => [...prev, comments])
-  //   );
-  // }, [id]);
+  useEffect(() => {
+    fetchComments(id).then((newComments) => setComments(newComments));
+  }, [id]);
 
   return (
     <StyledItemComment>
       <ItemCommentForm />
-      <ItemCommentList />
-      {/* {comments.count > 0 ? (
+      {comments.length > 0 ? (
         <ItemCommentList comments={comments} />
       ) : (
         <ItemCommentsEmpty />
-      )} */}
+      )}
     </StyledItemComment>
   );
 }

@@ -18,7 +18,7 @@ const DEFAULT_SIZE = 40;
 function Avatar({ imageUrl, size = DEFAULT_SIZE }) {
   return (
     <StyledAvatar $size={size}>
-      <img src={imageUrl ?? defaultImg} alt="프로필 사진" />
+      <img src={imageUrl || defaultImg} alt="프로필 사진" />
     </StyledAvatar>
   );
 }

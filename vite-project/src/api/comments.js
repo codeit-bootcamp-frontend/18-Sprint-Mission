@@ -1,12 +1,15 @@
-import { createUrl } from "./api";
+import mock from "./comments-mock.json";
 
-export async function fetchComments(productId, { limit = 10 } = {}) {
-  const url = createUrl(`products/${productId}/comments`, { limit });
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch products");
-  }
+export async function fetchComments(productId) {
+  // const url = createUrl(`products/${productId}/comments`, { limit });
+  // const response = await fetch(url);
+  // if (!response.ok) {
+  //   throw new Error("Failed to fetch comments");
+  // }
 
-  const json = await response.json();
-  return json.list;
+  // const json = await response.json();
+  // return json.list;
+
+  if (!productId) return;
+  return mock.list;
 }

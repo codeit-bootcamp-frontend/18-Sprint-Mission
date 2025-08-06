@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import styled from "styled-components";
 import moreImg from "../../assets/ic-dots-3-vertical.svg";
+import { formatElapsedTime } from "../../utils/formatter";
 import Button from "../button/button";
 import IconButton from "../button/icon-button";
 import TextInput from "../text-input";
@@ -114,9 +115,9 @@ function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
       )}
       <BottomContainer>
         <UserProfileCard
-          imageUrl={writer?.image}
-          name={writer?.nickname}
-          status={updatedAt}
+          imageUrl={writer.image}
+          name={writer.nickname}
+          status={formatElapsedTime(updatedAt)}
           size={USER_PROFILE_CARD_SIZE.small}
         />
         {isEditing && (
@@ -147,51 +148,35 @@ const StyledItemCommentList = styled.div`
   }
 `;
 
-function ItemCommentList() {
-  const handleEdit = () => {};
+function ItemCommentList({ comments }) {
+  const handleEdit = (/* commentId, content */) => {
+    // TODO: Comment 수정 API 연동
+  };
 
-  const handleDelete = () => {};
+  const handleDelete = (/* commentId */) => {
+    // TODO: Comment 삭제 API 연동
+  };
+
+  const sortedComments = useMemo(
+    () =>
+      comments.sort(
+        (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
+      ),
+    [comments]
+  );
 
   return (
     <StyledItemCommentList>
-      <CommentListItem
-        writer={{ nickname: "똑똑한판다" }}
-        content="혹시 사용기간이 어떻게 되실까요?"
-        updatedAt="1시간"
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
-      <CommentListItem
-        writer={{ nickname: "똑똑한판다" }}
-        content="혹시 사용기간이 어떻게 되실까요?"
-        updatedAt="1시간"
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
-      <CommentListItem
-        writer={{ nickname: "똑똑한판다" }}
-        content="혹시 사용기간이 어떻게 되실까요?"
-        updatedAt="1시간"
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
-      <CommentListItem
-        writer={{ nickname: "똑똑한판다" }}
-        content="혹시 사용기간이 어떻게 되실까요?"
-        updatedAt="1시간"
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
-      <CommentListItem
-        writer={{ nickname: "똑똑한판다" }}
-        content="혹시 사용기간이 어떻게 되실까요?"
-        updatedAt="1시간"
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
-      {/* {comments.map((comment) => (
-        <CommentListItem key={comment.id} content={comment.content} />
-      ))} */}
+      {sortedComments.map((comment) => (
+        <CommentListItem
+          key={comment.id}
+          writer={comment.writer}
+          updatedAt={comment.updatedAt}
+          content={comment.content}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
+      ))}
     </StyledItemCommentList>
   );
 }
