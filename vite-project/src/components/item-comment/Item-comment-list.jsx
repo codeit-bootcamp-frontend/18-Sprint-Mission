@@ -83,6 +83,10 @@ function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
   const [isEditing, setIsEditing] = useState(false);
   const inputRef = useRef();
 
+  const handleInputChange = () => {
+    // TODO: Comment 등록 구현
+  };
+
   const handleMoreClick = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -109,7 +113,11 @@ function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
   return (
     <StyledItemComment $isEditing={isEditing}>
       {isEditing ? (
-        <TextInput value={content} ref={inputRef} />
+        <TextInput
+          value={content}
+          onChange={handleInputChange}
+          ref={inputRef}
+        />
       ) : (
         <p>{content}</p>
       )}
