@@ -1,22 +1,46 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import moreImg from "../../assets/ic-dots-3-vertical.svg";
+import Button from "../button/button";
 import IconButton from "../button/icon-button";
+import TextInput from "../text-input";
 import UserProfileCard from "../user-profile-card/user-profile-card";
 import { USER_PROFILE_CARD_SIZE } from "../user-profile-card/user-profile-card-size";
 
 const StyledItemComment = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: ${({ $isEditing }) => ($isEditing ? 16 : 24)}px;
   position: relative;
-  padding-bottom: 12px;
+  padding-bottom: ${({ $isEditing }) => ($isEditing ? 24 : 12)}px;
   border-bottom: 1px solid var(--color-secondary-300);
 
   p {
     margin: 0;
     font-size: 14px;
     line-height: 24px;
+  }
+`;
+
+const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const EditingButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  button:first-child {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    color: var(--color-gray-500);
+    cursor: pointer;
   }
 `;
 
@@ -53,31 +77,60 @@ const Dropdown = styled.div`
   }
 `;
 
-function CommentListItem({ writer, updatedAt, content }) {
+function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const inputRef = useRef();
 
   const handleMoreClick = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const handleOptionClick = () => {
-    // TODO: 수정하기 or 삭제하기 기능 구현
+  const handleEditClick = () => {
+    setIsMenuOpen(false);
+    setIsEditing(true);
+  };
+
+  const handleDeleteClick = () => {
+    setIsMenuOpen(false);
+    onDelete();
+  };
+
+  const handleCancelClick = () => {
+    setIsEditing(false);
+  };
+
+  const handleEditDoneClick = () => {
+    setIsEditing(false);
+    onEdit(inputRef.current.value);
   };
 
   return (
-    <StyledItemComment>
-      <p>{content}</p>
-      <UserProfileCard
-        imageUrl={writer?.image}
-        name={writer?.nickname}
-        status={updatedAt}
-        size={USER_PROFILE_CARD_SIZE.small}
-      />
-      <MoreButton src={moreImg} onClick={handleMoreClick} />
+    <StyledItemComment $isEditing={isEditing}>
+      {isEditing ? (
+        <TextInput value={content} ref={inputRef} />
+      ) : (
+        <p>{content}</p>
+      )}
+      <BottomContainer>
+        <UserProfileCard
+          imageUrl={writer?.image}
+          name={writer?.nickname}
+          status={updatedAt}
+          size={USER_PROFILE_CARD_SIZE.small}
+        />
+        {isEditing && (
+          <EditingButtonContainer>
+            <button onClick={handleCancelClick}>취소</button>
+            <Button onClick={handleEditDoneClick}>수정 완료</Button>
+          </EditingButtonContainer>
+        )}
+      </BottomContainer>
+      {isEditing || <MoreButton src={moreImg} onClick={handleMoreClick} />}
       {isMenuOpen && (
         <Dropdown>
-          <button onClick={handleOptionClick}>수정하기</button>
-          <button onClick={handleOptionClick}>삭제하기</button>
+          <button onClick={handleEditClick}>수정하기</button>
+          <button onClick={handleDeleteClick}>삭제하기</button>
         </Dropdown>
       )}
     </StyledItemComment>
@@ -95,27 +148,46 @@ const StyledItemCommentList = styled.div`
 `;
 
 function ItemCommentList() {
+  const handleEdit = () => {};
+
+  const handleDelete = () => {};
+
   return (
     <StyledItemCommentList>
       <CommentListItem
         writer={{ nickname: "똑똑한판다" }}
         content="혹시 사용기간이 어떻게 되실까요?"
+        updatedAt="1시간"
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
       <CommentListItem
         writer={{ nickname: "똑똑한판다" }}
         content="혹시 사용기간이 어떻게 되실까요?"
+        updatedAt="1시간"
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
       <CommentListItem
         writer={{ nickname: "똑똑한판다" }}
         content="혹시 사용기간이 어떻게 되실까요?"
+        updatedAt="1시간"
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
       <CommentListItem
         writer={{ nickname: "똑똑한판다" }}
         content="혹시 사용기간이 어떻게 되실까요?"
+        updatedAt="1시간"
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
       <CommentListItem
         writer={{ nickname: "똑똑한판다" }}
         content="혹시 사용기간이 어떻게 되실까요?"
+        updatedAt="1시간"
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
       {/* {comments.map((comment) => (
         <CommentListItem key={comment.id} content={comment.content} />
