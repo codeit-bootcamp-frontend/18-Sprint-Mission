@@ -1,19 +1,23 @@
+import { createUrl } from "./api";
+
 export async function fetchProducts({
   keyword = "",
   page = 1,
   pageSize = 10,
   orderBy = "recent",
 } = {}) {
-  const url = new URL(`${import.meta.env.VITE_API_BASE_URL}/products`);
-  url.searchParams.append("page", page);
-  url.searchParams.append("pageSize", pageSize);
-  url.searchParams.append("orderBy", orderBy);
+  const params = {
+    page,
+    pageSize,
+    orderBy,
+  };
+
   if (keyword) {
-    url.searchParams.append("keyword", keyword);
+    params.keyword = keyword;
   }
 
+  const url = createUrl("products", params);
   const response = await fetch(url);
-
   if (!response.ok) {
     throw new Error("Failed to fetch products");
   }
@@ -23,4 +27,15 @@ export async function fetchProducts({
     products: json.list,
     numberOfPages: Math.ceil(json.totalCount / pageSize),
   };
+}
+
+export async function fetchProduct(id) {
+  const url = createUrl(`products/${id}`);
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error("Failed to fetch product");
+  }
+
+  const json = await response.json();
+  return json;
 }

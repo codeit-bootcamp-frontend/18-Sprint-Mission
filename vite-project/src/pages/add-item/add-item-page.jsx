@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
 import AddingItemImageContainer from "../../components/add-item/adding-item-image-container";
+import TextInput from "../../components/input/text-input";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
 import SectionHeaderSize from "../../components/section/section-header-size";
 import TagList from "../../components/tag/tag-list";
-import TextInput from "../../components/text-input";
 import { formatPrice } from "../../utils/formatter";
 
 const INITIAL_INPUT_VALUES = {
@@ -18,6 +18,12 @@ const INITIAL_INPUT_VALUES = {
 
 const StyledAddItemForm = styled.form`
   padding-bottom: 69px;
+`;
+
+const StyledTagSectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 `;
 
 function AddItemPage() {
@@ -101,6 +107,7 @@ function AddItemPage() {
               placeholder={"상품 소개를 입력해주세요"}
               onChange={handleInputChange}
               multiline
+              rows="10"
             />
           </Section>
           <Section>
@@ -114,7 +121,7 @@ function AddItemPage() {
           </Section>
           <Section>
             <SectionHeader title={"태그"} size={SectionHeaderSize.SMALL} />
-            <div>
+            <StyledTagSectionContent>
               <TextInput
                 name="tag"
                 value={inputValues["tag"]}
@@ -125,7 +132,7 @@ function AddItemPage() {
               {tags.length > 0 && (
                 <TagList tags={tags} onRemove={handleTagRemove} />
               )}
-            </div>
+            </StyledTagSectionContent>
           </Section>
         </Section>
       </Section>

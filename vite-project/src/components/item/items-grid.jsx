@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Item from "./item";
 
@@ -15,13 +16,18 @@ function ItemsGrid({ items, numberOfColumns }) {
   return (
     <StyledItemsGrid $numberOfColumns={numberOfColumns}>
       {items.map((product) => (
-        <Item
+        <Link
+          to={`${product.id}`}
           key={product.id}
-          imageUrl={product.images[0]}
-          title={product.name}
-          price={product.price}
-          likeCount={product.favoriteCount}
-        />
+          style={{ textDecoration: "none" }}
+        >
+          <Item
+            imageUrl={product.images[0]}
+            title={product.name}
+            price={product.price}
+            likeCount={product.favoriteCount}
+          />
+        </Link>
       ))}
     </StyledItemsGrid>
   );

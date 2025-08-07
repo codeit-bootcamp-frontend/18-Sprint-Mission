@@ -1,0 +1,60 @@
+{
+  "nextCursor": 0,
+  "list": [
+    {
+      "writer": {
+        "image": "",
+        "nickname": "똑똑한 판다",
+        "id": 1
+      },
+      "updatedAt": "2024-08-06T02:57:22.000Z",
+      "createdAt": "2024-08-06T02:57:22.000Z",
+      "content": "혹시 사용 기간이 어떻게 되실까요?",
+      "id": 1
+    },
+    {
+      "writer": {
+        "image": "",
+        "nickname": "똑똑한 고양이",
+        "id": 2
+      },
+      "updatedAt": "2025-07-06T02:57:22.000Z",
+      "createdAt": "2025-07-06T02:57:22.000Z",
+      "content": "잘 작동하나요??",
+      "id": 2
+    },
+    {
+      "writer": {
+        "image": "",
+        "nickname": "똑똑한 강아지",
+        "id": 3
+      },
+      "updatedAt": "2025-08-03T02:57:22.000Z",
+      "createdAt": "2025-08-03T02:57:22.000Z",
+      "content": "저도 사고싶어요!",
+      "id": 3
+    },
+    {
+      "writer": {
+        "image": "",
+        "nickname": "똑똑한 고양이",
+        "id": 2
+      },
+      "updatedAt": "2025-08-06T02:57:22.000Z",
+      "createdAt": "2025-08-06T02:57:22.000Z",
+      "content": "제가 샀습니다.",
+      "id": 4
+    },
+    {
+      "writer": {
+        "image": "",
+        "nickname": "똑똑한 토끼",
+        "id": 4
+      },
+      "updatedAt": "2025-08-06T07:10:22.000Z",
+      "createdAt": "2025-08-06T07:10:22.000Z",
+      "content": "까비...",
+      "id": 5
+    }
+  ]
+}
