@@ -1,6 +1,6 @@
-import { createUrl } from "../../../api/api";
+import { client } from "../../../api/HttpClient";
 
-export async function fetchProducts({
+async function fetchProducts({
   keyword = "",
   page = 1,
   pageSize = 10,
@@ -16,26 +16,17 @@ export async function fetchProducts({
     params.keyword = keyword;
   }
 
-  const url = createUrl("products", params);
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch products");
-  }
+  const result = await client.get("products", params);
 
-  const json = await response.json();
   return {
-    products: json.list,
-    numberOfPages: Math.ceil(json.totalCount / pageSize),
+    products: result.list,
+    numberOfPages: Math.ceil(result.totalCount / pageSize),
   };
 }
 
-export async function fetchProduct(id) {
-  const url = createUrl(`products/${id}`);
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch product");
-  }
-
-  const json = await response.json();
-  return json;
+async function fetchProduct(id) {
+  const result = await client.get(`products/${id}`);
+  return result;
 }
+
+export { fetchProduct, fetchProducts };
