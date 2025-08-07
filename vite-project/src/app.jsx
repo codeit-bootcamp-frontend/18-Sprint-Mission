@@ -4,6 +4,7 @@ import AddItemPage from "./pages/add-item/add-item-page";
 import ItemDetailPage from "./pages/items/item-detail-page";
 import ItemsPage from "./pages/items/items-page";
 import "./styles/global.css";
+import "./styles/palette.css";
 
 function App() {
   return (
