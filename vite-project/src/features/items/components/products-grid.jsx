@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Item from "./item";
+import ProductGridItem from "./product-grid-item";
 
-const StyledItemsGrid = styled.div`
+const StyledProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(
     ${({ $numberOfColumns }) => $numberOfColumns},
@@ -12,16 +12,16 @@ const StyledItemsGrid = styled.div`
   row-gap: 40px;
 `;
 
-function ItemsGrid({ items, numberOfColumns }) {
+function ProductsGrid({ items, numberOfColumns }) {
   return (
-    <StyledItemsGrid $numberOfColumns={numberOfColumns}>
+    <StyledProductsGrid $numberOfColumns={numberOfColumns}>
       {items.map((product) => (
         <Link
           to={`${product.id}`}
           key={product.id}
           style={{ textDecoration: "none" }}
         >
-          <Item
+          <ProductGridItem
             imageUrl={product.images[0]}
             title={product.name}
             price={product.price}
@@ -29,8 +29,8 @@ function ItemsGrid({ items, numberOfColumns }) {
           />
         </Link>
       ))}
-    </StyledItemsGrid>
+    </StyledProductsGrid>
   );
 }
 
-export default ItemsGrid;
+export default ProductsGrid;
