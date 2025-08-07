@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import SearchInput from "../../components/input/search-input";
-import OrderBySelect, {
-  ORDER_BY_DEFAULT,
-} from "../../components/OrderBySelect";
 import PageControl from "../../components/page-control/page-control";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
+import OrderBySelect, {
+  ORDER_BY_DEFAULT,
+} from "../../components/select/order-by-select";
 import { fetchProducts } from "../../features/product/apis/products";
 import ProductsGrid from "../../features/product/components/products-grid";
 import { useDevice } from "../../hooks/useDevice";
