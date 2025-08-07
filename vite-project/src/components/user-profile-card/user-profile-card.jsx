@@ -2,34 +2,31 @@ import styled from "styled-components";
 import Avatar from "../avatar/avatar";
 import { USER_PROFILE_CARD_SIZE } from "./user-profile-card-size";
 
-function infoGap(cardSize) {
-  return cardSize === USER_PROFILE_CARD_SIZE.large ? 2 : 4;
-}
-
-function fontSize(cardSize) {
-  return cardSize === USER_PROFILE_CARD_SIZE.large ? 14 : 12;
-}
-
-function lineHeight(cardSize) {
-  return cardSize === USER_PROFILE_CARD_SIZE.large ? 24 : 18;
-}
-
-function cardGap(cardSize) {
-  return cardSize === USER_PROFILE_CARD_SIZE.large ? 16 : 8;
-}
-
-function avatarSize(cardSize) {
-  return cardSize === USER_PROFILE_CARD_SIZE.large ? 40 : 32;
-}
+const PROFILE_INFO_STYLE = {
+  [USER_PROFILE_CARD_SIZE.large]: {
+    infoGap: 2,
+    fontSize: 14,
+    lineHeight: 24,
+    cardGap: 16,
+    avatarSize: 40,
+  },
+  [USER_PROFILE_CARD_SIZE.small]: {
+    infoGap: 4,
+    fontSize: 12,
+    lineHeight: 18,
+    cardGap: 8,
+    avatarSize: 32,
+  },
+};
 
 const ProfileInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ $size }) => infoGap($size)}px;
+  gap: ${({ $size }) => PROFILE_INFO_STYLE[$size].infoGap}px;
 
   span {
-    font-size: ${({ $size }) => fontSize($size)}px;
-    line-height: ${({ $size }) => lineHeight($size)}px;
+    font-size: ${({ $size }) => PROFILE_INFO_STYLE[$size].fontSize}px;
+    line-height: ${({ $size }) => PROFILE_INFO_STYLE[$size].lineHeight}px;
   }
 
   span:first-child {
@@ -45,7 +42,7 @@ const ProfileInfo = styled.div`
 const StyledUserProfileCard = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ $size }) => cardGap($size)}px;
+  gap: ${({ $size }) => PROFILE_INFO_STYLE[$size].cardGap}px;
 
   ${ProfileInfo} {
     flex-grow: 1;
@@ -60,7 +57,7 @@ function UserProfileCard({
 }) {
   return (
     <StyledUserProfileCard $size={size}>
-      <Avatar imageUrl={imageUrl} size={avatarSize(size)} />
+      <Avatar imageUrl={imageUrl} size={PROFILE_INFO_STYLE[size].avatarSize} />
       <ProfileInfo $size={size}>
         <span>{name}</span>
         <span>{status}</span>
