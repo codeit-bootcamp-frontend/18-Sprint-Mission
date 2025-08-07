@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../api";
+import { getProducts } from "../../api";
 import "./ItemsPage.css";
-import { useResponsive } from "./Responsive";
-import BestProducts from "../components/BestProducts";
-import TotalProducts from "../components/TotalProducts";
-import Pagination from "../components/Pagination";
+import { useResponsive } from "../../components/Responsive";
+import BestProducts from "./BestProducts";
+import TotalProducts from "./TotalProducts";
+import Pagination from "../../components/Pagination";
 
 function ItemsPage() {
   const [orderBy, setOrderBy] = useState("recent");

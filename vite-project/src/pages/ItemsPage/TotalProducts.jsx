@@ -1,8 +1,8 @@
-import likeIcon from "../assets/ic-heart.svg";
-import searchIcon from "../assets/ic-search.svg";
+import likeIcon from "../../assets/ic-heart.svg";
+import searchIcon from "../../assets/ic-search.svg";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import SelectDropdown from "./SelectDropdown";
+import SelectDropdown from "../../components/SelectDropdown";
 
 function TotalProducts({
   totalProducts,

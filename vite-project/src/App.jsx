@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/Nav";
-import ItemsPage from "./components/ItemsPage";
-import AddItemPage from "./components/AddItemPage";
+import ItemsPage from "./pages/ItemsPage/ItemsPage";
+import AddItemPage from "./pages/AddItemPage/AddItemPage";
 
 function App() {
   return (

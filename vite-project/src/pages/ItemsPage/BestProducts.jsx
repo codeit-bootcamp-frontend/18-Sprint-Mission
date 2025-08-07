@@ -1,4 +1,4 @@
-import likeIcon from "../assets/ic-heart.svg";
+import likeIcon from "../../assets/ic-heart.svg";
 
 function BestProducts({ bestProducts }) {
   return (

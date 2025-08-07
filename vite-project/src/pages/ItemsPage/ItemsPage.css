@@ -1,9 +1,4 @@
-@import url("../components/reset.css");
-@import url("../components/variable.css");
-
-html {
-  font-size: 62.5%;
-}
+@import url("../../components/reset.css");
 
 .products-container {
   display: flex;
@@ -267,6 +262,7 @@ html {
     border-radius: 1.2rem;
     text-align: center;
     cursor: pointer;
+    margin-top: 0.5rem;
   }
 
   .option-list li {
