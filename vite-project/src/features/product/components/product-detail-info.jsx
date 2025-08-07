@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import FavoriteButton from "../../../components/favorite-button";
+import favoriteImg from "../../../assets/ic-heart.svg";
 import TagList from "../../../components/tag/tag-list";
 import UserProfileCard from "../../../components/user-profile-card/user-profile-card";
 import { formatDateYYYYMMDD } from "../../../utils/formatter";
@@ -77,6 +77,35 @@ const FavoriteContainer = styled.div`
   padding-left: 24px;
 `;
 
+const FavoriteButton = styled.div`
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  border: 1px solid var(--color-secondary-200);
+  border-radius: 40px;
+  background: none;
+  padding: 4px 12px;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: var(--color-cool-gray-500);
+  }
+
+  @media (max-width: 1199px) {
+    div {
+      width: 24px;
+      height: 24px;
+    }
+  }
+`;
+
 function ProductDetailInfo() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
@@ -107,10 +136,10 @@ function ProductDetailInfo() {
             status={formatDateYYYYMMDD(product.createdAt)}
           />
           <FavoriteContainer>
-            <FavoriteButton
-              isFavorite={product.isFavorite}
-              count={product.favoriteCount}
-            />
+            <FavoriteButton>
+              <img src={product.isFavorite ? "" : favoriteImg} alt="좋아요" />
+              <span>{product.favoriteCount}</span>
+            </FavoriteButton>
           </FavoriteContainer>
         </ProfileContainer>
       </ProductInfo>
