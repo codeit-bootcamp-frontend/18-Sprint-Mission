@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 const useGetBestProductData = ({ pageSize = "4" }) => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -14,17 +14,17 @@ const useGetBestProductData = ({ pageSize = "4" }) => {
         const data = await response.json();
         setProducts(data);
       } catch (err) {
-        setError(err);
+        setIsError(err);
         console.error("베스트 상품 데이터 가져오기 실패:", err);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
 
     fetchProducts();
   }, [pageSize]);
 
-  return { products, loading, error };
+  return { products, isLoading, isError };
 };
 
 export default useGetBestProductData;
