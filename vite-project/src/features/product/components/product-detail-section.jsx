@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledItemDetailSection = styled.section`
+const StyledProductDetailSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -30,14 +30,14 @@ const StyledItemDetailSection = styled.section`
   }
 `;
 
-function ItemDetailSection({ title, description, children }) {
+function ProductDetailSection({ title, description, children }) {
   return (
-    <StyledItemDetailSection>
+    <StyledProductDetailSection>
       <h3>{title}</h3>
       {description && <p>{description}</p>}
       {children}
-    </StyledItemDetailSection>
+    </StyledProductDetailSection>
   );
 }
 
-export default ItemDetailSection;
+export default ProductDetailSection;

@@ -1,14 +1,14 @@
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
-import moreImg from "../../assets/ic-dots-3-vertical.svg";
-import { formatElapsedTime } from "../../utils/formatter";
-import Button from "../button/button";
-import IconButton from "../button/icon-button";
-import TextInput from "../input/text-input";
-import UserProfileCard from "../user-profile-card/user-profile-card";
-import { USER_PROFILE_CARD_SIZE } from "../user-profile-card/user-profile-card-size";
+import moreImg from "../../../assets/ic-dots-3-vertical.svg";
+import Button from "../../../components/button/button";
+import IconButton from "../../../components/button/icon-button";
+import TextInput from "../../../components/input/text-input";
+import UserProfileCard from "../../../components/user-profile-card/user-profile-card";
+import { USER_PROFILE_CARD_SIZE } from "../../../components/user-profile-card/user-profile-card-size";
+import { formatElapsedTime } from "../../../utils/formatter";
 
-const StyledItemComment = styled.div`
+const StyledCommentsListItem = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ $isEditing }) => ($isEditing ? 16 : 24)}px;
@@ -78,7 +78,7 @@ const Dropdown = styled.div`
   }
 `;
 
-function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
+function CommentsListItem({ writer, updatedAt, content, onEdit, onDelete }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const inputRef = useRef();
@@ -111,7 +111,7 @@ function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
   };
 
   return (
-    <StyledItemComment $isEditing={isEditing}>
+    <StyledCommentsListItem $isEditing={isEditing}>
       {isEditing ? (
         <TextInput
           value={content}
@@ -142,51 +142,8 @@ function CommentListItem({ writer, updatedAt, content, onEdit, onDelete }) {
           <button onClick={handleDeleteClick}>삭제하기</button>
         </Dropdown>
       )}
-    </StyledItemComment>
+    </StyledCommentsListItem>
   );
 }
 
-const StyledItemCommentList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-
-  @media (max-width: 767px) {
-    gap: 16px;
-  }
-`;
-
-function ItemCommentList({ comments }) {
-  const handleEdit = (/* commentId, content */) => {
-    // TODO: Comment 수정 API 연동
-  };
-
-  const handleDelete = (/* commentId */) => {
-    // TODO: Comment 삭제 API 연동
-  };
-
-  const sortedComments = useMemo(
-    () =>
-      comments.sort(
-        (a, b) => Date.parse(b.updatedAt) - Date.parse(a.updatedAt)
-      ),
-    [comments]
-  );
-
-  return (
-    <StyledItemCommentList>
-      {sortedComments.map((comment) => (
-        <CommentListItem
-          key={comment.id}
-          writer={comment.writer}
-          updatedAt={comment.updatedAt}
-          content={comment.content}
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-        />
-      ))}
-    </StyledItemCommentList>
-  );
-}
-
-export default ItemCommentList;
+export default CommentsListItem;

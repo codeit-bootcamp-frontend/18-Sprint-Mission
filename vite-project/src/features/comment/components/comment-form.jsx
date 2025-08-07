@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Button from "../button/button";
-import TextInput from "../input/text-input";
+import Button from "../../../components/button/button";
+import TextInput from "../../../components/input/text-input";
 
-const StyledItemCommentForm = styled.form`
+const StyledCommentForm = styled.form`
   display: flex;
   flex-direction: column;
 
@@ -33,7 +33,7 @@ const StyledItemCommentForm = styled.form`
 const INPUT_PLACEHOLDER =
   "개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.";
 
-function ItemCommentForm() {
+function CommentForm() {
   const [comment, setComment] = useState("");
   const canSubmit = comment.length > 0;
 
@@ -42,7 +42,7 @@ function ItemCommentForm() {
   };
 
   return (
-    <StyledItemCommentForm>
+    <StyledCommentForm>
       <label htmlFor="comment-input">문의하기</label>
       <TextInput
         id="comment-input"
@@ -53,8 +53,8 @@ function ItemCommentForm() {
         rows="3"
       />
       <Button disabled={!canSubmit}>등록</Button>
-    </StyledItemCommentForm>
+    </StyledCommentForm>
   );
 }
 
-export default ItemCommentForm;
+export default CommentForm;

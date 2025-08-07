@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { fetchProduct } from "../../features/product/apis/products";
-import { formatDateYYYYMMDD } from "../../utils/formatter";
-import FavoriteButton from "../favorite-button";
-import TagList from "../tag/tag-list";
-import UserProfileCard from "../user-profile-card/user-profile-card";
-import ItemDetailSection from "./item-detail-section";
-import ItemDetailTitle from "./item-detail-title";
+import FavoriteButton from "../../../components/favorite-button";
+import TagList from "../../../components/tag/tag-list";
+import UserProfileCard from "../../../components/user-profile-card/user-profile-card";
+import { formatDateYYYYMMDD } from "../../../utils/formatter";
+import { fetchProduct } from "../apis/products";
+import ProductDetailSection from "./product-detail-section";
+import ProductDetailTitle from "./product-detail-title";
 
-const StyledItemDetail = styled.div`
+const StyledProductDetailInfo = styled.div`
   display: flex;
   gap: 24px;
 
@@ -22,7 +22,7 @@ const StyledItemDetail = styled.div`
   }
 `;
 
-const ItemImage = styled.div`
+const ProductImage = styled.div`
   width: 486px;
   height: 486px;
   aspect-ratio: 1 / 1;
@@ -45,11 +45,11 @@ const ItemImage = styled.div`
   }
 `;
 
-const ItemInfo = styled.div`
+const ProductInfo = styled.div`
   width: 100%;
 `;
 
-const InfoSectionContainer = styled.div`
+const ProductInfoContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -77,7 +77,7 @@ const FavoriteContainer = styled.div`
   padding-left: 24px;
 `;
 
-function ItemDetail() {
+function ProductDetailInfo() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
 
@@ -86,21 +86,21 @@ function ItemDetail() {
   }, [id]);
 
   return product ? (
-    <StyledItemDetail>
-      <ItemImage>
+    <StyledProductDetailInfo>
+      <ProductImage>
         {product.images[0] && <img src={product.images[0]} />}
-      </ItemImage>
-      <ItemInfo>
-        <ItemDetailTitle title={product.name} price={product.price} />
-        <InfoSectionContainer>
-          <ItemDetailSection
+      </ProductImage>
+      <ProductInfo>
+        <ProductDetailTitle title={product.name} price={product.price} />
+        <ProductInfoContent>
+          <ProductDetailSection
             title="상품 소개"
             description={product.description}
           />
-          <ItemDetailSection title="상품 태그">
+          <ProductDetailSection title="상품 태그">
             <TagList tags={product.tags} />
-          </ItemDetailSection>
-        </InfoSectionContainer>
+          </ProductDetailSection>
+        </ProductInfoContent>
         <ProfileContainer>
           <UserProfileCard
             name={product.ownerNickname}
@@ -113,12 +113,12 @@ function ItemDetail() {
             />
           </FavoriteContainer>
         </ProfileContainer>
-      </ItemInfo>
-    </StyledItemDetail>
+      </ProductInfo>
+    </StyledProductDetailInfo>
   ) : (
     // TODO: Product loading 중 보여줄 UI
     <h2>Loading...</h2>
   );
 }
 
-export default ItemDetail;
+export default ProductDetailInfo;

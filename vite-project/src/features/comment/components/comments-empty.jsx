@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import emptyImg from "../../assets/comments-empty.png";
+import emptyImg from "../../../assets/comments-empty.png";
 
-const StyledItemCommentsEmpty = styled.div`
+const StyledCommentsEmpty = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -23,13 +23,13 @@ const StyledItemCommentsEmpty = styled.div`
   }
 `;
 
-function ItemCommentsEmpty() {
+function CommentsEmpty() {
   return (
-    <StyledItemCommentsEmpty>
+    <StyledCommentsEmpty>
       <img src={emptyImg} alt="문의 없음" />
       아직 문의가 없어요.
-    </StyledItemCommentsEmpty>
+    </StyledCommentsEmpty>
   );
 }
 
-export default ItemCommentsEmpty;
+export default CommentsEmpty;
