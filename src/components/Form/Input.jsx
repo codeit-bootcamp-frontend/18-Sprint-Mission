@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import globalTheme from "../styles/theme";
-import fontSize from "../styles/utils/fontSize.utils";
-import { convertPxToRem } from "../styles/utils/convert.utils";
+import globalTheme from "@/styles/theme";
+import fontSize from "@/styles/utils/fontSize.utils";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
 
 export const Label = styled.label`
   display: block;

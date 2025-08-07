@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
-import globalTheme from "../styles/theme";
-import { convertPxToRem } from "../styles/utils/convert.utils";
+import globalTheme from "@/styles/theme";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
 import {
   buttonSize,
   buttonStyle,
   buttonResponsive,
-} from "../styles/utils/button.utils";
+} from "@/styles/utils/button.utils";
 export const ButtonGroup = styled.div`
   display: flex;
   flex-flow: row nowrap;

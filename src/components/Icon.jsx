@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import globalTheme from "../styles/theme";
-import iconStyle from "../styles/utils/icon.utils";
-import { convertPxToRem } from "../styles/utils/convert.utils";
+import globalTheme from "@/styles/theme";
+import iconStyle from "@/styles/utils/icon.utils";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
 const ICON_SIZES = {
   sm: convertPxToRem(16),
   rg: convertPxToRem(20),

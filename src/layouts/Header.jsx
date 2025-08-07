@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import useDeviceSize from "../hooks/useDeviceSize";
-import logo from "../assets/logo/logo.svg";
-import logoText from "../assets/logo/logo-text.svg";
+import useDeviceSize from "@/hooks/useDeviceSize";
+import logo from "@/assets/logo/logo.svg";
+import logoText from "@/assets/logo/logo-text.svg";
 import styled from "styled-components";
-import Button from "../components/Button";
-import Icon from "../components/Icon";
-import fontSize from "../styles/utils/fontSize.utils";
-import globalTheme from "../styles/theme";
-import { convertPxToRem } from "../styles/utils/convert.utils";
+import Button from "@/components/Button";
+import Icon from "@/components/Icon";
+import fontSize from "@/styles/utils/fontSize.utils";
+import globalTheme from "@/styles/theme";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
 const HeaderStyle = styled.header`
   height: ${convertPxToRem(70)};
   display: flex;
@@ -73,7 +73,7 @@ const UserAccessBtn = styled(Button)`
   @media all and (max-width: 744px) {
     width: ${convertPxToRem(88)};
   }
-`;
+`; // 로그인 전/후 UI 변경
 const UserAccess = ({ isLoggedIn }) => {
   if (isLoggedIn) {
     return (
@@ -88,6 +88,12 @@ const UserAccess = ({ isLoggedIn }) => {
     </UserAccessBtn>
   );
 };
+// Nav menu
+const NAV_ITEMS = [
+  { link: "/boards", menu: "자유게시판" },
+  { link: "/items", menu: "중고마켓" },
+];
+
 const Header = ({ isLoggedIn }) => {
   const { isSmall } = useDeviceSize();
   const img = isSmall ? logoText : logo;
@@ -100,13 +106,17 @@ const Header = ({ isLoggedIn }) => {
           </h1>
         </Link>
         <nav>
-          <Link to="/boards">자유게시판</Link>
-          <Link to="/items">중고마켓</Link>
+          {NAV_ITEMS.map(({ link, menu }, index) => {
+            return (
+              <Link key={index} to={link}>
+                {menu}
+              </Link>
+            );
+          })}
         </nav>
         <UserAccess isLoggedIn={isLoggedIn}></UserAccess>
       </HaederContainer>
     </HeaderStyle>
   );
 };
-
 export default Header;

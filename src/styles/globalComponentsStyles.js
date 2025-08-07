@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import globalTheme from "./theme.js";
-import generateTypographyCSS from "./utils/typography.utils.js";
-import generateColorCSS from "./utils/colors.utils.js";
+import globalTheme from "@/styles/theme.js";
+import generateTypographyCSS from "@/styles/utils/typography.utils.js";
+import generateColorCSS from "@/styles/utils/colors.utils.js";
 // :root 에 추가할 컬러팔레트 전역변수를 통해 동적 생성
 const colorVariables = Object.entries(globalTheme.colors).map(
   ([key, value]) => `--${key}: ${value};`

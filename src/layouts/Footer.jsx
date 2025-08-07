@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import Container from "../components/Container";
-import { convertPxToRem } from "../styles/utils/convert.utils";
-import globalTheme from "../styles/theme";
-import Icon from "../components/Icon";
+import Container from "@/components/Container";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
+import globalTheme from "@/styles/theme";
+import Icon from "@/components/Icon";
 const Flexbox = css`
   display: flex;
   flex-flow: row nowrap;

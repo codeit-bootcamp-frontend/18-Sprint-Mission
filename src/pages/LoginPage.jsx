@@ -1,45 +1,77 @@
-import { Link } from "react-router-dom";
-import AuthTemplate, { AuthSwitch } from "../components/AuthTemplate";
-import FormField, { Form } from "../components/FormField";
-import Button from "../components/Button";
-import SocialLoginTemplate from "../components/SocialLoginTemplate";
+import { Link, useNavigate } from "react-router-dom";
+import AuthWrapper, { AuthSwitch } from "@/components/Form/AuthWrapper";
+import FormField, { Form } from "@/components/Form/FormField";
+import Button from "@/components/Button";
+import SocialLogin from "@/components/Form/SocialLogin";
+import useFormValidation from "@/hooks/useFormValidation";
+
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const {
+    formData,
+    formErrors,
+    isFormValid,
+    showPassword,
+    togglePassword,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useFormValidation({
+    userEmail: "",
+    userPassword: "",
+  });
+
+  const handleSubmitButton = (e) => {
+    e.preventDefault();
+    handleSubmit();
+    if (isFormValid) {
+      navigate("/items");
+    }
+  };
+
   return (
-    <>
-      <AuthTemplate>
-        <Form>
-          <FormField
-            type="email"
-            label="아이디"
-            name="userEmail"
-            placeholder="이메일을 입력해주세요."
-            errorMsg="아이디를 입력해주세요."
-          ></FormField>
-          <FormField
-            type="password"
-            label="비밀번호"
-            name="userPassword"
-            placeholder="비밀번호를 입력해주세요."
-            errorMsg="비밀번호를 8자 이상 입력해주세요."
-          ></FormField>
-          <Button
-            as={Link}
-            to="/"
-            size="lg"
-            round="true"
-            full="true"
-            className="disabled"
-          >
-            로그인
-          </Button>
-          <SocialLoginTemplate></SocialLoginTemplate>
-          <AuthSwitch>
-            판다마켓이 처음이신가요?
-            <Link to="/signup">회원가입</Link>
-          </AuthSwitch>
-        </Form>
-      </AuthTemplate>
-    </>
+    <AuthWrapper>
+      <Form>
+        <FormField
+          type="email"
+          label="아이디"
+          name="userEmail"
+          placeholder="이메일을 입력해주세요."
+          errorMsg={formErrors.userEmail}
+          value={formData.userEmail}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        ></FormField>
+        <FormField
+          type="password"
+          label="비밀번호"
+          name="userPassword"
+          placeholder="비밀번호를 입력해주세요."
+          errorMsg={formErrors.userPassword}
+          value={formData.userPassword}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          showPassword={showPassword}
+          onTogglePassword={togglePassword}
+        ></FormField>
+        <Button
+          type="submit"
+          size="lg"
+          round="true"
+          full="true"
+          disabled={!isFormValid}
+          onClick={handleSubmitButton}
+        >
+          로그인
+        </Button>
+        <SocialLogin></SocialLogin>
+        <AuthSwitch>
+          판다마켓이 처음이신가요?
+          <Link to="/signup">회원가입</Link>
+        </AuthSwitch>
+      </Form>
+    </AuthWrapper>
   );
 };
+
 export default LoginPage;

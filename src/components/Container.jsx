@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { convertPxToRem } from "../styles/utils/convert.utils";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
 
 const Container = styled.div`
   width: 100%;

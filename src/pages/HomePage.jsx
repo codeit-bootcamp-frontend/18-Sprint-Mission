@@ -1,15 +1,15 @@
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
-import { convertPxToRem, convertPxToVw } from "../styles/utils/convert.utils";
-import fontSize from "../styles/utils/fontSize.utils";
-import globalTheme from "../styles/theme";
-import Container from "../components/Container";
-import Button from "../components/Button";
-import VisualImgTop from "../assets/visual/Img_home_top.png";
-import VisualImgBottom from "../assets/visual/Img_home_bottom.png";
-import IntroImg01 from "../assets/visual/Img_home_01.png";
-import IntroImg02 from "../assets/visual/Img_home_02.png";
-import IntroImg03 from "../assets/visual/Img_home_03.png";
+import { convertPxToRem, convertPxToVw } from "@/styles/utils/convert.utils";
+import fontSize from "@/styles/utils/fontSize.utils";
+import globalTheme from "@/styles/theme";
+import Container from "@/components/Container";
+import Button from "@/components/Button";
+import VisualImgTop from "@/assets/visual/Img_home_top.png";
+import VisualImgBottom from "@/assets/visual/Img_home_bottom.png";
+import IntroImg01 from "@/assets/visual/Img_home_01.png";
+import IntroImg02 from "@/assets/visual/Img_home_02.png";
+import IntroImg03 from "@/assets/visual/Img_home_03.png";
 
 const MainContent = styled.main`
   display: flex;

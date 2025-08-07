@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Container from "./Container";
-import { convertPxToRem, convertPxToVw } from "../styles/utils/convert.utils";
-import logo from "../assets/logo/logo.svg";
-import fontSize from "../styles/utils/fontSize.utils";
-import globalTheme from "../styles/theme";
+import Container from "@/components/Container";
+import { convertPxToRem, convertPxToVw } from "@/styles/utils/convert.utils";
+import logo from "@/assets/logo/logo.svg";
+import fontSize from "@/styles/utils/fontSize.utils";
+import globalTheme from "@/styles/theme";
 const MainContent = styled.main`
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ export const AuthSwitch = styled.div`
     text-decoration: underline;
   }
 `;
-const AuthTemplate = ({ children }) => {
+const AuthWrapper = ({ children }) => {
   return (
     <MainContent className="min-vh">
       <Container>
@@ -60,4 +60,4 @@ const AuthTemplate = ({ children }) => {
     </MainContent>
   );
 };
-export default AuthTemplate;
+export default AuthWrapper;

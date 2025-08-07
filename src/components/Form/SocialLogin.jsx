@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { convertPxToRem, convertPxToVw } from "../styles/utils/convert.utils";
-import { ButtonGroup } from "./Button";
-import Icon from "./Icon";
+import { convertPxToRem } from "@/styles/utils/convert.utils";
+import { ButtonGroup } from "@/components/Button";
+import Icon from "@/components/Icon";
 const SocialLogin = styled.div`
   display: flex;
   flex-direction: row;
