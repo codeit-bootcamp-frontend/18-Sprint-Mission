@@ -1,4 +1,4 @@
-import { createUrl } from "./api";
+import { createUrl } from "../../../api/api";
 
 export async function fetchProducts({
   keyword = "",

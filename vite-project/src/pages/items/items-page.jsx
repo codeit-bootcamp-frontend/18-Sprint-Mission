@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { fetchProducts } from "../../api/products";
 import SearchInput from "../../components/input/search-input";
 import OrderBySelect, {
   ORDER_BY_DEFAULT,
@@ -10,7 +9,8 @@ import PageControl from "../../components/PageControl";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
-import ProductsGrid from "../../features/items/components/products-grid";
+import { fetchProducts } from "../../features/product/apis/products";
+import ProductsGrid from "../../features/product/components/products-grid";
 import { useDevice } from "../../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
