@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Avatar from "../avatar/avatar";
-import { USER_PROFILE_CARD_SIZE } from "./user-profile-card-size";
+import USER_PROFILE_CARD_SIZE from "./user-profile-card-size";
 
 const PROFILE_INFO_STYLE = {
   [USER_PROFILE_CARD_SIZE.large]: {

@@ -5,7 +5,7 @@ import Button from "../../../components/button/button";
 import IconButton from "../../../components/button/icon-button";
 import TextInput from "../../../components/input/text-input";
 import UserProfileCard from "../../../components/user-profile-card/user-profile-card";
-import { USER_PROFILE_CARD_SIZE } from "../../../components/user-profile-card/user-profile-card-size";
+import USER_PROFILE_CARD_SIZE from "../../../components/user-profile-card/user-profile-card-size";
 import { formatElapsedTime } from "../../../utils/formatter";
 
 const StyledCommentsListItem = styled.div`

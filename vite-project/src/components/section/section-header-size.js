@@ -1,8 +1,6 @@
-const SectionHeaderSize = {
-  LARGE: "large",
-  SMALL: "small",
-};
+const SECTION_HEADER_SIZE = Object.freeze({
+  large: "large",
+  small: "small",
+});
 
-Object.freeze(SectionHeaderSize);
-
-export default SectionHeaderSize;
+export default SECTION_HEADER_SIZE;

@@ -1,9 +1,11 @@
-export const BUTTON_SIZE = {
+const BUTTON_SIZE = Object.freeze({
   medium: "medium",
   small: "small",
-};
+});
 
-export const BUTTON_TYPE = {
+const BUTTON_TYPE = Object.freeze({
   round: "round",
   pill: "pill",
-};
+});
+
+export { BUTTON_SIZE, BUTTON_TYPE };
