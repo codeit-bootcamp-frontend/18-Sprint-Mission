@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 const ProductAddImgDiv = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
 `;
 const ProductAddImgTitle = styled.h1`
   font-weight: 700;

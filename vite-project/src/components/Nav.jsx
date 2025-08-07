@@ -6,6 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 function Nav() {
   const location = useLocation();
 
+  const navActive = ["/items", "/additem"].includes(location.pathname);
+
   return (
     <div className="nav-container">
       <div className="nav-inner">
@@ -18,9 +20,7 @@ function Nav() {
             <li className="nav-menu-item">
               <Link
                 to="/items"
-                className={`nav-menu-item ${
-                  location.pathname === "/items" ? "active" : ""
-                }`}
+                className={`nav-menu-item ${navActive ? "active" : ""}`}
               >
                 중고마켓
               </Link>

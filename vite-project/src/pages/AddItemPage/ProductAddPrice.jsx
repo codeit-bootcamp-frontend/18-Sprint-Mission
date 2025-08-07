@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-const ProductAddNameDiv = styled.div`
+const ProductAddPriceDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
 `;
 
-const ProductAddNameTitle = styled.h1`
+const ProductAddPriceTitle = styled.h1`
   font-weight: 700;
   font-size: 1.8rem;
   color: var(--gray-800);
 `;
 
-const ProductAddNameInput = styled.input`
+const ProductAddPriceInput = styled.input`
   border-radius: 1.2rem;
   padding: 1.6rem 2.4rem;
   height: 5.6rem;
@@ -27,11 +27,11 @@ const ProductAddNameInput = styled.input`
   }
 `;
 
-export default function ProductAddName() {
+export default function ProductAddPrice() {
   return (
-    <ProductAddNameDiv>
-      <ProductAddNameTitle>상품명</ProductAddNameTitle>
-      <ProductAddNameInput type="text" placeholder="상품명을 입력해주세요" />
-    </ProductAddNameDiv>
+    <ProductAddPriceDiv>
+      <ProductAddPriceTitle>판매가격</ProductAddPriceTitle>
+      <ProductAddPriceInput type="text" placeholder="판매가격을 입력해주세요" />
+    </ProductAddPriceDiv>
   );
 }
