@@ -3,11 +3,11 @@
   height: 42px;
   border-radius: 8px;
   padding: 9px;
-  background-color: #3692FF;
+  background-color: var(--blue);
   font-weight: 600;
   font-size: 16px;
   line-height: 26px;
-  color: #F3F4F6;
+  color: var(--gray-100);
   text-wrap: nowrap;
   text-align: center;
 }

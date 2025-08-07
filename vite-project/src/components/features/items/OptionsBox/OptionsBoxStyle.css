@@ -9,7 +9,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 32px;
-  color: #111827;
+  color: var(--gray-900);
 }
 
 .all-products-header-search-dropdown {

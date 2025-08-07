@@ -13,7 +13,7 @@
   height: 42px;
   border-radius: 12px;
   padding: 9px 16px 9px 40px;
-  background-color: #F3F4F6;
+  background-color: var(--gray-100);
   border: none;
   font-weight: 400;
   font-size: 16px;
@@ -22,7 +22,7 @@
 }
 
 .search-input::placeholder {
-  color: #9CA3AF;
+  color: var(--gray-400);
 }
 
 .search-input:focus {

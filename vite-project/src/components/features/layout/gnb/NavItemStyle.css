@@ -1,5 +1,5 @@
 .gnb li.active {
-  color: #3692FF;
+  color: var(--blue);
 }
 
 .gnb-left ul {
@@ -11,11 +11,11 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
-  color: #4B5563;
+  color: var(--gray-600);
   cursor: pointer;
 }
 
 .gnb-left ul li:hover {
-  color: #87bdff;
+  color: var(--blue-650);
   transition: color 0.3s ease;
 }

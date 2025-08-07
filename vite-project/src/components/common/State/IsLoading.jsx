@@ -15,7 +15,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    backgroundColor: "#F3F4F6",
+    backgroundColor: "var(--gray-100)",
   },
   BEST: {
     width: "100%",
@@ -25,7 +25,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    backgroundColor: "#F3F4F6",
+    backgroundColor: "var(--gray-100)",
   },
   text: {
     fontSize: "1.2rem",

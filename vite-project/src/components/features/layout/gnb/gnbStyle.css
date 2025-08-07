@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 0 10%;
   align-items: center;
-  border-bottom: 1px solid #DFDFDF;
+  border-bottom: 1px solid var(--gray-300);
 }
 
 .gnb-left {

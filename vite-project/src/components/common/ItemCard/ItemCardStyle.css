@@ -33,7 +33,7 @@
   justify-content: start;
   align-items: start;
   gap: 6px;
-  color: #1F2937;
+  color: var(--gray-800);
 }
 
 .item-card-info-title {
@@ -64,7 +64,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  color: #4B5563;
+  color: var(--gray-600);
 }
 
 @media (max-width: 1024px) {
