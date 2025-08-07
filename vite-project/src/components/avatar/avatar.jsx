@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import defaultImg from "../assets/profile-default.svg";
+import defaultImg from "../../assets/profile-default.svg";
 
 const StyledAvatar = styled.div`
   width: ${({ $size }) => $size}px;

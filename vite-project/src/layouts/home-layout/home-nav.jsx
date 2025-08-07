@@ -2,7 +2,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import largeLogo from "../../assets/logo-large.svg";
 import smallLogo from "../../assets/logo-small.svg";
-import Avatar from "../../components/avatar";
+import Avatar from "../../components/avatar/avatar";
 
 const StyledHomeNav = styled.nav`
   padding: 0 200px;

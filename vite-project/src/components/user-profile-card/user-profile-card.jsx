@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Avatar from "../avatar";
+import Avatar from "../avatar/avatar";
 import { USER_PROFILE_CARD_SIZE } from "./user-profile-card-size";
 
 function infoGap(cardSize) {
