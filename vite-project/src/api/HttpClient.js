@@ -21,13 +21,15 @@ function createUrl(baseUrl, path, searchParams) {
   return url;
 }
 
-function HttpClient({ baseUrl }) {
-  this.baseUrl = baseUrl;
+class HttpClient {
+  constructor({ baseUrl }) {
+    this.baseUrl = baseUrl;
+  }
 
-  HttpClient.prototype.get = async function (target, params) {
+  async get(target, params) {
     let url;
-    if (baseUrl) {
-      url = createUrl(baseUrl, target, params);
+    if (this.baseUrl) {
+      url = createUrl(this.baseUrl, target, params);
     } else {
       url = target;
     }
@@ -39,7 +41,7 @@ function HttpClient({ baseUrl }) {
 
     const json = await response.json();
     return json;
-  };
+  }
 }
 
 export default HttpClient;
