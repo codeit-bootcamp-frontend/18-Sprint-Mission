@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import addImg from "../../assets/ic-plus-gray.svg";
+import addImg from "../../../assets/ic-plus-gray.svg";
 
-const StyledAddingItemImageLabel = styled.label`
+const StyledAddingProductImageInput = styled.label`
   background-color: var(--color-secondary-100);
   color: var(--color-cool-gray-400);
   font-size: 16px;
@@ -28,9 +28,9 @@ const StyledAddingItemImageLabel = styled.label`
   }
 `;
 
-function AddingItemImageInput({ onClick, onChange, ref }) {
+function AddingProductImageInput({ onClick, onChange, ref }) {
   return (
-    <StyledAddingItemImageLabel htmlFor="AddingItemImageInput">
+    <StyledAddingProductImageInput htmlFor="AddingItemImageInput">
       <img src={addImg} alt="상품 이미지 추가 아이콘" />
       <span>이미지 등록</span>
       <input
@@ -44,8 +44,8 @@ function AddingItemImageInput({ onClick, onChange, ref }) {
         }}
         ref={ref}
       />
-    </StyledAddingItemImageLabel>
+    </StyledAddingProductImageInput>
   );
 }
 
-export default AddingItemImageInput;
+export default AddingProductImageInput;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { fetchProduct } from "../../api/products";
+import { fetchProduct } from "../../features/product/apis/products";
 import { formatDateYYYYMMDD } from "../../utils/formatter";
 import FavoriteButton from "../favorite-button";
 import TagList from "../tag/tag-list";

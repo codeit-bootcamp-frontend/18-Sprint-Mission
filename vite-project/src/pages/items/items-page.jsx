@@ -76,7 +76,6 @@ function ItemsPage() {
       orderBy,
     })
       .then(({ products, numberOfPages }) => {
-        console.log(products);
         setProducts(products);
         setCurrentPage((prev) => Math.min(prev, numberOfPages));
         setNumberOfPages(numberOfPages);

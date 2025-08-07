@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import AddingItemImage from "./adding-item-image";
-import AddingItemImageInput from "./adding-item-image-input";
+import AddingProductImageInput from "./adding-product-image-input";
+import AddingProductImagePreview from "./adding-product-image-preview";
 
-const StyledAddingItemImageContainer = styled.div`
+const StyledAddingProductImageContainer = styled.div`
   display: flex;
   gap: 24px;
 
@@ -12,7 +12,7 @@ const StyledAddingItemImageContainer = styled.div`
   }
 `;
 
-const StyledErrorMessage = styled.p`
+const ErrorMessage = styled.p`
   color: var(--color-error-red);
   font-size: 16px;
   font-weight: 400;
@@ -20,7 +20,7 @@ const StyledErrorMessage = styled.p`
   margin: 16px 0 0;
 `;
 
-function AddingItemImageContainer() {
+function AddingProductImageContainer() {
   const inputRef = useRef();
   const [preview, setPreview] = useState();
   const [error, setError] = useState(false);
@@ -54,24 +54,25 @@ function AddingItemImageContainer() {
 
   return (
     <div>
-      <StyledAddingItemImageContainer>
-        <AddingItemImageInput
+      <StyledAddingProductImageContainer>
+        <AddingProductImageInput
           value={preview}
           onClick={handleInputClick}
           onChange={handleInputChange}
           ref={inputRef}
         />
         {preview && (
-          <AddingItemImage imageUrl={preview} onRemove={handleRemovePreview} />
+          <AddingProductImagePreview
+            imageUrl={preview}
+            onRemove={handleRemovePreview}
+          />
         )}
-      </StyledAddingItemImageContainer>
+      </StyledAddingProductImageContainer>
       {error && (
-        <StyledErrorMessage>
-          *이미지 등록은 최대 1개까지 가능합니다.
-        </StyledErrorMessage>
+        <ErrorMessage>*이미지 등록은 최대 1개까지 가능합니다.</ErrorMessage>
       )}
     </div>
   );
 }
 
-export default AddingItemImageContainer;
+export default AddingProductImageContainer;

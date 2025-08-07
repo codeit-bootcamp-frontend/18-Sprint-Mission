@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import removeImg from "../../assets/ic-xmark-fill.svg";
+import removeImg from "../../../assets/ic-xmark-fill.svg";
 
-const StyledAddingItemImage = styled.div`
+const StyledAddingProductImagePreview = styled.div`
   width: 282px;
   height: 282px;
   position: relative;
@@ -35,15 +35,15 @@ const StyledAddingItemImage = styled.div`
   }
 `;
 
-function AddingItemImage({ imageUrl, onRemove }) {
+function AddingProductImagePreview({ imageUrl, onRemove }) {
   return (
-    <StyledAddingItemImage>
+    <StyledAddingProductImagePreview>
       {imageUrl && <img src={imageUrl} alt="등록할 상품 이미지" />}
       <button onClick={onRemove}>
         <img src={removeImg} alt="등록한 상품 이미지 삭제" />
       </button>
-    </StyledAddingItemImage>
+    </StyledAddingProductImagePreview>
   );
 }
 
-export default AddingItemImage;
+export default AddingProductImagePreview;
