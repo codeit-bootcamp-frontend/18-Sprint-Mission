@@ -40,7 +40,7 @@ const IconWrapper = styled.div`
 /**
  * 상품 카드 리스트를 출력하는 컴포넌트
  *
- * API 데이터 구조 
+ * API 데이터 구조
  * @param {{
  *   products: Array<{
  *     id: string | number,
@@ -63,7 +63,9 @@ const ProductItem = ({ products }) => {
             </ImgWrapper>
             <CardContent>
               <div className="txt-md font-weight-500">{name}</div>
-              <div className="txt-lg font-weight-700">{price}</div>
+              <div className="txt-lg font-weight-700">
+                {price.toLocaleString()}원
+              </div>
               <IconWrapper>
                 <Icon iconName="like" size="sm"></Icon>
                 <span className="txt-xs font-weight-500 fc-gray600">
