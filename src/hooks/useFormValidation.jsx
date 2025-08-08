@@ -12,7 +12,21 @@ const VALIDATORS = {
   userPassword: validatePassword,
   userPasswordConfirm: validatePasswordConfirm,
 };
-
+/**
+ * 회원가입/로그인 등의 입력 폼 유효성 검사를 처리하는 커스텀 훅
+ *
+ * @param {Record<string, string>} [init={}] 초기 입력값 객체
+ * @returns {{
+ *   formData: Record<string, string>, // 입력값 상태
+ *   formErrors: Record<string, string>, // 에러 메시지 상태
+ *   isFormValid: boolean, // 전체 폼의 유효성 여부
+ *   showPassword: boolean, // 비밀번호 보기 상태
+ *   togglePassword: () => void, // 비밀번호 토글 함수
+ *   handleChange: (e) => void // 입력 핸들러
+ *   handleBlur: (e) => void // 포커스 아웃 핸들러
+ *   handleSubmit: (e) => void // 제출 시 유효성 검사
+ * }}
+ */
 const useFormValidation = (init = {}) => {
   // 입력 폼 상태
   const [formData, setFormData] = useState(init);
@@ -73,7 +87,7 @@ const useFormValidation = (init = {}) => {
     });
     setFormErrors(errors);
   };
-  
+
   // 데이터가 변경 될때마다 유효성 검증
   // 별도의 useEffect 이유 : 작성 전 데이터 까지 검증하는것 방지
   useEffect(() => {

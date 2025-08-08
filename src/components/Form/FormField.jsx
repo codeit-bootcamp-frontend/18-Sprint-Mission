@@ -19,16 +19,26 @@ const ErrorMsg = styled.p`
 const PasswordToggle = styled.button`
   right: ${convertPxToRem(24)};
 `;
-const PasswordToggleButton = ({ showPassword, onTogglePassword }) => {
+
+/**
+ * 비밀번호 표시/숨기기 토글 버튼 컴포넌트
+ *
+ * @param {{
+ *   isShowPassword: boolean, // 비밀번호 표시 상태
+ *   onTogglePassword: () => void // 토글 함수
+ * }} props
+ * @returns {JSX.Element}
+ */
+const PasswordToggleButton = ({ isShowPassword, onTogglePassword }) => {
   return (
     <PasswordToggle
       type="button"
       className="input-icon"
-      aria-label={showPassword ? "비밀번호 숨기기" : "비밀번호 보기"}
+      aria-label={isShowPassword ? "비밀번호 숨기기" : "비밀번호 보기"}
       onClick={onTogglePassword}
     >
       <Icon
-        iconName={showPassword ? "show" : "hide"}
+        iconName={isShowPassword ? "show" : "hide"}
         size="md"
         color="coolGray600"
       />

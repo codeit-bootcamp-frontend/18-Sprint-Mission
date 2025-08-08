@@ -12,9 +12,9 @@ import Button from "@/components/Button";
 import { InputWrapper, SearchInput } from "@/components/Form/Input";
 import Icon from "@/components/Icon";
 import SkeletonUI from "@/components/SkeletonUI";
-`width: calc((($isMaxWidth - $isTotalGutter) / $isColumn * $isGridLoopNum) + $isGutter * ($isGridLoopNum - 1));
+import Pagination from "@/components/Pagination";
+import EmptyProduct from "@/components/Product/EmptyProduct";
 
-`;
 const ItemWrapper = styled.main`
   padding: ${convertPxToRem(24)} 0;
 `;
@@ -72,9 +72,9 @@ const ItemPage = () => {
   }, [isSmall, isRegular]);
 
   // 전체 상품 리스트
-  const [allProducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState({ list: [], totalCount: 0 });
   // 베스트 상품 리스트
-  const [bestProducts, setBestProducts] = useState([]);
+  const [bestProducts, setBestProducts] = useState({ list: [], totalCount: 0 });
   // 정렬 - 기본 최신순
   const [orderBy, setOrderBy] = useState("recent");
   // 페이지 불러오기
@@ -101,27 +101,51 @@ const ItemPage = () => {
         orderBy,
         keyword,
       });
-      setBestProducts(bastProduct.list);
-      setAllProducts(allProduct.list);
+      setBestProducts(bastProduct);
+      setAllProducts(allProduct);
     } catch (error) {
       setLoadingError("상품을 불러오는데 실패했습니다");
     } finally {
       setIsLoading(false);
     }
   };
-  useEffect(() => {
-    handleProductsLoad();
-  }, [page, orderBy, keyword, allProductCount, bestProductCount]);
-
+  const hasNoProduct = allProducts.list.length === 0;
   // 샹품명 검색
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     setKeyword(e.target["search"].value);
+    setPage(1);
   };
   // 정렬변경
   const handleOrderChange = (value) => {
     setOrderBy(value);
+    setPage(1);
   };
+  // 페이지네이션
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
+  // 반응형 페이징 버튼 카운트
+  const viewBtnCount = useMemo(() => {
+    return isSmall ? 3 : isRegular ? 5 : isMedium ? 7 : 10;
+  }, [isSmall, isRegular, isMedium]);
+
+  useEffect(() => {
+    handleProductsLoad();
+  }, [page, orderBy, keyword, allProductCount, bestProductCount]);
+
+  // 반응형 전환 시 없는 페이지 대응
+  useEffect(() => {
+    const totalPage = Math.max(
+      1,
+      Math.ceil(allProducts.totalCount / allProductCount)
+    );
+    if (page > totalPage) {
+      setPage(totalPage);
+    } else if (page < 1) {
+      setPage(1);
+    }
+  }, [allProductCount, allProducts.totalCount]);
 
   return (
     <ItemWrapper>
@@ -134,8 +158,10 @@ const ItemPage = () => {
           <ProductsWrapper className="best" width={bestProductCount}>
             {isLoading ? (
               <SkeletonUI count={bestProductCount} />
+            ) : hasNoProduct ? (
+              <EmptyProduct>검색 결과가 없습니다 !</EmptyProduct>
             ) : (
-              <ProductItem products={bestProducts} />
+              <ProductItem products={bestProducts.list} />
             )}
           </ProductsWrapper>
           {loadingError && <span>{loadingError}</span>}
@@ -165,13 +191,23 @@ const ItemPage = () => {
           </Toolbar>
           <ProductsWrapper className="all" width={allProductCount}>
             {isLoading ? (
-              <SkeletonUI count={allProductCount} />
+              <SkeletonUI count={bestProductCount} />
+            ) : hasNoProduct ? (
+              <EmptyProduct>검색 결과가 없습니다 !</EmptyProduct>
             ) : (
-              <ProductItem products={allProducts} />
+              <ProductItem products={allProducts.list} />
             )}
           </ProductsWrapper>
           {loadingError && <span>{loadingError}</span>}
         </section>
+        {!hasNoProduct && (
+          <Pagination
+            currentPage={page}
+            totalPage={Math.ceil(allProducts.totalCount / allProductCount)}
+            viewBtnCount={viewBtnCount}
+            handlePageChange={handlePageChange}
+          />
+        )}
       </ItemContainer>
     </ItemWrapper>
   );

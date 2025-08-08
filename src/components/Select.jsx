@@ -50,7 +50,16 @@ const DropdownItems = styled.ul`
     }
   }
 `;
-
+/**
+ * 제품 정렬 기준을 선택하는 Select 드롭다운 컴포넌트
+ *
+ * @param {{
+ *   order: "recent" | "favorite", // 정렬 기준
+ *   onChange: (value: "recent" | "favorite") => void, // 선택 값 변경 핸들러
+ *   isLoading?: boolean // 비활성화 상태 여부
+ * }} props
+ * @returns {JSX.Element}
+ */
 const Select = ({ order, onChange, isLoading }) => {
   const [isActive, onToggleActive] = useToggle(false);
   const handleSelect = ({ target }) => {

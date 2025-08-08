@@ -5,7 +5,7 @@ import { convertPxToRem, convertPxToVw } from "@/styles/utils/convert.utils";
 import logo from "@/assets/logo/logo.svg";
 import fontSize from "@/styles/utils/fontSize.utils";
 import globalTheme from "@/styles/theme";
-const MainContent = styled.main`
+const Auth = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +48,7 @@ export const AuthSwitch = styled.div`
 `;
 const AuthWrapper = ({ children }) => {
   return (
-    <MainContent className="min-vh">
+    <Auth className="min-vh">
       <Container>
         <h1>
           <Link to="/" className="logo">
@@ -57,7 +57,7 @@ const AuthWrapper = ({ children }) => {
         </h1>
         {children}
       </Container>
-    </MainContent>
+    </Auth>
   );
 };
 export default AuthWrapper;

@@ -36,11 +36,26 @@ const IconWrapper = styled.div`
   align-items: center;
   gap: 0 ${convertPxToRem(4)};
 `;
+
+/**
+ * 상품 카드 리스트를 출력하는 컴포넌트
+ *
+ * API 데이터 구조 
+ * @param {{
+ *   products: Array<{
+ *     id: string | number,
+ *     images: string[],
+ *     name: string,
+ *     price: number | string,
+ *     favoriteCount: number
+ *   }>
+ * }} props
+ * @returns {JSX.Element}
+ */
 const ProductItem = ({ products }) => {
   return (
     <>
-      {products.map((product) => {
-        const { id, images, name, price, favoriteCount } = product;
+      {products.map(({ id, images, name, price, favoriteCount }) => {
         return (
           <CardWrapper key={id}>
             <ImgWrapper>

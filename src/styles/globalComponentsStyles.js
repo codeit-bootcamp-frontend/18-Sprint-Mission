@@ -43,6 +43,13 @@ const GlobalComponentsStyles = createGlobalStyle`
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
-   
+  #root {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: calc(var(--vh, 1vh) * 100);
+    & main {
+      flex: 1;
+    }
+  }
 `;
 export default GlobalComponentsStyles;

@@ -19,6 +19,12 @@ const SkeletonBox = styled.div`
   margin-bottom: 12px;
 `;
 
+/**
+ * Skeleton UI 컴포넌트
+ *
+ * @param {{ count: number }} param0 - 렌더링할 Skeleton 박스의 개수를 담은 객체
+ * @returns {JSX.Element[]} Skeleton 박스 리스트를 반환
+ */
 const SkeletonUI = ({ count }) => {
   return (
     <>
