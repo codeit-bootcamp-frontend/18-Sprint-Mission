@@ -1,0 +1,49 @@
+import styled from "styled-components";
+import removeImg from "../../../assets/ic-xmark-fill.svg";
+
+const StyledAddingProductImagePreview = styled.div`
+  width: 282px;
+  height: 282px;
+  position: relative;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  & > button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 168px;
+    height: 168px;
+  }
+
+  @media (max-width: 767px) {
+    width: 50%;
+    height: auto;
+  }
+`;
+
+function AddingProductImagePreview({ imageUrl, onRemove }) {
+  return (
+    <StyledAddingProductImagePreview>
+      {imageUrl && <img src={imageUrl} alt="등록할 상품 이미지" />}
+      <button onClick={onRemove}>
+        <img src={removeImg} alt="등록한 상품 이미지 삭제" />
+      </button>
+    </StyledAddingProductImagePreview>
+  );
+}
+
+export default AddingProductImagePreview;

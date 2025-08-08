@@ -6,8 +6,8 @@ import {
   BUTTON_SIZE,
   BUTTON_TYPE,
 } from "../../components/button/button-styles";
-import ItemComment from "../../components/item-comment/item-comment";
-import ItemDetail from "../../components/item-detail/item-detail";
+import ProductDetailComment from "../../features/product/components/product-detail-comment";
+import ProductDetailInfo from "../../features/product/components/product-detail-info";
 
 const StyledItemDetailPage = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const Separator = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledBackButton = styled(Link)`
   align-self: center;
   margin-top: 64px;
   text-decoration: none;
@@ -50,21 +50,21 @@ const StyledLink = styled(Link)`
 
 function BackButton({ children }) {
   return (
-    <StyledLink to="/items">
+    <StyledBackButton to="/items">
       <Button size={BUTTON_SIZE.medium} type={BUTTON_TYPE.pill}>
         {children}
         <img src={backImg} alt="되돌아가기" />
       </Button>
-    </StyledLink>
+    </StyledBackButton>
   );
 }
 
 function ItemDetailPage() {
   return (
     <StyledItemDetailPage>
-      <ItemDetail />
+      <ProductDetailInfo />
       <Separator />
-      <ItemComment />
+      <ProductDetailComment />
       <BackButton>목록으로 돌아가기</BackButton>
     </StyledItemDetailPage>
   );

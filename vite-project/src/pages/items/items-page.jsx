@@ -1,16 +1,16 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { fetchProducts } from "../../api/products";
 import SearchInput from "../../components/input/search-input";
-import ItemsGrid from "../../components/item/items-grid";
-import OrderBySelect, {
-  ORDER_BY_DEFAULT,
-} from "../../components/OrderBySelect";
-import PageControl from "../../components/PageControl";
+import PageControl from "../../components/page-control/page-control";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
+import OrderBySelect, {
+  ORDER_BY_DEFAULT,
+} from "../../components/select/order-by-select";
+import { fetchProducts } from "../../features/product/apis/products";
+import ProductsGrid from "../../features/product/components/products-grid";
 import { useDevice } from "../../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
@@ -69,7 +69,7 @@ function ItemsPage() {
     setCurrentPage(page);
   };
 
-  const fetch = useCallback(() => {
+  useEffect(() => {
     fetchProducts({
       page: currentPage,
       pageSize: productsColumns * 2,
@@ -83,15 +83,14 @@ function ItemsPage() {
       .catch(() => setProducts([]));
   }, [currentPage, orderBy, productsColumns]);
 
-  useEffect(() => {
-    fetch();
-  }, [fetch]);
-
   return (
     <StyledItemsPage>
       <Section>
         <SectionHeader title="베스트 상품" />
-        <ItemsGrid items={bestProducts} numberOfColumns={bestProductsColumns} />
+        <ProductsGrid
+          items={bestProducts}
+          numberOfColumns={bestProductsColumns}
+        />
       </Section>
       <Section spacing={24}>
         <SectionHeader title="전체 상품">
@@ -107,7 +106,7 @@ function ItemsPage() {
             onOptionClick={setOrderBy}
           />
         </SectionHeader>
-        <ItemsGrid items={allProducts} numberOfColumns={productsColumns} />
+        <ProductsGrid items={allProducts} numberOfColumns={productsColumns} />
         <PageControl
           numberOfPages={numberOfPages}
           currentPage={currentPage}

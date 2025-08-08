@@ -1,15 +1,15 @@
-export function formatPrice(price, suffix = "") {
+function formatPrice(price, suffix = "") {
   return Intl.NumberFormat().format(price) + suffix;
 }
 
-export function formatDateYYYYMMDD(dateString) {
+function formatDateYYYYMMDD(dateString) {
   const date = new Date(dateString);
   const isoString = date.toISOString();
   const index = isoString.indexOf("T");
   return isoString.slice(0, index);
 }
 
-export function formatElapsedTime(dateString) {
+function formatElapsedTime(dateString) {
   const now = new Date();
   const target = new Date(dateString);
   let diff = (now.getTime() - target.getTime()) / 1000;
@@ -42,3 +42,5 @@ export function formatElapsedTime(dateString) {
 
   return `${now.getFullYear() - target.getFullYear()}년 전`;
 }
+
+export { formatDateYYYYMMDD, formatElapsedTime, formatPrice };

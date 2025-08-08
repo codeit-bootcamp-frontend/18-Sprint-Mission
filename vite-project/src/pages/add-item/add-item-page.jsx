@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import AddingItemImageContainer from "../../components/add-item/adding-item-image-container";
 import TextInput from "../../components/input/text-input";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
-import SectionHeaderSize from "../../components/section/section-header-size";
+import SECTION_HEADER_SIZE from "../../components/section/section-header-size";
 import TagList from "../../components/tag/tag-list";
+import AddingProductImageContainer from "../../features/product/components/adding-product-image-container";
 import { formatPrice } from "../../utils/formatter";
 
 const INITIAL_INPUT_VALUES = {
@@ -86,12 +86,12 @@ function AddItemPage() {
           <Section>
             <SectionHeader
               title={"상품 이미지"}
-              size={SectionHeaderSize.SMALL}
+              size={SECTION_HEADER_SIZE.small}
             />
-            <AddingItemImageContainer />
+            <AddingProductImageContainer />
           </Section>
           <Section>
-            <SectionHeader title={"상품명"} size={SectionHeaderSize.SMALL} />
+            <SectionHeader title={"상품명"} size={SECTION_HEADER_SIZE.small} />
             <TextInput
               name="title"
               value={inputValues["title"]}
@@ -100,7 +100,10 @@ function AddItemPage() {
             />
           </Section>
           <Section>
-            <SectionHeader title={"상품 소개"} size={SectionHeaderSize.SMALL} />
+            <SectionHeader
+              title={"상품 소개"}
+              size={SECTION_HEADER_SIZE.small}
+            />
             <TextInput
               name="description"
               value={inputValues["description"]}
@@ -111,7 +114,10 @@ function AddItemPage() {
             />
           </Section>
           <Section>
-            <SectionHeader title={"판매 가격"} size={SectionHeaderSize.SMALL} />
+            <SectionHeader
+              title={"판매 가격"}
+              size={SECTION_HEADER_SIZE.small}
+            />
             <TextInput
               name="price"
               value={inputValues["price"]}
@@ -120,7 +126,7 @@ function AddItemPage() {
             />
           </Section>
           <Section>
-            <SectionHeader title={"태그"} size={SectionHeaderSize.SMALL} />
+            <SectionHeader title={"태그"} size={SECTION_HEADER_SIZE.small} />
             <StyledTagSectionContent>
               <TextInput
                 name="tag"

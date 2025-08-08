@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SectionHeaderSize from "./section-header-size";
+import SECTION_HEADER_SIZE from "./section-header-size";
 import SectionHeaderTitle from "./section-header-title";
 
 const StyledSectionHeader = styled.div`
@@ -26,7 +26,7 @@ const StyledSectionHeaderActions = styled.div`
   }
 `;
 
-function SectionHeader({ children, title, size = SectionHeaderSize.LARGE }) {
+function SectionHeader({ children, title, size = SECTION_HEADER_SIZE.large }) {
   const hasSingleAction = children?.type?.name === "SectionHeaderAction";
 
   return (

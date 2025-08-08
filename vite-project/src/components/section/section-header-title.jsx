@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import SectionHeaderSize from "./section-header-size";
+import SECTION_HEADER_SIZE from "./section-header-size";
 
 const headerTitleStyle = css`
   font-weight: 700;
@@ -25,13 +25,13 @@ const StyledSectionHeaderTitleSmall = styled.h3`
 
 function SectionHeaderTitle({ size, children }) {
   switch (size) {
-    case SectionHeaderSize.LARGE:
+    case SECTION_HEADER_SIZE.large:
       return (
         <StyledSectionHeaderTitleLarge>
           {children}
         </StyledSectionHeaderTitleLarge>
       );
-    case SectionHeaderSize.SMALL:
+    case SECTION_HEADER_SIZE.small:
       return (
         <StyledSectionHeaderTitleSmall>
           {children}
