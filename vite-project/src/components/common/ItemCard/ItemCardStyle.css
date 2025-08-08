@@ -1,0 +1,82 @@
+.item-card-link {
+  transition: transform 0.2s ease-in-out;
+}
+
+.item-card:hover .item-card-link {
+  transform: scale(1.05);
+}
+
+.item-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-card-best-img,
+.item-card-all-img {
+  border-radius: 16px;
+}
+
+.item-card-best-img {
+  width: 282px;
+  height: 282px;
+}
+
+.item-card-all-img {
+  width: 221px;
+  height: 221px;
+}
+
+.item-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 6px;
+  color: var(--gray-800);
+}
+
+.item-card-info-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.item-card-info-price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.item-card-heart {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item-card-heart img {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.item-card-heart-count {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--gray-600);
+}
+
+@media (max-width: 1024px) {
+  .item-card-best-img {
+    width: 343px;
+    height: 343px;
+  }
+}
+
+@media (max-width: 600px) {
+  .item-card-best-img {
+    width: 343px;
+    height: 343px;
+  }
+}

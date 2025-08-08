@@ -1,0 +1,13 @@
+.add-product-button {
+  width: 133px;
+  height: 42px;
+  border-radius: 8px;
+  padding: 9px;
+  background-color: var(--blue);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-100);
+  text-wrap: nowrap;
+  text-align: center;
+}

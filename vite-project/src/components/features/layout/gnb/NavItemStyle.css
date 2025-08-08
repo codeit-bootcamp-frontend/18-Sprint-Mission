@@ -1,0 +1,21 @@
+.gnb li.active {
+  color: var(--blue);
+}
+
+.gnb-left ul {
+  display: flex;
+}
+
+.gnb-left ul li {
+  padding: 21px 15px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--gray-600);
+  cursor: pointer;
+}
+
+.gnb-left ul li:hover {
+  color: var(--blue-650);
+  transition: color 0.3s ease;
+}
