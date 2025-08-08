@@ -27,11 +27,16 @@ const ProductAddNameInput = styled.input`
   }
 `;
 
-export default function ProductAddName() {
+export default function ProductAddName({ value, onChange }) {
   return (
     <ProductAddNameDiv>
       <ProductAddNameTitle>상품명</ProductAddNameTitle>
-      <ProductAddNameInput type="text" placeholder="상품명을 입력해주세요" />
+      <ProductAddNameInput
+        type="text"
+        placeholder="상품명을 입력해주세요"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
     </ProductAddNameDiv>
   );
 }

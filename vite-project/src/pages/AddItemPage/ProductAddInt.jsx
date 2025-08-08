@@ -28,11 +28,16 @@ const ProductAddIntInput = styled.textarea`
   }
 `;
 
-export default function ProductAddInt() {
+export default function ProductAddInt({ value, onChange }) {
   return (
     <ProductAddIntDiv>
       <ProductAddIntTitle>상품 소개</ProductAddIntTitle>
-      <ProductAddIntInput type="text" placeholder="상품명을 입력해주세요" />
+      <ProductAddIntInput
+        type="text"
+        placeholder="상품명을 입력해주세요"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
     </ProductAddIntDiv>
   );
 }

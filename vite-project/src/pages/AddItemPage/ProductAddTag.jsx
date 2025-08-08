@@ -53,20 +53,24 @@ const TagSpan = styled.span`
   }
 `;
 
-export default function ProductAddTag() {
+export default function ProductAddTag({ onTagsChange }) {
   const [input, setInput] = useState("");
   const [tags, setTags] = useState([]);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && input.trim()) {
       e.preventDefault();
-      setTags((prev) => [...prev, input.trim()]);
+      const newTags = [...tags, input.trim()];
+      setTags(newTags);
+      onTagsChange(newTags);
       setInput("");
     }
   };
 
   const handleDeleteClick = (deletespan) => {
-    setTags((prev) => prev.filter((_, id) => id !== deletespan));
+    const newTags = tags.filter((_, id) => id !== deletespan);
+    setTags(newTags);
+    onTagsChange(newTags);
   };
 
   return (

@@ -6,6 +6,7 @@ import ProductAddName from "./ProductAddName.jsx";
 import ProductAddInt from "./ProductAddInt.jsx";
 import ProductAddPrice from "./ProductAddPrice.jsx";
 import ProductAddTag from "./ProductAddTag.jsx";
+import { useState } from "react";
 
 const FormContainer = Styled.form`
     display: flex;
@@ -16,15 +17,48 @@ const FormContainer = Styled.form`
   `;
 
 function AddItemPage() {
+  const [formValues, setFormValues] = useState({
+    name: "",
+    description: "",
+    price: "",
+    tags: [],
+  });
+
+  const handleChange = (field, value) => {
+    setFormValues((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const isFormValid =
+    formValues.name.trim() !== "" &&
+    formValues.description.trim() !== "" &&
+    formValues.price.trim() !== "" &&
+    formValues.tags.length > 0;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+
+    console.log("등록 데이터:", formValues); //submit 확인용
+  };
+
   return (
     <>
-      <FormContainer>
-        <ProductAddHeader />
-        <ProductAddImg />
-        <ProductAddName />
-        <ProductAddInt />
-        <ProductAddPrice />
-        <ProductAddTag />
+      <FormContainer onSubmit={handleSubmit}>
+        <ProductAddHeader isFormValid={isFormValid} />
+        <ProductAddImg onChange={(img) => handleChange("image", img)} />
+        <ProductAddName
+          value={formValues.name}
+          onChange={(val) => handleChange("name", val)}
+        />
+        <ProductAddInt
+          value={formValues.description}
+          onChange={(val) => handleChange("description", val)}
+        />
+        <ProductAddPrice
+          value={formValues.price}
+          onChange={(val) => handleChange("price", val)}
+        />
+        <ProductAddTag onTagsChange={(tags) => handleChange("tags", tags)} />
       </FormContainer>
     </>
   );

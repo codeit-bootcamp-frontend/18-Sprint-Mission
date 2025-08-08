@@ -27,11 +27,16 @@ const ProductAddPriceInput = styled.input`
   }
 `;
 
-export default function ProductAddPrice() {
+export default function ProductAddPrice({ value, onChange }) {
   return (
     <ProductAddPriceDiv>
       <ProductAddPriceTitle>판매가격</ProductAddPriceTitle>
-      <ProductAddPriceInput type="text" placeholder="판매가격을 입력해주세요" />
+      <ProductAddPriceInput
+        type="text"
+        placeholder="판매가격을 입력해주세요"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
     </ProductAddPriceDiv>
   );
 }

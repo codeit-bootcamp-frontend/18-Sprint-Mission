@@ -16,18 +16,22 @@ const ProductAddHeaderButton = styled.button`
   font-weight: 600;
   font-size: 1.6rem;
   color: var(--gray-100);
-  background-color: var(--gray-400);
+  background-color: ${({ disabled }) =>
+    disabled ? "var(--gray-400)" : "var(--blue)"};
   border-radius: 0.8rem;
   width: 7.4rem;
   height: 4.2rem;
   border: 0.1rem solid var(--gray-400);
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
-export default function ProductAddHeader() {
+export default function ProductAddHeader({ isFormValid }) {
   return (
     <ProductAddHeaderDiv>
       <ProductAddHeaderTitle>상품 등록하기</ProductAddHeaderTitle>
-      <ProductAddHeaderButton>등록</ProductAddHeaderButton>
+      <ProductAddHeaderButton type="submit" disabled={!isFormValid}>
+        등록
+      </ProductAddHeaderButton>
     </ProductAddHeaderDiv>
   );
 }
