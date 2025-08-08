@@ -81,7 +81,6 @@ const DropdownItems = styled.ul`
 const Dropdown = ({ order, onChange, isLoading, className }) => {
   const [isActive, onToggleActive] = useToggle(false);
   const { isSmall } = useDeviceSize();
-  console.log(isSmall);
   const handleSelect = ({ target }) => {
     const value = target.dataset.value;
     if (value) {
