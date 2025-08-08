@@ -1,15 +1,15 @@
 import '../styles/components/dropDownList.css';
 import { memo, useEffect, useState } from 'react';
 
-function DropdownList({ changeOrder }) {
-  /**
-   * 드롭다운 리스트 메뉴
-   */
-  const orderList = [
-    { name: '최신순', value: 'recent' },
-    { name: '좋아요순', value: 'favorite' },
-  ];
+/**
+ * 드롭다운 리스트 메뉴
+ */
+const orderList = [
+  { name: '최신순', value: 'recent' },
+  { name: '좋아요순', value: 'favorite' },
+];
 
+function DropdownList({ changeOrder }) {
   const [order, setOrder] = useState(orderList[0].name);
 
   /**
@@ -21,7 +21,7 @@ function DropdownList({ changeOrder }) {
    * 드롭다운 리스트 열림/닫힘 이벤트
    */
   const onClickOpen = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevState) => !prevState);
   };
 
   /**

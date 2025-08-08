@@ -41,8 +41,6 @@ export default function Pagination({
     }
 
     setPageArr(pages);
-
-    console.log(pages);
   }, [pageGroup, contentNum]);
 
   /**

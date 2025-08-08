@@ -32,15 +32,23 @@ export default function Signup() {
     pw: '',
   });
 
+  const onValid = (data) => {
+    console.log('✅ 유효성 검사 성공! 데이터:', data);
+    setSignupForm(data);
+  };
+
   /**
    * React-Hook-Form 사용 객체 선언
    */
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid },
     handleSubmit,
     getValues,
-  } = useForm({ mode: 'onBlur' });
+  } = useForm({
+    mode: 'onBlur',
+  });
+  console.log(isValid);
 
   return (
     <>
@@ -52,7 +60,7 @@ export default function Signup() {
             </Link>
           </div>
 
-          <form id="signup-form" onSubmit={handleSubmit}>
+          <form id="signup-form" onSubmit={handleSubmit(onValid)}>
             <div className="input-container">
               <div id="email-box" className="email-box">
                 <label htmlFor="email" className="basic-p">

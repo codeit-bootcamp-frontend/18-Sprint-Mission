@@ -11,14 +11,15 @@ export default function useMediaQuery(query) {
   /**
    * 반환할 데이터를 담아둘 state
    */
+
   const [isMatch, setIsMatch] = useState(() => getMatches(query));
+
+  const handleChange = (e) => {
+    setIsMatch(e.matches);
+  };
 
   useEffect(() => {
     const media = window.matchMedia(query);
-
-    const handleChange = (e) => {
-      setIsMatch(e.matches);
-    };
 
     media.addEventListener('change', handleChange);
 

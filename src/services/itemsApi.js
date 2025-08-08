@@ -3,15 +3,11 @@
  * @param {string} orderBy
  * @returns {object}
  */
-const requestProductList = async (
-  orderBy = 'recent',
-  page = 1,
-  pageSize = 10
-) => {
+const requestProductList = async (querys) => {
   const url = new URL('https://panda-market-api.vercel.app/products');
-  url.searchParams.append('page', page);
-  url.searchParams.append('pageSize', pageSize);
-  url.searchParams.append('orderBy', orderBy);
+  url.searchParams.append('page', querys.page);
+  url.searchParams.append('pageSize', querys.pageSize);
+  url.searchParams.append('orderBy', querys.orderBy);
 
   const response = await fetch(url, {
     method: 'get',
