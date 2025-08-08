@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useDeviceSize from "@/hooks/useDeviceSize";
 import logo from "@/assets/logo/logo.svg";
 import logoText from "@/assets/logo/logo-text.svg";
@@ -18,6 +18,8 @@ const HeaderStyle = styled.header`
   left: 0;
   padding: 0 ${convertPxToRem(40)};
   background-color: #fff;
+  z-index: 10;
+  border-bottom: 1px solid ${globalTheme.colors.gray200};
   & .logo {
     height: ${convertPxToRem(51)};
   }
@@ -93,7 +95,7 @@ const NAV_ITEMS = [
   { link: "/boards", menu: "자유게시판" },
   { link: "/items", menu: "중고마켓" },
 ];
-
+const getNavStyle = ({ isActive }) => ({ color: isActive && "#3692ff" });
 const Header = ({ isLoggedIn }) => {
   const { isSmall } = useDeviceSize();
   const img = isSmall ? logoText : logo;
@@ -108,9 +110,9 @@ const Header = ({ isLoggedIn }) => {
         <nav>
           {NAV_ITEMS.map(({ link, menu }, index) => {
             return (
-              <Link key={index} to={link}>
+              <NavLink key={index} to={link} style={getNavStyle}>
                 {menu}
-              </Link>
+              </NavLink>
             );
           })}
         </nav>

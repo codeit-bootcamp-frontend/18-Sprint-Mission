@@ -1,10 +1,10 @@
+import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import AuthWrapper, { AuthSwitch } from "@/components/Form/AuthWrapper";
 import FormField, { Form } from "@/components/Form/FormField";
 import Button from "@/components/Button";
 import SocialLogin from "@/components/Form/SocialLogin";
 import useFormValidation from "@/hooks/useFormValidation";
-
 const LoginPage = () => {
   const navigate = useNavigate();
   const {
@@ -31,6 +31,9 @@ const LoginPage = () => {
 
   return (
     <AuthWrapper>
+      <Helmet>
+        <title>판다마켓 - 로그인</title>
+      </Helmet>
       <Form>
         <FormField
           type="email"

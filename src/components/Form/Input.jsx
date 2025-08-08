@@ -11,17 +11,15 @@ export const Label = styled.label`
 `;
 export const InputWrapper = styled.div`
   position: relative;
-  & .password-toggle {
+  & .input-icon {
     position: absolute;
     top: 50%;
-    right: ${convertPxToRem(24)};
     transform: translate(0, -50%);
   }
 `;
-const Input = styled.input`
+export const InputStyled = styled.input`
   display: block;
   width: 100%;
-  padding: ${convertPxToRem(16)} ${convertPxToRem(24)};
   border-radius: ${convertPxToRem(12)};
   background-color: ${globalTheme.colors.coolGray100};
   box-shadow: inset 0 0 0 1px
@@ -33,5 +31,12 @@ const Input = styled.input`
   ${({ error }) =>
     !error &&
     `&:focus{box-shadow: inset 0 0 0 1px ${globalTheme.colors.primary100}}`}
+`;
+export const SearchInput = styled(InputStyled)`
+  padding: ${convertPxToRem(9)} ${convertPxToRem(16)};
+  padding-left: ${convertPxToRem(44)};
+`;
+const Input = styled(InputStyled)`
+  padding: ${convertPxToRem(16)} ${convertPxToRem(24)};
 `;
 export default Input;

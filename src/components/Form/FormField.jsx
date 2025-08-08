@@ -16,11 +16,14 @@ const ErrorMsg = styled.p`
   font-weight: 600;
   color: ${globalTheme.colors.error};
 `;
+const PasswordToggle = styled.button`
+  right: ${convertPxToRem(24)};
+`;
 const PasswordToggleButton = ({ showPassword, onTogglePassword }) => {
   return (
-    <button
+    <PasswordToggle
       type="button"
-      className="password-toggle"
+      className="input-icon"
       aria-label={showPassword ? "비밀번호 숨기기" : "비밀번호 보기"}
       onClick={onTogglePassword}
     >
@@ -29,7 +32,7 @@ const PasswordToggleButton = ({ showPassword, onTogglePassword }) => {
         size="md"
         color="coolGray600"
       />
-    </button>
+    </PasswordToggle>
   );
 };
 const FormField = ({

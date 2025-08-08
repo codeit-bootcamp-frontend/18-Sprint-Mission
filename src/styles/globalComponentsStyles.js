@@ -11,7 +11,7 @@ const GlobalComponentsStyles = createGlobalStyle`
   :root {
     ${colorVariables}
     --base-text-color: var(--gray800);
-    --base-background-color: var(--white);
+    --base-background-color: #fcfcfc;
     --base-font-family: "Pretendard";
   }
   * {

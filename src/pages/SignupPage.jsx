@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import AuthWrapper, { AuthSwitch } from "@/components/Form/AuthWrapper";
 import FormField, { Form } from "@/components/Form/FormField";
@@ -33,6 +34,9 @@ const SignupPage = () => {
 
   return (
     <AuthWrapper>
+      <Helmet>
+        <title>판다마켓 - 회원가입</title>
+      </Helmet>
       <Form>
         <FormField
           type="email"

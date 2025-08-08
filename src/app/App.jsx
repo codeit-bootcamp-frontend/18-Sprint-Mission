@@ -1,9 +1,9 @@
 import { ThemeProvider } from "styled-components";
 import { Outlet } from "react-router-dom";
-import ResetStyles from "../styles/globalResetStyles";
-import ComponentsStyles from "../styles/globalComponentsStyles";
-import globalTheme from "../styles/theme";
-
+import ResetStyles from "@/styles/globalResetStyles";
+import ComponentsStyles from "@/styles/globalComponentsStyles";
+import globalTheme from "@/styles/theme";
+// import api from
 const App = () => {
   return (
     <>
