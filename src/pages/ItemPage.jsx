@@ -7,7 +7,7 @@ import useDeviceSize from "@/hooks/useDeviceSize";
 import { convertPxToRem } from "@/styles/utils/convert.utils";
 import Container from "@/components/Container";
 import ProductItem from "@/components/Product/ProductItem";
-import Select from "@/components/Select";
+import Dropdown from "@/components/Dropdown";
 import Button from "@/components/Button";
 import { InputWrapper, SearchInput } from "@/components/Form/Input";
 import Icon from "@/components/Icon";
@@ -39,15 +39,16 @@ const ProductsWrapper = styled.ul`
     }};
   }
 `;
+
 const Toolbar = styled.div`
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: start;
   align-items: center;
-  justify-content: end;
-  gap: 0 ${convertPxToRem(12)};
+  gap: ${convertPxToRem(8)} ${convertPxToRem(14)};
   & h2 {
     flex: 1;
+    white-space: nowrap;
   }
   & input {
     min-width: 240px;
@@ -57,6 +58,27 @@ const Toolbar = styled.div`
   }
   & ${Button} {
     width: ${convertPxToRem(130)};
+  }
+  @media all and (max-width: 680px) {
+    & h2 {
+      order: 1;
+    }
+    & ${Button} {
+      order: 2;
+    }
+    & ${InputWrapper} {
+      width: calc(100% - ${convertPxToRem(14 + 130)});
+      order: 3;
+    }
+    & .dropdown {
+      order: 4;
+    }
+  }
+  @media all and (max-width: 480px) {
+    & ${InputWrapper} {
+      width: calc(100% - ${convertPxToRem(14 + 44)});
+      order: 3;
+    }
   }
 `;
 
@@ -183,11 +205,12 @@ const ItemPage = () => {
             <Button as={Link} to="/additem" size="xs">
               상품 등록하기
             </Button>
-            <Select
+            <Dropdown
               order={orderBy}
               onChange={handleOrderChange}
               disabled={isLoading}
-            ></Select>
+              className="dropdown"
+            ></Dropdown>
           </Toolbar>
           <ProductsWrapper className="all" width={allProductCount}>
             {isLoading ? (

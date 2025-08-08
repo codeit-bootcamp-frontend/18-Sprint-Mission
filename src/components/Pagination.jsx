@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import useDeviceSize from "@/hooks/useDeviceSize";
 import { convertPxToRem } from "@/styles/utils/convert.utils";
 import Icon from "./Icon";
@@ -25,12 +25,14 @@ const PageButton = styled.button`
   ${fontSize("txt-lg")};
   ${({ isCurrent }) =>
     isCurrent
-      ? `
-    color:#fff;
-    background-color:${globalTheme.colors.primary100}`
-      : `
-    color:${globalTheme.colors.coolGray500};
-    background-color:#fff`}
+      ? css`
+          color: #fff;
+          background-color: ${globalTheme.colors.primary100};
+        `
+      : css`
+          color: ${globalTheme.colors.coolGray500};
+          background-color: #fff;
+        `}
 `;
 /**
  * 페이지네이션 버튼 목록을 출력하는 컴포넌트
