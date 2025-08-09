@@ -10,7 +10,6 @@ import VisualImgBottom from "@/assets/visual/Img_home_bottom.png";
 import IntroImg01 from "@/assets/visual/Img_home_01.png";
 import IntroImg02 from "@/assets/visual/Img_home_02.png";
 import IntroImg03 from "@/assets/visual/Img_home_03.png";
-
 const MainContent = styled.main`
   display: flex;
   flex-direction: column;

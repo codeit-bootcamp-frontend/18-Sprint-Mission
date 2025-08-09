@@ -5,5 +5,10 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src", "src/pages/._SignRefa.jsx", "src/pages/._SignRefa2.jsx"]
+  "include": [
+    "src",
+    "src/pages/._SignRefa.jsx",
+    "src/pages/._SignRefa2.jsx",
+    "src/pages/ComponentTestPage.jsx"
+  ]
 }

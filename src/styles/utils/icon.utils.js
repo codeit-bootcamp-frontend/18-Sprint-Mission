@@ -34,127 +34,127 @@ import { css } from "styled-components";
 // 아이콘 변수
 const ICONS = {
   alignmentCenter: {
-    name: alignmentCenter,
+    url: alignmentCenter,
     type: "mask",
   },
   alignmentLeft: {
-    name: alignmentLeft,
+    url: alignmentLeft,
     type: "mask",
   },
   alignmentRight: {
-    name: alignmentRight,
+    url: alignmentRight,
     type: "mask",
   },
   arrow_down: {
-    name: arrow_down,
+    url: arrow_down,
     type: "mask",
   },
   back: {
-    name: back,
+    url: back,
     type: "mask",
   },
   bold: {
-    name: bold,
+    url: bold,
     type: "mask",
   },
   bullet: {
-    name: bullet,
+    url: bullet,
     type: "mask",
   },
   check: {
-    name: check,
+    url: check,
     type: "bg",
   },
   chevronLeft: {
-    name: chevronLeft,
+    url: chevronLeft,
     type: "mask",
   },
   chevronRight: {
-    name: chevronRight,
+    url: chevronRight,
     type: "mask",
   },
   close: {
-    name: close,
+    url: close,
     type: "bg",
   },
   coloring: {
-    name: coloring,
+    url: coloring,
     type: "mask",
   },
   facebook: {
-    name: facebook,
+    url: facebook,
     type: "mask",
   },
   google: {
-    name: google,
+    url: google,
     type: "bg",
   },
   hide: {
-    name: hide,
+    url: hide,
     type: "mask",
   },
   instagram: {
-    name: instagram,
+    url: instagram,
     type: "mask",
   },
   italic: {
-    name: italic,
+    url: italic,
     type: "mask",
   },
   kakao: {
-    name: kakao,
+    url: kakao,
     type: "bg",
   },
   likeFill: {
-    name: likeFill,
+    url: likeFill,
     type: "bg",
   },
   like: {
-    name: like,
+    url: like,
     type: "mask",
   },
   medal: {
-    name: medal,
+    url: medal,
     type: "bg",
   },
   numbering: {
-    name: numbering,
+    url: numbering,
     type: "mask",
   },
   plus: {
-    name: plus,
+    url: plus,
     type: "mask",
   },
   profile: {
-    name: profile,
+    url: profile,
     type: "bg",
   },
   searchDarker: {
-    name: searchDarker,
+    url: searchDarker,
     type: "mask",
   },
   search: {
-    name: search,
+    url: search,
     type: "mask",
   },
   show: {
-    name: show,
+    url: show,
     type: "mask",
   },
   sort: {
-    name: sort,
+    url: sort,
     type: "mask",
   },
   twitter: {
-    name: twitter,
+    url: twitter,
     type: "mask",
   },
   underline: {
-    name: underline,
+    url: underline,
     type: "mask",
   },
   youtube: {
-    name: youtube,
+    url: youtube,
     type: "mask",
   },
 };
@@ -175,10 +175,9 @@ const backgroundIconStyle = (url) => css`
 `;
 // 아이콘의 타입별 함수실행
 const iconStyle = (iconName) => {
-  if (ICONS[iconName].type === "bg") {
-    return backgroundIconStyle(ICONS[iconName].name);
-  } else {
-    return maskIconStyle(ICONS[iconName].name);
-  }
+  const icon = ICONS[iconName];
+  if (!icon) return;
+  return icon.type === "bg" ? backgroundIconStyle(icon.url) : maskIconStyle(icon.url);
 };
+
 export default iconStyle;
