@@ -1,13 +1,12 @@
 import styled, { css } from "styled-components";
 import selectDownImgMobile from "../../assets/ic-arrow-down-list.svg";
 import selectDownImg from "../../assets/ic-triangle-down.svg";
+import { ORDER_BY_DEFAULT, ORDER_BY_VALUES } from "../utils/order-by-values";
 
 const ORDER_BY_TITLE = {
   recent: "최신순",
   favorite: "좋아요순",
 };
-const ORDER_BY_VALUES = Array.from(Object.keys(ORDER_BY_TITLE));
-export const ORDER_BY_DEFAULT = "recent";
 
 const baseStyle = css`
   /* typography */
@@ -21,7 +20,7 @@ const baseStyle = css`
   border-radius: 12px;
 `;
 
-const StyledOrderBySelect = styled.button`
+const StyledProductSortSelect = styled.button`
   ${baseStyle}
   background-color: white;
   padding: 8px 20px;
@@ -61,7 +60,7 @@ const StyledSelectDropdown = styled.div`
 function SelectDropdown({ options, onOptionClick }) {
   return (
     <StyledSelectDropdown>
-      {options.map((option, index) => {
+      {options.map((option) => {
         return (
           <DropdownOption key={option} onClick={() => onOptionClick(option)}>
             {ORDER_BY_TITLE[option]}
@@ -72,7 +71,7 @@ function SelectDropdown({ options, onOptionClick }) {
   );
 }
 
-function OrderBySelect({
+function ProductSortSelect({
   value,
   isOpen = false,
   isMobile,
@@ -83,7 +82,7 @@ function OrderBySelect({
   const selectImage = isMobile ? selectDownImgMobile : selectDownImg;
 
   return (
-    <StyledOrderBySelect onClick={onClick}>
+    <StyledProductSortSelect onClick={onClick}>
       {isMobile || <span>{ORDER_BY_TITLE[currentOption]}</span>}
       <img src={selectImage} alt="정렬 선택" />
       {isOpen && (
@@ -92,8 +91,8 @@ function OrderBySelect({
           onOptionClick={onOptionClick}
         />
       )}
-    </StyledOrderBySelect>
+    </StyledProductSortSelect>
   );
 }
 
-export default OrderBySelect;
+export default ProductSortSelect;

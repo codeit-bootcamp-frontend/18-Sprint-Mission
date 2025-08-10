@@ -6,11 +6,10 @@ import PageControl from "../../components/page-control/page-control";
 import Section from "../../components/section/section";
 import SectionHeader from "../../components/section/section-header";
 import SectionHeaderAction from "../../components/section/section-header-action";
-import OrderBySelect, {
-  ORDER_BY_DEFAULT,
-} from "../../components/select/order-by-select";
 import { fetchProducts } from "../../features/product/apis/products";
+import ProductSortSelect from "../../features/product/components/product-sort-select";
 import ProductsGrid from "../../features/product/components/products-grid";
+import { ORDER_BY_DEFAULT } from "../../features/product/utils/order-by-values";
 import { useDevice } from "../../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
@@ -98,7 +97,7 @@ function ItemsPage() {
           <SectionHeaderAction onClick={handleAddClick}>
             상품 등록하기
           </SectionHeaderAction>
-          <OrderBySelect
+          <ProductSortSelect
             value={orderBy}
             isOpen={isSelectOpen}
             isMobile={deviceInfo.isMobile}
