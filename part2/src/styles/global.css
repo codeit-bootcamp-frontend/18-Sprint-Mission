@@ -1,0 +1,90 @@
+:root {
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-600: #4b5563;
+  --gray-500: #6b7280;
+  --gray-400: #9ca3af;
+  --gray-200: #f7f9fa;
+  --gray-100: #f9fafb;
+  --gray-50: #f3f4f6;
+
+  --blue: #3692ff;
+
+  --header-height: 70px; /* 수정 시 해당 코드만 수정하면 됨 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--gray-800);
+  font-family: 'Pretendard', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dfdfdf;
+  z-index: 100;
+}
+
+/* Link */
+a {
+  text-decoration: none;
+  color: inherit; /* 부모 요소 값 상속 */
+}
+
+.button {
+  background-color: var(--blue);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.withHeader {
+  margin-top: var(--header-height);
+}
+
+.wrapper {
+  padding: 0 16px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 0 24px;
+  }
+
+  .wrapper {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  header {
+    padding: 0 200px;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}

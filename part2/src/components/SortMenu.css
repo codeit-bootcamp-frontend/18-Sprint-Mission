@@ -1,0 +1,60 @@
+.sortWrapper {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.sortDropdownMenu {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  z-index: 99;
+}
+
+.sortItem {
+  padding: 12px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sortItem:first-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sortDropdownButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 7px 18px;
+  font-size: 16px;
+  color: var(--gray-800);
+  background-color: #ffffff;
+  cursor: pointer;
+  width: 120px;
+}
+
+.labelButton,
+.downArrowButton {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobileSortButton {
+    display: none;
+  }
+
+  .labelButton,
+  .downArrowButton {
+    display: inline;
+  }
+}
