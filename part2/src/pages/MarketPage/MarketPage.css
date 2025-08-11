@@ -1,0 +1,131 @@
+.bestContainer {
+  padding: 10px 0 20px;
+  margin-bottom: 40px;
+}
+
+.allContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 20px;
+}
+
+.allSearchSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.bestTitle,
+.allTitle {
+  color: var(--gray-900);
+  font-size: 24px;
+}
+
+.bestItemSection {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px 8px;
+}
+
+.allItemSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 8px;
+}
+
+.itemCard {
+  color: var(--gray-800);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.itemCardThumbnail {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.itemSummary {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis; /* ... */
+  white-space: nowrap;
+}
+
+.itemPrice {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.favoriteCount {
+  display: flex;
+  align-items: center;
+  color: var(--gray-600);
+  gap: 3px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--gray-100);
+  flex: 1 1;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.searchBarInput {
+  padding: 10px 50px 10px 0;
+  background-color: var(--gray-100);
+  border: none;
+}
+
+.searchBarInput::placeholder {
+  color: var(--gray-400);
+  font-size: 16px;
+  width: 200px;
+}
+
+.searchBarInput:focus {
+  outline: none;
+}
+
+.paginationBarSection {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .bestItemSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .allItemSection {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .bestItemSection {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .allItemSection {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px 24px;
+  }
+}
