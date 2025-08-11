@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "../api";
+import { getProducts } from "../../api";
 import "./ItemsPage.css";
-import { useResponsive } from "./Responsive";
-import BestProducts from "../components/BestProducts";
-import TotalProducts from "../components/TotalProducts";
-import Pagination from "../components/Pagination";
+import { useResponsive } from "../../components/Responsive";
+import BestProducts from "./BestProducts";
+import TotalProducts from "./TotalProducts";
+import Pagination from "../../components/Pagination";
 
 function ItemsPage() {
   const [orderBy, setOrderBy] = useState("recent");
@@ -20,12 +20,12 @@ function ItemsPage() {
   useEffect(() => {
     async function fetchBestProducts() {
       try {
-        const [list] = await getProducts({
+        const res = await getProducts({
           page: 1,
           pageSize: bestCount,
           orderBy: "favorite",
         });
-        setBestProducts(list);
+        setBestProducts(res.list);
       } catch (error) {
         setError(error.message);
       }
@@ -37,14 +37,14 @@ function ItemsPage() {
   useEffect(() => {
     async function fetchTotalProducts() {
       try {
-        const [list, count] = await getProducts({
+        const res = await getProducts({
           page,
           pageSize: totalCountPerPage,
           orderBy,
           keyword,
         });
-        setTotalProducts(list);
-        setTotalCount(count);
+        setTotalProducts(res.list);
+        setTotalCount(res.totalCount);
       } catch (error) {
         setError(error.message);
       }

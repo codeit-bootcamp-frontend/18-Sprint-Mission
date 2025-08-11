@@ -1,9 +1,4 @@
 @import url("./reset.css");
-@import url("./variable.css");
-
-html {
-  font-size: 62.5%;
-}
 
 .nav-container {
   border-bottom: 0.1rem solid #dfdfdf;

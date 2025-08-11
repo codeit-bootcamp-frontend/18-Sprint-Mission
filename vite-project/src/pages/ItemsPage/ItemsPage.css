@@ -1,9 +1,4 @@
-@import url("../components/reset.css");
-@import url("../components/variable.css");
-
-html {
-  font-size: 62.5%;
-}
+@import url("../../components/reset.css");
 
 .products-container {
   display: flex;
@@ -209,6 +204,7 @@ html {
 
   .total-products-card {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
 
   .total-product-card-img {
@@ -237,7 +233,47 @@ html {
     gap: 0;
   }
 
-  .total-products-content select {
-    padding: 0;
+  .total-products-content input {
+    display: flex;
+    width: 29rem;
+  }
+
+  .select-dropdown {
+    position: relative;
+  }
+
+  .selected-option {
+    border: 0.1rem solid var(--gray-200);
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 1.2rem;
+    padding: 0.9rem;
+    cursor: pointer;
+  }
+
+  .option-list {
+    position: absolute;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--gray-800);
+    border: 0.1rem solid var(--gray-200);
+    right: 0;
+    background-color: white;
+    border-radius: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+
+  .option-list li {
+    width: 13rem;
+    height: 4.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .option-list li:first-child {
+    border-bottom: 0.1rem solid var(--gray-200);
   }
 }
