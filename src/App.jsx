@@ -16,7 +16,6 @@ function App() {
   const handleNewestClick = () => setOrder("updatedAt");
   const handleLikeClick = () => setOrder("favoriteCount");
 
-  
   useEffect(() => {
     const handleLoad = async () => {
       const { list } = await getProducts({});

@@ -3,9 +3,6 @@ import ProductCard from "./ProductCard";
 import ProductTitle from "./ProductTitle";
 
 export default function BestProducts({ bestitems, displayCount }) {
-  // 미디어 쿼리
-  
-
   return (
     <div className="best-product-wrap">
       <ProductTitle>베스트 상품</ProductTitle>
