@@ -19,7 +19,7 @@ function App() {
   const handleLoad = async () => {
     const { list } = await getPanda();
     setItems(list);
-    const { list : best } = await getPanda();
+    const { list : best } = await getPanda({orderBy: 'favorite'});
     setBestItems(best);
   };
 
