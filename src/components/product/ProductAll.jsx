@@ -11,7 +11,6 @@ export default function ProductAll({
   items,
   onClickNew,
   onClickLike,
-  displayCount,
   isMobile,
 }) {
   return (
@@ -35,7 +34,7 @@ export default function ProductAll({
         />
       )}
       <ul className="product-all-list">
-        {items.slice(0, displayCount).map((item) => {
+        {items.map((item) => {
           return (
             <li key={item.id}>
               <ProductCard item={item} />
