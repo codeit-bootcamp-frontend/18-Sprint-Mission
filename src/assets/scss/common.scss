@@ -1,0 +1,73 @@
+@import url("../css/fonts.css");
+@import url("../css/reset.css");
+@import url("../css/variable.css");
+@import "./_variables";
+
+body {
+  width: 100%;
+  font-family: "Pretendard-Regular";
+  font-size: var(--common);
+}
+
+#root {
+  width: 100%;
+}
+
+.section {
+  margin: 4rem 0;
+}
+
+.section:first-child {
+  margin-top: 8.4rem;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 0 4rem;
+  width: 100%;
+  max-width: 128rem;
+}
+
+.icon {
+  display: inline-block;
+  line-height: 1;
+  font-size: 0;
+  font-style: normal;
+}
+
+.hidden {
+  overflow: hidden;
+  display: inline-block;
+  margin: -1px;
+  width: 0;
+  height: 0;
+  font-size: 1px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 2.3rem;
+  font-size: var(--common);
+  font-weight: 600;
+  color: var(--white100);
+  background-color: var(--blue100);
+  border-radius: 9999px;
+  -webkit-border-radius: 9999px;
+  -moz-border-radius: 9999px;
+  -ms-border-radius: 9999px;
+  -o-border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.medium-button {
+  height: 4.8rem;
+}
+
+@include mobile {
+  .inner {
+    padding: 0 2rem;
+    width: 100%;
+  }
+}

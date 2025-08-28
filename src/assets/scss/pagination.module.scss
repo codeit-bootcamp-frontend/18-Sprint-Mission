@@ -1,0 +1,30 @@
+@import "./_variables";
+.pagination {
+  @include center;
+  gap: 0 0.4rem;
+  margin: 5.3rem auto 5.8rem;
+  width: fit-content;
+
+  .button {
+    @include center;
+    padding: 0;
+    width: 4rem;
+    height: 4rem;
+    @include border(var(--gray200), all);
+    @include round(9999px);
+  }
+
+  ul {
+    @include center;
+    gap: 0 0.4rem;
+
+    .button {
+      &:hover,
+      &.active {
+        color: var(--white100);
+        background-color: var(--Secondary100);
+        border-color: var(--Secondary100);
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "./_variables";
+
+.menu {
+  margin-left: auto;
+  height: 100%;
+  > li {
+    position: relative;
+    &:hover {
+      .dropMenu {
+        display: block;
+      }
+    }
+  }
+  .dropMenu {
+    display: none;
+    position: absolute;
+    right: 0;
+    white-space: nowrap;
+    .logoutButton {
+      margin-top: 0.4rem;
+      padding: 1.6rem 4.15rem;
+      font-size: var(--common);
+      background-color: var(--white100);
+      @include border(var(--gray500));
+      @include round(1.6rem);
+    }
+  }
+  .profileButton {
+    margin-top: 0.5rem;
+    padding: 0;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--gray400);
+    @include round(4rem);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.loginButton {
+  width: 12.8rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}

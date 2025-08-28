@@ -1,0 +1,20 @@
+@import "./_variables";
+
+.searchGroup {
+  padding: 0 2rem 0 4.4rem;
+  height: 4.2rem;
+  background: url("../images/seach_icon.svg") 2rem center no-repeat var(--gray100);
+  @include round;
+  input {
+    width: 100%;
+    height: 100%;
+    font-size: var(--common);
+    color: var(--gray400);
+  }
+}
+
+@include mobile {
+  .searchGroup {
+    @include round(1.2rem);
+  }
+}

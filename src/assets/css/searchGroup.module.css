@@ -1,0 +1,26 @@
+.searchGroup {
+  padding: 0 2rem 0 4.4rem;
+  height: 4.2rem;
+  background: url("../images/seach_icon.svg") 2rem center no-repeat var(--gray100);
+  border-radius: 1.6rem;
+  -webkit-border-radius: 1.6rem;
+  -moz-border-radius: 1.6rem;
+  -ms-border-radius: 1.6rem;
+  -o-border-radius: 1.6rem;
+}
+.searchGroup input {
+  width: 100%;
+  height: 100%;
+  font-size: var(--common);
+  color: var(--gray400);
+}
+
+@media all and (max-width: 47.9375rem) {
+  .searchGroup {
+    border-radius: 1.2rem;
+    -webkit-border-radius: 1.2rem;
+    -moz-border-radius: 1.2rem;
+    -ms-border-radius: 1.2rem;
+    -o-border-radius: 1.2rem;
+  }
+}/*# sourceMappingURL=searchGroup.module.css.map */

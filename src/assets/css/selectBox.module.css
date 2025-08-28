@@ -1,0 +1,69 @@
+.selectBoxGroup {
+  position: relative;
+}
+.selectBoxGroup .selectButton {
+  padding: 0.9rem 4.4rem 0.9rem 2rem;
+  width: 13rem;
+  height: 4.2rem;
+  background: url("../images/ic_arrow_down.svg") right 2rem center no-repeat;
+  border: 1px solid var(--gray200);
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+}
+.selectBoxGroup .selectOption {
+  overflow: hidden;
+  position: absolute;
+  top: 4.5rem;
+  width: 13rem;
+  background-color: var(--white100);
+}
+.selectBoxGroup .selectOption li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.2rem;
+  cursor: pointer;
+}
+.selectBoxGroup .selectOption li:first-child {
+  border-bottom: 1px solid var(--gray200);
+}
+.selectBoxGroup .selectOption li:hover {
+  background-color: var(--gray100);
+}
+.selectBoxGroup .selectOption.active {
+  display: block;
+  top: 5rem;
+  height: fit-content;
+  border: 1px solid var(--gray200);
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+  transition: top 0.5s 0s;
+  -webkit-transition: top 0.5s 0s;
+  -moz-transition: top 0.5s 0s;
+  -ms-transition: top 0.5s 0s;
+  -o-transition: top 0.5s 0s;
+}
+
+@media all and (max-width: 47.9375rem) {
+  .selectBoxGroup span {
+    overflow: hidden;
+    display: block;
+    margin: -1px;
+    width: 0;
+    height: 0;
+  }
+  .selectBoxGroup .selectButton {
+    padding: 0;
+    width: 4.2rem;
+    background: url("../images/m-select-button.svg") center no-repeat;
+  }
+  .selectOption {
+    right: 0;
+  }
+}/*# sourceMappingURL=selectBox.module.css.map */
