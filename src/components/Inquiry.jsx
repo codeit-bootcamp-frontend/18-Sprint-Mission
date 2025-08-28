@@ -17,6 +17,7 @@ import { useNavigate } from "react-router";
 import icBack from "../assets/icons/ic_back.svg";
 import imgEmptyMd from "../assets/images/img_inquiry_empty_md.png";
 import useService from "../hooks/useService";
+import KebabMenu from "./kebab/KebabMenu";
 
 export default function Inquiry({ id }) {
   const navigate = useNavigate();
@@ -47,8 +48,16 @@ export default function Inquiry({ id }) {
                 style={{ borderBottom: `1px solid ${palette.gray200}` }}
                 key={el.id}
               >
-                <div style={{ display: "flex", margin: "20px 0px 20px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    margin: "20px 0px 20px",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
                   <InquiryContent>{el.content}</InquiryContent>
+                  <KebabMenu />
                 </div>
                 <div style={{ display: "flex", marginBottom: "10px" }}>
                   <InquiryProfileImg
