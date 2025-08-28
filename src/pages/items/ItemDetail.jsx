@@ -19,6 +19,7 @@ import icProfile from "../../assets/icons/ic_profile.svg";
 import icHeartInactive from "../../assets/icons/ic_heart_inactive_large.svg";
 import icHeartActive from "../../assets/icons/ic_heart_active_large.svg";
 import Inquiry from "../../components/Inquiry";
+import useService from "../../hooks/useService";
 
 export default function ItemDetail() {
   /**
@@ -29,65 +30,37 @@ export default function ItemDetail() {
   /**
    * 목록에서 가져온 상품 정보
    */
-  const { state } = useLocation();
+  const { state: productInfo } = useLocation();
 
   /**
-   * loading
+   * 상품 정보 받아오기
    */
-  const [isLoading, setIsLoading] = useState(false);
-
-  /**
-   * 상품 상세 정보를 받을 state
-   */
-  const [productDetail, setProductDetail] = useState({});
-
-  /**
-   * 상품의 상세 정보를 받아온다.
-   * @param {string} id
-   */
-  const getProductDetail = async (id) => {
-    try {
-      setIsLoading(true);
-      const data = await requestProductDetail(id);
-      if (!data) {
-        throw new Error("상품 정보를 불러오지 못했습니다.");
-      }
-
-      setProductDetail(data);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getProductDetail(productId);
-  }, []);
+  const { data, isLoading } = useService(() => requestProductDetail(productId));
 
   return (
     <>
       <div style={{ width: "1200px", margin: "0 auto" }}>
         <ProductInfoBox>
-          <ProductImg src={state.images[0]} alt="상품 이미지" />
+          <ProductImg src={productInfo.images[0]} alt="상품 이미지" />
           <ProductTextBox>
             <div style={{ borderBottom: `1px solid ${palette.gray200}` }}>
               <div style={{ display: "flex" }}>
-                <ProductTitle>{state.name}</ProductTitle>
+                <ProductTitle>{productInfo.name}</ProductTitle>
               </div>
               <ProductPrice>
-                {state.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
-                  "원"}
+                {productInfo.price
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원"}
               </ProductPrice>
             </div>
             <div style={{ height: "146px" }}>
               <ProductSubTitle>상품 소개</ProductSubTitle>
-              <ProductTextArea>{state.description}</ProductTextArea>
+              <ProductTextArea>{productInfo.description}</ProductTextArea>
             </div>
             <div style={{ marginBottom: "90px" }}>
               <ProductSubTitle>상품 태그</ProductSubTitle>
               <div style={{ display: "flex" }}>
-                {state.tags.map((tag) => {
+                {productInfo.tags.map((tag) => {
                   return <ItemsTag key={tag}>{`#${tag}`}</ItemsTag>;
                 })}
               </div>
@@ -102,20 +75,20 @@ export default function ItemDetail() {
                 }}
               >
                 <ProductOwnerName>
-                  {!isLoading && productDetail.ownerNickname}
+                  {!isLoading ? data?.ownerNickname : "..."}
                 </ProductOwnerName>
                 <ProductDate>
-                  {state.updatedAt.slice(0, 10).replaceAll("-", ". ")}
+                  {productInfo.updatedAt.slice(0, 10).replaceAll("-", ". ")}
                 </ProductDate>
               </div>
               <div style={{ marginLeft: "20px" }}>
                 <Heart>
-                  {!isLoading && productDetail.isFavorite ? (
+                  {!isLoading && data?.isFavorite ? (
                     <img src={icHeartActive} alt="좋아요 이미지" />
                   ) : (
                     <img src={icHeartInactive} alt="좋아요 이미지" />
                   )}
-                  <HeartCount>{state.favoriteCount}</HeartCount>
+                  <HeartCount>{productInfo.favoriteCount}</HeartCount>
                 </Heart>
               </div>
             </div>
