@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { palette } from "../styles/commonStyles";
 import {
   BackButton,
@@ -16,6 +16,7 @@ import { formatTimeAgo } from "../util/formatTimeAgo";
 import { useNavigate } from "react-router";
 import icBack from "../assets/icons/ic_back.svg";
 import imgEmptyMd from "../assets/images/img_inquiry_empty_md.png";
+import useService from "../hooks/useService";
 
 export default function Inquiry({ id }) {
   const navigate = useNavigate();
@@ -24,44 +25,7 @@ export default function Inquiry({ id }) {
    */
   const [isActive, setIsActive] = useState(false);
 
-  /**
-   * loading
-   */
-  const [isLoading, setIsLoading] = useState(false);
-
-  /**
-   * 문의내역을 담을 state
-   */
-  const [inQuiryLists, setInquiryLists] = useState({});
-
-  /**
-   * 상품의 아이디에 맞는 문의 목록을 불러온다
-   * @param {string} productId
-   */
-  const getInquiryLists = async (productId) => {
-    try {
-      setIsLoading(true);
-      const lists = await requestInquiryLists(productId);
-      if (!lists) {
-        throw new Error("문의 목록을 받아오지 못했습니다.");
-      }
-      console.log(lists.list?.length);
-
-      if (lists.list?.length) {
-        setInquiryLists(lists);
-      } else {
-        setInquiryLists(null);
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getInquiryLists(id);
-  }, []);
+  const { data, isLoading } = useService(() => requestInquiryLists(id));
 
   return (
     <>
@@ -76,8 +40,8 @@ export default function Inquiry({ id }) {
         <InquirySubmitButton isActive={isActive}>등록</InquirySubmitButton>
       </div>
       {!isLoading ? (
-        inQuiryLists ? (
-          inQuiryLists.list?.map((el) => {
+        data ? (
+          data.list?.map((el) => {
             return (
               <div
                 style={{ borderBottom: `1px solid ${palette.gray200}` }}

@@ -32,4 +32,5 @@ const useService = (fetchFunction) => {
 
   return { data, isLoading };
 };
+
 export default useService;
