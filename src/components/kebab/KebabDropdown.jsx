@@ -5,6 +5,11 @@ import {
 } from "../../styles/components/kebab/kebabStyle";
 import useCloseDropdown from "../../hooks/useCloseDropdown";
 
+/**
+ * 케밥 메뉴 클릭 시 보여지는 드롭다운
+ * @param {object[]} menus
+ * @param {Function} onclickClose
+ */
 const KebabDropdown = ({ menus, onClickClose }) => {
   const dropdownRef = useRef(null);
   useCloseDropdown(dropdownRef, onClickClose);

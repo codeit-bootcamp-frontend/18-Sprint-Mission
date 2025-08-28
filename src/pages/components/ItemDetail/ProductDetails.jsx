@@ -13,13 +13,15 @@ import {
 import icProfile from "../../../assets/icons/ic_profile.svg";
 import icHeartInactive from "../../../assets/icons/ic_heart_inactive_large.svg";
 import icHeartActive from "../../../assets/icons/ic_heart_active_large.svg";
+import KebabMenu from "../../../components/kebab/KebabMenu";
 
 export default function ProductDetails({ data, productInfo, isLoading }) {
   return (
     <ProductTextBox>
       <div style={{ borderBottom: `1px solid ${palette.gray200}` }}>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <ProductTitle>{productInfo.name}</ProductTitle>
+          <KebabMenu />
         </div>
         <ProductPrice>
           {productInfo.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") +
