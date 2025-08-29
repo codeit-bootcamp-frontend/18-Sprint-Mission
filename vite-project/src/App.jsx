@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/common/Header";
 import ProductGrid from "./components/common/ProductGrid";
-import getProductLists from "./services/getProductLists";
+import useGetProducts from "./hooks/useGetProducts";
 
 function App() {
-  const [products, setProducts] = useState([]);
-
-  const getProducts = async () => {
-    const { list } = await getProductLists();
-    setProducts(list);
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
+  const { products, setProducts } = useGetProducts();
 
   return (
     <>
