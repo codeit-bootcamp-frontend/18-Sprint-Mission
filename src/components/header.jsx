@@ -16,7 +16,7 @@ function Header({ isLogin }) {
           <ul>
             <li>
               <NavLink
-                to="/"
+                to="/additem"
                 className={({ isActive }) => (isActive ? header.active : "")}
               >
                 자유게시판

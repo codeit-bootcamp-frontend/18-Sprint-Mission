@@ -4,7 +4,7 @@
 @import "./_variables";
 
 body {
-  width: 100%;
+  width: 100vw;
   font-family: "Pretendard-Regular";
   font-size: var(--common);
 }
@@ -63,6 +63,24 @@ body {
 
 .medium-button {
   height: 4.8rem;
+}
+
+.sectionTitleWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0 1.2rem;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 1.6rem;
+  width: 100%;
+  min-height: 3.2rem;
+
+  .sectionTitle {
+    position: absolute;
+    left: 0;
+    font-size: var(--sectionTitle);
+  }
 }
 
 @include mobile {

@@ -1,7 +1,13 @@
 function AddItems() {
   return (
     <>
-      <span>상품등록 페이지</span>
+      <section className="section section-1">
+        <div className="inner">
+          <div className="sectionTitleWrap">
+            <h2 className="sectionTitle">베스트 상품</h2>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

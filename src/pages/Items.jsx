@@ -8,7 +8,7 @@ import Pagination from "../components/Pagination";
 import useAsync from "../hooks/useAsync";
 import { useResponsiveQueries } from "../hooks/useMediaQuery";
 import { useComma } from "../hooks/useComma";
-import list from "../assets/css/itemsList.module.css";
+import list from "../assets/scss/itemsList.module.scss";
 
 
 function Items() {
@@ -76,8 +76,8 @@ function Items() {
     <>
       <section className="section section-1">
         <div className="inner">
-          <div className={list.sectionTitleWrap}>
-            <h2 className={list.sectionTitle}>베스트 상품</h2>
+          <div className="sectionTitleWrap">
+            <h2 className="sectionTitle">베스트 상품</h2>
           </div>
           <BestProduct
             items={bestItems}
@@ -90,8 +90,8 @@ function Items() {
       </section>
       <section className="section section-2">
         <div className="inner">
-          <div className={list.sectionTitleWrap}>
-            <h2 className={list.sectionTitle}>전체 상품</h2>
+          <div className="sectionTitleWrap">
+            <h2 className="sectionTitle">전체 상품</h2>
             <div className={list.formWrap}>
               <SearchGroup />
             </div>
