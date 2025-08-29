@@ -94,4 +94,12 @@ export const BackButton = styled.button`
   align-items: center;
   display: flex;
   gap: 10px;
+
+  &:hover {
+    background-color: #1967d6;
+  }
+
+  &:active {
+    background-color: #1251aa;
+  }
 `;

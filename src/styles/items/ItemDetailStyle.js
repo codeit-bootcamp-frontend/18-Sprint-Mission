@@ -165,6 +165,12 @@ export const Heart = styled.div`
   column-gap: 5px;
   padding: 2px 10px;
   align-items: center;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 `;
 
 export const HeartCount = styled.p`
