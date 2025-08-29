@@ -11,7 +11,7 @@ import imgEmptyMd from "../../../assets/images/img_inquiry_empty_md.png";
 import { formatTimeAgo } from "../../../util/formatTimeAgo";
 
 const InquiryList = ({ data }) => {
-  return data?.length > 0 ? (
+  return data?.list?.length > 0 ? (
     data.list?.map((el) => {
       return (
         <div
