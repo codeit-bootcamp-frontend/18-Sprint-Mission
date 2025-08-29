@@ -10,7 +10,10 @@ import {
   InquiryTitle,
   InquiryWriter,
 } from "../styles/components/InquiryStyles";
-import { requestInquiryLists } from "../services/itemsApi";
+import {
+  requestInquiryLists,
+  requestPostInquiry,
+} from "../services/inquiryApi";
 import icProfile from "../assets/icons/ic_profile.svg";
 import { formatTimeAgo } from "../util/formatTimeAgo";
 import { useNavigate } from "react-router";
@@ -26,7 +29,23 @@ export default function Inquiry({ id }) {
    */
   const [isActive, setIsActive] = useState(false);
 
-  const { data, isLoading } = useService(() => requestInquiryLists(id));
+  /**
+   * 문의 내역을 가져온다.
+   */
+  const { data, isLoading, requestServer } = useService(() =>
+    requestInquiryLists(id)
+  );
+
+  const onClickUploadInquiry = (e) => {
+    let data = {
+      productId: id,
+      Inquiry: {
+        content: e.target.value,
+      },
+    };
+
+    requestServer(() => requestPostInquiry(data));
+  };
 
   return (
     <>
@@ -38,7 +57,13 @@ export default function Inquiry({ id }) {
           }}
           placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
         ></InquiryTextArea>
-        <InquirySubmitButton isActive={isActive}>등록</InquirySubmitButton>
+        <InquirySubmitButton
+          type={isActive ? "submit" : "button"}
+          isActive={isActive}
+          onClick={onClickUploadInquiry}
+        >
+          등록
+        </InquirySubmitButton>
       </div>
       {!isLoading ? (
         data ? (

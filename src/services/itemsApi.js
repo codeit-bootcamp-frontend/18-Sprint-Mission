@@ -38,19 +38,3 @@ export const requestProductDetail = async (productId) => {
 
   return response.json();
 };
-
-export const requestInquiryLists = async (productId) => {
-  const url = new URL(
-    `https://panda-market-api.vercel.app/products/${productId}/comments`
-  );
-  url.searchParams.append("limit", 3);
-
-  const response = await fetch(url, {
-    method: "get",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  return response.json();
-};

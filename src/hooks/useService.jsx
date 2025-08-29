@@ -8,29 +8,30 @@ import { useEffect, useState } from "react";
 const useService = (fetchFunction) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState();
+  const [error, setError] = useState(false);
+  const requestServer = async (dataFetch) => {
+    try {
+      setIsLoading(true);
+      const response = await dataFetch();
+
+      if (!response) {
+        throw new Error("서버와의 통신에 실패했습니다.");
+      }
+
+      setData(response);
+    } catch (error) {
+      setError(true);
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const getService = async (getDataFunction) => {
-      try {
-        setIsLoading(true);
-        const response = await getDataFunction();
-
-        if (!response) {
-          throw new Error("데이터를 불러오지 못했습니다.");
-        }
-
-        setData(response);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    getService(fetchFunction);
+    requestServer(fetchFunction);
   }, []);
 
-  return { data, isLoading };
+  return { data, isLoading, error, requestServer };
 };
 
 export default useService;
