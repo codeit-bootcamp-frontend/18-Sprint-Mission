@@ -80,6 +80,13 @@ export const InquiryDate = styled.p`
   color: ${palette.gray400};
 `;
 
+export const BackButtonWrapper = styled.div`
+  margin: 60px 0px 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+`;
+
 export const BackButton = styled.button`
   width: 240px;
   height: 48px;

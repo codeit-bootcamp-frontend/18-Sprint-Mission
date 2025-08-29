@@ -93,7 +93,7 @@ export const ProductPrice = styled.p`
     font-size: 40px;
     line-height: 32px;
     letter-spacing: 0%;
-    margin: 20px 0px 10px;
+    margin: 20px 0px 16px;
   }
 `;
 
