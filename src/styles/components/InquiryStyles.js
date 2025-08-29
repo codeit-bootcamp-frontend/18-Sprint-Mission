@@ -10,11 +10,17 @@ export const InquiryTextArea = styled.textarea`
   resize: none;
   font-family: Pretendard-Reqular;
   padding: 20px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 10px;
   &::placeholder {
     color: ${palette.gray400};
+  }
+
+  @media (min-width: 744px) {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0%;
   }
 `;
 
@@ -37,7 +43,6 @@ export const InquirySubmitButton = styled.button`
   font-weight: 600;
   background-color: ${({ isActive }) =>
     isActive ? `${palette.blue}` : `${palette.gray400}`};
-  // float: right;
 
   &:hover {
     background-color: ${({ isActive }) =>

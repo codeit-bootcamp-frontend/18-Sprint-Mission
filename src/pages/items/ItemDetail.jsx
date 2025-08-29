@@ -1,6 +1,10 @@
 import { useLocation, useParams } from "react-router";
 import { requestProductDetail } from "../../services/itemsApi";
-import { ProductImg, ProductInfoBox } from "../../styles/items/ItemDetailStyle";
+import {
+  ProductDetailContainer,
+  ProductImg,
+  ProductInfoBox,
+} from "../../styles/items/ItemDetailStyle";
 
 import Inquiry from "../../components/Inquiry";
 import useService from "../../hooks/useService";
@@ -24,7 +28,7 @@ export default function ItemDetail() {
 
   return (
     <>
-      <div style={{ width: "1200px", margin: "0 auto" }}>
+      <ProductDetailContainer>
         <ProductInfoBox>
           <ProductImg src={productInfo.images[0]} alt="상품 이미지" />
           <ProductDetails
@@ -34,7 +38,7 @@ export default function ItemDetail() {
           />
         </ProductInfoBox>
         <Inquiry id={productId} />
-      </div>
+      </ProductDetailContainer>
     </>
   );
 }

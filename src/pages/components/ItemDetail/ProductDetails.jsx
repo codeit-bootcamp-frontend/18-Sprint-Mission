@@ -6,6 +6,8 @@ import {
   ProductOwnerName,
   ProductPrice,
   ProductSubTitle,
+  ProductTagContainer,
+  ProductTagWrapper,
   ProductTextArea,
   ProductTextBox,
   ProductTitle,
@@ -32,14 +34,14 @@ export default function ProductDetails({ data, productInfo, isLoading }) {
         <ProductSubTitle>상품 소개</ProductSubTitle>
         <ProductTextArea>{productInfo.description}</ProductTextArea>
       </div>
-      <div style={{ marginBottom: "90px" }}>
+      <ProductTagWrapper>
         <ProductSubTitle>상품 태그</ProductSubTitle>
-        <div style={{ display: "flex" }}>
+        <ProductTagContainer>
           {productInfo.tags.map((tag) => {
             return <ItemsTag key={tag}>{`#${tag}`}</ItemsTag>;
           })}
-        </div>
-      </div>
+        </ProductTagContainer>
+      </ProductTagWrapper>
       <div style={{ display: "flex" }}>
         <ProfileImg src={icProfile} alt="프로필 이미지" />
         <div
