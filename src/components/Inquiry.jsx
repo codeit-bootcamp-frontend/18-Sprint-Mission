@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { palette } from "../styles/commonStyles";
 import {
   BackButton,
@@ -21,50 +20,21 @@ import icBack from "../assets/icons/ic_back.svg";
 import imgEmptyMd from "../assets/images/img_inquiry_empty_md.png";
 import useService from "../hooks/useService";
 import KebabMenu from "./kebab/KebabMenu";
+import usePost from "../hooks/usePost";
+import InquiryWriteArea from "./InquiryWriteArea";
 
 export default function Inquiry({ id }) {
   const navigate = useNavigate();
-  /**
-   * 버튼 활성화 state
-   */
-  const [isActive, setIsActive] = useState(false);
 
   /**
    * 문의 내역을 가져온다.
    */
-  const { data, isLoading, requestServer } = useService(() =>
-    requestInquiryLists(id)
-  );
-
-  const onClickUploadInquiry = (e) => {
-    let data = {
-      productId: id,
-      Inquiry: {
-        content: e.target.value,
-      },
-    };
-
-    requestServer(() => requestPostInquiry(data));
-  };
+  const { data, isLoading } = useService(() => requestInquiryLists(id));
 
   return (
     <>
-      <div style={{ textAlign: "right", marginBottom: "20px" }}>
-        <InquiryTitle>문의하기</InquiryTitle>
-        <InquiryTextArea
-          onChange={(e) => {
-            e.target.value !== "" ? setIsActive(true) : setIsActive(false);
-          }}
-          placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
-        ></InquiryTextArea>
-        <InquirySubmitButton
-          type={isActive ? "submit" : "button"}
-          isActive={isActive}
-          onClick={onClickUploadInquiry}
-        >
-          등록
-        </InquirySubmitButton>
-      </div>
+      <InquiryTitle>문의하기</InquiryTitle>
+      <InquiryWriteArea />
       {!isLoading ? (
         data ? (
           data.list?.map((el) => {

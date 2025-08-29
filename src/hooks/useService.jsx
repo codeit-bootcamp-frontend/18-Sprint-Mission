@@ -9,29 +9,30 @@ const useService = (fetchFunction) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState();
   const [error, setError] = useState(false);
-  const requestServer = async (dataFetch) => {
-    try {
-      setIsLoading(true);
-      const response = await dataFetch();
-
-      if (!response) {
-        throw new Error("서버와의 통신에 실패했습니다.");
-      }
-
-      setData(response);
-    } catch (error) {
-      setError(true);
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   useEffect(() => {
-    requestServer(fetchFunction);
+    const getService = async (getDataFunction) => {
+      try {
+        setIsLoading(true);
+        const response = await getDataFunction();
+
+        if (!response) {
+          throw new Error("서버와의 통신에 실패했습니다.");
+        }
+
+        setData(response);
+      } catch (error) {
+        setError(true);
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    getService(fetchFunction);
   }, []);
 
-  return { data, isLoading, error, requestServer };
+  return { data, isLoading, error };
 };
 
 export default useService;
