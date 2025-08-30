@@ -11,4 +11,7 @@ export const AddItemInput = styled.input`
   &::placeholder{
     color:var(--gray-400);
   }
+  &::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  }
 `

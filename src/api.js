@@ -14,10 +14,9 @@ export async function getProducts({
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const body = await response.json();
-    console.log(body);
     return body;
   } catch (error) {
     console.error("Fetch error:", error);
-    throw error;
+    throw new Error(error);
   }
 }

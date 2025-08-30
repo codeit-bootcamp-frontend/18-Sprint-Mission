@@ -1,20 +1,29 @@
-import { NavLink } from 'react-router-dom';
-import './Nav.css';
+import { NavLink, useMatch } from "react-router-dom";
+import "./Nav.css";
 
-function getLinkStyle ({isActive}) { 
+function getLinkStyle({ isActive }) {
   return {
-    color: isActive ? '#3692FF' : '#485563',
-  }
+    color: isActive ? "#3692FF" : "#485563",
+  };
 }
 
 export default function Nav() {
+  const ItemActive = useMatch("/additem");
+
   return (
-    <ul className='panda-nav'>
-      <li className='panda-li'>
-        <NavLink >자유게시판</NavLink>
+    <ul className="panda-nav">
+      <li className="panda-li">
+        <NavLink>자유게시판</NavLink>
       </li>
-      <li className='panda-li'>
-        <NavLink to="/items" style={getLinkStyle}>중고마켓</NavLink>
+      <li className="panda-li">
+        <NavLink
+          to="/items"
+          style={({ isActive }) =>
+            getLinkStyle({ isActive: isActive || ItemActive })
+          }
+        >
+          중고마켓
+        </NavLink>
       </li>
     </ul>
   );

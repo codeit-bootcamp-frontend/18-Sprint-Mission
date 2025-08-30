@@ -9,7 +9,12 @@ export default function AddItemTag({ tag, setTag }) {
   return (
     <div className="AddItemTag">
       <ProductTitle>태그</ProductTitle>
-      <AddItemInput value={tag} onChange={handleChange} type="text" />
+      <AddItemInput
+        value={tag}
+        onChange={handleChange}
+        type="text"
+        placeholder="태그를 입력해주세요"
+      />
       <div className="tag-box">
         <div className="tag">
           <p>#티셔츠</p>

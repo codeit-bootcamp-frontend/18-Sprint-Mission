@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import AddItemImg from "./AddItemImg";
 import AddItemIntroduce from "./AddItemIntroduce";
@@ -9,21 +9,73 @@ import AddItemTop from "./AddItemTop";
 import "./PandaAddItem.css";
 
 export default function PandaAddItem() {
-  const [title, setTitle] = useState("");
-  const [intro, setIntro] = useState("");
-  const [price, setPrice] = useState("");
-  const [tag, setTag] = useState("");
+  const [formData, setFormData] = useState({
+    img: false,
+    title: "",
+    intro: "",
+    price: "",
+    tag: "",
+  });
+  const [submit, setSubmit] = useState(true);
+
+  const updateImg = (newImg) => {
+    setFormData((prev) => ({
+      ...prev,
+      img: newImg,
+    }));
+  };
+
+  const updateTitle = (newTitle) => {
+    setFormData((prev) => ({
+      ...prev,
+      title: newTitle,
+    }));
+  };
+
+  const updateIntro = (newIntro) => {
+    setFormData((prev) => ({
+      ...prev,
+      intro: newIntro,
+    }));
+  };
+
+  const updatePrice = (newPrice) => {
+    setFormData((prev) => ({
+      ...prev,
+      price: newPrice,
+    }));
+  };
+
+  const updateTag = (newTag) => {
+    setFormData((prev) => ({
+      ...prev,
+      tag: newTag,
+    }));
+  };
+
+  useEffect(() => {
+    if (
+      formData.title !== "" &&
+      formData.intro !== "" &&
+      formData.price !== "" &&
+      formData.tag !== ""
+    ) {
+      setSubmit(false);
+    } else {
+      setSubmit(true);
+    }
+  }, [formData]);
 
   return (
     <>
       <Header />
-      <div className="panda-additem-main">
-        <AddItemTop />
-        <AddItemImg />
-        <AddItemTitle title={title} setTitle={setTitle} />
-        <AddItemIntroduce intro={intro} setIntro={setIntro} />
-        <AddItemPrice price={price} setPrice={setPrice} />
-        <AddItemTag tag={tag} setTag={setTag} />
+      <div className="panda-addItem-main">
+        <AddItemTop submit={submit} />
+        <AddItemImg img={formData.img} setImg={updateImg} />
+        <AddItemTitle title={formData.title} setTitle={updateTitle} />
+        <AddItemIntroduce intro={formData.intro} setIntro={updateIntro} />
+        <AddItemPrice price={formData.price} setPrice={updatePrice} />
+        <AddItemTag tag={formData.tag} setTag={updateTag} />
       </div>
     </>
   );

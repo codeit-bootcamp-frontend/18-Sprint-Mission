@@ -1,5 +1,4 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
 import PandaAddItem from "./pages/pandaadditem/PandaAddItem";
 import PandaItems from "./pages/pandaitems/PandaItems";
 import "./reset.css";
