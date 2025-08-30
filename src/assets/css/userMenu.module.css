@@ -1,0 +1,54 @@
+.menu {
+  margin-left: auto;
+  height: 100%;
+}
+.menu > li {
+  position: relative;
+}
+.menu > li:hover .dropMenu {
+  display: block;
+}
+.menu .dropMenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+}
+.menu .dropMenu .logoutButton {
+  margin-top: 0.4rem;
+  padding: 1.6rem 4.15rem;
+  font-size: var(--common);
+  background-color: var(--white100);
+  border: 1px solid var(--gray500);
+  border-radius: 1.6rem;
+  -webkit-border-radius: 1.6rem;
+  -moz-border-radius: 1.6rem;
+  -ms-border-radius: 1.6rem;
+  -o-border-radius: 1.6rem;
+}
+.menu .profileButton {
+  margin-top: 0.5rem;
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--gray400);
+  border-radius: 4rem;
+  -webkit-border-radius: 4rem;
+  -moz-border-radius: 4rem;
+  -ms-border-radius: 4rem;
+  -o-border-radius: 4rem;
+}
+.menu .profileButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.loginButton {
+  width: 12.8rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}/*# sourceMappingURL=userMenu.module.css.map */

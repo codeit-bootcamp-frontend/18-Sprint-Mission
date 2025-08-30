@@ -1,0 +1,64 @@
+@import "./_variables";
+
+.selectBoxGroup {
+  position: relative;
+
+  .selectButton {
+    padding: 0.9rem 4.4rem 0.9rem 2rem;
+    width: 13rem;
+    height: 4.2rem;
+    background: url("../images/ic_arrow_down.svg") right 2rem center no-repeat;
+    @include border(var(--gray200), all);
+    @include round(1.2rem);
+  }
+
+  .selectOption {
+    // display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 4.5rem;
+    width: 13rem;
+    background-color: var(--white100);
+
+    li {
+      @include center;
+      height: 4.2rem;
+      cursor: pointer;
+
+      &:first-child {
+        @include border(var(--gray200), bottom);
+      }
+      &:hover {
+        background-color: var(--gray100);
+      }
+    }
+    &.active {
+      display: block;
+      top: 5rem;
+      height: fit-content;
+      @include border(var(--gray200), all);
+      @include round(1.2rem);
+      @include transition(top, 0.5s, 0s);
+    }
+  }
+}
+
+@include mobile {
+  .selectBoxGroup {
+    span{
+      overflow: hidden;
+      display: block;
+      margin: -1px;
+      width: 0;
+      height: 0;
+    }
+    .selectButton {
+      padding: 0;
+      width: 4.2rem;
+      background: url("../images/m-select-button.svg") center no-repeat;
+    }
+  }
+  .selectOption{
+    right: 0;
+  }
+}
