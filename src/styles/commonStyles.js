@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const palette = {
+  secondary: {
+    gray500: "#6B7280",
+  },
   gray900: "#111827",
   gray800: "#1f2937",
   gray700: "#374151",
@@ -10,6 +13,7 @@ export const palette = {
   gray200: "#e5e7eb",
   gray100: "#f3f4f6",
   gray50: "#f9fafb",
+  coolGray300: "#D1D5DB",
   blue: "#3692ff",
   menu: "#4b5563",
 };
@@ -29,4 +33,9 @@ export const ItemsTag = styled.div`
   align-items: center;
   padding: 15px;
   margin-right: 10px;
+`;
+
+export const ProfileImg = styled.img`
+  width: 40px;
+  height: 40px;
 `;
