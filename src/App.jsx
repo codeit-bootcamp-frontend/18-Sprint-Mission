@@ -7,6 +7,7 @@ import AuthLayout from "./layout/AuthLayout";
 import ItemsLayout from "./layout/ItemsLayout";
 import Items from "./pages/items/Items";
 import AddItem from "./pages/items/AddItem";
+import ItemDetail from "./pages/items/ItemDetail";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route element={<ItemsLayout />}>
           <Route path="items" element={<Items />} />
           <Route path="additem" element={<AddItem />} />
+          <Route path="/items/:productId" element={<ItemDetail />} />
         </Route>
       </Routes>
     </>

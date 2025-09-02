@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const getMatches = (query) => {
   return window.matchMedia(query).matches;
@@ -21,10 +21,10 @@ export default function useMediaQuery(query) {
   useEffect(() => {
     const media = window.matchMedia(query);
 
-    media.addEventListener('change', handleChange);
+    media.addEventListener("change", handleChange);
 
     return () => {
-      media.removeEventListener('change', handleChange);
+      media.removeEventListener("change", handleChange);
     };
   }, [query]);
 

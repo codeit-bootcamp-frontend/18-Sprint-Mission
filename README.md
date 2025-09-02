@@ -1,8 +1,189 @@
-# React + Vite
+# 판다 마켓 - 중고 거래 플랫폼
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 미션 3 요구사항
 
-Currently, two official plugins are available:
+### 기본
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [x] 랜딩 페이지의 url path는 루트(‘/’) 입니다.
+- [x] title은 “판다마켓”으로 설정해 주세요.
+- [x] 화면의 너비가 1920px 이상이면 하늘색 배경색은 너비를 꽉 채우도록 채워지고, 내부 요소들의 위치는 고정되고, 여백만 커지도록 해주세요.
+- [x] 화면의 너비가 1920px 보다 작아질 때, “판다마켓” 로고의 왼쪽 여백 200px“로그인" 버튼의 오른쪽 여백 200px이 유지되고, 화면의 너비가 작아질수록 두 요소간 거리가 가까워지도록 해주세요.
+- [x] 클릭으로 기능이 동작해야 하는 경우, 사용자가 클릭할 수 있는 요소임을 알 수 있도록 cursor: pointer를 설정해 주세요.
+- [x] “판다마켓” 클릭 시 루트 페이지(‘/’)로 이동시켜주세요.
+- [x] “구경하러 가기" 클릭 시 (“/items”)페이지로 이동시켜주세요.(빈 페이지)
+- [x] “로그인”버튼 클릭 시 로그인 페이지(‘/login’)로 이동합니다
+- [x] “구경하러가기”버튼 클릭 시(’/items’)로 이동합니다
+- [x] 페이스북, 트위터, 유튜브, 인스타그램 아이콘은 클릭 시 각각의 홈페이지로 새로운 창이 열리면서 이동 합니다
+- [x] “Privacy Policy”, “FAQ”는 클릭 시 각각 아래 페이지로 이동합니다- Privacy 페이지(‘/privacy’) - FAQ 페이지(‘/faq’)
+
+---
+
+- [x] 아래로 스크롤 해도 상단 네비게이션 바(Global Navigation Bar)가 최상단에 고정됩니다.
+- [x] “판다마켓" 클릭 시 루트 페이지(“/”)로 이동합니다. (새로고침)
+- [x] 로그인 페이지, 회원가입 페이지 모두 로고 위 상단 여백이 동일합니다.
+- [x] SNS 아이콘들은 클릭시 각각 아래 페이지로 이동합니다.- “https://www.google.com/”, “https://www.kakaocorp.com/page/”
+- [x] “회원 가입”버튼 클릭 시 “/signup” 페이지로 이동합니다.
+
+---
+
+- [x] 브라우저에 현재 보이는 화면의 영역(viewport) 너비를 기준으로 분기되는 반응형 디자인을 적용합니다.- PC: 1200px 이상- Tablet: 768px 이상 ~ 1199px 이하- Mobile: 375px 이상 ~ 767px 이하\* 375px 미만 사이즈의 디자인은 고려하지 않습니다
+- [x] Tablet 사이즈로 작아질 때 “판다마켓” 로고의 왼쪽에 여백 24px, “로그인” 버튼 오른쪽 여백 24px을 유지할 수 있도록 “판다마켓” 로고와 “로그인" 버튼의 간격이 가까워집니다.
+- [x] Mobile 사이즈로 작아질 때 “판다마켓” 로고의 왼쪽에 여백 16px, “로그인” 버튼 오른쪽 여백 16px을 유지할 수 있도록 “판다마켓” 로고와 “로그인" 버튼의 간격이 가까워집니다.
+- [x] Tablet 사이즈에서 내부 디자인은 PC사이즈와 동일합니다.
+- [x] Mobile 사이즈에서 좌우 여백 16px 제외하고 내부 요소들이 너비를 모두 차지합니다.
+- [x] Mobile 사이즈에서 내부 요소들의 너비는 기기의 너비가 커지는 만큼 커지지만 400px을 넘지 않습니다.
+- [x] Mobile 사이즈에서 좌우 여백 16px 제외하고 내부 요소들이 너비를 모두 차지합니다.
+- [x] Mobile 사이즈에서 내부 요소들의 너비는 기기의 너비가 커지는 만큼 커지지만 400px을 넘지 않습니다.
+
+### 심화
+
+- [x] 사용자의 브라우저가 크고 작아짐에 따라 페이지의 요소간 간격, 요소의 크기, font-size 등 모든 크기와 관련된 값이 크고 작아지도록 설정해 보세요.(설정값은 자유입니다)
+
+---
+
+- [x] palette에 있는 color값들을 css 변수로 등록하고 사용합니다.
+
+---
+
+- [x] 페이스북, 카카오톡, 디스코드, 트위터 등 SNS에서 Linkbrary 랜딩 페이지(“/”) 공유 시 좌측 예시와 같은 미리보기를 볼 수 있도록 랜딩 페이지 메타 태그를 설정해 주세요.
+- [x] 미리보기에서 제목은 “판다 마켓”, 설명은 “일상의 모든 물건을 거래해보세요”로 설정합니다.
+- [x] 주소와 이미지는 자유롭게 설정하세요.
+
+### 주요 변경사항
+
+- Netlify에서 로고 이미지가 보이게 수정했습니다.
+
+### 스크린샷
+
+**메인화면**
+| PC | Tablet | Mobile |
+| :-: | :----: | :----: |
+|![pc_main](https://github.com/user-attachments/assets/ab4254e0-c732-49b6-8eb3-becf313e4a92)|![tablet_main](https://github.com/user-attachments/assets/28e8b861-bf77-47b1-9f60-93267f592650)|![mobile_main](https://github.com/user-attachments/assets/fe76d76f-9b93-4403-8205-ec875e364f7f)|
+
+<br>
+
+**로그인 화면**
+| PC | Mobile |
+| :-: | :----: |
+|![pc_login](https://github.com/user-attachments/assets/aa9ff9df-8eff-4f13-a7e4-e946ad8fe48f)|![mobile_login](https://github.com/user-attachments/assets/8e1662fb-4544-48ce-a791-40e3e5ce0e28)|
+
+<br>
+
+**회원가입 화면**
+| PC | Mobile |
+| :-: | :----: |
+|![join_pc](https://github.com/user-attachments/assets/52788e32-a174-4441-abe1-957bc36094e7)|![join_mobile](https://github.com/user-attachments/assets/6222a188-d431-433c-959a-07c052ff61a5)|
+
+### 멘토에게
+
+- 저는 CSS를 작성할 때 대부분의 단위를 `px`로 사용했는데, `rem`, `vw`와 같은 단위를 사용하는 것이 더 나은지 궁금합니다
+  > 답변
+  > [px vs rem vs em 접근성과 관련된 아티클](https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/)
+
+<br>
+
+## 미션 5 요구사항
+
+### 기본
+
+- [x] 중고마켓 페이지 주소는 "/items" 입니다.
+- [x] 페이지 주소가 "/items" 일 때 상단 네비게이션 바의 "중고마켓" 버튼의 색상은 "3692FF" 입니다.
+- [x] 상단 네비게이션 바는 이전 미션에서 구현한 랜딩 페이지와 동일한 스타일로 만들어주세요
+- [x] 전체 상품에서 드롭다운으로 "최신순" 또는 "좋아요순"을 선택해서 정렬할 수 있습니다.
+- [ ] "상품 등록하기" 버튼을 누르면 “/additem” 로 이동합니다 ( 빈 페이지 )
+- [x] 미디어 쿼리를 사용하여 반응형 view 마다 물품 개수를 다르게 보여줍니다 (서버로 요청하는 값은 동일)
+- 베스트 상품
+  - Desktop : 4개 보이기
+  - Tablet : 2개 보이기
+  - Mobile : 1개 보이기
+- 전체 상품
+  - Desktop : 10개 보이기
+  - Tablet : 6개 보이기
+  - Mobile : 4개 보이기
+
+### 심화
+
+- [x] 페이지 네이션 기능을 구현합니다.
+- [x] 반응형으로 보여지는 물품들의 개수를 다르게 설정할때 서버에 보내는 pageSize값을 적절하게 설정합니다.
+
+### 주요 변경사항
+
+- 스프린트 미션 1부터 4까지의 내용을 React로 변경했습니다.
+  > form 변경 내용: [React-Hook-form을 이용해 유효성 검사 해보기](https://velog.io/@nudge0613/React-Hook-Form%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%B4-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC-%ED%95%98%EA%B8%B0)
+
+### 스크린샷
+
+|                                                                         PC                                                                          |                                                                         Tablet                                                                          |                                                                         Mobile                                                                         |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img width="1413" height="1456" alt="localhost_5173_items" src="https://github.com/user-attachments/assets/0e017351-f79f-4428-be83-ef06eb510031" /> | <img width="2274" height="3022" alt="localhost_5173_items (1)" src="https://github.com/user-attachments/assets/7268b74d-0721-43a4-9a97-d2893df28540" /> | <img width="750" height="2830" alt="localhost_5173_items (2)" src="https://github.com/user-attachments/assets/17ae2721-6c04-40dd-99d6-c25902d8cd2e" /> |
+
+<br>
+
+## 미션 6 요구사항
+
+### 기본
+
+- [x] 상품 등록 페이지 주소는 “/additem” 입니다.
+- [x] 페이지 주소가 “/additem” 일때 상단네비게이션바의 '중고마켓' 버튼의 색상은 “3692FF”입니다.
+- [x] 상품 이미지는 최대 한개 업로드가 가능합니다.
+- [x] 각 input의 placeholder 값을 정확히 입력해주세요.
+- [x] 이미지를 제외하고 input 에 모든 값을 입력하면 ‘등록' 버튼이 활성화 됩니다.
+- [ ] API를 통한 상품 등록은 추후 미션에서 적용합니다.
+
+### 심화
+
+- [x] 이미지 안의 X 버튼을 누르면 이미지가 삭제됩니다.
+- [x] 추가된 태그 안의 X 버튼을 누르면 해당 태그는 삭제됩니다.
+
+### 주요 변경사항
+
+- styled component를 통해 스타일링
+
+### 스크린샷
+
+|                                                                          PC                                                                           |                                                                          Tablet                                                                           |                                                                          Mobile                                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img width="1920" height="1655" alt="localhost_5173_additem" src="https://github.com/user-attachments/assets/e078e0f9-3de5-4045-930a-ffb997db412f" /> | <img width="1964" height="3136" alt="localhost_5173_additem (1)" src="https://github.com/user-attachments/assets/b6041614-7825-4c2c-b7da-01d56d038684" /> | <img width="938" height="3136" alt="localhost_5173_additem (2)" src="https://github.com/user-attachments/assets/af508c63-5fcb-4140-9afd-3c0a49bbf58e" /> |
+
+### 멘토에게
+
+- styled component를 사용해서 스타일링을 했는데 한 컴포넌트의 코드가 너무 길어지는 느낌입니다.
+  스타일은 따로 빼놓는게 나을까요?
+
+  <br>
+
+## 미션 7 요구사항
+
+### 기본
+
+- [x] 상품 상세 페이지 주소는 “items/{productId}” 입니다.
+- [x] response로 받은 아래의 데이터로 화면을 구현합니다.
+  - favoriteCount : 하트 개수
+  - images : 상품 이미지
+  - tags : 상품태그
+  - name : 상품 이름
+  - description : 상품 설명
+- [x] 목록으로 돌아가기 버튼을 클릭하면 중고마켓 페이지 주소인 "/items"로 이동합니다.
+- [x] 문의하기에 내용을 입력하면 등록 버튼의 색상은 “3692FF”로 변합니다.
+- [x] response 로 받은 아래의 데이터로 화면을 구현합니다.
+  - image : 작성자 이미지
+  - nickname : 작성자 닉네임
+  - content : 작성자가 남긴 문구
+  - description : 상품 설명
+  - updatedAt : 문의글 마지막 업데이트 시간
+
+### 심화
+
+- [x] 모든 버튼에 자유롭게 Hover효과를 적용하세요.
+
+### 주요 변경사항
+
+### 스크린샷
+
+|                                                                          PC                                                                           |                                                                          Tablet                                                                           |                                                                          Mobile                                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <img width="1920" height="1655" alt="localhost_5173_additem" src="https://github.com/user-attachments/assets/e078e0f9-3de5-4045-930a-ffb997db412f" /> | <img width="1964" height="3136" alt="localhost_5173_additem (1)" src="https://github.com/user-attachments/assets/b6041614-7825-4c2c-b7da-01d56d038684" /> | <img width="938" height="3136" alt="localhost_5173_additem (2)" src="https://github.com/user-attachments/assets/af508c63-5fcb-4140-9afd-3c0a49bbf58e" /> |
+
+### 멘토에게
+
+Copyright 2025 코드잇 Inc. All rights reserved.
