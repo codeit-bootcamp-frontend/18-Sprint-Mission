@@ -1,14 +1,9 @@
 import { NavLink, useMatch } from "react-router-dom";
 import "./Nav.css";
 
-function getLinkStyle({ isActive }) {
-  return {
-    color: isActive ? "#3692FF" : "#485563",
-  };
-}
-
 export default function Nav() {
-  const ItemActive = useMatch("/additem");
+  const AddItemActive = useMatch("/additem");
+  const ItemActive = useMatch("/items");
 
   return (
     <ul className="panda-nav">
@@ -18,9 +13,7 @@ export default function Nav() {
       <li className="panda-li">
         <NavLink
           to="/items"
-          style={({ isActive }) =>
-            getLinkStyle({ isActive: isActive || ItemActive })
-          }
+          style={{ color: AddItemActive || ItemActive ? "#3692FF" : "#485563",}}
         >
           중고마켓
         </NavLink>

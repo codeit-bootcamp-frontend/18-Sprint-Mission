@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { getProducts } from "../../api";
+import { getProducts } from "../../api/getProducts";
 import Header from "../../components/header/Header";
 import BestProducts from "../../components/product/BestProducts";
 import ProductAll from "../../components/product/ProductAll";

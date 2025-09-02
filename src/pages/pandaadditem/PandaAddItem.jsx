@@ -10,7 +10,7 @@ import "./PandaAddItem.css";
 
 export default function PandaAddItem() {
   const [formData, setFormData] = useState({
-    img: false,
+    img: "",
     title: "",
     intro: "",
     price: "",
