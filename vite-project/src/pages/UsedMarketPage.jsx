@@ -5,9 +5,6 @@ import BestItems from "../components/BestItems";
 const UsedMarketPage = () => {
   return (
     <>
-      <header>
-        <Header />
-      </header>
       <main>
         <BestItems />
         <AllItems />

@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <div className="container">
       <a className="container-son">
-        <Link to="/" className="head_logo" color="#3692FF">
+        <Link to="/" className="head_logo">
           <img
             src={Logo}
             alt="판다마켓 로고"
-            style="width: 40px; height: 40px; top: 5px"
+            style={{ width: 40, height: 40 }}
           />
-          판다마켓
+          <span style={{ fontWeight: 700, color: "#3692FF" }}>판다마켓</span>
         </Link>
       </a>
       <Link to="/" className="free-board">
