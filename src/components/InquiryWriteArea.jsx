@@ -1,5 +1,4 @@
 import { useState } from "react";
-import usePost from "../hooks/usePost";
 import {
   InquirySubmitButton,
   InquiryTextArea,
@@ -30,7 +29,7 @@ export default function InquiryWriteArea() {
       },
     };
 
-    const { data: success } = usePost(requestPostInquiry(data));
+    // const { data: success } = usePost(requestPostInquiry(data));
 
     if (success) {
       location.reload(true);
