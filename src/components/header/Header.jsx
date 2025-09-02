@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import Logo from "./Logo";
 import Nav from "./Nav";
-import User from "./User";
+import Avatar from "./Avatar";
 
 export default function Header() {
   return (
@@ -13,7 +13,7 @@ export default function Header() {
         </Link>
         <Nav />
       </div>
-      <User />
+      <Avatar />
     </header>
   );
 }
