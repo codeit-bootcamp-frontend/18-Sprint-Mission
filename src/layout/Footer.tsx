@@ -1,8 +1,8 @@
-import '../styles/layout/footer.css';
-import ic_facebook from '../assets/icons/ic_facebook.svg';
-import ic_twitter from '../assets/icons/ic_twitter.svg';
-import ic_youtube from '../assets/icons/ic_youtube.svg';
-import ic_instagram from '../assets/icons/ic_instagram.svg';
+import "../styles/layout/footer.css";
+import ic_facebook from "../assets/icons/ic_facebook.svg";
+import ic_twitter from "../assets/icons/ic_twitter.svg";
+import ic_youtube from "../assets/icons/ic_youtube.svg";
+import ic_instagram from "../assets/icons/ic_instagram.svg";
 
 /**
  * 푸터
