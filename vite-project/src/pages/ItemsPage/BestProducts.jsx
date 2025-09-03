@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import likeIcon from "../../assets/ic-heart.svg";
 
 function BestProducts({ bestProducts }) {
@@ -8,7 +9,11 @@ function BestProducts({ bestProducts }) {
       </div>
       <div className="best-products-card">
         {bestProducts.map((product) => (
-          <div className="best-product-card" key={product.id}>
+          <Link
+            to={`/items/${product.id}`}
+            className="best-product-card"
+            key={product.id}
+          >
             <img
               className="best-product-card-img"
               src={product.images[0]}
@@ -24,7 +29,7 @@ function BestProducts({ bestProducts }) {
               </button>
               {product.favoriteCount}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </>

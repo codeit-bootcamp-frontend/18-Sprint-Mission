@@ -14,3 +14,12 @@ export async function getProducts({
     throw new Error(`상품을 불러오는데 실패했습니다 : ${error.message}`);
   }
 }
+
+export async function getProductDetail(productId) {
+  try {
+    const response = await instance.get(`/products/${productId}`);
+    return response.data;
+  } catch (error) {
+    throw new Error(`상품을 불러오는데 실패했습니다 : ${error.message}`);
+  }
+}

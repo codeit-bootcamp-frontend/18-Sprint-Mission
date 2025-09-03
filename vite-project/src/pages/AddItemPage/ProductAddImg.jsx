@@ -71,20 +71,20 @@ export default function ProductAddImg() {
   const inputRef = useRef();
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files?.[0];
     if (!file) return;
 
-    if (previewImg) {
-      SetShowError(true);
-      inputRef.current.value = "";
+    if (!file.type.startsWith("image/")) {
+      SetShowError("이미지 파일만 업로드할 수 있습니다.");
+      e.target.value = "";
       return;
     }
-
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setPreviewImg(reader.result);
-    };
-    reader.readAsDataURL(file);
+    SetShowError(null);
+    inputRef.current = file;
+    if (previewImg) URL.revokeObjectURL(previewImg);
+    const url = URL.createObjectURL(file);
+    setPreviewImg(url);
+    e.target.value = "";
   };
 
   const handleClearClick = () => {

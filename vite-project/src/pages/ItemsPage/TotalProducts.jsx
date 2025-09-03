@@ -63,7 +63,11 @@ function TotalProducts({
 
       <div className="total-products-card">
         {totalProducts.map((product) => (
-          <div className="total-product-card" key={product.id}>
+          <Link
+            to="/items/{productId}"
+            className="total-product-card"
+            key={product.id}
+          >
             <img
               className="total-product-card-img"
               src={product.images[0]}
@@ -79,7 +83,7 @@ function TotalProducts({
               </button>
               {product.favoriteCount}
             </span>
-          </div>
+          </Link>
         ))}
       </div>
     </>
