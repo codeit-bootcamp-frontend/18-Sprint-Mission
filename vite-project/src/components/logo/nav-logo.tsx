@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import styled from "styled-components";
-import largeLogo from "../../assets/logo-large.svg";
 import smallLogo from "../../assets/logo-small.svg";
+import textLogo from "../../assets/logo-text-xsmall.svg";
 import { MediaQueryBreakpoint } from "../../utils/breakpoint";
 
 const StyledNavLogo = styled.picture`
@@ -19,8 +19,8 @@ const StyledNavLogo = styled.picture`
 function NavLogo(): JSX.Element {
   return (
     <StyledNavLogo>
-      <source srcSet={smallLogo} media={MediaQueryBreakpoint.mobile} />
-      <img src={largeLogo} />
+      <source srcSet={textLogo} media={MediaQueryBreakpoint.mobile} />
+      <img src={smallLogo} />
     </StyledNavLogo>
   );
 }
