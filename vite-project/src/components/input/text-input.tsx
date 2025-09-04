@@ -20,12 +20,14 @@ const StyledTextInput = styled.div`
   }
 `;
 
-interface Props extends InputHTMLAttributes<HTMLInputElement> {}
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
+  trailingIcon?: string;
+}
 
-function TextInput({ ...props }: Props): JSX.Element {
+function TextInput({ type = "text", ...props }: Props): JSX.Element {
   return (
     <StyledTextInput>
-      <input {...props} />
+      <input type={type} {...props} />
     </StyledTextInput>
   );
 }

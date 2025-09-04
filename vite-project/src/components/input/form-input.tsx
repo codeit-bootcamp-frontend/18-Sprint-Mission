@@ -19,11 +19,11 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string;
 }
 
-function FormInput({ labelText, id, ...props }: Props): JSX.Element {
+function FormInput({ type, labelText, id, ...props }: Props): JSX.Element {
   return (
     <StyledFormInput>
       <label htmlFor={id}>{labelText}</label>
-      <TextInput id={id} {...props} />
+      <TextInput id={id} type={type} {...props} />
     </StyledFormInput>
   );
 }

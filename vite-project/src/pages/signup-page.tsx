@@ -64,7 +64,8 @@ function SignUpPage() {
       inputValue.email.trim() !== "" &&
       inputValue.username.trim() !== "" &&
       inputValue.password.trim() !== "" &&
-      inputValue.confirmPassword.trim() !== ""
+      inputValue.confirmPassword.trim() !== "" &&
+      inputValue.password === inputValue.confirmPassword
     );
   }, [inputValue]);
 
@@ -81,6 +82,7 @@ function SignUpPage() {
           <LoginForm>
             <FormInput
               id="signup-email"
+              type="email"
               name="email"
               labelText="이메일"
               placeholder="이메일을 입력해주세요"
@@ -97,6 +99,7 @@ function SignUpPage() {
             />
             <FormInput
               id="signup-password"
+              type="password"
               name="password"
               labelText="비밀번호"
               placeholder="비밀번호를 입력해주세요"
@@ -105,6 +108,7 @@ function SignUpPage() {
             />
             <FormInput
               id="signup-confirm-password"
+              type="password"
               name="confirmPassword"
               labelText="비밀번호 확인"
               placeholder="비밀번호를 다시 한 번 입력해주세요"

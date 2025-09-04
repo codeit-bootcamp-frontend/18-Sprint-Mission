@@ -74,6 +74,7 @@ function LoginPage() {
           <LoginForm>
             <FormInput
               id="login-email"
+              type="email"
               name="email"
               labelText="이메일"
               placeholder="이메일을 입력해주세요"
@@ -82,6 +83,7 @@ function LoginPage() {
             />
             <FormInput
               id="login-password"
+              type="password"
               name="password"
               labelText="비밀번호"
               placeholder="비밀번호를 입력해주세요"
