@@ -117,6 +117,10 @@ const Container = styled.div`
     margin: 0;
     padding: 24px;
   }
+
+  @media ${MediaQueryBreakpoint.mobile} {
+    padding: 16px;
+  }
 `;
 
 const StyledContentSection = styled.section``;
