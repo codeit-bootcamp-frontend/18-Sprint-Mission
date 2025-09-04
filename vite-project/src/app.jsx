@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeLayout from "./layouts/home-layout";
+import OnboardingLayout from "./layouts/onboarding-layout";
 import AddItemPage from "./pages/add-item-page";
 import ItemDetailPage from "./pages/item-detail-page";
 import ItemsPage from "./pages/items-page";
 import NotFoundPage from "./pages/not-found-page";
+import OnboardingPage from "./pages/onboarding-page";
 import "./styles/global.css";
 import "./styles/palette.css";
 
@@ -11,6 +13,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route
+          path="/"
+          element={
+            <OnboardingLayout>
+              <OnboardingPage />
+            </OnboardingLayout>
+          }
+        />
         <Route
           path="/items"
           element={

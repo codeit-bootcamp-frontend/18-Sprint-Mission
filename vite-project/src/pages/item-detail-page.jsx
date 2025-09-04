@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import backImg from "../assets/ic-arrow-back.svg";
 import Button from "../components/button/button";
-import { BUTTON_SIZE, BUTTON_TYPE } from "../components/button/button-styles";
+import { ButtonShape, ButtonSize } from "../components/button/button-styles";
 import ProductDetailComment from "../features/product/components/product-detail-comment";
 import ProductDetailInfo from "../features/product/components/product-detail-info";
 
@@ -48,7 +48,7 @@ const StyledBackButton = styled(Link)`
 function BackButton({ children }) {
   return (
     <StyledBackButton to="/items">
-      <Button size={BUTTON_SIZE.medium} type={BUTTON_TYPE.pill}>
+      <Button size={ButtonSize.medium} shape={ButtonShape.pill}>
         {children}
         <img src={backImg} alt="되돌아가기" />
       </Button>

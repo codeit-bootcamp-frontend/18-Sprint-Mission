@@ -21,6 +21,7 @@ const Content = styled.div`
 interface Props {
   children: React.ReactNode;
 }
+
 function HomeLayout({ children }: Props): JSX.Element {
   return (
     <>

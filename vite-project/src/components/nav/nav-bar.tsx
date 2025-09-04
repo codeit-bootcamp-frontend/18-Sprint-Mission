@@ -2,6 +2,8 @@ import type { JSX } from "react";
 import styled from "styled-components";
 
 const Content = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
   height: 70px;
   display: flex;
@@ -10,7 +12,6 @@ const Content = styled.div`
 `;
 
 const StyledNavBar = styled.nav`
-  padding: 0 200px;
   border-bottom: 1px solid #dfdfdf;
   background-color: white;
 
@@ -26,6 +27,7 @@ const StyledNavBar = styled.nav`
 interface Props {
   children: React.ReactNode;
 }
+
 function NavBar({ children }: Props): JSX.Element {
   return (
     <StyledNavBar>

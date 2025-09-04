@@ -28,6 +28,7 @@ const StyledLinkList = styled.ul`
 interface Props {
   children: React.ReactNode;
 }
+
 function LinkList({ children }: Props): JSX.Element {
   return <StyledLinkList>{children}</StyledLinkList>;
 }

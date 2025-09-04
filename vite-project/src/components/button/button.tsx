@@ -1,25 +1,27 @@
+import type { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
-import { BUTTON_SIZE, BUTTON_TYPE } from "./button-styles";
+import { ButtonShape, ButtonSize } from "./button-styles";
 
 const BUTTON_STYLE = {
-  [BUTTON_SIZE.medium]: {
+  [ButtonSize.medium]: {
     padding: "11px 40px",
     fontSize: 18,
   },
-  [BUTTON_SIZE.small]: {
+  [ButtonSize.small]: {
     padding: "8px 23px",
     fontSize: 16,
   },
-  [BUTTON_TYPE.round]: {
+  [ButtonShape.round]: {
     borderRadius: 8,
   },
-  [BUTTON_TYPE.pill]: {
+  [ButtonShape.pill]: {
     borderRadius: 24,
   },
 };
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{ $size: ButtonSize; $shape: ButtonShape }>`
   display: flex;
+  justify-content: center;
   gap: 8px;
   background-color: var(--color-primary-100);
   padding: ${({ $size }) => BUTTON_STYLE[$size].padding};
@@ -27,7 +29,7 @@ const StyledButton = styled.button`
   font-size: ${({ $size }) => BUTTON_STYLE[$size].fontSize}px;
   font-weight: 600;
   line-height: 26px;
-  border-radius: ${({ $type }) => BUTTON_STYLE[$type].borderRadius}px;
+  border-radius: ${({ $shape }) => BUTTON_STYLE[$shape].borderRadius}px;
   border: none;
   cursor: pointer;
 
@@ -41,14 +43,20 @@ const StyledButton = styled.button`
   }
 `;
 
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: ButtonSize;
+  shape?: ButtonShape;
+  children: React.ReactNode;
+}
+
 function Button({
   children,
-  size = BUTTON_SIZE.small,
-  type = BUTTON_TYPE.round,
+  size = ButtonSize.small,
+  shape = ButtonShape.round,
   ...props
-}) {
+}: Props) {
   return (
-    <StyledButton $size={size} $type={type} {...props}>
+    <StyledButton $size={size} $shape={shape} {...props}>
       {children}
     </StyledButton>
   );
