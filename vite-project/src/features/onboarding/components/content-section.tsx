@@ -11,9 +11,11 @@ interface Props {
 }
 
 function breakText(text: string): JSX.Element {
-  const elements = text
-    .split("\n")
-    .map((value) => <div key={value}>{value}</div>);
+  const elements = text.split("\n").map((value) => (
+    <span key={value} style={{ display: "inline-block" }}>
+      {value}
+    </span>
+  ));
   return <>{elements}</>;
 }
 
