@@ -35,30 +35,37 @@ const Content = styled.div`
 
 const Container = styled.div`
   width: 640px;
-  margin: 230px auto;
+  margin: 60px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 
   @media ${MediaQueryBreakpoint.tablet} {
-    margin: 190px auto;
+    margin: 48px auto;
   }
 
   @media ${MediaQueryBreakpoint.mobile} {
-    margin: 80px auto;
+    margin: 24px auto;
     gap: 24px;
   }
 `;
 
-function LoginPage() {
+function SignUpPage() {
   const [inputValue, setInputValue] = useState<{
     email: string;
+    username: string;
     password: string;
-  }>({ email: "", password: "" });
+    confirmPassword: string;
+  }>({ email: "", username: "", password: "", confirmPassword: "" });
 
-  const canLogin = useMemo(() => {
-    return inputValue.email.trim() !== "" && inputValue.password.trim() !== "";
+  const canSignUp = useMemo(() => {
+    return (
+      inputValue.email.trim() !== "" &&
+      inputValue.username.trim() !== "" &&
+      inputValue.password.trim() !== "" &&
+      inputValue.confirmPassword.trim() !== ""
+    );
   }, [inputValue]);
 
   const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -73,7 +80,7 @@ function LoginPage() {
         <Content>
           <LoginForm>
             <FormInput
-              id="login-email"
+              id="signup-email"
               name="email"
               labelText="이메일"
               placeholder="이메일을 입력해주세요"
@@ -81,24 +88,40 @@ function LoginPage() {
               onChange={handleInputChange}
             />
             <FormInput
-              id="login-password"
+              id="signup-username"
+              name="username"
+              labelText="닉네임"
+              placeholder="닉네임을 입력해주세요"
+              value={inputValue.username}
+              onChange={handleInputChange}
+            />
+            <FormInput
+              id="signup-password"
               name="password"
               labelText="비밀번호"
               placeholder="비밀번호를 입력해주세요"
               value={inputValue.password}
               onChange={handleInputChange}
             />
+            <FormInput
+              id="signup-confirm-password"
+              name="confirmPassword"
+              labelText="비밀번호 확인"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+              value={inputValue.confirmPassword}
+              onChange={handleInputChange}
+            />
             <Button
               size={ButtonSize.medium}
               shape={ButtonShape.pill}
-              disabled={!canLogin}
+              disabled={!canSignUp}
             >
-              로그인
+              회원가입
             </Button>
           </LoginForm>
           <FormSocialLogin />
           <SignUpContainer>
-            판다마켓이 처음이신가요? <NavLink to="/signup">회원가입</NavLink>
+            이미 회원이신가요? <NavLink to="/login">로그인</NavLink>
           </SignUpContainer>
         </Content>
       </Container>
@@ -106,4 +129,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default SignUpPage;

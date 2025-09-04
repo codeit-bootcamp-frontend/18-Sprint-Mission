@@ -7,6 +7,7 @@ import ItemsPage from "./pages/items-page";
 import LoginPage from "./pages/login-page";
 import NotFoundPage from "./pages/not-found-page";
 import OnboardingPage from "./pages/onboarding-page";
+import SignUpPage from "./pages/signup-page";
 import "./styles/global.css";
 import "./styles/palette.css";
 
@@ -23,6 +24,7 @@ function App() {
           }
         />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route
           path="/items"
           element={
