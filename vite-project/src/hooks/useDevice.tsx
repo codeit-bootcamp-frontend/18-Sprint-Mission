@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-let _matchesDesktop;
-let _matchesTablet;
-let _matchesMobile;
+let _matchesDesktop: MediaQueryList | null;
+let _matchesTablet: MediaQueryList | null;
+let _matchesMobile: MediaQueryList | null;
 
 function useDevice() {
   const matchesDesktop = _matchesDesktop ?? matchMedia("(min-width: 1200px)");
@@ -17,7 +17,7 @@ function useDevice() {
   });
 
   useEffect(() => {
-    const handleDesktopMatchesChange = (e) => {
+    const handleDesktopMatchesChange = (e: MediaQueryListEvent) => {
       if (!e.matches) return;
       setDeviceInfo({
         isDesktop: true,
@@ -35,7 +35,7 @@ function useDevice() {
   }, [matchesDesktop]);
 
   useEffect(() => {
-    const handleTabletMatchesChange = (e) => {
+    const handleTabletMatchesChange = (e: MediaQueryListEvent) => {
       if (!e.matches) return;
       setDeviceInfo({
         isDesktop: false,
@@ -51,7 +51,7 @@ function useDevice() {
   }, [matchesTablet]);
 
   useEffect(() => {
-    const handleMobileMatchesChange = (e) => {
+    const handleMobileMatchesChange = (e: MediaQueryListEvent) => {
       if (!e.matches) return;
       setDeviceInfo({
         isDesktop: false,
