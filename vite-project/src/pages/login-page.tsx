@@ -34,7 +34,7 @@ const Content = styled.div`
 `;
 
 const Container = styled.div`
-  width: 640px;
+  max-width: 640px;
   margin: 230px auto;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,17 @@ const Container = styled.div`
   @media ${MediaQueryBreakpoint.mobile} {
     margin: 80px auto;
     gap: 24px;
+  }
+`;
+
+const StyledLoginPage = styled.main`
+  @media ${MediaQueryBreakpoint.tablet} {
+    padding: 0 56px;
+  }
+
+  @media ${MediaQueryBreakpoint.mobile} {
+    padding: 0 24px;
+    gap: 16px;
   }
 `;
 
@@ -67,7 +78,7 @@ function LoginPage() {
   };
 
   return (
-    <main>
+    <StyledLoginPage>
       <Container>
         <Link to="/">
           <FormLogo />
@@ -106,7 +117,7 @@ function LoginPage() {
           </SignUpContainer>
         </Content>
       </Container>
-    </main>
+    </StyledLoginPage>
   );
 }
 
