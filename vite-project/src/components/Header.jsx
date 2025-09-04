@@ -1,19 +1,16 @@
 import Logo from "../svg/logo.svg";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   return (
     <div className="container">
-      <a className="container-son">
+      <div className="container-son">
         <Link to="/" className="head_logo">
-          <img
-            src={Logo}
-            alt="판다마켓 로고"
-            style={{ width: 40, height: 40 }}
-          />
-          <span style={{ fontWeight: 700, color: "#3692FF" }}>판다마켓</span>
+          <img src={Logo} alt="판다마켓 로고" />
         </Link>
-      </a>
+        <span className="head_name">판다마켓</span>
+      </div>
       <Link to="/" className="free-board">
         자유게시판
       </Link>

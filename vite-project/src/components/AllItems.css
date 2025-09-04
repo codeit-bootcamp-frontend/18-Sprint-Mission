@@ -1,0 +1,27 @@
+.allitems_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 80px auto 20px;
+}
+
+.allitems_title {
+}
+
+.allitems_bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search {
+  border: 1px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 8px;
+  width: 280px;
+}
+
+.register {
+  background-color: #3692ff;
+}
