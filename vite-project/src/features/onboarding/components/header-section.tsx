@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import landingImageTop from "../../../assets/landing-image_top.png";
 import Button from "../../../components/button/button";
@@ -42,6 +43,12 @@ const StyledHeaderSection = styled.div`
 `;
 
 function HeaderSection(): JSX.Element {
+  const navigate = useNavigate();
+
+  const handleLookClick = () => {
+    navigate("/items");
+  };
+
   return (
     <HeaderFooterSection>
       <StyledHeaderSection>
@@ -51,7 +58,11 @@ function HeaderSection(): JSX.Element {
             <br />
             거래해 보세요
           </OnboardingTitle>
-          <Button size={ButtonSize.medium} shape={ButtonShape.pill}>
+          <Button
+            size={ButtonSize.medium}
+            shape={ButtonShape.pill}
+            onClick={handleLookClick}
+          >
             구경하러 가기
           </Button>
         </TitleContainer>

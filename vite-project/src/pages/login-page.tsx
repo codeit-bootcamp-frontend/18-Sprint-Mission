@@ -1,5 +1,5 @@
 import { useMemo, useState, type ChangeEventHandler } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../components/button/button";
 import { ButtonShape, ButtonSize } from "../components/button/button-styles";
@@ -69,7 +69,9 @@ function LoginPage() {
   return (
     <main>
       <Container>
-        <FormLogo />
+        <Link to="/">
+          <FormLogo />
+        </Link>
         <Content>
           <LoginForm>
             <FormInput

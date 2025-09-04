@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { Link } from "react-router-dom";
 import Avatar from "../avatar/avatar";
 import { LinkList, LinkListItem } from "../link/link-list";
 import StyledNavLink from "../link/styled-nav-link";
@@ -10,7 +11,9 @@ function HomeNavBar(): JSX.Element {
     <NavBar>
       <LinkList>
         <LinkListItem>
-          <NavLogo />
+          <Link to="/">
+            <NavLogo />
+          </Link>
         </LinkListItem>
         <LinkListItem>
           <StyledNavLink to="/community">자유게시판</StyledNavLink>
