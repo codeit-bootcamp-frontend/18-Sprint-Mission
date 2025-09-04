@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import styled from "styled-components";
-import HomeNavBar from "../../components/nav/home-nav-bar";
-import { MediaQueryBreakpoint } from "../../utils/breakpoint";
+import HomeNavBar from "../components/nav/home-nav-bar";
+import { MediaQueryBreakpoint } from "../utils/breakpoint";
 
 const Content = styled.div`
   max-width: 1200px;

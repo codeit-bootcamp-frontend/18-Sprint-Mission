@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import backImg from "../../assets/ic-arrow-back.svg";
-import Button from "../../components/button/button";
-import {
-  BUTTON_SIZE,
-  BUTTON_TYPE,
-} from "../../components/button/button-styles";
-import ProductDetailComment from "../../features/product/components/product-detail-comment";
-import ProductDetailInfo from "../../features/product/components/product-detail-info";
+import backImg from "../assets/ic-arrow-back.svg";
+import Button from "../components/button/button";
+import { BUTTON_SIZE, BUTTON_TYPE } from "../components/button/button-styles";
+import ProductDetailComment from "../features/product/components/product-detail-comment";
+import ProductDetailInfo from "../features/product/components/product-detail-info";
 
 const StyledItemDetailPage = styled.div`
   display: flex;

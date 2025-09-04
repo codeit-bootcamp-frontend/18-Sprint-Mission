@@ -1,13 +1,13 @@
 import { useState } from "react";
 import styled from "styled-components";
-import TextInput from "../../components/input/text-input";
-import Section from "../../components/section/section";
-import SectionHeader from "../../components/section/section-header";
-import SectionHeaderAction from "../../components/section/section-header-action";
-import SECTION_HEADER_SIZE from "../../components/section/section-header-size";
-import TagList from "../../components/tag/tag-list";
-import AddingProductImageContainer from "../../features/product/components/adding-product-image-container";
-import { formatPrice } from "../../utils/formatter";
+import TextInput from "../components/input/text-input";
+import Section from "../components/section/section";
+import SectionHeader from "../components/section/section-header";
+import SectionHeaderAction from "../components/section/section-header-action";
+import SECTION_HEADER_SIZE from "../components/section/section-header-size";
+import TagList from "../components/tag/tag-list";
+import AddingProductImageContainer from "../features/product/components/adding-product-image-container";
+import { formatPrice } from "../utils/formatter";
 
 const INITIAL_INPUT_VALUES = {
   title: "",

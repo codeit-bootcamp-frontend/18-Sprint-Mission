@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import SearchInput from "../../components/input/search-input";
-import PageControl from "../../components/page-control/page-control";
-import Section from "../../components/section/section";
-import SectionHeader from "../../components/section/section-header";
-import SectionHeaderAction from "../../components/section/section-header-action";
-import { fetchProducts } from "../../features/product/apis/products";
-import ProductSortSelect from "../../features/product/components/product-sort-select";
-import ProductsGrid from "../../features/product/components/products-grid";
-import { ORDER_BY_DEFAULT } from "../../features/product/utils/order-by-values";
-import { useDevice } from "../../hooks/useDevice";
+import SearchInput from "../components/input/search-input";
+import PageControl from "../components/page-control/page-control";
+import Section from "../components/section/section";
+import SectionHeader from "../components/section/section-header";
+import SectionHeaderAction from "../components/section/section-header-action";
+import { fetchProducts } from "../features/product/apis/products";
+import ProductSortSelect from "../features/product/components/product-sort-select";
+import ProductsGrid from "../features/product/components/products-grid";
+import { ORDER_BY_DEFAULT } from "../features/product/utils/order-by-values";
+import { useDevice } from "../hooks/useDevice";
 
 function getNumberOfColumns(deviceInfo) {
   let bestProductsColumns = 4;

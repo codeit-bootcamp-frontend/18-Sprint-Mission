@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomeLayout from "./layouts/home-layout/home-layout";
-import AddItemPage from "./pages/add-item/add-item-page";
-import ItemDetailPage from "./pages/items/item-detail-page";
-import ItemsPage from "./pages/items/items-page";
+import HomeLayout from "./layouts/home-layout";
+import AddItemPage from "./pages/add-item-page";
+import ItemDetailPage from "./pages/item-detail-page";
+import ItemsPage from "./pages/items-page";
 import NotFoundPage from "./pages/not-found-page";
 import "./styles/global.css";
 import "./styles/palette.css";
