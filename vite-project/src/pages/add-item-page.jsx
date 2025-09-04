@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import TextAreaInput from "../components/input/text-area-input";
 import TextInput from "../components/input/text-input";
 import Section from "../components/section/section";
 import SectionHeader from "../components/section/section-header";
@@ -104,12 +105,11 @@ function AddItemPage() {
               title={"상품 소개"}
               size={SECTION_HEADER_SIZE.small}
             />
-            <TextInput
+            <TextAreaInput
               name="description"
               value={inputValues["description"]}
               placeholder={"상품 소개를 입력해주세요"}
               onChange={handleInputChange}
-              multiline
               rows="10"
             />
           </Section>

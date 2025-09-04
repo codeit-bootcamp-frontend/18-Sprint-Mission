@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Button from "../../../components/button/button";
-import TextInput from "../../../components/input/text-input";
+import TextAreaInput from "../../../components/input/text-area-input";
 
 const StyledCommentForm = styled.form`
   display: flex;
@@ -44,12 +44,11 @@ function CommentForm() {
   return (
     <StyledCommentForm>
       <label htmlFor="comment-input">문의하기</label>
-      <TextInput
+      <TextAreaInput
         id="comment-input"
         value={comment}
         placeholder={INPUT_PLACEHOLDER}
         onChange={handleInputChange}
-        multiline
         rows="3"
       />
       <Button disabled={!canSubmit}>등록</Button>
