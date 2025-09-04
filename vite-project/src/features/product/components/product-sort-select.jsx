@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import selectDownImgMobile from "../../assets/ic-arrow-down-list.svg";
-import selectDownImg from "../../assets/ic-triangle-down.svg";
+import selectDownImgMobile from "../../../assets/ic-arrow-down-list.svg";
+import selectDownImg from "../../../assets/ic-triangle-down.svg";
 import { ORDER_BY_DEFAULT, ORDER_BY_VALUES } from "../utils/order-by-values";
 
 const ORDER_BY_TITLE = {

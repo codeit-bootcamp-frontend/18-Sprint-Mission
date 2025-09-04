@@ -1,7 +1,8 @@
+import type { JSX } from "react";
 import styled from "styled-components";
 import defaultImg from "../../assets/profile-default.svg";
 
-const StyledAvatar = styled.div`
+const StyledAvatar = styled.div<{ $size: number }>`
   width: ${({ $size }) => $size}px;
   height: ${({ $size }) => $size}px;
 
@@ -15,7 +16,12 @@ const StyledAvatar = styled.div`
 
 const DEFAULT_SIZE = 40;
 
-function Avatar({ imageUrl, size = DEFAULT_SIZE }) {
+interface Props {
+  imageUrl?: string;
+  size?: number;
+}
+
+function Avatar({ imageUrl, size = DEFAULT_SIZE }: Props): JSX.Element {
   return (
     <StyledAvatar $size={size}>
       <img src={imageUrl || defaultImg} alt="프로필 사진" />
