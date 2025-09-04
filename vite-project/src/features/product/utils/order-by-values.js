@@ -5,4 +5,4 @@ const ORDER_BY_VALUES = {
   favorite: "favorite",
 };
 
-export default { ORDER_BY_DEFAULT, ORDER_BY_VALUES };
+export { ORDER_BY_DEFAULT, ORDER_BY_VALUES };
