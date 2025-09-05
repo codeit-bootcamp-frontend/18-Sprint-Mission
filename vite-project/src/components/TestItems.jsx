@@ -1,19 +1,10 @@
-export function ListItem({ item }) {
-  return (
-    <div>
-      <p>{item.createdAt}</p>
-      <p>{item.price}</p>
-      <p>{item.name}</p>
-      <p>{item.favoriteCount}</p>
-      <img src={item.images} />
-    </div>
-  );
-}
+import ListItem from "./ListItem";
+import "./ListItem.css";
 
 function TestItems({ items }) {
   console.log(items);
   return (
-    <ul>
+    <ul className="item">
       {items.map((item) => {
         return (
           <li key={item.id}>

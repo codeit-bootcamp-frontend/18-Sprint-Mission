@@ -1,4 +1,4 @@
-import { ListItem } from "./TestItems";
+import ListItem from "./TestItems";
 
 const BestItems = () => {
   return (
