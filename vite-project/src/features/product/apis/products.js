@@ -1,10 +1,11 @@
 import { client } from "../../../api/HttpClient";
+import { ORDER_BY_DEFAULT } from "../utils/order-by-values";
 
 async function fetchProducts({
   keyword = "",
   page = 1,
   pageSize = 10,
-  orderBy = "recent",
+  orderBy = ORDER_BY_DEFAULT,
 } = {}) {
   const params = {
     page,
