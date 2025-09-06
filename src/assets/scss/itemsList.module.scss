@@ -1,7 +1,5 @@
 @import "./_variables";
 
-
-
 .formWrap {
   width: 40%;
   max-width: 32.5rem;
@@ -21,11 +19,6 @@
 }
 
 @include mobile {
-  .sectionTitleWrap {
-    flex-wrap: wrap;
-    gap: 0.8rem 1.4rem;
-    align-items: flex-start;
-  }
   .formWrap {
     order: 3;
     width: 100%;

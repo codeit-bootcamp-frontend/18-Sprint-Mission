@@ -23,11 +23,6 @@
 }
 
 @media all and (max-width: 47.9375rem) {
-  .sectionTitleWrap {
-    flex-wrap: wrap;
-    gap: 0.8rem 1.4rem;
-    align-items: flex-start;
-  }
   .formWrap {
     order: 3;
     width: 100%;

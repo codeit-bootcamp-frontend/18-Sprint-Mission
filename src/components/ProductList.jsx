@@ -9,19 +9,19 @@ import "react-loading-skeleton/dist/skeleton.css";
 //베스트 아이템
 function BestProduct({ items, col, setNumberComma, isBestLoading }) {
   return (
-    <ul className={`${product.thumbNailList} ${product["col" + col]}`}>
-      {items.map((item) => {
-        return (
-          <li key={item.id}>
-            <ProductItem
-              item={item}
-              setNumberComma={setNumberComma}
-              isLoading={isBestLoading}
-            />
-          </li>
-        );
-      })}
-    </ul>
+      <ul className={`${product.thumbNailList} ${product["col" + col]}`}>
+        {items.map((item) => {
+          return (
+            <li key={item.id}>
+              <ProductItem
+                item={item}
+                setNumberComma={setNumberComma}
+                isLoading={isBestLoading}
+              />
+            </li>
+          );
+        })}
+      </ul>
   );
 }
 

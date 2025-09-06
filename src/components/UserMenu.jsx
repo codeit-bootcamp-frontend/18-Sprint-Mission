@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import userMenu from "../assets/scss/userMenu.module.scss";
 import userProFile from "../assets/images/UserButton.svg";
-import { useState } from "react";
+import Button from "./Button";
+import { Children, useState } from "react";
 
 function UserMenu({ isLogin }) {
   return (
@@ -14,7 +15,9 @@ function UserMenu({ isLogin }) {
             </button>
             <ul className={userMenu.dropMenu}>
               <li>
-                <button className={userMenu.logoutButton}>로그아웃</button>
+                <Button className={userMenu.logoutButton}>
+                  로그아웃
+                </Button>               
               </li>
             </ul>
           </>

@@ -10,7 +10,6 @@ import { useResponsiveQueries } from "../hooks/useMediaQuery";
 import { useComma } from "../hooks/useComma";
 import list from "../assets/scss/itemsList.module.scss";
 
-
 function Items() {
   //미디어 쿼리
   const { isTABLET, isMOBILE } = useResponsiveQueries();
@@ -46,7 +45,7 @@ function Items() {
   };
 
   useEffect(() => {
-    handleBestLoad({ pageSize: bestLength });
+    handleBestLoad({ page: 1, pageSize: bestLength, orderBy: "favorite" });
   }, [isTABLET, isMOBILE]);
 
   //리스트 불러오기
@@ -65,7 +64,6 @@ function Items() {
   //선택한 페이지 리스트 불러오기
   const handlePageLoad = (pageNumber) => {
     setPage(pageNumber);
-    handleListLoad({ page: pageNumber, pageSize: itemListLength, orderBy });
   };
 
   //정렬
@@ -95,7 +93,7 @@ function Items() {
             <div className={list.formWrap}>
               <SearchGroup />
             </div>
-            <NavLink to="/" className={list.linkButton}>
+            <NavLink to="/Additem" className={list.linkButton}>
               상품 등록하기
             </NavLink>
             <div className={list.selectBoxGroup}>
