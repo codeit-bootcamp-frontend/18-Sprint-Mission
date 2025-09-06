@@ -20,14 +20,14 @@ const Dropdown = ({ handleSelect, orderBy }) => {
     <div className="relative order-3 cursor-pointer">
       <div
         onClick={() => setIsDropdown(!isDropdown)}
-        className="hidden w-32 gap-4 px-5 py-3 border md:flex rounded-xl"
+        className="hidden w-32 gap-4 px-5 py-3 border xs:flex rounded-xl"
       >
         <span>{dropdownValue}</span>
         <img src={arrow} alt="드롭다운 화살표 아이콘" />
       </div>
       <div
         onClick={() => setIsDropdown(!isDropdown)}
-        className="p-3 border rounded-xl md:hidden"
+        className="p-3 border rounded-xl xs:hidden"
       >
         <img src={dropdown} alt="드롭다운 아이콘" />
       </div>

@@ -21,7 +21,7 @@ export const useResponsivePage = () => {
         setNormalPicContainerSize("grid224");
         setBestPicContainerSize("grid228");
         setBestPicSize("bestPicSize");
-      } else if (window.matchMedia("(min-width:636px)").matches) {
+      } else if (window.matchMedia("(min-width:680px)").matches) {
         setPageSize(6);
         setBestPageSize(2);
         setIsMobile(false);

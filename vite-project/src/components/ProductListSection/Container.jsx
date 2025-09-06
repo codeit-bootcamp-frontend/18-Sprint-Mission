@@ -6,6 +6,7 @@ import Pagination from "../ProductListSection/Pagination";
 import searchIcon from "../../assets/searchIcon.svg";
 import Dropdown from "./Dropdown";
 import { useResponsivePage } from "../../hooks/useResponsivePage";
+import { Link } from "react-router-dom";
 
 const Container = ({ pageSize, isMobile }) => {
   const [orderBy, setOrderBy] = useState("recent");
@@ -67,9 +68,13 @@ const Container = ({ pageSize, isMobile }) => {
                   placeholder="검색할 상품을 입력해주세요"
                 />
               </div>
-              <button className="px-6 py-3 text-white bg-blue-500 rounded-lg">
-                상품 등록하기
-              </button>
+              <Link
+                className="px-6 py-3 text-white bg-blue-500 rounded-lg"
+                to="/addItems"
+              >
+                상품등록하기
+              </Link>
+
               <Dropdown handleSelect={handleSelect} orderBy={orderBy} />
             </div>
           </div>
