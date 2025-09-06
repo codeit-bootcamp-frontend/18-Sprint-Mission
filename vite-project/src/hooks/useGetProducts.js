@@ -1,17 +1,50 @@
 import { useEffect, useState } from "react";
 import getProductLists from "../services/getProductLists";
+import none_icon from "../assets/none_icon.png";
 
-export default function useGetProducts() {
+const loadImg = (url) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+      resolve(url);
+    };
+    img.onerror = () => {
+      reject(none_icon);
+    };
+  });
+};
+
+export default function useGetProducts({
+  currentPage = 1,
+  orderBy = "recent",
+  pageSize = 10,
+}) {
+  const [totalProductCount, setTotalProductCount] = useState(0);
   const [products, setProducts] = useState([]);
 
-  const getProducts = async () => {
-    const { list } = await getProductLists();
-    setProducts(list);
-  };
-
   useEffect(() => {
-    getProducts();
-  }, []);
+    const handleLoad = async () => {
+      const [recent] = await Promise.all([
+        getProductLists(currentPage, pageSize, orderBy),
+      ]);
+      setTotalProductCount(recent.totalCount);
 
-  return { products, setProducts };
+      const validImagePromises = recent.list.map((product) =>
+        loadImg(product.images[0]).catch(() => none_icon)
+      );
+      const validUrls = await Promise.all(validImagePromises);
+
+      const validProducts = recent.list.map((product, index) => ({
+        ...product,
+        images: [validUrls[index]],
+      }));
+
+      setProducts(validProducts);
+    };
+
+    handleLoad();
+  }, [currentPage, orderBy, pageSize]);
+
+  return { products, totalProductCount };
 }

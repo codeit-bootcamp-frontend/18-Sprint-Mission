@@ -1,20 +1,27 @@
 import ProductCard from "./ProductCard";
 import { GRID_SIZES } from "./ProductGridTokens";
+import { PIC_SIZES } from "./ProductGridTokens";
 
-const productGrid = ({ gridSize = "grid224", products }) => {
+const ProductGrid = ({
+  gridSize = "grid224",
+  picSize = "normalPicSize",
+  products,
+}) => {
   const sizeClass = GRID_SIZES[gridSize] || "";
+  const picSizeClass = PIC_SIZES[picSize] || "";
 
   return (
-    <div className="flex gap-3">
-      {" "}
+    <div className="flex flex-wrap justify-center gap-5">
       {products.map((product) => {
         return (
           <ProductCard
             key={product.id}
-            className={sizeClass}
+            className={`${sizeClass}`}
             name={product.name}
             price={product.price}
+            favoriteCount={product.favoriteCount}
             images={product.images}
+            picSizeClass={picSizeClass}
           />
         );
       })}
@@ -22,4 +29,4 @@ const productGrid = ({ gridSize = "grid224", products }) => {
   );
 };
 
-export default productGrid;
+export default ProductGrid;

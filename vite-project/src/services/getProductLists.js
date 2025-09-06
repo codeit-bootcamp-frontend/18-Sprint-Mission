@@ -2,7 +2,7 @@ import instance from "./axiosInstance";
 
 export default async function getProductLists(
   page = 1,
-  pageSize = 5,
+  pageSize = 10,
   orderBy = "recent"
 ) {
   try {
@@ -12,7 +12,5 @@ export default async function getProductLists(
     return response.data;
   } catch (error) {
     throw new Error(`상품을 불러오는데 실패하였습니다. ${error.message}`);
-  } finally {
-    console.log("여긴 뭐해야지");
   }
 }

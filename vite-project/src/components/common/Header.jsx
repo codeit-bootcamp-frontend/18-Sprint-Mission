@@ -4,8 +4,8 @@ import profile from "../../assets/profile.svg";
 
 const Header = () => {
   return (
-    <div className="px-6 py-2 md:px-52 flex justify-between">
-      <div className="flex gap-4 items-center">
+    <div className="flex justify-between px-6 py-2 border-b xl:px-52">
+      <div className="flex items-center gap-4">
         <img src={LogoIcon} alt="판다마켓 판다 아이콘" />
         <img src={Logo} alt="판다마켓 로고" />
         <span>자유게시판</span>
