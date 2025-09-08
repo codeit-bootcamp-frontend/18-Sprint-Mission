@@ -1,0 +1,14 @@
+.todoLabel {
+  background-color: var(--color-lime-300);
+  color: var(--color-green-700);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 6px 27px;
+  border-radius: 24px;
+}
+
+.todoLabel.done {
+  background-color: var(--color-green-700);
+  color: var(--color-amber-300);
+}
