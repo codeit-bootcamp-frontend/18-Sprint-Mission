@@ -1,6 +1,7 @@
 .todoLabel {
   background-color: var(--color-lime-300);
   color: var(--color-green-700);
+  font-family: "HsSantoki20";
   font-size: 18px;
   font-weight: 400;
   line-height: 100%;
