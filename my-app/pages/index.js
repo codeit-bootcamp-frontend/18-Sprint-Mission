@@ -52,11 +52,6 @@ export default function Home() {
           content="A productivity app to help you get things done"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"
-        ></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
