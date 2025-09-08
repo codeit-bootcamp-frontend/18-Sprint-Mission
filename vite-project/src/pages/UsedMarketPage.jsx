@@ -34,7 +34,7 @@ const UsedMarketPage = () => {
       setBestItems(list);
     };
     fetchlist();
-  }, [page, pageSize]);
+  }, [pageSize]);
 
   const goPage = async (n) => {
     const { list } = await getLists({
