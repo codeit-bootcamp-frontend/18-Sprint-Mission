@@ -5,8 +5,8 @@ function EmptyMessage({ children }) {
   const chunks = children.split("\n");
   let messageChunks = [];
   for (const chunk of chunks) {
-    messageChunks.push(<span>{chunk}</span>);
-    messageChunks.push(<br />);
+    messageChunks.push(<span key={chunk}>{chunk}</span>);
+    messageChunks.push(<br key={`${chunk}-br`} />);
   }
   messageChunks.pop();
   return <p>{messageChunks}</p>;

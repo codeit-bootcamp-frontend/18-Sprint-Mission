@@ -8,7 +8,7 @@ function GlobalNavBar() {
         <Link href="/">
           <picture>
             <source
-              srcset="/images/logo-small.svg"
+              srcSet="/images/logo-small.svg"
               media="(max-width: 743px)"
             />
             <img src="/images/logo-large.svg" alt="logo" />

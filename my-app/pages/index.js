@@ -6,21 +6,41 @@ import Todo from "@/components/todo/todo";
 import TodoList from "@/components/todo/todo-list";
 import styles from "@/styles/home.module.css";
 import Head from "next/head";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 export default function Home() {
-  const [checked, setChecked] = useState(false);
+  const [inputValue, setInputValue] = useState("");
   const [todos, setTodos] = useState([]);
 
-  const inProgressTodos = todos.filter((todo) => !todo.isCompleted);
-  const doneTodos = todos.filter((todo) => todo.isCompleted);
+  const canAdd = useMemo(() => inputValue.trim().length > 0, [inputValue]);
+
+  const inProgressTodos = todos
+    .filter((todo) => !todo.isCompleted)
+    .sort((a, b) => a.id - b.id);
+  const doneTodos = todos
+    .filter((todo) => todo.isCompleted)
+    .sort((a, b) => a.id - b.id);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
   const handleAddClick = (event) => {
     event.preventDefault();
+    setTodos((prev) => [
+      ...prev,
+      { id: prev.length + 1, name: inputValue, isCompleted: false },
+    ]);
+    setInputValue("");
   };
 
-  const handleToDoClick = (event) => {
-    setChecked((prev) => !prev);
+  const handleToDoClick = (todo) => {
+    setTodos((prevTodos) => {
+      const index = prevTodos.findIndex((prevTodo) => prevTodo.id === todo.id);
+      let newTodos = [...prevTodos];
+      newTodos[index] = { ...todo, isCompleted: !todo.isCompleted };
+      return newTodos;
+    });
   };
 
   return (
@@ -44,22 +64,34 @@ export default function Home() {
         <main className={styles.main}>
           <div className={styles.content}>
             <form className={styles.searchForm}>
-              <SearchInput />
-              <Button type={BUTTON_TYPE.add} onClick={handleAddClick}>
+              <SearchInput
+                value={inputValue}
+                placeholder="할 일을 입력해주세요"
+                onChange={handleInputChange}
+              />
+              <Button
+                type={BUTTON_TYPE.add}
+                onClick={handleAddClick}
+                disabled={!canAdd}
+              >
                 추가하기
               </Button>
             </form>
             <div className={styles.todoListContainer}>
               <TodoList>
                 {inProgressTodos.map((todo) => (
-                  <Todo key={todo.id} checked={done}>
+                  <Todo key={todo.id} onClick={() => handleToDoClick(todo)}>
                     {todo.name}
                   </Todo>
                 ))}
               </TodoList>
               <TodoList done>
                 {doneTodos.map((todo) => (
-                  <Todo key={todo.id} checked={done}>
+                  <Todo
+                    key={todo.id}
+                    checked
+                    onClick={() => handleToDoClick(todo)}
+                  >
                     {todo.name}
                   </Todo>
                 ))}
