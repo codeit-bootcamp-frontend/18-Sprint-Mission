@@ -1,4 +1,14 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-state-100: #f1f5f9;
+  --color-state-200: #e2e8f0;
+  --color-state-300: #cbd5e1;
+  --color-state-400: #94a3b8;
+  --color-state-500: #64748b;
+  --color-state-800: #1e293b;
+  --color-state-900: #0f172a;
+  --color-violet-100: #ede9fe;
+  --color-violet-600: #7c3aed;
+  --color-rose-500: #f43f5e;
+  --color-lime-300: #bef264;
+  --color-amber-800: #92400e;
 }
