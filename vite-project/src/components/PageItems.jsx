@@ -1,7 +1,7 @@
 import ListItem from "./ListItem";
 import "./ListItem.css";
 
-function TestItems({ items }) {
+function PageItems({ items }) {
   console.log(items);
   return (
     <ul className="item">
@@ -15,4 +15,4 @@ function TestItems({ items }) {
     </ul>
   );
 }
-export default TestItems;
+export default PageItems;

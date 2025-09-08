@@ -1,8 +1,8 @@
-import ListItem from "./TestItems";
+import "./BestItems.css";
 
 const BestItems = () => {
   return (
-    <div>
+    <div className="best_container">
       <h2 className="bestitems_menu">베스트 상품</h2>
     </div>
   );

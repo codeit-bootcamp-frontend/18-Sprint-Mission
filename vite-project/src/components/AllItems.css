@@ -7,6 +7,7 @@
 
 .allitems_title {
   margin-right: 12px;
+  color: #333;
 }
 
 .allitems_bar {
@@ -25,4 +26,17 @@
 
 .register {
   background-color: #3692ff;
+}
+
+.dropped-down {
+  gap: 10px;
+
+  border-radius: 12px;
+  border-width: 1px;
+  padding-top: 12px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  color: #333;
+  background-color: #ffffff;
 }

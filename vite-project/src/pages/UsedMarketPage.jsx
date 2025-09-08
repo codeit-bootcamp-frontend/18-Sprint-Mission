@@ -1,78 +1,111 @@
 import { useEffect, useState } from "react";
 import AllItems from "../components/AllItems";
 import BestItems from "../components/BestItems";
-import TestItems from "../components/TestItems";
+import PageItems from "../components/PageItems";
 import { getLists } from "../api/api";
+import useMediaQuery from "../hooks/mediaquery";
+import "./UsedMarketPage.css";
+
+const LIMIT = 12;
 
 const UsedMarketPage = () => {
   const [orderBy, setOrderBy] = useState("recent");
   const [items, setItems] = useState([]);
   const [bestItems, setBestItems] = useState([]);
   const [page, setPage] = useState(1);
-  const LIMIT = 10;
+  const [search, setSearch] = useState("");
 
-  const sortedItems = items.sort((a, b) => {
-    return b[orderBy] - a[orderBy];
-  });
+  const { device } = useMediaQuery();
+  const deviceMap = {
+    mobile: 1,
+    tablet: 2,
+    desktop: 4,
+  };
+
+  const pageSize = deviceMap[device];
 
   useEffect(() => {
-    const bestlist = async () => {
+    const fetchlist = async () => {
       const { list } = await getLists({
         page,
-        pageSize: 4,
+        pageSize: deviceMap[device],
         orderBy: "favorite",
       });
       setBestItems(list);
     };
-    bestlist();
-  }, []);
-
-  const handleNewestClick = () => setOrderBy("recent");
-  const handleBestClick = () => setOrderBy("favorite");
-
-  const handleLoad = async () => {
-    const { list } = await getLists({ page, pageSize: LIMIT, orderBy });
-    if (page === 1) {
-      setItems(list);
-    } else {
-      setItems([...items, ...list]);
-    }
-    setPage(page);
-  };
+    fetchlist();
+  }, [page, pageSize]);
 
   const goPage = async (n) => {
-    const { list } = await getLists({ page: n, pageSize: LIMIT, orderBy });
+    const { list } = await getLists({
+      page: n,
+      pageSize: LIMIT,
+      orderBy,
+      keyword: search,
+    });
     setItems(list);
     setPage(n);
   };
 
-  const handleLoadMore = () => {
-    handleLoad({ orderBy, page, pageSize: LIMIT });
-  };
-
   useEffect(() => {
-    handleLoad({ orderBy, page: 1, pageSize: LIMIT });
-  }, [orderBy]);
+    goPage(1);
+  }, [orderBy, search]);
+
+  const getFilteredData = () => items;
+  const filteredItems = getFilteredData();
+
+  const MAXPAGE = 5;
+
+  const focusPage = (n) => document.getElementById(`page${n}`).focus();
 
   return (
     <>
-      <main>
+      <main className="main">
         <BestItems />
-        <TestItems items={bestItems} />
-        <AllItems />
-        <TestItems items={sortedItems} />
+        <PageItems items={bestItems} />
+        <AllItems
+          orderBy={orderBy}
+          setOrderBy={setOrderBy}
+          search={search}
+          setSearch={setSearch}
+        />
+        <PageItems items={filteredItems} />
         <div>
-          <div>
-            <button onClick={() => goPage(1)}>1</button>
-            <button onClick={() => goPage(2)}>2</button>
-            <button onClick={() => goPage(3)}>3</button>
-            <button onClick={() => goPage(4)}>4</button>
-            <button onClick={() => goPage(5)}>5</button>
+          <div className="page_button">
+            <button
+              onClick={() => {
+                const n = Math.max(1, page - 1);
+                focusPage(n);
+                goPage(n);
+              }}
+            >
+              ◁
+            </button>
+            <button id="page1" onClick={() => goPage(1)}>
+              1
+            </button>
+            <button id="page2" onClick={() => goPage(2)}>
+              2
+            </button>
+            <button id="page3" onClick={() => goPage(3)}>
+              3
+            </button>
+            <button id="page4" onClick={() => goPage(4)}>
+              4
+            </button>
+            <button id="page5" onClick={() => goPage(5)}>
+              5
+            </button>
+            <button
+              onClick={() => {
+                const n = Math.min(MAXPAGE, page + 1);
+                focusPage(n);
+                goPage(n);
+              }}
+            >
+              ▷
+            </button>
           </div>
-          <button onClick={handleNewestClick}>최신순</button>
-          <button onClick={handleBestClick}>좋아요순</button>
-          <button onClick={handleLoad}>불러오기</button>
-          <button onClick={handleLoadMore}>더보기</button>
         </div>
       </main>
     </>
