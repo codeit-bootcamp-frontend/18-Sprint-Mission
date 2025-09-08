@@ -19,21 +19,12 @@
 
   .globalNavBar .content {
     max-width: none;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
+    margin: 0;
   }
 }
 
 @media (max-width: 743px) {
   .globalNavBar {
     padding: 0 16px;
-  }
-
-  .globalNavBar .content {
-    max-width: none;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
   }
 }

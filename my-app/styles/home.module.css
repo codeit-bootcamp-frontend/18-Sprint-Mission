@@ -14,3 +14,20 @@
   align-items: center;
   gap: 16px;
 }
+
+@media (max-width: 1199px) {
+  .main {
+    padding: 0 24px;
+  }
+
+  .content {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 743px) {
+  .main {
+    padding: 0 16px;
+  }
+}
