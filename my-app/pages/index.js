@@ -5,7 +5,6 @@ import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
 import Todo from "@/components/todo/todo";
 import TodoList from "@/components/todo/todo-list";
 import styles from "@/styles/home.module.css";
-import Head from "next/head";
 import { useMemo, useState } from "react";
 
 export default function Home() {
@@ -45,15 +44,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Do It</title>
-        <meta
-          name="description"
-          content="A productivity app to help you get things done"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div>
         <GlobalNavBar />
         <main className={styles.main}>
