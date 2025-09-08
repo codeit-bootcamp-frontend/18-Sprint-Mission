@@ -1,4 +1,5 @@
 .searchInput {
+  width: 100%;
   background-color: var(--color-state-100);
   padding: 16px 24px;
   border: 2px solid var(--color-state-900);

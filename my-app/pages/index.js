@@ -1,6 +1,15 @@
+import Button from "@/components/button/button";
+import { BUTTON_TYPE } from "@/components/button/button-type";
+import SearchInput from "@/components/input/search-input";
+import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
+import styles from "@/styles/home.module.css";
 import Head from "next/head";
 
 export default function Home() {
+  const handleAddClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <>
       <Head>
@@ -13,8 +22,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <main>
-          <h1>Welcome to Do It</h1>
+        <GlobalNavBar />
+        <main className={styles.main}>
+          <div className={styles.content}>
+            <form className={styles.searchForm}>
+              <SearchInput />
+              <Button type={BUTTON_TYPE.add} onClick={handleAddClick}>
+                추가하기
+              </Button>
+            </form>
+          </div>
         </main>
       </div>
     </>

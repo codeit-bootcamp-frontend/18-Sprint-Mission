@@ -1,0 +1,16 @@
+.main {
+  padding: 0 200px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
