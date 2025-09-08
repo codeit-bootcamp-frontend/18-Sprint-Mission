@@ -2,6 +2,7 @@ import Button from "@/components/button/button";
 import { BUTTON_TYPE } from "@/components/button/button-type";
 import SearchInput from "@/components/input/search-input";
 import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
+import Todo from "@/components/todo/todo";
 import TodoList from "@/components/todo/todo-list";
 import styles from "@/styles/home.module.css";
 import Head from "next/head";
@@ -9,6 +10,10 @@ import { useState } from "react";
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
+  const [todos, setTodos] = useState([]);
+
+  const inProgressTodos = todos.filter((todo) => !todo.isCompleted);
+  const doneTodos = todos.filter((todo) => todo.isCompleted);
 
   const handleAddClick = (event) => {
     event.preventDefault();
@@ -45,8 +50,20 @@ export default function Home() {
               </Button>
             </form>
             <div className={styles.todoListContainer}>
-              <TodoList />
-              <TodoList done />
+              <TodoList>
+                {inProgressTodos.map((todo) => (
+                  <Todo key={todo.id} checked={done}>
+                    {todo.name}
+                  </Todo>
+                ))}
+              </TodoList>
+              <TodoList done>
+                {doneTodos.map((todo) => (
+                  <Todo key={todo.id} checked={done}>
+                    {todo.name}
+                  </Todo>
+                ))}
+              </TodoList>
             </div>
           </div>
         </main>

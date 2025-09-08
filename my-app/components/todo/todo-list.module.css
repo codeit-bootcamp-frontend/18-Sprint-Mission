@@ -12,3 +12,21 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.todoListEmptyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.todoListEmptyContainer img {
+  aspect-ratio: 1 / 1;
+}
+.todoListEmptyContainer p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--color-state-400);
+  text-align: center;
+}
