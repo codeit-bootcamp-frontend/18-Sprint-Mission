@@ -1,0 +1,21 @@
+.searchInput {
+  background-color: var(--color-state-100);
+  padding: 16px 24px;
+  border: 2px solid var(--color-state-900);
+  border-radius: 30px;
+  box-shadow: 4px 4px 0px var(--color-state-900);
+}
+.searchInput input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-state-900);
+}
+.searchInput input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-state-500);
+}

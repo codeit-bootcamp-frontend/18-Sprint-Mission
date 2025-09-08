@@ -12,3 +12,7 @@
   --color-lime-300: #bef264;
   --color-amber-800: #92400e;
 }
+
+* {
+  box-sizing: border-box;
+}
