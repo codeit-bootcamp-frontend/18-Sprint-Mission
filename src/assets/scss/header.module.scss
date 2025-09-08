@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   padding: 1rem 0 0.9rem;
-  width: 100%;
+  width: 100vw;
   height: 7rem;
   background-color: var(--white100);
   border-bottom: 1px solid var(--line);
@@ -41,15 +41,26 @@
 
   a {
     display: block;
+    position: relative;
     height: fit-content;
     padding: 1rem 1rem;
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #3692ff;
+      content: "";
+    }
     &.active {
-      border-bottom: 2px solid #3692ff;
+      &::after {
+        width: 100%;
+        @include transition(width, 0.3s, 0.1s);
+      }
     }
   }
 }
-
-
 
 @include mobile {
   .container {

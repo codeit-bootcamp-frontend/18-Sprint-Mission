@@ -8,8 +8,7 @@ import Pagination from "../components/Pagination";
 import useAsync from "../hooks/useAsync";
 import { useResponsiveQueries } from "../hooks/useMediaQuery";
 import { useComma } from "../hooks/useComma";
-import list from "../assets/css/itemsList.module.css";
-
+import list from "../assets/scss/itemsList.module.scss";
 
 function Items() {
   //미디어 쿼리
@@ -46,7 +45,7 @@ function Items() {
   };
 
   useEffect(() => {
-    handleBestLoad({ pageSize: bestLength });
+    handleBestLoad({ page: 1, pageSize: bestLength, orderBy: "favorite" });
   }, [isTABLET, isMOBILE]);
 
   //리스트 불러오기
@@ -65,7 +64,6 @@ function Items() {
   //선택한 페이지 리스트 불러오기
   const handlePageLoad = (pageNumber) => {
     setPage(pageNumber);
-    handleListLoad({ page: pageNumber, pageSize: itemListLength, orderBy });
   };
 
   //정렬
@@ -76,8 +74,8 @@ function Items() {
     <>
       <section className="section section-1">
         <div className="inner">
-          <div className={list.sectionTitleWrap}>
-            <h2 className={list.sectionTitle}>베스트 상품</h2>
+          <div className="sectionTitleWrap">
+            <h2 className="sectionTitle">베스트 상품</h2>
           </div>
           <BestProduct
             items={bestItems}
@@ -90,12 +88,12 @@ function Items() {
       </section>
       <section className="section section-2">
         <div className="inner">
-          <div className={list.sectionTitleWrap}>
-            <h2 className={list.sectionTitle}>전체 상품</h2>
+          <div className="sectionTitleWrap">
+            <h2 className="sectionTitle">전체 상품</h2>
             <div className={list.formWrap}>
               <SearchGroup />
             </div>
-            <NavLink to="/" className={list.linkButton}>
+            <NavLink to="/Additem" className={list.linkButton}>
               상품 등록하기
             </NavLink>
             <div className={list.selectBoxGroup}>

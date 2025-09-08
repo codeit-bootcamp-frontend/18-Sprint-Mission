@@ -3,22 +3,21 @@ import leftArrowIcon from "../assets/images/left_arrow.svg";
 import rightArrowIcon from "../assets/images/right_arrow.svg";
 import wrap from "../assets/scss/pagination.module.scss";
 
-function Pagination({ onPageLoad, totalCount, itemListLength }) {
+//페이지네이션 최대 생성 갯수
+const LIST_MAX = 5;
+const paginationArr = (startPage, maxPages) => {
+  const pages = [];
+  for (let i = 0; i < maxPages; i++) {
+    pages.push(startPage + i);
+  }
+  return pages;
+};
 
-  //페이지네이션 최대 생성 갯수
-  const LIST_MAX = 5;
+function Pagination({ onPageLoad, totalCount, itemListLength }) {
   const ITEM_LENGTH = itemListLength;
   const [currentPage, setCurrentPage] = useState(1); //현재 페이지
   const [pages, setPages] = useState([]); //페이지네이션 배열
   const [hasNext, setHasNext] = useState(true);
-
-  const paginationArr = (startPage, maxPages) => {
-    const pages = [];   
-    for (let i = 0; i < maxPages; i++) {
-      pages.push(startPage + i);
-    }
-    return pages;
-  };
 
   // 페이지네이션 상태 업데이트 함수
   useEffect(() => {
@@ -42,7 +41,7 @@ function Pagination({ onPageLoad, totalCount, itemListLength }) {
 
       setPages(newPages);
     }
-  }, [currentPage,totalCount,itemListLength]);
+  }, [currentPage, totalCount, itemListLength]);
 
   // 이전 페이지 버튼 클릭
   const handlePrevClick = () => {
@@ -60,22 +59,6 @@ function Pagination({ onPageLoad, totalCount, itemListLength }) {
     onPageLoad(nextPage);
   };
 
-  // 페이지네이션 렌더링
-  const renderPages = () => {
-    return pages.map((number) => (
-      <li key={number}>
-        <button
-          className={`${wrap.button} ${
-            currentPage === number ? wrap.active : ""
-          }`}
-          onClick={() => handlePageClick(number)}
-        >
-          {number}
-        </button>
-      </li>
-    ));
-  };
-
   //페이지 클릭
   const handlePageClick = (number) => {
     setCurrentPage(number); //현재 페이지 변경
@@ -87,7 +70,13 @@ function Pagination({ onPageLoad, totalCount, itemListLength }) {
       <button className={wrap.button} onClick={handlePrevClick}>
         <img src={leftArrowIcon} alt="이전페이지" />
       </button>
-      <ul>{renderPages()}</ul>
+      <ul>
+        <RenderPages
+          pages={pages}
+          currentPage={currentPage}
+          onClick={handlePageClick}
+        />
+      </ul>
       {hasNext && (
         <button className={wrap.button} onClick={handleNextClick}>
           <img src={rightArrowIcon} alt="다음페이지" />
@@ -95,6 +84,22 @@ function Pagination({ onPageLoad, totalCount, itemListLength }) {
       )}
     </div>
   );
+}
+
+// 페이지네이션 렌더링
+function RenderPages({ pages, currentPage, onClick }) {
+  return pages.map((number) => (
+    <li key={number}>
+      <button
+        className={`${wrap.button} ${
+          currentPage === number ? wrap.active : ""
+        }`}
+        onClick={() => onClick(number)}
+      >
+        {number}
+      </button>
+    </li>
+  ));
 }
 
 export default Pagination;

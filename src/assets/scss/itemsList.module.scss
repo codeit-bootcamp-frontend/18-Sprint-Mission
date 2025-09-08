@@ -1,23 +1,5 @@
 @import "./_variables";
 
-.sectionTitleWrap {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0 1.2rem;
-  position: relative;
-  z-index: 100;
-  margin-bottom: 1.6rem;
-  width: 100%;
-  min-height: 3.2rem;
-
-  .sectionTitle {
-    position: absolute;
-    left: 0;
-    font-size: var(--sectionTitle);
-  }
-}
-
 .formWrap {
   width: 40%;
   max-width: 32.5rem;
@@ -37,11 +19,6 @@
 }
 
 @include mobile {
-  .sectionTitleWrap {
-    flex-wrap: wrap;
-    gap: 0.8rem 1.4rem;
-    align-items: flex-start;
-  }
   .formWrap {
     order: 3;
     width: 100%;

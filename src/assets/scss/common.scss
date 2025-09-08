@@ -4,7 +4,7 @@
 @import "./_variables";
 
 body {
-  width: 100%;
+  width: calc(100vw - calc(100vw - 100%));
   font-family: "Pretendard-Regular";
   font-size: var(--common);
 }
@@ -48,7 +48,8 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem 2.3rem;
+  padding: 1.3rem 2.229rem;
+  line-height: 1;
   font-size: var(--common);
   font-weight: 600;
   color: var(--white100);
@@ -59,15 +60,48 @@ body {
   -ms-border-radius: 9999px;
   -o-border-radius: 9999px;
   white-space: nowrap;
+
+  &[disabled] {
+    background-color: var(--gray400);
+    cursor: default;
+  }
 }
 
 .medium-button {
   height: 4.8rem;
 }
 
+.small-round {
+  @include round(1.2rem);
+}
+
+.sectionTitleWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0 1.2rem;
+  position: relative;
+  z-index: 100;
+  margin-bottom: 1.6rem;
+  width: 100%;
+  min-height: 3.2rem;
+
+  .sectionTitle {
+    position: absolute;
+    left: 0;
+    font-size: var(--sectionTitle);
+  }
+}
+
 @include mobile {
   .inner {
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     width: 100%;
+  }
+
+  .sectionTitleWrap {
+    flex-wrap: wrap;
+    gap: 0.8rem 1.4rem;
+    align-items: flex-start;
   }
 }
