@@ -1,0 +1,42 @@
+.allitems_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 80px auto 20px;
+}
+
+.allitems_title {
+  margin-right: 12px;
+  color: #333;
+}
+
+.allitems_bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search {
+  border: 1px;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 8px;
+  width: 280px;
+}
+
+.register {
+  background-color: #3692ff;
+}
+
+.dropped-down {
+  gap: 10px;
+
+  border-radius: 12px;
+  border-width: 1px;
+  padding-top: 12px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  color: #333;
+  background-color: #ffffff;
+}
