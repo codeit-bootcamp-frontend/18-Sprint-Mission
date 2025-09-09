@@ -64,7 +64,7 @@ function TotalProducts({
       <div className="total-products-card">
         {totalProducts.map((product) => (
           <Link
-            to="/items/{productId}"
+            to={`/items/${product.id}`}
             className="total-product-card"
             key={product.id}
           >

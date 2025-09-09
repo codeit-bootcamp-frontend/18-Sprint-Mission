@@ -32,6 +32,7 @@ export default function SelectDropdown({ onChange, value }) {
       <div ref={dropdownRef} className="select-dropdown">
         <div className="selected-option" onClick={() => setIsOpen(!isOpen)}>
           <img src={selectIcon} alt="드롭다운 아이콘" />
+          <span>{selected ? selected.label : "선택"}</span>
         </div>
 
         {isOpen && (
