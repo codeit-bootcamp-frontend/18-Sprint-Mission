@@ -2,17 +2,13 @@ import { useState } from "react";
 import { Outlet } from "react-router";
 import visibleEye_off from "../assets/icons/eyes_off.png";
 import visibleEye_on from "../assets/icons/eyes_on.png";
-
-export interface visibleValue {
-  pw: boolean;
-  checkPw: boolean;
-}
+import { isVisibleKey, VisibleValue } from "../types/authType";
 
 export default function AuthLayout() {
   /**
    * 비밀번호 보이기 / 가리기 상태
    */
-  const [visible, setVisible] = useState<visibleValue>({
+  const [visible, setVisible] = useState<VisibleValue>({
     pw: false,
     checkPw: false,
   });
@@ -21,7 +17,9 @@ export default function AuthLayout() {
    * id 별로 비밀번호 가리기 여부를 변경한다.
    * @param {string} id
    */
-  const onClickVisible = (id: keyof visibleValue) => {
+  const onClickVisible = (id: string) => {
+    if (!isVisibleKey(id)) return;
+
     setVisible((prevState) => ({
       ...prevState,
       [id]: !visible[id],

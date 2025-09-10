@@ -2,9 +2,9 @@ import { Link, useOutletContext } from "react-router";
 import "../../styles/auth.css";
 import ic_kakao from "../../assets/icons/ic_kakao.png";
 import ic_google from "../../assets/icons/ic_google.png";
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { visibleValue } from "../../layout/AuthLayout";
+import { AuthType } from "../../types/authType";
 
 /**
  * 회원가입 화면
@@ -16,13 +16,7 @@ export default function Signup() {
     onClickVisible,
     visibleEye_off,
     visibleEye_on,
-  }: {
-    visible: visibleValue;
-    setVisible: (prevState: SetStateAction<object>) => void;
-    onClickVisible: (e: string) => void;
-    visibleEye_off: string;
-    visibleEye_on: string;
-  } = useOutletContext();
+  }: AuthType = useOutletContext();
 
   /**
    * 기본적으로 비밀번호 숨김 상태 유지

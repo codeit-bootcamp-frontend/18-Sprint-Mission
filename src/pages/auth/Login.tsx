@@ -3,8 +3,8 @@ import ic_kakao from "../../assets/icons/ic_kakao.png";
 import ic_google from "../../assets/icons/ic_google.png";
 import { Link, useOutletContext } from "react-router";
 import { useForm } from "react-hook-form";
-import { SetStateAction, useEffect } from "react";
-import { visibleValue } from "../../layout/AuthLayout";
+import { useEffect } from "react";
+import { AuthType } from "../../types/authType";
 
 /**
  * 로그인 화면
@@ -16,13 +16,7 @@ export default function Login() {
     onClickVisible,
     visibleEye_off,
     visibleEye_on,
-  }: {
-    visible: visibleValue;
-    setVisible: (prevState: SetStateAction<object>) => void;
-    onClickVisible: (e: string) => void;
-    visibleEye_off: string;
-    visibleEye_on: string;
-  } = useOutletContext();
+  }: AuthType = useOutletContext();
 
   /**
    * 기본적으로 비밀번호 숨김 상태 유지
