@@ -51,9 +51,6 @@ const UsedMarketPage = () => {
     goPage(1);
   }, [orderBy, search]);
 
-  const getFilteredData = () => items;
-  const filteredItems = getFilteredData();
-
   const MAXPAGE = 5;
 
   const focusPage = (n) => document.getElementById(`page${n}`).focus();
@@ -69,7 +66,7 @@ const UsedMarketPage = () => {
           search={search}
           setSearch={setSearch}
         />
-        <PageItems items={filteredItems} />
+        <PageItems items={items} />
         <div>
           <div className="page_button">
             <button
