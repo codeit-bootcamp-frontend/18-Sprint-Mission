@@ -2,9 +2,9 @@ import { Link, useOutletContext } from "react-router";
 import "../../styles/auth.css";
 import ic_kakao from "../../assets/icons/ic_kakao.png";
 import ic_google from "../../assets/icons/ic_google.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthType } from "../../types/authType";
+import { AuthType, SignupType } from "../../types/authType";
 
 /**
  * 회원가입 화면
@@ -32,11 +32,11 @@ export default function Signup() {
    * 회원가입 양식 정보를 담고 있는 객체
    * 이메일, 닉네임, 비밀번호, 비밀번호 확인
    */
-  // const [signupForm, setSignupForm] = useState({
-  //   email: "",
-  //   nickname: "",
-  //   pw: "",
-  // });
+  const [signupForm, setSignupForm] = useState<SignupType>({
+    email: "",
+    nickname: "",
+    pw: "",
+  });
 
   // const onValid = (data) => {
   //   console.log("✅ 유효성 검사 성공! 데이터:", data);

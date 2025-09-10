@@ -18,3 +18,9 @@ export interface AuthType {
 export function isVisibleKey(value: string): value is VisibleKey {
   return value === "pw" || value === "checkPw";
 }
+
+export interface SignupType {
+  email: string;
+  nickname: string;
+  pw: string;
+}
