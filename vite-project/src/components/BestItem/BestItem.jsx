@@ -34,14 +34,12 @@ const BestItem = () => {
   ];
 
   return (
-    <section className="px-72 py-4">
+    <section className="py-8">
       {/* 베스트 상품 제목 */}
-      <p className="text-xl font-bold text-gray-900 mb-4 inline-block">
-        베스트 상품
-      </p>
+      <p className="text-xl font-bold text-gray-900 mb-6">베스트 상품</p>
 
-      {/* 상품 그리드 */}
-      <div className="grid grid-cols-4 gap-6">
+      {/* 상품 그리드 - 반응형 */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         {bestProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
