@@ -4,7 +4,8 @@
     "module": "esnext",
     "outDir": "dist",
     "strict": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "jsx": "react-jsx"
   },
   "include": ["src"]
 }

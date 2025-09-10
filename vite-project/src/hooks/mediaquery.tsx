@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useMediaQuery() {
-  const [device, setDevice] = useState("mobile"); // 'desktop' | 'tablet' | 'mobile'
+  const [device, setDevice] = useState<string>("mobile"); // 'desktop' | 'tablet' | 'mobile'
 
   useEffect(
     () => {

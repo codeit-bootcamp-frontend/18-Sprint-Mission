@@ -5,10 +5,10 @@ import PageItems from "../components/PageItems";
 import { getLists } from "../api/api";
 import useMediaQuery from "../hooks/mediaquery";
 import "./UsedMarketPage.css";
-
-const LIMIT = 12;
+import { MouseEvent, ReactNode } from "react";
 
 const UsedMarketPage = () => {
+  const LIMIT = 12;
   const [orderBy, setOrderBy] = useState("recent");
   const [items, setItems] = useState([]);
   const [bestItems, setBestItems] = useState([]);
@@ -16,6 +16,7 @@ const UsedMarketPage = () => {
   const [search, setSearch] = useState("");
 
   const { device } = useMediaQuery();
+
   const deviceMap = {
     mobile: 1,
     tablet: 2,
@@ -36,7 +37,7 @@ const UsedMarketPage = () => {
     fetchlist();
   }, [pageSize]);
 
-  const goPage = async (n) => {
+  const goPage = async (n: number) => {
     const { list } = await getLists({
       page: n,
       pageSize: LIMIT,
@@ -53,7 +54,7 @@ const UsedMarketPage = () => {
 
   const MAXPAGE = 5;
 
-  const focusPage = (n) => document.getElementById(`page${n}`).focus();
+  const focusPage = (n: number) => document.getElementById(`page${n}`).focus();
 
   return (
     <>
