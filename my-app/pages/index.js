@@ -8,11 +8,16 @@ import TodoList from "@/components/todo/todo-list";
 import { useAsyncCall } from "@/hooks/use-async-call";
 import { addTodo, getTodos, toggleTodo } from "@/libs/apis/todo";
 import styles from "@/styles/home.module.css";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
-export default function Home() {
+export async function getServerSideProps() {
+  const todos = await getTodos();
+  return { props: { todos } };
+}
+
+export default function Home({ todos: initialTodos }) {
   const [inputValue, setInputValue] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(initialTodos ?? []);
   const [isLoading, execute] = useAsyncCall();
 
   const canAdd = useMemo(() => inputValue.trim().length > 0, [inputValue]);
@@ -50,13 +55,6 @@ export default function Home() {
       });
     });
   };
-
-  useEffect(() => {
-    execute(async () => {
-      const fetchedTodos = await getTodos();
-      setTodos(fetchedTodos);
-    });
-  }, []);
 
   return (
     <>
