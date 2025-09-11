@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getProductComments, getProductDetails } from "../../api";
 import { useParams } from "react-router-dom";
 import ItemInfo from "./ItemInfo";
+import ItemComments from "./ItemComments";
 
 export default function ItemDetailPage() {
   const [itemInfo, setItemInfo] = useState({});
@@ -28,15 +29,19 @@ export default function ItemDetailPage() {
   console.log(commentInfo);
   return (
     <>
-      <ItemInfo
-        images={itemInfo.images}
-        name={itemInfo.name}
-        price={itemInfo.price}
-        description={itemInfo.description}
-        favoriteCount={itemInfo.favoriteCount}
-        tags={itemInfo.tags}
-        nickname={itemInfo.ownerNickname}
-      />
+      <div className="w-[1200px] h-[1257px] mx-auto">
+        <ItemInfo
+          images={itemInfo.images}
+          name={itemInfo.name}
+          price={itemInfo.price}
+          description={itemInfo.description}
+          favoriteCount={itemInfo.favoriteCount}
+          tags={itemInfo.tags}
+          nickname={itemInfo.ownerNickname}
+          createdAt={itemInfo.createdAt}
+        />
+        <ItemComments commentInfo={commentInfo} />
+      </div>
     </>
   );
 }

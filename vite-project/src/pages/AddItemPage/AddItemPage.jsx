@@ -7,6 +7,8 @@ import ProductAddInt from "./ProductAddInt.jsx";
 import ProductAddPrice from "./ProductAddPrice.jsx";
 import ProductAddTag from "./ProductAddTag.jsx";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { postProducts } from "../../api.jsx";
 
 const FormContainer = Styled.form`
     display: flex;
@@ -22,7 +24,10 @@ function AddItemPage() {
     description: "",
     price: "",
     tags: [],
+    images: null,
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (field, value) => {
     setFormValues((prev) => ({ ...prev, [field]: value }));
@@ -34,11 +39,17 @@ function AddItemPage() {
     formValues.price.trim() !== "" &&
     formValues.tags.length > 0;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isFormValid) return;
 
-    console.log("등록 데이터:", formValues); //submit 확인용
+    try {
+      const newItem = { ...formValues, price: Number(formValues.price) };
+      const response = await postProducts(newItem);
+      navigate("/items");
+    } catch (error) {
+      console.error("상품 등록 실패", error.message);
+    }
   };
 
   return (
