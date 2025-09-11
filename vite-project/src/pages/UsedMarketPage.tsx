@@ -5,19 +5,21 @@ import PageItems from "../components/PageItems";
 import { getLists } from "../api/api";
 import useMediaQuery from "../hooks/mediaquery";
 import "./UsedMarketPage.css";
-i;
+import { Items, OrderBy, GetListsParams, GetListsResponse } from "../api/api";
 
 const UsedMarketPage = () => {
   const LIMIT = 12;
-  const [orderBy, setOrderBy] = useState("recent");
-  const [items, setItems] = useState([]);
-  const [bestItems, setBestItems] = useState([]);
+  const [orderBy, setOrderBy] = useState<OrderBy>("recent");
+  const [items, setItems] = useState<Items[]>([]);
+  const [bestItems, setBestItems] = useState<Items[]>([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
+  type DeviceMap = { [key: string]: number }; // 인덱스 시그니처
+
   const { device } = useMediaQuery();
 
-  const deviceMap = {
+  const deviceMap: DeviceMap = {
     mobile: 1,
     tablet: 2,
     desktop: 4,
@@ -54,8 +56,6 @@ const UsedMarketPage = () => {
 
   const MAXPAGE = 5;
 
-  const focusPage = (n: number) => document.getElementById(`page${n}`).focus();
-
   return (
     <>
       <main className="main">
@@ -73,7 +73,7 @@ const UsedMarketPage = () => {
             <button
               onClick={() => {
                 const n = Math.max(1, page - 1);
-                focusPage(n);
+
                 goPage(n);
               }}
             >
@@ -97,7 +97,7 @@ const UsedMarketPage = () => {
             <button
               onClick={() => {
                 const n = Math.min(MAXPAGE, page + 1);
-                focusPage(n);
+
                 goPage(n);
               }}
             >
