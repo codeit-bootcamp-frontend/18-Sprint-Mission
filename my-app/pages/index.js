@@ -4,8 +4,9 @@ import SearchInput from "@/components/input/search-input";
 import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
 import Todo from "@/components/todo/todo";
 import TodoList from "@/components/todo/todo-list";
+import { addTodo, getTodos, toggleTodo } from "@/libs/apis/todo";
 import styles from "@/styles/home.module.css";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -24,23 +25,26 @@ export default function Home() {
     setInputValue(event.target.value);
   };
 
-  const handleAddClick = (event) => {
+  const handleAddClick = async (event) => {
     event.preventDefault();
-    setTodos((prev) => [
-      ...prev,
-      { id: prev.length + 1, name: inputValue, isCompleted: false },
-    ]);
+    const newTodo = await addTodo(inputValue);
+    setTodos((prev) => [...prev, newTodo]);
     setInputValue("");
   };
 
-  const handleToDoClick = (todo) => {
+  const handleToDoClick = async (todo) => {
+    const updatedTodo = await toggleTodo(todo);
     setTodos((prevTodos) => {
       const index = prevTodos.findIndex((prevTodo) => prevTodo.id === todo.id);
       let newTodos = [...prevTodos];
-      newTodos[index] = { ...todo, isCompleted: !todo.isCompleted };
+      newTodos[index] = updatedTodo;
       return newTodos;
     });
   };
+
+  useEffect(() => {
+    getTodos().then((fetchedTodos) => setTodos(fetchedTodos));
+  }, []);
 
   return (
     <>
