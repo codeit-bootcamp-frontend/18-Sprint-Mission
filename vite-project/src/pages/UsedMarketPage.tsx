@@ -5,7 +5,7 @@ import PageItems from "../components/PageItems";
 import { getLists } from "../api/api";
 import useMediaQuery from "../hooks/mediaquery";
 import "./UsedMarketPage.css";
-import { MouseEvent, ReactNode } from "react";
+i;
 
 const UsedMarketPage = () => {
   const LIMIT = 12;

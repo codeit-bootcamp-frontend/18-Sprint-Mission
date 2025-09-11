@@ -6,7 +6,8 @@
     "strict": true,
     "moduleDetection": "force",
     "jsx": "react-jsx",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "traceResolution": true
   },
   "include": ["src"]
 }
