@@ -1,4 +1,4 @@
-class Client {
+class HttpClient {
   constructor(baseUrl = process.env.NEXT_PUBLIC_BASE_URL) {
     this.baseUrl = baseUrl;
   }
@@ -44,4 +44,4 @@ class Client {
   }
 }
 
-export default Client;
+export default HttpClient;

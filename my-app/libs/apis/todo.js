@@ -1,8 +1,8 @@
-import Client from "./client";
+import HttpClient from "./http-client";
 
 export async function getTodos() {
   try {
-    const client = new Client();
+    const client = new HttpClient();
     const items = await client.get("items");
     return items;
   } catch (error) {
@@ -12,7 +12,7 @@ export async function getTodos() {
 
 export async function addTodo(name) {
   try {
-    const client = new Client();
+    const client = new HttpClient();
     const newItem = await client.post(`items`, { name });
     return newItem;
   } catch (error) {
@@ -22,7 +22,7 @@ export async function addTodo(name) {
 
 export async function toggleTodo(todo) {
   try {
-    const client = new Client();
+    const client = new HttpClient();
     const updatedItem = await client.patch(`items/${todo.id}`, {
       isCompleted: !todo.isCompleted,
     });
