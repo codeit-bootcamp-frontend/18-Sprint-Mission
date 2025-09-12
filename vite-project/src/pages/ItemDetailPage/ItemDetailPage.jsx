@@ -29,7 +29,7 @@ export default function ItemDetailPage() {
   console.log(commentInfo);
   return (
     <>
-      <div className="w-[1200px] h-[1257px] mx-auto">
+      <div className="tablet:w-[696px] mobile:w-[344px] w-[1200px] h-[1257px] mx-auto">
         <ItemInfo
           images={itemInfo.images}
           name={itemInfo.name}
