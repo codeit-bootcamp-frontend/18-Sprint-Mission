@@ -1,0 +1,46 @@
+.main {
+  padding: 0 200px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.todoListContainer {
+  margin-top: 40px;
+  display: flex;
+  gap: 24px;
+}
+
+.loading {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+@media (max-width: 1199px) {
+  .main {
+    padding: 0 24px;
+  }
+
+  .content {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 743px) {
+  .main {
+    padding: 0 16px;
+  }
+}

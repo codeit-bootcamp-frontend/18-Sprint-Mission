@@ -1,0 +1,31 @@
+.globalNavBar {
+  height: 60px;
+  background-color: white;
+  padding: 0 200px;
+  border-bottom: 1px solid var(--color-state-200);
+}
+
+.globalNavBar .content {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1199px) {
+  .globalNavBar {
+    padding: 0 24px;
+  }
+
+  .globalNavBar .content {
+    max-width: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 743px) {
+  .globalNavBar {
+    padding: 0 16px;
+  }
+}
