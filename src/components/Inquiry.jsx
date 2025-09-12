@@ -6,7 +6,7 @@ import {
 import { requestInquiryLists } from "../services/inquiryApi";
 import { useNavigate } from "react-router";
 import icBack from "../assets/icons/ic_back.svg";
-import useService from "../hooks/useService";
+import useFetch from "../hooks/useService";
 import InquiryWriteArea from "./InquiryWriteArea";
 import InquiryList from "../pages/components/ItemDetail/InquiryList";
 
@@ -16,7 +16,7 @@ export default function Inquiry({ id }) {
   /**
    * 문의 내역을 가져온다.
    */
-  const { data, isLoading } = useService(() => requestInquiryLists(id));
+  const { data, isLoading } = useFetch(() => requestInquiryLists(id));
 
   return (
     <>

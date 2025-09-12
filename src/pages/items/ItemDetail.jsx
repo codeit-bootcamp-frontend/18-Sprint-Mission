@@ -7,7 +7,7 @@ import {
 } from "../../styles/items/ItemDetailStyle";
 
 import Inquiry from "../../components/Inquiry";
-import useService from "../../hooks/useService";
+import useFetch from "../../hooks/useService";
 import ProductDetails from "../components/ItemDetail/ProductDetails";
 
 export default function ItemDetail() {
@@ -24,7 +24,7 @@ export default function ItemDetail() {
   /**
    * 상품 정보 받아오기
    */
-  const { data, isLoading } = useService(() => requestProductDetail(productId));
+  const { data, isLoading } = useFetch(() => requestProductDetail(productId));
 
   return (
     <>

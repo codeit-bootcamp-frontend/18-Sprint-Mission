@@ -1,16 +1,22 @@
-import '../../styles/auth.css';
-import ic_kakao from '../../assets/icons/ic_kakao.png';
-import ic_google from '../../assets/icons/ic_google.png';
-import { Link, useOutletContext } from 'react-router';
-import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
+import "../../styles/auth.css";
+import ic_kakao from "../../assets/icons/ic_kakao.png";
+import ic_google from "../../assets/icons/ic_google.png";
+import { Link, useOutletContext } from "react-router";
+import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { AuthType } from "../../types/authType";
 
 /**
  * 로그인 화면
  */
 export default function Login() {
-  const { visible, setVisible, onClickVisible, visibleEye_off, visibleEye_on } =
-    useOutletContext();
+  const {
+    visible,
+    setVisible,
+    onClickVisible,
+    visibleEye_off,
+    visibleEye_on,
+  }: AuthType = useOutletContext();
 
   /**
    * 기본적으로 비밀번호 숨김 상태 유지
@@ -28,8 +34,8 @@ export default function Login() {
   const {
     register,
     formState: { errors },
-    handleSubmit,
-  } = useForm({ mode: 'onBlur' });
+    // handleSubmit,
+  } = useForm({ mode: "onBlur" });
 
   return (
     <>
@@ -40,7 +46,7 @@ export default function Login() {
               <div className="auth-logo-img"></div>
             </Link>
           </div>
-          <form id="form" className="form-box" onSubmit={handleSubmit}>
+          <form id="form" className="form-box">
             <div className="input-container">
               <div id="email-box" className="email-box">
                 <label htmlFor="email" className="basic-p">
@@ -48,12 +54,11 @@ export default function Login() {
                 </label>
                 <input
                   className={`input-box email ${
-                    errors.email ? 'auth-err-border' : ''
+                    errors.email ? "auth-err-border" : ""
                   }`}
-                  name="email"
                   type="email"
                   placeholder="이메일을 입력해주세요"
-                  {...register('email', {
+                  {...register("email", {
                     required: true,
                     pattern:
                       /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -70,12 +75,11 @@ export default function Login() {
                 </label>
                 <input
                   className={`input-box pw ${
-                    errors.password ? 'auth-err-border' : ''
+                    errors.password ? "auth-err-border" : ""
                   }`}
-                  name="password"
-                  type={visible.pw ? 'text' : 'password'}
+                  type={visible.pw ? "text" : "password"}
                   placeholder="비밀번호를 입력해주세요"
-                  {...register('password', {
+                  {...register("password", {
                     required: true,
                     minLength: 8,
                   })}
@@ -86,15 +90,15 @@ export default function Login() {
                     src={visible.pw ? visibleEye_on : visibleEye_off}
                     alt="visible-icon"
                     onClick={(e) => {
-                      onClickVisible(e.target.id);
+                      onClickVisible(e.currentTarget.id);
                     }}
                   />
                 </div>
               </div>
-              {errors.password?.type === 'required' && (
+              {errors.password?.type === "required" && (
                 <p className="auth-err-msg">비밀번호를 입력해주세요</p>
               )}
-              {errors.password?.type === 'minLength' && (
+              {errors.password?.type === "minLength" && (
                 <p className="auth-err-msg">
                   비밀번호를 8자 이상 입력해주세요.
                 </p>

@@ -1,11 +1,11 @@
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 /**
  * 문의 데이터를 가져온다.
  * @param {string} productId
  */
 export const requestInquiryLists = async (productId) => {
-  const url = new URL(
-    `https://panda-market-api.vercel.app/products/${productId}/comments`
-  );
+  const url = new URL(`${BASE_URL}products/${productId}/comments`);
   url.searchParams.append("limit", 3);
 
   const response = await fetch(url, {
@@ -24,9 +24,7 @@ export const requestInquiryLists = async (productId) => {
  * @returns
  */
 export const requestPostInquiry = async (inquiryData) => {
-  const url = new URL(
-    `https://panda-market-api.vercel.app/products/${inquiryData.productId}/comments`
-  );
+  const url = new URL(`${BASE_URL}products/${inquiryData.productId}/comments`);
 
   try {
     const response = await fetch(url, {

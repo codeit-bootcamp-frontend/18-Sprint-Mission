@@ -1,16 +1,22 @@
-import { Link, useOutletContext } from 'react-router';
-import '../../styles/auth.css';
-import ic_kakao from '../../assets/icons/ic_kakao.png';
-import ic_google from '../../assets/icons/ic_google.png';
-import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Link, useOutletContext } from "react-router";
+import "../../styles/auth.css";
+import ic_kakao from "../../assets/icons/ic_kakao.png";
+import ic_google from "../../assets/icons/ic_google.png";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { AuthType, SignupType } from "../../types/authType";
 
 /**
  * 회원가입 화면
  */
 export default function Signup() {
-  const { visible, setVisible, onClickVisible, visibleEye_off, visibleEye_on } =
-    useOutletContext();
+  const {
+    visible,
+    setVisible,
+    onClickVisible,
+    visibleEye_off,
+    visibleEye_on,
+  }: AuthType = useOutletContext();
 
   /**
    * 기본적으로 비밀번호 숨김 상태 유지
@@ -26,16 +32,16 @@ export default function Signup() {
    * 회원가입 양식 정보를 담고 있는 객체
    * 이메일, 닉네임, 비밀번호, 비밀번호 확인
    */
-  const [signupForm, setSignupForm] = useState({
-    email: '',
-    nickname: '',
-    pw: '',
+  const [signupForm, setSignupForm] = useState<SignupType>({
+    email: "",
+    nickname: "",
+    pw: "",
   });
 
-  const onValid = (data) => {
-    console.log('✅ 유효성 검사 성공! 데이터:', data);
-    setSignupForm(data);
-  };
+  // const onValid = (data) => {
+  //   console.log("✅ 유효성 검사 성공! 데이터:", data);
+  //   setSignupForm(data);
+  // };
 
   /**
    * React-Hook-Form 사용 객체 선언
@@ -43,10 +49,10 @@ export default function Signup() {
   const {
     register,
     formState: { errors, isValid },
-    handleSubmit,
+    // handleSubmit,
     getValues,
   } = useForm({
-    mode: 'onBlur',
+    mode: "onBlur",
   });
   console.log(isValid);
 
@@ -60,7 +66,7 @@ export default function Signup() {
             </Link>
           </div>
 
-          <form id="signup-form" onSubmit={handleSubmit(onValid)}>
+          <form id="signup-form">
             <div className="input-container">
               <div id="email-box" className="email-box">
                 <label htmlFor="email" className="basic-p">
@@ -68,12 +74,11 @@ export default function Signup() {
                 </label>
                 <input
                   className={`input-box email ${
-                    errors.email ? 'auth-err-border' : ''
+                    errors.email ? "auth-err-border" : ""
                   }`}
-                  name="email"
                   type="email"
                   placeholder="이메일을 입력해주세요"
-                  {...register('email', {
+                  {...register("email", {
                     required: true,
                     pattern:
                       /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -89,23 +94,22 @@ export default function Signup() {
                   닉네임
                 </label>
                 <input
-                  name="nickname"
                   className={`input-box nickname ${
-                    errors.nickname ? 'auth-err-border' : ''
+                    errors.nickname ? "auth-err-border" : ""
                   }`}
                   type="text"
                   placeholder="닉네임을 입력해주세요"
-                  {...register('nickname', {
+                  {...register("nickname", {
                     required: true,
                     minLength: 2,
                     maxLength: 10,
                   })}
                 />
               </div>
-              {errors.nickname?.type === 'required' && (
+              {errors.nickname?.type === "required" && (
                 <p className="auth-err-msg">닉네임을 입력해주세요</p>
               )}
-              {errors.nickname?.type === 'maxLength' && (
+              {errors.nickname?.type === "maxLength" && (
                 <p className="auth-err-msg">닉네임이 너무 깁니다.</p>
               )}
 
@@ -115,12 +119,11 @@ export default function Signup() {
                 </label>
                 <input
                   className={`input-box pw ${
-                    errors.password ? 'auth-err-border' : ''
+                    errors.password ? "auth-err-border" : ""
                   }`}
-                  name="password"
-                  type={visible.pw ? 'text' : 'password'}
+                  type={visible.pw ? "text" : "password"}
                   placeholder="비밀번호를 입력해주세요"
-                  {...register('password', {
+                  {...register("password", {
                     required: true,
                     minLength: 8,
                   })}
@@ -131,15 +134,15 @@ export default function Signup() {
                     src={visible.pw ? visibleEye_on : visibleEye_off}
                     alt="visible-icon"
                     onClick={(e) => {
-                      onClickVisible(e.target.id);
+                      onClickVisible(e.currentTarget.id);
                     }}
                   />
                 </div>
               </div>
-              {errors.password?.type === 'required' && (
+              {errors.password?.type === "required" && (
                 <p className="auth-err-msg">비밀번호를 입력해주세요</p>
               )}
-              {errors.password?.type === 'minLength' && (
+              {errors.password?.type === "minLength" && (
                 <p className="auth-err-msg">
                   비밀번호를 8자 이상 입력해주세요.
                 </p>
@@ -151,16 +154,15 @@ export default function Signup() {
                 </label>
                 <input
                   className={`input-box pw ${
-                    errors.confirmPassword ? 'auth-err-border' : ''
+                    errors.confirmPassword ? "auth-err-border" : ""
                   }`}
-                  name="checkPassword"
-                  type={visible.checkPw ? 'text' : 'password'}
+                  type={visible.checkPw ? "text" : "password"}
                   placeholder="비밀번호를 다시 한 번 입력해주세요"
-                  {...register('confirmPassword', {
+                  {...register("confirmPassword", {
                     required: true,
                     minLength: 8,
                     validate: () =>
-                      getValues('password') === getValues('confirmPassword'),
+                      getValues("password") === getValues("confirmPassword"),
                   })}
                 />
                 <div className="auth-visible-icon">
@@ -169,17 +171,17 @@ export default function Signup() {
                     src={visible.checkPw ? visibleEye_on : visibleEye_off}
                     alt="visible-icon"
                     onClick={(e) => {
-                      onClickVisible(e.target.id);
+                      onClickVisible(e.currentTarget.id);
                     }}
                   />
                 </div>
               </div>
-              {errors.confirmPassword?.type === 'minLength' && (
+              {errors.confirmPassword?.type === "minLength" && (
                 <p className="auth-err-msg">
                   비밀번호를 8자 이상 입력해주세요.
                 </p>
               )}
-              {errors.confirmPassword?.type === 'validate' && (
+              {errors.confirmPassword?.type === "validate" && (
                 <p className="auth-err-msg">비밀번호가 일치하지 않습니다.</p>
               )}
             </div>
