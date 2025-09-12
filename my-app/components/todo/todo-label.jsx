@@ -1,12 +1,14 @@
 import styles from "./todo-label.module.css";
+import TODO_STATUS from "./todo-status";
 
-function TodoLabel({ done }) {
-  let className = styles.todoLabel;
-  if (done) {
-    className += ` ${styles.done}`;
-  }
+const title = {
+  [TODO_STATUS.inProgress]: "TO DO",
+  [TODO_STATUS.done]: "DONE",
+};
 
-  return <span className={className}>{done ? "DONE" : "TO DO"}</span>;
+function TodoLabel({ status }) {
+  const className = `${styles.todoLabel} ${styles[status]}`;
+  return <span className={className}>{title[status]}</span>;
 }
 
 export default TodoLabel;

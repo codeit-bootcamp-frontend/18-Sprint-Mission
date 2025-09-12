@@ -5,6 +5,7 @@ import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
 import Portal from "@/components/portal/portal";
 import Todo from "@/components/todo/todo";
 import TodoList from "@/components/todo/todo-list";
+import TODO_STATUS from "@/components/todo/todo-status";
 import { useAsyncCall } from "@/hooks/use-async-call";
 import { addTodo, getTodos, toggleTodo } from "@/libs/apis/todo";
 import styles from "@/styles/home.module.css";
@@ -76,14 +77,14 @@ export default function Home({ todos: initialTodos }) {
             </Button>
           </form>
           <div className={styles.todoListContainer}>
-            <TodoList>
+            <TodoList status={TODO_STATUS.inProgress}>
               {inProgressTodos.map((todo) => (
                 <Todo key={todo.id} onClick={() => handleToDoClick(todo)}>
                   {todo.name}
                 </Todo>
               ))}
             </TodoList>
-            <TodoList done>
+            <TodoList status={TODO_STATUS.done}>
               {doneTodos.map((todo) => (
                 <Todo
                   key={todo.id}

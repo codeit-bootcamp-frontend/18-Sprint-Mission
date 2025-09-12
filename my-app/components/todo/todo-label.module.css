@@ -1,12 +1,15 @@
 .todoLabel {
-  background-color: var(--color-lime-300);
-  color: var(--color-green-700);
   font-family: "HsSantoki20";
   font-size: 18px;
   font-weight: 400;
   line-height: 100%;
   padding: 6px 27px;
   border-radius: 24px;
+}
+
+.todoLabel.inProgress {
+  background-color: var(--color-lime-300);
+  color: var(--color-green-700);
 }
 
 .todoLabel.done {
