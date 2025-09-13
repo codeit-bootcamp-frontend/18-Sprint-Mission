@@ -15,6 +15,7 @@ export default function ItemComments({ commentInfo }) {
   const [dropdown, setDropdown] = useState(null);
   const [editId, setEditId] = useState(null);
   const [editContent, setEditContent] = useState("");
+  const [inquiry, setInquiry] = useState("");
 
   const handleEdit = (comment) => {
     setEditId(comment.id);
@@ -38,9 +39,16 @@ export default function ItemComments({ commentInfo }) {
             className="resize-none rounded-[12px] bg-[#f3f4f6] px-[24px] py-[16px] mt-3"
             name="inquiry"
             id="inquiry"
+            value={inquiry}
+            onChange={(e) => setInquiry(e.target.value)}
             placeholder="개인정보를 공유 및 요청하거나, 명예 회손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
           ></textarea>
-          <button className="flex justify-center items-center mt-4 ml-auto rounded-lg bg-[#9ca3af] w-[74px] h-[42px] font-semibold text-[16px] text-[#f3f4f6]">
+          <button
+            disabled={inquiry.trim() === ""}
+            className={`flex justify-center items-center mt-4 ml-auto rounded-lg w-[74px] h-[42px] font-semibold text-[16px] text-[#f3f4f6] ${
+              inquiry.trim() === "" ? "bg-[#9ca3af]" : "bg-[#3692ff]"
+            }`}
+          >
             등록
           </button>
           {commentInfo.list?.length > 0 ? (
