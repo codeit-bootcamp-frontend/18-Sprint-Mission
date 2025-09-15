@@ -5,18 +5,21 @@ import PageItems from "../components/PageItems";
 import { getLists } from "../api/api";
 import useMediaQuery from "../hooks/mediaquery";
 import "./UsedMarketPage.css";
-
-const LIMIT = 12;
+import { Items, OrderBy, GetListsParams, GetListsResponse } from "../api/api";
 
 const UsedMarketPage = () => {
-  const [orderBy, setOrderBy] = useState("recent");
-  const [items, setItems] = useState([]);
-  const [bestItems, setBestItems] = useState([]);
+  const LIMIT = 12;
+  const [orderBy, setOrderBy] = useState<OrderBy>("recent");
+  const [items, setItems] = useState<Items[]>([]);
+  const [bestItems, setBestItems] = useState<Items[]>([]);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
 
+  type DeviceMap = { [key: string]: number }; // 인덱스 시그니처
+
   const { device } = useMediaQuery();
-  const deviceMap = {
+
+  const deviceMap: DeviceMap = {
     mobile: 1,
     tablet: 2,
     desktop: 4,
@@ -36,7 +39,7 @@ const UsedMarketPage = () => {
     fetchlist();
   }, [pageSize]);
 
-  const goPage = async (n) => {
+  const goPage = async (n: number) => {
     const { list } = await getLists({
       page: n,
       pageSize: LIMIT,
@@ -51,12 +54,7 @@ const UsedMarketPage = () => {
     goPage(1);
   }, [orderBy, search]);
 
-  const getFilteredData = () => items;
-  const filteredItems = getFilteredData();
-
   const MAXPAGE = 5;
-
-  const focusPage = (n) => document.getElementById(`page${n}`).focus();
 
   return (
     <>
@@ -69,13 +67,13 @@ const UsedMarketPage = () => {
           search={search}
           setSearch={setSearch}
         />
-        <PageItems items={filteredItems} />
+        <PageItems items={items} />
         <div>
           <div className="page_button">
             <button
               onClick={() => {
                 const n = Math.max(1, page - 1);
-                focusPage(n);
+
                 goPage(n);
               }}
             >
@@ -99,7 +97,7 @@ const UsedMarketPage = () => {
             <button
               onClick={() => {
                 const n = Math.min(MAXPAGE, page + 1);
-                focusPage(n);
+
                 goPage(n);
               }}
             >

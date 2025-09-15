@@ -1,12 +1,24 @@
 import { useNavigate } from "react-router-dom";
 import "./AllItems.css";
+import { OrderBy } from "../api/api";
 
-const AllItems = ({ orderBy, setOrderBy, search, setSearch }) => {
+interface Props {
+  orderBy: string;
+  setOrderBy: React.Dispatch<React.SetStateAction<OrderBy>>; // AllItems 왼쪽 setOrderBy가 any로 떠서 오른쪽 setOrderBy를 hover 해서 뜬걸 그대로 붙여넣었습니다
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>; // ''
+}
+const AllItems = ({ orderBy, setOrderBy, search, setSearch }: Props) => {
   const navigate = useNavigate();
 
   const navigateToRegister = () => {
     navigate("/additem");
   };
+
+  const SetOrderBySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value === "recent" || e.target.value === "favorite")
+      setOrderBy(e.target.value);
+  }; //OrderBy가 리터럴 유니온 타입인데, e.target.value가 string 으로 타입오류가 떠서 if 문으로 고쳤습니다
 
   return (
     <>
@@ -29,9 +41,7 @@ const AllItems = ({ orderBy, setOrderBy, search, setSearch }) => {
           <select
             className="dropped-down"
             value={orderBy}
-            onChange={(e) => {
-              setOrderBy(e.target.value);
-            }}
+            onChange={SetOrderBySelect}
           >
             <option value="recent">최신순</option>
             <option value="favorite">좋아요순</option>

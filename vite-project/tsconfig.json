@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "outDir": "dist",
+    "strict": true,
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "traceResolution": true
+  },
+  "include": ["src"]
+}
