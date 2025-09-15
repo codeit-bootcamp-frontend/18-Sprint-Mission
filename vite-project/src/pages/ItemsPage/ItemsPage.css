@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  text-decoration: none;
 }
 
 .total-product-card-img {
@@ -106,6 +107,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  text-decoration: none;
 }
 
 .best-product-card-img {

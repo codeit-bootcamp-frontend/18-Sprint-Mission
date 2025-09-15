@@ -16,13 +16,18 @@ const ProductAddHeaderButton = styled.button`
   font-weight: 600;
   font-size: 1.6rem;
   color: var(--gray-100);
-  background-color: ${({ disabled }) =>
-    disabled ? "var(--gray-400)" : "var(--blue)"};
   border-radius: 0.8rem;
   width: 7.4rem;
   height: 4.2rem;
   border: 0.1rem solid var(--gray-400);
-  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  &:enabled {
+    background-color: var(--blue);
+    cursor: pointer;
+  }
+  &:disabled {
+    background-color: var(--gray-400);
+    cursor: not-allowed;
+  }
 `;
 
 export default function ProductAddHeader({ isFormValid }) {

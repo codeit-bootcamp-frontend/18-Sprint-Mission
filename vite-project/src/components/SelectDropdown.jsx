@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import selectIcon from "../assets/ic-sort.svg";
 
+const options = [
+  { label: "최신순", value: "recent" },
+  { label: "좋아요순", value: "favorite" },
+];
+
 export default function SelectDropdown({ onChange, value }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-
-  const options = [
-    { label: "최신순", value: "recent" },
-    { label: "좋아요순", value: "favorite" },
-  ];
 
   const selected = options.find((opt) => opt.value === value);
 
@@ -32,6 +32,7 @@ export default function SelectDropdown({ onChange, value }) {
       <div ref={dropdownRef} className="select-dropdown">
         <div className="selected-option" onClick={() => setIsOpen(!isOpen)}>
           <img src={selectIcon} alt="드롭다운 아이콘" />
+          <span>{selected ? selected.label : "선택"}</span>
         </div>
 
         {isOpen && (
