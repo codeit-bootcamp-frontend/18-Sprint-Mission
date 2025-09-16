@@ -1,0 +1,126 @@
+.pandaitem_wrap{
+  width: 1200px;
+  margin: 0 auto;
+}
+.pandaitem_wrap .pandaitem_section{
+  display: flex;
+  padding: 29px 0 40px;
+    border-bottom: 1px solid var(--gray-200);
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_img{
+  padding-right: 24px;
+  border-radius: 16px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_img img{
+  width: 486px;
+  height: 486px;
+  border-radius: 16px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_top{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-200);
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_top .pandaitem_data_title{
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  padding-bottom: 16px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_top .pandaitem_data_price{
+  font-size: 4.0rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  padding-bottom: 16px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_top button{
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_top button > img{
+  width: 100%;
+  height: 100%;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_intro{
+  padding-top: 24px;
+  color: var(--gray-600);
+  font-size: 1.6rem;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_text{
+  padding-top: 16px;
+  color: var(--gray-600);
+  font-size: 1.6rem;
+  min-height: 104px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_tag_title{
+  padding-top: 24px;
+  color: var(--gray-600);
+  font-size: 1.6rem;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_tag_list{
+  display: flex;
+  padding-top: 16px;
+  gap: 8px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_tag{
+  background-color: var(--gray-100);
+  padding: 5px 16px;
+  border-radius: 26px;
+  font-size: 1.6rem;
+  color: var(--gray-800);
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user{
+  padding-top: 62px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: end;
+  flex: auto;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_icon{
+  width: 40px;
+  height: 40px;
+  padding-right: 16px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_icon > img{
+  width: 100%;
+  height: 100%;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_main{
+  flex: 1;
+  border-right: 1px solid var(--gray-200);
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_main p:nth-of-type(1){
+  font-size: 1.4rem;
+  color: var(--gray-600);
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_main p:nth-of-type(2){
+  font-size: 1.4rem;
+  color: var(--gray-400);
+  padding-top: 2px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_like{
+  border: 1px solid var(--gray-200) ;
+  border-radius: 35px;
+  padding: 4px 12px;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 24px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_like > img{
+  width: 32px;
+  height: 32px;
+}
+.pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_user .pandaitem_data_user_like > span{
+  color: var(--gray-500);
+}

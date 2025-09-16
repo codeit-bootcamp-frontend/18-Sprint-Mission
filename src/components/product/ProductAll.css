@@ -6,6 +6,9 @@
   padding: 24px 0 43px;
   gap: 40px 23px;
 }
+.product-all-list > li{
+  cursor: pointer;
+}
 .product-all-list > li > .product-card {
   width: 221px;
   height: 317px;
