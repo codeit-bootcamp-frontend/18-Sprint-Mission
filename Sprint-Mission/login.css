@@ -4,8 +4,8 @@ html {
 
 body {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -75,7 +75,6 @@ main {
   cursor: pointer;
 }
 
-
 .form-button {
   width: 64rem;
   height: 5.6rem;
@@ -131,7 +130,7 @@ main {
 }
 
 .login-footer a {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .input-div .errorborder {
@@ -157,7 +156,7 @@ main {
     top: -6rem;
   }
 
-    .login-header {
+  .login-header {
     padding-bottom: 3rem;
   }
 
@@ -180,12 +179,11 @@ main {
     font-size: 1.4rem;
   }
 
-    .form-container {
+  .form-container {
     gap: 1.6rem;
   }
 
   .pw-visibility {
-  top: 5rem;
-}
-
+    top: 5rem;
+  }
 }
