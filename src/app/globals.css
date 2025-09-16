@@ -16,6 +16,7 @@
 
 *{
   font-family: "NanumSquare";
+  box-sizing: border-box;
 }
 
 html, body, div, span, applet, object, iframe,
