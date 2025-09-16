@@ -97,3 +97,5 @@ eyebtn?.addEventListener("click", () => {
     eyeIcon.src = "images/hidden.svg";
   }
 });
+
+console.log('지울 콘솔');
