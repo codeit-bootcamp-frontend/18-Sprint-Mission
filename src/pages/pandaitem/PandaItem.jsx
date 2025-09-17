@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProductsItem } from "../../api/getProductsItem";
+import {
+  getProductsItem,
+  getProductsItemComments,
+} from "../../api/getProductsItem";
 import Header from "../../components/header/Header";
 import "./PandaItem.css";
+import PandaItemComment from "./PandaItemComment";
 import PandaItemSection from "./PandaItemSection";
 
 export default function PandaItem() {
@@ -20,12 +24,16 @@ export default function PandaItem() {
     ownerNickname: "",
     isFavorite: false,
   });
+  const [list, setList] = useState([]);
+  const sortedLists = list.sort((a, b) => b["updatedAt"] - a["updatedAt"]);
   const { id } = useParams();
 
   useEffect(() => {
     const handelLoad = async () => {
       const body = await getProductsItem({ id });
+      const { list } = await getProductsItemComments({ id });
       setItem(body);
+      setList(list);
     };
     handelLoad();
   }, [id]);
@@ -39,6 +47,7 @@ export default function PandaItem() {
       <Header />
       <div className="pandaitem_wrap">
         <PandaItemSection item={item} />
+        <PandaItemComment item={sortedLists} />
       </div>
     </>
   );

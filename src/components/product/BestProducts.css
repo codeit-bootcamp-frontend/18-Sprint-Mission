@@ -9,6 +9,9 @@
   gap: 16px;
   margin-top: 16px;
 }
+.best-product-list li{
+  cursor: pointer;
+}
 .best-product-list > .product-title {
   font-size: 14px;
   color: #1f2937;
