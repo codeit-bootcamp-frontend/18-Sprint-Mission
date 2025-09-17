@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./checkList.module.css";
+import styles from "./check-list.module.css";
 import notCheck from "../../../public/not_check.svg";
 import checkedIcon from "../../../public/checked.svg";
 

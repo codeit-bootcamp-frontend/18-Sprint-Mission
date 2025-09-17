@@ -1,9 +1,10 @@
-import Image from "next/image";
-import CheckList from "./checkList";
 import styles from "./todoList.module.css";
 import todoImg from "../../../public/todo.png";
 import doneImg from "../../../public/done.png";
 import { SeparatedTodos, TodoData } from "@/types";
+import emptyTodo from "../../../public/empty_todo.png";
+import emptyDone from "../../../public/empty_done.png";
+import TodoSection from "./todo-section";
 
 async function getAllTodoList() {
   const response = await fetch(
@@ -39,25 +40,35 @@ export default async function TodoList() {
     <>
       <div className={styles.todo_list_container}>
         <section className={styles.todo_list_box}>
-          <Image src={todoImg} width={101} height={36} alt="todo 이미지" />
-          {separatedTodos.incomplete.map((todo) => (
-            <CheckList
-              key={todo.id}
-              name={todo.name}
-              isCompleted={todo.isCompleted}
-            />
-          ))}
+          <TodoSection
+            img={todoImg}
+            imgAlt="TODO 이미지"
+            list={separatedTodos.incomplete}
+            emptyImg={emptyTodo}
+            emptyMsg={
+              <>
+                할 일이 없어요.
+                <br />
+                TODO를 새롭게 추가해주세요!
+              </>
+            }
+          />
         </section>
 
         <section className={styles.todo_list_box}>
-          <Image src={doneImg} width={101} height={36} alt="done 이미지" />
-          {separatedTodos.completed.map((todo) => (
-            <CheckList
-              key={todo.id}
-              name={todo.name}
-              isCompleted={todo.isCompleted}
-            />
-          ))}
+          <TodoSection
+            img={doneImg}
+            imgAlt="TODO 이미지"
+            list={separatedTodos.completed}
+            emptyImg={emptyDone}
+            emptyMsg={
+              <>
+                아직 다 한 일이 없어요.
+                <br />
+                해야 할 일을 체크해보세요!
+              </>
+            }
+          />
         </section>
       </div>
     </>
