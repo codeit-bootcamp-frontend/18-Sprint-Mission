@@ -8,9 +8,9 @@ import ProductPagination from "../../components/product/ProductPagination";
 import "./PandaItems.css";
 
 export default function PandaItems() {
-  const [order, setOrder] = useState("createdAt");
   const [items, setItems] = useState([]);
-  const sortedItems = items.sort((a, b) => b[String(order)] - a[String(order)]);
+  const [order, setOrder] = useState("createdAt");
+  const sortedItems = [...items].sort((a, b) => b[order] - a[order]);
   const [bestitems, setBestItems] = useState([]);
 
   const handleNewestClick = () => setOrder("createdAt");
