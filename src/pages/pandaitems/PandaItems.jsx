@@ -8,7 +8,7 @@ import ProductPagination from "../../components/product/ProductPagination";
 import "./PandaItems.css";
 
 export default function PandaItems() {
-  const [order, setOrder] = useState("updatedAt");
+  const [order, setOrder] = useState("createdAt");
   const [bestorder] = useState("");
   const [items, setItems] = useState([]);
   const [bestitems, setBestItems] = useState([]);
@@ -17,7 +17,7 @@ export default function PandaItems() {
     (a, b) => b[bestorder] - a[bestorder]
   );
 
-  const handleNewestClick = () => setOrder("updatedAt");
+  const handleNewestClick = () => setOrder("createdAt");
   const handleLikeClick = () => setOrder("favoriteCount");
 
   const isMobile = useMediaQuery({ minWidth: 375, maxWidth: 767 });
