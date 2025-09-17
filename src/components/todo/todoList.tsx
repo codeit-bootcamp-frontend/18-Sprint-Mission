@@ -7,7 +7,8 @@ import { SeparatedTodos, TodoData } from "@/types";
 
 async function getAllTodoList() {
   const response = await fetch(
-    `${process.env.NEXT_API_URL}/fe-18-sprint9/items`
+    `${process.env.NEXT_API_URL}/fe-18-sprint9/items`,
+    { next: { tags: [`todo`] } }
   );
 
   if (!response.ok) console.error(response.statusText);

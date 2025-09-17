@@ -1,11 +1,11 @@
-import Searchbar from "@/components/searchbar/searchbar";
+import Taskbar from "@/components/addTask/taskbar";
 import styles from "./page.module.css";
 import TodoList from "@/components/todo/todoList";
 
 export default function Home() {
   return (
     <div>
-      <Searchbar />
+      <Taskbar />
       <div className={styles.list_container}>
         <TodoList />
       </div>

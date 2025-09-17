@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./searchbar.module.css";
 
-export default function Searchbar() {
+export default function Taskbar() {
+  // const onChangeTask
+
   return (
     <div className={styles.searchbar_box}>
       <input className={styles.searchbar} placeholder="할 일을 입력해주세요" />
