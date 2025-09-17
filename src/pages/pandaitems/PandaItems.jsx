@@ -9,13 +9,9 @@ import "./PandaItems.css";
 
 export default function PandaItems() {
   const [order, setOrder] = useState("createdAt");
-  // const [bestorder] = useState("");
   const [items, setItems] = useState([]);
-  const sortedItems = items.sort((a, b) => b[order] - a[order]);
+  const sortedItems = items.sort((a, b) => b[String(order)] - a[String(order)]);
   const [bestitems, setBestItems] = useState([]);
-  // const bestedItems = [...bestitems].sort(
-  //   (a, b) => b[bestorder] - a[bestorder]
-  // );
 
   const handleNewestClick = () => setOrder("createdAt");
   const handleLikeClick = () => setOrder("favoriteCount");
