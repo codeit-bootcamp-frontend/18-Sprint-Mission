@@ -28,7 +28,6 @@ export default function PandaItem() {
     isFavorite: false,
   });
   const [list, setList] = useState([]);
-  const sortedLists = list.sort((a, b) => b["updatedAt"] - a["updatedAt"]);
   const { id } = useParams();
   const nav = useNavigate();
 
@@ -55,7 +54,7 @@ export default function PandaItem() {
         {list.length === 0 ? (
           <PandaItemCommentEmpty />
         ) : (
-          <PandaItemComment item={sortedLists} />
+          <PandaItemComment item={list} />
         )}
 
         <div className="return_btn">
