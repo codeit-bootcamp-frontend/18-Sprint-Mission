@@ -1,0 +1,13 @@
+.todo_list_container {
+  width: 1200px;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.todo_list_box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

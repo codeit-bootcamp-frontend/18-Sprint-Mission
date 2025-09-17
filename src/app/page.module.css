@@ -1,5 +1,4 @@
-.title {
-  font-family: "NanumSquareBold";
-  font-weight: 700;
-  font-size: 24px;
+.list_container {
+  display: flex;
+  justify-content: center;
 }
