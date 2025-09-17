@@ -61,13 +61,14 @@
   .pandaitem_data_top
   button
   > img {
-  width: 100%;
+  width: 3px;
   height: 100%;
 }
 .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_intro {
   padding-top: 24px;
   color: var(--gray-600);
   font-size: 1.6rem;
+  font-weight: 600;
 }
 .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_text {
   padding-top: 16px;
@@ -79,11 +80,13 @@
   padding-top: 24px;
   color: var(--gray-600);
   font-size: 1.6rem;
+  font-weight: 600;
 }
 .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_tag_list {
   display: flex;
   padding-top: 16px;
   gap: 8px;
+  flex-wrap: wrap;
 }
 .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_tag {
   background-color: var(--gray-100);
@@ -190,7 +193,7 @@
 }
 .pandaitem_wrap .pandaitem_comments_text_area .textarea {
   display: block;
-  width: 1200px;
+  width: 100%;
   height: 104px;
   padding: 16px 24px;
   box-sizing: border-box;
@@ -200,6 +203,9 @@
   resize: none;
   font-size: 1.6rem;
   margin-bottom: 16px;
+}
+.pandaitem_wrap .pandaitem_comments_text_area .textarea::placeholder{
+  color: var(--gray-400);
 }
 .pandaitem_wrap .pandaitem_comments_text_area > div {
   display: flex;
@@ -235,7 +241,7 @@
   background: none;
   border: none;
 }
-.pandaitem_wrap .pandaitem_comments_box .pandaitem_comments_top .update_box{
+.pandaitem_wrap .pandaitem_comments_box .pandaitem_comments_top .update_box {
   position: absolute;
   right: 0;
   top: 34px;
@@ -247,7 +253,11 @@
   display: flex;
   flex-direction: column;
 }
-.pandaitem_wrap .pandaitem_comments_box .pandaitem_comments_top .update_box > button{
+.pandaitem_wrap
+  .pandaitem_comments_box
+  .pandaitem_comments_top
+  .update_box
+  > button {
   border: none;
   background-color: #fff;
   color: var(--gray-500);
@@ -255,7 +265,7 @@
   border-radius: 8px;
 }
 .pandaitem_wrap .pandaitem_comments_box .pandaitem_comments_top > button > img {
-  width: 100%;
+  width: 3px;
   height: 100%;
 }
 .pandaitem_wrap .pandaitem_comments_box .pandaitem_comments_bottom {
@@ -284,12 +294,12 @@
   font-size: 1.2rem;
   color: var(--gray-400);
 }
-.pandaitem_wrap .return_btn{
+.pandaitem_wrap .return_btn {
   padding: 64px 0;
   display: flex;
   justify-content: center;
 }
-.pandaitem_wrap .return_btn .nav_btn{
+.pandaitem_wrap .return_btn .nav_btn {
   width: 240px;
   line-height: 48px;
   display: flex;
@@ -303,7 +313,76 @@
   font-size: 1.8rem;
   font-weight: 600;
 }
-.pandaitem_wrap .return_btn .nav_btn > img{
+.pandaitem_wrap .return_btn .nav_btn > img {
   width: 24px;
   height: 24px;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .pandaitem_wrap {
+    width: 696px;
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_img {
+    width: 340px;
+    height: 340px;
+    padding-right: 16px;
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_img img {
+    width: 340px;
+    height: 340px;
+    border-radius: 16px;
+  }
+}
+/* Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+  .pandaitem_wrap {
+    width: 344px;
+  }
+  .pandaitem_wrap .pandaitem_section {
+    display: flex;
+    flex-direction: column;
+    padding: 29px 0 40px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_top {
+    padding-top: 16px;
+  }
+  .pandaitem_wrap
+  .pandaitem_section
+  .pandaitem_data
+  .pandaitem_data_top
+  .pandaitem_data_title{
+    font-size: 1.6rem;
+  }
+  .pandaitem_wrap
+  .pandaitem_section
+  .pandaitem_data
+  .pandaitem_data_top
+  .pandaitem_data_price{
+    font-size: 2.4rem;
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_intro {
+    font-size: 1.4rem;
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_data .pandaitem_data_tag_title{
+    font-size: 1.4rem;
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_img {
+    width: 343px;
+    height: 343px;
+    padding-right: 16px;
+  }
+  .pandaitem_wrap .pandaitem_section .pandaitem_img img {
+    width: 343px;
+    height: 343px;
+    border-radius: 16px;
+  }
+  .pandaitem_wrap .pandaitem_comments_text_area .textarea{
+    font-size: 1.4rem;
+  }
+  .pandaitem_wrap .pandaitem_comments_box .pandaitem_comments_top .update_box{
+    width: 102px;
+    height: 90px;
+  }
 }
