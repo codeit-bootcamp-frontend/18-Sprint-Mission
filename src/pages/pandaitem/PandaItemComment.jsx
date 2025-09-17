@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import dotIcon from "../../assets/images/dot_btn.svg";
 import userIcon from "../../assets/images/header_user_icon.svg";
-import returnIcon from "../../assets/images/return_icon.svg";
 
 export default function PandaItemComment({ item }) {
   const [updateBox, setUpdateBox] = useState(null);
-  const nav = useNavigate();
+
 
   const handleChangeBtn = (id) => {
     if (updateBox === id) {
@@ -49,16 +47,6 @@ export default function PandaItemComment({ item }) {
 
   return (
     <>
-      <div className="pandaitem_comments_text_area">
-        <p className="title">문의하기</p>
-        <textarea
-          className="textarea"
-          placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."
-        ></textarea>
-        <div>
-          <button>등록</button>
-        </div>
-      </div>
       {item.map((comment) => (
         <div key={comment.id} className="pandaitem_comments_box">
           <div className="pandaitem_comments_top">
@@ -85,12 +73,6 @@ export default function PandaItemComment({ item }) {
           </div>
         </div>
       ))}
-      <div className="return_btn">
-        <button className="nav_btn" onClick={() => nav("/items")}>
-          목록으로 돌아가기
-          <img src={returnIcon} alt="목록으로 돌아가기 버튼 아이콘" />
-        </button>
-      </div>
     </>
   );
 }

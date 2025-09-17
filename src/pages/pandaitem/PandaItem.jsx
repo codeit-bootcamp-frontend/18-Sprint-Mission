@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   getProductsItem,
   getProductsItemComments,
 } from "../../api/getProductsItem";
+import returnIcon from "../../assets/images/return_icon.svg";
 import Header from "../../components/header/Header";
 import "./PandaItem.css";
 import PandaItemComment from "./PandaItemComment";
+import PandaItemCommentEmpty from "./PandaItemCommentEmpty";
+import PandaItemCommnetTextArea from "./PandaItemCommnetTextArea";
 import PandaItemSection from "./PandaItemSection";
 
 export default function PandaItem() {
@@ -27,6 +30,7 @@ export default function PandaItem() {
   const [list, setList] = useState([]);
   const sortedLists = list.sort((a, b) => b["updatedAt"] - a["updatedAt"]);
   const { id } = useParams();
+  const nav = useNavigate();
 
   useEffect(() => {
     const handelLoad = async () => {
@@ -47,7 +51,19 @@ export default function PandaItem() {
       <Header />
       <div className="pandaitem_wrap">
         <PandaItemSection item={item} />
-        <PandaItemComment item={sortedLists} />
+        <PandaItemCommnetTextArea />
+        {list.length === 0 ? (
+          <PandaItemCommentEmpty />
+        ) : (
+          <PandaItemComment item={sortedLists} />
+        )}
+
+        <div className="return_btn">
+          <button className="nav_btn" onClick={() => nav("/items")}>
+            목록으로 돌아가기
+            <img src={returnIcon} alt="목록으로 돌아가기 버튼 아이콘" />
+          </button>
+        </div>
       </div>
     </>
   );

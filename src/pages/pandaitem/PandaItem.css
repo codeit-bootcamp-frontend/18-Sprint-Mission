@@ -317,7 +317,18 @@
   width: 24px;
   height: 24px;
 }
-
+.pandaitem_empty{
+  text-align:center;
+}
+.pandaitem_empty img{
+  width: 196px;
+  height: 196px;
+  padding-bottom: 8px;
+}
+.pandaitem_empty p{
+  font-size: 1.6rem;
+  color: var(--gray-400);
+}
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
   .pandaitem_wrap {
