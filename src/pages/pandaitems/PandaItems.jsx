@@ -9,13 +9,13 @@ import "./PandaItems.css";
 
 export default function PandaItems() {
   const [order, setOrder] = useState("createdAt");
-  const [bestorder] = useState("");
+  // const [bestorder] = useState("");
   const [items, setItems] = useState([]);
-  const [bestitems, setBestItems] = useState([]);
   const sortedItems = items.sort((a, b) => b[order] - a[order]);
-  const bestedItems = [...bestitems].sort(
-    (a, b) => b[bestorder] - a[bestorder]
-  );
+  const [bestitems, setBestItems] = useState([]);
+  // const bestedItems = [...bestitems].sort(
+  //   (a, b) => b[bestorder] - a[bestorder]
+  // );
 
   const handleNewestClick = () => setOrder("createdAt");
   const handleLikeClick = () => setOrder("favoriteCount");
@@ -41,7 +41,7 @@ export default function PandaItems() {
     <div className="product-wrap">
       <Header />
       <div className="main">
-        <BestProducts bestitems={bestedItems} displayCount={displayBestCount} />
+        <BestProducts bestitems={bestitems} displayCount={displayBestCount} />
         <ProductAll
           items={sortedItems}
           onClickNew={handleNewestClick}
