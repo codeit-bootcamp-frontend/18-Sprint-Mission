@@ -7,7 +7,7 @@ import emptyDone from "../../../public/empty_done.png";
 import TodoSection from "./todo-section";
 
 async function getAllTodoList() {
-  const response = await fetch(`${process.env.NEXT_API_URL}/items`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`, {
     next: { tags: ["todo"] },
   });
 

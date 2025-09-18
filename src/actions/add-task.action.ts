@@ -12,7 +12,7 @@ export default async function addTaskAction(
   if (!name) return { status: false, error: "할 일을 입력해주세요" };
 
   try {
-    const response = await fetch(`${process.env.NEXT_API_URL}/items`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -7,6 +7,13 @@ export interface TodoData {
   isCompleted: boolean;
 }
 
+export interface TodoDetailData {
+  name: string;
+  isCompleted: boolean;
+  memo: string;
+  imageUrl: string;
+}
+
 export interface SeparatedTodos {
   completed: TodoData[];
   incomplete: TodoData[];

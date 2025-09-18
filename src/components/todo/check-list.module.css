@@ -13,11 +13,17 @@
   letter-spacing: 0%;
 }
 
+.check_list_container > button {
+  background: none; /* 배경 제거 */
+  border: none; /* 테두리 제거 */
+  padding: 0; /* 패딩 제거 */
+  font: inherit; /* 부모 요소의 폰트 상속 */
+  color: inherit; /* 부모 요소의 글자색 상속 */
+  cursor: pointer; /* 마우스 커서를 포인터로 설정 */
+  outline: inherit; /* focus 시 나타나는 외곽선 상속 */
+}
+
 .checked {
   background-color: var(--violet-100);
   text-decoration: line-through;
-}
-
-.check_btn {
-  cursor: pointer;
 }
