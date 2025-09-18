@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { getProducts } from "../../api";
+import { getProducts } from "../../api/getProducts";
 import Header from "../../components/header/Header";
 import BestProducts from "../../components/product/BestProducts";
 import ProductAll from "../../components/product/ProductAll";
@@ -8,16 +8,12 @@ import ProductPagination from "../../components/product/ProductPagination";
 import "./PandaItems.css";
 
 export default function PandaItems() {
-  const [order, setOrder] = useState("updatedAt");
-  const [bestorder] = useState("");
   const [items, setItems] = useState([]);
+  const [order, setOrder] = useState("createdAt");
+  const sortedItems = [...items].sort((a, b) => b[order] - a[order]);
   const [bestitems, setBestItems] = useState([]);
-  const sortedItems = items.sort((a, b) => b[order] - a[order]);
-  const bestedItems = [...bestitems].sort(
-    (a, b) => b[bestorder] - a[bestorder]
-  );
 
-  const handleNewestClick = () => setOrder("updatedAt");
+  const handleNewestClick = () => setOrder("createdAt");
   const handleLikeClick = () => setOrder("favoriteCount");
 
   const isMobile = useMediaQuery({ minWidth: 375, maxWidth: 767 });
@@ -41,7 +37,7 @@ export default function PandaItems() {
     <div className="product-wrap">
       <Header />
       <div className="main">
-        <BestProducts bestitems={bestedItems} displayCount={displayBestCount} />
+        <BestProducts bestitems={bestitems} displayCount={displayBestCount} />
         <ProductAll
           items={sortedItems}
           onClickNew={handleNewestClick}

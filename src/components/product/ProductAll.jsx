@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ProductAddButton from "./ProductAddButton";
 import "./ProductAll.css";
 import ProductAllMobileTop from "./ProductAllMobileTop";
@@ -13,6 +13,8 @@ export default function ProductAll({
   onClickLike,
   isMobile,
 }) {
+  const nav = useNavigate();
+
   return (
     <div className="product-all">
       {!isMobile && (
@@ -36,7 +38,7 @@ export default function ProductAll({
       <ul className="product-all-list">
         {items.map((item) => {
           return (
-            <li key={item.id}>
+            <li key={item.id} onClick={() => nav(`/item/${item.id}`)} >
               <ProductCard item={item} />
             </li>
           );
