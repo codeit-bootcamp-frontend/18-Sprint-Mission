@@ -19,3 +19,8 @@ export interface TodoSectionProps {
   imgAlt: string;
   emptyMsg: ReactNode;
 }
+
+export interface ActionState {
+  status: boolean;
+  error: string;
+}
