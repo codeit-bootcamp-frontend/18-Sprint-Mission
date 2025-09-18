@@ -14,13 +14,7 @@ export default function TodoSection({
     <>
       <Image src={img} width={101} height={36} alt={imgAlt} />
       {list.length > 0 ? (
-        list.map((todo) => (
-          <CheckList
-            key={todo.id}
-            name={todo.name}
-            isCompleted={todo.isCompleted}
-          />
-        ))
+        list.map((todo) => <CheckList key={todo.id} {...todo} />)
       ) : (
         <div className={styles.empty}>
           <Image src={emptyImg} width={240} height={240} alt="리스트 없음" />

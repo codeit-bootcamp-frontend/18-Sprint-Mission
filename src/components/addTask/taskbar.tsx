@@ -6,6 +6,7 @@ import { ChangeEvent, useActionState, useEffect, useState } from "react";
 import plus from "../../../public/plus.svg";
 import plusWhite from "../../../public/plus_white.svg";
 import addTaskAction from "@/actions/add-task.action";
+import Spinner from "../loading/spinner";
 
 export default function Taskbar() {
   const [task, setTask] = useState("");
@@ -40,13 +41,19 @@ export default function Taskbar() {
           }
           disabled={isPending ? true : false}
         >
-          <Image
-            src={task !== "" ? plusWhite : plus}
-            width={16}
-            height={16}
-            alt="추가이미지"
-          />{" "}
-          추가하기
+          {task && isPending ? (
+            <Spinner />
+          ) : (
+            <>
+              <Image
+                src={task !== "" ? plusWhite : plus}
+                width={16}
+                height={16}
+                alt="추가이미지"
+              />
+              추가하기
+            </>
+          )}
         </button>
       </div>
     </form>

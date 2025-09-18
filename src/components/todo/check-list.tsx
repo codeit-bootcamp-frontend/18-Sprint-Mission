@@ -1,12 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./check-list.module.css";
 import notCheck from "../../../public/not_check.svg";
 import checkedIcon from "../../../public/checked.svg";
 
 export default function CheckList({
+  id,
   name,
   isCompleted,
 }: {
+  id: number;
   name: string;
   isCompleted: boolean;
 }) {
