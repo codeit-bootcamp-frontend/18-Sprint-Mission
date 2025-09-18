@@ -4,8 +4,10 @@ import PretendardMedium from "@/assets/fonts/Pretendard-Medium.woff2";
 import PretendardSemiBold from "@/assets/fonts/Pretendard-SemiBold.woff2";
 import PretendardBold from "@/assets/fonts/Pretendard-Bold.woff2";
 import PretendardExtraBold from "@/assets/fonts/Pretendard-ExtraBold.woff";
+import ImgLogo from "@/assets/logo/logo.svg";
+import ImgLogoText from "@/assets/logo/logo_text.svg";
 
-const BaseStyle = createGlobalStyle`
+const globalStyle = createGlobalStyle`
   :root {
     --color-primary-100: #3692FF;
     --color-primary-200: #1967D6;
@@ -25,6 +27,8 @@ const BaseStyle = createGlobalStyle`
     --main-text-color: var(--color-gray-800);
     --color-error: var(--color-red);
     --border-color: #DFDFDF;
+    --img-logo: url("${ImgLogo}") no-repeat center/100%;
+    --img-logo-text: url("${ImgLogoText}") no-repeat center/100%;
   }
 
   /* Font face */
@@ -103,4 +107,4 @@ const BaseStyle = createGlobalStyle`
   }
 `;
 
-export default BaseStyle;
+export default globalStyle;
