@@ -1,5 +1,5 @@
 import { TodoSectionProps } from "@/types";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import CheckList from "./check-list";
 import styles from "./empty-img.module.css";
 

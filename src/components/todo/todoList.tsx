@@ -9,7 +9,7 @@ import TodoSection from "./todo-section";
 async function getAllTodoList() {
   const response = await fetch(
     `${process.env.NEXT_API_URL}/fe-18-sprint9/items`,
-    { next: { tags: [`todo`] } }
+    { next: { tags: ["todo"] } }
   );
 
   if (!response.ok) console.error(response.statusText);
