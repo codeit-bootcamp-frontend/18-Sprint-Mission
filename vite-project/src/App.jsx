@@ -4,26 +4,20 @@ import AddItemPage from "./pages/AddItemPage/AddItemPage";
 import ItemDetailPage from "./pages/ItemDetailPage/ItemDetailPage";
 import MainPage from "./pages/MainPage/MainPage";
 import MainLayout from "./Layouts/MainLayout";
-import DefaultLayout from "./layouts/DefaultLayout";
+import DefaultLayout from "./Layouts/DefaultLayout";
+import LoginPage from "./pages/MainPage/LoginPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
         <Route
           path="/"
           element={
             <MainLayout>
-              <MainPage></MainPage>
-            </MainLayout>
-          }
-        ></Route>
-        <Route
-          path="/"
-          element={
-            <DefaultLayout>
               <MainPage />
-            </DefaultLayout>
+            </MainLayout>
           }
         />
         <Route

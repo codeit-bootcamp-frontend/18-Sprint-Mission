@@ -7,15 +7,15 @@ import logoImg from "../../assets/ic-header.png";
 function Header() {
   return (
     <>
-      <header class="header">
-        <div class="header-container">
-          <div class="header-logo">
+      <header className="header">
+        <div className="header-container">
+          <div className="header-logo">
             <img src={logoImg} alt="판다 얼굴" />
-            <a class="header-title" href="./">
+            <a className="header-title" href="./">
               판다마켓
             </a>
           </div>
-          <a class="header-login" href="./login.html">
+          <a className="header-login" href="./login.html">
             로그인
           </a>
         </div>

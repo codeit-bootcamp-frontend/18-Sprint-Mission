@@ -34,6 +34,11 @@ const ProductAddImgFile = styled.label`
   input {
     display: none;
   }
+
+  @media (max-width: 767px) {
+    width: 16.8rem;
+    height: 16.8rem;
+  }
 `;
 
 const ProductAddImgFileDiv = styled.div`
