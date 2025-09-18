@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.input {
+  width: 20px;
+}
+
+.content {
+  flex: 1;
+  font-size: 16px;
+}
+
+.button {
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
