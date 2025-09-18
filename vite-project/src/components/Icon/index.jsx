@@ -4,12 +4,6 @@ import IconProfile from "@/assets/icons/ic_profile.svg";
 import IconSearch from "@/assets/icons/ic_search.svg";
 import IconDropdown from "@/assets/icons/ic_arrow_down.svg";
 
-const StyledIcon = styled.img`
-  display: inline-block;
-  width: ${props => getIconSize(props.size, props.customSize)};
-  height: ${props => getIconSize(props.size, props.customSize)};
-`;
-
 const ICON_SIZES = {
   xl: "48px",
   lg: "40px",
@@ -25,6 +19,12 @@ const ICON_MAP = {
   search: IconSearch,
   dropdown: IconDropdown,
 };
+
+const StyledIcon = styled.img`
+  display: inline-block;
+  width: ${props => getIconSize(props.size, props.customSize)};
+  height: ${props => getIconSize(props.size, props.customSize)};
+`;
 
 const getIconSize = (size, customSize) => {
   if (size === "custom" && customSize) return customSize;

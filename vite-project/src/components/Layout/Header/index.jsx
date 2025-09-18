@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { HeaderContainer, Inner, Logo, LogoLink, MenuList, MenuLink, UserMenu, UserProfileButton } from "./style";
 import Icon from "@/components/Icon";
+import Button from "@/components/Button";
 
 const MENU_ITEMS = [
   { to: "/board", label: "자유게시판" },
@@ -40,7 +41,9 @@ const Header = ({ template = "main", isLoggedIn }) => {
                   <Icon size="lg" icon="profile" />
                 </UserProfileButton>
               ) : (
-                <Link to="/login">로그인</Link>
+                <Button to="/login" size="sm48" as={Link}>
+                  로그인
+                </Button>
               )}
             </UserMenu>
           </>
