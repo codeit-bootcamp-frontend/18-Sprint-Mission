@@ -34,7 +34,6 @@ export default function useGetProducts({
         loadImg(product.images[0]).catch(() => none_icon)
       );
       const validUrls = await Promise.all(validImagePromises);
-      console.log(validUrls);
 
       const validProducts = recent.list.map((product, index) => ({
         ...product,

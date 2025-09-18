@@ -6,9 +6,9 @@ export default async function getProductLists(
   orderBy = "recent"
 ) {
   try {
-    const response = await instance.get(
-      `products?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`
-    );
+    const response = await instance.get("products", {
+      params: { page, pageSize, orderBy },
+    });
     return response.data;
   } catch (error) {
     throw new Error(`상품을 불러오는데 실패하였습니다. ${error.message}`);
