@@ -1,6 +1,15 @@
+import { MouseEventHandler, ReactNode } from "react";
 import styles from "./todo.module.css";
 
-function Todo({ children, checked = false, ...props }) {
+function TodoListItem({
+  children,
+  checked = false,
+  onClick,
+}: {
+  children: ReactNode;
+  checked?: boolean;
+  onClick: MouseEventHandler;
+}) {
   let className = styles.todo;
   if (checked) {
     className += ` ${styles.checked}`;
@@ -11,7 +20,7 @@ function Todo({ children, checked = false, ...props }) {
     : "/images/checkbox.svg";
 
   return (
-    <div className={className} {...props}>
+    <div className={className} onClick={onClick}>
       <div className={styles.checkImage}>
         <img src={checkImage} alt="check" />
       </div>
@@ -20,4 +29,4 @@ function Todo({ children, checked = false, ...props }) {
   );
 }
 
-export default Todo;
+export default TodoListItem;

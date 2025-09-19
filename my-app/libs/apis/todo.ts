@@ -1,6 +1,7 @@
+import type { Todo } from "@/types";
 import HttpClient from "./http-client";
 
-export async function getTodos() {
+export async function getTodos(): Promise<Todo[]> {
   try {
     const client = new HttpClient();
     const items = await client.get("items");
@@ -10,7 +11,7 @@ export async function getTodos() {
   }
 }
 
-export async function addTodo(name) {
+export async function addTodo(name: string): Promise<Todo | null> {
   try {
     const client = new HttpClient();
     const newItem = await client.post(`items`, { name });
@@ -20,7 +21,7 @@ export async function addTodo(name) {
   }
 }
 
-export async function toggleTodo(todo) {
+export async function toggleTodo(todo: Todo): Promise<Todo | null> {
   try {
     const client = new HttpClient();
     const updatedItem = await client.patch(`items/${todo.id}`, {

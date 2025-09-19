@@ -1,13 +1,13 @@
 class HttpClient {
-  constructor(baseUrl = process.env.NEXT_PUBLIC_BASE_URL) {
+  constructor(private baseUrl = process.env.NEXT_PUBLIC_BASE_URL) {
     this.baseUrl = baseUrl;
   }
 
-  createFetchInput(endpoint) {
-    return `${this.baseUrl}/${endpoint.replace()}`;
+  createFetchInput(endpoint: string) {
+    return `${this.baseUrl}/${endpoint}`;
   }
 
-  async get(endpoint) {
+  async get(endpoint: string) {
     const response = await fetch(this.createFetchInput(endpoint));
     if (!response.ok) {
       throw new Error(`Error fetching ${endpoint}: ${response.statusText}`);
@@ -15,7 +15,7 @@ class HttpClient {
     return response.json();
   }
 
-  async post(endpoint, data) {
+  async post(endpoint: string, data: any) {
     const response = await fetch(this.createFetchInput(endpoint), {
       method: "POST",
       headers: {
@@ -29,7 +29,7 @@ class HttpClient {
     return response.json();
   }
 
-  async patch(endpoint, data) {
+  async patch(endpoint: string, data: any) {
     const response = await fetch(this.createFetchInput(endpoint), {
       method: "PATCH",
       headers: {

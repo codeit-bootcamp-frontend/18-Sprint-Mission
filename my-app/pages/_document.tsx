@@ -4,12 +4,10 @@ export default function Document() {
   return (
     <Html lang="ko">
       <Head>
-        <title>Do It</title>
         <meta
           name="description"
           content="A productivity app to help you get things done"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="stylesheet"
           type="text/css"

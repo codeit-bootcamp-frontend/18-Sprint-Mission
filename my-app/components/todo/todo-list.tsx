@@ -1,16 +1,18 @@
 import TodoLabel from "./todo-label";
 import styles from "./todo-list.module.css";
-import TODO_STATUS from "./todo-status";
+import { TodoStatus } from "./todo-status";
 
-const emptyMessage = {
-  [TODO_STATUS.inProgress]:
+const emptyMessage: {
+  [key in keyof typeof TodoStatus]: string;
+} = {
+  [TodoStatus.inProgress]:
     "아직 다 한 일이 없어요.\n해야 할 일을 체크해보세요!",
-  [TODO_STATUS.inProgress]: "할 일이 없어요.\nTODO를 새롭게 추가해주세요!",
+  [TodoStatus.done]: "할 일이 없어요.\nTODO를 새롭게 추가해주세요!",
 };
 
-function EmptyMessage({ status }) {
+function EmptyMessage({ status }: { status: keyof typeof TodoStatus }) {
   const chunks = emptyMessage[status].split("\n");
-  let messageChunks = [];
+  let messageChunks: JSX.Element[] = [];
   for (const chunk of chunks) {
     messageChunks.push(<span key={chunk}>{chunk}</span>);
     messageChunks.push(<br key={`${chunk}-br`} />);
@@ -19,7 +21,19 @@ function EmptyMessage({ status }) {
   return <p>{messageChunks}</p>;
 }
 
-function TodoList({ status, children }) {
+interface Props {
+  status: keyof typeof TodoStatus;
+  children: React.ReactNode[];
+}
+
+const emptyImage: {
+  [key in keyof typeof TodoStatus]: string;
+} = {
+  [TodoStatus.inProgress]: "/images/todo-list-empty.svg",
+  [TodoStatus.done]: "/images/done-list-empty.svg",
+};
+
+function TodoList({ status, children }: Props) {
   return (
     <div className={styles.todoList}>
       <TodoLabel status={status} />
@@ -27,10 +41,7 @@ function TodoList({ status, children }) {
         <div className={styles.todoListContent}>{children}</div>
       ) : (
         <div className={styles.todoListEmptyContainer}>
-          <img
-            src={`/images/${done ? "done" : "todo"}-list-empty.svg`}
-            alt="empty"
-          />
+          <img src={emptyImage[status]} alt="empty" />
           <EmptyMessage status={status} />
         </div>
       )}

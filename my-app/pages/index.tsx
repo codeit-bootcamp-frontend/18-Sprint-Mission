@@ -1,25 +1,31 @@
 import Button from "@/components/button/button";
-import { BUTTON_TYPE } from "@/components/button/button-type";
+import { ButtonType } from "@/components/button/button-type";
 import SearchInput from "@/components/input/search-input";
 import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
 import Portal from "@/components/portal/portal";
-import Todo from "@/components/todo/todo";
 import TodoList from "@/components/todo/todo-list";
-import TODO_STATUS from "@/components/todo/todo-status";
+import TodoListItem from "@/components/todo/todo-list-item";
+import { TodoStatus } from "@/components/todo/todo-status";
 import { useAsyncCall } from "@/hooks/use-async-call";
 import { addTodo, getTodos, toggleTodo } from "@/libs/apis/todo";
 import styles from "@/styles/home.module.css";
-import { useMemo, useState } from "react";
+import type { Todo } from "@/types";
+import {
+  type ChangeEventHandler,
+  MouseEventHandler,
+  useMemo,
+  useState,
+} from "react";
 
 export async function getServerSideProps() {
   const todos = await getTodos();
   return { props: { todos } };
 }
 
-export default function Home({ todos: initialTodos }) {
-  const [inputValue, setInputValue] = useState("");
-  const [todos, setTodos] = useState(initialTodos ?? []);
-  const [isLoading, execute] = useAsyncCall();
+export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
+  const [inputValue, setInputValue] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>(initialTodos ?? []);
+  const { isLoading, execute } = useAsyncCall();
 
   const canAdd = useMemo(() => inputValue.trim().length > 0, [inputValue]);
 
@@ -30,22 +36,24 @@ export default function Home({ todos: initialTodos }) {
     .filter((todo) => todo.isCompleted)
     .sort((a, b) => a.id - b.id);
 
-  const handleInputChange = (event) => {
+  const handleInputChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     setInputValue(event.target.value);
   };
 
-  const handleAddClick = async (event) => {
+  const handleAddClick: MouseEventHandler = async (event) => {
     event.preventDefault();
     execute(async () => {
       const newTodo = await addTodo(inputValue);
-      setTodos((prev) => [...prev, newTodo]);
+      if (!newTodo) return;
+      setTodos((prevTodos) => [...prevTodos, newTodo]);
       setInputValue("");
     });
   };
 
-  const handleToDoClick = async (todo) => {
+  const handleToDoClick = async (todo: Todo) => {
     execute(async () => {
       const updatedTodo = await toggleTodo(todo);
+      if (!updatedTodo) return;
       setTodos((prevTodos) => {
         const index = prevTodos.findIndex(
           (prevTodo) => prevTodo.id === todo.id
@@ -69,7 +77,7 @@ export default function Home({ todos: initialTodos }) {
               onChange={handleInputChange}
             />
             <Button
-              type={BUTTON_TYPE.add}
+              buttonType={ButtonType.add}
               onClick={handleAddClick}
               disabled={!canAdd}
             >
@@ -77,22 +85,25 @@ export default function Home({ todos: initialTodos }) {
             </Button>
           </form>
           <div className={styles.todoListContainer}>
-            <TodoList status={TODO_STATUS.inProgress}>
+            <TodoList status={TodoStatus.inProgress}>
               {inProgressTodos.map((todo) => (
-                <Todo key={todo.id} onClick={() => handleToDoClick(todo)}>
+                <TodoListItem
+                  key={todo.id}
+                  onClick={() => handleToDoClick(todo)}
+                >
                   {todo.name}
-                </Todo>
+                </TodoListItem>
               ))}
             </TodoList>
-            <TodoList status={TODO_STATUS.done}>
+            <TodoList status={TodoStatus.done}>
               {doneTodos.map((todo) => (
-                <Todo
+                <TodoListItem
                   key={todo.id}
                   checked
                   onClick={() => handleToDoClick(todo)}
                 >
                   {todo.name}
-                </Todo>
+                </TodoListItem>
               ))}
             </TodoList>
           </div>
