@@ -9,6 +9,7 @@ import HomePage from "@/pages/HomePage";
 import ItemsPage from "@/pages/ItemsPage";
 import AddItemPage from "@/pages/AddItemPage";
 import LoginPage from "@/pages/LoginPage";
+import BoardsPage from "@/pages/BoardsPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route index element={<HomePage />} />
           </Route>
           <Route element={<PageLayout />}>
+            <Route path="/boards" element={<BoardsPage />} />
             <Route path="/items" element={<ItemsPage />} />
             <Route path="/additem" element={<AddItemPage />} />
           </Route>

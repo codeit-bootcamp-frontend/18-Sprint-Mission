@@ -4,7 +4,7 @@ import typography from "@/styles/utils/typography";
 import media from "@/styles/utils/media";
 
 const COMMON_CONTAINER_STYLES = css`
-  position: fixed;
+  position: sticky;
   height: 70px;
   border-bottom: 1px solid var(--border-color);
   background-color: var(--main-bg-color);

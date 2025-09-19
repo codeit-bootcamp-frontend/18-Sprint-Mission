@@ -4,7 +4,7 @@ import Icon from "@/components/Icon";
 import Button from "@/components/Button";
 
 const MENU_ITEMS = [
-  { to: "/board", label: "자유게시판" },
+  { to: "/boards", label: "자유게시판" },
   { to: "/items", label: "중고마켓" },
 ];
 const AUTH_ITEMS = ["/login", "/signup"];
