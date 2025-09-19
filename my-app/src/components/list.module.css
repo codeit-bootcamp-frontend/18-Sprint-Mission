@@ -1,18 +1,42 @@
 .container {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
-}
-
-.todo {
+  align-items: flex-start;
+  margin: 0 auto;
+  gap: 40px;
 }
 
 .todo_wrapper {
+  flex: 1;
+  min-width: 360px;
+}
+
+.todo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 28px;
+  margin: 14px 0;
+  background-color: #bef264;
+  color: #15803d;
+  border-radius: 999px;
+}
+
+.checklist_wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 28px;
+  margin: 14px 0;
+  background-color: #15803d;
+  color: #fcd34d;
+  border-radius: 999px;
 }

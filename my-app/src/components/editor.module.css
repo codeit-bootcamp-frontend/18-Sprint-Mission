@@ -1,20 +1,24 @@
 .container {
   display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
 .input {
   flex: 1;
   padding: 12px;
-  border: 1px solid grey;
+  border: 2px solid black;
   border-radius: 20px;
+  box-shadow: 4px 6px 4px #0f172a;
+  outline: none;
 }
 
 .button {
   cursor: pointer;
-  width: 100px;
-  border: none;
+  width: 120px;
+  border: 1px solid black;
   border-radius: 20px;
   background-color: #7c3aed;
   color: white;
+  box-shadow: 4px 6px 4px #0f172a;
 }

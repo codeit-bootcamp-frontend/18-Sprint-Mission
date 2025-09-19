@@ -1,12 +1,26 @@
 .container {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 20px;
+  gap: 12px;
+
+  padding: 12px 18px;
+  border: 2px solid #101828;
+  border-radius: 999px;
+  background: #fff;
 }
 
 .input {
   width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 2px solid #101828;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.input:checked {
+  background: #6d28d9;
+  border-color: #6d28d9;
 }
 
 .content {
@@ -19,5 +33,6 @@
   font-size: 14px;
   border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
+  color: #8a8a8a;
 }
