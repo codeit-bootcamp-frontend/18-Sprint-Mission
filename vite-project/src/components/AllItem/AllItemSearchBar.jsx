@@ -28,7 +28,7 @@ const AllItemSearchBar = ({ onSearch }) => {
           className="bg-transparent outline-none flex-1 text-sm placeholder-gray-400"
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyPress}
         />
       </div>
     </form>
