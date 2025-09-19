@@ -3,8 +3,12 @@ import BestItem from "./components/BestItem/BestItem";
 import AllItemHeader from "./components/AllItem/AllItemHeader";
 import AllItemSearchBar from "./components/AllItem/AllItemSearchBar";
 import AllItemRegisterButton from "./components/AllItem/AllItemRegisterButton";
+import SortDropDown from "./components/AllItem/SortDropDown";
+import { useState } from "react";
 
 function App() {
+  const [sortBy, setSortBy] = useState("latest");
+
   return (
     <>
       <Header />
@@ -15,6 +19,7 @@ function App() {
           <div className="flex items-center gap-2">
             <AllItemSearchBar />
             <AllItemRegisterButton />
+            <SortDropDown onSortChange={setSortBy} currentSort={sortBy} />
           </div>
         </div>
       </div>
