@@ -1,5 +1,6 @@
 import { styled, css } from "styled-components";
 import typography from "@/styles/utils/typography";
+import Icon from "@/components/Icon";
 
 const BUTTON_STATE_STYLES = {
   primary: css`
@@ -25,6 +26,10 @@ const BUTTON_STATE_STYLES = {
     background: var(--main-white);
     color: var(--color-gray-500);
     border: 1px solid var(--border-color);
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   `,
 };
 
@@ -63,16 +68,23 @@ const BUTTON_SHAPE_STYLES = {
     padding: 11px 30px;
     ${typography["text-lg-semibold"]},
   `,
+  round40: css`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    ${typography["text-lg-semibold"]},
+  `,
 };
 
 const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: top;
   border: none;
   cursor: pointer;
   transition: all 0.2s;
-  ${props => BUTTON_SHAPE_STYLES[props.$size || "md"]};
+  ${props => BUTTON_SHAPE_STYLES[props.$shape || "md"]};
   ${props => BUTTON_STATE_STYLES[props.$appearance || "primary"]};
   ${props =>
     props.disabled &&
@@ -81,9 +93,10 @@ const StyledButton = styled.button`
     `}
 `;
 
-const Button = ({ size = "md", appearance = "primary", disabled = false, children, ...props }) => {
+const Button = ({ shape = "md", appearance = "primary", icon, disabled = false, children, ...props }) => {
   return (
-    <StyledButton $size={size} $appearance={appearance} disabled={disabled} {...props}>
+    <StyledButton $shape={shape} $appearance={appearance} disabled={disabled} {...props}>
+      {icon && <Icon src={icon} alt="" />}
       {children}
     </StyledButton>
   );

@@ -41,7 +41,7 @@ const Header = ({ template = "main", isLoggedIn }) => {
                   <Icon size="lg" icon="profile" />
                 </UserProfileButton>
               ) : (
-                <Button to="/login" size="sm48" as={Link}>
+                <Button to="/login" shape="sm48" as={Link}>
                   로그인
                 </Button>
               )}

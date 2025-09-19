@@ -1,4 +1,5 @@
 import Card from "../../components/Card";
+import Pagination from "../../components/Pagination";
 
 const dummy = [
   {
@@ -52,6 +53,7 @@ const ItemsPage = () => {
       <Card items={dummy} type="best" />
       <div>전체 상품</div>
       <Card items={dummy} />
+      <Pagination totalDataCount={dummy.length} itemsPerPage={10} onPageChange={() => {}} />
     </>
   );
 };
