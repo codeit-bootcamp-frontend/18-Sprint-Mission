@@ -96,8 +96,8 @@ const StyledButton = styled.button`
 const Button = ({ shape = "md", appearance = "primary", icon, disabled = false, children, ...props }) => {
   return (
     <StyledButton $shape={shape} $appearance={appearance} disabled={disabled} {...props}>
-      {icon && <Icon src={icon} alt="" />}
       {children}
+      {icon && <Icon src={icon} alt="" />}
     </StyledButton>
   );
 };

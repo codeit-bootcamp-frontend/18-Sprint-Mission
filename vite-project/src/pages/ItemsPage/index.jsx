@@ -1,5 +1,8 @@
+import { useState } from "react";
 import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
+import Dropdown from "../../components/Dropdown";
+import Button from "../../components/Button";
 
 const dummy = [
   {
@@ -46,12 +49,20 @@ const dummy = [
   },
 ];
 
+const productSortOptions = [
+  { value: "latest", label: "최신순" },
+  { value: "popular", label: "좋아요순" },
+];
+
 const ItemsPage = () => {
+  const [state, setState] = useState("latest");
   return (
     <>
       <div>베스트 상품</div>
       <Card items={dummy} type="best" />
       <div>전체 상품</div>
+      <Button shape="sm42">상품 등록하기</Button>
+      <Dropdown options={productSortOptions} value={state} onChange={setState} />
       <Card items={dummy} />
       <Pagination totalDataCount={dummy.length} itemsPerPage={10} onPageChange={() => {}} />
     </>
