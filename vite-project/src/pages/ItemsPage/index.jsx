@@ -3,6 +3,7 @@ import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
 import Dropdown from "../../components/Dropdown";
 import Button from "../../components/Button";
+import Input from "../../components/Input";
 
 const dummy = [
   {
@@ -61,6 +62,13 @@ const ItemsPage = () => {
       <div>베스트 상품</div>
       <Card items={dummy} type="best" />
       <div>전체 상품</div>
+      <Input
+        type="search"
+        icon="search"
+        iconAlign="left"
+        appearance="secondary"
+        placeholder="검색할 상품을 입력해주세요"
+      />
       <Button shape="sm42">상품 등록하기</Button>
       <Dropdown options={productSortOptions} value={state} onChange={setState} />
       <Card items={dummy} />

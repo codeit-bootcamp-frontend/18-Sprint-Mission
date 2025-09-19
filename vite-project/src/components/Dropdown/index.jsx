@@ -1,5 +1,5 @@
 import { useRef, useEffect, useCallback } from "react";
-import useToggle from "../../hooks/useToggle";
+import useToggle from "@/hooks/useToggle";
 import styled from "styled-components";
 import Icon from "../Icon";
 import Button from "../Button";

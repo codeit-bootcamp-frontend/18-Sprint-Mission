@@ -3,6 +3,8 @@ import IconLike from "@/assets/icons/ic_heart.svg";
 import IconProfile from "@/assets/icons/ic_profile.svg";
 import IconSearch from "@/assets/icons/ic_search.svg";
 import IconDropdown from "@/assets/icons/ic_arrow_down.svg";
+import IconEye from "@/assets/icons/ic_eye_open.svg";
+import IconEyeOff from "@/assets/icons/ic_eye_closed.svg";
 
 const ICON_SIZES = {
   xl: "48px",
@@ -18,6 +20,8 @@ const ICON_MAP = {
   like: IconLike,
   search: IconSearch,
   dropdown: IconDropdown,
+  eyeOff: IconEyeOff,
+  eye: IconEye,
 };
 
 const StyledIcon = styled.img`
