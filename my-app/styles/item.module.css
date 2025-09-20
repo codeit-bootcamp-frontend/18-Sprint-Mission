@@ -1,6 +1,63 @@
-.content {
+.container {
   width: 100%;
   height: 100%;
   padding: 24px 102px 100px;
   background-color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.imageMemoContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  height: 311px;
+}
+
+.memoContainer {
+  flex-grow: 1;
+  background-color: #fefce8;
+  border-radius: 24px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.memoContainer > span {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 100%;
+  color: var(--color-amber-800);
+  text-align: center;
+  display: block;
+}
+.memoContainer > p {
+  margin: 0;
+  padding: 0;
+  padding-right: 2px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--color-state-800);
+  height: 100%;
+  overflow-y: scroll;
+}
+.memoContainer > p::-webkit-scrollbar {
+  width: 4px;
+}
+.memoContainer > p::-webkit-scrollbar-thumb {
+  height: 20%;
+  border-radius: 2px;
+  background-color: var(--color-amber-200);
+  background-clip: padding-box;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
 }
