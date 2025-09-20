@@ -8,7 +8,6 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 100%;
-  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -22,17 +21,20 @@
   width: 100%;
   height: 100%;
 }
+.button:not(:disabled) {
+  cursor: pointer;
+}
 
-.button.add:active {
+.button.add:not(:disabled) {
   color: white;
   background-color: var(--color-violet-600);
 }
-.button.add:active img {
+.button.add:not(:disabled) img {
   filter: invert(100%) sepia(14%) saturate(1801%) hue-rotate(190deg)
     brightness(116%) contrast(101%);
 }
 
-.button.edit:active {
+.button.edit:not(:disabled) {
   background-color: var(--color-lime-300);
 }
 

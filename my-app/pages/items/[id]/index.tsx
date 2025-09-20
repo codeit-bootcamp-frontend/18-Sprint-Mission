@@ -50,7 +50,11 @@ export default function Page({ todo }: { todo: Todo }) {
           </div>
         </div>
         <div className={styles.buttonContainer}>
-          <Button buttonType={ButtonType.edit} onClick={handleEditClick}>
+          <Button
+            buttonType={ButtonType.edit}
+            disabled
+            onClick={handleEditClick}
+          >
             수정 완료
           </Button>
           <Button buttonType={ButtonType.delete} onClick={handleDeleteClick}>
