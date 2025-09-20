@@ -7,31 +7,35 @@ import searchIcon from "../../assets/searchIcon.svg";
 import Dropdown from "./Dropdown";
 import { useResponsivePage } from "../../hooks/useResponsivePage";
 import { Link } from "react-router-dom";
+import { SORT_OPTIONS } from "../../constant/SORT_OPTIONS";
 
 const Container = ({ pageSize, isMobile }) => {
-  const [orderBy, setOrderBy] = useState("recent");
+  const [orderBy, setOrderBy] = useState(SORT_OPTIONS[0].value);
   const { setCurrentPage, getPageNumber, currentPage } = usePagination();
   const { products, totalProductCount } = useGetProducts({
     pageSize,
     orderBy,
     currentPage,
   });
-  const { normalPicSize, normalPicContainerSize } = useResponsivePage();
+  const ResponsiveValues = useResponsivePage();
 
-  const handleSelect = (e) => {
-    return setOrderBy(e.target.dataset.value);
+  const handleSelect = (val) => {
+    console.log("$$", val);
+    setOrderBy(val);
   };
-
   const { pages, totalPages } = getPageNumber(totalProductCount);
   return (
-    <div className="flex flex-col items-center gap-6 mt-6 max-w-[1200px] h-">
+    <div className="flex flex-col items-center gap-6 mt-6 max-w-[1200px]">
       {isMobile ? (
         <div className="flex flex-col w-full gap-4">
           <div className="flex justify-between">
             <h2 className="text-xl font-bold">전체 상품</h2>
-            <button className="px-6 py-3 text-white bg-blue-500 rounded-lg">
-              상품 등록하기
-            </button>
+            <Link
+              className="px-6 py-3 text-white bg-blue-500 rounded-lg"
+              to="/addItems"
+            >
+              상품등록하기
+            </Link>
           </div>
           <div className="flex w-full gap-3">
             <div className="flex items-center flex-1 gap-2">
@@ -46,7 +50,11 @@ const Container = ({ pageSize, isMobile }) => {
                   placeholder="검색할 상품을 입력해주세요"
                 />
               </div>
-              <Dropdown handleSelect={handleSelect} orderBy={orderBy} />
+              <Dropdown
+                onChange={handleSelect}
+                value={orderBy}
+                options={SORT_OPTIONS}
+              />
             </div>
           </div>
         </div>
@@ -74,8 +82,11 @@ const Container = ({ pageSize, isMobile }) => {
               >
                 상품등록하기
               </Link>
-
-              <Dropdown handleSelect={handleSelect} orderBy={orderBy} />
+              <Dropdown
+                onChange={handleSelect}
+                value={orderBy}
+                options={SORT_OPTIONS}
+              />
             </div>
           </div>
         </div>
@@ -83,8 +94,8 @@ const Container = ({ pageSize, isMobile }) => {
 
       <ProductGrid
         products={products}
-        picSize={normalPicSize}
-        gridSize={normalPicContainerSize}
+        picSize={ResponsiveValues.normalPicSize}
+        gridSize={ResponsiveValues.normalPicContainerSize}
       />
       <Pagination
         currentPage={currentPage}

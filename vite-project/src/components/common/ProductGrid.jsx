@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
-import { GRID_SIZES } from "./ProductGridTokens";
-import { PIC_SIZES } from "./ProductGridTokens";
+import { GRID_SIZES } from "./ProductGridClasses";
+import { PIC_SIZES } from "./ProductGridClasses";
 
 const ProductGrid = ({
   gridSize = "grid224",
