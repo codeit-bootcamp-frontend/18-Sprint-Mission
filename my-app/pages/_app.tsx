@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlobalNavBar />
-      <main>
+      <main className={styles.main}>
         <div className={styles.container}>
           <Component {...pageProps} />
         </div>

@@ -1,5 +1,10 @@
+.main {
+  background-color: #f9fafb;
+  min-height: calc(100vh - 60px);
+}
+
 .container {
-  padding: 0 200px;
+  padding: 0 200px 100px;
 }
 
 @media (max-width: 1199px) {
