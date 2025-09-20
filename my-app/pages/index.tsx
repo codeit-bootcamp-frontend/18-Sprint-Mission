@@ -10,6 +10,7 @@ import { useAsyncCall } from "@/hooks/use-async-call";
 import { addTodo, getTodos, toggleTodo } from "@/libs/apis/todo";
 import styles from "@/styles/home.module.css";
 import type { Todo } from "@/types";
+import { useRouter } from "next/router";
 import {
   type ChangeEventHandler,
   MouseEventHandler,
@@ -26,6 +27,7 @@ export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
   const [inputValue, setInputValue] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>(initialTodos ?? []);
   const { isLoading, execute } = useAsyncCall();
+  const router = useRouter();
 
   const canAdd = useMemo(() => inputValue.trim().length > 0, [inputValue]);
 
@@ -50,7 +52,7 @@ export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
     });
   };
 
-  const handleToDoClick = async (todo: Todo) => {
+  const handleTodoChange = async (todo: Todo) => {
     execute(async () => {
       const updatedTodo = await toggleTodo(todo);
       if (!updatedTodo) return;
@@ -63,6 +65,10 @@ export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
         return newTodos;
       });
     });
+  };
+
+  const handleTodoClick = async (todo: Todo) => {
+    router.push(`/items/${todo.id}`);
   };
 
   return (
@@ -89,21 +95,20 @@ export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
               {inProgressTodos.map((todo) => (
                 <TodoListItem
                   key={todo.id}
-                  onClick={() => handleToDoClick(todo)}
-                >
-                  {todo.name}
-                </TodoListItem>
+                  todo={todo}
+                  onChange={handleTodoChange}
+                  onClick={handleTodoClick}
+                />
               ))}
             </TodoList>
             <TodoList status={TodoStatus.done}>
               {doneTodos.map((todo) => (
                 <TodoListItem
                   key={todo.id}
-                  checked
-                  onClick={() => handleToDoClick(todo)}
-                >
-                  {todo.name}
-                </TodoListItem>
+                  todo={todo}
+                  onChange={handleTodoChange}
+                  onClick={handleTodoClick}
+                />
               ))}
             </TodoList>
           </div>
