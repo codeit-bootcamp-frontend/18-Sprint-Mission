@@ -52,7 +52,16 @@ export async function editTodo(
     const updatedItem = await client.patch(`items/${id}`, updateValues);
     return updatedItem;
   } catch (error) {
-    console.error("Error editing todo:", error);
     return null;
+  }
+}
+
+export async function deleteTodo(id: number): Promise<boolean> {
+  try {
+    const client = new HttpClient();
+    await client.delete(`items/${id}`);
+    return true;
+  } catch (error) {
+    return false;
   }
 }

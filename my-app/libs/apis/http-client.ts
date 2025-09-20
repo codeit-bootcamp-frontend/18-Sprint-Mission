@@ -42,6 +42,16 @@ class HttpClient {
     }
     return response.json();
   }
+
+  async delete(endpoint: string) {
+    const response = await fetch(this.createFetchInput(endpoint), {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      throw new Error(`Error deleting ${endpoint}: ${response.statusText}`);
+    }
+    return response.json();
+  }
 }
 
 export default HttpClient;
