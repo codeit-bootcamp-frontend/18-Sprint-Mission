@@ -6,7 +6,7 @@ import Footer from "@/components/Layout/Footer";
 import Container from "@/components/Layout/Container";
 
 const StyledContainer = styled(Container)`
-  max-width: ${({ template }) => (template === "auth" ? "calc(640px + 48px)" : "100%")};
+  max-width: ${({ template }) => (template === "auth" ? "calc(640px + 48px)" : "")};
 `;
 
 const PageLayout = ({ template = "main" }) => {
