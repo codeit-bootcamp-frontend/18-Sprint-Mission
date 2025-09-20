@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import CardItem from "./CardItem";
 import Midia from "@/styles/utils/media";
+import CardItem from "./CardItem";
 
 const CardContainer = styled.ul`
   width: 100%;
@@ -12,9 +12,11 @@ const CardContainer = styled.ul`
   grid-template-columns: repeat(5, 1fr);
   ${Midia("md")} {
     grid-template-columns: repeat(3, 1fr);
+    gap: 40px 16px;
   }
   ${Midia("sm")} {
     grid-template-columns: repeat(2, 1fr);
+    gap: 32px 8px;
   }
   `}
   ${({ type }) =>
@@ -23,6 +25,7 @@ const CardContainer = styled.ul`
   grid-template-columns: repeat(4, 1fr);
   ${Midia("md")} {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0px 10px;
   }
   ${Midia("sm")} {
     grid-template-columns: repeat(1, 1fr);

@@ -1,60 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import getItems from "@/api/item";
+import useResponsiveView from "@/hooks/useResponsiveView";
 import { SectionWrapper, SectionHeader, SectionTitle, ProductControlBar, SearchInput, AddItemButton } from "./style";
-import Card from "../../components/Card";
-import Pagination from "../../components/Pagination";
-import Dropdown from "../../components/Dropdown";
-import Button from "../../components/Button";
+import Card from "@/components/Card";
+import Pagination from "@/components/Pagination";
+import Button from "@/components/Button";
+import Dropdown from "@/components/Dropdown";
 
-const dummy = [
-  {
-    id: 1,
-    title: "아이패드 미니 팝니다",
-    price: "500,000원",
-    imgUrl: "/src/assets/icons/ic_heart.svg",
-    likes: 240,
-  },
-  {
-    id: 2,
-    title: "로봇 청소기",
-    price: "300,000원",
-    imgUrl: "/src/assets/icons/ic_profile.svg",
-    likes: 120,
-  },
-  {
-    id: 3,
-    title: "곰인형",
-    price: "400,000원",
-    imgUrl: "/src/assets/icons/ic_search.svg",
-    likes: 80,
-  },
-  {
-    id: 4,
-    title: "티셔츠",
-    price: "400,000원",
-    imgUrl: "/src/assets/items/logo.png",
-    likes: 80,
-  },
-  {
-    id: 5,
-    title: "빗자루",
-    price: "104,000원",
-    imgUrl: "/src/assets/logo/logo.svg",
-    likes: 180,
-  },
-  {
-    id: 6,
-    title: "모니터",
-    price: "1,304,000원",
-    imgUrl: "/src/assets/logo/logo_text.svg",
-    likes: 21,
-  },
-];
-const productSortOptions = [
-  { value: "latest", label: "최신순" },
-  { value: "popular", label: "좋아요순" },
-];
+const ITEMS_DISPLAY_COUNT = {
+  desktop: 10,
+  tablet: 6,
+  mobile: 4,
+};
+
 const AllItemsSection = () => {
-  const [sort, setSort] = useState("latest");
+  const view = useResponsiveView();
+  const pageSize = ITEMS_DISPLAY_COUNT[view] || 10;
+  const [items, setItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [orderBy, setOrderBy] = useState("recent");
+  const [totalCount, setTotalCount] = useState(0);
+
+  const getItemsData = useCallback(async () => {
+    try {
+      const data = await getItems({ page: currentPage, pageSize, orderBy });
+      setItems(data.list || []);
+      setTotalCount(data.totalCount || 0);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [currentPage, pageSize, orderBy]);
+
+  useEffect(() => {
+    getItemsData();
+  }, [getItemsData]);
+
   return (
     <SectionWrapper className="section-all-items">
       <SectionHeader>
@@ -68,11 +48,24 @@ const AllItemsSection = () => {
             placeholder="검색할 상품을 입력해주세요"
           />
           <Button label="상품 등록하기" shape="sm42" to="/additem" as={AddItemButton} />
-          <Dropdown options={productSortOptions} value={sort} onChange={setSort} mobileIcon="sort" />
+          <Dropdown
+            options={[
+              { label: "최신순", value: "recent" },
+              { label: "좋아요순", value: "favorite" },
+            ]}
+            value={orderBy}
+            onChange={setOrderBy}
+            mobileIcon="sort"
+          />
         </ProductControlBar>
       </SectionHeader>
-      <Card items={dummy} />
-      <Pagination totalDataCount={dummy.length} itemsPerPage={10} onPageChange={() => {}} />
+      <Card items={items} />
+      <Pagination
+        totalDataCount={totalCount}
+        itemsPerPage={pageSize}
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+      />
     </SectionWrapper>
   );
 };

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import typography from "@/styles/utils/typography";
+import Midia from "@/styles/utils/media";
 import Icon from "@/components/Icon";
 import defaultImg from "/src/assets/items/img_default_product.svg";
 
@@ -13,14 +14,17 @@ const CardThumbnail = styled.div`
   aspect-ratio: 1 / 1;
   border-radius: 16px;
   overflow: hidden;
+  transition: all 0.2s;
   & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
-    &:hover {
-      transform: scale(1.07);
-    }
+  }
+  ${CardItemWrapper}:hover & {
+    opacity: 0.8;
+  }
+  ${Midia("sm")} {
+    border-radius: 12px;
   }
 `;
 
@@ -47,25 +51,31 @@ const CardLikes = styled.div`
   }
 `;
 
-const CardItem = ({ imgUrl, title, price, likes }) => {
-  const thumbnailUrl = imgUrl || defaultImg;
+const CardView = styled.a`
+  display: block;
+`;
+
+const CardItem = ({ images, name, price, favoriteCount }) => {
+  const thumbnailUrl = images && images.length > 0 ? images[0] : defaultImg;
   const handleImgError = e => {
     e.target.src = defaultImg;
   };
   return (
     <>
       <CardItemWrapper>
-        <CardThumbnail>
-          <img src={thumbnailUrl} alt="상품 이미지" onError={handleImgError} />
-        </CardThumbnail>
-        <CardInfo>
-          <CardTitle>{title}</CardTitle>
-          <CardPrice>{price}</CardPrice>
-          <CardLikes>
-            <Icon size="xxs" icon="like" alt="좋아요 갯수" />
-            <span className="count">{likes}</span>
-          </CardLikes>
-        </CardInfo>
+        <CardView>
+          <CardThumbnail>
+            <img src={thumbnailUrl} alt={name} onError={handleImgError} />
+          </CardThumbnail>
+          <CardInfo>
+            <CardTitle>{name}</CardTitle>
+            <CardPrice>{price.toLocaleString()}원</CardPrice>
+            <CardLikes>
+              <Icon size="xxs" icon="like" alt="좋아요 갯수" />
+              <span className="count">{favoriteCount}</span>
+            </CardLikes>
+          </CardInfo>
+        </CardView>
       </CardItemWrapper>
     </>
   );

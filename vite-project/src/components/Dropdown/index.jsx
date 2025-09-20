@@ -1,7 +1,7 @@
 import { useRef, useCallback } from "react";
 import useToggle from "@/hooks/useToggle";
-import useIsMobileScreen from "@/hooks/useIsMobileScreen";
-import useClickOutside from "../../hooks/useClickOutside";
+import useResponsiveView from "@/hooks/useResponsiveView";
+import useClickOutside from "@/hooks/useClickOutside";
 import styled from "styled-components";
 import typography from "@/styles/utils/typography";
 import media from "@/styles/utils/media";
@@ -11,7 +11,7 @@ import Button from "../Button";
 const DropdownWrapper = styled.div`
   position: relative;
   display: inline-block;
-  --width: 130px !important;
+  --width: 130px;
 `;
 
 const DropdownButton = styled(Button)`
@@ -50,11 +50,11 @@ const DropdownList = styled.ul`
   border-radius: 12px;
   background: var(--main-white);
   overflow: hidden;
-  animation: dropdownShow 0.3s ease-out forwards;
+  animation: dropdownShow 0.2s ease-out forwards;
   @keyframes dropdownShow {
     from {
       opacity: 0;
-      transform: translate3d(8px, 0, 0);
+      transform: translate3d(0, 8px, 0);
     }
     to {
       opacity: 1;
@@ -78,6 +78,15 @@ const DropdownItem = styled.li`
       background: var(--color-gray-100);
       transition: background 0.2s;
     }
+
+    ${media("sm")} {
+      &.selected {
+        background: var(--color-gray-100);
+      }
+      &:hover {
+        background: transparent;
+      }
+    }
   }
 `;
 
@@ -95,7 +104,8 @@ const Label = styled.span`
 const Dropdown = ({ options, label, initLabel, value, icon = "dropdown", mobileIcon, onChange }) => {
   const [isOpen, { toggle, setOff }] = useToggle(false);
   const ref = useRef(null);
-  const isMobileScreen = useIsMobileScreen();
+  const view = useResponsiveView();
+  const isMobileScreen = view === "mobile";
   const currentIcon = (isMobileScreen && mobileIcon) || icon;
 
   const handleClose = useCallback(() => {
@@ -128,6 +138,7 @@ const Dropdown = ({ options, label, initLabel, value, icon = "dropdown", mobileI
           {options.map(option => (
             <DropdownItem key={option.value}>
               <button
+                className={option.value === value ? "selected" : ""}
                 onClick={() => {
                   onChange(option.value);
                   setOff();

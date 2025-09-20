@@ -76,6 +76,7 @@ const globalStyle = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
   }
 
   img {

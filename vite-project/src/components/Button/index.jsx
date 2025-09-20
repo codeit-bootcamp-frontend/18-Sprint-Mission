@@ -84,7 +84,6 @@ const StyledButton = styled.button`
   white-space: nowrap;
   border: none;
   cursor: pointer;
-  background: red;
   transition: all 0.2s;
   ${props => BUTTON_SHAPE_STYLES[props.$shape || "md"]};
   ${props => BUTTON_STATE_STYLES[props.$appearance || "primary"]};

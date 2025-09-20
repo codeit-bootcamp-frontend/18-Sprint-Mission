@@ -23,6 +23,13 @@ const PaginationWrapper = styled.ul`
 
 const PaginationItem = styled.li``;
 
+const PageButton = styled(Button)`
+  transition: none;
+  &.active {
+    pointer-events: none;
+  }
+`;
+
 const getPageRange = (currentPage, totalPage, pageRange) => {
   const halfRange = Math.floor(pageRange / 2);
   const initStart = Math.max(1, currentPage - halfRange);
@@ -52,14 +59,15 @@ const Pagination = ({ totalDataCount, itemsPerPage, currentPage = 1, onPageChang
       </PaginationItem>
       {pages.map(page => (
         <PaginationItem key={page}>
-          <Button
+          <PageButton
+            className={page === currentPage ? "active" : ""}
             appearance={page === currentPage ? "primary" : "tertiary"}
             shape="round40"
             aria-label={page === currentPage ? "현재 페이지" : `페이지 ${page}`}
             onClick={() => onPageChange(page)}
           >
             {page}
-          </Button>
+          </PageButton>
         </PaginationItem>
       ))}
       <PaginationItem>
