@@ -1,6 +1,7 @@
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useCallback } from "react";
 import useToggle from "@/hooks/useToggle";
 import useIsMobileScreen from "@/hooks/useIsMobileScreen";
+import useClickOutside from "../../hooks/useClickOutside";
 import styled from "styled-components";
 import typography from "@/styles/utils/typography";
 import media from "@/styles/utils/media";
@@ -49,6 +50,17 @@ const DropdownList = styled.ul`
   border-radius: 12px;
   background: var(--main-white);
   overflow: hidden;
+  animation: dropdownShow 0.3s ease-out forwards;
+  @keyframes dropdownShow {
+    from {
+      opacity: 0;
+      transform: translate3d(8px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
   z-index: 10;
 `;
 
@@ -82,25 +94,15 @@ const Label = styled.span`
 
 const Dropdown = ({ options, label, initLabel, value, icon = "dropdown", mobileIcon, onChange }) => {
   const [isOpen, { toggle, setOff }] = useToggle(false);
-  const ref = useRef();
+  const ref = useRef(null);
   const isMobileScreen = useIsMobileScreen();
   const currentIcon = (isMobileScreen && mobileIcon) || icon;
 
-  const handleClickOutside = useCallback(
-    e => {
-      if (ref.current && !ref.current.contains(e.target)) {
-        setOff();
-      }
-    },
-    [setOff],
-  );
+  const handleClose = useCallback(() => {
+    setOff();
+  }, [setOff]);
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [handleClickOutside]);
+  useClickOutside(ref, handleClose);
 
   const selected = options.find(option => option.value === value);
   const getSelectedLabel = () => {
