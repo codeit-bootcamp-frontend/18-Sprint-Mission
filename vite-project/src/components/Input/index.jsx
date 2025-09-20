@@ -87,7 +87,7 @@ const ErrorMsg = styled.p`
   ${typography["text-md-semibold"]}
 `;
 
-const Input = ({ type = "text", error, icon, iconAlign = "left", appearance = "primary", ...rest }) => {
+const Input = ({ type = "text", error, icon, iconAlign = "left", appearance = "primary", className, ...rest }) => {
   const [isToggled, { toggle }] = useToggle(false);
   const isPasswordType = type === "password";
   const inputType = isPasswordType ? (isToggled ? "text" : "password") : type;
@@ -96,7 +96,7 @@ const Input = ({ type = "text", error, icon, iconAlign = "left", appearance = "p
 
   return (
     <>
-      <InputWrapper className={(error ? "error" : "", finalIconAlign && `icon-align-${finalIconAlign}`)}>
+      <InputWrapper className={`${className ?? ""} ${error ? "error" : ""} icon-align-${finalIconAlign}`}>
         <StyledInput type={inputType} $appearance={appearance} {...rest} />
         {isPasswordType && (
           <ToggleButton onClick={toggle}>

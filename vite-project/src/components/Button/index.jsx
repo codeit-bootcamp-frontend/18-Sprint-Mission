@@ -25,7 +25,7 @@ const BUTTON_STATE_STYLES = {
   tertiary: css`
     background: var(--main-white);
     color: var(--color-gray-500);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--color-gray-200);
     &:disabled {
       opacity: 0.5;
       pointer-events: none;
@@ -81,8 +81,10 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   vertical-align: top;
+  white-space: nowrap;
   border: none;
   cursor: pointer;
+  background: red;
   transition: all 0.2s;
   ${props => BUTTON_SHAPE_STYLES[props.$shape || "md"]};
   ${props => BUTTON_STATE_STYLES[props.$appearance || "primary"]};
@@ -90,14 +92,24 @@ const StyledButton = styled.button`
     props.disabled &&
     css`
       pointer-events: none;
-    `}
+    `};
 `;
 
-const Button = ({ shape = "md", appearance = "primary", icon, disabled = false, children, ...props }) => {
+const Button = ({
+  label,
+  shape = "md",
+  appearance = "primary",
+  icon,
+  disabled = false,
+  className,
+  children,
+  ...props
+}) => {
   return (
-    <StyledButton $shape={shape} $appearance={appearance} disabled={disabled} {...props}>
-      {children}
+    <StyledButton $shape={shape} $appearance={appearance} disabled={disabled} className={className} {...props}>
+      {label}
       {icon && <Icon src={icon} alt="" />}
+      {children}
     </StyledButton>
   );
 };

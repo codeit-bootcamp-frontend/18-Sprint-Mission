@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "@/styles/utils/media";
 import Button from "../Button";
 import Icon from "../Icon";
 import PrevIcon from "@/assets/icons/ic_arrow_left.svg";
@@ -7,9 +8,17 @@ import NextIcon from "@/assets/icons/ic_arrow_right.svg";
 const PaginationWrapper = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 43px 0 58px;
+  gap: 0 4px;
+  ${media("md")} {
+    margin: 40px 0 72px;
+  }
+  ${media("sm")} {
+    margin: 40px 0 35px;
+  }
 `;
 
 const PaginationItem = styled.li``;

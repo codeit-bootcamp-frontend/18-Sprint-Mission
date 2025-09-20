@@ -135,4 +135,6 @@ export const UserMenu = styled.div`
   margin-left: auto;
 `;
 
-export const UserProfileButton = styled.button``;
+export const UserProfileButton = styled.button`
+  display: inline-block;
+`;

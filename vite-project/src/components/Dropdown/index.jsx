@@ -1,19 +1,24 @@
 import { useRef, useEffect, useCallback } from "react";
 import useToggle from "@/hooks/useToggle";
+import useIsMobileScreen from "@/hooks/useIsMobileScreen";
 import styled from "styled-components";
+import typography from "@/styles/utils/typography";
+import media from "@/styles/utils/media";
 import Icon from "../Icon";
 import Button from "../Button";
-import typography from "@/styles/utils/typography";
 
 const DropdownWrapper = styled.div`
   position: relative;
   display: inline-block;
+  --width: 130px !important;
 `;
+
 const DropdownButton = styled(Button)`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 130px;
+  width: var(--width);
   border-radius: 12px;
   padding: 7px 20px;
   text-align: left;
@@ -22,14 +27,25 @@ const DropdownButton = styled(Button)`
   & img {
     margin-left: 4px;
   }
+  &.icon-btn {
+    width: auto;
+    min-width: 42px;
+    justify-content: center;
+    padding: 0;
+    & img {
+      margin: 0;
+    }
+  }
 `;
+
 const DropdownList = styled.ul`
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   width: 100%;
+  min-width: var(--width);
   margin-top: 8px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-gray-200);
   border-radius: 12px;
   background: var(--main-white);
   overflow: hidden;
@@ -38,7 +54,7 @@ const DropdownList = styled.ul`
 
 const DropdownItem = styled.li`
   & + & {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--color-gray-200);
   }
   & button {
     width: 100%;
@@ -53,9 +69,22 @@ const DropdownItem = styled.li`
   }
 `;
 
-const Dropdown = ({ options, label, initLabel, value, onChange }) => {
+const Label = styled.span`
+  ${media("sm")} {
+    position: absolute;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+  }
+`;
+
+const Dropdown = ({ options, label, initLabel, value, icon = "dropdown", mobileIcon, onChange }) => {
   const [isOpen, { toggle, setOff }] = useToggle(false);
   const ref = useRef();
+  const isMobileScreen = useIsMobileScreen();
+  const currentIcon = (isMobileScreen && mobileIcon) || icon;
 
   const handleClickOutside = useCallback(
     e => {
@@ -82,9 +111,15 @@ const Dropdown = ({ options, label, initLabel, value, onChange }) => {
 
   return (
     <DropdownWrapper ref={ref}>
-      <DropdownButton appearance="tertiary" shape="sm42" onClick={toggle} aria-label={getSelectedLabel() + ` 선택`}>
-        {getSelectedLabel()}
-        <Icon size="sm" icon="dropdown" />
+      <DropdownButton
+        className={`${isOpen ? "open" : ""} ${!value ? "icon-btn" : ""} ${isMobileScreen ? "icon-btn" : ""}`}
+        appearance="tertiary"
+        shape="sm42"
+        onClick={toggle}
+        aria-label={getSelectedLabel() + ` 선택`}
+      >
+        {value && <Label>{getSelectedLabel()}</Label>}
+        <Icon size="sm" icon={currentIcon} />
       </DropdownButton>
       {isOpen && (
         <DropdownList>

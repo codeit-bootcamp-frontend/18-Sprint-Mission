@@ -5,6 +5,7 @@ import IconSearch from "@/assets/icons/ic_search.svg";
 import IconDropdown from "@/assets/icons/ic_arrow_down.svg";
 import IconEye from "@/assets/icons/ic_eye_open.svg";
 import IconEyeOff from "@/assets/icons/ic_eye_closed.svg";
+import IconSort from "@/assets/icons/ic_sort.svg";
 
 const ICON_SIZES = {
   xl: "48px",
@@ -22,6 +23,7 @@ const ICON_MAP = {
   dropdown: IconDropdown,
   eyeOff: IconEyeOff,
   eye: IconEye,
+  sort: IconSort,
 };
 
 const StyledIcon = styled.img`
