@@ -1,14 +1,23 @@
 import Button from "@/components/button/button";
 import { ButtonType } from "@/components/button/button-type";
 import TodoDetailTitle from "@/components/todo/todo-detail-title";
-import { getTodo } from "@/libs/apis/todo";
+import { editTodo, getTodo } from "@/libs/apis/todo";
 import styles from "@/styles/item.module.css";
 import type { Todo } from "@/types";
 import { GetServerSidePropsContext } from "next";
+import { useRouter } from "next/router";
+import { ChangeEvent, useMemo, useState } from "react";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { id } = context.params!;
   const todo = await getTodo(Number(id));
+
+  if (!todo) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       todo,
@@ -16,18 +25,56 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   };
 }
 
+type TodoValuesState = Pick<Todo, "name" | "imageUrl" | "memo" | "isCompleted">;
+
 export default function Page({ todo }: { todo: Todo }) {
+  const router = useRouter();
+
   if (!todo) {
     return <div>Todo not found</div>;
   }
+
+  const [todoValues, setTodoValues] = useState<TodoValuesState>({
+    name: todo.name,
+    imageUrl: todo.imageUrl,
+    memo: todo.memo,
+    isCompleted: todo.isCompleted,
+  });
+
+  const canEdit = useMemo(() => {
+    return (
+      todoValues.name !== todo.name ||
+      todoValues.memo != todo.memo ||
+      todoValues.imageUrl != todo.imageUrl ||
+      todoValues.isCompleted !== todo.isCompleted
+    );
+  }, [todoValues]);
 
   const handleTitleClick = (todo: Todo) => {
     console.log("Title clicked:", todo);
   };
 
-  const handleEditClick = () => {};
+  const handleEditClick = async () => {
+    const result = await editTodo(todo.id, {
+      name: todoValues.name,
+      memo: todoValues.memo ?? "",
+      imageUrl: todoValues.imageUrl ?? "",
+      isCompleted: todoValues.isCompleted,
+    });
+
+    if (result) {
+      router.replace("/");
+    }
+  };
 
   const handleDeleteClick = () => {};
+
+  const handleMemoChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setTodoValues((prev) => ({
+      ...prev,
+      memo: event.target.value || undefined,
+    }));
+  };
 
   return (
     <div className={styles.container}>
@@ -42,17 +89,16 @@ export default function Page({ todo }: { todo: Todo }) {
           </div>
           <div className={styles.memoContainer}>
             <span>Memo</span>
-            <p>
-              {
-                "내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내부 스크롤이 이루어집니다. 내용이 최대로 늘어날 때 다음과 같이 보이며 내"
-              }
-            </p>
+            <textarea
+              value={todoValues.memo ?? ""}
+              onChange={handleMemoChange}
+            />
           </div>
         </div>
         <div className={styles.buttonContainer}>
           <Button
             buttonType={ButtonType.edit}
-            disabled
+            disabled={!canEdit}
             onClick={handleEditClick}
           >
             수정 완료

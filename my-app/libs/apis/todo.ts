@@ -42,3 +42,17 @@ export async function toggleTodo(todo: Todo): Promise<Todo | null> {
     return null;
   }
 }
+
+export async function editTodo(
+  id: number,
+  updateValues: Partial<Todo>
+): Promise<Todo | null> {
+  try {
+    const client = new HttpClient();
+    const updatedItem = await client.patch(`items/${id}`, updateValues);
+    return updatedItem;
+  } catch (error) {
+    console.error("Error editing todo:", error);
+    return null;
+  }
+}
