@@ -11,6 +11,16 @@ export async function getTodos(): Promise<Todo[]> {
   }
 }
 
+export async function getTodo(id: number): Promise<Todo | null> {
+  try {
+    const client = new HttpClient();
+    const item = await client.get(`items/${id}`);
+    return item;
+  } catch (error) {
+    return null;
+  }
+}
+
 export async function addTodo(name: string): Promise<Todo | null> {
   try {
     const client = new HttpClient();
