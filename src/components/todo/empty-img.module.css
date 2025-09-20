@@ -1,0 +1,14 @@
+.empty {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.empty_msg {
+  font-family: "NanumSquareBold";
+  font-size: 16px;
+  letter-spacing: 0%;
+  color: var(--slate-400);
+  text-align: center;
+}

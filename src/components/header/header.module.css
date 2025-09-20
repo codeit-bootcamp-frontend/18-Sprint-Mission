@@ -1,0 +1,12 @@
+.header_container {
+  background-color: white;
+  border-bottom: 1px solid var(--slate-200);
+  display: flex;
+  justify-content: center;
+}
+
+.header_box {
+  width: 1200px;
+  max-width: 1200px;
+  padding: 10px 0px;
+}
