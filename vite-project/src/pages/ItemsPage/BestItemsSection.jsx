@@ -1,57 +1,40 @@
+import { useState, useEffect, useCallback } from "react";
+import getItems from "@/api/item";
+import useResponsiveView from "@/hooks/useResponsiveView";
 import { SectionWrapper, SectionHeader, SectionTitle, ProductControlBar } from "./style";
-import Card from "../../components/Card";
+import Card from "@/components/Card";
 
-const dummy = [
-  {
-    id: 1,
-    title: "아이패드 미니 팝니다",
-    price: "500,000원",
-    imgUrl: "/src/assets/icons/ic_heart.svg",
-    likes: 240,
-  },
-  {
-    id: 2,
-    title: "로봇 청소기",
-    price: "300,000원",
-    imgUrl: "/src/assets/icons/ic_profile.svg",
-    likes: 120,
-  },
-  {
-    id: 3,
-    title: "곰인형",
-    price: "400,000원",
-    imgUrl: "/src/assets/icons/ic_search.svg",
-    likes: 80,
-  },
-  {
-    id: 4,
-    title: "티셔츠",
-    price: "400,000원",
-    imgUrl: "/src/assets/items/logo.png",
-    likes: 80,
-  },
-  {
-    id: 5,
-    title: "빗자루",
-    price: "104,000원",
-    imgUrl: "/src/assets/logo/logo.svg",
-    likes: 180,
-  },
-  {
-    id: 6,
-    title: "모니터",
-    price: "1,304,000원",
-    imgUrl: "/src/assets/logo/logo_text.svg",
-    likes: 21,
-  },
-];
+const ITEMS_DISPLAY_COUNT = {
+  desktop: 4,
+  tablet: 2,
+  mobile: 1,
+};
+
 const BestItemsSection = () => {
+  const view = useResponsiveView();
+  const pageSize = ITEMS_DISPLAY_COUNT[view] || 4;
+  const [items, setItems] = useState([]);
+  const [orderBy, setOrderBy] = useState("favorite");
+
+  const getItemsData = useCallback(async () => {
+    try {
+      const data = await getItems({ pageSize, orderBy });
+      setItems(data.list || []);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [pageSize, orderBy]);
+
+  useEffect(() => {
+    getItemsData();
+  }, [getItemsData]);
+
   return (
     <SectionWrapper className="section-best-items">
       <SectionHeader>
         <SectionTitle>베스트 상품</SectionTitle>
       </SectionHeader>
-      <Card items={dummy} type="best" />
+      <Card items={items} type="main" />
     </SectionWrapper>
   );
 };

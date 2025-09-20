@@ -20,7 +20,7 @@ const CardContainer = styled.ul`
   }
   `}
   ${({ type }) =>
-    type === "best" &&
+    type === "main" &&
     `
   grid-template-columns: repeat(4, 1fr);
   ${Midia("md")} {

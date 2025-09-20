@@ -32,10 +32,14 @@ const CardInfo = styled.div`
   margin-top: 16px;
   display: grid;
   gap: 6px 0;
+  word-break: break-all;
 `;
 
 const CardTitle = styled.div`
   ${typography["text-md-medium"]};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 const CardPrice = styled.div`
