@@ -1,7 +1,6 @@
 import Button from "@/components/button/button";
 import { ButtonType } from "@/components/button/button-type";
 import SearchInput from "@/components/input/search-input";
-import GlobalNavBar from "@/components/nav-bar/global-nav-bar";
 import Portal from "@/components/portal/portal";
 import TodoList from "@/components/todo/todo-list";
 import TodoListItem from "@/components/todo/todo-list-item";
@@ -73,47 +72,44 @@ export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
 
   return (
     <>
-      <GlobalNavBar />
-      <main className={styles.main}>
-        <div className={styles.content}>
-          <form className={styles.searchForm}>
-            <SearchInput
-              value={inputValue}
-              placeholder="할 일을 입력해주세요"
-              onChange={handleInputChange}
-            />
-            <Button
-              buttonType={ButtonType.add}
-              onClick={handleAddClick}
-              disabled={!canAdd}
-            >
-              추가하기
-            </Button>
-          </form>
-          <div className={styles.todoListContainer}>
-            <TodoList status={TodoStatus.inProgress}>
-              {inProgressTodos.map((todo) => (
-                <TodoListItem
-                  key={todo.id}
-                  todo={todo}
-                  onChange={handleTodoChange}
-                  onClick={handleTodoClick}
-                />
-              ))}
-            </TodoList>
-            <TodoList status={TodoStatus.done}>
-              {doneTodos.map((todo) => (
-                <TodoListItem
-                  key={todo.id}
-                  todo={todo}
-                  onChange={handleTodoChange}
-                  onClick={handleTodoClick}
-                />
-              ))}
-            </TodoList>
-          </div>
+      <div className={styles.content}>
+        <form className={styles.searchForm}>
+          <SearchInput
+            value={inputValue}
+            placeholder="할 일을 입력해주세요"
+            onChange={handleInputChange}
+          />
+          <Button
+            buttonType={ButtonType.add}
+            onClick={handleAddClick}
+            disabled={!canAdd}
+          >
+            추가하기
+          </Button>
+        </form>
+        <div className={styles.todoListContainer}>
+          <TodoList status={TodoStatus.inProgress}>
+            {inProgressTodos.map((todo) => (
+              <TodoListItem
+                key={todo.id}
+                todo={todo}
+                onChange={handleTodoChange}
+                onClick={handleTodoClick}
+              />
+            ))}
+          </TodoList>
+          <TodoList status={TodoStatus.done}>
+            {doneTodos.map((todo) => (
+              <TodoListItem
+                key={todo.id}
+                todo={todo}
+                onChange={handleTodoChange}
+                onClick={handleTodoClick}
+              />
+            ))}
+          </TodoList>
         </div>
-      </main>
+      </div>
       <Portal>{isLoading && <div className={styles.loading}></div>}</Portal>
     </>
   );
