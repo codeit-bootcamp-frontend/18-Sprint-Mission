@@ -53,8 +53,18 @@ export default function Page({ todo }: { todo: Todo }) {
     );
   }, [todoValues]);
 
-  const handleTitleClick = (todo: Todo) => {
-    console.log("Title clicked:", todo);
+  const handleNameChange = (newName: string) => {
+    setTodoValues((prev) => ({
+      ...prev,
+      name: newName,
+    }));
+  };
+
+  const handleCompletedChange = (newCompleted: boolean) => {
+    setTodoValues((prev) => ({
+      ...prev,
+      isCompleted: newCompleted,
+    }));
   };
 
   const handleEditClick = async () => {
@@ -88,11 +98,21 @@ export default function Page({ todo }: { todo: Todo }) {
     }));
   };
 
+  // TODO: File input을 hidden 처리한 뒤 이미지 파일 업로드, preview 등 구현하기 -> 문자열 형식으로 전송해야 하는데 어떻게...?
+  //       `POST /images/upload` API가 있음. 이걸로 먼저 업로드 한 다음 반환되는 url을 `imageUrl`에 넣어주면 될 듯
+  // TODO: <textarea> 상하좌우 가운데 정렬 시키기
+  // TODO: 페이지 이동이 지연되는 이유 디버깅하기
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.content}>
-          <TodoDetailTitle todo={todo} onClick={handleTitleClick} />
+          <TodoDetailTitle
+            name={todoValues.name}
+            isCompleted={todoValues.isCompleted}
+            onNameChange={handleNameChange}
+            onCompletedChange={handleCompletedChange}
+          />
           <div className={styles.imageMemoContainer}>
             <div className={styles.imageContainer}>
               <img
