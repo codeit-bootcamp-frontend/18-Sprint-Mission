@@ -10,7 +10,9 @@ export default function Checklist({ id, isDone, content, onUpdate, onDelete }) {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${isDone ? styles.doneContainer : ""}`}
+    >
       <input
         onChange={onChangeCheckbox}
         readOnly
@@ -18,7 +20,9 @@ export default function Checklist({ id, isDone, content, onUpdate, onDelete }) {
         className={styles.input}
         type="checkbox"
       />
-      <div className={styles.content}>{content}</div>
+      <div className={`${styles.content} ${isDone ? styles.doneContent : ""}`}>
+        {content}
+      </div>
       <button onClick={onClickDeleteButton} className={styles.button}>
         삭제
       </button>

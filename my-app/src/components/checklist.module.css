@@ -36,3 +36,13 @@
   padding: 5px;
   color: #8a8a8a;
 }
+
+.doneContainer {
+  background: #ede9fe;
+  border-color: #7c3aed;
+}
+
+.doneContent {
+  text-decoration: line-through;
+  color: #6b7280;
+}
