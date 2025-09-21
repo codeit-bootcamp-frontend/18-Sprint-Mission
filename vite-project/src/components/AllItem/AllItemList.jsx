@@ -1,7 +1,8 @@
-// components/AllItem/AllItemList.jsx
+// components/AllItem/AllItemList.jsx - 반응형 개수 적용
 import { useState, useEffect } from "react";
 import ProductCard from "../BestItem/ProductCard";
 import { getProducts, searchProducts } from "../../api/products";
+import useResponsiveCount from "../../hooks/useResponsiveCount";
 
 const AllItemList = ({
   sortBy = "recent",
@@ -13,6 +14,11 @@ const AllItemList = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // 반응형 훅 사용
+  const { getAllProductCount, getGridClass } = useResponsiveCount();
+  const pageSize = getAllProductCount();
+  const gridClass = getGridClass("all");
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,27 +27,19 @@ const AllItemList = ({
 
         const params = {
           page: currentPage,
-          pageSize: 10,
+          pageSize: pageSize, // 🎯 화면 크기별 다른 개수
           orderBy: sortBy === "latest" ? "recent" : "favorite",
         };
 
         let data;
         if (searchQuery.trim()) {
-          // 검색 API 함수 사용
           data = await searchProducts(searchQuery.trim(), params);
         } else {
-          // 일반 상품 목록 API 함수 사용
           data = await getProducts(params);
         }
 
         setProducts(data.list || []);
 
-        // 상위 컴포넌트에 전체 개수 전달
-        if (onTotalCountChange) {
-          onTotalCountChange(data.totalCount || 0);
-        }
-
-        // 상위 컴포넌트에 전체 개수 전달
         if (onTotalCountChange) {
           onTotalCountChange(data.totalCount || 0);
         }
@@ -54,14 +52,15 @@ const AllItemList = ({
     };
 
     fetchProducts();
-  }, [sortBy, searchQuery, currentPage, onTotalCountChange]);
+  }, [sortBy, searchQuery, currentPage, pageSize, onTotalCountChange]); // pageSize 의존성 추가
 
   // 로딩 상태
   if (loading) {
     return (
       <section className="mt-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {[...Array(10)].map((_, index) => (
+        {/* 🎯 반응형 그리드 클래스와 개수 적용 */}
+        <div className={gridClass}>
+          {[...Array(pageSize)].map((_, index) => (
             <div
               key={index}
               className="bg-gray-200 rounded-lg h-64 animate-pulse"
@@ -101,7 +100,8 @@ const AllItemList = ({
 
   return (
     <section className="mt-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      {/* 🎯 반응형 그리드 + 반응형 개수 */}
+      <div className={gridClass}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

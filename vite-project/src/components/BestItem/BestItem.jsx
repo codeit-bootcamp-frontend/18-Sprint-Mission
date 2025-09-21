@@ -1,12 +1,18 @@
-// components/BestItem/BestItem.jsx
+// components/BestItem/BestItem.jsx - 반응형 개수 적용
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import { getBestProducts } from "../../api/products";
+import useResponsiveCount from "../../hooks/useResponsiveCount";
 
 const BestItem = () => {
   const [bestProducts, setBestProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // 반응형 훅 사용
+  const { getBestProductCount, getGridClass } = useResponsiveCount();
+  const productCount = getBestProductCount();
+  const gridClass = getGridClass("best");
 
   useEffect(() => {
     const fetchBestProducts = async () => {
@@ -14,7 +20,8 @@ const BestItem = () => {
         setLoading(true);
         setError(null);
 
-        const data = await getBestProducts(4); // 4개만 가져오기
+        // 🎯 화면 크기에 따라 다른 개수 요청
+        const data = await getBestProducts(productCount);
         setBestProducts(data.list || []);
       } catch (err) {
         setError(err.message);
@@ -25,7 +32,7 @@ const BestItem = () => {
     };
 
     fetchBestProducts();
-  }, []);
+  }, [productCount]); // productCount가 변경되면 재요청
 
   if (loading) {
     return (
@@ -36,8 +43,9 @@ const BestItem = () => {
         >
           베스트 상품
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-          {[...Array(4)].map((_, index) => (
+        {/* 🎯 반응형 그리드 클래스 적용 */}
+        <div className={gridClass}>
+          {[...Array(productCount)].map((_, index) => (
             <div
               key={index}
               className="bg-gray-200 rounded-lg h-64 animate-pulse"
@@ -72,7 +80,8 @@ const BestItem = () => {
       >
         베스트 상품
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      {/* 🎯 반응형 그리드 + 반응형 개수 */}
+      <div className={gridClass}>
         {bestProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
