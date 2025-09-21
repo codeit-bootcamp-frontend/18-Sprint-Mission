@@ -1,0 +1,59 @@
+import { useEffect, useState } from "react";
+import TodoDetailImageButton from "./todo-detail-image-button";
+import styles from "./todo-detail-image-preview.module.css";
+
+export default function TodoDetailImagePreview({
+  imageUrl,
+  onChange,
+}: {
+  imageUrl?: string;
+  onChange: (file: File) => void;
+}) {
+  const [previewUrl, setPreviewUrl] = useState<string | undefined | null>(
+    imageUrl
+  );
+
+  const handlePreviewChanged = (file?: File) => {
+    if (!file) return;
+
+    if (previewUrl) {
+      URL.revokeObjectURL(previewUrl);
+    }
+
+    const newPreviewUrl = URL.createObjectURL(file);
+    setPreviewUrl(newPreviewUrl);
+    onChange(file);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
+
+  return (
+    <div className={styles.preview}>
+      <div className={styles.previewImageContainer}>
+        <img
+          className={styles.previewImage}
+          src={previewUrl || "/images/image-preview-background.svg"}
+          alt="Preview image"
+        />
+        {typeof previewUrl === "string" || (
+          <img
+            className={styles.previewEmptyIcon}
+            src="/icons/ic-image.svg"
+            alt="empty preview logo"
+          />
+        )}
+      </div>
+      <TodoDetailImageButton
+        className={styles.button}
+        buttonType={previewUrl ? "edit" : "add"}
+        onChange={handlePreviewChanged}
+      />
+    </div>
+  );
+}

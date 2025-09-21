@@ -28,7 +28,6 @@ export default function TodoDetailTitle({
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const span = document.createElement("span");
     span.textContent = event.target.value;
-    console.log(span.style.width);
     onNameChange(event.target.value);
   };
 

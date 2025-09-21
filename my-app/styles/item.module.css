@@ -18,6 +18,10 @@
   height: 311px;
 }
 
+.imageContainer {
+  width: 384px;
+}
+
 .memoContainer {
   flex-grow: 1;
   background-color: #fefce8;

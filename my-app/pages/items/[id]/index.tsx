@@ -1,6 +1,7 @@
 import Button from "@/components/button/button";
 import { ButtonType } from "@/components/button/button-type";
 import Portal from "@/components/portal/portal";
+import TodoDetailImagePreview from "@/components/todo/todo-detail-image-preview";
 import TodoDetailTitle from "@/components/todo/todo-detail-title";
 import { useAsyncCall } from "@/hooks/use-async-call";
 import { deleteTodo, editTodo, getTodo } from "@/libs/apis/todo";
@@ -38,17 +39,16 @@ export default function Page({ todo }: { todo: Todo }) {
 
   const [todoValues, setTodoValues] = useState<TodoValuesState>({
     name: todo.name,
-    imageUrl: todo.imageUrl,
     memo: todo.memo,
     isCompleted: todo.isCompleted,
   });
+  const [image, setImage] = useState<File | undefined>();
   const { isLoading, execute } = useAsyncCall();
 
   const canEdit = useMemo(() => {
     return (
       todoValues.name !== todo.name ||
       todoValues.memo != todo.memo ||
-      todoValues.imageUrl != todo.imageUrl ||
       todoValues.isCompleted !== todo.isCompleted
     );
   }, [todoValues]);
@@ -65,6 +65,10 @@ export default function Page({ todo }: { todo: Todo }) {
       ...prev,
       isCompleted: newCompleted,
     }));
+  };
+
+  const handleImageChange = (file: File) => {
+    setImage(file);
   };
 
   const handleEditClick = async () => {
@@ -115,9 +119,9 @@ export default function Page({ todo }: { todo: Todo }) {
           />
           <div className={styles.imageMemoContainer}>
             <div className={styles.imageContainer}>
-              <img
-                src="/images/todo-detail-image-background.svg"
-                alt="background"
+              <TodoDetailImagePreview
+                imageUrl={todo.imageUrl}
+                onChange={handleImageChange}
               />
             </div>
             <div className={styles.memoContainer}>
