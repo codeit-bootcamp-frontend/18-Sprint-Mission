@@ -35,6 +35,11 @@ const AllItemsSection = () => {
     getItemsData();
   }, [getItemsData]);
 
+  const handleOrderChange = newOrderBy => {
+    setOrderBy(newOrderBy);
+    setCurrentPage(1);
+  };
+
   return (
     <SectionWrapper className="section-all-items">
       <SectionHeader>
@@ -54,7 +59,7 @@ const AllItemsSection = () => {
               { label: "좋아요순", value: "favorite" },
             ]}
             value={orderBy}
-            onChange={setOrderBy}
+            onChange={handleOrderChange}
             mobileIcon="sort"
           />
         </ProductControlBar>
