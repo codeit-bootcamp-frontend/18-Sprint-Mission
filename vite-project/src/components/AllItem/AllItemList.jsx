@@ -106,8 +106,6 @@ const AllItemList = ({
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-
-      {/* 페이지 정보는 제거 - 페이지네이션 컴포넌트에서 처리 */}
     </section>
   );
 };

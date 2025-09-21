@@ -30,7 +30,12 @@ const BestItem = () => {
   if (loading) {
     return (
       <section className="py-8">
-        <p className="text-xl font-bold text-gray-900 mb-6">베스트 상품</p>
+        <h2
+          id="best-products-heading"
+          className="text-xl font-bold text-gray-900 mb-6"
+        >
+          베스트 상품
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {[...Array(4)].map((_, index) => (
             <div
@@ -46,7 +51,12 @@ const BestItem = () => {
   if (error) {
     return (
       <section className="py-8">
-        <p className="text-xl font-bold text-gray-900 mb-6">베스트 상품</p>
+        <h2
+          id="best-products-heading"
+          className="text-xl font-bold text-gray-900 mb-6"
+        >
+          베스트 상품
+        </h2>
         <div className="text-center py-8 text-gray-500">
           <p>{error}</p>
         </div>
@@ -56,7 +66,12 @@ const BestItem = () => {
 
   return (
     <section className="py-8">
-      <p className="text-xl font-bold text-gray-900 mb-6">베스트 상품</p>
+      <h2
+        id="best-products-heading"
+        className="text-xl font-bold text-gray-900 mb-6"
+      >
+        베스트 상품
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         {bestProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
