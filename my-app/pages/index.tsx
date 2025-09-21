@@ -2,10 +2,14 @@ import { useState, useRef, ReactNode } from "react";
 import Editor from "src/components/editor";
 import List from "src/components/list";
 import styles from "./index.module.css";
-import { InferGetServerSidePropsType } from "next";
-import fetchItems from "src/api/api";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { fetchItems, createItem } from "src/api/api";
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  console.log(context);
+
   const allItems = await fetchItems(1, 10);
 
   return { props: { allItems } };
@@ -14,19 +18,15 @@ export const getServerSideProps = async () => {
 export default function Home({
   allItems,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(allItems);
   const [items, setItems] = useState(allItems);
 
-  const idRef = useRef(Math.max(0, ...allItems.map((i) => i.id)) + 1);
+  const idRef = useRef(0);
 
-  const onCreate = (name) => {
-    const newItem = {
-      id: idRef.current++,
-      isCompleted: false,
-      name: name,
-    };
+  const onCreate = async (name) => {
+    const created = await createItem(name);
+    if (!created) return;
 
-    setItems([newItem, ...items]);
+    setItems([created, ...items]);
   };
 
   const onUpdate = (targetId) => {
