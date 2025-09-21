@@ -117,8 +117,6 @@ export default function Page({ todo }: { todo: Todo }) {
     }));
   };
 
-  // TODO: 페이지 이동이 지연되는 이유 디버깅하기
-
   return (
     <>
       <div className={styles.container}>
