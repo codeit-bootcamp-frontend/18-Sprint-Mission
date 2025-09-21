@@ -40,3 +40,7 @@
   color: #fcd34d;
   border-radius: 999px;
 }
+
+.empty img {
+  width: 260px;
+}
