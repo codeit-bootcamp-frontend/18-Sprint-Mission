@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MarketPage from "./pages/market";
 import BoardPage from "./pages/board";
+import AddItemPage from "./pages/additem";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MarketPage />} />
           <Route path="/board" element={<BoardPage />} />
+          <Route path="/additem" element={<AddItemPage />} />
         </Routes>
       </div>
     </Router>
