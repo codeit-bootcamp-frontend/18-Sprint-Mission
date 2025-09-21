@@ -18,10 +18,9 @@ export async function fetchItems(page = 1, pageSize = 10): Promise<ItemData[]> {
 
 export async function createItem(name): Promise<ItemData> {
   try {
-    const { data } = await instance.post<ItemData>(
-      `/api/${encodeURIComponent(TENANT_ID)}/items`,
-      { name }
-    );
+    const { data } = await instance.post<ItemData>(`/api/${TENANT_ID}/items`, {
+      name,
+    });
     return data;
   } catch (err) {
     console.error(err);

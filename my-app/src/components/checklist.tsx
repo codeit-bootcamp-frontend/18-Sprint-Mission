@@ -1,4 +1,5 @@
 import styles from "./checklist.module.css";
+import { ChecklistProps } from "src/api/types";
 
 export default function Checklist({
   id,
@@ -6,7 +7,7 @@ export default function Checklist({
   name,
   onUpdate,
   onDelete,
-}) {
+}: ChecklistProps) {
   const onChangeCheckbox = () => {
     onUpdate(id);
   };

@@ -22,14 +22,14 @@ export default function Home({
 
   const idRef = useRef(0);
 
-  const onCreate = async (name) => {
+  const onCreate = async (name: string) => {
     const created = await createItem(name);
     if (!created) return;
 
     setItems([created, ...items]);
   };
 
-  const onUpdate = (targetId) => {
+  const onUpdate = (targetId: number) => {
     setItems(
       items.map((item) =>
         item.id === targetId
@@ -39,7 +39,7 @@ export default function Home({
     );
   };
 
-  const onDelete = (targetId) => {
+  const onDelete = (targetId: number) => {
     setItems(items.filter((item) => item.id !== targetId));
   };
 

@@ -1,7 +1,8 @@
 import Checklist from "./checklist";
 import styles from "./list.module.css";
+import { ListProps } from "src/api/types";
 
-export default function List({ items, onUpdate, onDelete }) {
+export default function List({ items, onUpdate, onDelete }: ListProps) {
   const todoItems = items.filter((item) => !item.isCompleted);
   const doneItems = items.filter((item) => item.isCompleted);
 

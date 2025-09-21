@@ -1,7 +1,7 @@
 import styles from "./editor.module.css";
 import { useState, useRef } from "react";
-
-export default function Editor({ onCreate }) {
+import { EditorProps } from "src/api/types";
+export default function Editor({ onCreate }: EditorProps) {
   const [name, setName] = useState("");
   const contentRef = useRef<HTMLInputElement>(null);
 
