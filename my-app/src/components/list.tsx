@@ -1,9 +1,9 @@
 import Checklist from "./checklist";
 import styles from "./list.module.css";
 
-export default function List({ todos, onUpdate, onDelete }) {
-  const todoItems = todos.filter((todo) => !todo.isDone);
-  const doneItems = todos.filter((todo) => todo.isDone);
+export default function List({ items, onUpdate, onDelete }) {
+  const todoItems = items.filter((item) => !item.isCompleted);
+  const doneItems = items.filter((item) => item.isCompleted);
 
   return (
     <>
@@ -13,11 +13,11 @@ export default function List({ todos, onUpdate, onDelete }) {
             <h3>To do</h3>
           </div>
           <div className={styles.checklist_wrapper}>
-            {todoItems.map((todo) => {
+            {todoItems.map((item) => {
               return (
                 <Checklist
-                  key={todo.id}
-                  {...todo}
+                  key={item.id}
+                  {...item}
                   onUpdate={onUpdate}
                   onDelete={onDelete}
                 />
@@ -30,10 +30,10 @@ export default function List({ todos, onUpdate, onDelete }) {
             <h3>Done</h3>
           </div>
           <div className={styles.checklist_wrapper}>
-            {doneItems.map((todo) => (
+            {doneItems.map((item) => (
               <Checklist
-                key={todo.id}
-                {...todo}
+                key={item.id}
+                {...item}
                 onUpdate={onUpdate}
                 onDelete={onDelete}
               />

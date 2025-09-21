@@ -1,58 +1,53 @@
-import { useState, useRef } from "react";
+import { useState, useRef, ReactNode } from "react";
 import Editor from "src/components/editor";
 import List from "src/components/list";
 import styles from "./index.module.css";
+import { InferGetServerSidePropsType } from "next";
+import fetchItems from "src/api/api";
 
-const mockData = [
-  {
-    id: 0,
-    isDone: false,
-    content: "공부하기",
-  },
-  {
-    id: 1,
-    isDone: false,
-    content: "게임하기",
-  },
-  {
-    id: 2,
-    isDone: false,
-    content: "잠자기",
-  },
-];
+export const getServerSideProps = async () => {
+  const allItems = await fetchItems(1, 10);
 
-export default function Home() {
-  const [todos, setTodos] = useState(mockData);
+  return { props: { allItems } };
+};
 
-  const idRef = useRef(3);
+export default function Home({
+  allItems,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log(allItems);
+  const [items, setItems] = useState(allItems);
 
-  const onCreate = (content) => {
-    const newTodo = {
+  const idRef = useRef(Math.max(0, ...allItems.map((i) => i.id)) + 1);
+
+  const onCreate = (name) => {
+    const newItem = {
       id: idRef.current++,
-      isDone: false,
-      content: content,
+      isCompleted: false,
+      name: name,
     };
 
-    setTodos([newTodo, ...todos]);
+    setItems([newItem, ...items]);
   };
 
   const onUpdate = (targetId) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+    setItems(
+      items.map((item) =>
+        item.id === targetId
+          ? { ...item, isCompleted: !item.isCompleted }
+          : item
       )
     );
   };
 
   const onDelete = (targetId) => {
-    setTodos(todos.filter((todo) => todo.id !== targetId));
+    setItems(items.filter((item) => item.id !== targetId));
   };
 
   return (
     <>
       <div className={styles.container}>
         <Editor onCreate={onCreate} />
-        <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+        <List items={items} onUpdate={onUpdate} onDelete={onDelete} />
       </div>
     </>
   );
