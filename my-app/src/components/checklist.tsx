@@ -1,6 +1,12 @@
 import styles from "./checklist.module.css";
 
-export default function Checklist({ id, isDone, content, onUpdate, onDelete }) {
+export default function Checklist({
+  id,
+  isCompleted,
+  name,
+  onUpdate,
+  onDelete,
+}) {
   const onChangeCheckbox = () => {
     onUpdate(id);
   };
@@ -11,17 +17,21 @@ export default function Checklist({ id, isDone, content, onUpdate, onDelete }) {
 
   return (
     <div
-      className={`${styles.container} ${isDone ? styles.doneContainer : ""}`}
+      className={`${styles.container} ${
+        isCompleted ? styles.doneContainer : ""
+      }`}
     >
       <input
         onChange={onChangeCheckbox}
         readOnly
-        checked={isDone}
+        checked={isCompleted}
         className={styles.input}
         type="checkbox"
       />
-      <div className={`${styles.content} ${isDone ? styles.doneContent : ""}`}>
-        {content}
+      <div
+        className={`${styles.content} ${isCompleted ? styles.doneContent : ""}`}
+      >
+        {name}
       </div>
       <button onClick={onClickDeleteButton} className={styles.button}>
         삭제
