@@ -1,7 +1,7 @@
 // App.jsx - 라우터 적용 버전
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import MarketPage from "./pages/marget";
+import MarketPage from "./pages/market";
 import BoardPage from "./pages/board";
 
 function App() {
