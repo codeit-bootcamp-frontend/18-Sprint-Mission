@@ -1,4 +1,4 @@
-import { ItemData } from "./types";
+import { ItemData, DeleteData } from "./types";
 import instance from "./axios";
 
 const BASE_URL = "https://assignment-todolist-api.vercel.app";
@@ -21,6 +21,16 @@ export async function createItem(name): Promise<ItemData> {
     const { data } = await instance.post<ItemData>(`/api/${TENANT_ID}/items`, {
       name,
     });
+    return data;
+  } catch (err) {
+    console.error(err);
+    return;
+  }
+}
+
+export async function deleteItem(itemId): Promise<DeleteData> {
+  try {
+    const { data } = await instance.delete(`/api/${TENANT_ID}/items/${itemId}`);
     return data;
   } catch (err) {
     console.error(err);

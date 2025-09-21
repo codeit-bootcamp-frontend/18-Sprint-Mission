@@ -3,7 +3,7 @@ import Editor from "src/components/editor";
 import List from "src/components/list";
 import styles from "./index.module.css";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { fetchItems, createItem } from "src/api/api";
+import { fetchItems, createItem, deleteItem } from "src/api/api";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
@@ -39,7 +39,8 @@ export default function Home({
     );
   };
 
-  const onDelete = (targetId: number) => {
+  const onDelete = async (targetId: number) => {
+    const deleted = await deleteItem(targetId);
     setItems(items.filter((item) => item.id !== targetId));
   };
 

@@ -7,6 +7,10 @@ export interface ItemData {
   id: number;
 }
 
+export interface DeleteData {
+  message: string;
+}
+
 export interface ListProps {
   items: ItemData[];
   onUpdate: (id: number) => void;
