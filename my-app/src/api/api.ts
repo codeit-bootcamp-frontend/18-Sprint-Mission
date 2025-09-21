@@ -2,7 +2,7 @@ import { ItemData } from "./types";
 import instance from "./axios";
 
 const BASE_URL = "https://assignment-todolist-api.vercel.app";
-const TENANT_ID = "tenantId";
+const TENANT_ID = "godfather";
 
 export async function fetchItems(page = 1, pageSize = 10): Promise<ItemData[]> {
   try {
