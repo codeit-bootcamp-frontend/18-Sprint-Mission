@@ -1,18 +1,15 @@
 import { ItemData } from "./types";
+import instance from "./axios";
 
 const BASE_URL = "https://assignment-todolist-api.vercel.app";
 const TENANT_ID = "tenantId";
 
 export async function fetchItems(page = 1, pageSize = 10): Promise<ItemData[]> {
-  const url = `${BASE_URL}/api/${TENANT_ID}/items?page=${page}&pageSize=${pageSize}`;
-
   try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      throw new Error();
-    }
-
-    return await res.json();
+    const { data } = await instance.get<ItemData[]>(`/api/${TENANT_ID}/items`, {
+      params: { page, pageSize },
+    });
+    return data;
   } catch (err) {
     console.error(err);
     return [];
@@ -20,17 +17,11 @@ export async function fetchItems(page = 1, pageSize = 10): Promise<ItemData[]> {
 }
 
 export async function createItem(name): Promise<ItemData> {
-  const url = `${BASE_URL}/api/${TENANT_ID}/items`;
   try {
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name }),
-    });
-    if (!res.ok) {
-      throw new Error();
-    }
-    const data = await res.json();
+    const { data } = await instance.post<ItemData>(
+      `/api/${encodeURIComponent(TENANT_ID)}/items`,
+      { name }
+    );
     return data;
   } catch (err) {
     console.error(err);
