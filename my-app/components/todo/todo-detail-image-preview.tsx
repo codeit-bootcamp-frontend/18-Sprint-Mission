@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import TodoDetailImageButton from "./todo-detail-image-button";
 import styles from "./todo-detail-image-preview.module.css";
 
@@ -12,6 +12,10 @@ export default function TodoDetailImagePreview({
   const [previewUrl, setPreviewUrl] = useState<string | undefined | null>(
     imageUrl
   );
+
+  const hasPreview = useMemo(() => {
+    return previewUrl !== "" && previewUrl != null;
+  }, [previewUrl]);
 
   const handlePreviewChanged = (file?: File) => {
     if (!file) return;
@@ -38,10 +42,12 @@ export default function TodoDetailImagePreview({
       <div className={styles.previewImageContainer}>
         <img
           className={styles.previewImage}
-          src={previewUrl || "/images/image-preview-background.svg"}
+          src={
+            hasPreview ? previewUrl! : "/images/image-preview-background.svg"
+          }
           alt="Preview image"
         />
-        {typeof previewUrl === "string" || (
+        {hasPreview || (
           <img
             className={styles.previewEmptyIcon}
             src="/icons/ic-image.svg"

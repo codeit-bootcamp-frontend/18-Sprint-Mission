@@ -15,14 +15,20 @@ class HttpClient {
     return response.json();
   }
 
-  async post(endpoint: string, data: any) {
-    const response = await fetch(this.createFetchInput(endpoint), {
+  async post(endpoint: string, data: any, options?: { isFormData?: boolean }) {
+    let init: RequestInit = {
       method: "POST",
-      headers: {
+      body: options?.isFormData ? data : JSON.stringify(data),
+    };
+
+    // Form data를 전송하는 경우 브라우저가 자동으로 설정하는 'Content-Type'과 boundary 사용
+    if (!options?.isFormData) {
+      init.headers = {
         "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+      };
+    }
+
+    const response = await fetch(this.createFetchInput(endpoint), init);
     if (!response.ok) {
       throw new Error(`Error posting ${endpoint}: ${response.statusText}`);
     }

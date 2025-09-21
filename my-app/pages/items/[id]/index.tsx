@@ -4,6 +4,7 @@ import Portal from "@/components/portal/portal";
 import TodoDetailImagePreview from "@/components/todo/todo-detail-image-preview";
 import TodoDetailTitle from "@/components/todo/todo-detail-title";
 import { useAsyncCall } from "@/hooks/use-async-call";
+import { uploadImage } from "@/libs/apis/image";
 import { deleteTodo, editTodo, getTodo } from "@/libs/apis/todo";
 import styles from "@/styles/item.module.css";
 import type { Todo } from "@/types";
@@ -28,7 +29,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   };
 }
 
-type TodoValuesState = Pick<Todo, "name" | "imageUrl" | "memo" | "isCompleted">;
+type TodoValuesState = Pick<Todo, "name" | "memo" | "isCompleted">;
 
 export default function Page({ todo }: { todo: Todo }) {
   const router = useRouter();
@@ -46,12 +47,16 @@ export default function Page({ todo }: { todo: Todo }) {
   const { isLoading, execute } = useAsyncCall();
 
   const canEdit = useMemo(() => {
+    if (image) {
+      return true;
+    }
+
     return (
       todoValues.name !== todo.name ||
       todoValues.memo != todo.memo ||
       todoValues.isCompleted !== todo.isCompleted
     );
-  }, [todoValues]);
+  }, [image, todoValues]);
 
   const handleNameChange = (newName: string) => {
     setTodoValues((prev) => ({
@@ -73,13 +78,23 @@ export default function Page({ todo }: { todo: Todo }) {
 
   const handleEditClick = async () => {
     execute(async () => {
-      const result = await editTodo(todo.id, {
+      const updateValues: Partial<Todo> = {
         name: todoValues.name,
         memo: todoValues.memo ?? "",
-        imageUrl: todoValues.imageUrl ?? "",
         isCompleted: todoValues.isCompleted,
-      });
+      };
 
+      if (image) {
+        const imageUrl = await uploadImage(image);
+        if (imageUrl) {
+          updateValues.imageUrl = imageUrl;
+        } else {
+          console.log("Failed to upload image");
+          return;
+        }
+      }
+
+      const result = await editTodo(todo.id, updateValues);
       if (result) {
         router.replace("/");
       }
@@ -102,9 +117,6 @@ export default function Page({ todo }: { todo: Todo }) {
     }));
   };
 
-  // TODO: File input을 hidden 처리한 뒤 이미지 파일 업로드, preview 등 구현하기 -> 문자열 형식으로 전송해야 하는데 어떻게...?
-  //       `POST /images/upload` API가 있음. 이걸로 먼저 업로드 한 다음 반환되는 url을 `imageUrl`에 넣어주면 될 듯
-  // TODO: <textarea> 상하좌우 가운데 정렬 시키기
   // TODO: 페이지 이동이 지연되는 이유 디버깅하기
 
   return (
