@@ -4,7 +4,7 @@ import styles from "./todo-detail-image-button.module.css";
 interface Props {
   className?: string;
   buttonType: "add" | "edit";
-  onChange: (file?: File) => void;
+  onChange: (file: File | null, reset: () => void) => void;
 }
 
 const icon = {
@@ -25,7 +25,9 @@ export default function TodoDetailImageButton({
   const classNames = `${styles.editButton} ${typeClassName[buttonType]} ${className}`;
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.files?.[0]);
+    onChange(event.target.files?.[0] ?? null, () => {
+      event.target.value = "";
+    });
   };
 
   return (

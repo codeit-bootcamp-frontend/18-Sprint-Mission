@@ -17,8 +17,15 @@ export default function TodoDetailImagePreview({
     return previewUrl !== "" && previewUrl != null;
   }, [previewUrl]);
 
-  const handlePreviewChanged = (file?: File) => {
+  const handlePreviewChanged = (file: File | null, reset: () => void) => {
     if (!file) return;
+
+    const maxSize = 5 * 1024 * 1024;
+    if (file.size > maxSize) {
+      alert("파일 크기는 5MB 이하여야 합니다.");
+      reset();
+      return;
+    }
 
     if (previewUrl) {
       URL.revokeObjectURL(previewUrl);
