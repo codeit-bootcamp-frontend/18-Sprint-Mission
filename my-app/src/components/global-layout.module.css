@@ -1,0 +1,29 @@
+.header {
+  background-color: white;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+}
+
+.headerContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.headerContent > a {
+  display: flex;
+  align-items: center;
+  color: #6500c3;
+  height: 45px;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.main {
+  padding-top: 10px;
+}
