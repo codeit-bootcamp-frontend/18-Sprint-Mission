@@ -78,9 +78,9 @@ function MainPage() {
             <img src={bottomImg} alt="하단 사진" />
           </div>
         </div>
-        <footer>
-          <div className="footer-codeit">©codeit - 2024</div>
-          <div className="footer-mid">
+        <footer className="main-footer">
+          <div className="main-footer-codeit">©codeit - 2024</div>
+          <div className="main-footer-mid">
             <div>
               <a href="./privacy.html">Privacy Policy</a>
             </div>
@@ -88,7 +88,7 @@ function MainPage() {
               <a href="./faq.html">FAQ</a>
             </div>
           </div>
-          <ul className="footer-sns">
+          <ul className="main-footer-sns">
             <li>
               <a href="https://www.facebook.com/">
                 <img src={facebookIcon} alt="페이스북" />

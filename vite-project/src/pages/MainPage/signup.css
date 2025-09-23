@@ -2,10 +2,10 @@ html {
   font-size: 62.5%;
 }
 
-body {
+.signup-body {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -22,7 +22,7 @@ body {
   padding-bottom: 4rem;
 }
 
-main {
+.signup-main {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
@@ -62,7 +62,8 @@ main {
   padding: 0.8rem 2rem;
 }
 
-.input-div:nth-child(3), .input-div:nth-child(4) {
+.input-div:nth-child(3),
+.input-div:nth-child(4) {
   position: relative;
 }
 
@@ -75,7 +76,7 @@ main {
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .form-button {
@@ -133,7 +134,7 @@ button:hover {
 }
 
 .login-footer a {
-    color: var(--blue);
+  color: var(--blue);
 }
 
 .input-div .errorborder {
@@ -159,7 +160,7 @@ button:hover {
     top: -4rem;
   }
 
-    .login-header {
+  .login-header {
     padding-bottom: 2rem;
   }
 
@@ -178,7 +179,6 @@ button:hover {
     gap: 0.8rem;
   }
 
-
   .input-div label {
     font-size: 1.4rem;
   }
@@ -188,6 +188,6 @@ button:hover {
   }
 
   .pw-visibility {
-  top: 5rem;
-}
+    top: 5rem;
+  }
 }

@@ -15,7 +15,7 @@ function Header() {
               판다마켓
             </a>
           </div>
-          <a className="header-login" href="./login.html">
+          <a className="header-login" href="./login">
             로그인
           </a>
         </div>

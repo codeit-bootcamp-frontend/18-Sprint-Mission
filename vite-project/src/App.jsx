@@ -6,12 +6,14 @@ import MainPage from "./pages/MainPage/MainPage";
 import MainLayout from "./Layouts/MainLayout";
 import DefaultLayout from "./Layouts/DefaultLayout";
 import LoginPage from "./pages/MainPage/LoginPage";
+import SignupPage from "./pages/MainPage/SignupPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route
           path="/"
           element={
