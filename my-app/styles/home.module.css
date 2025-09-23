@@ -1,12 +1,9 @@
-.main {
-  padding: 0 200px;
-}
-
 .content {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 24px;
+  padding-bottom: 100px;
 }
 
 .searchForm {
@@ -29,18 +26,8 @@
 }
 
 @media (max-width: 1199px) {
-  .main {
-    padding: 0 24px;
-  }
-
   .content {
     max-width: none;
     margin: 0;
-  }
-}
-
-@media (max-width: 743px) {
-  .main {
-    padding: 0 16px;
   }
 }

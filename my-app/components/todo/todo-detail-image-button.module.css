@@ -1,0 +1,25 @@
+.editButton {
+  right: 16px;
+  bottom: 16px;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.editButtonImg {
+  width: 24px;
+  height: 24px;
+}
+
+.editButton.add {
+  background-color: var(--color-state-200);
+}
+
+.editButton.edit {
+  border: 2px solid var(--color-state-900);
+  background-color: #0f172a80;
+}

@@ -1,4 +1,4 @@
-.todo {
+.todoListItem {
   background-color: white;
   border: 2px solid var(--color-state-900);
   border-radius: 27px;
@@ -13,21 +13,21 @@
   padding: 9px 12px;
   cursor: pointer;
 }
-.todo.checked {
+.todoListItem.checked {
   background-color: var(--color-violet-100);
   text-decoration: line-through;
 }
 
-.todo .checkImage {
+.todoListItem .checkImage {
   width: 32px;
   height: 32px;
 }
 
-.todo .checkImage img {
+.todoListItem .checkImage img {
   width: 100%;
   height: 100%;
 }
 
-.todo .title {
+.todoListItem .title {
   flex-grow: 1;
 }

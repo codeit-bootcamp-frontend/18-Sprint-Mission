@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-function Portal({ children }) {
-  const [container, setContainer] = useState(null);
+interface Props {
+  children: ReactNode;
+}
+
+function Portal({ children }: Props) {
+  const [container, setContainer] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     // setContainer(document.getElementById("portal"));
