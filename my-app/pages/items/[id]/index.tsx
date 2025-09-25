@@ -1,8 +1,8 @@
 import Button from "@/components/button/button";
 import { ButtonType } from "@/components/button/button-type";
 import Portal from "@/components/portal/portal";
+import TodoDetailHeader from "@/components/todo/todo-detail-header";
 import TodoDetailImagePreview from "@/components/todo/todo-detail-image-preview";
-import TodoDetailTitle from "@/components/todo/todo-detail-title";
 import { useAsyncCall } from "@/hooks/use-async-call";
 import { uploadImage } from "@/libs/apis/image";
 import { deleteTodo, editTodo, getTodo } from "@/libs/apis/todo";
@@ -121,7 +121,7 @@ export default function Page({ todo }: { todo: Todo }) {
     <>
       <div className={styles.container}>
         <div className={styles.content}>
-          <TodoDetailTitle
+          <TodoDetailHeader
             name={todoValues.name}
             isCompleted={todoValues.isCompleted}
             onNameChange={handleNameChange}
