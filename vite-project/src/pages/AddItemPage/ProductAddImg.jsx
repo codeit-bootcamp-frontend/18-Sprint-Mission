@@ -35,10 +35,10 @@ const ProductAddImgFile = styled.label`
     display: none;
   }
 
-    @media (max-width: 767px) {
-  width: 16.8rem;
-  height: 16.8rem;
-  }
+React-양재영-sprint8
+  @media (max-width: 767px) {
+    width: 16.8rem;
+    height: 16.8rem;
 `;
 
 const ProductAddImgFileDiv = styled.div`
