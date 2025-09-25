@@ -35,19 +35,25 @@ const ProductAddImgFile = styled.label`
     display: none;
   }
 
+React-양재영-sprint8
   @media (max-width: 767px) {
     width: 16.8rem;
     height: 16.8rem;
-  }
 `;
 
 const ProductAddImgFileDiv = styled.div`
   display: flex;
   gap: 2.4rem;
+
+  @media (max-width: 767px) {
+  gap: 1rem;
+  }
 `;
 
 const PreviewWrapper = styled.div`
   position: relative;
+
+
 `;
 
 const PreviewImg = styled.img`
@@ -55,6 +61,11 @@ const PreviewImg = styled.img`
   height: 28.2rem;
   border-radius: 1.2rem;
   border: 0.1rem solid var(--gray-50);
+
+    @media (max-width: 767px) {
+  width: 16.8rem;
+  height: 16.8rem;
+  }
 `;
 
 const ClearBtn = styled.button`

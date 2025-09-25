@@ -16,7 +16,7 @@ const FormContainer = Styled.form`
   margin: 3rem auto;
   width: 120.6rem;
   gap: 2.4rem;
-  
+
   @media (max-width: 1199px) {
   width: 69.6rem;
   }
