@@ -1,18 +1,27 @@
 import Button from "@/components/button/button";
 import { ButtonType } from "@/components/button/button-type";
 import Portal from "@/components/portal/portal";
+import TodoDetailHeader from "@/components/todo/todo-detail-header";
 import TodoDetailImagePreview from "@/components/todo/todo-detail-image-preview";
-import TodoDetailTitle from "@/components/todo/todo-detail-title";
 import { useAsyncCall } from "@/hooks/use-async-call";
 import { uploadImage } from "@/libs/apis/image";
-import { deleteTodo, editTodo, getTodo } from "@/libs/apis/todo";
+import { revalidate } from "@/libs/apis/revalidate";
+import { deleteTodo, editTodo, getTodo, getTodos } from "@/libs/apis/todo";
 import styles from "@/styles/item.module.css";
 import type { Todo } from "@/types";
-import { GetServerSidePropsContext } from "next";
+import { GetStaticPropsContext } from "next";
 import { useRouter } from "next/router";
 import { ChangeEvent, useMemo, useState } from "react";
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+export async function getStaticPaths() {
+  const todos = await getTodos();
+  const paths = todos.map((todo) => ({
+    params: { id: todo.id.toString() },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
   const { id } = context.params!;
   const todo = await getTodo(Number(id));
 
@@ -33,10 +42,6 @@ type TodoValuesState = Pick<Todo, "name" | "memo" | "isCompleted">;
 
 export default function Page({ todo }: { todo: Todo }) {
   const router = useRouter();
-
-  if (!todo) {
-    return <div>Todo not found</div>;
-  }
 
   const [todoValues, setTodoValues] = useState<TodoValuesState>({
     name: todo.name,
@@ -96,7 +101,8 @@ export default function Page({ todo }: { todo: Todo }) {
 
       const result = await editTodo(todo.id, updateValues);
       if (result) {
-        router.replace("/");
+        await revalidate(["/", `/items/${todo.id}`]);
+        router.push("/");
       }
     });
   };
@@ -121,7 +127,7 @@ export default function Page({ todo }: { todo: Todo }) {
     <>
       <div className={styles.container}>
         <div className={styles.content}>
-          <TodoDetailTitle
+          <TodoDetailHeader
             name={todoValues.name}
             isCompleted={todoValues.isCompleted}
             onNameChange={handleNameChange}

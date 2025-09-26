@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import TodoDetailImageButton from "./todo-detail-image-button";
 import styles from "./todo-detail-image-preview.module.css";
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+
 export default function TodoDetailImagePreview({
   imageUrl,
   onChange,
@@ -20,8 +22,7 @@ export default function TodoDetailImagePreview({
   const handlePreviewChanged = (file: File | null, reset: () => void) => {
     if (!file) return;
 
-    const maxSize = 5 * 1024 * 1024;
-    if (file.size > maxSize) {
+    if (file.size > MAX_FILE_SIZE) {
       alert("파일 크기는 5MB 이하여야 합니다.");
       reset();
       return;
