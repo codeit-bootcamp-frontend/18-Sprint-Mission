@@ -6,6 +6,7 @@ import TodoList from "@/components/todo/todo-list";
 import TodoListItem from "@/components/todo/todo-list-item";
 import { TodoStatus } from "@/components/todo/todo-status";
 import { useAsyncCall } from "@/hooks/use-async-call";
+import { revalidate } from "@/libs/apis/revalidate";
 import { addTodo, getTodos, toggleTodo } from "@/libs/apis/todo";
 import styles from "@/styles/home.module.css";
 import type { Todo } from "@/types";
@@ -17,7 +18,7 @@ import {
   useState,
 } from "react";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const todos = await getTodos();
   return { props: { todos } };
 }
@@ -43,18 +44,24 @@ export default function Home({ todos: initialTodos }: { todos: Todo[] }) {
 
   const handleAddClick: MouseEventHandler = async (event) => {
     event.preventDefault();
-    execute(async () => {
+    await execute(async () => {
       const newTodo = await addTodo(inputValue);
       if (!newTodo) return;
+
+      await revalidate(["/", `/items/${newTodo.id}`]);
+
       setTodos((prevTodos) => [...prevTodos, newTodo]);
       setInputValue("");
     });
   };
 
   const handleTodoChange = async (todo: Todo) => {
-    execute(async () => {
+    await execute(async () => {
       const updatedTodo = await toggleTodo(todo);
       if (!updatedTodo) return;
+
+      await revalidate(["/", `/items/${todo.id}`]);
+
       setTodos((prevTodos) => {
         const index = prevTodos.findIndex(
           (prevTodo) => prevTodo.id === todo.id
