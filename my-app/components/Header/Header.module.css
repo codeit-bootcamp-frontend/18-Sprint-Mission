@@ -1,0 +1,25 @@
+.header {
+  border-bottom: 1px solid var(--state-200);
+  height: 60px;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo-small {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .logo-large {
+    display: none;
+  }
+  .logo-small {
+    display: block;
+  }
+}

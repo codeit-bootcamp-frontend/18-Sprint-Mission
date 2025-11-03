@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  gap: 16px;
+}
+
+.input {
+  flex: 1;
+  border-radius: 24px;
+  border: 2px solid var(--state-900);
+  box-shadow: 4px 4px var(--state-900);
+  background-color: var(--state-100);
+  color: var(--state-500);
+  padding: 0 24px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 720px) {
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+  .input {
+    flex: none;
+    width: 80%;
+    height: 52px;
+  }
+}

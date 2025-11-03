@@ -1,0 +1,9 @@
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
